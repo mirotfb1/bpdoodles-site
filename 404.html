@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Page not found · Basepoint Doodles</title>
+<link rel="icon" href="/favicon.ico" sizes="any"/>
+<link rel="apple-touch-icon" href="/favicon-180.png"/>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Caveat:wght@700&display=swap" rel="stylesheet"/>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Nunito', sans-serif;
+  background: #F0F2F5;
+  color: #1C1C1C;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 16px;
+}
+.card {
+  background: #fff;
+  border: 1px solid #E8E8E8;
+  border-radius: 6px;
+  max-width: 480px;
+  width: 100%;
+  padding: 48px 40px;
+  text-align: center;
+}
+.logo {
+  font-size: 28px;
+  font-weight: 900;
+  color: #1B2E5E;
+  letter-spacing: -0.5px;
+  margin-bottom: 4px;
+}
+.logo span { font-family: 'Caveat', cursive; color: #CC2B2B; font-size: 34px; }
+.code {
+  font-size: 72px;
+  font-weight: 900;
+  color: #E8E8E8;
+  line-height: 1;
+  margin: 28px 0 8px;
+}
+.message {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1C1C1C;
+  margin-bottom: 8px;
+}
+.sub {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+.links {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.btn {
+  display: inline-block;
+  padding: 10px 22px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.btn-primary { background: #CC2B2B; color: #fff; }
+.btn-secondary { background: #F0F2F5; color: #1B2E5E; border: 1px solid #E8E8E8; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">Basepoint <span>Doodles</span></div>
+    <div class="code">404</div>
+    <div class="message">Page not found</div>
+    <div class="sub">This page doesn't exist or has moved.<br/>Try one of the links below.</div>
+    <div class="links">
+      <a href="/" class="btn btn-primary">Home</a>
+      <a href="/newsletters/" class="btn btn-secondary">Newsletter</a>
+      <a href="/cockpit/" class="btn btn-secondary">Cockpit</a>
+    </div>
+  </div>
+</body>
+</html>
