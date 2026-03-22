@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Macro Cockpit · Basepoint Doodles · Bulgaria</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Caveat:wght@700&display=swap" rel="stylesheet"/>
+<style>
+/* ── Reset ── */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── Tokens — Pack A (Navy + Red) ── */
+body {
+  --color-basepoint:   #1B2E5E;
+  --color-doodles:     #CC2B2B;
+  --color-accent:      #CC2B2B;
+  --color-up:          #2A9D5C;
+  --color-down:        #E03E2D;
+  --color-ink:         #1C1C1C;
+  --color-ink-2:       #444444;
+  --color-muted:       #888888;
+  --color-muted-light: #AAAAAA;
+  --color-border:      #E8E8E8;
+  --color-surface:     #F8F8F8;
+  --color-fresh:       #2A9D5C;
+
+  font-family: 'Nunito', Arial, sans-serif;
+  background: #F0F2F5;
+  color: var(--color-ink);
+  line-height: 1.6;
+}
+
+/* ── Wrapper ── */
+.wrapper {
+  max-width: 700px;
+  margin: 32px auto;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+}
+
+/* ── Language toggle ── */
+.lang-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  background: var(--color-basepoint);
+  gap: 0;
+}
+/* ── Site nav ── */
+.site-nav { display: flex; gap: 20px; align-items: center; }
+.site-nav a { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.45); text-decoration: none; }
+.site-nav a:hover { color: rgba(255,255,255,0.9); }
+.site-nav a.active { color: var(--color-accent); }
+.site-nav .soon { font-size: 9px; background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.3); border-radius: 3px; padding: 1px 5px; margin-left: 4px; vertical-align: middle; }
+.lang-buttons { display: flex; }
+.lang-btn {
+  background: transparent;
+  border: 1px solid #444;
+  color: #888;
+  font-family: 'Nunito', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 5px 14px;
+  cursor: pointer;
+}
+.lang-btn:first-child { border-radius: 3px 0 0 3px; }
+.lang-btn:last-child  { border-radius: 0 3px 3px 0; border-left: none; }
+.lang-btn.active { background: var(--color-accent); border-color: var(--color-accent); color: #fff; }
+
+/* ── Language visibility ── */
+.lc-bg { display: none !important; }
+.lc-en { display: block; }
+span.lc-en { display: inline; }
+span.lc-bg { display: none !important; }
+body.lang-bg .lc-en { display: none !important; }
+body.lang-bg .lc-bg { display: block !important; }
+body.lang-bg span.lc-bg { display: inline !important; }
+body.lang-bg span.lc-en { display: none !important; }
+
+/* ── Masthead ── */
+.masthead {
+  background: var(--color-basepoint);
+  padding: 24px 28px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 3px solid var(--color-accent);
+}
+.masthead-logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.masthead-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 14px;
+}
+.masthead-basepoint {
+  font-family: 'Nunito', 'Arial Black', sans-serif;
+  font-size: 22px;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: -0.3px;
+  line-height: 1;
+}
+.masthead-tagline {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  margin-top: 4px;
+}
+.masthead-divider {
+  width: 2px;
+  height: 52px;
+  background: rgba(255,255,255,0.2);
+}
+.masthead-doodles {
+  font-family: 'Caveat', cursive;
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--color-doodles);
+  line-height: 1;
+  padding-left: 14px;
+}
+.masthead-meta { text-align: right; }
+.masthead-issue {
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.8);
+  display: block;
+  line-height: 1.5;
+}
+.masthead-date {
+  font-size: 11px;
+  color: rgba(255,255,255,0.4);
+  display: block;
+}
+
+/* ── Page header ── */
+.page-header {
+  padding: 20px 28px 16px;
+  border-bottom: 1px solid var(--color-border);
+}
+.page-title {
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--color-ink);
+  letter-spacing: -0.3px;
+  margin-bottom: 6px;
+}
+.page-subtitle {
+  font-size: 13px;
+  color: var(--color-muted);
+}
+.page-generated {
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+  color: var(--color-muted-light);
+  margin-top: 6px;
+}
+
+/* ── Section header ── */
+.section-header {
+  padding: 14px 28px 10px;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.section-label {
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+/* ── Chart card ── */
+.chart-card {
+  padding: 20px 28px;
+  border-bottom: 1px solid var(--color-border);
+}
+.chart-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.chart-code {
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+  color: var(--color-muted-light);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 3px;
+  padding: 1px 6px;
+}
+.fresh-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-fresh);
+  flex-shrink: 0;
+}
+.dataset-badge {
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+  color: var(--color-muted);
+}
+.chart-title {
+  font-size: 15px;
+  font-weight: 900;
+  color: var(--color-ink);
+  line-height: 1.3;
+  letter-spacing: -0.2px;
+  margin-bottom: 2px;
+}
+.chart-subtitle {
+  font-size: 11px;
+  color: var(--color-muted);
+  margin-bottom: 10px;
+}
+.chart-img {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+}
+.chart-img-placeholder {
+  width: 100%;
+  min-height: 200px;
+  background: var(--color-surface);
+  border: 1px dashed var(--color-border);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-muted-light);
+  font-size: 12px;
+}
+.chart-footer {
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+  color: var(--color-muted-light);
+  margin-top: 6px;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+.chart-footer-left  { text-align: left; }
+.chart-footer-right { text-align: right; flex-shrink: 0; }
+
+/* ── Error / loading states ── */
+.state-msg {
+  padding: 40px 28px;
+  text-align: center;
+  color: var(--color-muted);
+  font-size: 14px;
+}
+
+/* ── Footer ── */
+.footer {
+  padding: 14px 28px;
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-logo {
+  font-family: 'Caveat', cursive;
+  font-size: 18px;
+  font-weight: 700;
+  color: #CCC;
+}
+.footer-sources {
+  font-family: 'Courier New', monospace;
+  font-size: 9px;
+  color: var(--color-muted-light);
+  text-align: right;
+}
+
+/* ── Mobile ── */
+@media (max-width: 740px) {
+  .wrapper { margin: 0; border-radius: 0; border-left: none; border-right: none; }
+  .masthead { padding: 18px 16px 14px; }
+  .page-header, .section-header, .chart-card, .footer { padding-left: 16px; padding-right: 16px; }
+}
+</style>
+</head>
+<body>
+<div class="wrapper" id="app">
+
+  <!-- Language toggle + site nav -->
+  <div class="lang-toggle">
+    <nav class="site-nav">
+      <a href="/" class="lc-en">Home</a>
+      <a href="/" class="lc-bg">Начало</a>
+      <a href="/newsletters/" class="lc-en">Newsletter</a>
+      <a href="/newsletters/" class="lc-bg">Бюлетин</a>
+      <a href="/cockpit/" class="active lc-en">Cockpit</a>
+      <a href="/cockpit/" class="active lc-bg">Кокпит</a>
+      <a href="/calendar/" class="lc-en">Calendar<span class="soon">soon</span></a>
+      <a href="/calendar/" class="lc-bg">Календар<span class="soon">скоро</span></a>
+    </nav>
+    <div class="lang-buttons">
+      <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" data-lang="bg" onclick="setLang('bg')">БГ</button>
+    </div>
+  </div>
+
+  <!-- Masthead -->
+  <div class="masthead">
+    <div class="masthead-logo">
+      <div class="masthead-left">
+        <span class="masthead-basepoint">Basepoint</span>
+        <span class="masthead-tagline">macro · cockpit</span>
+      </div>
+      <div class="masthead-divider"></div>
+      <span class="masthead-doodles">Doodles</span>
+    </div>
+    <div class="masthead-meta">
+      <span class="masthead-issue">
+        <span class="lc-en">Bulgaria Macro</span>
+        <span class="lc-bg">Макро · България</span>
+      </span>
+      <span class="masthead-date">
+        <span class="lc-en">26 indicators · live cockpit</span>
+        <span class="lc-bg">26 показателя · актуален кокпит</span>
+      </span>
+    </div>
+  </div>
+
+  <!-- Page header -->
+  <div class="page-header">
+    <div class="page-title lc-en">Macro Cockpit</div>
+    <div class="page-title lc-bg">Макро Кокпит</div>
+    <div class="page-subtitle lc-en">All indicators in one view — updated weekly with fresh data.</div>
+    <div class="page-subtitle lc-bg">Всички показатели на едно място — актуализирано седмично.</div>
+    <div class="page-generated lc-en" id="gen-date-en"></div>
+    <div class="page-generated lc-bg" id="gen-date-bg"></div>
+  </div>
+
+  <!-- Charts injected here -->
+  <div id="charts-container">
+    <div class="state-msg lc-en">Loading charts...</div>
+    <div class="state-msg lc-bg">Зареждане...</div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <span class="footer-logo">Doodles.</span>
+    <span class="footer-sources">
+      <span class="lc-en">Eurostat · NSI · BNB · NSSI</span>
+      <span class="lc-bg">Евростат · НСИ · БНБ · НОИ</span>
+    </span>
+  </div>
+
+</div>
+
+<script>
+// ── Language toggle ──────────────────────────────────────────────────────────
+function setLang(lang) {
+  document.body.classList.toggle('lang-bg', lang === 'bg');
+  document.querySelectorAll('.lang-btn').forEach(function(btn) {
+    btn.classList.toggle('active', btn.dataset.lang === lang);
+  });
+}
+
+// ── Fresh dot logic (7-day threshold) ───────────────────────────────────────
+function isFresh(isoTimestamp) {
+  if (!isoTimestamp) return false;
+  var generated = new Date(isoTimestamp);
+  var now = new Date();
+  var diffDays = (now - generated) / (1000 * 60 * 60 * 24);
+  return diffDays <= 7;
+}
+
+// ── Format period label ──────────────────────────────────────────────────────
+function formatPeriod(period) {
+  if (!period) return '';
+  // Quarterly: "2025-Q4"
+  if (/^\d{4}-Q\d$/.test(period)) return period;
+  // Monthly: "2026-02" -> "Feb 2026"
+  if (/^\d{4}-\d{2}$/.test(period)) {
+    var parts = period.split('-');
+    var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    var mon = months[parseInt(parts[1], 10) - 1] || parts[1];
+    return mon + ' ' + parts[0];
+  }
+  // Annual: "2024"
+  return period;
+}
+
+function formatPeriodBG(period) {
+  if (!period) return '';
+  if (/^\d{4}-Q\d$/.test(period)) return period.replace('Q','Т');
+  if (/^\d{4}-\d{2}$/.test(period)) {
+    var parts = period.split('-');
+    var months = ['яну','фев','мар','апр','май','юни','юли','авг','сеп','окт','ное','дек'];
+    var mon = months[parseInt(parts[1], 10) - 1] || parts[1];
+    return mon + ' ' + parts[0];
+  }
+  return period;
+}
+
+// ── Render ───────────────────────────────────────────────────────────────────
+function render(manifest) {
+  var container = document.getElementById('charts-container');
+  container.innerHTML = '';
+
+  // Generated-at line
+  var genDate = new Date(manifest.generated_at);
+  var genStr = genDate.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+  var genStrBG = genDate.toLocaleDateString('bg-BG', { day: 'numeric', month: 'long', year: 'numeric' });
+  document.getElementById('gen-date-en').textContent = 'Charts generated: ' + genStr;
+  document.getElementById('gen-date-bg').textContent = 'Графики от: ' + genStrBG;
+
+  var datasets = manifest.datasets || {};
+
+  manifest.sections.forEach(function(sec) {
+    // Section header
+    var hdr = document.createElement('div');
+    hdr.className = 'section-header';
+    hdr.innerHTML =
+      '<span class="section-label lc-en">&#9658; ' + escHtml(sec.label) + '</span>' +
+      '<span class="section-label lc-bg">&#9658; ' + escHtml(sec.label_bg) + '</span>';
+    container.appendChild(hdr);
+
+    sec.charts.forEach(function(chart) {
+      var ds = datasets[chart.dataset] || {};
+      var fresh = isFresh(ds.last_generated);
+      var period = formatPeriod(ds.latest_period);
+      var periodBG = formatPeriodBG(ds.latest_period);
+      var dsLabel = ds.label || chart.dataset;
+      var dsLabelBG = ds.label_bg || chart.dataset;
+
+      var metaHtml =
+        '<span class="chart-code">' + escHtml(chart.code) + '</span>' +
+        (fresh ? '<span class="fresh-dot" title="Updated within 7 days"></span>' : '') +
+        '<span class="dataset-badge lc-en">' + escHtml(dsLabel) +
+          (period ? ' &middot; ' + escHtml(period) : '') + '</span>' +
+        '<span class="dataset-badge lc-bg">' + escHtml(dsLabelBG) +
+          (periodBG ? ' &middot; ' + escHtml(periodBG) : '') + '</span>';
+
+      var imgHtml = chart.chart_file
+        ? '<img class="chart-img" src="' + escHtml(chart.chart_file) +
+          '" alt="' + escHtml(chart.title) + '" loading="lazy"/>'
+        : '<div class="chart-img-placeholder"><span>No image</span></div>';
+
+      var footerLeft  = chart.footer_left    || '';
+      var footerLeftBG  = chart.footer_left_bg || '';
+      var footerRight = chart.footer_right   || '';
+      var footerRightBG = chart.footer_right_bg || '';
+
+      var card = document.createElement('div');
+      card.className = 'chart-card';
+      card.innerHTML =
+        '<div class="chart-card-meta">' + metaHtml + '</div>' +
+        '<div class="chart-title lc-en">' + escHtml(chart.title) + '</div>' +
+        '<div class="chart-title lc-bg">' + escHtml(chart.title_bg) + '</div>' +
+        (chart.subtitle
+          ? '<div class="chart-subtitle lc-en">' + escHtml(chart.subtitle) + '</div>' +
+            '<div class="chart-subtitle lc-bg">' + escHtml(chart.subtitle_bg) + '</div>'
+          : '') +
+        imgHtml +
+        '<div class="chart-footer">' +
+          '<span class="chart-footer-left">' +
+            '<span class="lc-en">' + escHtml(footerLeft) + '</span>' +
+            '<span class="lc-bg">' + escHtml(footerLeftBG) + '</span>' +
+          '</span>' +
+          '<span class="chart-footer-right">' +
+            '<span class="lc-en">' + escHtml(footerRight) + '</span>' +
+            '<span class="lc-bg">' + escHtml(footerRightBG) + '</span>' +
+          '</span>' +
+        '</div>';
+
+      container.appendChild(card);
+    });
+  });
+}
+
+// ── HTML escaping ────────────────────────────────────────────────────────────
+function escHtml(str) {
+  if (!str) return '';
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+// ── Load manifest ────────────────────────────────────────────────────────────
+fetch('manifest.json')
+  .then(function(r) {
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    return r.json();
+  })
+  .then(function(manifest) {
+    render(manifest);
+  })
+  .catch(function(err) {
+    document.getElementById('charts-container').innerHTML =
+      '<div class="state-msg lc-en">Could not load charts. (' + err.message + ')</div>' +
+      '<div class="state-msg lc-bg">Грешка при зареждане. (' + err.message + ')</div>';
+    console.error('Cockpit load error:', err);
+  });
+</script>
+</body>
+</html>

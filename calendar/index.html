@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Data Calendar · Basepoint Doodles</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Caveat:wght@700&display=swap" rel="stylesheet"/>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  --color-basepoint:   #1B2E5E;
+  --color-doodles:     #CC2B2B;
+  --color-accent:      #CC2B2B;
+  --color-ink:         #1C1C1C;
+  --color-ink-2:       #444444;
+  --color-muted:       #888888;
+  --color-muted-light: #AAAAAA;
+  --color-border:      #E8E8E8;
+  --color-surface:     #F8F8F8;
+  font-family: 'Nunito', Arial, sans-serif;
+  background: #F0F2F5;
+  color: var(--color-ink);
+  line-height: 1.6;
+}
+.wrapper { max-width: 700px; margin: 32px auto; background: #fff; border: 1px solid var(--color-border); border-radius: 4px; }
+.lang-toggle { display: flex; justify-content: space-between; align-items: center; padding: 8px 16px; background: var(--color-basepoint); }
+.lang-buttons { display: flex; }
+.lang-btn { background: transparent; border: 1px solid #444; color: #888; font-family: 'Nunito', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; padding: 4px 12px; cursor: pointer; }
+.lang-btn:first-child { border-radius: 3px 0 0 3px; }
+.lang-btn:last-child  { border-radius: 0 3px 3px 0; border-left: none; }
+.lang-btn.active { background: var(--color-accent); border-color: var(--color-accent); color: #fff; }
+.site-nav { display: flex; gap: 20px; align-items: center; }
+.site-nav a { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.45); text-decoration: none; }
+.site-nav a:hover { color: rgba(255,255,255,0.9); }
+.site-nav a.active { color: var(--color-accent); }
+.site-nav .soon { font-size: 9px; background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.3); border-radius: 3px; padding: 1px 5px; margin-left: 4px; vertical-align: middle; }
+.lc-bg { display: none !important; }
+.lc-en { display: block; }
+span.lc-en { display: inline; }
+span.lc-bg { display: none !important; }
+body.lang-bg .lc-en { display: none !important; }
+body.lang-bg .lc-bg { display: block !important; }
+body.lang-bg span.lc-bg { display: inline !important; }
+body.lang-bg span.lc-en { display: none !important; }
+.masthead { background: var(--color-basepoint); padding: 22px 28px 18px; display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 3px solid var(--color-accent); }
+.masthead-logo { display: flex; align-items: center; }
+.masthead-left { display: flex; flex-direction: column; align-items: flex-end; padding-right: 14px; }
+.masthead-basepoint { font-family: 'Nunito', sans-serif; font-size: 22px; font-weight: 900; color: #fff; letter-spacing: -0.3px; line-height: 1; }
+.masthead-tagline { font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-top: 4px; }
+.masthead-divider { width: 2px; height: 52px; background: rgba(255,255,255,0.18); }
+.masthead-doodles { font-family: 'Caveat', cursive; font-size: 48px; font-weight: 700; color: var(--color-doodles); line-height: 1; padding-left: 14px; }
+.masthead-desc { text-align: right; }
+.masthead-desc-main { font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.75); display: block; }
+.masthead-desc-sub { font-size: 11px; color: rgba(255,255,255,0.35); display: block; }
+.page-header { padding: 20px 28px 16px; border-bottom: 1px solid var(--color-border); }
+.page-title { font-size: 20px; font-weight: 900; color: var(--color-ink); letter-spacing: -0.3px; margin-bottom: 6px; }
+.page-subtitle { font-size: 13px; color: var(--color-muted); }
+.coming-soon {
+  padding: 48px 28px;
+  text-align: center;
+  border-bottom: 1px solid var(--color-border);
+}
+.coming-soon-icon { font-size: 36px; margin-bottom: 16px; color: var(--color-border); }
+.coming-soon-title { font-size: 17px; font-weight: 900; color: var(--color-ink); margin-bottom: 10px; }
+.coming-soon-desc { font-size: 13px; color: var(--color-muted); max-width: 420px; margin: 0 auto; line-height: 1.65; }
+.footer { padding: 14px 28px; background: var(--color-surface); border-top: 1px solid var(--color-border); display: flex; justify-content: space-between; align-items: center; }
+.footer-logo { font-family: 'Caveat', cursive; font-size: 18px; font-weight: 700; color: #CCC; }
+.footer-links { font-size: 11px; display: flex; gap: 16px; }
+.footer-links a { color: var(--color-muted-light); text-decoration: none; }
+.footer-links a:hover { color: var(--color-muted); }
+@media (max-width: 740px) {
+  .wrapper { margin: 0; border-radius: 0; border-left: none; border-right: none; }
+  .masthead, .page-header, .coming-soon, .footer { padding-left: 16px; padding-right: 16px; }
+  .masthead-desc { display: none; }
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <div class="lang-toggle">
+    <nav class="site-nav">
+      <a href="/" class="lc-en">Home</a>
+      <a href="/" class="lc-bg">Начало</a>
+      <a href="/newsletters/" class="lc-en">Newsletter</a>
+      <a href="/newsletters/" class="lc-bg">Бюлетин</a>
+      <a href="/cockpit/" class="lc-en">Cockpit</a>
+      <a href="/cockpit/" class="lc-bg">Кокпит</a>
+      <a href="/calendar/" class="active lc-en">Calendar<span class="soon">soon</span></a>
+      <a href="/calendar/" class="active lc-bg">Календар<span class="soon">скоро</span></a>
+    </nav>
+    <div class="lang-buttons">
+      <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" data-lang="bg" onclick="setLang('bg')">БГ</button>
+    </div>
+  </div>
+
+  <div class="masthead">
+    <div class="masthead-logo">
+      <div class="masthead-left">
+        <span class="masthead-basepoint">Basepoint</span>
+        <span class="masthead-tagline lc-en">macro · bulgaria</span>
+        <span class="masthead-tagline lc-bg">макро · българия</span>
+      </div>
+      <div class="masthead-divider"></div>
+      <span class="masthead-doodles">Doodles</span>
+    </div>
+    <div class="masthead-desc">
+      <span class="masthead-desc-main lc-en">Data Calendar</span>
+      <span class="masthead-desc-main lc-bg">Календар на данните</span>
+      <span class="masthead-desc-sub lc-en">releases &amp; revisions</span>
+      <span class="masthead-desc-sub lc-bg">публикации и ревизии</span>
+    </div>
+  </div>
+
+  <div class="page-header">
+    <div class="page-title lc-en">Data Calendar</div>
+    <div class="page-title lc-bg">Календар на данните</div>
+    <div class="page-subtitle lc-en">Upcoming data releases and revisions from Eurostat, NSI, BNB and NSSI.</div>
+    <div class="page-subtitle lc-bg">Предстоящи публикации и ревизии на данни от Евростат, НСИ, БНБ и НОИ.</div>
+  </div>
+
+  <div class="coming-soon">
+    <div class="coming-soon-icon">&#128197;</div>
+    <div class="coming-soon-title lc-en">Coming soon</div>
+    <div class="coming-soon-title lc-bg">Очаквайте скоро</div>
+    <div class="coming-soon-desc lc-en">
+      This page will track scheduled releases for all key Bulgarian macro indicators —
+      HICP, GDP, industrial output, trade, labour and confidence data.
+      Useful for knowing when the next update is due and whether a recent print
+      is subject to revision.
+    </div>
+    <div class="coming-soon-desc lc-bg">
+      Тази страница ще следи планираните публикации на всички ключови макро показатели за България —
+      ХИПЦ, БВП, промишлено производство, търговия, труд и бизнес климат.
+      Полезно за ориентиране кога се очакват нови данни и дали последните цифри подлежат на ревизия.
+    </div>
+  </div>
+
+  <div class="footer">
+    <span class="footer-logo">Doodles.</span>
+    <div class="footer-links">
+      <a href="/" class="lc-en">Home</a>
+      <a href="/" class="lc-bg">Начало</a>
+      <a href="/newsletters/" class="lc-en">Newsletter</a>
+      <a href="/newsletters/" class="lc-bg">Бюлетин</a>
+      <a href="/cockpit/" class="lc-en">Cockpit</a>
+      <a href="/cockpit/" class="lc-bg">Кокпит</a>
+    </div>
+  </div>
+
+</div>
+<script>
+function setLang(lang) {
+  document.body.classList.toggle('lang-bg', lang === 'bg');
+  document.querySelectorAll('.lang-btn').forEach(function(btn) {
+    btn.classList.toggle('active', btn.dataset.lang === lang);
+  });
+  localStorage.setItem('bpd-lang', lang);
+}
+(function() { var s = localStorage.getItem('bpd-lang'); if (s === 'bg') setLang('bg'); })();
+</script>
+</body>
+</html>

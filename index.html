@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Basepoint Doodles · Bulgaria Macro</title>
+<meta name="description" content="Weekly macro data on the Bulgarian economy — charts, numbers, plain language. Free."/>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Caveat:wght@700&display=swap" rel="stylesheet"/>
+<style>
+/* ── Reset ── */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── Tokens — Pack A (Navy + Red) ── */
+body {
+  --color-basepoint:   #1B2E5E;
+  --color-doodles:     #CC2B2B;
+  --color-accent:      #CC2B2B;
+  --color-up:          #2A9D5C;
+  --color-ink:         #1C1C1C;
+  --color-ink-2:       #444444;
+  --color-muted:       #888888;
+  --color-muted-light: #AAAAAA;
+  --color-border:      #E8E8E8;
+  --color-surface:     #F8F8F8;
+  font-family: 'Nunito', Arial, sans-serif;
+  background: #F0F2F5;
+  color: var(--color-ink);
+  line-height: 1.6;
+}
+
+/* ── Wrapper ── */
+.wrapper {
+  max-width: 700px;
+  margin: 32px auto;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+}
+
+/* ── Language toggle ── */
+.lang-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  background: var(--color-basepoint);
+}
+.lang-buttons { display: flex; gap: 0; }
+.lang-btn {
+  background: transparent;
+  border: 1px solid #444;
+  color: #888;
+  font-family: 'Nunito', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 4px 12px;
+  cursor: pointer;
+}
+.lang-btn:first-child { border-radius: 3px 0 0 3px; }
+.lang-btn:last-child  { border-radius: 0 3px 3px 0; border-left: none; }
+.lang-btn.active { background: var(--color-accent); border-color: var(--color-accent); color: #fff; }
+
+/* ── Site nav (top bar) ── */
+.site-nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.site-nav a {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.site-nav a:hover { color: rgba(255,255,255,0.9); }
+.site-nav a.active { color: var(--color-accent); }
+.site-nav .soon {
+  font-size: 9px;
+  background: rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.3);
+  border-radius: 3px;
+  padding: 1px 5px;
+  margin-left: 4px;
+  vertical-align: middle;
+  letter-spacing: 0.05em;
+}
+
+/* ── Language visibility ── */
+.lc-bg { display: none !important; }
+.lc-en { display: block; }
+span.lc-en { display: inline; }
+span.lc-bg { display: none !important; }
+body.lang-bg .lc-en { display: none !important; }
+body.lang-bg .lc-bg { display: block !important; }
+body.lang-bg span.lc-bg { display: inline !important; }
+body.lang-bg span.lc-en { display: none !important; }
+
+/* ── Masthead ── */
+.masthead {
+  background: var(--color-basepoint);
+  padding: 22px 28px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 3px solid var(--color-accent);
+}
+.masthead-logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.masthead-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 14px;
+}
+.masthead-basepoint {
+  font-family: 'Nunito', 'Arial Black', sans-serif;
+  font-size: 22px;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: -0.3px;
+  line-height: 1;
+}
+.masthead-tagline {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  margin-top: 4px;
+}
+.masthead-divider {
+  width: 2px;
+  height: 52px;
+  background: rgba(255,255,255,0.18);
+}
+.masthead-doodles {
+  font-family: 'Caveat', cursive;
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--color-doodles);
+  line-height: 1;
+  padding-left: 14px;
+}
+.masthead-desc {
+  text-align: right;
+}
+.masthead-desc-main {
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.75);
+  display: block;
+  line-height: 1.5;
+}
+.masthead-desc-sub {
+  font-size: 11px;
+  color: rgba(255,255,255,0.35);
+  display: block;
+}
+
+/* ── Hero ── */
+.hero {
+  padding: 36px 28px 30px;
+  border-bottom: 1px solid var(--color-border);
+}
+.hero-headline {
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--color-ink);
+  letter-spacing: -0.5px;
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+.hero-sub {
+  font-size: 15px;
+  color: var(--color-ink-2);
+  max-width: 520px;
+  line-height: 1.65;
+}
+
+/* ── Section label ── */
+.section-label-row {
+  padding: 12px 28px 10px;
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+.section-label {
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+/* ── Latest issue card ── */
+.issue-card {
+  padding: 24px 28px;
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+.issue-meta {
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+  color: var(--color-muted-light);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.issue-title {
+  font-size: 17px;
+  font-weight: 900;
+  color: var(--color-ink);
+  letter-spacing: -0.2px;
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+.issue-desc {
+  font-size: 13px;
+  color: var(--color-muted);
+  line-height: 1.55;
+}
+.issue-link {
+  display: inline-block;
+  margin-top: 14px;
+  background: var(--color-accent);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 8px 18px;
+  border-radius: 3px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  align-self: center;
+}
+.issue-link:hover { background: #a82222; }
+
+/* ── About ── */
+.about {
+  padding: 28px 28px 24px;
+  border-bottom: 1px solid var(--color-border);
+}
+.about p {
+  font-size: 14px;
+  color: var(--color-ink-2);
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.about p:last-child { margin-bottom: 0; }
+.about ul {
+  margin: 10px 0 14px 18px;
+  font-size: 14px;
+  color: var(--color-muted);
+  line-height: 1.7;
+}
+.about strong { color: var(--color-ink); font-weight: 900; }
+.disclaimer {
+  background: var(--color-surface);
+  border-left: 3px solid var(--color-border);
+  padding: 12px 14px;
+  border-radius: 0 3px 3px 0;
+  margin-top: 14px;
+}
+.disclaimer p { margin-bottom: 6px; font-size: 13px; color: var(--color-muted); }
+.disclaimer p:last-child { margin-bottom: 0; }
+
+/* ── Waitlist form ── */
+.waitlist {
+  padding: 28px 28px 24px;
+  border-bottom: 1px solid var(--color-border);
+}
+.waitlist-title {
+  font-size: 16px;
+  font-weight: 900;
+  color: var(--color-ink);
+  margin-bottom: 8px;
+  letter-spacing: -0.2px;
+}
+.waitlist-desc {
+  font-size: 13px;
+  color: var(--color-muted);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+.waitlist-form {
+  display: flex;
+  gap: 8px;
+  max-width: 440px;
+}
+.waitlist-input {
+  flex: 1;
+  border: 1px solid var(--color-border);
+  border-radius: 3px;
+  padding: 9px 12px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 13px;
+  color: var(--color-ink);
+  outline: none;
+  background: #fff;
+}
+.waitlist-input:focus { border-color: var(--color-basepoint); }
+.waitlist-btn {
+  background: var(--color-basepoint);
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  padding: 9px 18px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.waitlist-btn:hover { background: #14234a; }
+.waitlist-note {
+  margin-top: 8px;
+  font-size: 11px;
+  color: var(--color-muted-light);
+}
+.waitlist-success {
+  display: none;
+  font-size: 13px;
+  color: var(--color-up);
+  margin-top: 10px;
+  font-weight: 700;
+}
+
+/* ── Contact ── */
+.contact {
+  padding: 20px 28px;
+  border-bottom: 1px solid var(--color-border);
+}
+.contact-line {
+  font-size: 14px;
+  color: var(--color-ink-2);
+  line-height: 1.6;
+}
+.contact-line a {
+  color: var(--color-basepoint);
+  font-weight: 700;
+  text-decoration: none;
+}
+.contact-line a:hover { text-decoration: underline; }
+
+/* ── Footer ── */
+.footer {
+  padding: 14px 28px;
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-logo {
+  font-family: 'Caveat', cursive;
+  font-size: 18px;
+  font-weight: 700;
+  color: #CCC;
+}
+.footer-links {
+  font-size: 11px;
+  color: var(--color-muted-light);
+  display: flex;
+  gap: 16px;
+}
+.footer-links a {
+  color: var(--color-muted-light);
+  text-decoration: none;
+}
+.footer-links a:hover { color: var(--color-muted); }
+
+/* ── Mobile ── */
+@media (max-width: 740px) {
+  .wrapper { margin: 0; border-radius: 0; border-left: none; border-right: none; }
+  .masthead { padding: 18px 16px 14px; }
+  .hero, .about, .waitlist, .contact, .footer { padding-left: 16px; padding-right: 16px; }
+  .section-label-row { padding-left: 16px; padding-right: 16px; }
+  .issue-card { flex-direction: column; padding: 20px 16px; gap: 0; }
+  .issue-link { margin-top: 14px; }
+  .hero-headline { font-size: 26px; }
+  .waitlist-form { flex-direction: column; }
+  .masthead-desc { display: none; }
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- Top bar: lang toggle + site nav -->
+  <div class="lang-toggle">
+    <nav class="site-nav" aria-label="Site navigation">
+      <a href="/" class="active lc-en">Home</a>
+      <a href="/" class="active lc-bg">Начало</a>
+      <a href="/newsletters/" class="lc-en">Newsletter</a>
+      <a href="/newsletters/" class="lc-bg">Бюлетин</a>
+      <a href="/cockpit/" class="lc-en">Cockpit</a>
+      <a href="/cockpit/" class="lc-bg">Кокпит</a>
+      <a href="/calendar/" class="lc-en">Calendar<span class="soon">soon</span></a>
+      <a href="/calendar/" class="lc-bg">Календар<span class="soon">скоро</span></a>
+    </nav>
+    <div class="lang-buttons">
+      <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" data-lang="bg" onclick="setLang('bg')">БГ</button>
+    </div>
+  </div>
+
+  <!-- Masthead -->
+  <div class="masthead">
+    <div class="masthead-logo">
+      <div class="masthead-left">
+        <span class="masthead-basepoint">Basepoint</span>
+        <span class="masthead-tagline lc-en">macro · bulgaria</span>
+        <span class="masthead-tagline lc-bg">макро · българия</span>
+      </div>
+      <div class="masthead-divider"></div>
+      <span class="masthead-doodles">Doodles</span>
+    </div>
+    <div class="masthead-desc">
+      <span class="masthead-desc-main lc-en">Bulgaria Macro</span>
+      <span class="masthead-desc-main lc-bg">Макро · България</span>
+      <span class="masthead-desc-sub lc-en">data · charts · weekly</span>
+      <span class="masthead-desc-sub lc-bg">данни · графики · седмично</span>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-headline lc-en">Bulgaria in numbers.</div>
+    <div class="hero-headline lc-bg">България в числа.</div>
+    <div class="hero-sub lc-en">Weekly macro data — inflation, output, trade, labour — turned into charts and plain language. No spin. Free.</div>
+    <div class="hero-sub lc-bg">Седмични макро данни — инфлация, производство, търговия, труд — превърнати в графики и разбираем текст. Без PR. Безплатно.</div>
+  </div>
+
+  <!-- Latest issue -->
+  <div class="section-label-row">
+    <span class="section-label lc-en">&#9658; Latest Issue</span>
+    <span class="section-label lc-bg">&#9658; Последен брой</span>
+  </div>
+  <div class="issue-card">
+    <div>
+      <div class="issue-meta lc-en">2026 · Week 12 · 22 March 2026</div>
+      <div class="issue-meta lc-bg">2026 · Седмица 12 · 22 март 2026</div>
+      <div class="issue-title lc-en">Is Bulgaria Losing Competitiveness?</div>
+      <div class="issue-title lc-bg">Губи ли България конкурентоспособност?</div>
+      <div class="issue-desc lc-en">ULC vs. productivity scissors. Export market share. Wage convergence. The data tells a nuanced story.</div>
+      <div class="issue-desc lc-bg">Ножицата НРЕТ–производителност. Пазарен дял на износа. Сближаване на заплатите. Данните разкриват сложна картина.</div>
+    </div>
+    <a href="/newsletters/2026-W12/" class="issue-link lc-en">Read&nbsp;&rarr;</a>
+    <a href="/newsletters/2026-W12/" class="issue-link lc-bg">Прочети&nbsp;&rarr;</a>
+  </div>
+
+  <!-- About -->
+  <div class="section-label-row">
+    <span class="section-label lc-en">&#9658; About</span>
+    <span class="section-label lc-bg">&#9658; За проекта</span>
+  </div>
+  <div class="about">
+    <div class="lc-en">
+      <p>Bulgaria produces a lot of economic data. Most of it never leaves a PDF.</p>
+      <p>Basepoint Doodles is one person's attempt to fix that. Every week, I pull numbers from Eurostat, the NSI, the BNB and other official sources, build the charts, and write a short narrative on what the data is saying. The goal is simple: make Bulgarian macro data readable — in English and Bulgarian — for anyone curious enough to look.</p>
+      <p>I'm not a macroeconomist. Call me Miro — a curious mind with a spreadsheet habit. Good English-language coverage of the Bulgarian economy is genuinely hard to find, and that seemed worth doing something about, however informally.</p>
+      <div class="disclaimer">
+        <p><strong>A few things to keep in mind:</strong></p>
+        <p>The numbers come from official institutions (Eurostat, NSI, BNB, NSSI). The charts, framing and narrative are mine — and I can't guarantee there are no mistakes.</p>
+        <p>I sometimes combine data sources to illustrate a trend. The goal is directional clarity, not decimal precision.</p>
+        <p>This is not financial advice, investment research or professional analysis. It's doodles. Take it as such.</p>
+      </div>
+    </div>
+    <div class="lc-bg">
+      <p>България публикува много икономически данни. По-голямата им част не излиза от PDF файловете.</p>
+      <p>Basepoint Doodles е опитът на един човек да промени това. Всяка седмица извличам числа от Евростат, НСИ, БНБ и други официални източници, изграждам графики и пиша кратък разказ за това, което данните показват. Целта е проста: да направим макро данните за България четими — на английски и на български — за всеки достатъчно любопитен да погледне.</p>
+      <p>Не съм макроикономист. Казвам се Миро — любопитен ум с навик за електронни таблици. Доброто отразяване на българската икономика на английски е изключително рядко, и ми се стори, че си заслужава да се направи нещо по въпроса — макар и неформално.</p>
+      <div class="disclaimer">
+        <p><strong>Няколко важни уточнения:</strong></p>
+        <p>Числата идват от официални институции (Евростат, НСИ, БНБ, НОИ). Графиките, интерпретацията и текстовете са мои — и не мога да гарантирам, че няма грешки.</p>
+        <p>Понякога комбинирам данни от различни източници, за да илюстрирам тенденция. Целта е ясна посока, а не прецизност до последната цифра.</p>
+        <p>Това не е финансов съвет, инвестиционно проучване или професионален анализ. Това са doodles. Приемете го като такива.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Waitlist -->
+  <div class="section-label-row">
+    <span class="section-label lc-en">&#9658; Stay in the loop</span>
+    <span class="section-label lc-bg">&#9658; Остани информиран</span>
+  </div>
+  <div class="waitlist">
+    <div class="waitlist-title lc-en">Be first to know when subscriptions open.</div>
+    <div class="waitlist-title lc-bg">Бъди сред първите, когато отворим абонамента.</div>
+    <div class="waitlist-desc lc-en">Basepoint Doodles is free and open for now. When we eventually add a subscription tier or delivery options, we'll notify this list first. Drop your email — no spam, just a heads-up when the time comes.</div>
+    <div class="waitlist-desc lc-bg">Basepoint Doodles засега е напълно безплатен. Когато добавим абонаментна опция или имейл доставка, ще уведомим първо тези, които са оставили имейл тук. Без спам — само едно известие, когато настъпи моментът.</div>
+    <!-- Formspree form — replace YOUR_FORM_ID with your Formspree endpoint ID -->
+    <!-- See WORKFLOW.md → "Formspree setup" for instructions -->
+    <form class="waitlist-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" onsubmit="handleWaitlist(event)">
+      <input type="hidden" name="_subject" value="Basepoint Doodles — waitlist signup"/>
+      <input class="waitlist-input" type="email" name="email" placeholder="your@email.com" required/>
+      <button class="waitlist-btn" type="submit">
+        <span class="lc-en">Notify me</span>
+        <span class="lc-bg">Уведоми ме</span>
+      </button>
+    </form>
+    <div class="waitlist-note lc-en">Your email stays with us. One notification, no newsletters until you ask for them.</div>
+    <div class="waitlist-note lc-bg">Имейлът ти остава при нас. Само едно известие — без бюлетини, докато не поискаш.</div>
+    <div class="waitlist-success lc-en" id="success-en">&#10003; Got it — we'll be in touch.</div>
+    <div class="waitlist-success lc-bg" id="success-bg">&#10003; Записахме те — ще се чуем.</div>
+  </div>
+
+  <!-- Contact -->
+  <div class="section-label-row">
+    <span class="section-label lc-en">&#9658; Contact</span>
+    <span class="section-label lc-bg">&#9658; Контакт</span>
+  </div>
+  <div class="contact">
+    <div class="contact-line lc-en">Questions, feedback or data corrections: <a href="mailto:editor@bpdoodles.com">editor@bpdoodles.com</a></div>
+    <div class="contact-line lc-bg">Въпроси, коментари или корекции на данни: <a href="mailto:editor@bpdoodles.com">editor@bpdoodles.com</a></div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <span class="footer-logo">Doodles.</span>
+    <div class="footer-links">
+      <a href="/newsletters/" class="lc-en">Newsletter</a>
+      <a href="/newsletters/" class="lc-bg">Бюлетин</a>
+      <a href="/cockpit/" class="lc-en">Cockpit</a>
+      <a href="/cockpit/" class="lc-bg">Кокпит</a>
+      <a href="/calendar/" class="lc-en">Calendar</a>
+      <a href="/calendar/" class="lc-bg">Календар</a>
+    </div>
+  </div>
+
+</div>
+<script>
+function setLang(lang) {
+  document.body.classList.toggle('lang-bg', lang === 'bg');
+  document.querySelectorAll('.lang-btn').forEach(function(btn) {
+    btn.classList.toggle('active', btn.dataset.lang === lang);
+  });
+  localStorage.setItem('bpd-lang', lang);
+}
+// Restore saved language preference
+(function() {
+  var saved = localStorage.getItem('bpd-lang');
+  if (saved === 'bg') setLang('bg');
+})();
+
+function handleWaitlist(e) {
+  // If Formspree ID is not set, prevent submission and show instructions
+  if (document.querySelector('.waitlist-form').action.indexOf('YOUR_FORM_ID') !== -1) {
+    e.preventDefault();
+    alert('Formspree not configured yet. See WORKFLOW.md for setup instructions.');
+    return;
+  }
+  // Let Formspree handle it — show success on redirect back
+  // For AJAX submission (no page reload):
+  e.preventDefault();
+  var form = e.target;
+  fetch(form.action, {
+    method: 'POST',
+    body: new FormData(form),
+    headers: { 'Accept': 'application/json' }
+  }).then(function(r) {
+    if (r.ok) {
+      form.style.display = 'none';
+      document.getElementById('success-en').style.display = 'block';
+      document.getElementById('success-bg').style.display = 'block';
+    }
+  });
+}
+</script>
+</body>
+</html>
