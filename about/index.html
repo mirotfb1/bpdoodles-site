@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>About · Basepoint Doodles</title>
+<meta name="description" content="About Basepoint Doodles — an independent weekly macro newsletter and data visualization portal for the Bulgarian economy."/>
+<link rel="icon" href="/favicon.ico" sizes="any"/>
+<link rel="apple-touch-icon" href="/favicon-180.png"/>
+<link rel="canonical" href="https://bpdoodles.com/about/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://bpdoodles.com/about/"/>
+<meta property="og:title" content="About · Basepoint Doodles"/>
+<meta property="og:description" content="About Basepoint Doodles — an independent weekly macro newsletter and data visualization portal for the Bulgarian economy."/>
+<meta property="og:image" content="https://bpdoodles.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="About · Basepoint Doodles"/>
+<meta name="twitter:description" content="About Basepoint Doodles — an independent weekly macro newsletter and data visualization portal for the Bulgarian economy."/>
+<meta name="twitter:image" content="https://bpdoodles.com/og-image.png"/>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Caveat:wght@700&display=swap" rel="stylesheet"/>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  --color-basepoint:   #1B2E5E;
+  --color-doodles:     #CC2B2B;
+  --color-accent:      #CC2B2B;
+  --color-ink:         #1C1C1C;
+  --color-ink-2:       #444444;
+  --color-muted:       #888888;
+  --color-muted-light: #AAAAAA;
+  --color-border:      #E8E8E8;
+  --color-surface:     #F8F8F8;
+  font-family: 'Nunito', Arial, sans-serif;
+  background: #F0F2F5;
+  color: var(--color-ink);
+  line-height: 1.6;
+}
+.wrapper { max-width: 700px; margin: 32px auto; background: #fff; border: 1px solid var(--color-border); border-radius: 4px; }
+.lang-toggle { display: flex; justify-content: space-between; align-items: center; padding: 8px 16px; background: var(--color-basepoint); }
+.lang-buttons { display: flex; }
+.lang-btn { background: transparent; border: 1px solid #444; color: #888; font-family: 'Nunito', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; padding: 4px 12px; cursor: pointer; }
+.lang-btn:first-child { border-radius: 3px 0 0 3px; }
+.lang-btn:last-child  { border-radius: 0 3px 3px 0; border-left: none; }
+.lang-btn.active { background: var(--color-accent); border-color: var(--color-accent); color: #fff; }
+.site-nav { display: flex; gap: 20px; align-items: center; }
+.site-nav a { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.45); text-decoration: none; }
+.site-nav a:hover { color: rgba(255,255,255,0.9); }
+.site-nav a.active { color: var(--color-accent); }
+/* ── Lang visibility ── */
+.lc-bg { display: none !important; }
+.lc-en { display: block; }
+span.lc-en { display: inline; }
+span.lc-bg { display: none !important; }
+body.lang-bg .lc-en { display: none !important; }
+body.lang-bg .lc-bg { display: block !important; }
+body.lang-bg span.lc-bg { display: inline !important; }
+body.lang-bg span.lc-en { display: none !important; }
+/* ── Masthead ── */
+.masthead { background: var(--color-basepoint); padding: 22px 28px 18px; display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 3px solid var(--color-accent); }
+.masthead-logo { display: flex; align-items: center; }
+.masthead-left { display: flex; flex-direction: column; align-items: flex-end; padding-right: 14px; }
+.masthead-basepoint { font-family: 'Nunito', sans-serif; font-size: 22px; font-weight: 900; color: #fff; letter-spacing: -0.3px; line-height: 1; }
+.masthead-tagline { font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-top: 4px; }
+.masthead-divider { width: 2px; height: 52px; background: rgba(255,255,255,0.18); }
+.masthead-doodles { font-family: 'Caveat', cursive; font-size: 48px; font-weight: 700; color: var(--color-doodles); line-height: 1; padding-left: 14px; }
+.masthead-desc { text-align: right; }
+.masthead-desc-main { font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.75); display: block; }
+.masthead-desc-sub { font-size: 11px; color: rgba(255,255,255,0.35); display: block; }
+/* ── Page header ── */
+.page-header { padding: 20px 28px 16px; border-bottom: 1px solid var(--color-border); }
+.page-title { font-size: 20px; font-weight: 900; color: var(--color-ink); letter-spacing: -0.3px; margin-bottom: 6px; }
+/* ── About content ── */
+.about { padding: 28px 28px 24px; border-bottom: 1px solid var(--color-border); }
+.about p { font-size: 14px; color: var(--color-ink-2); line-height: 1.7; margin-bottom: 14px; }
+.about p:last-child { margin-bottom: 0; }
+.about strong { color: var(--color-ink); font-weight: 900; }
+.disclaimer { background: var(--color-surface); border-left: 3px solid var(--color-border); padding: 12px 14px; border-radius: 0 3px 3px 0; margin-top: 14px; }
+.disclaimer p { margin-bottom: 6px; font-size: 13px; color: var(--color-muted); }
+.disclaimer p:last-child { margin-bottom: 0; }
+/* ── Contact ── */
+.contact { padding: 20px 28px; border-bottom: 1px solid var(--color-border); }
+.contact-line { font-size: 14px; color: var(--color-ink-2); line-height: 1.6; }
+.contact-line a { color: var(--color-basepoint); font-weight: 700; text-decoration: none; }
+.contact-line a:hover { text-decoration: underline; }
+/* ── Footer ── */
+.footer { padding: 14px 28px; background: var(--color-surface); border-top: 1px solid var(--color-border); display: flex; justify-content: space-between; align-items: center; }
+.footer-logo { font-family: 'Caveat', cursive; font-size: 18px; font-weight: 700; color: #CCC; }
+.footer-links { font-size: 11px; display: flex; gap: 16px; }
+.footer-links a { color: var(--color-muted-light); text-decoration: none; }
+.footer-links a:hover { color: var(--color-muted); }
+/* ── Mobile ── */
+@media (max-width: 740px) {
+  .wrapper { margin: 0; border-radius: 0; border-left: none; border-right: none; }
+  .masthead, .page-header, .about, .contact, .footer { padding-left: 16px; padding-right: 16px; }
+  .masthead-desc { display: none; }
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <div class="lang-toggle">
+    <nav class="site-nav">
+      <a href="/" class="lc-en">Home</a>
+      <a href="/" class="lc-bg">Начало</a>
+      <a href="/newsletters/" class="lc-en">Newsletter</a>
+      <a href="/newsletters/" class="lc-bg">Бюлетин</a>
+      <a href="/cockpit/" class="lc-en">Cockpit</a>
+      <a href="/cockpit/" class="lc-bg">Кокпит</a>
+      <a href="/calendar/" class="lc-en">Calendar</a>
+      <a href="/calendar/" class="lc-bg">Календар</a>
+      <a href="/about/" class="active lc-en">About</a>
+      <a href="/about/" class="active lc-bg">За проекта</a>
+    </nav>
+    <div class="lang-buttons">
+      <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" data-lang="bg" onclick="setLang('bg')">БГ</button>
+    </div>
+  </div>
+
+  <div class="masthead">
+    <div class="masthead-logo">
+      <div class="masthead-left">
+        <span class="masthead-basepoint">Basepoint</span>
+        <span class="masthead-tagline lc-en">macro · bulgaria</span>
+        <span class="masthead-tagline lc-bg">макро · българия</span>
+      </div>
+      <div class="masthead-divider"></div>
+      <span class="masthead-doodles">Doodles</span>
+    </div>
+    <div class="masthead-desc">
+      <span class="masthead-desc-main lc-en">About</span>
+      <span class="masthead-desc-main lc-bg">За проекта</span>
+      <span class="masthead-desc-sub lc-en">who · why · what</span>
+      <span class="masthead-desc-sub lc-bg">кой · защо · какво</span>
+    </div>
+  </div>
+
+  <div class="page-header">
+    <div class="page-title lc-en">About</div>
+    <div class="page-title lc-bg">За проекта</div>
+  </div>
+
+  <div class="about">
+    <div class="lc-en">
+      <p>My name is Miro. I'm not an economist, but I've spent years following economic data, reading analyses, and trying to understand how Bulgaria's economy is developing.</p>
+      <p>I decided to create a single place where key economic indicators and data are brought together and visualized — figures that various institutions publish regularly, but often in formats that aren't easy to interpret. Once a week I put out a newsletter summarizing the most important trends worth paying attention to.</p>
+      <p>This isn't professional analysis. It's more like thinking out loud and visualizing indicators. I often simplify and combine sources. I'm interested in the direction and the logic behind the numbers, not absolute precision.</p>
+      <div class="disclaimer">
+        <p>The data comes from NSI, BNB, Eurostat, and other institutions. The interpretation is entirely my own.</p>
+        <p>The project is free and independent. Mistakes are possible. Nothing here is financial advice.</p>
+        <p>The goal is simple: to make economic indicators a little easier to understand.</p>
+      </div>
+    </div>
+    <div class="lc-bg">
+      <p>Казвам се Миро. Не съм икономист, но от години следя икономически данни, чета анализи и се опитвам да разбера как се развива икономиката в България.</p>
+      <p>Реших да създам и събера на едно място визуализации на ключови икономически показатели и данни, които различни институции публикуват редовно, но често във формат, който не е лесен за интерпретация. Веднъж седмично издавам бюлетин, в който обобщавам най-важните тенденции, които си струва да се следят.</p>
+      <p>Това не е професионален анализ. По-скоро е мислене на глас и визуализация на индикатори. Често опростявам и комбинирам източници. Интересува ме посоката и смисълът зад числата, не абсолютната прецизност.</p>
+      <div class="disclaimer">
+        <p>Данните идват от НСИ, БНБ, Евростат и други институции. Интерпретацията е изцяло моя.</p>
+        <p>Проектът е безплатен и независим. Грешки са възможни. Нищо тук не е финансов съвет.</p>
+        <p>Целта е проста: да направи икономическите показатели по-разбираеми.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact">
+    <div class="contact-line lc-en">Questions, feedback or data corrections: <a href="mailto:editor@bpdoodles.com">editor@bpdoodles.com</a></div>
+    <div class="contact-line lc-bg">Въпроси, коментари или корекции на данни: <a href="mailto:editor@bpdoodles.com">editor@bpdoodles.com</a></div>
+  </div>
+
+  <div class="footer">
+    <span class="footer-logo">Doodles.</span>
+    <div class="footer-links">
+      <a href="/" class="lc-en">Home</a>
+      <a href="/" class="lc-bg">Начало</a>
+      <a href="/newsletters/" class="lc-en">Newsletter</a>
+      <a href="/newsletters/" class="lc-bg">Бюлетин</a>
+      <a href="/cockpit/" class="lc-en">Cockpit</a>
+      <a href="/cockpit/" class="lc-bg">Кокпит</a>
+      <a href="/privacy/" class="lc-en">Privacy</a>
+      <a href="/privacy/" class="lc-bg">Поверителност</a>
+    </div>
+  </div>
+
+</div>
+<script>
+function setLang(lang) {
+  document.body.classList.toggle('lang-bg', lang === 'bg');
+  document.querySelectorAll('.lang-btn').forEach(function(btn) {
+    btn.classList.toggle('active', btn.dataset.lang === lang);
+  });
+  localStorage.setItem('bpd-lang', lang);
+}
+(function() { var s = localStorage.getItem('bpd-lang'); if (s === 'bg') setLang('bg'); })();
+</script>
+</body>
+</html>
