@@ -1,59 +1,59 @@
 {
-  "generated_at": "2026-03-22T13:35:07Z",
+  "generated_at": "2026-03-30T07:58:21Z",
   "datasets": {
     "hicp": {
       "label": "HICP",
       "label_bg": "ХИПЦ",
       "latest_period": "2026-02",
-      "last_generated": "2026-03-22T13:35:07Z"
+      "last_generated": "2026-03-30T07:58:21Z"
     },
     "gdp": {
       "label": "GDP",
       "label_bg": "БВП",
       "latest_period": "2025-Q4",
-      "last_generated": "2026-03-22T13:35:07Z"
+      "last_generated": "2026-03-30T07:58:21Z"
     },
     "ipi": {
       "label": "Industry",
       "label_bg": "Промишленост",
       "latest_period": "2026-01",
-      "last_generated": "2026-03-22T13:35:07Z"
+      "last_generated": "2026-03-30T07:58:21Z"
     },
     "retail": {
       "label": "Retail",
       "label_bg": "Търговия на дребно",
       "latest_period": "2026-01",
-      "last_generated": "2026-03-22T13:35:07Z"
+      "last_generated": "2026-03-30T07:58:21Z"
     },
     "construction": {
       "label": "Construction",
       "label_bg": "Строителство",
       "latest_period": "2026-01",
-      "last_generated": "2026-03-22T13:35:07Z"
+      "last_generated": "2026-03-30T07:58:21Z"
     },
     "services": {
       "label": "Services",
       "label_bg": "Услуги",
       "latest_period": "2025-12",
-      "last_generated": "2026-03-22T13:35:07Z"
+      "last_generated": "2026-03-30T07:58:21Z"
     },
     "unemployment": {
       "label": "Labour",
       "label_bg": "Пазар на труда",
       "latest_period": "2026-01",
-      "last_generated": "2026-03-22T13:35:07Z"
+      "last_generated": "2026-03-30T07:58:21Z"
     },
     "trade": {
       "label": "Trade (BNB)",
       "label_bg": "Търговия (БНБ)",
-      "latest_period": "2025-11",
-      "last_generated": "2026-03-22T13:35:07Z"
+      "latest_period": "2025-12",
+      "last_generated": "2026-03-30T07:58:21Z"
     },
     "confidence": {
       "label": "Confidence",
       "label_bg": "Доверие",
       "latest_period": "2026-02",
-      "last_generated": "2026-03-22T13:35:07Z"
+      "last_generated": "2026-03-30T07:58:21Z"
     }
   },
   "sections": [
@@ -61,485 +61,43 @@
       "id": "prices",
       "label": "Prices",
       "label_bg": "Цени",
-      "charts": [
-        {
-          "code": "M-01",
-          "dataset": "hicp",
-          "title": "Inflation — Consumer Prices (HICP)",
-          "title_bg": "Инфлация — Потребителски цени (ХИПЦ)",
-          "subtitle": "Bulgaria  ·  Monthly, February 2019 – February 2026  ·  Eurostat",
-          "subtitle_bg": "България  ·  Месечно, Февруари 2019 – Февруари 2026  ·  Евростат",
-          "chart_file": "charts/m01.png",
-          "stat_value": null,
-          "stat_yoy": null,
-          "stat_period": null,
-          "stat_color": null,
-          "footer_left": "YoY = year-on-year  ·  MoM = month-on-month",
-          "footer_left_bg": "ГоГ = година-към-година  ·  МоМ = месец-към-месец",
-          "footer_right": "Source: Eurostat (prc_hicp_midx)",
-          "footer_right_bg": "Източник: Евростат (prc_hicp_midx)"
-        },
-        {
-          "code": "M-02",
-          "dataset": "hicp",
-          "title": "Inflation by Component",
-          "title_bg": "Инфлация по компоненти",
-          "subtitle": "Bulgaria  ·  Monthly YoY %, February 2019 – February 2026  ·  Eurostat",
-          "subtitle_bg": "България  ·  Месечно ГоГ %, Февруари 2019 – Февруари 2026  ·  Евростат",
-          "chart_file": "charts/m02.png",
-          "stat_value": null,
-          "stat_yoy": null,
-          "stat_period": null,
-          "stat_color": null,
-          "footer_left": "YoY = year-on-year percentage change",
-          "footer_left_bg": "ГоГ = процентна промяна г-т-г",
-          "footer_right": "Source: Eurostat (prc_hicp_midx)",
-          "footer_right_bg": "Източник: Евростат (prc_hicp_midx)"
-        },
-        {
-          "code": "M-03",
-          "dataset": "hicp",
-          "title": "Inflation — Regional Peers",
-          "title_bg": "Инфлация — Регионални сравнения",
-          "subtitle": "Bulgaria vs Euro Area, Romania, Croatia, Serbia  ·  February 2019 – February 2026",
-          "subtitle_bg": "България срещу Евро зона, Румъния, Хърватия, Сърбия  ·  Февруари 2019 – Февруари 2026",
-          "chart_file": "charts/m03.png",
-          "stat_value": null,
-          "stat_yoy": null,
-          "stat_period": null,
-          "stat_color": null,
-          "footer_left": "YoY = year-on-year percentage change  ·  EA20 = Euro Area 20 countries",
-          "footer_left_bg": "ГоГ = процентна промяна г-т-г  ·  EA20 = Евро зона 20 страни",
-          "footer_right": "Source: Eurostat (ei_cphi_m)",
-          "footer_right_bg": "Източник: Евростат (ei_cphi_m)"
-        }
-      ]
+      "charts": []
     },
     {
       "id": "gdp",
       "label": "GDP & Growth",
       "label_bg": "БВП и Растеж",
-      "charts": [
-        {
-          "code": "M-04",
-          "dataset": "gdp",
-          "title": "GDP Growth",
-          "title_bg": "Растеж на БВП",
-          "subtitle": "Bulgaria  ·  Quarterly, Q1 2019 – Q4 2025  ·  Eurostat",
-          "subtitle_bg": "България  ·  Тримесечно, Q1 2019 – Q4 2025  ·  Евростат",
-          "chart_file": "charts/m04.png",
-          "stat_value": null,
-          "stat_yoy": null,
-          "stat_period": null,
-          "stat_color": null,
-          "footer_left": "QoQ = quarter-on-quarter  ·  YoY = year-on-year  ·  SCA = seasonally & calendar adjusted",
-          "footer_left_bg": "ТоТ = тримесечие-към-тримесечие  ·  ГоГ = година-към-година  ·  СКИ = сезонно и календарно изгладен",
-          "footer_right": "Source: Eurostat (namq_10_gdp)",
-          "footer_right_bg": "Източник: Евростат (namq_10_gdp)"
-        },
-        {
-          "code": "M-05",
-          "dataset": "gdp",
-          "title": "GDP Growth — EU Country Comparison",
-          "title_bg": "Растеж на БВП — Страни от ЕС",
-          "subtitle": "Year-on-year %, Q4 2025  ·  All EU members & aggregates  ·  Eurostat",
-          "subtitle_bg": "Г-т-г %, Q4 2025  ·  Всички страни от ЕС и агрегати  ·  Евростат",
-          "chart_file": "charts/m05.png",
-          "stat_value": null,
-          "stat_yoy": null,
-          "stat_period": null,
-          "stat_color": null,
-          "footer_left": "YoY = year-on-year  ·  SCA = seasonally & calendar adjusted  ·  Sorted by growth rate",
-          "footer_left_bg": "ГоГ = година-към-година  ·  СКИ = сезонно и календарно изгладен  ·  Наредени по темп на растеж",
-          "footer_right": "Source: Eurostat (namq_10_gdp)",
-          "footer_right_bg": "Източник: Евростат (namq_10_gdp)"
-        },
-        {
-          "code": "M-06",
-          "dataset": "gdp",
-          "title": "GDP Growth — Expenditure Contributions",
-          "title_bg": "Растеж на БВП — Разходни приноси",
-          "subtitle": "Bulgaria  ·  Quarterly YoY, Q1 2019 – Q4 2025  ·  Eurostat  ·  SCA",
-          "subtitle_bg": "България  ·  Тримесечно ГоГ, Q1 2019 – Q4 2025  ·  Евростат  ·  СКИ",
-          "chart_file": "charts/m06.png",
-          "stat_value": null,
-          "stat_yoy": null,
-          "stat_period": null,
-          "stat_color": null,
-          "footer_left": "Bars = contribution to YoY growth (pp)  ·  Line = GDP YoY %  ·  Net Exports weight = exports minus imports as % of GDP  ·  SCA",
-          "footer_left_bg": "Стълбове = принос към ГоГ растеж (пп)  ·  Линия = БВП ГоГ %  ·  Нетен износ = износ минус внос като % от БВП  ·  СКИ",
-          "footer_right": "Source: Eurostat (namq_10_gdp)",
-          "footer_right_bg": "Източник: Евростат (namq_10_gdp)"
-        },
-        {
-          "code": "M-07",
-          "dataset": "gdp",
-          "title": "GVA Growth — Sector Contributions",
-          "title_bg": "Растеж на БДС — Приноси по сектори",
-          "subtitle": "Bulgaria  ·  Quarterly YoY, Q1 2019 – Q4 2025  ·  Eurostat  ·  SCA",
-          "subtitle_bg": "България  ·  Тримесечно ГоГ, Q1 2019 – Q4 2025  ·  Евростат  ·  СКИ",
-          "chart_file": "charts/m07.png",
-          "stat_value": null,
-          "stat_yoy": null,
-          "stat_period": null,
-          "stat_color": null,
-          "footer_left": "Bars = sector contribution to YoY GVA growth (pp)  ·  Line = Total GVA YoY %  ·  SCA = seasonally & calendar adjusted",
-          "footer_left_bg": "Стълбове = секторен принос към ГоГ растеж на БДС (пп)  ·  Линия = Общ БДС ГоГ %  ·  СКИ = сезонно и календарно изгладен",
-          "footer_right": "Source: Eurostat (namq_10_a10)",
-          "footer_right_bg": "Източник: Евростат (namq_10_a10)"
-        }
-      ]
+      "charts": []
     },
     {
       "id": "activity",
       "label": "Output & Activity",
       "label_bg": "Производство и Активност",
-      "charts": [
-        {
-          "code": "M-08",
-          "dataset": "ipi",
-          "title": "Industrial Production Index",
-          "title_bg": "Индекс на промишленото производство",
-          "subtitle": "Bulgaria  ·  Monthly, January 2019 – January 2026  ·  Eurostat  ·  Calendar adjusted",
-          "subtitle_bg": "България  ·  Месечно, Януари 2019 – Януари 2026  ·  Евростат  ·  Календарно коригиран",
-          "chart_file": "charts/m08.png",
-          "stat_value": null,
-          "stat_yoy": null,
-          "stat_period": null,
-          "stat_color": null,
-          "footer_left": "MoM = month-on-month  ·  YoY = year-on-year  ·  CA = calendar adjusted  ·  NACE Rev.2 B–D",
-          "footer_left_bg": "МоМ = месец-към-месец  ·  ГоГ = година-към-година  ·  КИ = календарно коригиран  ·  NACE Rev.2 B–D",
-          "footer_right": "Source: Eurostat (sts_inpr_m)",
-          "footer_right_bg": "Източник: Евростат (sts_inpr_m)"
-        },
-        {
-          "code": "M-09",
-          "dataset": "ipi",
-          "title": "Industrial Production — by Sector",
-          "title_bg": "Промишлено производство — по сектори",
-          "subtitle": "Bulgaria  ·  Monthly, January 2019 – January 2026  ·  Eurostat  ·  Calendar adjusted",
-          "subtitle_bg": "България  ·  Месечно, Януари 2019 – Януари 2026  ·  Евростат  ·  Календарно коригиран",
-          "chart_file": "charts/m09.png",
-          "stat_value": null,
-          "stat_yoy": null,
-          "stat_period": null,
-          "stat_color": null,
-          "footer_left": "Index 2021 = 100  ·  Sector codes per NACE Rev.2 classification",
-          "footer_left_bg": "Индекс 2021 = 100  ·  Секторни кодове по НКИД Rev.2",
-          "footer_right": "Source: Eurostat (sts_inpr_m)",
-          "footer_right_bg": "Източник: Евростат (sts_inpr_m)"
-        },
-        {
-          "code": "M-12",
-          "dataset": "construction",
-          "title": "Construction Output",
-          "title_bg": "Строителна продукция",
-          "subtitle": "Bulgaria  ·  Monthly, January 2019 – January 2026  ·  Eurostat  ·  Seasonally & calendar adjusted",
-          "subtitle_bg": "България  ·  Месечно, Януари 2019 – Януари 2026  ·  Евростат  ·  Сезонно и календарно изгладен",
-          "chart_file": "charts/m12.png",
-          "stat_value": null,
-          "stat_yoy": null,
-          "stat_period": null,
-          "stat_color": null,
-          "footer_left": "Index 2021 = 100  ·  NACE Rev.2 F",
-          "footer_left_bg": "Индекс 2021 = 100  ·  NACE Rev.2 F",
-          "footer_right": "Source: Eurostat (sts_copr_m)",
-          "footer_right_bg": "Източник: Евростат (sts_copr_m)"
-        },
-        {
-          "code": "M-13",
-          "dataset": "construction",
-          "title": "Construction Output — Change",
-          "title_bg": "Строителна продукция — Промяна",
-          "subtitle": "Bulgaria  ·  Monthly, January 2019 – January 2026  ·  Eurostat  ·  Seasonally & calendar adjusted",
-          "subtitle_bg": "България  ·  Месечно, Януари 2019 – Януари 2026  ·  Евростат  ·  Сезонно и календарно изгладен",
-          "chart_file": "charts/m13.png",
-          "stat_value": null,
-          "stat_yoy": null,
-          "stat_period": null,
-          "stat_color": null,
-          "footer_left": "MoM = month-on-month  ·  YoY = year-on-year  ·  CA = calendar adjusted  ·  NACE Rev.2 F",
-          "footer_left_bg": "МоМ = месец-към-месец  ·  ГоГ = година-към-година  ·  КИ = календарно коригиран  ·  NACE Rev.2 F",
-          "footer_right": "Source: Eurostat (sts_copr_m)",
-          "footer_right_bg": "Източник: Евростат (sts_copr_m)"
-        },
-        {
-          "code": "M-14",
-          "dataset": "services",
-          "title": "Services Output",
-          "title_bg": "Производство в услугите",
-          "subtitle": "Bulgaria  ·  Monthly, January 2021 – December 2025  ·  Eurostat  ·  Seasonally & calendar adjusted",
-          "subtitle_bg": "България  ·  Месечно, Януари 2021 – Декември 2025  ·  Евростат  ·  Сезонно и календарно изгладен",
-          "chart_file": "charts/m14.png",
-          "stat_value": null,
-          "stat_yoy": null,
-          "stat_period": null,
-          "stat_color": null,
-          "footer_left": "Index 2021 = 100  ·  NACE Rev.2 H–N excl. K",
-          "footer_left_bg": "Индекс 2021 = 100  ·  NACE Rev.2 H–N excl. K",
-          "footer_right": "Source: Eurostat (sts_sepr_m)",
-          "footer_right_bg": "Източник: Евростат (sts_sepr_m)"
-        },
-        {
-          "code": "M-15",
-          "dataset": "services",
-          "title": "Services Output — Change",
-          "title_bg": "Услуги — Промяна",
-          "subtitle": "Bulgaria  ·  Monthly, January 2022 – December 2025  ·  Eurostat  ·  Seasonally & calendar adjusted",
-          "subtitle_bg": "България  ·  Месечно, Януари 2022 – Декември 2025  ·  Евростат  ·  Сезонно и календарно изгладен",
-          "chart_file": "charts/m15.png",
-          "stat_value": null,
-          "stat_yoy": null,
-          "stat_period": null,
-          "stat_color": null,
-          "footer_left": "MoM = month-on-month  ·  YoY = year-on-year  ·  CA = calendar adjusted  ·  NACE Rev.2 H–N excl. K",
-          "footer_left_bg": "МоМ = месец-към-месец  ·  ГоГ = година-към-година  ·  КИ = календарно коригиран  ·  NACE Rev.2 H–N excl. K",
-          "footer_right": "Source: Eurostat (sts_sepr_m)",
-          "footer_right_bg": "Източник: Евростат (sts_sepr_m)"
-        },
-        {
-          "code": "M-16",
-          "dataset": "services",
-          "title": "Services — by Sector",
-          "title_bg": "Услуги — по сектори",
-          "subtitle": "Bulgaria  ·  Eurostat  ·  Calendar adjusted  ·  <strong>Snapshot: December 2025</strong>",
-          "subtitle_bg": "България  ·  Евростат  ·  Календарно коригиран  ·  <strong>Моментна снимка: Декември 2025</strong>",
-          "chart_file": "charts/m16.png",
-          "stat_value": null,
-          "stat_yoy": null,
-          "stat_period": null,
-          "stat_color": null,
-          "footer_left": "YoY = year-on-year  ·  CA = calendar adjusted  ·  Section codes per NACE Rev.2 classification  ·  H–N excl. K",
-          "footer_left_bg": "ГоГ = година-към-година  ·  КИ = календарно коригиран  ·  Секторни кодове по НКИД Rev.2  ·  H–N excl. K",
-          "footer_right": "Source: Eurostat (sts_sepr_m)",
-          "footer_right_bg": "Източник: Евростат (sts_sepr_m)"
-        }
-      ]
+      "charts": []
     },
     {
       "id": "retail_trade",
       "label": "Retail & Foreign Trade",
       "label_bg": "Търговия",
-      "charts": [
-        {
-          "code": "M-10",
-          "dataset": "retail",
-          "title": "Retail Trade — Volume of Sales",
-          "title_bg": "Търговия на дребно — Обем на продажбите",
-          "subtitle": "Bulgaria  ·  Monthly, January 2019 – January 2026  ·  Eurostat  ·  Seasonally adjusted",
-          "subtitle_bg": "България  ·  Месечно, Януари 2019 – Януари 2026  ·  Евростат  ·  Сезонно изгладен",
-          "chart_file": "charts/m10.png",
-          "stat_value": null,
-          "stat_yoy": null,
-          "stat_period": null,
-          "stat_color": null,
-          "footer_left": "MoM = month-on-month  ·  YoY = year-on-year  ·  SCA = seasonally & calendar adjusted  ·  NACE Rev.2 G47",
-          "footer_left_bg": "МоМ = месец-към-месец  ·  ГоГ = година-към-година  ·  СКИ = сезонно и календарно изгладен  ·  NACE Rev.2 G47",
-          "footer_right": "Source: Eurostat (sts_trtu_m)",
-          "footer_right_bg": "Източник: Евростат (sts_trtu_m)"
-        },
-        {
-          "code": "M-11",
-          "dataset": "retail",
-          "title": "Retail Trade — by Category",
-          "title_bg": "Търговия на дребно — по категории",
-          "subtitle": "Bulgaria  ·  Monthly, January 2019 – January 2026  ·  Eurostat  ·  Seasonally adjusted",
-          "subtitle_bg": "България  ·  Месечно, Януари 2019 – Януари 2026  ·  Евростат  ·  Сезонно изгладен",
-          "chart_file": "charts/m11.png",
-          "stat_value": null,
-          "stat_yoy": null,
-          "stat_period": null,
-          "stat_color": null,
-          "footer_left": "Index 2021 = 100  ·  Series codes per NACE Rev.2 classification",
-          "footer_left_bg": "Индекс 2021 = 100  ·  Кодове на серии по НКИД Rev.2",
-          "footer_right": "Source: Eurostat (sts_trtu_m)",
-          "footer_right_bg": "Източник: Евростат (sts_trtu_m)"
-        },
-        {
-          "code": "M-20",
-          "dataset": "retail",
-          "title": "Retail Trade — Category Snapshot",
-          "title_bg": "Търговия на дребно — по категории (снимка)",
-          "subtitle": "Bulgaria  ·  Eurostat  ·  Calendar adjusted  ·  <strong>Snapshot: January 2026</strong>",
-          "subtitle_bg": "България  ·  Евростат  ·  Календарно коригиран  ·  <strong>Моментна снимка: Януари 2026</strong>",
-          "chart_file": "charts/m20.png",
-          "stat_value": null,
-          "stat_yoy": null,
-          "stat_period": null,
-          "stat_color": null,
-          "footer_left": "YoY = year-on-year  ·  CA = calendar adjusted  ·  Series codes per NACE Rev.2 classification  ·  G47",
-          "footer_left_bg": "ГоГ = година-към-година  ·  КИ = календарно коригиран  ·  Кодове на серии по НКИД Rev.2  ·  G47",
-          "footer_right": "Source: Eurostat (sts_trtu_m)",
-          "footer_right_bg": "Източник: Евростат (sts_trtu_m)"
-        },
-        {
-          "code": "M-21",
-          "dataset": "trade",
-          "title": "Exports (Goods)",
-          "title_bg": "Износ (стоки)",
-          "subtitle": "Bulgaria  ·  Monthly, January 2023 – January 2026  ·  EUR million",
-          "subtitle_bg": "България  ·  Месечно, Януари 2023 – Януари 2026  ·  Млн. евро",
-          "chart_file": "charts/m21.png",
-          "stat_value": "3,327",
-          "stat_yoy": "-1.4% YoY",
-          "stat_period": "EUR mn  ·  January 2026 (prelim.)",
-          "stat_color": "#1565C0",
-          "footer_left": "Goods exports  ·  Total (World)  ·  EUR million",
-          "footer_left_bg": "Износ (стоки)  ·  Общо (Свят)  ·  Млн. евро",
-          "footer_right": "Source: BNB (verified)  ·  NSI Express (preliminary, hatched)",
-          "footer_right_bg": "Източник: БНБ (верифицирано)  ·  НСИ Експрес (предварително, щриховано)"
-        },
-        {
-          "code": "M-22",
-          "dataset": "trade",
-          "title": "Imports (Goods)",
-          "title_bg": "Внос (стоки)",
-          "subtitle": "Bulgaria  ·  Monthly, January 2023 – January 2026  ·  EUR million",
-          "subtitle_bg": "България  ·  Месечно, Януари 2023 – Януари 2026  ·  Млн. евро",
-          "chart_file": "charts/m22.png",
-          "stat_value": "4,373",
-          "stat_yoy": "+0.1% YoY",
-          "stat_period": "EUR mn  ·  January 2026 (prelim.)",
-          "stat_color": "#1565C0",
-          "footer_left": "Goods imports  ·  Total (World)  ·  EUR million",
-          "footer_left_bg": "Внос (стоки)  ·  Общо (Свят)  ·  Млн. евро",
-          "footer_right": "Source: BNB (verified)  ·  NSI Express (preliminary, hatched)",
-          "footer_right_bg": "Източник: БНБ (верифицирано)  ·  НСИ Експрес (предварително, щриховано)"
-        },
-        {
-          "code": "M-23",
-          "dataset": "trade",
-          "title": "Trade Balance",
-          "title_bg": "Търговски баланс",
-          "subtitle": "Bulgaria  ·  Monthly, January 2023 – January 2026  ·  EUR million",
-          "subtitle_bg": "България  ·  Месечно, Януари 2023 – Януари 2026  ·  Млн. евро",
-          "chart_file": "charts/m23.png",
-          "stat_value": "-1,046",
-          "stat_yoy": "+5.4% YoY",
-          "stat_period": "EUR mn  ·  January 2026 (prelim.)",
-          "stat_color": "#C62828",
-          "footer_left": "Exports minus imports  ·  Deficit = negative  ·  EUR million",
-          "footer_left_bg": "Износ минус внос  ·  Дефицит = отрицателен  ·  Млн. евро",
-          "footer_right": "Source: BNB (verified)  ·  NSI Express (preliminary, hatched)",
-          "footer_right_bg": "Източник: БНБ (верифицирано)  ·  НСИ Експрес (предварително, щриховано)"
-        }
-      ]
+      "charts": []
     },
     {
       "id": "labour",
       "label": "Labour Market",
       "label_bg": "Пазар на труда",
-      "charts": [
-        {
-          "code": "M-17",
-          "dataset": "unemployment",
-          "title": "Unemployment Rate",
-          "title_bg": "Безработица — България и ЕС-27",
-          "subtitle": "Monthly, January 2019 – January 2026  ·  Eurostat  ·  Seasonally adjusted  ·  % of active population",
-          "subtitle_bg": "Месечно, Януари 2019 – Януари 2026  ·  Евростат  ·  Сезонно изгладен  ·  % от активното население",
-          "chart_file": "charts/m17.png",
-          "stat_value": null,
-          "stat_yoy": null,
-          "stat_period": null,
-          "stat_color": null,
-          "footer_left": "SA = seasonally adjusted  ·  Age 15–74  ·  Total (male + female)",
-          "footer_left_bg": "СИ = сезонно изгладен  ·  Възраст 15–74  ·  Общо (мъже + жени)",
-          "footer_right": "Source: Eurostat (une_rt_m)",
-          "footer_right_bg": "Източник: Евростат (une_rt_m)"
-        },
-        {
-          "code": "M-18",
-          "dataset": "unemployment",
-          "title": "Newly Registered Unemployed — Monthly Change",
-          "title_bg": "Новорегистрирани безработни — Месечна промяна",
-          "subtitle": "Bulgaria  ·  Monthly, March 2024 – December 2025  ·  NSSI  ·  Year-on-year absolute difference",
-          "subtitle_bg": "България  ·  Месечно, Март 2024 – Декември 2025  ·  НОИ  ·  Г-т-г абсолютна разлика",
-          "chart_file": "charts/m18.png",
-          "stat_value": null,
-          "stat_yoy": null,
-          "stat_period": null,
-          "stat_color": null,
-          "footer_left": "YoY = same month vs prior year  ·  Negative = fewer registrations (improving labour market)",
-          "footer_left_bg": "ГоГ = същият месец спрямо предходната година  ·  Отрицателно = по-малко регистрации (подобрение на пазара на труда)",
-          "footer_right": "Source: NSSI Bulgaria  ·  Table 9",
-          "footer_right_bg": "Източник: НОИ България  ·  Таблица 9"
-        },
-        {
-          "code": "M-19",
-          "dataset": "unemployment",
-          "title": "Newly Registered Unemployed",
-          "title_bg": "Новорегистрирани безработни",
-          "subtitle": "Bulgaria  ·  Monthly, March 2023 – December 2025  ·  NSSI  ·  Not seasonally adjusted",
-          "subtitle_bg": "България  ·  Месечно, Март 2023 – Декември 2025  ·  НОИ  ·  Без сезонно изглаждане",
-          "chart_file": "charts/m19.png",
-          "stat_value": null,
-          "stat_yoy": null,
-          "stat_period": null,
-          "stat_color": null,
-          "footer_left": "000s = thousands of persons  ·  3MA = 3-month moving average  ·  Not seasonally adjusted",
-          "footer_left_bg": "000 = хиляди лица  ·  3MA = 3-месечна плъзгаща средна  ·  Без сезонно изглаждане",
-          "footer_right": "Source: NSSI Bulgaria  ·  Table 9",
-          "footer_right_bg": "Източник: НОИ България  ·  Таблица 9"
-        }
-      ]
+      "charts": []
     },
     {
       "id": "sentiment",
       "label": "Confidence & Sentiment",
       "label_bg": "Доверие и Настроения",
-      "charts": [
-        {
-          "code": "M-24",
-          "dataset": "confidence",
-          "title": "Economic Sentiment Indicator",
-          "title_bg": "Икономически настроения (ИИН)",
-          "subtitle": "Bulgaria  ·  Monthly, February 2019 – February 2026  ·  Seasonally adjusted  ·  LTA = 100",
-          "subtitle_bg": "България  ·  Месечно, Февруари 2019 – Февруари 2026  ·  Сезонно изгладен  ·  ДСС = 100",
-          "chart_file": "charts/m24.png",
-          "stat_value": "98.8",
-          "stat_yoy": "-1.8 MoM  |  -6.1 YoY",
-          "stat_period": "February 2026",
-          "stat_color": "#1565C0",
-          "footer_left": "ESI = Economic Sentiment Indicator  ·  LTA = long-term average  ·  Index points  ·  SA",
-          "footer_left_bg": "ИИН = Индикатор на икономическите настроения  ·  ДСС = дългосрочна средна стойност  ·  Индексни точки  ·  SA",
-          "footer_right": "Source: Eurostat (ei_bssi_m_r2)",
-          "footer_right_bg": "Източник: Евростат (ei_bssi_m_r2)"
-        },
-        {
-          "code": "M-25",
-          "dataset": "confidence",
-          "title": "Sector Confidence",
-          "title_bg": "Доверие по сектори",
-          "subtitle": "Bulgaria  ·  Eurostat  ·  Seasonally adjusted  ·  <strong>Snapshot: February 2026</strong>",
-          "subtitle_bg": "България  ·  Евростат  ·  Сезонно изгладен  ·  <strong>Моментна снимка: Февруари 2026</strong>",
-          "chart_file": "charts/m25.png",
-          "stat_value": "ESI 98.8",
-          "stat_yoy": "-1.8 MoM  |  -6.1 YoY",
-          "stat_period": "February 2026",
-          "stat_color": "#C62828",
-          "footer_left": "BAL = balance (% positive minus % negative respondents)  ·  ICI/CCI/RCI/SCI per Eurostat harmonised methodology  ·  SA",
-          "footer_left_bg": "Баланс = % положителни минус % отрицателни отговори  ·  ИИП/ИДП по хармонизирана методология на Евростат  ·  SA",
-          "footer_right": "Source: Eurostat (ei_bssi/in/co/bu/rt/se_m_r2)",
-          "footer_right_bg": "Източник: Евростат (ei_bssi/in/co/bu/rt/se_m_r2)"
-        },
-        {
-          "code": "M-26",
-          "dataset": "confidence",
-          "title": "Consumer Confidence",
-          "title_bg": "Доверие на потребителите",
-          "subtitle": "Bulgaria  ·  Monthly, February 2019 – February 2026  ·  Seasonally adjusted  ·  Balance %",
-          "subtitle_bg": "България  ·  Месечно, Февруари 2019 – Февруари 2026  ·  Сезонно изгладен  ·  Баланс %",
-          "chart_file": "charts/m26.png",
-          "stat_value": "-23.9",
-          "stat_yoy": "-0.4 MoM  |  -5.3 YoY",
-          "stat_period": "February 2026",
-          "stat_color": "#C62828",
-          "footer_left": "BAL = % positive minus % negative respondents  ·  Harmonised EU methodology  ·  SA",
-          "footer_left_bg": "Баланс = % положителни минус % отрицателни  ·  Хармонизирана методология на ЕС  ·  SA",
-          "footer_right": "Source: Eurostat (ei_bsco_m)",
-          "footer_right_bg": "Източник: Евростат (ei_bsco_m)"
-        }
-      ]
+      "charts": []
+    },
+    {
+      "id": "energy",
+      "label": "Energy",
+      "label_bg": "Енергия",
+      "charts": []
     }
   ]
 }
