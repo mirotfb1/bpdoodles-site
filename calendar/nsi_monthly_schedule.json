@@ -1,0 +1,1773 @@
+[
+  {
+    "id": "IPI",
+    "name_en": "Industrial Production Index",
+    "name_bg": "ИПП Промишленост",
+    "frequency": "M",
+    "source": "NSI",
+    "lag_note": "~40 days after ref month",
+    "past": [
+      {
+        "date": "2026-02-10",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Dec 2025",
+        "is_past": true,
+        "iso_week": "W07/2026",
+        "week_monday": "2026-02-09",
+        "series_id": "IPI",
+        "series_en": "Industrial Production Index",
+        "series_bg": "ИПП Промишленост",
+        "frequency": "M"
+      },
+      {
+        "date": "2026-03-10",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Jan 2026",
+        "is_past": true,
+        "iso_week": "W11/2026",
+        "week_monday": "2026-03-09",
+        "series_id": "IPI",
+        "series_en": "Industrial Production Index",
+        "series_bg": "ИПП Промишленост",
+        "frequency": "M"
+      }
+    ],
+    "future": [
+      {
+        "date": "2026-04-09",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Feb 2026",
+        "is_past": false,
+        "iso_week": "W15/2026",
+        "week_monday": "2026-04-06",
+        "series_id": "IPI",
+        "series_en": "Industrial Production Index",
+        "series_bg": "ИПП Промишленост",
+        "frequency": "M"
+      },
+      {
+        "date": "2026-05-08",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Mar 2026",
+        "is_past": false,
+        "iso_week": "W19/2026",
+        "week_monday": "2026-05-04",
+        "series_id": "IPI",
+        "series_en": "Industrial Production Index",
+        "series_bg": "ИПП Промишленост",
+        "frequency": "M"
+      },
+      {
+        "date": "2026-06-10",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Apr 2026",
+        "is_past": false,
+        "iso_week": "W24/2026",
+        "week_monday": "2026-06-08",
+        "series_id": "IPI",
+        "series_en": "Industrial Production Index",
+        "series_bg": "ИПП Промишленост",
+        "frequency": "M"
+      }
+    ]
+  },
+  {
+    "id": "CONSTRUCTION",
+    "name_en": "Construction Output",
+    "name_bg": "ИПП Строителство",
+    "frequency": "M",
+    "source": "NSI",
+    "lag_note": "~40 days after ref month",
+    "past": [
+      {
+        "date": "2026-02-10",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Dec 2025",
+        "is_past": true,
+        "iso_week": "W07/2026",
+        "week_monday": "2026-02-09",
+        "series_id": "CONSTRUCTION",
+        "series_en": "Construction Output",
+        "series_bg": "ИПП Строителство",
+        "frequency": "M"
+      },
+      {
+        "date": "2026-03-10",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Jan 2026",
+        "is_past": true,
+        "iso_week": "W11/2026",
+        "week_monday": "2026-03-09",
+        "series_id": "CONSTRUCTION",
+        "series_en": "Construction Output",
+        "series_bg": "ИПП Строителство",
+        "frequency": "M"
+      }
+    ],
+    "future": [
+      {
+        "date": "2026-04-09",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Feb 2026",
+        "is_past": false,
+        "iso_week": "W15/2026",
+        "week_monday": "2026-04-06",
+        "series_id": "CONSTRUCTION",
+        "series_en": "Construction Output",
+        "series_bg": "ИПП Строителство",
+        "frequency": "M"
+      },
+      {
+        "date": "2026-05-08",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Mar 2026",
+        "is_past": false,
+        "iso_week": "W19/2026",
+        "week_monday": "2026-05-04",
+        "series_id": "CONSTRUCTION",
+        "series_en": "Construction Output",
+        "series_bg": "ИПП Строителство",
+        "frequency": "M"
+      },
+      {
+        "date": "2026-06-10",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Apr 2026",
+        "is_past": false,
+        "iso_week": "W24/2026",
+        "week_monday": "2026-06-08",
+        "series_id": "CONSTRUCTION",
+        "series_en": "Construction Output",
+        "series_bg": "ИПП Строителство",
+        "frequency": "M"
+      }
+    ]
+  },
+  {
+    "id": "RETAIL",
+    "name_en": "Retail Trade Index",
+    "name_bg": "Оборот в търговията",
+    "frequency": "M",
+    "source": "NSI",
+    "lag_note": "~36 days after ref month",
+    "past": [
+      {
+        "date": "2026-02-06",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Dec 2025",
+        "is_past": true,
+        "iso_week": "W06/2026",
+        "week_monday": "2026-02-02",
+        "series_id": "RETAIL",
+        "series_en": "Retail Trade Index",
+        "series_bg": "Оборот в търговията",
+        "frequency": "M"
+      },
+      {
+        "date": "2026-03-06",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Jan 2026",
+        "is_past": true,
+        "iso_week": "W10/2026",
+        "week_monday": "2026-03-02",
+        "series_id": "RETAIL",
+        "series_en": "Retail Trade Index",
+        "series_bg": "Оборот в търговията",
+        "frequency": "M"
+      }
+    ],
+    "future": [
+      {
+        "date": "2026-04-07",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Feb 2026",
+        "is_past": false,
+        "iso_week": "W15/2026",
+        "week_monday": "2026-04-06",
+        "series_id": "RETAIL",
+        "series_en": "Retail Trade Index",
+        "series_bg": "Оборот в търговията",
+        "frequency": "M"
+      },
+      {
+        "date": "2026-05-08",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Mar 2026",
+        "is_past": false,
+        "iso_week": "W19/2026",
+        "week_monday": "2026-05-04",
+        "series_id": "RETAIL",
+        "series_en": "Retail Trade Index",
+        "series_bg": "Оборот в търговията",
+        "frequency": "M"
+      },
+      {
+        "date": "2026-06-05",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Apr 2026",
+        "is_past": false,
+        "iso_week": "W23/2026",
+        "week_monday": "2026-06-01",
+        "series_id": "RETAIL",
+        "series_en": "Retail Trade Index",
+        "series_bg": "Оборот в търговията",
+        "frequency": "M"
+      }
+    ]
+  },
+  {
+    "id": "SERVICES",
+    "name_en": "Services Production Index",
+    "name_bg": "ИПП Услуги",
+    "frequency": "M",
+    "source": "NSI",
+    "lag_note": "~65 days after ref month",
+    "past": [
+      {
+        "date": "2026-02-06",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Nov 2025",
+        "is_past": true,
+        "iso_week": "W06/2026",
+        "week_monday": "2026-02-02",
+        "series_id": "SERVICES",
+        "series_en": "Services Production Index",
+        "series_bg": "ИПП Услуги",
+        "frequency": "M"
+      },
+      {
+        "date": "2026-03-06",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Dec 2025",
+        "is_past": true,
+        "iso_week": "W10/2026",
+        "week_monday": "2026-03-02",
+        "series_id": "SERVICES",
+        "series_en": "Services Production Index",
+        "series_bg": "ИПП Услуги",
+        "frequency": "M"
+      }
+    ],
+    "future": [
+      {
+        "date": "2026-04-07",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Jan 2026",
+        "is_past": false,
+        "iso_week": "W15/2026",
+        "week_monday": "2026-04-06",
+        "series_id": "SERVICES",
+        "series_en": "Services Production Index",
+        "series_bg": "ИПП Услуги",
+        "frequency": "M"
+      },
+      {
+        "date": "2026-05-08",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Feb 2026",
+        "is_past": false,
+        "iso_week": "W19/2026",
+        "week_monday": "2026-05-04",
+        "series_id": "SERVICES",
+        "series_en": "Services Production Index",
+        "series_bg": "ИПП Услуги",
+        "frequency": "M"
+      },
+      {
+        "date": "2026-06-05",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Mar 2026",
+        "is_past": false,
+        "iso_week": "W23/2026",
+        "week_monday": "2026-06-01",
+        "series_id": "SERVICES",
+        "series_en": "Services Production Index",
+        "series_bg": "ИПП Услуги",
+        "frequency": "M"
+      }
+    ]
+  },
+  {
+    "id": "HICP_FLASH",
+    "name_en": "HICP Flash Estimate",
+    "name_bg": "ИПЦ Експресна оценка",
+    "frequency": "M",
+    "source": "NSI",
+    "lag_note": "~1 day after ref month end",
+    "past": [
+      {
+        "date": "2026-02-03",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Jan 2026",
+        "is_past": true,
+        "iso_week": "W06/2026",
+        "week_monday": "2026-02-02",
+        "series_id": "HICP_FLASH",
+        "series_en": "HICP Flash Estimate",
+        "series_bg": "ИПЦ Експресна оценка",
+        "frequency": "M"
+      },
+      {
+        "date": "2026-03-02",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Feb 2026",
+        "is_past": true,
+        "iso_week": "W10/2026",
+        "week_monday": "2026-03-02",
+        "series_id": "HICP_FLASH",
+        "series_en": "HICP Flash Estimate",
+        "series_bg": "ИПЦ Експресна оценка",
+        "frequency": "M"
+      }
+    ],
+    "future": [
+      {
+        "date": "2026-03-30",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Mar 2026",
+        "is_past": false,
+        "iso_week": "W14/2026",
+        "week_monday": "2026-03-30",
+        "series_id": "HICP_FLASH",
+        "series_en": "HICP Flash Estimate",
+        "series_bg": "ИПЦ Експресна оценка",
+        "frequency": "M"
+      },
+      {
+        "date": "2026-04-29",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Apr 2026",
+        "is_past": false,
+        "iso_week": "W18/2026",
+        "week_monday": "2026-04-27",
+        "series_id": "HICP_FLASH",
+        "series_en": "HICP Flash Estimate",
+        "series_bg": "ИПЦ Експресна оценка",
+        "frequency": "M"
+      },
+      {
+        "date": "2026-06-01",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "May 2026",
+        "is_past": false,
+        "iso_week": "W23/2026",
+        "week_monday": "2026-06-01",
+        "series_id": "HICP_FLASH",
+        "series_en": "HICP Flash Estimate",
+        "series_bg": "ИПЦ Експресна оценка",
+        "frequency": "M"
+      }
+    ]
+  },
+  {
+    "id": "HICP_MAIN",
+    "name_en": "HICP Preliminary / Final",
+    "name_bg": "ИПЦ Предварителни/Окончат",
+    "frequency": "M",
+    "source": "NSI",
+    "lag_note": "~45 days after ref month",
+    "past": [
+      {
+        "date": "2026-02-16",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Jan 2026",
+        "is_past": true,
+        "iso_week": "W08/2026",
+        "week_monday": "2026-02-16",
+        "series_id": "HICP_MAIN",
+        "series_en": "HICP Preliminary / Final",
+        "series_bg": "ИПЦ Предварителни/Окончат",
+        "frequency": "M"
+      },
+      {
+        "date": "2026-03-16",
+        "flag": "NR",
+        "flag_label": "new + revision",
+        "ref_period": "Jan 2026",
+        "is_past": true,
+        "iso_week": "W12/2026",
+        "week_monday": "2026-03-16",
+        "series_id": "HICP_MAIN",
+        "series_en": "HICP Preliminary / Final",
+        "series_bg": "ИПЦ Предварителни/Окончат",
+        "frequency": "M"
+      }
+    ],
+    "future": [
+      {
+        "date": "2026-04-14",
+        "flag": "NR",
+        "flag_label": "new + revision",
+        "ref_period": "Mar 2026",
+        "is_past": false,
+        "iso_week": "W16/2026",
+        "week_monday": "2026-04-13",
+        "series_id": "HICP_MAIN",
+        "series_en": "HICP Preliminary / Final",
+        "series_bg": "ИПЦ Предварителни/Окончат",
+        "frequency": "M"
+      },
+      {
+        "date": "2026-05-18",
+        "flag": "NR",
+        "flag_label": "new + revision",
+        "ref_period": "Apr 2026",
+        "is_past": false,
+        "iso_week": "W21/2026",
+        "week_monday": "2026-05-18",
+        "series_id": "HICP_MAIN",
+        "series_en": "HICP Preliminary / Final",
+        "series_bg": "ИПЦ Предварителни/Окончат",
+        "frequency": "M"
+      },
+      {
+        "date": "2026-06-15",
+        "flag": "NR",
+        "flag_label": "new + revision",
+        "ref_period": "May 2026",
+        "is_past": false,
+        "iso_week": "W25/2026",
+        "week_monday": "2026-06-15",
+        "series_id": "HICP_MAIN",
+        "series_en": "HICP Preliminary / Final",
+        "series_bg": "ИПЦ Предварителни/Окончат",
+        "frequency": "M"
+      }
+    ]
+  },
+  {
+    "id": "PPI",
+    "name_en": "Producer Price Index",
+    "name_bg": "ИЦП Промишленост",
+    "frequency": "M",
+    "source": "NSI",
+    "lag_note": "~60 days after ref month",
+    "past": [
+      {
+        "date": "2026-01-30",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Dec 2025",
+        "is_past": true,
+        "iso_week": "W05/2026",
+        "week_monday": "2026-01-26",
+        "series_id": "PPI",
+        "series_en": "Producer Price Index",
+        "series_bg": "ИЦП Промишленост",
+        "frequency": "M"
+      },
+      {
+        "date": "2026-02-27",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Jan 2026",
+        "is_past": true,
+        "iso_week": "W09/2026",
+        "week_monday": "2026-02-23",
+        "series_id": "PPI",
+        "series_en": "Producer Price Index",
+        "series_bg": "ИЦП Промишленост",
+        "frequency": "M"
+      }
+    ],
+    "future": [
+      {
+        "date": "2026-03-30",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Feb 2026",
+        "is_past": false,
+        "iso_week": "W14/2026",
+        "week_monday": "2026-03-30",
+        "series_id": "PPI",
+        "series_en": "Producer Price Index",
+        "series_bg": "ИЦП Промишленост",
+        "frequency": "M"
+      },
+      {
+        "date": "2026-04-30",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Mar 2026",
+        "is_past": false,
+        "iso_week": "W18/2026",
+        "week_monday": "2026-04-27",
+        "series_id": "PPI",
+        "series_en": "Producer Price Index",
+        "series_bg": "ИЦП Промишленост",
+        "frequency": "M"
+      },
+      {
+        "date": "2026-05-29",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Apr 2026",
+        "is_past": false,
+        "iso_week": "W22/2026",
+        "week_monday": "2026-05-25",
+        "series_id": "PPI",
+        "series_en": "Producer Price Index",
+        "series_bg": "ИЦП Промишленост",
+        "frequency": "M"
+      }
+    ]
+  },
+  {
+    "id": "ESI",
+    "name_en": "Business Tendency Survey (ESI)",
+    "name_bg": "Бизнес тенденции",
+    "frequency": "M",
+    "source": "NSI",
+    "lag_note": "Last day of ref month",
+    "past": [
+      {
+        "date": "2026-01-30",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Jan 2026",
+        "is_past": true,
+        "iso_week": "W05/2026",
+        "week_monday": "2026-01-26",
+        "series_id": "ESI",
+        "series_en": "Business Tendency Survey (ESI)",
+        "series_bg": "Бизнес тенденции",
+        "frequency": "M"
+      },
+      {
+        "date": "2026-02-27",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Feb 2026",
+        "is_past": true,
+        "iso_week": "W09/2026",
+        "week_monday": "2026-02-23",
+        "series_id": "ESI",
+        "series_en": "Business Tendency Survey (ESI)",
+        "series_bg": "Бизнес тенденции",
+        "frequency": "M"
+      }
+    ],
+    "future": [
+      {
+        "date": "2026-03-30",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Mar 2026",
+        "is_past": false,
+        "iso_week": "W14/2026",
+        "week_monday": "2026-03-30",
+        "series_id": "ESI",
+        "series_en": "Business Tendency Survey (ESI)",
+        "series_bg": "Бизнес тенденции",
+        "frequency": "M"
+      },
+      {
+        "date": "2026-04-30",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Apr 2026",
+        "is_past": false,
+        "iso_week": "W18/2026",
+        "week_monday": "2026-04-27",
+        "series_id": "ESI",
+        "series_en": "Business Tendency Survey (ESI)",
+        "series_bg": "Бизнес тенденции",
+        "frequency": "M"
+      },
+      {
+        "date": "2026-05-29",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "May 2026",
+        "is_past": false,
+        "iso_week": "W22/2026",
+        "week_monday": "2026-05-25",
+        "series_id": "ESI",
+        "series_en": "Business Tendency Survey (ESI)",
+        "series_bg": "Бизнес тенденции",
+        "frequency": "M"
+      }
+    ]
+  },
+  {
+    "id": "TRADE_EXT",
+    "name_en": "External Trade Extrastat (prelim)",
+    "name_bg": "Екстрастат (предварит.)",
+    "frequency": "M",
+    "source": "NSI",
+    "lag_note": "~42 days after ref month",
+    "past": [
+      {
+        "date": "2026-02-10",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Dec 2025",
+        "is_past": true,
+        "iso_week": "W07/2026",
+        "week_monday": "2026-02-09",
+        "series_id": "TRADE_EXT",
+        "series_en": "External Trade Extrastat (prelim)",
+        "series_bg": "Екстрастат (предварит.)",
+        "frequency": "M"
+      },
+      {
+        "date": "2026-03-12",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Jan 2026",
+        "is_past": true,
+        "iso_week": "W11/2026",
+        "week_monday": "2026-03-09",
+        "series_id": "TRADE_EXT",
+        "series_en": "External Trade Extrastat (prelim)",
+        "series_bg": "Екстрастат (предварит.)",
+        "frequency": "M"
+      }
+    ],
+    "future": [
+      {
+        "date": "2026-04-14",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Feb 2026",
+        "is_past": false,
+        "iso_week": "W16/2026",
+        "week_monday": "2026-04-13",
+        "series_id": "TRADE_EXT",
+        "series_en": "External Trade Extrastat (prelim)",
+        "series_bg": "Екстрастат (предварит.)",
+        "frequency": "M"
+      },
+      {
+        "date": "2026-05-13",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Mar 2026",
+        "is_past": false,
+        "iso_week": "W20/2026",
+        "week_monday": "2026-05-11",
+        "series_id": "TRADE_EXT",
+        "series_en": "External Trade Extrastat (prelim)",
+        "series_bg": "Екстрастат (предварит.)",
+        "frequency": "M"
+      },
+      {
+        "date": "2026-06-11",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Apr 2026",
+        "is_past": false,
+        "iso_week": "W24/2026",
+        "week_monday": "2026-06-08",
+        "series_id": "TRADE_EXT",
+        "series_en": "External Trade Extrastat (prelim)",
+        "series_bg": "Екстрастат (предварит.)",
+        "frequency": "M"
+      }
+    ]
+  },
+  {
+    "id": "TRADE_INT",
+    "name_en": "Intra-EU Trade Intrastat (prelim)",
+    "name_bg": "Интрастат (предварит.)",
+    "frequency": "M",
+    "source": "NSI",
+    "lag_note": "~42 days after ref month",
+    "past": [
+      {
+        "date": "2026-02-10",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Nov 2025",
+        "is_past": true,
+        "iso_week": "W07/2026",
+        "week_monday": "2026-02-09",
+        "series_id": "TRADE_INT",
+        "series_en": "Intra-EU Trade Intrastat (prelim)",
+        "series_bg": "Интрастат (предварит.)",
+        "frequency": "M"
+      },
+      {
+        "date": "2026-03-12",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Dec 2025",
+        "is_past": true,
+        "iso_week": "W11/2026",
+        "week_monday": "2026-03-09",
+        "series_id": "TRADE_INT",
+        "series_en": "Intra-EU Trade Intrastat (prelim)",
+        "series_bg": "Интрастат (предварит.)",
+        "frequency": "M"
+      }
+    ],
+    "future": [
+      {
+        "date": "2026-04-14",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Jan 2026",
+        "is_past": false,
+        "iso_week": "W16/2026",
+        "week_monday": "2026-04-13",
+        "series_id": "TRADE_INT",
+        "series_en": "Intra-EU Trade Intrastat (prelim)",
+        "series_bg": "Интрастат (предварит.)",
+        "frequency": "M"
+      },
+      {
+        "date": "2026-05-13",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Feb 2026",
+        "is_past": false,
+        "iso_week": "W20/2026",
+        "week_monday": "2026-05-11",
+        "series_id": "TRADE_INT",
+        "series_en": "Intra-EU Trade Intrastat (prelim)",
+        "series_bg": "Интрастат (предварит.)",
+        "frequency": "M"
+      },
+      {
+        "date": "2026-06-11",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Mar 2026",
+        "is_past": false,
+        "iso_week": "W24/2026",
+        "week_monday": "2026-06-08",
+        "series_id": "TRADE_INT",
+        "series_en": "Intra-EU Trade Intrastat (prelim)",
+        "series_bg": "Интрастат (предварит.)",
+        "frequency": "M"
+      }
+    ]
+  },
+  {
+    "id": "ENERGY_PROD",
+    "name_en": "Energy Production & Supply",
+    "name_bg": "Производство на енергия",
+    "frequency": "M",
+    "source": "NSI",
+    "lag_note": "~60 days after ref month",
+    "past": [
+      {
+        "date": "2026-01-29",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Nov 2025",
+        "is_past": true,
+        "iso_week": "W05/2026",
+        "week_monday": "2026-01-26",
+        "series_id": "ENERGY_PROD",
+        "series_en": "Energy Production & Supply",
+        "series_bg": "Производство на енергия",
+        "frequency": "M"
+      },
+      {
+        "date": "2026-03-02",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Dec 2025",
+        "is_past": true,
+        "iso_week": "W10/2026",
+        "week_monday": "2026-03-02",
+        "series_id": "ENERGY_PROD",
+        "series_en": "Energy Production & Supply",
+        "series_bg": "Производство на енергия",
+        "frequency": "M"
+      }
+    ],
+    "future": [
+      {
+        "date": "2026-04-01",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Jan 2026",
+        "is_past": false,
+        "iso_week": "W14/2026",
+        "week_monday": "2026-03-30",
+        "series_id": "ENERGY_PROD",
+        "series_en": "Energy Production & Supply",
+        "series_bg": "Производство на енергия",
+        "frequency": "M"
+      },
+      {
+        "date": "2026-04-29",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Feb 2026",
+        "is_past": false,
+        "iso_week": "W18/2026",
+        "week_monday": "2026-04-27",
+        "series_id": "ENERGY_PROD",
+        "series_en": "Energy Production & Supply",
+        "series_bg": "Производство на енергия",
+        "frequency": "M"
+      },
+      {
+        "date": "2026-05-29",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Mar 2026",
+        "is_past": false,
+        "iso_week": "W22/2026",
+        "week_monday": "2026-05-25",
+        "series_id": "ENERGY_PROD",
+        "series_en": "Energy Production & Supply",
+        "series_bg": "Производство на енергия",
+        "frequency": "M"
+      }
+    ]
+  },
+  {
+    "id": "FISCAL",
+    "name_en": "Fiscal Data (Central Govt)",
+    "name_bg": "Фискални данни",
+    "frequency": "M",
+    "source": "NSI",
+    "lag_note": "~35 days after ref month",
+    "past": [
+      {
+        "date": "2026-02-04",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Dec 2025",
+        "is_past": true,
+        "iso_week": "W06/2026",
+        "week_monday": "2026-02-02",
+        "series_id": "FISCAL",
+        "series_en": "Fiscal Data (Central Govt)",
+        "series_bg": "Фискални данни",
+        "frequency": "M"
+      },
+      {
+        "date": "2026-03-06",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Jan 2026",
+        "is_past": true,
+        "iso_week": "W10/2026",
+        "week_monday": "2026-03-02",
+        "series_id": "FISCAL",
+        "series_en": "Fiscal Data (Central Govt)",
+        "series_bg": "Фискални данни",
+        "frequency": "M"
+      }
+    ],
+    "future": [
+      {
+        "date": "2026-04-06",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Feb 2026",
+        "is_past": false,
+        "iso_week": "W15/2026",
+        "week_monday": "2026-04-06",
+        "series_id": "FISCAL",
+        "series_en": "Fiscal Data (Central Govt)",
+        "series_bg": "Фискални данни",
+        "frequency": "M"
+      },
+      {
+        "date": "2026-05-08",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Mar 2026",
+        "is_past": false,
+        "iso_week": "W19/2026",
+        "week_monday": "2026-05-04",
+        "series_id": "FISCAL",
+        "series_en": "Fiscal Data (Central Govt)",
+        "series_bg": "Фискални данни",
+        "frequency": "M"
+      },
+      {
+        "date": "2026-06-04",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Apr 2026",
+        "is_past": false,
+        "iso_week": "W23/2026",
+        "week_monday": "2026-06-01",
+        "series_id": "FISCAL",
+        "series_en": "Fiscal Data (Central Govt)",
+        "series_bg": "Фискални данни",
+        "frequency": "M"
+      }
+    ]
+  },
+  {
+    "id": "LFS_Q",
+    "name_en": "Labour Force Survey",
+    "name_bg": "Наблюдение на работната сила",
+    "frequency": "Q",
+    "source": "NSI",
+    "lag_note": "~45 days after ref quarter",
+    "past": [
+      {
+        "date": "2026-02-13",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Q4 2025",
+        "is_past": true,
+        "iso_week": "W07/2026",
+        "week_monday": "2026-02-09",
+        "series_id": "LFS_Q",
+        "series_en": "Labour Force Survey",
+        "series_bg": "Наблюдение на работната сила",
+        "frequency": "Q"
+      },
+      {
+        "date": "2026-03-13",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Annual 2025",
+        "is_past": true,
+        "iso_week": "W11/2026",
+        "week_monday": "2026-03-09",
+        "series_id": "LFS_Q",
+        "series_en": "Labour Force Survey",
+        "series_bg": "Наблюдение на работната сила",
+        "frequency": "Q"
+      }
+    ],
+    "future": [
+      {
+        "date": "2026-05-21",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Q1 2026",
+        "is_past": false,
+        "iso_week": "W21/2026",
+        "week_monday": "2026-05-18",
+        "series_id": "LFS_Q",
+        "series_en": "Labour Force Survey",
+        "series_bg": "Наблюдение на работната сила",
+        "frequency": "Q"
+      },
+      {
+        "date": "2026-08-14",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Q2 2026",
+        "is_past": false,
+        "iso_week": "W33/2026",
+        "week_monday": "2026-08-10",
+        "series_id": "LFS_Q",
+        "series_en": "Labour Force Survey",
+        "series_bg": "Наблюдение на работната сила",
+        "frequency": "Q"
+      },
+      {
+        "date": "2026-11-13",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Q3 2026",
+        "is_past": false,
+        "iso_week": "W46/2026",
+        "week_monday": "2026-11-09",
+        "series_id": "LFS_Q",
+        "series_en": "Labour Force Survey",
+        "series_bg": "Наблюдение на работната сила",
+        "frequency": "Q"
+      }
+    ]
+  },
+  {
+    "id": "WAGES",
+    "name_en": "Wages & Employment",
+    "name_bg": "Наети лица и заплати",
+    "frequency": "Q",
+    "source": "NSI",
+    "lag_note": "~45 days after ref quarter",
+    "past": [
+      {
+        "date": "2026-02-13",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Q4 2025",
+        "is_past": true,
+        "iso_week": "W07/2026",
+        "week_monday": "2026-02-09",
+        "series_id": "WAGES",
+        "series_en": "Wages & Employment",
+        "series_bg": "Наети лица и заплати",
+        "frequency": "Q"
+      },
+      {
+        "date": "2026-02-26",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Annual 2025",
+        "is_past": true,
+        "iso_week": "W09/2026",
+        "week_monday": "2026-02-23",
+        "series_id": "WAGES",
+        "series_en": "Wages & Employment",
+        "series_bg": "Наети лица и заплати",
+        "frequency": "Q"
+      }
+    ],
+    "future": [
+      {
+        "date": "2026-05-15",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Q1 2026",
+        "is_past": false,
+        "iso_week": "W20/2026",
+        "week_monday": "2026-05-11",
+        "series_id": "WAGES",
+        "series_en": "Wages & Employment",
+        "series_bg": "Наети лица и заплати",
+        "frequency": "Q"
+      },
+      {
+        "date": "2026-08-12",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Q2 2026",
+        "is_past": false,
+        "iso_week": "W33/2026",
+        "week_monday": "2026-08-10",
+        "series_id": "WAGES",
+        "series_en": "Wages & Employment",
+        "series_bg": "Наети лица и заплати",
+        "frequency": "Q"
+      },
+      {
+        "date": "2026-11-13",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Q3 2026",
+        "is_past": false,
+        "iso_week": "W46/2026",
+        "week_monday": "2026-11-09",
+        "series_id": "WAGES",
+        "series_en": "Wages & Employment",
+        "series_bg": "Наети лица и заплати",
+        "frequency": "Q"
+      }
+    ]
+  },
+  {
+    "id": "CONSUMER_CONF",
+    "name_en": "Consumer Confidence",
+    "name_bg": "Наблюдение на потребителите",
+    "frequency": "Q",
+    "source": "NSI",
+    "lag_note": "Feb / May / Aug / Nov",
+    "past": [
+      {
+        "date": "2025-11-07",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Oct 2025",
+        "is_past": true,
+        "iso_week": "W45/2025",
+        "week_monday": "2025-11-03",
+        "series_id": "CONSUMER_CONF",
+        "series_en": "Consumer Confidence",
+        "series_bg": "Наблюдение на потребителите",
+        "frequency": "Q"
+      },
+      {
+        "date": "2026-02-09",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Jan 2026",
+        "is_past": true,
+        "iso_week": "W07/2026",
+        "week_monday": "2026-02-09",
+        "series_id": "CONSUMER_CONF",
+        "series_en": "Consumer Confidence",
+        "series_bg": "Наблюдение на потребителите",
+        "frequency": "Q"
+      }
+    ],
+    "future": [
+      {
+        "date": "2026-05-08",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Apr 2026",
+        "is_past": false,
+        "iso_week": "W19/2026",
+        "week_monday": "2026-05-04",
+        "series_id": "CONSUMER_CONF",
+        "series_en": "Consumer Confidence",
+        "series_bg": "Наблюдение на потребителите",
+        "frequency": "Q"
+      },
+      {
+        "date": "2026-08-07",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Jul 2026",
+        "is_past": false,
+        "iso_week": "W32/2026",
+        "week_monday": "2026-08-03",
+        "series_id": "CONSUMER_CONF",
+        "series_en": "Consumer Confidence",
+        "series_bg": "Наблюдение на потребителите",
+        "frequency": "Q"
+      },
+      {
+        "date": "2026-11-06",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Oct 2026",
+        "is_past": false,
+        "iso_week": "W45/2026",
+        "week_monday": "2026-11-02",
+        "series_id": "CONSUMER_CONF",
+        "series_en": "Consumer Confidence",
+        "series_bg": "Наблюдение на потребителите",
+        "frequency": "Q"
+      }
+    ]
+  },
+  {
+    "id": "BLDG_PERMITS",
+    "name_en": "Building Permits & Starts",
+    "name_bg": "Разрешителни за строеж",
+    "frequency": "Q",
+    "source": "NSI",
+    "lag_note": "~1 month after ref quarter",
+    "past": [
+      {
+        "date": "2025-11-03",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Q3 2025",
+        "is_past": true,
+        "iso_week": "W45/2025",
+        "week_monday": "2025-11-03",
+        "series_id": "BLDG_PERMITS",
+        "series_en": "Building Permits & Starts",
+        "series_bg": "Разрешителни за строеж",
+        "frequency": "Q"
+      },
+      {
+        "date": "2026-02-03",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Q4 2025",
+        "is_past": true,
+        "iso_week": "W06/2026",
+        "week_monday": "2026-02-02",
+        "series_id": "BLDG_PERMITS",
+        "series_en": "Building Permits & Starts",
+        "series_bg": "Разрешителни за строеж",
+        "frequency": "Q"
+      }
+    ],
+    "future": [
+      {
+        "date": "2026-05-04",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Q1 2026",
+        "is_past": false,
+        "iso_week": "W19/2026",
+        "week_monday": "2026-05-04",
+        "series_id": "BLDG_PERMITS",
+        "series_en": "Building Permits & Starts",
+        "series_bg": "Разрешителни за строеж",
+        "frequency": "Q"
+      },
+      {
+        "date": "2026-08-03",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Q2 2026",
+        "is_past": false,
+        "iso_week": "W32/2026",
+        "week_monday": "2026-08-03",
+        "series_id": "BLDG_PERMITS",
+        "series_en": "Building Permits & Starts",
+        "series_bg": "Разрешителни за строеж",
+        "frequency": "Q"
+      },
+      {
+        "date": "2026-11-03",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Q3 2026",
+        "is_past": false,
+        "iso_week": "W45/2026",
+        "week_monday": "2026-11-02",
+        "series_id": "BLDG_PERMITS",
+        "series_en": "Building Permits & Starts",
+        "series_bg": "Разрешителни за строеж",
+        "frequency": "Q"
+      }
+    ]
+  },
+  {
+    "id": "GDP",
+    "name_en": "GDP — National Level",
+    "name_bg": "БВП — национално ниво",
+    "frequency": "Q",
+    "source": "NSI",
+    "lag_note": "~65 days after ref quarter",
+    "past": [
+      {
+        "date": "2026-02-13",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Q4 2025",
+        "is_past": true,
+        "iso_week": "W07/2026",
+        "week_monday": "2026-02-09",
+        "series_id": "GDP",
+        "series_en": "GDP — National Level",
+        "series_bg": "БВП — национално ниво",
+        "frequency": "Q"
+      },
+      {
+        "date": "2026-03-06",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Q4 2025",
+        "is_past": true,
+        "iso_week": "W10/2026",
+        "week_monday": "2026-03-02",
+        "series_id": "GDP",
+        "series_en": "GDP — National Level",
+        "series_bg": "БВП — национално ниво",
+        "frequency": "Q"
+      }
+    ],
+    "future": [
+      {
+        "date": "2026-05-13",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Annual 2026",
+        "is_past": false,
+        "iso_week": "W20/2026",
+        "week_monday": "2026-05-11",
+        "series_id": "GDP",
+        "series_en": "GDP — National Level",
+        "series_bg": "БВП — национално ниво",
+        "frequency": "Q"
+      },
+      {
+        "date": "2026-06-05",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Q1 2026",
+        "is_past": false,
+        "iso_week": "W23/2026",
+        "week_monday": "2026-06-01",
+        "series_id": "GDP",
+        "series_en": "GDP — National Level",
+        "series_bg": "БВП — национално ниво",
+        "frequency": "Q"
+      },
+      {
+        "date": "2026-08-14",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Q2 2026",
+        "is_past": false,
+        "iso_week": "W33/2026",
+        "week_monday": "2026-08-10",
+        "series_id": "GDP",
+        "series_en": "GDP — National Level",
+        "series_bg": "БВП — национално ниво",
+        "frequency": "Q"
+      }
+    ]
+  },
+  {
+    "id": "PRODUCTIVITY",
+    "name_en": "Labour Productivity",
+    "name_bg": "Производителност на труда",
+    "frequency": "Q",
+    "source": "NSI",
+    "lag_note": "Same release as GDP flash",
+    "past": [
+      {
+        "date": "2025-12-05",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Annual 2025",
+        "is_past": true,
+        "iso_week": "W49/2025",
+        "week_monday": "2025-12-01",
+        "series_id": "PRODUCTIVITY",
+        "series_en": "Labour Productivity",
+        "series_bg": "Производителност на труда",
+        "frequency": "Q"
+      },
+      {
+        "date": "2026-03-06",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Q4 2025",
+        "is_past": true,
+        "iso_week": "W10/2026",
+        "week_monday": "2026-03-02",
+        "series_id": "PRODUCTIVITY",
+        "series_en": "Labour Productivity",
+        "series_bg": "Производителност на труда",
+        "frequency": "Q"
+      }
+    ],
+    "future": [
+      {
+        "date": "2026-06-05",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Q1 2026",
+        "is_past": false,
+        "iso_week": "W23/2026",
+        "week_monday": "2026-06-01",
+        "series_id": "PRODUCTIVITY",
+        "series_en": "Labour Productivity",
+        "series_bg": "Производителност на труда",
+        "frequency": "Q"
+      },
+      {
+        "date": "2026-09-07",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Q2 2026",
+        "is_past": false,
+        "iso_week": "W37/2026",
+        "week_monday": "2026-09-07",
+        "series_id": "PRODUCTIVITY",
+        "series_en": "Labour Productivity",
+        "series_bg": "Производителност на труда",
+        "frequency": "Q"
+      },
+      {
+        "date": "2026-10-20",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Annual 2025",
+        "is_past": false,
+        "iso_week": "W43/2026",
+        "week_monday": "2026-10-19",
+        "series_id": "PRODUCTIVITY",
+        "series_en": "Labour Productivity",
+        "series_bg": "Производителност на труда",
+        "frequency": "Q"
+      }
+    ]
+  },
+  {
+    "id": "LCI",
+    "name_en": "Labour Cost Index",
+    "name_bg": "Индекс разходи за труд",
+    "frequency": "Q",
+    "source": "NSI",
+    "lag_note": "~82 days after ref quarter",
+    "past": [
+      {
+        "date": "2025-09-23",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Q2 2025",
+        "is_past": true,
+        "iso_week": "W39/2025",
+        "week_monday": "2025-09-22",
+        "series_id": "LCI",
+        "series_en": "Labour Cost Index",
+        "series_bg": "Индекс разходи за труд",
+        "frequency": "Q"
+      },
+      {
+        "date": "2025-12-22",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Q3 2025",
+        "is_past": true,
+        "iso_week": "W52/2025",
+        "week_monday": "2025-12-22",
+        "series_id": "LCI",
+        "series_en": "Labour Cost Index",
+        "series_bg": "Индекс разходи за труд",
+        "frequency": "Q"
+      }
+    ],
+    "future": [
+      {
+        "date": "2026-03-23",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Q4 2025",
+        "is_past": false,
+        "iso_week": "W13/2026",
+        "week_monday": "2026-03-23",
+        "series_id": "LCI",
+        "series_en": "Labour Cost Index",
+        "series_bg": "Индекс разходи за труд",
+        "frequency": "Q"
+      },
+      {
+        "date": "2026-06-19",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Q1 2026",
+        "is_past": false,
+        "iso_week": "W25/2026",
+        "week_monday": "2026-06-15",
+        "series_id": "LCI",
+        "series_en": "Labour Cost Index",
+        "series_bg": "Индекс разходи за труд",
+        "frequency": "Q"
+      },
+      {
+        "date": "2026-09-23",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Q2 2026",
+        "is_past": false,
+        "iso_week": "W39/2026",
+        "week_monday": "2026-09-21",
+        "series_id": "LCI",
+        "series_en": "Labour Cost Index",
+        "series_bg": "Индекс разходи за труд",
+        "frequency": "Q"
+      }
+    ]
+  },
+  {
+    "id": "HOUSE_PRICES",
+    "name_en": "House Price Statistics",
+    "name_bg": "Статистика цени жилища",
+    "frequency": "Q",
+    "source": "NSI",
+    "lag_note": "~85 days after ref quarter",
+    "past": [
+      {
+        "date": "2025-09-23",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Q2 2025",
+        "is_past": true,
+        "iso_week": "W39/2025",
+        "week_monday": "2025-09-22",
+        "series_id": "HOUSE_PRICES",
+        "series_en": "House Price Statistics",
+        "series_bg": "Статистика цени жилища",
+        "frequency": "Q"
+      },
+      {
+        "date": "2025-12-23",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Q3 2025",
+        "is_past": true,
+        "iso_week": "W52/2025",
+        "week_monday": "2025-12-22",
+        "series_id": "HOUSE_PRICES",
+        "series_en": "House Price Statistics",
+        "series_bg": "Статистика цени жилища",
+        "frequency": "Q"
+      }
+    ],
+    "future": [
+      {
+        "date": "2026-03-26",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Q4 2025",
+        "is_past": false,
+        "iso_week": "W13/2026",
+        "week_monday": "2026-03-23",
+        "series_id": "HOUSE_PRICES",
+        "series_en": "House Price Statistics",
+        "series_bg": "Статистика цени жилища",
+        "frequency": "Q"
+      },
+      {
+        "date": "2026-06-24",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Q1 2026",
+        "is_past": false,
+        "iso_week": "W26/2026",
+        "week_monday": "2026-06-22",
+        "series_id": "HOUSE_PRICES",
+        "series_en": "House Price Statistics",
+        "series_bg": "Статистика цени жилища",
+        "frequency": "Q"
+      },
+      {
+        "date": "2026-09-23",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Q2 2026",
+        "is_past": false,
+        "iso_week": "W39/2026",
+        "week_monday": "2026-09-21",
+        "series_id": "HOUSE_PRICES",
+        "series_en": "House Price Statistics",
+        "series_bg": "Статистика цени жилища",
+        "frequency": "Q"
+      }
+    ]
+  },
+  {
+    "id": "TRADE_PRICES",
+    "name_en": "Export/Import Price Indices",
+    "name_bg": "Цени на износа и вноса",
+    "frequency": "Q",
+    "source": "NSI",
+    "lag_note": "~85 days after ref quarter",
+    "past": [
+      {
+        "date": "2025-09-29",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Q2 2025",
+        "is_past": true,
+        "iso_week": "W40/2025",
+        "week_monday": "2025-09-29",
+        "series_id": "TRADE_PRICES",
+        "series_en": "Export/Import Price Indices",
+        "series_bg": "Цени на износа и вноса",
+        "frequency": "Q"
+      },
+      {
+        "date": "2025-12-23",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Q3 2025",
+        "is_past": true,
+        "iso_week": "W52/2025",
+        "week_monday": "2025-12-22",
+        "series_id": "TRADE_PRICES",
+        "series_en": "Export/Import Price Indices",
+        "series_bg": "Цени на износа и вноса",
+        "frequency": "Q"
+      }
+    ],
+    "future": [
+      {
+        "date": "2026-03-26",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Q4 2025",
+        "is_past": false,
+        "iso_week": "W13/2026",
+        "week_monday": "2026-03-23",
+        "series_id": "TRADE_PRICES",
+        "series_en": "Export/Import Price Indices",
+        "series_bg": "Цени на износа и вноса",
+        "frequency": "Q"
+      },
+      {
+        "date": "2026-06-26",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Q1 2026",
+        "is_past": false,
+        "iso_week": "W26/2026",
+        "week_monday": "2026-06-22",
+        "series_id": "TRADE_PRICES",
+        "series_en": "Export/Import Price Indices",
+        "series_bg": "Цени на износа и вноса",
+        "frequency": "Q"
+      },
+      {
+        "date": "2026-09-29",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Annual 2025",
+        "is_past": false,
+        "iso_week": "W40/2026",
+        "week_monday": "2026-09-28",
+        "series_id": "TRADE_PRICES",
+        "series_en": "Export/Import Price Indices",
+        "series_bg": "Цени на износа и вноса",
+        "frequency": "Q"
+      }
+    ]
+  },
+  {
+    "id": "SPPI",
+    "name_en": "Services Producer Prices (SPPI)",
+    "name_bg": "Цени производител услуги",
+    "frequency": "Q",
+    "source": "NSI",
+    "lag_note": "~88 days after ref quarter",
+    "past": [
+      {
+        "date": "2025-09-29",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Q2 2025",
+        "is_past": true,
+        "iso_week": "W40/2025",
+        "week_monday": "2025-09-29",
+        "series_id": "SPPI",
+        "series_en": "Services Producer Prices (SPPI)",
+        "series_bg": "Цени производител услуги",
+        "frequency": "Q"
+      },
+      {
+        "date": "2025-12-29",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Q3 2025",
+        "is_past": true,
+        "iso_week": "W01/2026",
+        "week_monday": "2025-12-29",
+        "series_id": "SPPI",
+        "series_en": "Services Producer Prices (SPPI)",
+        "series_bg": "Цени производител услуги",
+        "frequency": "Q"
+      }
+    ],
+    "future": [
+      {
+        "date": "2026-03-30",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Q4 2025",
+        "is_past": false,
+        "iso_week": "W14/2026",
+        "week_monday": "2026-03-30",
+        "series_id": "SPPI",
+        "series_en": "Services Producer Prices (SPPI)",
+        "series_bg": "Цени производител услуги",
+        "frequency": "Q"
+      },
+      {
+        "date": "2026-06-29",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Q1 2026",
+        "is_past": false,
+        "iso_week": "W27/2026",
+        "week_monday": "2026-06-29",
+        "series_id": "SPPI",
+        "series_en": "Services Producer Prices (SPPI)",
+        "series_bg": "Цени производител услуги",
+        "frequency": "Q"
+      },
+      {
+        "date": "2026-09-29",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Q2 2026",
+        "is_past": false,
+        "iso_week": "W40/2026",
+        "week_monday": "2026-09-28",
+        "series_id": "SPPI",
+        "series_en": "Services Producer Prices (SPPI)",
+        "series_bg": "Цени производител услуги",
+        "frequency": "Q"
+      }
+    ]
+  },
+  {
+    "id": "ENERGY_PRICE",
+    "name_en": "Energy Prices — Households & Business",
+    "name_bg": "Цени на ел. енергия и газ",
+    "frequency": "S",
+    "source": "NSI",
+    "lag_note": "Mar & Sep (H2/H1 of prior year)",
+    "past": [
+      {
+        "date": "2025-03-31",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Annual 2024",
+        "is_past": true,
+        "iso_week": "W14/2025",
+        "week_monday": "2025-03-31",
+        "series_id": "ENERGY_PRICE",
+        "series_en": "Energy Prices — Households & Business",
+        "series_bg": "Цени на ел. енергия и газ",
+        "frequency": "S"
+      },
+      {
+        "date": "2025-09-30",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Annual 2025",
+        "is_past": true,
+        "iso_week": "W40/2025",
+        "week_monday": "2025-09-29",
+        "series_id": "ENERGY_PRICE",
+        "series_en": "Energy Prices — Households & Business",
+        "series_bg": "Цени на ел. енергия и газ",
+        "frequency": "S"
+      }
+    ],
+    "future": [
+      {
+        "date": "2026-03-31",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Annual 2025",
+        "is_past": false,
+        "iso_week": "W14/2026",
+        "week_monday": "2026-03-30",
+        "series_id": "ENERGY_PRICE",
+        "series_en": "Energy Prices — Households & Business",
+        "series_bg": "Цени на ел. енергия и газ",
+        "frequency": "S"
+      },
+      {
+        "date": "2026-09-30",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Annual 2026",
+        "is_past": false,
+        "iso_week": "W40/2026",
+        "week_monday": "2026-09-28",
+        "series_id": "ENERGY_PRICE",
+        "series_en": "Energy Prices — Households & Business",
+        "series_bg": "Цени на ел. енергия и газ",
+        "frequency": "S"
+      },
+      {
+        "date": "2027-03-31",
+        "flag": "N",
+        "flag_label": "new data",
+        "ref_period": "Annual 2026",
+        "is_past": false,
+        "iso_week": "W13/2027",
+        "week_monday": "2027-03-29",
+        "series_id": "ENERGY_PRICE",
+        "series_en": "Energy Prices — Households & Business",
+        "series_bg": "Цени на ел. енергия и газ",
+        "frequency": "S"
+      }
+    ]
+  }
+]

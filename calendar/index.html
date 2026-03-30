@@ -35,18 +35,44 @@ body {
   color: var(--color-ink);
   line-height: 1.6;
 }
-.wrapper { max-width: 700px; margin: 32px auto; background: #fff; border: 1px solid var(--color-border); border-radius: 4px; }
-.lang-toggle { display: flex; justify-content: space-between; align-items: center; padding: 8px 16px; background: var(--color-basepoint); }
+.wrapper {
+  max-width: 700px;
+  margin: 32px auto;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+}
+/* ── Lang toggle + site nav ── */
+.lang-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  background: var(--color-basepoint);
+}
 .lang-buttons { display: flex; }
-.lang-btn { background: transparent; border: 1px solid #444; color: #888; font-family: 'Nunito', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; padding: 4px 12px; cursor: pointer; }
+.lang-btn {
+  background: transparent;
+  border: 1px solid #444;
+  color: #888;
+  font-family: 'Nunito', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 4px 12px;
+  cursor: pointer;
+}
 .lang-btn:first-child { border-radius: 3px 0 0 3px; }
 .lang-btn:last-child  { border-radius: 0 3px 3px 0; border-left: none; }
 .lang-btn.active { background: var(--color-accent); border-color: var(--color-accent); color: #fff; }
 .site-nav { display: flex; gap: 20px; align-items: center; }
-.site-nav a { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.45); text-decoration: none; }
+.site-nav a {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: rgba(255,255,255,0.45); text-decoration: none;
+}
 .site-nav a:hover { color: rgba(255,255,255,0.9); }
 .site-nav a.active { color: var(--color-accent); }
-.site-nav .soon { font-size: 9px; background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.3); border-radius: 3px; padding: 1px 5px; margin-left: 4px; vertical-align: middle; }
+/* ── Lang visibility ── */
 .lc-bg { display: none !important; }
 .lc-en { display: block; }
 span.lc-en { display: inline; }
@@ -55,7 +81,15 @@ body.lang-bg .lc-en { display: none !important; }
 body.lang-bg .lc-bg { display: block !important; }
 body.lang-bg span.lc-bg { display: inline !important; }
 body.lang-bg span.lc-en { display: none !important; }
-.masthead { background: var(--color-basepoint); padding: 22px 28px 18px; display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 3px solid var(--color-accent); }
+/* ── Masthead ── */
+.masthead {
+  background: var(--color-basepoint);
+  padding: 22px 28px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 3px solid var(--color-accent);
+}
 .masthead-logo { display: flex; align-items: center; }
 .masthead-left { display: flex; flex-direction: column; align-items: flex-end; padding-right: 14px; }
 .masthead-basepoint { font-family: 'Nunito', sans-serif; font-size: 22px; font-weight: 900; color: #fff; letter-spacing: -0.3px; line-height: 1; }
@@ -65,26 +99,159 @@ body.lang-bg span.lc-en { display: none !important; }
 .masthead-desc { text-align: right; }
 .masthead-desc-main { font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.75); display: block; }
 .masthead-desc-sub { font-size: 11px; color: rgba(255,255,255,0.35); display: block; }
+/* ── Page header ── */
 .page-header { padding: 20px 28px 16px; border-bottom: 1px solid var(--color-border); }
 .page-title { font-size: 20px; font-weight: 900; color: var(--color-ink); letter-spacing: -0.3px; margin-bottom: 6px; }
 .page-subtitle { font-size: 13px; color: var(--color-muted); }
-.coming-soon {
-  padding: 48px 28px;
-  text-align: center;
+/* ── Controls ── */
+.controls-bar {
+  padding: 10px 16px;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.ctrl-label {
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  white-space: nowrap;
+}
+.ctrl-btn-group { display: flex; }
+.ctrl-btn {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  color: var(--color-muted);
+  font-family: 'Nunito', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 11px;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  transition: all 0.1s;
+  white-space: nowrap;
+}
+.ctrl-btn:first-child { border-radius: 3px 0 0 3px; }
+.ctrl-btn:last-child  { border-radius: 0 3px 3px 0; border-left: none; }
+.ctrl-btn + .ctrl-btn { border-left: none; }
+.ctrl-btn.active { background: var(--color-basepoint); border-color: var(--color-basepoint); color: #fff; }
+.ctrl-btn:hover:not(.active) { background: #E8ECFF; color: var(--color-ink); }
+/* ── Include past label ── */
+.ctrl-past {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--color-ink-2);
+  cursor: pointer;
+  user-select: none;
+}
+/* ── Legend ── */
+.ctrl-legend {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+  flex-wrap: wrap;
+}
+.leg-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  color: var(--color-ink-2);
+}
+.leg-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+/* ── Calendar grid ── */
+.cal-grid {
+  padding: 12px 16px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+/* ── Week card ── */
+.week-card {
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  overflow: hidden;
+  background: #fff;
+}
+.week-card-head {
+  background: var(--color-basepoint);
+  padding: 9px 14px;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.week-card.current .week-card-head { background: var(--color-accent); }
+.week-card.past    .week-card-head { background: #9CA3AF; }
+.week-num { color: #fff; font-size: 13px; font-weight: 900; letter-spacing: 0.04em; }
+.week-dates { color: rgba(255,255,255,0.5); font-size: 11px; }
+.week-total {
+  margin-left: auto;
+  background: rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.85);
+  font-size: 10px; font-weight: 700;
+  border-radius: 10px; padding: 2px 8px;
+}
+/* ── Source section ── */
+.src-section { border-top: 1px solid var(--color-border); }
+.src-hdr {
+  padding: 4px 14px;
+  font-size: 9px; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase;
+  display: flex; align-items: center;
+  color: rgba(255,255,255,0.9); gap: 6px;
+}
+.src-hdr-nsi      { background: #1B2E5E; }
+.src-hdr-eurostat { background: #003F88; }
+.src-hdr-bnb      { background: #005A2B; }
+.src-count {
+  margin-left: auto;
+  background: rgba(255,255,255,0.2);
+  font-size: 9px; font-weight: 700;
+  border-radius: 8px; padding: 1px 7px;
+}
+/* ── Release item ── */
+.rel-item {
+  display: flex; align-items: flex-start; gap: 9px;
+  padding: 7px 14px;
   border-bottom: 1px solid var(--color-border);
 }
-.coming-soon-icon { font-size: 36px; margin-bottom: 16px; color: var(--color-border); }
-.coming-soon-title { font-size: 17px; font-weight: 900; color: var(--color-ink); margin-bottom: 10px; }
-.coming-soon-desc { font-size: 13px; color: var(--color-muted); max-width: 420px; margin: 0 auto; line-height: 1.65; }
+.rel-item:last-child { border-bottom: none; }
+.rel-item.past { opacity: 0.45; }
+.rel-dot { width: 6px; height: 6px; border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
+.rel-dot.M { background: #1565C0; }
+.rel-dot.Q { background: #6B21A8; }
+.rel-dot.S { background: #B45309; }
+.rel-body { flex: 1; min-width: 0; }
+.rel-name { font-size: 12px; font-weight: 700; color: var(--color-ink); line-height: 1.3; }
+.rel-ref  { font-size: 11px; font-weight: 700; color: var(--color-accent); margin-top: 1px; }
+.rel-date { font-size: 11px; color: var(--color-muted); margin-top: 3px; }
+/* ── Type badges ── */
+.tbadge { font-size: 8px; font-weight: 700; padding: 1px 4px; border-radius: 2px; margin-left: 4px; vertical-align: middle; }
+.tbadge-flash  { background: #FFF3E0; color: #E65100; }
+.tbadge-update { background: #F3E8FF; color: #6B21A8; }
+.tbadge-NR     { background: #F3E8FF; color: #6B21A8; }
+.tbadge-R      { background: #FEF3C7; color: #B45309; }
+.week-empty { padding: 14px; color: var(--color-muted); font-size: 12px; text-align: center; font-style: italic; }
+.cal-state  { padding: 40px 28px; text-align: center; color: var(--color-muted); font-size: 13px; }
+.cal-error  { color: #B71C1C; }
+/* ── Footer ── */
 .footer { padding: 14px 28px; background: var(--color-surface); border-top: 1px solid var(--color-border); display: flex; justify-content: space-between; align-items: center; }
 .footer-logo { font-family: 'Caveat', cursive; font-size: 18px; font-weight: 700; color: #CCC; }
 .footer-links { font-size: 11px; display: flex; gap: 16px; }
 .footer-links a { color: var(--color-muted-light); text-decoration: none; }
 .footer-links a:hover { color: var(--color-muted); }
+/* ── Mobile ── */
 @media (max-width: 740px) {
   .wrapper { margin: 0; border-radius: 0; border-left: none; border-right: none; }
-  .masthead, .page-header, .coming-soon, .footer { padding-left: 16px; padding-right: 16px; }
+  .masthead, .page-header, .cal-grid, .footer { padding-left: 16px; padding-right: 16px; }
   .masthead-desc { display: none; }
+  .ctrl-legend { display: none; }
 }
 </style>
 </head>
@@ -99,8 +266,8 @@ body.lang-bg span.lc-en { display: none !important; }
       <a href="/newsletters/" class="lc-bg">Бюлетин</a>
       <a href="/cockpit/" class="lc-en">Cockpit</a>
       <a href="/cockpit/" class="lc-bg">Кокпит</a>
-      <a href="/calendar/" class="active lc-en">Calendar<span class="soon">soon</span></a>
-      <a href="/calendar/" class="active lc-bg">Календар<span class="soon">скоро</span></a>
+      <a href="/calendar/" class="active lc-en">Calendar</a>
+      <a href="/calendar/" class="active lc-bg">Календар</a>
     </nav>
     <div class="lang-buttons">
       <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
@@ -129,24 +296,37 @@ body.lang-bg span.lc-en { display: none !important; }
   <div class="page-header">
     <div class="page-title lc-en">Data Calendar</div>
     <div class="page-title lc-bg">Календар на данните</div>
-    <div class="page-subtitle lc-en">Upcoming data releases and revisions from Eurostat, NSI, BNB and NSSI.</div>
-    <div class="page-subtitle lc-bg">Предстоящи публикации и ревизии на данни от Евростат, НСИ, БНБ и НОИ.</div>
+    <div class="page-subtitle lc-en">Scheduled data releases and revisions from Eurostat, NSI and BNB.</div>
+    <div class="page-subtitle lc-bg">Планирани публикации и ревизии от Евростат, НСИ и БНБ.</div>
   </div>
 
-  <div class="coming-soon">
-    <div class="coming-soon-icon">&#128197;</div>
-    <div class="coming-soon-title lc-en">Coming soon</div>
-    <div class="coming-soon-title lc-bg">Очаквайте скоро</div>
-    <div class="coming-soon-desc lc-en">
-      This page will track scheduled releases for all key Bulgarian macro indicators —
-      HICP, GDP, industrial output, trade, labour and confidence data.
-      Useful for knowing when the next update is due and whether a recent print
-      is subject to revision.
+  <div class="controls-bar">
+    <span class="ctrl-label lc-en">Horizon</span>
+    <span class="ctrl-label lc-bg">Период</span>
+    <div class="ctrl-btn-group">
+      <button class="ctrl-btn"        data-w="4"  onclick="setHorizon(4)"><span class="lc-en">4 weeks</span><span class="lc-bg">4 седм.</span></button>
+      <button class="ctrl-btn active" data-w="8"  onclick="setHorizon(8)"><span class="lc-en">8 weeks</span><span class="lc-bg">8 седм.</span></button>
+      <button class="ctrl-btn"        data-w="12" onclick="setHorizon(12)"><span class="lc-en">12 weeks</span><span class="lc-bg">12 седм.</span></button>
+      <button class="ctrl-btn"        data-w="26" onclick="setHorizon(26)"><span class="lc-en">6 months</span><span class="lc-bg">6 мес.</span></button>
     </div>
-    <div class="coming-soon-desc lc-bg">
-      Тази страница ще следи планираните публикации на всички ключови макро показатели за България —
-      ХИПЦ, БВП, промишлено производство, търговия, труд и бизнес климат.
-      Полезно за ориентиране кога се очакват нови данни и дали последните цифри подлежат на ревизия.
+    <label class="ctrl-past">
+      <input type="checkbox" id="chk-past" onchange="render()">
+      <span class="lc-en">Include past 2 weeks</span>
+      <span class="lc-bg">Включи последните 2 седмици</span>
+    </label>
+    <div class="ctrl-legend">
+      <div class="leg-item"><span class="leg-dot" style="background:#1B2E5E"></span>NSI</div>
+      <div class="leg-item"><span class="leg-dot" style="background:#003F88"></span>Eurostat</div>
+      <div class="leg-item"><span class="leg-dot" style="background:#005A2B"></span>BNB</div>
+      <div class="leg-item"><span class="leg-dot" style="background:#1565C0"></span><span class="lc-en">Monthly</span><span class="lc-bg">Месечно</span></div>
+      <div class="leg-item"><span class="leg-dot" style="background:#6B21A8"></span><span class="lc-en">Quarterly</span><span class="lc-bg">Тримесечно</span></div>
+    </div>
+  </div>
+
+  <div class="cal-grid" id="cal-grid">
+    <div class="cal-state">
+      <span class="lc-en">Loading calendar data…</span>
+      <span class="lc-bg">Зарежда се…</span>
     </div>
   </div>
 
@@ -155,15 +335,237 @@ body.lang-bg span.lc-en { display: none !important; }
     <div class="footer-links">
       <a href="/" class="lc-en">Home</a>
       <a href="/" class="lc-bg">Начало</a>
-      <a href="/newsletters/" class="lc-en">Newsletter</a>
-      <a href="/newsletters/" class="lc-bg">Бюлетин</a>
       <a href="/cockpit/" class="lc-en">Cockpit</a>
       <a href="/cockpit/" class="lc-bg">Кокпит</a>
+      <a href="/newsletters/" class="lc-en">Newsletter</a>
+      <a href="/newsletters/" class="lc-bg">Бюлетин</a>
     </div>
   </div>
 
 </div>
 <script>
+// ── Constants ────────────────────────────────────────────────────────────────
+const TODAY  = new Date().toISOString().slice(0, 10);
+const MONTHS    = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const MONTHS_BG = ['яну','фев','мар','апр','май','юни','юли','авг','сеп','окт','ное','дек'];
+const DAYS      = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+const DAYS_BG   = ['Нед','Пон','Вт','Ср','Чет','Пет','Съб'];
+const MONTH_FULL = ['January','February','March','April','May','June',
+                    'July','August','September','October','November','December'];
+// 3-letter month name → BG abbreviation (for ref_period translation)
+const MONTH_ABBR_TO_BG = {};
+MONTHS.forEach(function(en, i) { MONTH_ABBR_TO_BG[en] = MONTHS_BG[i]; });
+// Full month name → BG abbreviation
+MONTH_FULL.forEach(function(en, i) { MONTH_ABBR_TO_BG[en] = MONTHS_BG[i]; });
+
+let horizon     = 8;
+let loaded      = { nsi: [], bnb: [], eurostat: [] };
+let loadedCount = 0;
+
+// ── Date helpers ─────────────────────────────────────────────────────────────
+function fmtDateEn(iso) {
+  var d = new Date(iso + 'T12:00:00');
+  return DAYS[d.getDay()] + ', ' + d.getDate() + ' ' + MONTHS[d.getMonth()];
+}
+function fmtDateBg(iso) {
+  var d = new Date(iso + 'T12:00:00');
+  return DAYS_BG[d.getDay()] + ', ' + d.getDate() + ' ' + MONTHS_BG[d.getMonth()];
+}
+function fmtDate(iso) {
+  return '<span class="lc-en">' + fmtDateEn(iso) + '</span>' +
+         '<span class="lc-bg">' + fmtDateBg(iso) + '</span>';
+}
+
+function fmtRangeEn(monday) {
+  var mon = new Date(monday + 'T12:00:00');
+  var fri = new Date(monday + 'T12:00:00'); fri.setDate(fri.getDate() + 4);
+  return (mon.getDate() + ' ' + MONTHS[mon.getMonth()] + ' \u2013 ' +
+          fri.getDate() + ' ' + MONTHS[fri.getMonth()] + ', ' + fri.getFullYear());
+}
+function fmtRangeBg(monday) {
+  var mon = new Date(monday + 'T12:00:00');
+  var fri = new Date(monday + 'T12:00:00'); fri.setDate(fri.getDate() + 4);
+  return (mon.getDate() + ' ' + MONTHS_BG[mon.getMonth()] + ' \u2013 ' +
+          fri.getDate() + ' ' + MONTHS_BG[fri.getMonth()] + ', ' + fri.getFullYear());
+}
+function fmtRange(monday) {
+  return '<span class="lc-en">' + fmtRangeEn(monday) + '</span>' +
+         '<span class="lc-bg">' + fmtRangeBg(monday) + '</span>';
+}
+
+function fmtPeriod(p) {
+  if (!p) return '';
+  // Translate 3-letter / full English month names to BG abbreviation
+  var bg = p;
+  for (var en in MONTH_ABBR_TO_BG) {
+    if (bg.indexOf(en) !== -1) {
+      bg = bg.replace(new RegExp('\\b' + en + '\\b', 'g'), MONTH_ABBR_TO_BG[en]);
+    }
+  }
+  if (bg === p) return escHtml(p);
+  return '<span class="lc-en">' + escHtml(p) + '</span>' +
+         '<span class="lc-bg">' + escHtml(bg) + '</span>';
+}
+
+// ── ISO week calculation ──────────────────────────────────────────────────────
+function isoWeek(iso) {
+  var d   = new Date(iso + 'T12:00:00');
+  var day = d.getDay() || 7;
+  d.setDate(d.getDate() + 4 - day);
+  var y = d.getFullYear();
+  var w = Math.ceil(((d - new Date(y, 0, 1)) / 86400000 + 1) / 7);
+  var mon = new Date(iso + 'T12:00:00');
+  mon.setDate(mon.getDate() - (mon.getDay() || 7) + 1);
+  return {
+    key:    y + '-W' + String(w).padStart(2, '0'),
+    label:  'W' + String(w).padStart(2, '0') + ' / ' + y,
+    monday: mon.toISOString().slice(0, 10),
+  };
+}
+
+// ── Type badge ───────────────────────────────────────────────────────────────
+function typeBadge(t) {
+  if (!t || t === 'new') return '';
+  var map = { flash: ['tbadge-flash','flash'], update: ['tbadge-update','upd'],
+              NR: ['tbadge-NR','New+Rev'], R: ['tbadge-R','Rev'] };
+  var entry = map[t];
+  return entry ? '<span class="tbadge ' + entry[0] + '">' + entry[1] + '</span>' : '';
+}
+
+// ── HTML escape ───────────────────────────────────────────────────────────────
+function escHtml(s) {
+  if (!s) return '';
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// ── Flatten source ────────────────────────────────────────────────────────────
+function flattenSource(series, srcKey) {
+  var out = [];
+  for (var i = 0; i < series.length; i++) {
+    var s = series[i];
+    var allRels = (s.past || []).concat(s.future || []);
+    for (var j = 0; j < allRels.length; j++) {
+      var rel = allRels[j];
+      if (!rel || !rel.date) continue;
+      out.push({
+        date:         rel.date,
+        ref_period:   rel.ref_period || '',
+        release_type: rel.release_type || rel.flag || '',
+        time:         rel.time || '',
+        frequency:    s.frequency || 'M',
+        id:           s.id,
+        name:         s.name_en || s.name || s.id,
+        is_past:      rel.date < TODAY,
+        src:          srcKey,
+      });
+    }
+  }
+  return out;
+}
+
+// ── Render ───────────────────────────────────────────────────────────────────
+function render() {
+  if (loadedCount < 3) return;
+
+  var includePast = document.getElementById('chk-past').checked;
+  var cutoff = new Date(TODAY);
+  if (includePast) cutoff.setDate(cutoff.getDate() - 14);
+  var cutoffStr = cutoff.toISOString().slice(0, 10);
+
+  var maxDate = new Date(TODAY);
+  maxDate.setDate(maxDate.getDate() + horizon * 7);
+  var maxStr = maxDate.toISOString().slice(0, 10);
+
+  var all = flattenSource(loaded.nsi,     'nsi')
+    .concat(flattenSource(loaded.eurostat,'eurostat'))
+    .concat(flattenSource(loaded.bnb,     'bnb'))
+    .filter(function(r) { return r.date >= cutoffStr && r.date <= maxStr; });
+
+  var byWeek = {};
+  all.forEach(function(r) {
+    var wk = isoWeek(r.date);
+    if (!byWeek[wk.key]) byWeek[wk.key] = { key: wk.key, label: wk.label, monday: wk.monday, items: [] };
+    byWeek[wk.key].items.push(r);
+  });
+
+  var grid = document.getElementById('cal-grid');
+
+  if (!Object.keys(byWeek).length) {
+    grid.innerHTML = '<div class="cal-state"><span class="lc-en">No releases in this window.</span>' +
+                     '<span class="lc-bg">Няма публикации в избрания период.</span></div>';
+    return;
+  }
+
+  var todayWk = isoWeek(TODAY).key;
+  var weeks = Object.values(byWeek).sort(function(a, b) { return a.key.localeCompare(b.key); });
+
+  var SOURCE_DEFS = [
+    { key: 'nsi',      label: 'NSI',      cls: 'src-hdr-nsi' },
+    { key: 'eurostat', label: 'Eurostat', cls: 'src-hdr-eurostat' },
+    { key: 'bnb',      label: 'BNB',      cls: 'src-hdr-bnb' },
+  ];
+
+  var html = weeks.map(function(wk) {
+    var isCurrent = wk.key === todayWk;
+    var isPast    = wk.key < todayWk;
+    var cardCls   = isCurrent ? 'current' : isPast ? 'past' : '';
+    var total     = wk.items.length;
+
+    var sorted = wk.items.slice().sort(function(a, b) { return a.date.localeCompare(b.date); });
+    var bySource = { nsi: [], eurostat: [], bnb: [] };
+    sorted.forEach(function(r) { if (bySource[r.src]) bySource[r.src].push(r); });
+
+    var thisWeekPrefix = isCurrent
+      ? '<span class="lc-en" style="font-size:9px;letter-spacing:.1em;opacity:.7">THIS WEEK · </span>' +
+        '<span class="lc-bg" style="font-size:9px;letter-spacing:.1em;opacity:.7">ТАЗИ СЕДМИЦА · </span>'
+      : '';
+
+    var sections = SOURCE_DEFS
+      .filter(function(sd) { return bySource[sd.key].length > 0; })
+      .map(function(sd) {
+        var items = bySource[sd.key].map(function(r) {
+          var dateStr = r.time ? fmtDate(r.date) + ' \u00b7 ' + escHtml(r.time) : fmtDate(r.date);
+          var periodHtml = r.ref_period ? '<div class="rel-ref">' + fmtPeriod(r.ref_period) + '</div>' : '';
+          return '<div class="rel-item' + (r.is_past ? ' past' : '') + '">' +
+            '<div class="rel-dot ' + escHtml(r.frequency) + '"></div>' +
+            '<div class="rel-body">' +
+              '<div class="rel-name">' + escHtml(r.name) + typeBadge(r.release_type) + '</div>' +
+              periodHtml +
+              '<div class="rel-date">' + dateStr + '</div>' +
+            '</div>' +
+          '</div>';
+        }).join('');
+
+        return '<div class="src-section">' +
+          '<div class="src-hdr ' + sd.cls + '">' + sd.label +
+            '<span class="src-count">' + bySource[sd.key].length + '</span>' +
+          '</div>' + items +
+        '</div>';
+      }).join('');
+
+    return '<div class="week-card ' + cardCls + '">' +
+      '<div class="week-card-head">' +
+        '<span class="week-num">' + thisWeekPrefix + escHtml(wk.label) + '</span>' +
+        '<span class="week-dates">' + fmtRange(wk.monday) + '</span>' +
+        '<span class="week-total">' + total + '</span>' +
+      '</div>' +
+      (sections || '<div class="week-empty"><span class="lc-en">No releases</span><span class="lc-bg">Няма публикации</span></div>') +
+    '</div>';
+  }).join('');
+
+  grid.innerHTML = html;
+}
+
+// ── Horizon control ───────────────────────────────────────────────────────────
+function setHorizon(w) {
+  horizon = w;
+  document.querySelectorAll('.ctrl-btn[data-w]').forEach(function(b) {
+    b.classList.toggle('active', +b.dataset.w === w);
+  });
+  render();
+}
+
+// ── Language toggle ───────────────────────────────────────────────────────────
 function setLang(lang) {
   document.body.classList.toggle('lang-bg', lang === 'bg');
   document.querySelectorAll('.lang-btn').forEach(function(btn) {
@@ -172,6 +574,44 @@ function setLang(lang) {
   localStorage.setItem('bpd-lang', lang);
 }
 (function() { var s = localStorage.getItem('bpd-lang'); if (s === 'bg') setLang('bg'); })();
+
+// ── Load data ────────────────────────────────────────────────────────────────
+(function loadAll() {
+  var sources = [
+    ['nsi_monthly_schedule.json',      'nsi'],
+    ['eurostat_monthly_schedule.json', 'eurostat'],
+    ['bnb_monthly_schedule.json',      'bnb'],
+  ];
+
+  var failed = [];
+  sources.forEach(function(pair) {
+    var url = pair[0], key = pair[1];
+    fetch(url)
+      .then(function(r) {
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.json();
+      })
+      .then(function(data) {
+        loaded[key] = data;
+        loadedCount++;
+        if (loadedCount + failed.length === 3) render();
+      })
+      .catch(function(err) {
+        failed.push(key + ': ' + (err.message || err));
+        loadedCount++;
+        if (loadedCount + failed.length - 1 === 3 || loadedCount === 3) {
+          if (loadedCount === 0) {
+            document.getElementById('cal-grid').innerHTML =
+              '<div class="cal-state cal-error">' +
+              '<span class="lc-en">Could not load calendar data.</span>' +
+              '<span class="lc-bg">Грешка при зареждане на данните.</span></div>';
+          } else {
+            render();
+          }
+        }
+      });
+  });
+})();
 </script>
 </body>
 </html>

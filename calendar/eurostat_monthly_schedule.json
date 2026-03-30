@@ -1,0 +1,1281 @@
+[
+  {
+    "id": "HICP_FLASH",
+    "name_en": "HICP — Flash Estimate",
+    "frequency": "M",
+    "source": "Eurostat",
+    "lag_note": "~1–7 days after ref month end",
+    "relevance": "high",
+    "past": [
+      {
+        "date": "2026-02-04",
+        "ref_period": "Jan 2026",
+        "lag_days": 4,
+        "release_type": "flash",
+        "is_past": true,
+        "iso_week": "W06/2026",
+        "week_monday": "2026-02-02"
+      },
+      {
+        "date": "2026-03-03",
+        "ref_period": "Feb 2026",
+        "lag_days": 3,
+        "release_type": "flash",
+        "is_past": true,
+        "iso_week": "W10/2026",
+        "week_monday": "2026-03-02"
+      }
+    ],
+    "future": [
+      {
+        "date": "2026-03-31",
+        "ref_period": "Mar 2026",
+        "lag_days": 0,
+        "release_type": "flash",
+        "is_past": false,
+        "iso_week": "W14/2026",
+        "week_monday": "2026-03-30"
+      },
+      {
+        "date": "2026-04-30",
+        "ref_period": "Apr 2026",
+        "lag_days": 0,
+        "release_type": "flash",
+        "is_past": false,
+        "iso_week": "W18/2026",
+        "week_monday": "2026-04-27"
+      },
+      {
+        "date": "2026-06-02",
+        "ref_period": "May 2026",
+        "lag_days": 2,
+        "release_type": "flash",
+        "is_past": false,
+        "iso_week": "W23/2026",
+        "week_monday": "2026-06-01"
+      }
+    ]
+  },
+  {
+    "id": "HICP_MAIN",
+    "name_en": "HICP / CPI",
+    "frequency": "M",
+    "source": "Eurostat",
+    "lag_note": "~18 days after ref month end",
+    "relevance": "high",
+    "past": [
+      {
+        "date": "2026-02-25",
+        "ref_period": "Jan 2026",
+        "lag_days": 25,
+        "release_type": "final",
+        "is_past": true,
+        "iso_week": "W09/2026",
+        "week_monday": "2026-02-23"
+      },
+      {
+        "date": "2026-03-18",
+        "ref_period": "Feb 2026",
+        "lag_days": 18,
+        "release_type": "final",
+        "is_past": true,
+        "iso_week": "W12/2026",
+        "week_monday": "2026-03-16"
+      }
+    ],
+    "future": [
+      {
+        "date": "2026-04-16",
+        "ref_period": "Mar 2026",
+        "lag_days": 16,
+        "release_type": "final",
+        "is_past": false,
+        "iso_week": "W16/2026",
+        "week_monday": "2026-04-13"
+      },
+      {
+        "date": "2026-05-20",
+        "ref_period": "Apr 2026",
+        "lag_days": 20,
+        "release_type": "final",
+        "is_past": false,
+        "iso_week": "W21/2026",
+        "week_monday": "2026-05-18"
+      },
+      {
+        "date": "2026-06-17",
+        "ref_period": "May 2026",
+        "lag_days": 17,
+        "release_type": "final",
+        "is_past": false,
+        "iso_week": "W25/2026",
+        "week_monday": "2026-06-15"
+      }
+    ]
+  },
+  {
+    "id": "PPI",
+    "name_en": "Producer Price Index (Domestic)",
+    "frequency": "M",
+    "source": "Eurostat",
+    "lag_note": "~55 days after ref month end",
+    "relevance": "high",
+    "past": [
+      {
+        "date": "2026-02-04",
+        "ref_period": "Nov 2025",
+        "lag_days": 66,
+        "release_type": "new",
+        "is_past": true,
+        "iso_week": "W06/2026",
+        "week_monday": "2026-02-02"
+      },
+      {
+        "date": "2026-03-04",
+        "ref_period": "Dec 2025",
+        "lag_days": 63,
+        "release_type": "new",
+        "is_past": true,
+        "iso_week": "W10/2026",
+        "week_monday": "2026-03-02"
+      }
+    ],
+    "future": [
+      {
+        "date": "2026-04-08",
+        "ref_period": "Jan 2026",
+        "lag_days": 67,
+        "release_type": "new",
+        "is_past": false,
+        "iso_week": "W15/2026",
+        "week_monday": "2026-04-06"
+      },
+      {
+        "date": "2026-05-06",
+        "ref_period": "Feb 2026",
+        "lag_days": 67,
+        "release_type": "new",
+        "is_past": false,
+        "iso_week": "W19/2026",
+        "week_monday": "2026-05-04"
+      },
+      {
+        "date": "2026-06-03",
+        "ref_period": "Mar 2026",
+        "lag_days": 64,
+        "release_type": "new",
+        "is_past": false,
+        "iso_week": "W23/2026",
+        "week_monday": "2026-06-01"
+      }
+    ]
+  },
+  {
+    "id": "PPI_EXT",
+    "name_en": "Producer Price Index (Export)",
+    "frequency": "M",
+    "source": "Eurostat",
+    "lag_note": "~55 days after ref month end",
+    "relevance": "med",
+    "past": [
+      {
+        "date": "2026-02-05",
+        "ref_period": "Nov 2025",
+        "lag_days": 67,
+        "release_type": "new",
+        "is_past": true,
+        "iso_week": "W06/2026",
+        "week_monday": "2026-02-02"
+      },
+      {
+        "date": "2026-03-05",
+        "ref_period": "Dec 2025",
+        "lag_days": 64,
+        "release_type": "new",
+        "is_past": true,
+        "iso_week": "W10/2026",
+        "week_monday": "2026-03-02"
+      }
+    ],
+    "future": [
+      {
+        "date": "2026-04-09",
+        "ref_period": "Jan 2026",
+        "lag_days": 68,
+        "release_type": "new",
+        "is_past": false,
+        "iso_week": "W15/2026",
+        "week_monday": "2026-04-06"
+      },
+      {
+        "date": "2026-05-07",
+        "ref_period": "Feb 2026",
+        "lag_days": 68,
+        "release_type": "new",
+        "is_past": false,
+        "iso_week": "W19/2026",
+        "week_monday": "2026-05-04"
+      },
+      {
+        "date": "2026-06-04",
+        "ref_period": "Mar 2026",
+        "lag_days": 65,
+        "release_type": "new",
+        "is_past": false,
+        "iso_week": "W23/2026",
+        "week_monday": "2026-06-01"
+      }
+    ]
+  },
+  {
+    "id": "IPI",
+    "name_en": "Industrial Production Index",
+    "frequency": "M",
+    "source": "Eurostat",
+    "lag_note": "~45 days after ref month end",
+    "relevance": "high",
+    "past": [
+      {
+        "date": "2026-02-16",
+        "ref_period": "Dec 2025",
+        "lag_days": 47,
+        "release_type": "new",
+        "is_past": true,
+        "iso_week": "W08/2026",
+        "week_monday": "2026-02-16"
+      },
+      {
+        "date": "2026-03-13",
+        "ref_period": "Jan 2026",
+        "lag_days": 41,
+        "release_type": "new",
+        "is_past": true,
+        "iso_week": "W11/2026",
+        "week_monday": "2026-03-09"
+      }
+    ],
+    "future": [
+      {
+        "date": "2026-04-15",
+        "ref_period": "Feb 2026",
+        "lag_days": 46,
+        "release_type": "new",
+        "is_past": false,
+        "iso_week": "W16/2026",
+        "week_monday": "2026-04-13"
+      },
+      {
+        "date": "2026-05-13",
+        "ref_period": "Mar 2026",
+        "lag_days": 43,
+        "release_type": "new",
+        "is_past": false,
+        "iso_week": "W20/2026",
+        "week_monday": "2026-05-11"
+      },
+      {
+        "date": "2026-06-15",
+        "ref_period": "Apr 2026",
+        "lag_days": 46,
+        "release_type": "new",
+        "is_past": false,
+        "iso_week": "W25/2026",
+        "week_monday": "2026-06-15"
+      }
+    ]
+  },
+  {
+    "id": "RETAIL",
+    "name_en": "Retail Trade Index",
+    "frequency": "M",
+    "source": "Eurostat",
+    "lag_note": "~36 days after ref month end",
+    "relevance": "high",
+    "past": [
+      {
+        "date": "2026-02-05",
+        "ref_period": "Dec 2025",
+        "lag_days": 36,
+        "release_type": "new",
+        "is_past": true,
+        "iso_week": "W06/2026",
+        "week_monday": "2026-02-02"
+      },
+      {
+        "date": "2026-03-05",
+        "ref_period": "Jan 2026",
+        "lag_days": 33,
+        "release_type": "new",
+        "is_past": true,
+        "iso_week": "W10/2026",
+        "week_monday": "2026-03-02"
+      }
+    ],
+    "future": [
+      {
+        "date": "2026-04-08",
+        "ref_period": "Feb 2026",
+        "lag_days": 39,
+        "release_type": "new",
+        "is_past": false,
+        "iso_week": "W15/2026",
+        "week_monday": "2026-04-06"
+      },
+      {
+        "date": "2026-05-07",
+        "ref_period": "Mar 2026",
+        "lag_days": 37,
+        "release_type": "new",
+        "is_past": false,
+        "iso_week": "W19/2026",
+        "week_monday": "2026-05-04"
+      },
+      {
+        "date": "2026-06-04",
+        "ref_period": "Apr 2026",
+        "lag_days": 35,
+        "release_type": "new",
+        "is_past": false,
+        "iso_week": "W23/2026",
+        "week_monday": "2026-06-01"
+      }
+    ]
+  },
+  {
+    "id": "CONSTRUCTION",
+    "name_en": "Construction Output",
+    "frequency": "M",
+    "source": "Eurostat",
+    "lag_note": "~50 days after ref month end",
+    "relevance": "high",
+    "past": [
+      {
+        "date": "2026-02-19",
+        "ref_period": "Dec 2025",
+        "lag_days": 50,
+        "release_type": "new",
+        "is_past": true,
+        "iso_week": "W08/2026",
+        "week_monday": "2026-02-16"
+      },
+      {
+        "date": "2026-03-19",
+        "ref_period": "Jan 2026",
+        "lag_days": 47,
+        "release_type": "new",
+        "is_past": true,
+        "iso_week": "W12/2026",
+        "week_monday": "2026-03-16"
+      }
+    ],
+    "future": [
+      {
+        "date": "2026-04-20",
+        "ref_period": "Feb 2026",
+        "lag_days": 51,
+        "release_type": "new",
+        "is_past": false,
+        "iso_week": "W17/2026",
+        "week_monday": "2026-04-20"
+      },
+      {
+        "date": "2026-05-21",
+        "ref_period": "Mar 2026",
+        "lag_days": 51,
+        "release_type": "new",
+        "is_past": false,
+        "iso_week": "W21/2026",
+        "week_monday": "2026-05-18"
+      },
+      {
+        "date": "2026-06-18",
+        "ref_period": "Apr 2026",
+        "lag_days": 49,
+        "release_type": "new",
+        "is_past": false,
+        "iso_week": "W25/2026",
+        "week_monday": "2026-06-15"
+      }
+    ]
+  },
+  {
+    "id": "SERVICES",
+    "name_en": "Services Production Index",
+    "frequency": "M",
+    "source": "Eurostat",
+    "lag_note": "~65 days after ref month end",
+    "relevance": "high",
+    "past": [
+      {
+        "date": "2026-02-06",
+        "ref_period": "Nov 2025",
+        "lag_days": 68,
+        "release_type": "new",
+        "is_past": true,
+        "iso_week": "W06/2026",
+        "week_monday": "2026-02-02"
+      },
+      {
+        "date": "2026-03-06",
+        "ref_period": "Dec 2025",
+        "lag_days": 65,
+        "release_type": "new",
+        "is_past": true,
+        "iso_week": "W10/2026",
+        "week_monday": "2026-03-02"
+      }
+    ],
+    "future": [
+      {
+        "date": "2026-04-10",
+        "ref_period": "Jan 2026",
+        "lag_days": 69,
+        "release_type": "new",
+        "is_past": false,
+        "iso_week": "W15/2026",
+        "week_monday": "2026-04-06"
+      },
+      {
+        "date": "2026-05-08",
+        "ref_period": "Feb 2026",
+        "lag_days": 69,
+        "release_type": "new",
+        "is_past": false,
+        "iso_week": "W19/2026",
+        "week_monday": "2026-05-04"
+      },
+      {
+        "date": "2026-06-05",
+        "ref_period": "Mar 2026",
+        "lag_days": 66,
+        "release_type": "new",
+        "is_past": false,
+        "iso_week": "W23/2026",
+        "week_monday": "2026-06-01"
+      }
+    ]
+  },
+  {
+    "id": "BLDG_PERMITS",
+    "name_en": "Building Permits & Starts",
+    "frequency": "M",
+    "source": "Eurostat",
+    "lag_note": "~55 days after ref month end",
+    "relevance": "med",
+    "past": [
+      {
+        "date": "2026-02-03",
+        "ref_period": "Nov 2025",
+        "lag_days": 65,
+        "release_type": "new",
+        "is_past": true,
+        "iso_week": "W06/2026",
+        "week_monday": "2026-02-02"
+      },
+      {
+        "date": "2026-03-03",
+        "ref_period": "Dec 2025",
+        "lag_days": 62,
+        "release_type": "new",
+        "is_past": true,
+        "iso_week": "W10/2026",
+        "week_monday": "2026-03-02"
+      }
+    ],
+    "future": [
+      {
+        "date": "2026-04-07",
+        "ref_period": "Jan 2026",
+        "lag_days": 66,
+        "release_type": "new",
+        "is_past": false,
+        "iso_week": "W15/2026",
+        "week_monday": "2026-04-06"
+      },
+      {
+        "date": "2026-05-05",
+        "ref_period": "Feb 2026",
+        "lag_days": 66,
+        "release_type": "new",
+        "is_past": false,
+        "iso_week": "W19/2026",
+        "week_monday": "2026-05-04"
+      },
+      {
+        "date": "2026-06-02",
+        "ref_period": "Mar 2026",
+        "lag_days": 63,
+        "release_type": "new",
+        "is_past": false,
+        "iso_week": "W23/2026",
+        "week_monday": "2026-06-01"
+      }
+    ]
+  },
+  {
+    "id": "UNEMPLOYMENT",
+    "name_en": "Unemployment Rate",
+    "frequency": "M",
+    "source": "Eurostat",
+    "lag_note": "~50 days after ref month end",
+    "relevance": "high",
+    "past": [
+      {
+        "date": "2026-01-30",
+        "ref_period": "Nov 2025",
+        "lag_days": 61,
+        "release_type": "new",
+        "is_past": true,
+        "iso_week": "W05/2026",
+        "week_monday": "2026-01-26"
+      },
+      {
+        "date": "2026-03-04",
+        "ref_period": "Dec 2025",
+        "lag_days": 63,
+        "release_type": "new",
+        "is_past": true,
+        "iso_week": "W10/2026",
+        "week_monday": "2026-03-02"
+      }
+    ],
+    "future": [
+      {
+        "date": "2026-04-01",
+        "ref_period": "Jan 2026",
+        "lag_days": 60,
+        "release_type": "new",
+        "is_past": false,
+        "iso_week": "W14/2026",
+        "week_monday": "2026-03-30"
+      },
+      {
+        "date": "2026-04-30",
+        "ref_period": "Feb 2026",
+        "lag_days": 61,
+        "release_type": "new",
+        "is_past": false,
+        "iso_week": "W18/2026",
+        "week_monday": "2026-04-27"
+      },
+      {
+        "date": "2026-06-01",
+        "ref_period": "Mar 2026",
+        "lag_days": 62,
+        "release_type": "new",
+        "is_past": false,
+        "iso_week": "W23/2026",
+        "week_monday": "2026-06-01"
+      }
+    ]
+  },
+  {
+    "id": "TRADE",
+    "name_en": "International Trade (Goods)",
+    "frequency": "M",
+    "source": "Eurostat",
+    "lag_note": "~55 days after ref month end",
+    "relevance": "high",
+    "past": [
+      {
+        "date": "2026-02-13",
+        "ref_period": "Dec 2025",
+        "lag_days": 44,
+        "release_type": "new",
+        "is_past": true,
+        "iso_week": "W07/2026",
+        "week_monday": "2026-02-09"
+      },
+      {
+        "date": "2026-03-20",
+        "ref_period": "Jan 2026",
+        "lag_days": 48,
+        "release_type": "new",
+        "is_past": true,
+        "iso_week": "W12/2026",
+        "week_monday": "2026-03-16"
+      }
+    ],
+    "future": [
+      {
+        "date": "2026-04-17",
+        "ref_period": "Feb 2026",
+        "lag_days": 48,
+        "release_type": "new",
+        "is_past": false,
+        "iso_week": "W16/2026",
+        "week_monday": "2026-04-13"
+      },
+      {
+        "date": "2026-05-19",
+        "ref_period": "Mar 2026",
+        "lag_days": 49,
+        "release_type": "new",
+        "is_past": false,
+        "iso_week": "W21/2026",
+        "week_monday": "2026-05-18"
+      },
+      {
+        "date": "2026-06-15",
+        "ref_period": "Apr 2026",
+        "lag_days": 46,
+        "release_type": "new",
+        "is_past": false,
+        "iso_week": "W25/2026",
+        "week_monday": "2026-06-15"
+      }
+    ]
+  },
+  {
+    "id": "BOP",
+    "name_en": "Balance of Payments",
+    "frequency": "M",
+    "source": "Eurostat",
+    "lag_note": "~45–50 days after ref month end",
+    "relevance": "high",
+    "past": [
+      {
+        "date": "2026-02-19",
+        "ref_period": "Dec 2025",
+        "lag_days": 50,
+        "release_type": "new",
+        "is_past": true,
+        "iso_week": "W08/2026",
+        "week_monday": "2026-02-16"
+      },
+      {
+        "date": "2026-03-20",
+        "ref_period": "Jan 2026",
+        "lag_days": 48,
+        "release_type": "new",
+        "is_past": true,
+        "iso_week": "W12/2026",
+        "week_monday": "2026-03-16"
+      }
+    ],
+    "future": [
+      {
+        "date": "2026-04-09",
+        "ref_period": "Feb 2026",
+        "lag_days": 40,
+        "release_type": "new",
+        "is_past": false,
+        "iso_week": "W15/2026",
+        "week_monday": "2026-04-06"
+      },
+      {
+        "date": "2026-04-17",
+        "ref_period": "Feb 2026",
+        "lag_days": 48,
+        "release_type": "new",
+        "is_past": false,
+        "iso_week": "W16/2026",
+        "week_monday": "2026-04-13"
+      },
+      {
+        "date": "2026-05-21",
+        "ref_period": "Mar 2026",
+        "lag_days": 51,
+        "release_type": "new",
+        "is_past": false,
+        "iso_week": "W21/2026",
+        "week_monday": "2026-05-18"
+      }
+    ]
+  },
+  {
+    "id": "ENERGY",
+    "name_en": "Monthly Energy Statistics",
+    "frequency": "M",
+    "source": "Eurostat",
+    "lag_note": "~65 days after ref month end",
+    "relevance": "med",
+    "past": [
+      {
+        "date": "2026-02-16",
+        "ref_period": "Nov 2025",
+        "lag_days": 78,
+        "release_type": "new",
+        "is_past": true,
+        "iso_week": "W08/2026",
+        "week_monday": "2026-02-16"
+      },
+      {
+        "date": "2026-03-16",
+        "ref_period": "Dec 2025",
+        "lag_days": 75,
+        "release_type": "new",
+        "is_past": true,
+        "iso_week": "W12/2026",
+        "week_monday": "2026-03-16"
+      }
+    ],
+    "future": [
+      {
+        "date": "2026-04-15",
+        "ref_period": "Jan 2026",
+        "lag_days": 74,
+        "release_type": "new",
+        "is_past": false,
+        "iso_week": "W16/2026",
+        "week_monday": "2026-04-13"
+      },
+      {
+        "date": "2026-05-13",
+        "ref_period": "Feb 2026",
+        "lag_days": 74,
+        "release_type": "new",
+        "is_past": false,
+        "iso_week": "W20/2026",
+        "week_monday": "2026-05-11"
+      },
+      {
+        "date": "2026-06-15",
+        "ref_period": "Mar 2026",
+        "lag_days": 76,
+        "release_type": "new",
+        "is_past": false,
+        "iso_week": "W25/2026",
+        "week_monday": "2026-06-15"
+      }
+    ]
+  },
+  {
+    "id": "GDP_FLASH1",
+    "name_en": "GDP — Prelim Flash (EU/EA)",
+    "frequency": "Q",
+    "source": "Eurostat",
+    "lag_note": "~30 days after ref quarter end",
+    "relevance": "high",
+    "past": [
+      {
+        "date": "2025-10-30",
+        "ref_period": "Q3 2025",
+        "lag_days": 30,
+        "release_type": "flash",
+        "is_past": true,
+        "iso_week": "W44/2025",
+        "week_monday": "2025-10-27"
+      },
+      {
+        "date": "2026-01-30",
+        "ref_period": "Q4 2025",
+        "lag_days": 30,
+        "release_type": "flash",
+        "is_past": true,
+        "iso_week": "W05/2026",
+        "week_monday": "2026-01-26"
+      }
+    ],
+    "future": [
+      {
+        "date": "2026-04-30",
+        "ref_period": "Q1 2026",
+        "lag_days": 30,
+        "release_type": "flash",
+        "is_past": false,
+        "iso_week": "W18/2026",
+        "week_monday": "2026-04-27"
+      },
+      {
+        "date": "2026-07-30",
+        "ref_period": "Q2 2026",
+        "lag_days": 30,
+        "release_type": "flash",
+        "is_past": false,
+        "iso_week": "W31/2026",
+        "week_monday": "2026-07-27"
+      },
+      {
+        "date": "2026-10-30",
+        "ref_period": "Q3 2026",
+        "lag_days": 30,
+        "release_type": "flash",
+        "is_past": false,
+        "iso_week": "W44/2026",
+        "week_monday": "2026-10-26"
+      }
+    ]
+  },
+  {
+    "id": "GDP_FLASH2",
+    "name_en": "GDP — Flash Estimate (EU/EA)",
+    "frequency": "Q",
+    "source": "Eurostat",
+    "lag_note": "~45 days after ref quarter end",
+    "relevance": "high",
+    "past": [
+      {
+        "date": "2025-11-14",
+        "ref_period": "Q3 2025",
+        "lag_days": 45,
+        "release_type": "flash",
+        "is_past": true,
+        "iso_week": "W46/2025",
+        "week_monday": "2025-11-10"
+      },
+      {
+        "date": "2026-02-13",
+        "ref_period": "Q4 2025",
+        "lag_days": 44,
+        "release_type": "flash",
+        "is_past": true,
+        "iso_week": "W07/2026",
+        "week_monday": "2026-02-09"
+      }
+    ],
+    "future": [
+      {
+        "date": "2026-05-13",
+        "ref_period": "Q1 2026",
+        "lag_days": 43,
+        "release_type": "flash",
+        "is_past": false,
+        "iso_week": "W20/2026",
+        "week_monday": "2026-05-11"
+      },
+      {
+        "date": "2026-08-14",
+        "ref_period": "Q2 2026",
+        "lag_days": 45,
+        "release_type": "flash",
+        "is_past": false,
+        "iso_week": "W33/2026",
+        "week_monday": "2026-08-10"
+      },
+      {
+        "date": "2026-11-13",
+        "ref_period": "Q3 2026",
+        "lag_days": 44,
+        "release_type": "flash",
+        "is_past": false,
+        "iso_week": "W46/2026",
+        "week_monday": "2026-11-09"
+      }
+    ]
+  },
+  {
+    "id": "GDP_MAIN",
+    "name_en": "GDP — Main Release",
+    "frequency": "Q",
+    "source": "Eurostat",
+    "lag_note": "~65–90 days after ref quarter",
+    "relevance": "high",
+    "past": [
+      {
+        "date": "2025-12-05",
+        "ref_period": "Q3 2025",
+        "lag_days": 66,
+        "release_type": "new",
+        "is_past": true,
+        "iso_week": "W49/2025",
+        "week_monday": "2025-12-01"
+      },
+      {
+        "date": "2026-03-06",
+        "ref_period": "Q4 2025",
+        "lag_days": 65,
+        "release_type": "new",
+        "is_past": true,
+        "iso_week": "W10/2026",
+        "week_monday": "2026-03-02"
+      }
+    ],
+    "future": [
+      {
+        "date": "2026-06-05",
+        "ref_period": "Q1 2026",
+        "lag_days": 66,
+        "release_type": "new",
+        "is_past": false,
+        "iso_week": "W23/2026",
+        "week_monday": "2026-06-01"
+      },
+      {
+        "date": "2026-09-07",
+        "ref_period": "Q2 2026",
+        "lag_days": 69,
+        "release_type": "new",
+        "is_past": false,
+        "iso_week": "W37/2026",
+        "week_monday": "2026-09-07"
+      },
+      {
+        "date": "2026-12-07",
+        "ref_period": "Q3 2026",
+        "lag_days": 68,
+        "release_type": "new",
+        "is_past": false,
+        "iso_week": "W50/2026",
+        "week_monday": "2026-12-07"
+      }
+    ]
+  },
+  {
+    "id": "GDP_UPDATE",
+    "name_en": "GDP — Second Estimate (update)",
+    "frequency": "Q",
+    "source": "Eurostat",
+    "lag_note": "~110 days after ref quarter",
+    "relevance": "med",
+    "past": [
+      {
+        "date": "2025-10-20",
+        "ref_period": "Q2 2025",
+        "lag_days": 112,
+        "release_type": "update",
+        "is_past": true,
+        "iso_week": "W43/2025",
+        "week_monday": "2025-10-20"
+      },
+      {
+        "date": "2026-01-20",
+        "ref_period": "Q3 2025",
+        "lag_days": 112,
+        "release_type": "update",
+        "is_past": true,
+        "iso_week": "W04/2026",
+        "week_monday": "2026-01-19"
+      }
+    ],
+    "future": [
+      {
+        "date": "2026-04-20",
+        "ref_period": "Q4 2025",
+        "lag_days": 110,
+        "release_type": "update",
+        "is_past": false,
+        "iso_week": "W17/2026",
+        "week_monday": "2026-04-20"
+      },
+      {
+        "date": "2026-07-20",
+        "ref_period": "Q1 2026",
+        "lag_days": 111,
+        "release_type": "update",
+        "is_past": false,
+        "iso_week": "W30/2026",
+        "week_monday": "2026-07-20"
+      },
+      {
+        "date": "2026-10-20",
+        "ref_period": "Q2 2026",
+        "lag_days": 112,
+        "release_type": "update",
+        "is_past": false,
+        "iso_week": "W43/2026",
+        "week_monday": "2026-10-19"
+      }
+    ]
+  },
+  {
+    "id": "LCI_FLASH",
+    "name_en": "Labour Cost Index — Flash",
+    "frequency": "Q",
+    "source": "Eurostat",
+    "lag_note": "~55 days after ref quarter end",
+    "relevance": "med",
+    "past": [
+      {
+        "date": "2025-11-19",
+        "ref_period": "Q3 2025",
+        "lag_days": 50,
+        "release_type": "flash",
+        "is_past": true,
+        "iso_week": "W47/2025",
+        "week_monday": "2025-11-17"
+      },
+      {
+        "date": "2026-02-19",
+        "ref_period": "Q4 2025",
+        "lag_days": 50,
+        "release_type": "flash",
+        "is_past": true,
+        "iso_week": "W08/2026",
+        "week_monday": "2026-02-16"
+      }
+    ],
+    "future": [
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "id": "LCI",
+    "name_en": "Labour Cost Index",
+    "frequency": "Q",
+    "source": "Eurostat",
+    "lag_note": "~80 days after ref quarter end",
+    "relevance": "high",
+    "past": [
+      {
+        "date": "2025-12-17",
+        "ref_period": "Q3 2025",
+        "lag_days": 78,
+        "release_type": "new",
+        "is_past": true,
+        "iso_week": "W51/2025",
+        "week_monday": "2025-12-15"
+      },
+      {
+        "date": "2026-03-19",
+        "ref_period": "Q4 2025",
+        "lag_days": 78,
+        "release_type": "new",
+        "is_past": true,
+        "iso_week": "W12/2026",
+        "week_monday": "2026-03-16"
+      }
+    ],
+    "future": [
+      {
+        "date": "2026-06-16",
+        "ref_period": "Q1 2026",
+        "lag_days": 77,
+        "release_type": "new",
+        "is_past": false,
+        "iso_week": "W25/2026",
+        "week_monday": "2026-06-15"
+      },
+      {
+        "date": "2026-09-16",
+        "ref_period": "Q2 2026",
+        "lag_days": 78,
+        "release_type": "new",
+        "is_past": false,
+        "iso_week": "W38/2026",
+        "week_monday": "2026-09-14"
+      },
+      {
+        "date": "2026-12-17",
+        "ref_period": "Q3 2026",
+        "lag_days": 78,
+        "release_type": "new",
+        "is_past": false,
+        "iso_week": "W51/2026",
+        "week_monday": "2026-12-14"
+      }
+    ]
+  },
+  {
+    "id": "LFS_Q",
+    "name_en": "Labour Force Survey",
+    "frequency": "Q",
+    "source": "Eurostat",
+    "lag_note": "~75 days after ref quarter end",
+    "relevance": "high",
+    "past": [
+      {
+        "date": "2025-04-15",
+        "ref_period": "Q4 2024",
+        "lag_days": 105,
+        "release_type": "new",
+        "is_past": true,
+        "iso_week": "W16/2025",
+        "week_monday": "2025-04-14"
+      },
+      {
+        "date": "2026-03-13",
+        "ref_period": "Q4 2025",
+        "lag_days": 72,
+        "release_type": "new",
+        "is_past": true,
+        "iso_week": "W11/2026",
+        "week_monday": "2026-03-09"
+      }
+    ],
+    "future": [
+      {
+        "date": "2026-06-12",
+        "ref_period": "Q1 2026",
+        "lag_days": 73,
+        "release_type": "new",
+        "is_past": false,
+        "iso_week": "W24/2026",
+        "week_monday": "2026-06-08"
+      },
+      {
+        "date": "2026-09-11",
+        "ref_period": "Q2 2026",
+        "lag_days": 73,
+        "release_type": "new",
+        "is_past": false,
+        "iso_week": "W37/2026",
+        "week_monday": "2026-09-07"
+      },
+      {
+        "date": "2026-12-11",
+        "ref_period": "Q3 2026",
+        "lag_days": 72,
+        "release_type": "new",
+        "is_past": false,
+        "iso_week": "W50/2026",
+        "week_monday": "2026-12-07"
+      }
+    ]
+  },
+  {
+    "id": "HOUSE_PRICES",
+    "name_en": "House Price Index",
+    "frequency": "Q",
+    "source": "Eurostat",
+    "lag_note": "~90 days after ref quarter end",
+    "relevance": "high",
+    "past": [
+      {
+        "date": "2025-10-03",
+        "ref_period": "Q2 2025",
+        "lag_days": 95,
+        "release_type": "new",
+        "is_past": true,
+        "iso_week": "W40/2025",
+        "week_monday": "2025-09-29"
+      },
+      {
+        "date": "2026-01-09",
+        "ref_period": "Q3 2025",
+        "lag_days": 101,
+        "release_type": "new",
+        "is_past": true,
+        "iso_week": "W02/2026",
+        "week_monday": "2026-01-05"
+      }
+    ],
+    "future": [
+      {
+        "date": "2026-04-07",
+        "ref_period": "Q4 2025",
+        "lag_days": 97,
+        "release_type": "new",
+        "is_past": false,
+        "iso_week": "W15/2026",
+        "week_monday": "2026-04-06"
+      },
+      {
+        "date": "2026-07-02",
+        "ref_period": "Q1 2026",
+        "lag_days": 93,
+        "release_type": "new",
+        "is_past": false,
+        "iso_week": "W27/2026",
+        "week_monday": "2026-06-29"
+      },
+      {
+        "date": "2026-10-01",
+        "ref_period": "Q2 2026",
+        "lag_days": 93,
+        "release_type": "new",
+        "is_past": false,
+        "iso_week": "W40/2026",
+        "week_monday": "2026-09-28"
+      }
+    ]
+  },
+  {
+    "id": "SPPI",
+    "name_en": "Services PPI",
+    "frequency": "Q",
+    "source": "Eurostat",
+    "lag_note": "~90 days after ref quarter end",
+    "relevance": "med",
+    "past": [
+      {
+        "date": "2025-10-06",
+        "ref_period": "Q2 2025",
+        "lag_days": 98,
+        "release_type": "new",
+        "is_past": true,
+        "iso_week": "W41/2025",
+        "week_monday": "2025-10-06"
+      },
+      {
+        "date": "2026-01-09",
+        "ref_period": "Q3 2025",
+        "lag_days": 101,
+        "release_type": "new",
+        "is_past": true,
+        "iso_week": "W02/2026",
+        "week_monday": "2026-01-05"
+      }
+    ],
+    "future": [
+      {
+        "date": "2026-04-09",
+        "ref_period": "Q4 2025",
+        "lag_days": 99,
+        "release_type": "new",
+        "is_past": false,
+        "iso_week": "W15/2026",
+        "week_monday": "2026-04-06"
+      },
+      {
+        "date": "2026-07-06",
+        "ref_period": "Q1 2026",
+        "lag_days": 97,
+        "release_type": "new",
+        "is_past": false,
+        "iso_week": "W28/2026",
+        "week_monday": "2026-07-06"
+      },
+      {
+        "date": "2026-10-06",
+        "ref_period": "Q2 2026",
+        "lag_days": 98,
+        "release_type": "new",
+        "is_past": false,
+        "iso_week": "W41/2026",
+        "week_monday": "2026-10-05"
+      }
+    ]
+  },
+  {
+    "id": "ENERGY_PRICE",
+    "name_en": "Energy Prices (Electricity & Gas)",
+    "frequency": "S",
+    "source": "Eurostat",
+    "lag_note": "Mar & Sep (H2/H1 of prior year)",
+    "relevance": "med",
+    "past": [
+      {
+        "date": "2025-05-06",
+        "ref_period": "H2 2024",
+        "lag_days": null,
+        "release_type": "new",
+        "is_past": true,
+        "iso_week": "W19/2025",
+        "week_monday": "2025-05-05"
+      },
+      {
+        "date": "2025-10-29",
+        "ref_period": "H1 2025",
+        "lag_days": null,
+        "release_type": "new",
+        "is_past": true,
+        "iso_week": "W44/2025",
+        "week_monday": "2025-10-27"
+      }
+    ],
+    "future": [
+      {
+        "date": "2026-05-05",
+        "ref_period": "H2 2025",
+        "lag_days": null,
+        "release_type": "new",
+        "is_past": false,
+        "iso_week": "W19/2026",
+        "week_monday": "2026-05-04"
+      },
+      {
+        "date": "2026-10-01",
+        "ref_period": "H1 2026",
+        "lag_days": null,
+        "release_type": "new",
+        "is_past": false,
+        "iso_week": "W40/2026",
+        "week_monday": "2026-09-28"
+      },
+      null
+    ]
+  }
+]
