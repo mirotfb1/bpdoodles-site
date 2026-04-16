@@ -190,12 +190,20 @@ body.lang-bg span.lc-en { display: none !important; }
   margin-bottom: 12px;
 }
 .hero-body {
-  font-size: 14px;
-  color: var(--color-ink-2);
-  line-height: 1.75;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-ink);
+  line-height: 1.55;
   max-width: 580px;
 }
-.hero-body strong { color: var(--color-ink); }
+
+/* ── Section descriptor (below section label, above content) ── */
+.section-desc {
+  padding: 14px 28px 4px;
+  font-size: 13px;
+  color: var(--color-muted);
+  line-height: 1.65;
+}
 
 /* ── Section label ── */
 .section-label-row {
@@ -436,6 +444,7 @@ body.lang-bg span.lc-en { display: none !important; }
   .masthead-desc { display: none; }
   .chart-grid { grid-template-columns: repeat(2, 1fr); padding-left: 16px; padding-right: 16px; }
   .chartbook-cta { padding-left: 16px; padding-right: 16px; }
+  .section-desc { padding-left: 16px; padding-right: 16px; }
 }
 </style>
 </head>
@@ -492,6 +501,8 @@ body.lang-bg span.lc-en { display: none !important; }
     <span class="section-label lc-en">&#9658; Macro Chartbook · Updated Weekly</span>
     <span class="section-label lc-bg">&#9658; Макро Чартбук · Актуализиран Седмично</span>
   </div>
+  <div class="section-desc lc-en">The Chartbook tracks 60+ indicators across inflation, output, labour, trade and more — updated as new data is published by NSI, Eurostat, BNB, and others.</div>
+  <div class="section-desc lc-bg">Чартбукът проследява над 60 показателя за инфлация, производство, труд, търговия и други — актуализиран с всяка нова публикация от НСИ, Евростат, БНБ и др.</div>
   <div class="chart-grid">
     <a class="chart-thumb" href="/cockpit/">
       <img src="/cockpit/charts/hicp-01.png" alt="Inflation" loading="lazy"/>
@@ -536,6 +547,9 @@ body.lang-bg span.lc-en { display: none !important; }
     <span class="section-label lc-en">&#9658; Latest Issues</span>
     <span class="section-label lc-bg">&#9658; Последни броеве</span>
   </div>
+
+  <div class="section-desc lc-en">The Newsletter is a periodic publication covering recent data releases — published when there is enough to say, and using data to uncover developing trends in the Bulgarian economy.</div>
+  <div class="section-desc lc-bg">Бюлетинът е периодична публикация, която разглежда последните данни — излиза когато има достатъчно за коментар и използва данните, за да открои развиващите се тенденции в икономиката.</div>
 
   <a class="issue-row" href="/newsletters/2026-W14/">
     <div class="issue-row-left">
