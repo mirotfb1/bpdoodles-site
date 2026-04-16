@@ -4,18 +4,18 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Basepoint Doodles · Bulgaria Macro</title>
-<meta name="description" content="Visualization portal for key economic indicators and independent weekly newsletter for people who want a concise, clear overview of economic trends in Bulgaria."/>
+<meta name="description" content="Live chartbook tracking Bulgaria's key economic indicators plus a periodic macro newsletter. Data-first, bilingual, free."/>
 <link rel="icon" href="/favicon.ico" sizes="any"/>
 <link rel="apple-touch-icon" href="/favicon-180.png"/>
 <link rel="canonical" href="https://bpdoodles.com/"/>
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://bpdoodles.com/"/>
 <meta property="og:title" content="Basepoint Doodles · Bulgaria Macro"/>
-<meta property="og:description" content="Visualization portal for key economic indicators and independent weekly newsletter for people who want a concise, clear overview of economic trends in Bulgaria."/>
+<meta property="og:description" content="Live chartbook tracking Bulgaria's key economic indicators plus a periodic macro newsletter. Data-first, bilingual, free."/>
 <meta property="og:image" content="https://bpdoodles.com/og-image.png"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Basepoint Doodles · Bulgaria Macro"/>
-<meta name="twitter:description" content="Visualization portal for key economic indicators and independent weekly newsletter for people who want a concise, clear overview of economic trends in Bulgaria."/>
+<meta name="twitter:description" content="Live chartbook tracking Bulgaria's key economic indicators plus a periodic macro newsletter. Data-first, bilingual, free."/>
 <meta name="twitter:image" content="https://bpdoodles.com/og-image.png"/>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Caveat:wght@700&display=swap" rel="stylesheet"/>
 <style>
@@ -178,24 +178,24 @@ body.lang-bg span.lc-en { display: none !important; }
 
 /* ── Hero ── */
 .hero {
-  padding: 36px 28px 30px;
+  padding: 32px 28px 28px;
   border-bottom: 1px solid var(--color-border);
 }
 .hero-headline {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 900;
   color: var(--color-ink);
   letter-spacing: -0.5px;
-  line-height: 1.15;
+  line-height: 1.2;
   margin-bottom: 12px;
 }
-.hero-sub {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--color-ink);
-  max-width: 560px;
-  line-height: 1.5;
+.hero-body {
+  font-size: 14px;
+  color: var(--color-ink-2);
+  line-height: 1.75;
+  max-width: 580px;
 }
+.hero-body strong { color: var(--color-ink); }
 
 /* ── Section label ── */
 .section-label-row {
@@ -212,7 +212,56 @@ body.lang-bg span.lc-en { display: none !important; }
   color: var(--color-accent);
 }
 
-/* ── Issue rows (Latest Issues section) ── */
+/* ── Chartbook preview grid ── */
+.chart-grid {
+  padding: 20px 28px 16px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.chart-thumb {
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  overflow: hidden;
+  text-decoration: none;
+  display: block;
+  background: var(--color-surface);
+  transition: border-color 0.15s;
+}
+.chart-thumb:hover { border-color: var(--color-basepoint); }
+.chart-thumb img {
+  width: 100%;
+  display: block;
+}
+.chart-thumb-label {
+  padding: 5px 8px 6px;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  line-height: 1;
+}
+.chartbook-cta {
+  padding: 4px 28px 22px;
+  text-align: center;
+}
+.chartbook-btn {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--color-basepoint);
+  text-decoration: none;
+  padding: 8px 22px;
+  border-radius: 3px;
+  transition: background 0.1s;
+}
+.chartbook-btn:hover { background: #14234a; }
+
+/* ── Issue rows (Briefings section) ── */
 .issue-row {
   padding: 18px 28px;
   border-bottom: 1px solid var(--color-border);
@@ -247,6 +296,7 @@ body.lang-bg span.lc-en { display: none !important; }
   margin-top: 3px;
 }
 .issue-row-arrow { font-size: 18px; color: var(--color-accent); font-weight: 900; flex-shrink: 0; }
+
 /* ── Archive button row ── */
 .archive-row {
   padding: 16px 28px;
@@ -381,9 +431,11 @@ body.lang-bg span.lc-en { display: none !important; }
   .masthead { padding: 18px 16px 14px; }
   .hero, .waitlist, .contact, .footer { padding-left: 16px; padding-right: 16px; }
   .section-label-row, .issue-row, .archive-row { padding-left: 16px; padding-right: 16px; }
-  .hero-headline { font-size: 26px; }
+  .hero-headline { font-size: 22px; }
   .waitlist-form { flex-direction: column; }
   .masthead-desc { display: none; }
+  .chart-grid { grid-template-columns: repeat(2, 1fr); padding-left: 16px; padding-right: 16px; }
+  .chartbook-cta { padding-left: 16px; padding-right: 16px; }
 }
 </style>
 </head>
@@ -397,8 +449,8 @@ body.lang-bg span.lc-en { display: none !important; }
       <a href="/" class="active lc-bg">Начало</a>
       <a href="/newsletters/" class="lc-en">Newsletter</a>
       <a href="/newsletters/" class="lc-bg">Бюлетин</a>
-      <a href="/cockpit/" class="lc-en">Cockpit</a>
-      <a href="/cockpit/" class="lc-bg">Кокпит</a>
+      <a href="/cockpit/" class="lc-en">Chartbook</a>
+      <a href="/cockpit/" class="lc-bg">Чартбук</a>
       <a href="/calendar/" class="lc-en">Calendar</a>
       <a href="/calendar/" class="lc-bg">Календар</a>
       <a href="/about/" class="lc-en">About</a>
@@ -424,18 +476,62 @@ body.lang-bg span.lc-en { display: none !important; }
     <div class="masthead-desc">
       <span class="masthead-desc-main lc-en">Bulgaria Macro</span>
       <span class="masthead-desc-main lc-bg">Макро · България</span>
-      <span class="masthead-desc-sub lc-en">data · charts · weekly</span>
-      <span class="masthead-desc-sub lc-bg">данни · графики · седмично</span>
+      <span class="masthead-desc-sub lc-en">data · charts · analysis</span>
+      <span class="masthead-desc-sub lc-bg">данни · графики · анализ</span>
     </div>
   </div>
 
   <!-- Hero -->
   <div class="hero">
-    <div class="hero-sub lc-en">Basepoint Doodles is a visualization portal for key indicators and independent weekly newsletter for people who want a concise, clear overview of economic trends in Bulgaria.</div>
-    <div class="hero-sub lc-bg">Basepoint Doodles е платформа за визуализации на ключови индикатори и независим седмичен бюлетин за хора, които искат кратък и ясен преглед на икономическите тенденции в България.</div>
+    <div class="hero-body lc-en">Basepoint Doodles is a visualization portal for key Bulgarian macroeconomic indicators and periodic newsletter for people who want a concise, clear overview of economic trends in Bulgaria.</div>
+    <div class="hero-body lc-bg">Basepoint Doodles е портал за визуализация на ключови макроикономически показатели на България и периодичен бюлетин за хора, които искат кратък и ясен преглед на икономическите тенденции в страната.</div>
   </div>
 
-  <!-- Latest issues -->
+  <!-- Chartbook preview -->
+  <div class="section-label-row">
+    <span class="section-label lc-en">&#9658; Macro Chartbook · Updated Weekly</span>
+    <span class="section-label lc-bg">&#9658; Макро Чартбук · Актуализиран Седмично</span>
+  </div>
+  <div class="chart-grid">
+    <a class="chart-thumb" href="/cockpit/">
+      <img src="/cockpit/charts/hicp-01.png" alt="Inflation" loading="lazy"/>
+      <div class="chart-thumb-label lc-en">Inflation</div>
+      <div class="chart-thumb-label lc-bg">Инфлация</div>
+    </a>
+    <a class="chart-thumb" href="/cockpit/">
+      <img src="/cockpit/charts/ipi-01.png" alt="Industrial Output" loading="lazy"/>
+      <div class="chart-thumb-label lc-en">Industry</div>
+      <div class="chart-thumb-label lc-bg">Промишленост</div>
+    </a>
+    <a class="chart-thumb" href="/cockpit/">
+      <img src="/cockpit/charts/retail-01.png" alt="Retail Trade" loading="lazy"/>
+      <div class="chart-thumb-label lc-en">Retail</div>
+      <div class="chart-thumb-label lc-bg">Търговия</div>
+    </a>
+    <a class="chart-thumb" href="/cockpit/">
+      <img src="/cockpit/charts/wages-01.png" alt="Wages" loading="lazy"/>
+      <div class="chart-thumb-label lc-en">Wages</div>
+      <div class="chart-thumb-label lc-bg">Заплати</div>
+    </a>
+    <a class="chart-thumb" href="/cockpit/">
+      <img src="/cockpit/charts/unemp-01.png" alt="Labour Market" loading="lazy"/>
+      <div class="chart-thumb-label lc-en">Labour</div>
+      <div class="chart-thumb-label lc-bg">Труд</div>
+    </a>
+    <a class="chart-thumb" href="/cockpit/">
+      <img src="/cockpit/charts/gdp-01.png" alt="GDP" loading="lazy"/>
+      <div class="chart-thumb-label lc-en">GDP</div>
+      <div class="chart-thumb-label lc-bg">БВП</div>
+    </a>
+  </div>
+  <div class="chartbook-cta">
+    <a href="/cockpit/" class="chartbook-btn">
+      <span class="lc-en">Open full chartbook &rarr;</span>
+      <span class="lc-bg">Виж целия чартбук &rarr;</span>
+    </a>
+  </div>
+
+  <!-- Latest briefings -->
   <div class="section-label-row">
     <span class="section-label lc-en">&#9658; Latest Issues</span>
     <span class="section-label lc-bg">&#9658; Последни броеве</span>
@@ -443,8 +539,8 @@ body.lang-bg span.lc-en { display: none !important; }
 
   <a class="issue-row" href="/newsletters/2026-W14/">
     <div class="issue-row-left">
-      <div class="issue-meta lc-en">2026 · Week 14 · 4 April 2026</div>
-      <div class="issue-meta lc-bg">2026 · Седмица 14 · 4 април 2026</div>
+      <div class="issue-meta lc-en">4 April 2026</div>
+      <div class="issue-meta lc-bg">4 април 2026</div>
       <div class="issue-title lc-en">Services output slows down in January. The Consumer holds (for now).</div>
       <div class="issue-title lc-bg">Производството в услугите се забавя. Търговията на дребно продължава да расте (засега).</div>
       <div class="issue-desc lc-en">Services −1.2% YoY · Retail +7.3% · PPI squeeze deepens · Restaurant prices up 108%</div>
@@ -455,8 +551,8 @@ body.lang-bg span.lc-en { display: none !important; }
 
   <a class="issue-row" href="/newsletters/2026-W13/">
     <div class="issue-row-left">
-      <div class="issue-meta lc-en">2026 · Week 13 · 29 March 2026</div>
-      <div class="issue-meta lc-bg">2026 · Седмица 13 · 29 март 2026</div>
+      <div class="issue-meta lc-en">29 March 2026</div>
+      <div class="issue-meta lc-bg">29 март 2026</div>
       <div class="issue-title lc-en">Labour Costs Surge. Convergence With the EU Accelerates.</div>
       <div class="issue-title lc-bg">Ръстът при разходите за труд се ускорява. Конвергенцията с ЕС набира скорост.</div>
       <div class="issue-desc lc-en">Wage growth at 3× EU pace · Housing cycle turning · Energy grid turns net importer</div>
@@ -467,8 +563,8 @@ body.lang-bg span.lc-en { display: none !important; }
 
   <a class="issue-row" href="/newsletters/2026-W12/">
     <div class="issue-row-left">
-      <div class="issue-meta lc-en">2026 · Week 12 · 22 March 2026</div>
-      <div class="issue-meta lc-bg">2026 · Седмица 12 · 22 март 2026</div>
+      <div class="issue-meta lc-en">22 March 2026</div>
+      <div class="issue-meta lc-bg">22 март 2026</div>
       <div class="issue-title lc-en">Is Bulgaria Losing Competitiveness?</div>
       <div class="issue-title lc-bg">Губи ли България конкурентоспособност?</div>
       <div class="issue-desc lc-en">ULC vs. productivity · Export market share · Wage convergence</div>
@@ -484,16 +580,14 @@ body.lang-bg span.lc-en { display: none !important; }
 
   <!-- Waitlist -->
   <div class="section-label-row">
-    <span class="section-label lc-en">&#9658; Subscribe to the free weekly newsletter</span>
+    <span class="section-label lc-en">&#9658; Subscribe to the free newsletter</span>
     <span class="section-label lc-bg">&#9658; Абонирай се за бюлетина</span>
   </div>
   <div class="waitlist">
     <div class="waitlist-title lc-en">Be first to know when subscriptions open.</div>
     <div class="waitlist-title lc-bg">Бъди сред първите, когато отворим абонамента.</div>
-    <div class="waitlist-desc lc-en">Basepoint Doodles newsletter is free and published on this website weekly. When we add email delivery options, we'll notify this list first. Drop your email. No spam, just a heads-up when subscription becomes available.</div>
-    <div class="waitlist-desc lc-bg">Бюлетинът на Basepoint Doodles е безплатен и се публикува седмично на този сайт. Когато добавим опция за доставка по имейл, първо ще уведомим този списък. Остави имейла си. Без спам — само съобщение, когато абонаментът стане достъпен.</div>
-    <!-- Formspree form — replace YOUR_FORM_ID with your Formspree endpoint ID -->
-    <!-- See WORKFLOW.md → "Formspree setup" for instructions -->
+    <div class="waitlist-desc lc-en">Basepoint Doodles newsletter is free and published on this website. When we add email delivery options, we'll notify this list first. Drop your email. No spam, just a heads-up when subscription becomes available.</div>
+    <div class="waitlist-desc lc-bg">Бюлетинът на Basepoint Doodles е безплатен и се публикува на този сайт. Когато добавим опция за доставка по имейл, първо ще уведомим този списък. Остави имейла си. Без спам — само съобщение, когато абонаментът стане достъпен.</div>
     <form class="waitlist-form" action="https://formspree.io/f/mreyvnaz" method="POST" onsubmit="handleWaitlist(event)">
       <input type="hidden" name="_subject" value="Basepoint Doodles — waitlist signup"/>
       <input class="waitlist-input" type="email" name="email" placeholder="your@email.com" required/>
@@ -524,8 +618,8 @@ body.lang-bg span.lc-en { display: none !important; }
     <div class="footer-links">
       <a href="/newsletters/" class="lc-en">Newsletter</a>
       <a href="/newsletters/" class="lc-bg">Бюлетин</a>
-      <a href="/cockpit/" class="lc-en">Cockpit</a>
-      <a href="/cockpit/" class="lc-bg">Кокпит</a>
+      <a href="/cockpit/" class="lc-en">Chartbook</a>
+      <a href="/cockpit/" class="lc-bg">Чартбук</a>
       <a href="/calendar/" class="lc-en">Calendar</a>
       <a href="/calendar/" class="lc-bg">Календар</a>
       <a href="/privacy/" class="lc-en">Privacy</a>
@@ -549,14 +643,11 @@ function setLang(lang) {
 })();
 
 function handleWaitlist(e) {
-  // If Formspree ID is not set, prevent submission and show instructions
   if (document.querySelector('.waitlist-form').action.indexOf('YOUR_FORM_ID') !== -1) {
     e.preventDefault();
     alert('Formspree not configured yet. See WORKFLOW.md for setup instructions.');
     return;
   }
-  // Let Formspree handle it — show success on redirect back
-  // For AJAX submission (no page reload):
   e.preventDefault();
   var form = e.target;
   fetch(form.action, {
