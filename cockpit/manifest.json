@@ -1,101 +1,101 @@
 {
-  "generated_at": "2026-05-04T08:36:07Z",
+  "generated_at": "2026-05-04T08:56:02Z",
   "datasets": {
     "hicp": {
       "label": "HICP",
       "label_bg": "ХИПЦ",
-      "latest_period": "Mar '26",
-      "last_generated": "2026-05-04T08:36:07Z"
+      "latest_period": "Apr '26",
+      "last_generated": "2026-05-04T08:56:02Z"
     },
     "ppi": {
       "label": "PPI",
       "label_bg": "ИЦП",
       "latest_period": "Mar '26",
-      "last_generated": "2026-05-04T08:36:07Z"
+      "last_generated": "2026-05-04T08:56:02Z"
     },
     "gdp": {
       "label": "GDP",
       "label_bg": "БВП",
       "latest_period": "Q4 '25",
-      "last_generated": "2026-05-04T08:36:07Z"
+      "last_generated": "2026-05-04T08:56:02Z"
     },
     "ipi": {
       "label": "Industry",
       "label_bg": "Промишленост",
       "latest_period": "Mar '26",
-      "last_generated": "2026-05-04T08:36:07Z"
+      "last_generated": "2026-05-04T08:56:02Z"
     },
     "construction": {
       "label": "Construction",
       "label_bg": "Строителство",
       "latest_period": "Feb '26",
-      "last_generated": "2026-05-04T08:36:07Z"
+      "last_generated": "2026-05-04T08:56:02Z"
     },
     "services": {
       "label": "Services",
       "label_bg": "Услуги",
       "latest_period": "Feb '26",
-      "last_generated": "2026-05-04T08:36:07Z"
+      "last_generated": "2026-05-04T08:56:02Z"
     },
     "retail": {
       "label": "Retail",
       "label_bg": "Търговия на дребно",
-      "latest_period": "Jan '26",
-      "last_generated": "2026-05-04T08:36:07Z"
+      "latest_period": "Feb '26",
+      "last_generated": "2026-05-04T08:56:02Z"
     },
     "trade": {
       "label": "Trade",
       "label_bg": "Външна търговия",
-      "latest_period": "Q4 '25",
-      "last_generated": "2026-05-04T08:36:07Z"
+      "latest_period": "Feb '26",
+      "last_generated": "2026-05-04T08:56:02Z"
     },
     "unemployment": {
       "label": "Labour",
       "label_bg": "Пазар на труда",
       "latest_period": "Mar '26",
-      "last_generated": "2026-05-04T08:36:07Z"
+      "last_generated": "2026-05-04T08:56:02Z"
     },
     "wages": {
       "label": "Wages",
       "label_bg": "Заплати",
-      "latest_period": "Dec '25",
-      "last_generated": "2026-05-04T08:36:07Z"
+      "latest_period": "2025-Q4",
+      "last_generated": "2026-05-04T08:56:02Z"
     },
     "confidence": {
       "label": "Confidence",
       "label_bg": "Доверие",
       "latest_period": "Apr '26",
-      "last_generated": "2026-05-04T08:36:07Z"
+      "last_generated": "2026-05-04T08:56:02Z"
     },
     "energy": {
       "label": "Energy",
       "label_bg": "Енергия",
       "latest_period": "Feb '26",
-      "last_generated": "2026-05-04T08:36:07Z"
+      "last_generated": "2026-05-04T08:56:02Z"
     },
     "bop": {
       "label": "Bal. of Payments",
       "label_bg": "Платежен баланс",
       "latest_period": "Feb '26",
-      "last_generated": "2026-05-04T08:36:07Z"
+      "last_generated": "2026-05-04T08:56:02Z"
     },
     "hpi": {
       "label": "House Prices",
       "label_bg": "Жилищни цени",
       "latest_period": "2025-Q4",
-      "last_generated": "2026-05-04T08:36:07Z"
+      "last_generated": "2026-05-04T08:56:02Z"
     },
     "credit": {
       "label": "Credit",
       "label_bg": "Кредит",
       "latest_period": "Mar '26",
-      "last_generated": "2026-05-04T08:36:07Z"
+      "last_generated": "2026-05-04T08:56:02Z"
     },
     "extdebt": {
       "label": "External Debt",
       "label_bg": "Външен дълг",
       "latest_period": "Q4 '25",
-      "last_generated": "2026-05-04T08:36:07Z"
+      "last_generated": "2026-05-04T08:56:02Z"
     }
   },
   "sections": [
