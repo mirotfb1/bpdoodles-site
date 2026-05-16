@@ -1,101 +1,101 @@
 {
-  "generated_at": "2026-05-04T08:56:02Z",
+  "generated_at": "2026-05-16T13:38:19Z",
   "datasets": {
     "hicp": {
       "label": "HICP",
       "label_bg": "ХИПЦ",
       "latest_period": "Apr '26",
-      "last_generated": "2026-05-04T08:56:02Z"
+      "last_generated": "2026-05-16T13:38:19Z"
     },
     "ppi": {
       "label": "PPI",
       "label_bg": "ИЦП",
       "latest_period": "Mar '26",
-      "last_generated": "2026-05-04T08:56:02Z"
+      "last_generated": "2026-05-16T13:38:19Z"
     },
     "gdp": {
       "label": "GDP",
       "label_bg": "БВП",
-      "latest_period": "Q4 '25",
-      "last_generated": "2026-05-04T08:56:02Z"
+      "latest_period": "Q1 '26",
+      "last_generated": "2026-05-16T13:38:19Z"
     },
     "ipi": {
       "label": "Industry",
       "label_bg": "Промишленост",
       "latest_period": "Mar '26",
-      "last_generated": "2026-05-04T08:56:02Z"
+      "last_generated": "2026-05-16T13:38:19Z"
     },
     "construction": {
       "label": "Construction",
       "label_bg": "Строителство",
-      "latest_period": "Feb '26",
-      "last_generated": "2026-05-04T08:56:02Z"
+      "latest_period": "Mar '26",
+      "last_generated": "2026-05-16T13:38:19Z"
     },
     "services": {
       "label": "Services",
       "label_bg": "Услуги",
       "latest_period": "Feb '26",
-      "last_generated": "2026-05-04T08:56:02Z"
+      "last_generated": "2026-05-16T13:38:19Z"
     },
     "retail": {
       "label": "Retail",
       "label_bg": "Търговия на дребно",
-      "latest_period": "Feb '26",
-      "last_generated": "2026-05-04T08:56:02Z"
+      "latest_period": "Mar '26",
+      "last_generated": "2026-05-16T13:38:19Z"
     },
     "trade": {
       "label": "Trade",
       "label_bg": "Външна търговия",
-      "latest_period": "Feb '26",
-      "last_generated": "2026-05-04T08:56:02Z"
+      "latest_period": "Mar '26",
+      "last_generated": "2026-05-16T13:38:19Z"
     },
     "unemployment": {
       "label": "Labour",
       "label_bg": "Пазар на труда",
       "latest_period": "Mar '26",
-      "last_generated": "2026-05-04T08:56:02Z"
+      "last_generated": "2026-05-16T13:38:19Z"
     },
     "wages": {
       "label": "Wages",
       "label_bg": "Заплати",
       "latest_period": "2025-Q4",
-      "last_generated": "2026-05-04T08:56:02Z"
+      "last_generated": "2026-05-16T13:38:19Z"
     },
     "confidence": {
       "label": "Confidence",
       "label_bg": "Доверие",
       "latest_period": "Apr '26",
-      "last_generated": "2026-05-04T08:56:02Z"
+      "last_generated": "2026-05-16T13:38:19Z"
     },
     "energy": {
       "label": "Energy",
       "label_bg": "Енергия",
       "latest_period": "Feb '26",
-      "last_generated": "2026-05-04T08:56:02Z"
+      "last_generated": "2026-05-16T13:38:19Z"
     },
     "bop": {
       "label": "Bal. of Payments",
       "label_bg": "Платежен баланс",
       "latest_period": "Feb '26",
-      "last_generated": "2026-05-04T08:56:02Z"
+      "last_generated": "2026-05-16T13:38:19Z"
     },
     "hpi": {
       "label": "House Prices",
       "label_bg": "Жилищни цени",
       "latest_period": "2025-Q4",
-      "last_generated": "2026-05-04T08:56:02Z"
+      "last_generated": "2026-05-16T13:38:19Z"
     },
     "credit": {
       "label": "Credit",
       "label_bg": "Кредит",
       "latest_period": "Mar '26",
-      "last_generated": "2026-05-04T08:56:02Z"
+      "last_generated": "2026-05-16T13:38:19Z"
     },
     "extdebt": {
       "label": "External Debt",
       "label_bg": "Външен дълг",
       "latest_period": "Q4 '25",
-      "last_generated": "2026-05-04T08:56:02Z"
+      "last_generated": "2026-05-16T13:38:19Z"
     }
   },
   "sections": [
@@ -226,8 +226,8 @@
           "title": "GDP Growth — EU Country Comparison (latest quarter)",
           "title_bg": "Растеж на БВП — Страни от ЕС",
           "chart_file": "charts/gdp-02.png",
-          "footer_left": "",
-          "footer_left_bg": "",
+          "footer_left": "IE axis-clipped (Q1 2026: -6.3%) · seasonally adjusted · YoY %",
+          "footer_left_bg": "IE axis-clipped (Q1 2026: -6.3%) · seasonally adjusted · ГоГ %",
           "footer_right": "Eurostat · namq_10_gdp · seasonally adjusted · YoY %",
           "footer_right_bg": "Евростат · namq_10_gdp · seasonally adjusted · ГоГ %"
         },
