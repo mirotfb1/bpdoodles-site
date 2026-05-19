@@ -49,8 +49,8 @@ async function handleSubscribe(request, env, ctx) {
   const isExisting = resp.status === 204;
 
   if (isNew || isExisting) {
-    const notif = await sendAdminNotification(apiKey, email, list_id, isNew);
-    return json({ ok: true, _notif: notif });
+    ctx.waitUntil(sendAdminNotification(apiKey, email, list_id, isNew));
+    return json({ ok: true });
   }
 
   const err = await resp.json().catch(() => ({}));
