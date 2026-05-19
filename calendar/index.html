@@ -72,6 +72,7 @@ body {
 }
 .site-nav a:hover { color: rgba(255,255,255,0.9); }
 .site-nav a.active { color: var(--color-accent); }
+.site-nav .soon { font-size: 9px; background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.3); border-radius: 3px; padding: 1px 5px; margin-left: 4px; vertical-align: middle; letter-spacing: 0.05em; }
 /* ── Lang visibility ── */
 .lc-bg { display: none !important; }
 .lc-en { display: block; }
@@ -270,6 +271,7 @@ body.lang-bg span.lc-en { display: none !important; }
       <a href="/calendar/" class="active lc-bg">Календар</a>
       <a href="/about/" class="lc-en">About</a>
       <a href="/about/" class="lc-bg">За проекта</a>
+      <a href="/parliament/" class="lc-bg">Парламент<span class="soon">WIP</span></a>
     </nav>
     <div class="lang-buttons">
       <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>

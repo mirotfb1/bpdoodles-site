@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="utf-8">
+<title>Парламентарни Doodles · Седмица 9 · 23 февруари – 1 март 2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+
+:root{
+  --color-basepoint:#1B2E5E;
+  --color-doodles:  #B5821A;
+  --color-accent:   #B5821A;
+  --color-ink:      #1C1C1C;
+  --color-ink-2:    #444444;
+  --color-muted:    #888888;
+  --color-muted-light:#AAAAAA;
+  --color-border:   #E8E8E8;
+  --color-surface:  #F8F8F8;
+  --color-paper:    #FFFFFF;
+  --font-display:'Caveat',cursive;
+  --font-head:'Nunito','Arial Black',sans-serif;
+  --font-body:'Nunito',Arial,sans-serif;
+}
+
+body{font-family:var(--font-body);background:#F0F2F5;color:var(--color-ink);line-height:1.6;}
+
+/* ── Wrapper (700px newsletter style) ── */
+.wrapper{max-width:740px;margin:32px auto;background:#fff;border:1px solid var(--color-border);border-radius:4px;overflow:hidden;}
+
+/* ── Top nav bar (navy) ── */
+.top-bar{display:flex;justify-content:space-between;align-items:center;padding:8px 16px;background:var(--color-basepoint);}
+.site-nav{display:flex;gap:20px;align-items:center;}
+.site-nav a{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none;}
+.site-nav a:hover{color:rgba(255,255,255,.9);}
+.site-nav a.active{color:var(--color-accent);}
+.top-bar-tag{font-family:'Courier New',monospace;font-size:10px;color:rgba(255,255,255,.25);}
+
+/* ── Masthead (navy, horizontal) ── */
+.masthead{background:var(--color-basepoint);padding:24px 28px 20px;display:flex;justify-content:space-between;align-items:flex-end;border-bottom:3px solid var(--color-accent);}
+.masthead-logo{display:flex;flex-direction:row;align-items:center;}
+.masthead-left{display:flex;flex-direction:column;align-items:flex-end;padding-right:14px;}
+.masthead-basepoint{font-family:var(--font-head);font-size:22px;font-weight:900;color:#fff;letter-spacing:-.3px;line-height:1;}
+.masthead-tagline{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:4px;}
+.masthead-divider{width:2px;height:52px;background:rgba(255,255,255,.2);}
+.masthead-doodles{font-family:var(--font-display);font-size:48px;font-weight:700;color:var(--color-doodles);line-height:1;padding-left:14px;}
+.masthead-meta{text-align:right;}
+.masthead-issue{font-size:13px;font-weight:700;color:rgba(255,255,255,.85);display:block;line-height:1.5;}
+.masthead-date{font-size:11px;color:rgba(255,255,255,.4);display:block;}
+.masthead-pills{margin-top:8px;display:flex;gap:6px;justify-content:flex-end;flex-wrap:wrap;}
+.masthead-pill{font-size:10px;font-weight:700;letter-spacing:.05em;background:rgba(255,255,255,.12);color:rgba(255,255,255,.6);padding:3px 8px;border-radius:3px;}
+
+/* ── Content sections ── */
+.section{padding:20px 28px;border-bottom:1px solid var(--color-border);}
+.section:last-of-type{border-bottom:none;}
+.section-tag{font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--color-accent);margin-bottom:12px;display:block;}
+
+/* ── Section label row (index/archive) ── */
+.section-label-row{padding:10px 28px 8px;background:var(--color-surface);border-bottom:1px solid var(--color-border);}
+.section-label{font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--color-accent);}
+
+/* ── Page header (index/archive) ── */
+.page-header{padding:20px 28px 16px;border-bottom:1px solid var(--color-border);}
+.page-title{font-family:var(--font-head);font-size:20px;font-weight:900;color:var(--color-ink);letter-spacing:-.3px;margin-bottom:6px;}
+.page-subtitle{font-size:13px;color:var(--color-muted);}
+
+/* ── Issue list (index/archive) ── */
+a.issue-row{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 28px;border-bottom:1px solid var(--color-border);text-decoration:none;color:inherit;transition:background .1s;}
+a.issue-row:hover{background:var(--color-surface);}
+a.issue-row:last-of-type{border-bottom:none;}
+.issue-row-left{flex:1;}
+.issue-row-meta{font-family:'Courier New',monospace;font-size:10px;color:var(--color-muted-light);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;}
+.issue-row-title{font-size:15px;font-weight:900;color:var(--color-ink);letter-spacing:-.2px;line-height:1.3;}
+.issue-row-desc{font-size:12px;color:var(--color-muted);margin-top:3px;}
+.issue-row-arrow{font-size:18px;color:var(--color-accent);font-weight:900;flex-shrink:0;}
+
+/* ── Footer (newsletter style) ── */
+.nl-footer{padding:14px 28px;background:var(--color-surface);border-top:1px solid var(--color-border);display:flex;justify-content:space-between;align-items:center;}
+.nl-footer-logo{font-family:var(--font-display);font-size:18px;font-weight:700;color:#CCC;}
+.nl-footer-links{font-size:11px;display:flex;gap:16px;}
+.nl-footer-links a{color:var(--color-muted-light);text-decoration:none;}
+.nl-footer-links a:hover{color:var(--color-muted);}
+.nl-footer-sources{font-family:'Courier New',monospace;font-size:10px;color:var(--color-muted-light);text-align:right;}
+
+/* ── DV CARDS ── */
+.dv-grid{display:flex;flex-direction:column;gap:10px;}
+details.dv-card{background:var(--color-paper);border:1px solid var(--color-border);border-radius:8px;overflow:hidden;transition:border-color .15s;}
+details.dv-card:hover{border-color:var(--color-accent);}
+details.dv-card[open]{border-color:var(--color-accent);}
+.dv-sum{padding:14px 16px;cursor:pointer;list-style:none;user-select:none;}
+.dv-sum::-webkit-details-marker{display:none;}
+.dv-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+.dv-meta{font-size:11px;color:var(--color-muted);font-weight:700;}
+.dv-title{font-family:var(--font-head);font-size:13px;font-weight:900;color:var(--color-ink);line-height:1.4;letter-spacing:-.1px;margin-bottom:6px;}
+.dv-lead{font-size:13px;color:var(--color-ink-2);line-height:1.55;margin-bottom:8px;}
+.expand-hint{font-size:11px;font-weight:700;color:var(--color-accent);text-transform:uppercase;letter-spacing:.06em;margin-top:4px;}
+details.dv-card[open] .expand-hint{display:none;}
+.dv-body{padding:0 16px 16px;border-top:1px solid var(--color-border);}
+
+/* ── BADGES ── */
+.badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;}
+.b-zakon   {background:#dbeafe;color:#1a56db;}
+.b-reshenie{background:#cffafe;color:#0a6e8a;}
+.b-ukaz    {background:#ede9fe;color:#7c3aed;}
+.b-decl    {background:#fef3c7;color:#92400e;}
+.b-post    {background:#d1fae5;color:#065f46;}
+.b-other   {background:#f3f4f6;color:#6b7280;}
+
+/* ── FACTSHEET SECTIONS ── */
+.fs-sec{margin:12px 0;font-size:13px;}
+.fs-sec h5,.parties-block h5,.notable-callout h5,.sess-col h5{font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.1em;color:var(--color-muted);margin-bottom:8px;padding-bottom:5px;border-bottom:1px solid var(--color-border);}
+.fs-sec ul,.parties-block ul{list-style:none;padding:0;}
+.fs-sec li,.parties-block li{padding:4px 0 4px 16px;position:relative;color:var(--color-ink-2);border-bottom:1px solid #f3f4f6;font-size:13px;line-height:1.5;}
+.fs-sec li:last-child,.parties-block li:last-child{border-bottom:none;}
+.fs-sec li::before{content:"·";position:absolute;left:3px;color:var(--color-accent);font-weight:700;font-size:16px;line-height:1.1;}
+.fs-sec p,.parties-block p{color:var(--color-ink-2);font-size:13px;margin-bottom:4px;}
+.fs-winners ul{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.fs-winners li{padding:8px 10px 8px 24px;border-radius:6px;border-bottom:none !important;}
+.fs-winners li:first-child{background:#f0fdf4;}
+.fs-winners li:first-child::before{content:"✓";color:#16a34a;font-size:13px;top:8px;}
+.fs-winners li:nth-child(2){background:#fef2f2;}
+.fs-winners li:nth-child(2)::before{content:"✗";color:#dc2626;font-size:13px;top:8px;}
+.fs-notable{background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:12px 14px;}
+.fs-notable h5{border-bottom-color:#fde68a;color:#92400e;}
+.fs-notable li,.fs-notable p{color:#78350f;}
+.fs-notable li::before{color:#d97706;}
+.fs-eu{background:#f0f9ff;border-radius:8px;padding:12px 14px;}
+.fs-eu h5{color:#0369a1;border-bottom-color:#bae6fd;}
+.fs-eu p{color:#0c4a6e;font-size:13px;}
+.ext-link{display:inline-block;margin-top:12px;font-size:12px;font-weight:700;color:var(--color-basepoint);text-decoration:none;}
+.ext-link:hover{text-decoration:underline;}
+.no-summ{color:var(--color-muted);font-size:13px;font-style:italic;padding:12px 0;}
+
+/* ── SESSION BLOCKS ── */
+details.sess-block{background:var(--color-paper);border:1px solid var(--color-border);border-left:4px solid var(--color-basepoint);border-radius:0 8px 8px 0;margin-bottom:10px;overflow:hidden;transition:box-shadow .15s;}
+details.sess-block:hover{box-shadow:0 2px 8px rgba(0,0,0,.06);}
+details.sess-block[open]{border-left-color:var(--color-accent);}
+.sess-sum{padding:14px 18px;cursor:pointer;list-style:none;user-select:none;}
+.sess-sum::-webkit-details-marker{display:none;}
+.sess-hd{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap;}
+.sess-date-chip{background:var(--color-basepoint);color:#fff;font-size:10px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:4px;white-space:nowrap;}
+details.sess-block[open] .sess-date-chip{background:var(--color-accent);}
+.sess-label{font-family:var(--font-head);font-size:14px;font-weight:900;color:var(--color-ink);}
+.sess-lead{font-size:13px;color:var(--color-ink-2);line-height:1.55;margin-bottom:6px;}
+.sess-body{padding:0 18px 16px;border-top:1px solid var(--color-border);}
+.sess-lead-full{font-size:13px;color:var(--color-ink-2);line-height:1.6;margin:12px 0;background:#f8fafc;border-left:3px solid var(--color-accent);padding:8px 12px;border-radius:0 6px 6px 0;}
+.sess-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0;}
+.sess-col{font-size:13px;}
+.sess-col ul{list-style:none;padding:0;}
+.sess-col li{padding:4px 0 4px 14px;position:relative;color:var(--color-ink-2);border-bottom:1px solid #f3f4f6;font-size:13px;line-height:1.5;}
+.sess-col li:last-child{border-bottom:none;}
+.sess-col li::before{content:"·";position:absolute;left:2px;color:var(--color-basepoint);font-weight:700;font-size:15px;line-height:1.1;}
+.notable-callout{display:flex;gap:10px;align-items:flex-start;background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:10px 12px;margin:12px 0;}
+.notable-icon{font-size:16px;color:#d97706;flex-shrink:0;line-height:1.4;}
+.notable-callout h5{border-bottom-color:#fde68a;color:#92400e;}
+.notable-callout p,.notable-callout li{color:#78350f;font-size:13px;}
+.notable-callout ul{list-style:none;padding:0;}
+.notable-callout li{padding:3px 0 3px 14px;position:relative;}
+.notable-callout li::before{content:"·";position:absolute;left:2px;color:#d97706;font-weight:700;font-size:15px;line-height:1.1;}
+.parties-block{margin:12px 0;font-size:13px;}
+.sess-ft{margin-top:12px;padding-top:10px;border-top:1px solid var(--color-border);}
+
+/* ── CHART SECTION ── */
+.chart-card-nl{margin-bottom:14px;}
+.chart-title-nl{font-size:12px;font-weight:900;color:var(--color-ink);margin-bottom:2px;}
+.chart-sub-nl{font-size:10px;color:var(--color-muted);margin-bottom:10px;}
+.dv-badges{display:flex;gap:6px;align-items:center;flex-wrap:wrap;}
+.b-cat{background:#f3f4f6;color:#555;}
+
+/* ── Archive table ── */
+.arch-table{width:100%;border-collapse:collapse;}
+.arch-table th{padding:8px 0;text-align:left;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.07em;color:var(--color-muted);border-bottom:1px solid var(--color-border);}
+.arch-table td{padding:12px 8px 12px 0;border-bottom:1px solid var(--color-border);font-size:13px;color:var(--color-ink-2);}
+.arch-table tr:last-child td{border-bottom:none;}
+.arch-table a{color:var(--color-basepoint);font-weight:700;text-decoration:none;}
+.arch-table a:hover{text-decoration:underline;}
+
+@media(max-width:760px){
+  .wrapper{margin:0;border-radius:0;border-left:none;border-right:none;}
+  .masthead,.section,.nl-footer,.page-header,a.issue-row,.section-label-row{padding-left:16px;padding-right:16px;}
+  .masthead-pills{display:none;}
+  .sess-cols{grid-template-columns:1fr;}
+  .fs-winners ul{grid-template-columns:1fr;}
+}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script><script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3/dist/chartjs-plugin-annotation.min.js"></script>
+</head>
+<body>
+<div class="wrapper">
+
+<div class="top-bar">
+  <nav class="site-nav">
+    <a href="../">Бюлетин</a>
+    <a href="https://bpdoodles.com" class="active">Basepoint Doodles</a>
+  </nav>
+  <span class="top-bar-tag">Парламентарни Doodles</span>
+</div>
+
+<div class="masthead">
+  <div class="masthead-logo">
+    <div class="masthead-left">
+      <span class="masthead-basepoint">Парламентарни</span>
+      <span class="masthead-tagline">Парламентарен дайджест</span>
+    </div>
+    <div class="masthead-divider"></div>
+    <span class="masthead-doodles">Doodles</span>
+  </div>
+  <div class="masthead-meta">
+    <span class="masthead-issue">Седмица 9 · 2026</span>
+    <span class="masthead-date">23 февруари – 1 март 2026</span>
+    <div class="masthead-pills"><span class="masthead-pill">6 закона в ДВ</span><span class="masthead-pill">1 решение в ДВ</span><span class="masthead-pill">3 заседания</span></div>
+  </div>
+</div>
+
+<div class="section" id="charts">
+  <span class="section-tag">Тенденции 2026</span>
+  <div class="chart-card-nl">
+    <div class="chart-title-nl">Закони в Държавен вестник</div>
+    <div class="chart-sub-nl">Нов закон &middot; изменение / допълнение &middot; ратификация</div>
+    <canvas id="nl-law-bar" height="90"></canvas>
+  </div>
+  <div class="chart-card-nl">
+    <div class="chart-title-nl">Решения на НС</div>
+    <div class="chart-sub-nl">Кадрово &middot; комисии &middot; процедурно &middot; политическо</div>
+    <canvas id="nl-dec-bar" height="90"></canvas>
+  </div>
+  <div class="chart-card-nl">
+    <div class="chart-title-nl">Пленарни заседания на седмица</div>
+    <div class="chart-sub-nl">Брой заседания</div>
+    <canvas id="nl-sess-bar" height="70"></canvas>
+  </div>
+</div>
+<script>
+const WEEK_LABELS   = ["2026-W01", "2026-W02", "2026-W03", "2026-W04", "2026-W05", "2026-W06", "2026-W07", "2026-W08", "2026-W09"];
+const WEEK_DISPLAY  = ["29 \u0434\u0435\u043a\u0435\u043c\u0432\u0440\u0438 \u2013 4 \u044f\u043d\u0443\u0430\u0440\u0438 2025", "5\u201311 \u044f\u043d\u0443\u0430\u0440\u0438 2026", "12\u201318 \u044f\u043d\u0443\u0430\u0440\u0438 2026", "19\u201325 \u044f\u043d\u0443\u0430\u0440\u0438 2026", "26 \u044f\u043d\u0443\u0430\u0440\u0438 \u2013 1 \u0444\u0435\u0432\u0440\u0443\u0430\u0440\u0438 2026", "2\u20138 \u0444\u0435\u0432\u0440\u0443\u0430\u0440\u0438 2026", "9\u201315 \u0444\u0435\u0432\u0440\u0443\u0430\u0440\u0438 2026", "16\u201322 \u0444\u0435\u0432\u0440\u0443\u0430\u0440\u0438 2026", "23 \u0444\u0435\u0432\u0440\u0443\u0430\u0440\u0438 \u2013 1 \u043c\u0430\u0440\u0442 2026"];
+const WEEK_PARL_IDX = null;
+const LAW_WDS       = [{"label": "\u041d\u043e\u0432 \u0437\u0430\u043a\u043e\u043d", "data": [0, 0, 0, 0, 0, 0, 1, 0, 0], "backgroundColor": "#1B2E5E", "borderColor": "#1B2E5E"}, {"label": "\u0418\u0437\u043c\u0435\u043d\u0435\u043d\u0438\u0435 / \u0434\u043e\u043f\u044a\u043b\u043d\u0435\u043d\u0438\u0435", "data": [0, 0, 0, 1, 0, 1, 6, 0, 2], "backgroundColor": "#B5821A", "borderColor": "#B5821A"}, {"label": "\u0420\u0430\u0442\u0438\u0444\u0438\u043a\u0430\u0446\u0438\u044f", "data": [0, 0, 0, 0, 0, 0, 1, 0, 4], "backgroundColor": "#2A9D5C", "borderColor": "#2A9D5C"}];
+const DEC_WDS       = [{"label": "\u041a\u0430\u0434\u0440\u043e\u0432\u043e", "data": [0, 0, 0, 0, 0, 0, 0, 1, 0], "backgroundColor": "#7C3AED", "borderColor": "#7C3AED"}, {"label": "\u041a\u043e\u043c\u0438\u0441\u0438\u0438", "data": [0, 0, 0, 0, 0, 0, 0, 0, 0], "backgroundColor": "#0A6E8A", "borderColor": "#0A6E8A"}, {"label": "\u041f\u0440\u043e\u0446\u0435\u0434\u0443\u0440\u043d\u043e", "data": [0, 0, 0, 0, 0, 0, 0, 0, 1], "backgroundColor": "#888888", "borderColor": "#888888"}, {"label": "\u041f\u043e\u043b\u0438\u0442\u0438\u0447\u0435\u0441\u043a\u043e", "data": [0, 0, 0, 0, 0, 2, 0, 0, 0], "backgroundColor": "#E03E2D", "borderColor": "#E03E2D"}];
+const SESS_WDS      = [{"label": "\u0417\u0430\u0441\u0435\u0434\u0430\u043d\u0438\u044f", "data": [0, 0, 3, 3, 3, 2, 3, 3, 3], "backgroundColor": "#1B2E5E", "borderColor": "#1B2E5E"}];
+
+const BAR_ANNO = WEEK_PARL_IDX !== null ? {
+  annotations: { newParl: {
+    type: 'line', scaleID: 'x',
+    value: WEEK_LABELS[WEEK_PARL_IDX],
+    borderColor: '#B5821A', borderWidth: 2, borderDash: [6, 4],
+    label: { content: '52-ро НС', display: true, position: 'start',
+             color: '#B5821A', backgroundColor: 'rgba(181,130,26,.08)',
+             font: { size: 10, weight: '700' }, padding: { x: 6, y: 3 } }
+  }}
+} : {};
+
+function makeNLBar(id, datasets, stacked) {
+  new Chart(document.getElementById(id), {
+    type: 'bar',
+    data: { labels: WEEK_LABELS, datasets: datasets.map(d => ({...d, borderWidth: 0})) },
+    options: {
+      responsive: true, maintainAspectRatio: true,
+      plugins: {
+        annotation: BAR_ANNO,
+        legend: { labels: { font: { size: 10 }, boxWidth: 10, padding: 10 } },
+        tooltip: { callbacks: { title: ctx => WEEK_DISPLAY[ctx[0].dataIndex] } }
+      },
+      scales: {
+        x: { stacked, ticks: { font: { size: 9 }, color: '#888', maxRotation: 45, autoSkip: false }, grid: { display: false } },
+        y: { stacked, ticks: { font: { size: 9 }, color: '#888', precision: 0 }, grid: { color: '#f3f4f6' }, beginAtZero: true }
+      }
+    }
+  });
+}
+
+makeNLBar('nl-law-bar',  LAW_WDS, true);
+makeNLBar('nl-dec-bar',  DEC_WDS, true);
+makeNLBar('nl-sess-bar', SESS_WDS, false);
+</script>
+
+<div class="section" id="dv">
+  <span class="section-tag">01 · Обнародвано в Държавен вестник</span>
+  <div class="dv-grid">
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges">
+        <span class="badge b-zakon">ЗАКОН</span>
+        <span class="badge b-cat">Ратификация</span>
+      </div>
+      <span class="dv-meta">Бр.&nbsp;22 &middot; 2026-02-24</span>
+    </div>
+    <div class="dv-title">ЗАКОН за ратифициране на Споразумението между правителството на Република България и правителството на Република Северна Македония за подготовката, изграждането и експлоатацията на трансгранично железопътно тунелно съоръжение, подписано на 6 ноември 2025 г. в с. Гюешево</div>
+    <p class="dv-lead">България официално приема международното споразумение за изграждане на железопътен тунел на границата с Република Северна Македония при Гюешево.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Ратифицира споразумение, подписано на 6 ноември 2025 г. в с. Гюешево, което урежда трите фази по проекта: подготовка, изграждане и последваща експлоатация на тунела.</li><li>Тунелът е трансгранично съоръжение – договорената рамка обвързва двете правителства съвместно, не само България.</li><li>Споразумението е рамково – конкретни технически и финансови параметри (дължина, цена, срокове) не са публикувани в ратификационния закон.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Товарният и пътническият железопътен транспорт между България и Северна Македония; региони около Гюешево и Крива Паланка; интеграцията на двете страни в европейската жп мрежа.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Споразумението е подписано в самото село Гюешево – на самата граница – което е необичайно символично място за подписване на двустранен договор от такъв мащаб.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><p>Влиза в сила от обнародването.</p></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Трансграничните железопътни тунели между страни членки и кандидат-членки са сравнително рядкост и обичайно се предшестват от дългогодишни проучвания и съфинансиране по механизми като CEF (Connecting Europe Facility). Подобни двустранни рамкови споразумения за жп инфраструктура съществуват в ЕС (напр. Австрия–Италия за Бренерския тунел), но те обичайно включват публично оповестен финансов модел още при ратификацията. Липсата на конкретни цифри в настоящото споразумение е по-скоро нетипична за европейската практика.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241407" target="_blank">
+      Отвори в Държавен вестник ↗
+    </a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges">
+        <span class="badge b-zakon">ЗАКОН</span>
+        <span class="badge b-cat">Ратификация</span>
+      </div>
+      <span class="dv-meta">Бр.&nbsp;22 &middot; 2026-02-24</span>
+    </div>
+    <div class="dv-title">ЗАКОН за ратифициране на Споразумение за изменение и допълнение на Рамковото споразумение между правителството на Република България и Европейския инвестиционен фонд относно изпълнението на Инициативата JEREMIE в Република България (Четвърто споразумение за изменение) и Споразумение за изменение и д</div>
+    <p class="dv-lead">България официално потвърждава четвъртото по ред изменение на договорите си с Европейския инвестиционен фонд за управление на средствата по програмата JEREMIE, насочена към финансиране на малки и средни предприятия.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Ратифицират се две отделни споразумения – едно за рамката и едно за финансите – и двете подписани на 22 декември 2025 г. в София.</li><li>Това е четвъртото поредно изменение на първоначалните договори с Европейския инвестиционен фонд (ЕИФ) по инициативата JEREMIE, което показва дългогодишна и активна програма.</li><li>Законът не разкрива конкретни нови суми, срокове или условия – те се съдържат в самите споразумения, а не в ратификационния текст.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Малки и средни предприятия, които потенциално получават достъп до финансови инструменти по JEREMIE при актуализирани условия.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><p>Влиза в сила от обнародването.</p></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Няма достатъчно сравнителни данни.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241428" target="_blank">
+      Отвори в Държавен вестник ↗
+    </a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges">
+        <span class="badge b-zakon">ЗАКОН</span>
+        <span class="badge b-cat">Изменение / допълнение</span>
+      </div>
+      <span class="dv-meta">Бр.&nbsp;23 &middot; 2026-02-27</span>
+    </div>
+    <div class="dv-title">ЗАКОН за изменение и допълнение на Закона за закрила на детето</div>
+    <p class="dv-lead">Гражданите получават безплатен публичен онлайн достъп до Националния регистър на осъдените за престъпления срещу деца – виждат три имена, дата на раждане, адрес, вид престъпление и размер на наказанието.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Националният регистър на лицата, осъдени за престъпления срещу деца, вече е публично достъпен – всеки гражданин може да провери информацията без да подава заявление и без да плаща такса.</li><li>Видимите данни включват: три имена на извършителя, дата на раждане, постоянен и настоящ адрес, вид престъпление и размер на наказанието.</li><li>За осъдени лица с чуждо гражданство или произход от друга държава се публикуват и данни за държавите по произход – допълнително поле спрямо останалите.</li><li>До момента регистърът е съществувал, но явно без публичен достъп – промяната го отваря към широката аудитория, не създава нов регистър.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: родители и граждани, които могат сами да проверяват дали лице, работещо с деца или от близкото обкръжение, фигурира в регистъра.</li><li>Губят: осъдените лица в регистъра – личните им данни и адресът им стават публично достъпни за неограничен кръг хора.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Публикуването на постоянния и настоящия адрес на осъдения е необичайно смело за европейски стандарти и поражда въпроси за баланса между защита на децата и правото на личен живот на осъдените, вкл. след изтърпяване на наказанието.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><p>Влиза в сила от обнародването.</p></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Публичните регистри на осъдени сексуални престъпници срещу деца съществуват в няколко държави от ЕС (напр. Великобритания преди Брекзит, Франция), но повечето европейски страни ограничават достъпа само до работодатели и органи, а не до широката публика. България с тази стъпка се доближава до модела на САЩ (т.нар. „Megan&#x27;s Law&quot;), който е нетипичен за континентална Европа. Европейският съд по правата на човека е имал резерви към неограничения публичен достъп до подобни данни, което прави закона потенциално уязвим.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241537" target="_blank">
+      Отвори в Държавен вестник ↗
+    </a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges">
+        <span class="badge b-zakon">ЗАКОН</span>
+        <span class="badge b-cat">Ратификация</span>
+      </div>
+      <span class="dv-meta">Бр.&nbsp;23 &middot; 2026-02-27</span>
+    </div>
+    <div class="dv-title">ЗАКОН за ратифициране на Международен договор (Letter of Offer and Аcceptance – LOA) BU-P-AAL „Придобиване на мобилна ракетна (NSM) система за брегова отбрана (CDS) и свързаните с нея оборудване, резервни части, обучение и свързаната с тях поддръжка“ и на Международен договор (Letter of Offer and Ac</div>
+    <p class="dv-lead">България официално потвърждава два военни договора със САЩ – за закупуване на брегова ракетна система NSM и на тактически радиосистеми MIDS JTRS.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>С първия договор (LOA BU-P-AAL) България придобива мобилна ракетна система за брегова отбрана NSM (Naval Strike Missile) заедно с резервни части, оборудване и обучение – договорът е подписан на 22 август 2025 г. в САЩ и на 6 февруари 2026 г. в София.</li><li>С втория договор (LOA BU-P-LBR) се закупуват мултифункционални тактически радиосистеми MIDS JTRS за обмен на бойна информация в реално време – подписан на 25 септември 2025 г. в САЩ и на 6 февруари 2026 г. в София.</li><li>И двата договора са сключени по американския механизъм „Правителство за правителство&quot; (FMS – Foreign Military Sales), при който САЩ са гарант за качество и доставка.</li><li>Съдържанието на двата договора остава тайно – законът изрично забранява обнародването им в „Държавен вестник&quot;.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Българската армия и ВМС (нови способности за брегова отбрана и тактически комуникации, съвместими с НАТО); американските отбранителни компании (доставчици).</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Съдържанието на двата договора е изрично укрито от публичността – гражданите знаят, че България е похарчила пари за ракети и радиосистеми, но не и колко.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><p>Влиза в сила от обнародването.</p></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Закупуването на отбранително оборудване по американския механизъм FMS е стандартна практика сред повечето източноевропейски членки на НАТО – Полша, Румъния и Гърция имат подобни договори. NSM е система, използвана и от Норвегия и Полша, което я прави добре интегрирана в натовската архитектура. Няма специфично европейско законодателство, което да регулира тези двустранни отбранителни сделки.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241618" target="_blank">
+      Отвори в Държавен вестник ↗
+    </a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges">
+        <span class="badge b-zakon">ЗАКОН</span>
+        <span class="badge b-cat">Ратификация</span>
+      </div>
+      <span class="dv-meta">Бр.&nbsp;23 &middot; 2026-02-27</span>
+    </div>
+    <div class="dv-title">ЗАКОН за ратифициране на Многостранното споразумение между компетентните органи за автоматичен обмен на информация съгласно Рамката за предоставяне на информация за криптоактиви и на Допълнението към Многостранното споразумение между компетентните органи за автоматичен обмен на информация за финансо</div>
+    <p class="dv-lead">България се присъединява към международна система за автоматичен обмен на данни за криптоактиви и финансови сметки между данъчните администрации на участващите държави.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Ратифицирано е споразумение, подписано на 26 ноември 2024 г. в Асунсион, което задължава България да обменя автоматично информация за криптоактиви с данъчните органи на другите страни по споразумението – т.нар. CARF рамка на ОИСР.</li><li>Доставчиците на услуги с криптоактиви (борси, платформи, посредници), работещи в България, ще трябва да събират и докладват данни за транзакциите на клиентите си пред НАП.</li><li>Ратифицирано е и допълнение към съществуващото споразумение за обмен на данни за финансови сметки (CRS), подписано от България още през 2015 г. – актуализацията разширява или прецизира обхвата му.</li><li>Информацията ще тече автоматично – без нужда от конкретно запитване от чужда данъчна служба, което затруднява укриването на доходи от крипто в чужбина.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: НАП и фиска – получават достъп до данни за крипто доходи на български граждани в чужбина и обратно; данъкоплатци, спазващи правилата (по-равна конкуренция).</li><li>Губят: Лица, укривали досега доходи от криптоактиви чрез сметки и платформи в чужди юрисдикции.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Споразумението е подписано в Асунсион, Парагвай – необичайно място за финансов договор с глобални последици, тъй като Парагвай не е типичен домакин на такива форуми на ОИСР.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><p>Влиза в сила от обнародването.</p></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>CARF рамката на ОИСР е отразена в европейското законодателство чрез Директивата DAC8, приета от ЕС през 2023 г., която задължава всички държави членки да въведат автоматичен обмен на данни за криптоактиви. България не е сред първите ратификатори – повечето страни членки се съобразиха с изискванията на DAC8 в рамките на 2024–2025 г. Настоящата ратификация привежда България в съответствие с общоевропейския стандарт, без съществено отклонение от него.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241619" target="_blank">
+      Отвори в Държавен вестник ↗
+    </a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges">
+        <span class="badge b-zakon">ЗАКОН</span>
+        <span class="badge b-cat">Изменение / допълнение</span>
+      </div>
+      <span class="dv-meta">Бр.&nbsp;23 &middot; 2026-02-27</span>
+    </div>
+    <div class="dv-title">ЗАКОН за изменение на Изборния кодекс</div>
+    <p class="dv-lead">Законът разширява възможностите за гласуване на българи извън страната, като урежда по-детайлно кога и как се образуват секции извън дипломатическите представителства – и в ЕС, и извън него.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>В страни от ЕС</strong> може да се открие секция извън посолство/консулство, ако поне <strong>40 избиратели</strong> са подали заявление за гласуване на конкретното място.</li><li><strong>Автоматично</strong> се запазват места в ЕС, където на предишни избори (до 5 години назад) е имало секция с поне <strong>100 гласували</strong> – ЦИК обявява списъка не по-късно от <strong>50 дни</strong> преди изборния ден.</li><li><strong>Извън ЕС</strong> секции извън дипломатическите представителства се образуват само с решение на ЦИК, по предложение на съответния посланик/консул, и отново при минимум <strong>40 заявления</strong>. Предложението трябва да постъпи не по-късно от <strong>22 дни</strong> преди изборния ден.</li><li><strong>Твърда горна граница извън ЕС:</strong> в една държава може да се открият максимум <strong>20 секции</strong> извън официалните представителства.</li><li>На <strong>избори за евродепутати</strong> правилото за секции извън ЕС (ал. 3) изобщо не се прилага – тези избори се провеждат само в и около представителствата в трети страни.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li><strong>Печелят:</strong> Българи в ЕС с достатъчна концентрация в дадено място – получават по-лесен достъп до урна без да пътуват до посолство. Общности в трети страни, чиито посланици преценят, че отговарят на условията.</li><li><strong>Губят:</strong> Не се открива явен губещ, но общности извън ЕС остават зависими от преценката на дипломатическото ръководство и от твърдия лимит от 20 секции на държава.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Законът е приет на 5 февруари, президентът го е върнал (за повторно гласуване на 25 февруари), но въпреки това една от разпоредбите (§ 4) влиза в сила retroактивно – от <strong>1 януари 2025 г.</strong>, тоест над година преди обнародването му.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><ul><li>Основният закон влиза в сила от <strong>27 февруари 2026 г.</strong> (деня на обнародването).</li><li>§ 4 – отлагането на срок от Закона за изменение от 2022 г. (от „1 януари 2025 г.&quot; на „1 януари 2028 г.&quot;) – влиза в сила retroактивно от <strong>1 януари 2025 г.</strong></li></ul></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Повечето държави – членки на ЕС осигуряват гласуване в чужбина предимно чрез посолства и консулства, а изнесените секции на неутрални места са по-рядка практика. България е сред малкото страни, които изрично регламентират прагове (брой заявления) за автоматично разкриване на секции в чужбина. Ключовата разлика е, че много западноевропейски държави залагат на гласуване по пощата или електронно, докато България разчита изцяло на физически секции.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241669" target="_blank">
+      Отвори в Държавен вестник ↗
+    </a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges">
+        <span class="badge b-reshenie">РЕШЕНИЕ</span>
+        <span class="badge b-cat">Процедурно</span>
+      </div>
+      <span class="dv-meta">Бр.&nbsp;23 &middot; 2026-02-27</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за приемане на Процедурни правила за условията и реда за предлагането на кандидат за подуправител – ръководител на управление „Емисионно“, на Българската народна банка, представяне и публично оповестяване на документите и изслушването на кандидата в Комисията по бюджет и финанси, както и про</div>
+    <p class="dv-lead">Решението установява точните стъпки – документи, срокове, изслушване и гласуване – по които Народното събрание ще избере новия подуправител на БНБ, ръководещ управление „Емисионно&quot;.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Управителят на БНБ има <strong>7 дни</strong> от приемането на правилата, за да внесе писмено предложение с мотиви и пакет документи до Комисията по бюджет и финанси.</li><li>Кандидатът трябва да е български гражданин с минимум <strong>магистърска степен</strong> в икономика, финанси или банково дело и да не е член на политическа партия, нейн ръководен орган, нито роднина до четвърта степен по съребрена линия с друг член на УС на БНБ.</li><li>Документите се публикуват онлайн <strong>не по-малко от 7 дни</strong> преди изслушването; НПО и медии могат да изпращат въпроси, а кандидатът ги получава писмено <strong>поне 24 часа</strong> предварително.</li><li>На изслушването: управителят на БНБ представя кандидата (<strong>до 7 мин.</strong>), кандидатът излага концепция (<strong>до 10 мин.</strong>), народните представители задават въпроси (<strong>до 2 мин.</strong> на човек), а кандидатът отговаря накуп (<strong>до 10 мин.</strong>).</li><li>Кандидатът се проверява служебно за принадлежност към Държавна сигурност; резултатът се публикува публично.</li><li>Изборът в пленарна зала е <strong>явен</strong>, чрез компютризирана система; необходимо е <strong>мнозинство от повече от половината присъстващи</strong> народни представители.</li><li>При отказ на кандидата на <strong>всеки етап</strong> (изслушване или гласуване) или при неполучаване на нужните гласове – НС открива <strong>нова процедура от начало</strong>.</li><li>След избора новият подуправител декларира несъвместимост пред Сметната палата и е длъжен да актуализира декларацията при <strong>всяка промяна</strong> в обстоятелствата.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Гражданите и НПО – прозрачна, публично излъчвана процедура с възможност за участие чрез въпроси и становища.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Анонимни сигнали и становища изрично не се разглеждат – рядко срещана клауза в подобни процедурни правила на НС.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><ul><li>Влиза в сила от обнародването.</li><li>Единственият вграден срок за изпълнение е 7-дневният срок за управителя на БНБ да внесе кандидатурата, който тече от датата на приемане (25 февруари 2026 г.).</li></ul></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Изборът на ръководството на централните банки от националните парламенти е сравнително рядко явление в ЕС – в повечето държави управителите и подуправителите се назначават от правителството или президента. България е сред малкото страни, където НС пряко избира членове на управителния съвет на централната банка, което засилва парламентарния контрол, но крие риск от политизиране, несъвместим с изискванията за независимост на ЕЦБ и Договора от Маастрихт.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241690" target="_blank">
+      Отвори в Държавен вестник ↗
+    </a>
+  </div>
+</details></div>
+</div>
+
+<div class="section" id="sessions">
+  <span class="section-tag">02 · В залата — пленарни заседания</span>
+  
+<details class="sess-block">
+  <summary class="sess-sum">
+    <div class="sess-hd">
+      <span class="sess-date-chip">сряда, 25 февруари 2026</span>
+      <span class="sess-label">51 НС, 149-о заседание</span>
+    </div>
+    <p class="sess-lead">Парламентът обсъди ветото на президента върху промените в Изборния кодекс, които ограничават броя на секциите за гласуване извън ЕС до 20, точно преди изборите …</p>
+    <div class="expand-hint">Виж подробности ▾</div>
+  </summary>
+  <div class="sess-body">
+    <p class="sess-lead-full">Парламентът обсъди ветото на президента върху промените в Изборния кодекс, които ограничават броя на секциите за гласуване извън ЕС до 20, точно преди изборите на 19 април.</p>
+    
+    <div class="sess-cols"><div class="sess-col"><h5>Обсъждани теми</h5><ul><li><strong>Президентско вето върху Изборния кодекс:</strong> Президентът Йотова е върнала за ново обсъждане три параграфа от закона, с които се въвежда таван от 20 секции в държави извън ЕС (основно засяга Турция) и се премахва автоматичното разкриване на секции там, където преди са гласували над 100 души. Противниците твърдят, че това е противоконституционно ограничаване на избирателни права.</li><li><strong>Изслушване за случая „Петрохан&quot;:</strong> Прието е в дневния ред изслушване на служебния министър на вътрешните работи Емил Дечев, директора на Национална полиция и редица полицейски ръководители по сигнали за оказван от министъра натиск по разследването.</li><li><strong>Военни самолети на САЩ на летище „София&quot;:</strong> Гласувано е изслушване на служебния премиер Гюров и министрите на отбраната и транспорта относно ситуацията с намиращите се на летището американски военни самолети и планираното временно затваряне на летището за граждански полети.</li><li><strong>Декларации по повод 4 години война в Украйна:</strong> ПП-ДБ и ГЕРБ-СДС изразиха солидарност с Украйна и осъдиха руската агресия; ВЪЗРАЖДАНЕ произнесе обширна декларация, определяща украинското правителство като „профашистко&quot; и отричаща Русия да е агресор.</li><li><strong>НСО охрана на народни представители:</strong> Предложение за второ четене на законопроект, ограничаващ охраната от НСО на народни представители (целящ премахване на ескорта на Борисов и Пеевски), не беше прието дори след прегласуване.</li><li><strong>Нов народен представител от АПС:</strong> Едис Даудов положи клетва като народен представител от Разград, замествайки Хасан Адемов (встъпил като министър), след което веднага заяви, че напуска парламентарната група на АПС.</li></ul></div><div class="sess-col"><h5>Гласувания</h5><ul><li><strong>Изслушване за военните самолети на летище „София&quot;:</strong> ЗА 153, ПРОТИВ 62, ВЪЗ 2 — прието</li><li><strong>Изслушване по случая „Петрохан&quot;:</strong> ЗА 215, ПРОТИВ 0, ВЪЗ 1 — прието с почти пълно единодушие</li><li><strong>Второ четене на ЗИД на Закона за МВР (охрана от НСО):</strong> ЗА 80, ПРОТИВ 91, ВЪЗ 50 — отхвърлено; при прегласуване ЗА 93, ПРОТИВ 90, ВЪЗ 36 — отново отхвърлено (ГЕРБ гласува против, въпреки апелите на ПП-ДБ и ВЪЗРАЖДАНЕ)</li><li><strong>Комисията по конституционни въпроси препоръча:</strong> 11 „за&quot; повторно приемане на закона, 8 „против&quot;, 1 „въздържал се&quot; — т.е. комисията препоръча да се потвърди законът въпреки ветото</li></ul></div></div>
+    <div class="notable-callout"><span class="notable-icon">★</span><div><h5>Забележително</h5><p>Едис Даудов положи клетва като народен представител от АПС и в същото заседание подаде заявление да напусне парламентарната група — само минути след встъпването си.</p></div></div>
+    <div class="parties-block"><h5>Позиции по партии</h5><ul><li><strong>ГЕРБ-СДС:</strong> Подкрепя повторното приемане на промените в Изборния кодекс (срещу ветото); гласува против законопроекта за охраната от НСО</li><li><strong>ПП-ДБ:</strong> Подкрепя ветото на президента и не приема промените в Изборния кодекс; подкрепя законопроекта за НСО охраната</li><li><strong>ВЪЗРАЖДАНЕ:</strong> Против ветото — подкрепя ограничаването на секциите в Турция; подкрепя законопроекта за НСО охраната</li><li><strong>ДПС – Ново начало:</strong> Подкрепя ветото; категорично против ограничаването на секциите извън ЕС</li><li><strong>АПС:</strong> Подкрепя ветото на президента</li><li><strong>БСП – Обединена левица:</strong> Подкрепя ветото (счита промените за неуместни точно преди избори), въпреки вътрешни разногласия по аргументацията</li></ul></div>
+    <div class="sess-ft">
+      <a href="https://www.parliament.bg/bg/plenaryst/ns/55/ID/11108" target="_blank" class="ext-link">
+        Отвори в parliament.bg ↗
+      </a>
+    </div>
+  </div>
+</details>
+
+<details class="sess-block">
+  <summary class="sess-sum">
+    <div class="sess-hd">
+      <span class="sess-date-chip">четвъртък, 26 февруари 2026</span>
+      <span class="sess-label">51 НС</span>
+    </div>
+    <p class="sess-lead">Парламентът разгледа на второ четене мащабни промени в Кодекса за социално осигуряване, които въвеждат три вида подфондове в задължителното пенсионно осигуряван…</p>
+    <div class="expand-hint">Виж подробности ▾</div>
+  </summary>
+  <div class="sess-body">
+    <p class="sess-lead-full">Парламентът разгледа на второ четене мащабни промени в Кодекса за социално осигуряване, които въвеждат три вида подфондове в задължителното пенсионно осигуряване (динамичен, балансиран и консервативен) в зависимост от възрастта на осигуреното лице.</p>
+    
+    <div class="sess-cols"><div class="sess-col"><h5>Обсъждани теми</h5><ul><li><strong>Реформа в пенсионните фондове:</strong> Промените в КСО въвеждат задължително разпределение на осигурените в три подфонда с различен рисков профил – до 50 г. в динамичен, от 50 г. до 3 г. преди пенсия в балансиран, след това в консервативен; всеки може и да избере сам своя подфонд</li><li><strong>По-строг контрол върху пенсионните дружества:</strong> Въвеждат се нови изисквания за инвестиционни консултанти, осигурителни посредници и за придобиване на квалифицирано участие в пенсионноосигурителни дружества; нарушителите губят право на участие в служебното разпределение на осигурени лица</li><li><strong>Декларация за мината край Брезник:</strong> Депутат от „Възраждане&quot; обвини, че гражданите на община Брезник са били измамени – обещано им е, че няма да има обогатителна фабрика и хвостохранилище, но концесионният договор (подписан от ГЕРБ) предвижда точно това; партията настоява за преразглеждане на договора и ново допитване до местните хора</li><li><strong>Декларация на ИТН срещу министър Христанов:</strong> „Има Такъв Народ&quot; обвини земеделския министър Иван Христанов в конфликт на интереси заради семейни фирми в сектора на храните и лабораторните изследвания, и в назначения на съпартийци на ключови постове в БАБХ</li><li><strong>Контраатака на ПП-ДБ срещу ИТН:</strong> Явор Божанков отговори с публикация от платформата Bird, че синът на Тошко Йорданов е стъпил в енергийния бизнес в деня, в който ИТН гласува за охраната на Борисов и Пеевски; последва остър словесен сблъсък в залата, завършил с забележка към Тошко Йорданов</li></ul></div><div class="sess-col"><h5>Гласувания</h5><ul><li><strong>Удължаване на работното време до изчерпване на дневния ред:</strong> ЗА 128, ПРОТИВ 4, ВЪЗДЪРЖАЛИ СЕ 46</li><li><strong>Допуск на експерти от Министерство на финансите и КФН за второто четене на КСО:</strong> ЗА 109, ПРОТИВ 50, ВЪЗДЪРЖАЛИ СЕ 8</li><li>*(Гласуванията по отделните параграфи на законопроекта за КСО не са включени в предоставените данни)*</li></ul></div></div>
+    <div class="notable-callout"><span class="notable-icon">★</span><div><h5>Забележително</h5><p>Докато в залата се води остър политически сблъсък с обвинения в конфликт на интереси между ИТН и ПП-ДБ, председателят Костадин Ангелов наложи официална забележка на Тошко Йорданов заради изказвания от трибуната, насочени към друг народен представител.</p></div></div>
+    <div class="parties-block"><h5>Позиции по партии</h5><ul><li><strong>ГЕРБ-СДС:</strong> Подкрепи промените в КСО; инициира удължаване на работното време</li><li><strong>ПП-ДБ:</strong> Подкрепи промените в КСО; атакува ИТН с публикации за бизнес интереси</li><li><strong>ДПС (Цонев/Сабри/Халит):</strong> Активно участие в комисията – предложенията им по КСО са подкрепени</li><li><strong>ВЪЗРАЖДАНЕ:</strong> Изнесе декларация срещу мината в Брезник; гласуването по процедурите показва въздържане</li><li><strong>ИТН:</strong> Изнесе декларация срещу министър Христанов; Тошко Йорданов получи забележка от председателя</li><li><strong>Хрисимиров/Георгиев/Койчев (ГЕРБ-дисиденти):</strong> Последователно предлагаха отпадане на ключови текстове в КСО (подфондовете, санкциите за ниска доходност) – всички предложения отхвърлени от комисията</li></ul></div>
+    <div class="sess-ft">
+      <a href="https://www.parliament.bg/bg/plenaryst/ns/55/ID/11109" target="_blank" class="ext-link">
+        Отвори в parliament.bg ↗
+      </a>
+    </div>
+  </div>
+</details>
+
+<details class="sess-block">
+  <summary class="sess-sum">
+    <div class="sess-hd">
+      <span class="sess-date-chip">петък, 27 февруари 2026</span>
+      <span class="sess-label">51 НС, 151-во заседание</span>
+    </div>
+    <p class="sess-lead">Парламентът ратифицира две международни споразумения – за издигане на Центъра за подводна археология под егидата на ЮНЕСКО и за партньорство на ЕС с 79 африканс…</p>
+    <div class="expand-hint">Виж подробности ▾</div>
+  </summary>
+  <div class="sess-body">
+    <p class="sess-lead-full">Парламентът ратифицира две международни споразумения – за издигане на Центъра за подводна археология под егидата на ЮНЕСКО и за партньорство на ЕС с 79 африкански, карибски и тихоокеански държави.</p>
+    
+    <div class="sess-cols"><div class="sess-col"><h5>Обсъждани теми</h5><ul><li><strong>Ратификация на ЮНЕСКО споразумение за подводна археология:</strong> България официално превръща Центъра за подводна археология в „Институт за подводно наследство&quot; – институт от категория 2 под егидата на ЮНЕСКО за региона на Черно море и Долен Дунав. Споразумението е подписано в Париж на 19 януари 2026 г. и е валидно 8 години.</li><li><strong>Ратификация на Споразумението от Самоа:</strong> ЕС и неговите членки, включително България, ратифицират рамково партньорство с 79 държави от Африка, Карибите и Тихоокеанския басейн. Споразумението покрива демокрация, климат, миграция и сигурност, но без конкретни финансови ангажименти. Частично се прилага от 1 януари 2024 г.</li><li><strong>Декларация на БСП по повод 3 март:</strong> Наталия Киселова разказа история на български опълченец от Шипченската епопея и защити значението на Руско-турската освободителна война като легитимен национален празник.</li><li><strong>Декларация на ПП-ДБ за незаконния арест на кмета на Варна:</strong> Николай Денков настоя за наказателна отговорност на длъжностните лица, наредили ареста на Благомир Коцев, и обвини прокуратурата в двоен стандарт спрямо случая „Борисов&quot;.</li><li><strong>Декларация на ВЪЗРАЖДАНЕ за миграционния пакт:</strong> Ангел Георгиев твърди, че България е отказала изключение от задължителния механизъм за приемане на мигранти от ЕС, и обвини кабинета в „национално предателство&quot;.</li><li><strong>Разгорещен дебат за Споразумението от Самоа:</strong> ВЪЗРАЖДАНЕ атакува споразумението като „скрита Истанбулска конвенция&quot; и критикува остро зам.-министъра Велизар Шаламанов, като председателката Назарян направи забележка за неуважение към орган на власт.</li></ul></div><div class="sess-col"><h5>Гласувания</h5><ul><li><strong>Ратификация на ЮНЕСКО споразумение (1-во четене):</strong> ЗА 163, ПРОТИВ 0, ВЪЗ 0 — пълно единодушие</li><li><strong>Ратификация на ЮНЕСКО споразумение (2-ро четене):</strong> ЗА 162, ПРОТИВ 0, ВЪЗ 0 — пълно единодушие</li><li><strong>Ратификация на Споразумението от Самоа (1-во четене):</strong> ЗА 93, ПРОТИВ 24, ВЪЗ 9 — ВЪЗРАЖДАНЕ гласува против; ГЕРБ, ПП-ДБ, ДПС, ИТН, АПС – за; ПП МЕЧ се въздържа</li><li><strong>Ратификация на Споразумението от Самоа (2-ро четене):</strong> ЗА 101, ПРОТИВ 23, ВЪЗ 12 — същото разпределение</li></ul></div></div>
+    <div class="notable-callout"><span class="notable-icon">★</span><div><h5>Забележително</h5><p>Депутати от ВЪЗРАЖДАНЕ публично нарекоха зам.-министъра на външните работи Велизар Шаламанов „срам&quot; и „срамен субект&quot; от трибуната, а председателката Назарян им направи забележка, че изразяват „явно неуважение към орган на власт&quot; – рядко открита конфронтация между ръководството на парламента и депутати в пленарна зала.</p></div></div>
+    <div class="parties-block"><h5>Позиции по партии</h5><ul><li><strong>ГЕРБ-СДС:</strong> Подкрепи и двете ратификации, активно участва в дебата по ЮНЕСКО.</li><li><strong>ПП-ДБ:</strong> Подкрепи и двете ратификации; декларация срещу незаконния арест на кмета на Варна.</li><li><strong>ВЪЗРАЖДАНЕ:</strong> Гласува против Споразумението от Самоа; подкрепи ЮНЕСКО ратификацията; водеше агресивен дебат с лични нападки срещу зам.-министър Шаламанов.</li><li><strong>ДПС – Ново начало:</strong> Подкрепи и двете ратификации.</li><li><strong>БСП – Обединена левица:</strong> Подкрепи ратификацията от Самоа; декларация за 3 март.</li><li><strong>ИТН:</strong> Подкрепи и двете ратификации; Тошко Йорданов предложи второто четене в същото заседание.</li><li><strong>АПС:</strong> Подкрепи и двете ратификации.</li><li><strong>ПП МЕЧ:</strong> Въздържа се по Споразумението от Самоа.</li></ul></div>
+    <div class="sess-ft">
+      <a href="https://www.parliament.bg/bg/plenaryst/ns/55/ID/11110" target="_blank" class="ext-link">
+        Отвори в parliament.bg ↗
+      </a>
+    </div>
+  </div>
+</details>
+</div>
+
+<div class="nl-footer">
+  <span class="nl-footer-logo">Парламентарни Doodles</span>
+  <div class="nl-footer-links">
+    <a href="../">Бюлетин</a>
+    <a href="https://bpdoodles.com">Basepoint Doodles</a>
+  </div>
+</div>
+</div>
+</body>
+</html>

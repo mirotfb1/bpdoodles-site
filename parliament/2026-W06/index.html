@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="utf-8">
+<title>Парламентарни Doodles · Седмица 6 · 2–8 февруари 2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+
+:root{
+  --color-basepoint:#1B2E5E;
+  --color-doodles:  #B5821A;
+  --color-accent:   #B5821A;
+  --color-ink:      #1C1C1C;
+  --color-ink-2:    #444444;
+  --color-muted:    #888888;
+  --color-muted-light:#AAAAAA;
+  --color-border:   #E8E8E8;
+  --color-surface:  #F8F8F8;
+  --color-paper:    #FFFFFF;
+  --font-display:'Caveat',cursive;
+  --font-head:'Nunito','Arial Black',sans-serif;
+  --font-body:'Nunito',Arial,sans-serif;
+}
+
+body{font-family:var(--font-body);background:#F0F2F5;color:var(--color-ink);line-height:1.6;}
+
+/* ── Wrapper (700px newsletter style) ── */
+.wrapper{max-width:740px;margin:32px auto;background:#fff;border:1px solid var(--color-border);border-radius:4px;overflow:hidden;}
+
+/* ── Top nav bar (navy) ── */
+.top-bar{display:flex;justify-content:space-between;align-items:center;padding:8px 16px;background:var(--color-basepoint);}
+.site-nav{display:flex;gap:20px;align-items:center;}
+.site-nav a{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none;}
+.site-nav a:hover{color:rgba(255,255,255,.9);}
+.site-nav a.active{color:var(--color-accent);}
+.top-bar-tag{font-family:'Courier New',monospace;font-size:10px;color:rgba(255,255,255,.25);}
+
+/* ── Masthead (navy, horizontal) ── */
+.masthead{background:var(--color-basepoint);padding:24px 28px 20px;display:flex;justify-content:space-between;align-items:flex-end;border-bottom:3px solid var(--color-accent);}
+.masthead-logo{display:flex;flex-direction:row;align-items:center;}
+.masthead-left{display:flex;flex-direction:column;align-items:flex-end;padding-right:14px;}
+.masthead-basepoint{font-family:var(--font-head);font-size:22px;font-weight:900;color:#fff;letter-spacing:-.3px;line-height:1;}
+.masthead-tagline{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:4px;}
+.masthead-divider{width:2px;height:52px;background:rgba(255,255,255,.2);}
+.masthead-doodles{font-family:var(--font-display);font-size:48px;font-weight:700;color:var(--color-doodles);line-height:1;padding-left:14px;}
+.masthead-meta{text-align:right;}
+.masthead-issue{font-size:13px;font-weight:700;color:rgba(255,255,255,.85);display:block;line-height:1.5;}
+.masthead-date{font-size:11px;color:rgba(255,255,255,.4);display:block;}
+.masthead-pills{margin-top:8px;display:flex;gap:6px;justify-content:flex-end;flex-wrap:wrap;}
+.masthead-pill{font-size:10px;font-weight:700;letter-spacing:.05em;background:rgba(255,255,255,.12);color:rgba(255,255,255,.6);padding:3px 8px;border-radius:3px;}
+
+/* ── Content sections ── */
+.section{padding:20px 28px;border-bottom:1px solid var(--color-border);}
+.section:last-of-type{border-bottom:none;}
+.section-tag{font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--color-accent);margin-bottom:12px;display:block;}
+
+/* ── Section label row (index/archive) ── */
+.section-label-row{padding:10px 28px 8px;background:var(--color-surface);border-bottom:1px solid var(--color-border);}
+.section-label{font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--color-accent);}
+
+/* ── Page header (index/archive) ── */
+.page-header{padding:20px 28px 16px;border-bottom:1px solid var(--color-border);}
+.page-title{font-family:var(--font-head);font-size:20px;font-weight:900;color:var(--color-ink);letter-spacing:-.3px;margin-bottom:6px;}
+.page-subtitle{font-size:13px;color:var(--color-muted);}
+
+/* ── Issue list (index/archive) ── */
+a.issue-row{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 28px;border-bottom:1px solid var(--color-border);text-decoration:none;color:inherit;transition:background .1s;}
+a.issue-row:hover{background:var(--color-surface);}
+a.issue-row:last-of-type{border-bottom:none;}
+.issue-row-left{flex:1;}
+.issue-row-meta{font-family:'Courier New',monospace;font-size:10px;color:var(--color-muted-light);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;}
+.issue-row-title{font-size:15px;font-weight:900;color:var(--color-ink);letter-spacing:-.2px;line-height:1.3;}
+.issue-row-desc{font-size:12px;color:var(--color-muted);margin-top:3px;}
+.issue-row-arrow{font-size:18px;color:var(--color-accent);font-weight:900;flex-shrink:0;}
+
+/* ── Footer (newsletter style) ── */
+.nl-footer{padding:14px 28px;background:var(--color-surface);border-top:1px solid var(--color-border);display:flex;justify-content:space-between;align-items:center;}
+.nl-footer-logo{font-family:var(--font-display);font-size:18px;font-weight:700;color:#CCC;}
+.nl-footer-links{font-size:11px;display:flex;gap:16px;}
+.nl-footer-links a{color:var(--color-muted-light);text-decoration:none;}
+.nl-footer-links a:hover{color:var(--color-muted);}
+.nl-footer-sources{font-family:'Courier New',monospace;font-size:10px;color:var(--color-muted-light);text-align:right;}
+
+/* ── DV CARDS ── */
+.dv-grid{display:flex;flex-direction:column;gap:10px;}
+details.dv-card{background:var(--color-paper);border:1px solid var(--color-border);border-radius:8px;overflow:hidden;transition:border-color .15s;}
+details.dv-card:hover{border-color:var(--color-accent);}
+details.dv-card[open]{border-color:var(--color-accent);}
+.dv-sum{padding:14px 16px;cursor:pointer;list-style:none;user-select:none;}
+.dv-sum::-webkit-details-marker{display:none;}
+.dv-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+.dv-meta{font-size:11px;color:var(--color-muted);font-weight:700;}
+.dv-title{font-family:var(--font-head);font-size:13px;font-weight:900;color:var(--color-ink);line-height:1.4;letter-spacing:-.1px;margin-bottom:6px;}
+.dv-lead{font-size:13px;color:var(--color-ink-2);line-height:1.55;margin-bottom:8px;}
+.expand-hint{font-size:11px;font-weight:700;color:var(--color-accent);text-transform:uppercase;letter-spacing:.06em;margin-top:4px;}
+details.dv-card[open] .expand-hint{display:none;}
+.dv-body{padding:0 16px 16px;border-top:1px solid var(--color-border);}
+
+/* ── BADGES ── */
+.badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;}
+.b-zakon   {background:#dbeafe;color:#1a56db;}
+.b-reshenie{background:#cffafe;color:#0a6e8a;}
+.b-ukaz    {background:#ede9fe;color:#7c3aed;}
+.b-decl    {background:#fef3c7;color:#92400e;}
+.b-post    {background:#d1fae5;color:#065f46;}
+.b-other   {background:#f3f4f6;color:#6b7280;}
+
+/* ── FACTSHEET SECTIONS ── */
+.fs-sec{margin:12px 0;font-size:13px;}
+.fs-sec h5,.parties-block h5,.notable-callout h5,.sess-col h5{font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.1em;color:var(--color-muted);margin-bottom:8px;padding-bottom:5px;border-bottom:1px solid var(--color-border);}
+.fs-sec ul,.parties-block ul{list-style:none;padding:0;}
+.fs-sec li,.parties-block li{padding:4px 0 4px 16px;position:relative;color:var(--color-ink-2);border-bottom:1px solid #f3f4f6;font-size:13px;line-height:1.5;}
+.fs-sec li:last-child,.parties-block li:last-child{border-bottom:none;}
+.fs-sec li::before{content:"·";position:absolute;left:3px;color:var(--color-accent);font-weight:700;font-size:16px;line-height:1.1;}
+.fs-sec p,.parties-block p{color:var(--color-ink-2);font-size:13px;margin-bottom:4px;}
+.fs-winners ul{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.fs-winners li{padding:8px 10px 8px 24px;border-radius:6px;border-bottom:none !important;}
+.fs-winners li:first-child{background:#f0fdf4;}
+.fs-winners li:first-child::before{content:"✓";color:#16a34a;font-size:13px;top:8px;}
+.fs-winners li:nth-child(2){background:#fef2f2;}
+.fs-winners li:nth-child(2)::before{content:"✗";color:#dc2626;font-size:13px;top:8px;}
+.fs-notable{background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:12px 14px;}
+.fs-notable h5{border-bottom-color:#fde68a;color:#92400e;}
+.fs-notable li,.fs-notable p{color:#78350f;}
+.fs-notable li::before{color:#d97706;}
+.fs-eu{background:#f0f9ff;border-radius:8px;padding:12px 14px;}
+.fs-eu h5{color:#0369a1;border-bottom-color:#bae6fd;}
+.fs-eu p{color:#0c4a6e;font-size:13px;}
+.ext-link{display:inline-block;margin-top:12px;font-size:12px;font-weight:700;color:var(--color-basepoint);text-decoration:none;}
+.ext-link:hover{text-decoration:underline;}
+.no-summ{color:var(--color-muted);font-size:13px;font-style:italic;padding:12px 0;}
+
+/* ── SESSION BLOCKS ── */
+details.sess-block{background:var(--color-paper);border:1px solid var(--color-border);border-left:4px solid var(--color-basepoint);border-radius:0 8px 8px 0;margin-bottom:10px;overflow:hidden;transition:box-shadow .15s;}
+details.sess-block:hover{box-shadow:0 2px 8px rgba(0,0,0,.06);}
+details.sess-block[open]{border-left-color:var(--color-accent);}
+.sess-sum{padding:14px 18px;cursor:pointer;list-style:none;user-select:none;}
+.sess-sum::-webkit-details-marker{display:none;}
+.sess-hd{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap;}
+.sess-date-chip{background:var(--color-basepoint);color:#fff;font-size:10px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:4px;white-space:nowrap;}
+details.sess-block[open] .sess-date-chip{background:var(--color-accent);}
+.sess-label{font-family:var(--font-head);font-size:14px;font-weight:900;color:var(--color-ink);}
+.sess-lead{font-size:13px;color:var(--color-ink-2);line-height:1.55;margin-bottom:6px;}
+.sess-body{padding:0 18px 16px;border-top:1px solid var(--color-border);}
+.sess-lead-full{font-size:13px;color:var(--color-ink-2);line-height:1.6;margin:12px 0;background:#f8fafc;border-left:3px solid var(--color-accent);padding:8px 12px;border-radius:0 6px 6px 0;}
+.sess-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0;}
+.sess-col{font-size:13px;}
+.sess-col ul{list-style:none;padding:0;}
+.sess-col li{padding:4px 0 4px 14px;position:relative;color:var(--color-ink-2);border-bottom:1px solid #f3f4f6;font-size:13px;line-height:1.5;}
+.sess-col li:last-child{border-bottom:none;}
+.sess-col li::before{content:"·";position:absolute;left:2px;color:var(--color-basepoint);font-weight:700;font-size:15px;line-height:1.1;}
+.notable-callout{display:flex;gap:10px;align-items:flex-start;background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:10px 12px;margin:12px 0;}
+.notable-icon{font-size:16px;color:#d97706;flex-shrink:0;line-height:1.4;}
+.notable-callout h5{border-bottom-color:#fde68a;color:#92400e;}
+.notable-callout p,.notable-callout li{color:#78350f;font-size:13px;}
+.notable-callout ul{list-style:none;padding:0;}
+.notable-callout li{padding:3px 0 3px 14px;position:relative;}
+.notable-callout li::before{content:"·";position:absolute;left:2px;color:#d97706;font-weight:700;font-size:15px;line-height:1.1;}
+.parties-block{margin:12px 0;font-size:13px;}
+.sess-ft{margin-top:12px;padding-top:10px;border-top:1px solid var(--color-border);}
+
+/* ── CHART SECTION ── */
+.chart-card-nl{margin-bottom:14px;}
+.chart-title-nl{font-size:12px;font-weight:900;color:var(--color-ink);margin-bottom:2px;}
+.chart-sub-nl{font-size:10px;color:var(--color-muted);margin-bottom:10px;}
+.dv-badges{display:flex;gap:6px;align-items:center;flex-wrap:wrap;}
+.b-cat{background:#f3f4f6;color:#555;}
+
+/* ── Archive table ── */
+.arch-table{width:100%;border-collapse:collapse;}
+.arch-table th{padding:8px 0;text-align:left;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.07em;color:var(--color-muted);border-bottom:1px solid var(--color-border);}
+.arch-table td{padding:12px 8px 12px 0;border-bottom:1px solid var(--color-border);font-size:13px;color:var(--color-ink-2);}
+.arch-table tr:last-child td{border-bottom:none;}
+.arch-table a{color:var(--color-basepoint);font-weight:700;text-decoration:none;}
+.arch-table a:hover{text-decoration:underline;}
+
+@media(max-width:760px){
+  .wrapper{margin:0;border-radius:0;border-left:none;border-right:none;}
+  .masthead,.section,.nl-footer,.page-header,a.issue-row,.section-label-row{padding-left:16px;padding-right:16px;}
+  .masthead-pills{display:none;}
+  .sess-cols{grid-template-columns:1fr;}
+  .fs-winners ul{grid-template-columns:1fr;}
+}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script><script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3/dist/chartjs-plugin-annotation.min.js"></script>
+</head>
+<body>
+<div class="wrapper">
+
+<div class="top-bar">
+  <nav class="site-nav">
+    <a href="../">Бюлетин</a>
+    <a href="https://bpdoodles.com" class="active">Basepoint Doodles</a>
+  </nav>
+  <span class="top-bar-tag">Парламентарни Doodles</span>
+</div>
+
+<div class="masthead">
+  <div class="masthead-logo">
+    <div class="masthead-left">
+      <span class="masthead-basepoint">Парламентарни</span>
+      <span class="masthead-tagline">Парламентарен дайджест</span>
+    </div>
+    <div class="masthead-divider"></div>
+    <span class="masthead-doodles">Doodles</span>
+  </div>
+  <div class="masthead-meta">
+    <span class="masthead-issue">Седмица 6 · 2026</span>
+    <span class="masthead-date">2–8 февруари 2026</span>
+    <div class="masthead-pills"><span class="masthead-pill">1 закон в ДВ</span><span class="masthead-pill">2 решения в ДВ</span><span class="masthead-pill">2 заседания</span></div>
+  </div>
+</div>
+
+<div class="section" id="charts">
+  <span class="section-tag">Тенденции 2026</span>
+  <div class="chart-card-nl">
+    <div class="chart-title-nl">Закони в Държавен вестник</div>
+    <div class="chart-sub-nl">Нов закон &middot; изменение / допълнение &middot; ратификация</div>
+    <canvas id="nl-law-bar" height="90"></canvas>
+  </div>
+  <div class="chart-card-nl">
+    <div class="chart-title-nl">Решения на НС</div>
+    <div class="chart-sub-nl">Кадрово &middot; комисии &middot; процедурно &middot; политическо</div>
+    <canvas id="nl-dec-bar" height="90"></canvas>
+  </div>
+  <div class="chart-card-nl">
+    <div class="chart-title-nl">Пленарни заседания на седмица</div>
+    <div class="chart-sub-nl">Брой заседания</div>
+    <canvas id="nl-sess-bar" height="70"></canvas>
+  </div>
+</div>
+<script>
+const WEEK_LABELS   = ["2026-W01", "2026-W02", "2026-W03", "2026-W04", "2026-W05", "2026-W06"];
+const WEEK_DISPLAY  = ["29 \u0434\u0435\u043a\u0435\u043c\u0432\u0440\u0438 \u2013 4 \u044f\u043d\u0443\u0430\u0440\u0438 2025", "5\u201311 \u044f\u043d\u0443\u0430\u0440\u0438 2026", "12\u201318 \u044f\u043d\u0443\u0430\u0440\u0438 2026", "19\u201325 \u044f\u043d\u0443\u0430\u0440\u0438 2026", "26 \u044f\u043d\u0443\u0430\u0440\u0438 \u2013 1 \u0444\u0435\u0432\u0440\u0443\u0430\u0440\u0438 2026", "2\u20138 \u0444\u0435\u0432\u0440\u0443\u0430\u0440\u0438 2026"];
+const WEEK_PARL_IDX = null;
+const LAW_WDS       = [{"label": "\u041d\u043e\u0432 \u0437\u0430\u043a\u043e\u043d", "data": [0, 0, 0, 0, 0, 0], "backgroundColor": "#1B2E5E", "borderColor": "#1B2E5E"}, {"label": "\u0418\u0437\u043c\u0435\u043d\u0435\u043d\u0438\u0435 / \u0434\u043e\u043f\u044a\u043b\u043d\u0435\u043d\u0438\u0435", "data": [0, 0, 0, 1, 0, 1], "backgroundColor": "#B5821A", "borderColor": "#B5821A"}, {"label": "\u0420\u0430\u0442\u0438\u0444\u0438\u043a\u0430\u0446\u0438\u044f", "data": [0, 0, 0, 0, 0, 0], "backgroundColor": "#2A9D5C", "borderColor": "#2A9D5C"}];
+const DEC_WDS       = [{"label": "\u041a\u0430\u0434\u0440\u043e\u0432\u043e", "data": [0, 0, 0, 0, 0, 0], "backgroundColor": "#7C3AED", "borderColor": "#7C3AED"}, {"label": "\u041a\u043e\u043c\u0438\u0441\u0438\u0438", "data": [0, 0, 0, 0, 0, 0], "backgroundColor": "#0A6E8A", "borderColor": "#0A6E8A"}, {"label": "\u041f\u0440\u043e\u0446\u0435\u0434\u0443\u0440\u043d\u043e", "data": [0, 0, 0, 0, 0, 0], "backgroundColor": "#888888", "borderColor": "#888888"}, {"label": "\u041f\u043e\u043b\u0438\u0442\u0438\u0447\u0435\u0441\u043a\u043e", "data": [0, 0, 0, 0, 0, 2], "backgroundColor": "#E03E2D", "borderColor": "#E03E2D"}];
+const SESS_WDS      = [{"label": "\u0417\u0430\u0441\u0435\u0434\u0430\u043d\u0438\u044f", "data": [0, 0, 3, 3, 3, 2], "backgroundColor": "#1B2E5E", "borderColor": "#1B2E5E"}];
+
+const BAR_ANNO = WEEK_PARL_IDX !== null ? {
+  annotations: { newParl: {
+    type: 'line', scaleID: 'x',
+    value: WEEK_LABELS[WEEK_PARL_IDX],
+    borderColor: '#B5821A', borderWidth: 2, borderDash: [6, 4],
+    label: { content: '52-ро НС', display: true, position: 'start',
+             color: '#B5821A', backgroundColor: 'rgba(181,130,26,.08)',
+             font: { size: 10, weight: '700' }, padding: { x: 6, y: 3 } }
+  }}
+} : {};
+
+function makeNLBar(id, datasets, stacked) {
+  new Chart(document.getElementById(id), {
+    type: 'bar',
+    data: { labels: WEEK_LABELS, datasets: datasets.map(d => ({...d, borderWidth: 0})) },
+    options: {
+      responsive: true, maintainAspectRatio: true,
+      plugins: {
+        annotation: BAR_ANNO,
+        legend: { labels: { font: { size: 10 }, boxWidth: 10, padding: 10 } },
+        tooltip: { callbacks: { title: ctx => WEEK_DISPLAY[ctx[0].dataIndex] } }
+      },
+      scales: {
+        x: { stacked, ticks: { font: { size: 9 }, color: '#888', maxRotation: 45, autoSkip: false }, grid: { display: false } },
+        y: { stacked, ticks: { font: { size: 9 }, color: '#888', precision: 0 }, grid: { color: '#f3f4f6' }, beginAtZero: true }
+      }
+    }
+  });
+}
+
+makeNLBar('nl-law-bar',  LAW_WDS, true);
+makeNLBar('nl-dec-bar',  DEC_WDS, true);
+makeNLBar('nl-sess-bar', SESS_WDS, false);
+</script>
+
+<div class="section" id="dv">
+  <span class="section-tag">01 · Обнародвано в Държавен вестник</span>
+  <div class="dv-grid">
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges">
+        <span class="badge b-zakon">ЗАКОН</span>
+        <span class="badge b-cat">Изменение / допълнение</span>
+      </div>
+      <span class="dv-meta">Бр.&nbsp;13 &middot; 2026-02-03</span>
+    </div>
+    <div class="dv-title">ЗАКОН за изменение и допълнение на Закона за защита на потребителите</div>
+    <p class="dv-lead">Законът въвежда новите европейски правила за безопасност на продуктите (включително онлайн търговия), урежда представителните съдебни искове на потребителски организации срещу нелоялни търговски практики и актуализира санкциите за опасни стоки на пазара.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Безопасност на всички продукти по новия EU регламент:</strong> Старите правила за обща безопасност на стоките се отменят изцяло и се заменят с разпоредби, прилагащи Регламент (ЕС) 2023/988 – важи за всички продукти независимо дали се продават физически или онлайн, включително употребявани, ремонтирани и рециклирани стоки.</li><li><strong>Онлайн платформи с нови задължения:</strong> Доставчиците на онлайн места за търговия (Amazon, eBay и подобни) трябва да се регистрират в портала Safety Gate, да определят единна точка за контакт с потребителите и с контролните органи и при заповед да премахнат съдържание за опасен продукт в рамките на <strong>2 работни дни</strong>.</li><li><strong>Ако продуктът е безопасен – разходите за проверката са за държавата; ако е опасен – за производителя/вносителя.</strong> Производителите задължително водят регистър на жалби, инциденти и изземвания.</li><li><strong>Нови санкции за опасни продукти:</strong> За пускане на опасен продукт на пазара – глоба до 40 000 лв. за физически лица и имуществена санкция до 50 000 лв. за фирми. За неизпълнение на предписание на КЗП – до 5 000 лв. / до 30 000 лв. За отказ на достъп на инспектори – до 2 500 лв. / до 5 000 лв.</li><li><strong>Представителни искове от потребителски организации:</strong> Въвежда се нова процедура – квалифицирани НПО и КЗП могат да завеждат колективни искове за преустановяване на нарушения или за обезщетение в полза на група потребители. Минимум <strong>10 присъединени потребители</strong> са необходими, за да продължи делото.</li><li><strong>Преди иск – задължителен 14-дневен срок за доброволно спиране:</strong> Квалифицираната организация трябва да уведоми търговеца и да му даде 14 дни да преустанови нарушението, преди да заведе иск за забрана.</li><li><strong>Признаване на организациите:</strong> Министерството на икономиката и индустрията одобрява кои НПО могат да водят представителни искове – изисква се реална дейност поне <strong>1 година</strong> преди кандидатстването, функционираща приемна в областен град, пълна финансова прозрачност и независимост от търговски интереси. Решението се издава в <strong>двумесечен срок</strong>, проверка – на всеки <strong>5 години</strong>.</li><li><strong>Давността спира</strong> докато тече представителен иск – индивидуалните потребители не губят правата си, докато колективното дело се води.</li><li><strong>Присъединилите се потребители не плащат разноски</strong> по делото, освен ако са действали умишлено или небрежно. Решението по колективен иск може да се ползва като доказателство в отделни индивидуални дела срещу същия търговец за същата практика.</li><li><strong>Намалението на цена при промоции</strong> – ново правило влиза в сила 1 година след обнародването: за стоки на пазара под 30 дни преди намалението, референтният срок е поне <strong>7 дни</strong> (вместо стандартните 30).</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li><strong>Печелят:</strong> Потребители (нови права при изземване на продукти, достъп до колективни искове без разноски, по-строг контрол на онлайн платформи); потребителски НПО (официален статус и правомощия за завеждане на дела).</li><li><strong>Губят:</strong> Производители, вносители и онлайн платформи (нови задължения, по-високи санкции, задължителни регистри и срокове за реакция при опасни продукти).</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Съдът може да отхвърли представителен иск за безсмислено финансиране от трета страна – включително ако финансиращото лице е конкурент на ответника – и да върне исковата молба, което е рядко виждана антиабузна клауза в потребителското законодателство.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><ul><li>Законът влиза в сила от деня на обнародването (3 февруари 2026 г.), с едно изключение.</li><li>Разпоредбата за минималния референтен период при промоции (§ 2) влиза в сила <strong>1 година след обнародването</strong> – т.е. от февруари 2027 г.</li><li>Организациите, вече включени в стария списък на квалифицирани организации, трябва да подадат ново заявление по новите правила; първият годишен доклад за колективни искове се предава до <strong>30 април 2027 г.</strong>, а България докладва на ЕК до <strong>26 юни 2027 г.</strong></li></ul></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Законът транспонира Директива (ЕС) 2020/1828 за представителните искове и прилага Регламент (ЕС) 2023/988 за безопасността на продуктите – задължения, общи за всички държави членки с краен срок съответно 2023 и 2024 г. България приема тези правила с известно закъснение спрямо водещите страни като Германия и Нидерландия, но е в синхрон с мнозинството от страните в Централна и Източна Европа. Характерна особеност е изричното изискване за физическа приемна в областен град като условие за признаване на потребителска организация – изискване, което не е типично за повечето западноевропейски системи.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240866" target="_blank">
+      Отвори в Държавен вестник ↗
+    </a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges">
+        <span class="badge b-reshenie">РЕШЕНИЕ</span>
+        <span class="badge b-cat">Политическо</span>
+      </div>
+      <span class="dv-meta">Бр.&nbsp;15 &middot; 2026-02-06</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за приемане на Проект за инвестиционен разход „Придобиване на брегови противокорабни ракетни комплекси“ за Военноморските сили</div>
+    <p class="dv-lead">Народното събрание одобрява закупуването на брегови противокорабни ракетни комплекси за Военноморските сили на България.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Одобрен е конкретен инвестиционен проект за придобиване на брегови противокорабни ракетни комплекси – оръжейни системи, предназначени да поразяват морски цели от сушата.</li><li>Решението е процедурно задължително по Закона за отбраната и въоръжените сили – без парламентално одобрение подобни крупни придобивания не могат да стартират.</li><li>Никакви финансови параметри – нито стойност на сделката, нито брой комплекси, нито производител – не са оповестени в публичния текст на решението.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Военноморските сили, които получават нова ударна способност за защита на черноморското крайбрежие; потенциален доставчик на системата (неназован).</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Решението не съдържа нито една цифра – нито цена, нито количество, нито срок на доставка – което е необичайно дори за отбранителни придобивания, при които частична публичност е стандартна практика в НАТО.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><p>Влиза в сила от обнародването.</p></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Придобиването на брегови противокорабни системи е стандартна практика сред черноморските и балтийските членки на НАТО/ЕС – Румъния, Финландия, Швеция, Полша и Естония разполагат с подобни комплекси. България е сред по-късно инвестиращите в този клас въоръжения. Типичната европейска практика предвижда поне частично публично оповестяване на рамката на договора, докато в Bulgarian случай никакви параметри не са огласени.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241088" target="_blank">
+      Отвори в Държавен вестник ↗
+    </a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges">
+        <span class="badge b-reshenie">РЕШЕНИЕ</span>
+        <span class="badge b-cat">Политическо</span>
+      </div>
+      <span class="dv-meta">Бр.&nbsp;15 &middot; 2026-02-06</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за приемане на Годишна работна програма на Народното събрание по въпросите на Европейския съюз (2026 г.)</div>
+    <p class="dv-lead">Народното събрание определя кои европейски законодателни проекти ще следи и контролира парламентарно през 2026 г. – общо 68 инициативи в шест приоритетни области.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Програмата обхваща 68 европейски инициативи, разпределени в шест тематични блока: конкурентоспособност, отбрана, социална политика, продоволствена сигурност, демокрация и외 и外 外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外外</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241157" target="_blank">
+      Отвори в Държавен вестник ↗
+    </a>
+  </div>
+</details></div>
+</div>
+
+<div class="section" id="sessions">
+  <span class="section-tag">02 · В залата — пленарни заседания</span>
+  
+<details class="sess-block">
+  <summary class="sess-sum">
+    <div class="sess-hd">
+      <span class="sess-date-chip">сряда, 4 февруари 2026</span>
+      <span class="sess-label">51 НС, 141-во заседание</span>
+    </div>
+    <p class="sess-lead">Парламентът отхвърли изслушвания за двойните сметки за ток и за закриването на детска хирургия във Варна, а като основна точка разгледа закон за защита на турис…</p>
+    <div class="expand-hint">Виж подробности ▾</div>
+  </summary>
+  <div class="sess-body">
+    <p class="sess-lead-full">Парламентът отхвърли изслушвания за двойните сметки за ток и за закриването на детска хирургия във Варна, а като основна точка разгледа закон за защита на туристите при фалит на туроператор.</p>
+    
+    <div class="sess-cols"><div class="sess-col"><h5>Обсъждани теми</h5><ul><li><strong>Сметки за ток:</strong> Депутати от ПП МЕЧ поискаха изслушване на енергийния министър Жечо Станков за рязко поскъпналите сметки за електроенергия от януари 2026 г. – отхвърлено два пъти при прегласуване</li><li><strong>Детска хирургия във Варна:</strong> ВЪЗРАЖДАНЕ поиска изслушване на здравния министър и директора на НЗОК за предстоящото закриване на отделението по детска хирургия в МБАЛ „Св. Анна&quot; – Варна, което обслужва деца от цяла Североизточна България; предложението мина на първо гласуване, но след поискано прегласуване (от ВЕЛИЧИЕ) беше отхвърлено</li><li><strong>Лукойл и особеният управител:</strong> ПП-ДБ поискаха изслушване на министъра на икономиката и особения управител на „Лукойл – България&quot; за износната забрана на дизел и авиационно гориво, изтичащата британска дерогация (14 февруари) и финансовите потоци в рафинерията – отхвърлено</li><li><strong>Закон за туризма – Туристически гаранционен фонд:</strong> Разгледан на първо четене законопроект, създаващ механизъм за защита на туристите при несъстоятелност на туроператор чрез гаранционен фонд; в момента застрахователите покриват само до 20% от рисковете; законопроектът е внесен от БСП, подкрепен от министерството, но критикуван от ВЪЗРАЖДАНЕ и браншовите организации като недостатъчно съгласуван</li><li><strong>Бюджет 2025 – декларация на ВЪЗРАЖДАНЕ:</strong> Партията заяви, че реалният дефицит надхвърля 5% от БВП (а не декларираните 3,1%), тъй като разходите за отбрана и капитали за държавни дружества се записват „под черта&quot;; критика и за нов дълг от около 1 млрд. лв. само от началото на 2026 г.</li><li><strong>Конституция и „домова книга&quot; – декларация на ВЕЛИЧИЕ:</strong> Партията призова за премахване на ограничения списък, от който президентът избира служебен премиер; констатира, че 5 от 10-те лица в конституционния списък са отказали поста, което обезсмисля реформата</li><li><strong>ТИР паркинг Русе:</strong> ПП-ДБ сигнализира за схема, при която Община Русе набързо е гласувала покупка на частен ТИР паркинг за 10 млн. евро с публични средства – точно след като влизането в Шенген е лишило паркинга от изкуствено поддържания монопол</li></ul></div><div class="sess-col"><h5>Гласувания</h5><ul><li><strong>Изслушване на енергийния министър за сметките за ток:</strong> ЗА 95, ПРОТИВ 74, ВЪЗ 35 (при прегласуване) — не е прието</li><li><strong>Изслушване за детска хирургия във Варна:</strong> ЗА 99, ПРОТИВ 80, ВЪЗ 19 (при прегласуване) — не е прието; при първото гласуване бе прието, но ВЕЛИЧИЕ поиска прегласуване</li><li><strong>Изслушване за Лукойл и особения управител:</strong> ЗА 90, ПРОТИВ 34, ВЪЗ 77 (при прегласуване) — не е прието</li><li><strong>Законопроект за Закона за туризма (1-во гласуване):</strong> гласуван в хода на заседанието; в комисия – 7 за, 1 против, 4 въздържали се</li><li><strong>Законопроект за киберсигурност да отпадне от дневния ред:</strong> ЗА 65, ПРОТИВ 92, ВЪЗ 19 — не е прието; ВЪЗРАЖДАНЕ настояваше за отпадане</li></ul></div></div>
+    <div class="notable-callout"><span class="notable-icon">★</span><div><h5>Забележително</h5><p>При първото гласуване изслушването за детската хирургия мина с мнозинство, но след като ВЕЛИЧИЕ поиска прегласуване (депутатка от партията твърди, че случайно е натиснала грешен бутон), залата обърна вота и изслушването отпадна — пряк пример как техническа грешка и прегласуване могат да блокират парламентарен контрол по здравна криза.</p></div></div>
+    <div class="parties-block"><h5>Позиции по партии</h5><ul><li><strong>ГЕРБ-СДС:</strong> Подкрепи Закона за туризма; блокира включването на извънредни изслушвания в дневния ред</li><li><strong>ПП-ДБ:</strong> Настоя за изслушване на Лукойл и особения управител; декларация срещу сделката с ТИР паркинга в Русе; подкрепи Закона за туризма в комисия (въздържал се)</li><li><strong>БСП – Обединена левица:</strong> Вносител на Закона за туризма; гласува против изслушванията</li><li><strong>ИТН:</strong> Гласува против изслушванията; Тошко Йорданов обясни, че цените на тока се регулират от КЕВР, не от министъра</li><li><strong>ВЪЗРАЖДАНЕ:</strong> Против Закона за туризма в настоящия вид; поиска изслушване за детската хирургия; декларация срещу бюджетната политика; искаше киберсигурността да отпадне от дневния ред</li><li><strong>ПП МЕЧ:</strong> Настоя за изслушване на енергийния министър за сметките за ток; гласува против повечето предложения на мнозинството</li><li><strong>ВЕЛИЧИЕ:</strong> Поиска прегласуване на детската хирургия, с което гласуването се обърна и изслушването отпадна; декларация срещу конституционните промени за служебния кабинет</li><li><strong>ДПС – Ново начало:</strong> Без постъпило предложение за дневния ред; не е регистрирана специфична позиция</li></ul></div>
+    <div class="sess-ft">
+      <a href="https://www.parliament.bg/bg/plenaryst/ns/55/ID/11100" target="_blank" class="ext-link">
+        Отвори в parliament.bg ↗
+      </a>
+    </div>
+  </div>
+</details>
+
+<details class="sess-block">
+  <summary class="sess-sum">
+    <div class="sess-hd">
+      <span class="sess-date-chip">четвъртък, 5 февруари 2026</span>
+      <span class="sess-label">51 НС, 142-ро заседание</span>
+    </div>
+    <p class="sess-lead">Парламентът разглежда на второ четене промени в Изборния кодекс, ограничаващи броя на избирателните секции извън ЕС до максимум 20, при остри спорове дали това …</p>
+    <div class="expand-hint">Виж подробности ▾</div>
+  </summary>
+  <div class="sess-body">
+    <p class="sess-lead-full">Парламентът разглежда на второ четене промени в Изборния кодекс, ограничаващи броя на избирателните секции извън ЕС до максимум 20, при остри спорове дали това е противоконституционно.</p>
+    
+    <div class="sess-cols"><div class="sess-col"><h5>Обсъждани теми</h5><ul><li><strong>Ограничаване на секциите в чужбина извън ЕС:</strong> Законопроектът на ВЪЗРАЖДАНЕ (подкрепен от ГЕРБ) предвижда не повече от 20 секции извън дипломатическите представителства в страни извън ЕС – опонентите твърдят, че това на практика лишава десетки хиляди българи в Турция, Великобритания и другаде от реална възможност да гласуват</li><li><strong>Конституционносъобразност:</strong> ПП-ДБ и АПС настояват, че ограничението нарушава конституционното право на всеобщо и равно избирателно право – обявено е намерение за сезиране на Конституционния съд и европейски институции</li><li><strong>Политически мотиви зад промяната:</strong> Опозицията цитира Бойко Борисов, заявил публично „обещал съм на ВЪЗРАЖДАНЕ&quot;, и пита каква е насрещната услуга; обвинения за тайни политически сделки между ГЕРБ, ВЪЗРАЖДАНЕ и „ДПС – Ново начало&quot;</li><li><strong>Отхвърлени предложения на ПП-ДБ:</strong> Мнозинството не прие предложенията за задължително подписване на декларации пред комисията в секцията (мярка срещу контролиран вот) и за въвеждане на дистанционно електронно гласуване като компенсация за ограничените секции</li><li><strong>Кризата в болница „Св. Анна&quot; – Варна (декларация на ВЪЗРАЖДАНЕ):</strong> Лекарите в детската хирургия подават оставки заради заплати от 1000–1200 лв. и неизплатени от НЗОК над 1,3 млн. лв.; отделението спира работа от 1 март, обслужвало е спешните случаи за цяла Североизточна България</li><li><strong>154 години от рождението на Гоце Делчев (декларация на ГЕРБ):</strong> Тържествена декларация в памет на революционера</li><li><strong>Еврото и неговите противници (декларация на ПП-ДБ):</strong> Явор Божанков изброява публични лъжи на ВЪЗРАЖДАНЕ и президента Радев срещу еврото; цитира решение на Конституционния съд, отхвърлило референдума срещу еврозоната като противоконституционен</li></ul></div><div class="sess-col"><h5>Гласувания</h5><ul><li><strong>Допускане за обсъждане на предложението за дистанционно електронно гласуване:</strong> ЗА 80, ПРОТИВ 89, ВЪЗ 41 — предложението не е прието; ГЕРБ и „ДПС – Ново начало&quot; гласуват против</li><li><strong>Прегласуване на същото предложение:</strong> ЗА 82, ПРОТИВ 88, ВЪЗ 46 — отново не е прието</li></ul><p>*(Пълни данни за гласуванията по параграфите на законопроекта не са налични в предоставените данни)*</p></div></div>
+    <div class="notable-callout"><span class="notable-icon">★</span><div><h5>Забележително</h5><p>Бойко Борисов публично е признал, че е „обещал&quot; на ВЪЗРАЖДАНЕ да подкрепи ограничаването на секциите в чужбина – нито един народен представител на ГЕРБ не излезе на трибуната да обясни мотивите или да отрече твърдението.</p></div></div>
+    <div class="parties-block"><h5>Позиции по партии</h5><ul><li><strong>ГЕРБ-СДС:</strong> Подкрепя законопроекта с ограничението от 20 секции; гласува против допускане на електронното гласуване за обсъждане; не излиза с обяснение от трибуната защо подкрепя промяната</li><li><strong>ВЪЗРАЖДАНЕ:</strong> Вносител на законопроекта; настоява ограничението е срещу контролиран вот; подкрепя някои предложения на ПП-ДБ в комисия (по декларациите и есемес-верификацията), но общо е в мнозинството за приемане на закона</li><li><strong>ПП-ДБ:</strong> Категорично против; внася алтернативни предложения (електронно гласуване, по-строги мерки срещу контролиран вот), всички отхвърлени; заявява намерение за Конституционен съд</li><li><strong>АПС (Алианс за права и свободи):</strong> Против законопроекта; предлага §1 и §2 да отпаднат; обявява сезиране на КС и международни институции</li><li><strong>БСП – Обединена левица:</strong> Драгомир Стойнев защитава ограниченията с аргумента, че гласуващите в чужбина не плащат данъци в България – позиция, критикувана от всички останали страни като противоконституционна</li><li><strong>„ДПС – Ново начало&quot;:</strong> Не участва активно в дебата, но по данни от изказванията е осигурило кворум в комисия и е сред тихите поддръжници на законопроекта</li></ul></div>
+    <div class="sess-ft">
+      <a href="https://www.parliament.bg/bg/plenaryst/ns/55/ID/11101" target="_blank" class="ext-link">
+        Отвори в parliament.bg ↗
+      </a>
+    </div>
+  </div>
+</details>
+</div>
+
+<div class="nl-footer">
+  <span class="nl-footer-logo">Парламентарни Doodles</span>
+  <div class="nl-footer-links">
+    <a href="../">Бюлетин</a>
+    <a href="https://bpdoodles.com">Basepoint Doodles</a>
+  </div>
+</div>
+</div>
+</body>
+</html>

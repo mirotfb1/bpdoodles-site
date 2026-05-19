@@ -46,6 +46,7 @@ body {
 .site-nav a { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.45); text-decoration: none; }
 .site-nav a:hover { color: rgba(255,255,255,0.9); }
 .site-nav a.active { color: var(--color-accent); }
+.site-nav .soon { font-size: 9px; background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.3); border-radius: 3px; padding: 1px 5px; margin-left: 4px; vertical-align: middle; letter-spacing: 0.05em; }
 /* ── Lang visibility ── */
 .lc-bg { display: none !important; }
 .lc-en { display: block; }
@@ -111,6 +112,7 @@ body.lang-bg span.lc-en { display: none !important; }
       <a href="/calendar/" class="lc-bg">Календар</a>
       <a href="/about/" class="active lc-en">About</a>
       <a href="/about/" class="active lc-bg">За проекта</a>
+      <a href="/parliament/" class="lc-bg">Парламент<span class="soon">WIP</span></a>
     </nav>
     <div class="lang-buttons">
       <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
@@ -162,6 +164,11 @@ body.lang-bg span.lc-en { display: none !important; }
         <p>Целта е проста: да направи икономическите показатели по-разбираеми.</p>
       </div>
     </div>
+  </div>
+
+  <div class="disclaimer" style="margin-top:20px; border-left-color:#B5821A;">
+    <p class="lc-en"><strong>Парламентарни Doodles</strong> is a sister project tracking Bulgarian parliament activity: laws published in the State Gazette and plenary session summaries, every week. <a href="/parliament/" style="color:#1B2E5E;font-weight:700;">bpdoodles.com/parliament/</a></p>
+    <p class="lc-bg"><strong>Парламентарни Doodles</strong> е сестрен проект, следящ дейността на Народното събрание: нови закони от Държавен вестник и резюмета на пленарни заседания, всяка седмица. <a href="/parliament/" style="color:#1B2E5E;font-weight:700;">bpdoodles.com/parliament/</a></p>
   </div>
 
   <div class="contact">
