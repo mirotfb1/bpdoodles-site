@@ -28,7 +28,8 @@ async function handleSubscribe(request, env) {
   const apiKey = env.BREVO_API_KEY;
   if (!apiKey) {
     const keys = Object.keys(env).join(",") || "(none)";
-    return json({ ok: false, error: `Server not configured. env keys: ${keys}` }, 500);
+    const val = JSON.stringify(apiKey);
+    return json({ ok: false, error: `Not configured. keys=${keys} val=${val} type=${typeof apiKey}` }, 500);
   }
 
   const resp = await fetch("https://api.brevo.com/v3/contacts", {
