@@ -184,6 +184,9 @@ details.sess-block[open] .sess-date-chip{background:var(--color-accent);}
   .sess-cols{grid-template-columns:1fr;}
   .fs-winners ul{grid-template-columns:1fr;}
 }
+.intro-block{padding:20px 28px;border-bottom:1px solid var(--color-border);font-size:14px;line-height:1.7;color:var(--color-ink-2);}
+.show-all-btn{display:block;width:100%;padding:14px 28px;background:none;border:none;border-bottom:1px solid var(--color-border);font-family:var(--font-body);font-size:13px;font-weight:700;color:var(--color-accent);cursor:pointer;text-align:left;letter-spacing:.03em;}
+.show-all-btn:hover{background:var(--color-surface);}
 </style>
 </head>
 <body>
@@ -212,11 +215,10 @@ details.sess-block[open] .sess-date-chip{background:var(--color-accent);}
     
   </div>
 </div>
-<div class="page-header">
-  <div class="page-title">Бюлетин</div>
-  <div class="page-subtitle">Нови закони в Държавен вестник и пленарни заседания — всяка седмица.</div>
+<div class="intro-block">
+  <p>Парламентарни Doodles е седмичен дайджест за дейността на Народното събрание: нови закони и решения от Държавен вестник и резюмета на пленарни заседания, обобщени с изкуствен интелект.</p>
 </div>
-<div class="section-label-row"><span class="section-label">Всички издания</span></div>
+<div class="section-label-row"><span class="section-label">Последни издания</span></div>
 
 <a class="issue-row" href="2026-W20/">
   <div class="issue-row-left">
@@ -250,6 +252,7 @@ details.sess-block[open] .sess-date-chip{background:var(--color-accent);}
   </div>
   <div class="issue-row-arrow">→</div>
 </a>
+<div id="parl-hidden" style="display:none">
 <a class="issue-row" href="2026-W14/">
   <div class="issue-row-left">
     <div class="issue-row-meta">Седмица 14</div>
@@ -345,7 +348,8 @@ details.sess-block[open] .sess-date-chip{background:var(--color-accent);}
     <div class="issue-row-desc">3 заседания</div>
   </div>
   <div class="issue-row-arrow">→</div>
-</a>
+</a></div>
+<button class="show-all-btn" onclick="document.getElementById('parl-hidden').style.display='block';this.style.display='none'">Виж всички 16 издания →</button>
 
 <div class="nl-footer">
   <span class="nl-footer-logo">Парламентарни Doodles</span>
