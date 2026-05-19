@@ -179,14 +179,28 @@ details.sess-block[open] .sess-date-chip{background:var(--color-accent);}
 
 @media(max-width:760px){
   .wrapper{margin:0;border-radius:0;border-left:none;border-right:none;}
-  .masthead,.section,.nl-footer,.page-header,a.issue-row,.section-label-row{padding-left:16px;padding-right:16px;}
+  .masthead,.section,.nl-footer,.page-header,a.issue-row,.section-label-row,.intro-block,.waitlist-section,.contact-section,.all-issues-wrap{padding-left:16px;padding-right:16px;}
   .masthead-pills{display:none;}
   .sess-cols{grid-template-columns:1fr;}
   .fs-winners ul{grid-template-columns:1fr;}
 }
-.intro-block{padding:20px 28px;border-bottom:1px solid var(--color-border);font-size:14px;line-height:1.7;color:var(--color-ink-2);}
-.show-all-btn{display:block;width:100%;padding:14px 28px;background:none;border:none;border-bottom:1px solid var(--color-border);font-family:var(--font-body);font-size:13px;font-weight:700;color:var(--color-accent);cursor:pointer;text-align:left;letter-spacing:.03em;}
-.show-all-btn:hover{background:var(--color-surface);}
+.intro-block{padding:20px 28px;border-bottom:1px solid var(--color-border);font-size:15px;line-height:1.7;color:var(--color-ink);}
+.all-issues-wrap{padding:16px 28px;border-bottom:1px solid var(--color-border);}
+.all-issues-btn{width:100%;padding:13px;background:none;border:1.5px solid var(--color-basepoint);border-radius:3px;font-family:var(--font-head);font-size:11px;font-weight:900;color:var(--color-basepoint);cursor:pointer;text-align:center;letter-spacing:.14em;text-transform:uppercase;transition:background .15s,color .15s;}
+.all-issues-btn:hover{background:var(--color-basepoint);color:#fff;}
+.waitlist-section,.contact-section{padding:20px 28px;border-bottom:1px solid var(--color-border);}
+.waitlist-heading{font-family:var(--font-head);font-size:17px;font-weight:900;color:var(--color-ink);letter-spacing:-.2px;margin-bottom:8px;line-height:1.3;}
+.waitlist-body{font-size:14px;color:var(--color-ink-2);line-height:1.6;margin-bottom:16px;}
+.waitlist-form{display:flex;gap:8px;margin-bottom:10px;}
+.waitlist-input{flex:1;padding:10px 12px;border:1px solid var(--color-border);border-radius:3px;font-family:var(--font-body);font-size:14px;color:var(--color-ink);min-width:0;}
+.waitlist-input:focus{outline:none;border-color:var(--color-basepoint);}
+.waitlist-btn{padding:10px 18px;background:var(--color-basepoint);color:#fff;border:none;border-radius:3px;font-family:var(--font-head);font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;white-space:nowrap;}
+.waitlist-btn:hover{background:#122348;}
+.waitlist-fine{font-size:12px;color:var(--color-muted-light);line-height:1.5;}
+.waitlist-ok{display:none;font-size:14px;font-weight:700;color:#16a34a;margin-top:10px;}
+.contact-section p{font-size:14px;color:var(--color-ink-2);line-height:1.6;}
+.contact-section a{color:var(--color-basepoint);font-weight:700;text-decoration:none;}
+.contact-section a:hover{text-decoration:underline;}
 </style>
 </head>
 <body>
@@ -221,14 +235,6 @@ details.sess-block[open] .sess-date-chip{background:var(--color-accent);}
 </div>
 <div class="section-label-row"><span class="section-label">Всички издания</span></div>
 
-<a class="issue-row" href="../2026-W20/">
-  <div class="issue-row-left">
-    <div class="issue-row-meta">Седмица 20</div>
-    <div class="issue-row-title">11–17 май 2026</div>
-    <div class="issue-row-desc">10 обнародвани акта в ДВ · 3 заседания</div>
-  </div>
-  <div class="issue-row-arrow">→</div>
-</a>
 <a class="issue-row" href="../2026-W19/">
   <div class="issue-row-left">
     <div class="issue-row-meta">Седмица 19</div>
