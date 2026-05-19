@@ -618,28 +618,28 @@ body.lang-bg span.lc-en { display: none !important; }
     <a href="/newsletters/" class="archive-btn lc-bg">Всички броеве &rarr;</a>
   </div>
 
-  <!-- Waitlist -->
+  <!-- Subscribe -->
   <div class="section-label-row">
     <span class="section-label lc-en">&#9658; Subscribe to the free newsletter</span>
     <span class="section-label lc-bg">&#9658; Абонирай се за бюлетина</span>
   </div>
   <div class="waitlist">
-    <div class="waitlist-title lc-en">Be first to know when subscriptions open.</div>
-    <div class="waitlist-title lc-bg">Бъди сред първите, когато отворим абонамента.</div>
-    <div class="waitlist-desc lc-en">Basepoint Doodles newsletter is free and published on this website. When we add email delivery options, we'll notify this list first. Drop your email. No spam, just a heads-up when subscription becomes available.</div>
-    <div class="waitlist-desc lc-bg">Бюлетинът на Basepoint Doodles е безплатен и се публикува на този сайт. Когато добавим опция за доставка по имейл, първо ще уведомим този списък. Остави имейла си. Без спам — само съобщение, когато абонаментът стане достъпен.</div>
-    <form class="waitlist-form" action="https://formspree.io/f/mreyvnaz" method="POST" onsubmit="handleWaitlist(event)">
-      <input type="hidden" name="_subject" value="Basepoint Doodles — waitlist signup"/>
+    <div class="waitlist-title lc-en">Get the newsletter in your inbox.</div>
+    <div class="waitlist-title lc-bg">Получавай бюлетина по имейл.</div>
+    <div class="waitlist-desc lc-en">Free, weekly, bilingual. Data-driven macro coverage of the Bulgarian economy — new charts, key indicators, and the week's most important number.</div>
+    <div class="waitlist-desc lc-bg">Безплатен, седмичен, двуезичен. Макроикономически преглед на България — нови графики, ключови показатели и най-важното число на седмицата.</div>
+    <form class="waitlist-form" onsubmit="handleSubscribe(event, 3)">
       <input class="waitlist-input" type="email" name="email" placeholder="your@email.com" required/>
       <button class="waitlist-btn" type="submit">
-        <span class="lc-en">Notify me</span>
-        <span class="lc-bg">Уведоми ме</span>
+        <span class="lc-en">Subscribe</span>
+        <span class="lc-bg">Абонирай се</span>
       </button>
     </form>
-    <div class="waitlist-note lc-en">Your email stays with us. One notification, no newsletters until you ask for them.</div>
-    <div class="waitlist-note lc-bg">Имейлът ти остава при нас. Само едно известие — без бюлетини, докато не поискаш.</div>
-    <div class="waitlist-success lc-en" id="success-en">&#10003; Got it — we'll be in touch.</div>
-    <div class="waitlist-success lc-bg" id="success-bg">&#10003; Записахме те — ще се чуем.</div>
+    <div class="waitlist-note lc-en">No spam. Unsubscribe any time.</div>
+    <div class="waitlist-note lc-bg">Без спам. Откажи се по всяко време.</div>
+    <div class="waitlist-success lc-en" id="success-en">&#10003; You&#8217;re subscribed &#8212; see you in your inbox.</div>
+    <div class="waitlist-success lc-bg" id="success-bg">&#10003; Абониран &#8212; ще те намерим в пощата.</div>
+    <div class="waitlist-error" id="subscribe-error" style="display:none;color:#CC2B2B;font-size:13px;margin-top:8px;">Something went wrong &#8212; please try again or email us at <a href="mailto:editor@bpdoodles.com">editor@bpdoodles.com</a>.</div>
   </div>
 
   <!-- Contact -->
@@ -682,24 +682,28 @@ function setLang(lang) {
   if (saved === 'bg') setLang('bg');
 })();
 
-function handleWaitlist(e) {
-  if (document.querySelector('.waitlist-form').action.indexOf('YOUR_FORM_ID') !== -1) {
-    e.preventDefault();
-    alert('Formspree not configured yet. See WORKFLOW.md for setup instructions.');
-    return;
-  }
+function handleSubscribe(e, listId) {
   e.preventDefault();
   var form = e.target;
-  fetch(form.action, {
+  var btn = form.querySelector('.waitlist-btn');
+  var email = form.querySelector('[type="email"]').value;
+  btn.disabled = true;
+  fetch('/subscribe', {
     method: 'POST',
-    body: new FormData(form),
-    headers: { 'Accept': 'application/json' }
-  }).then(function(r) {
-    if (r.ok) {
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({ email: email, list_id: listId })
+  }).then(function(r) { return r.json(); }).then(function(data) {
+    if (data.ok) {
       form.style.display = 'none';
       document.getElementById('success-en').style.display = 'block';
       document.getElementById('success-bg').style.display = 'block';
+    } else {
+      btn.disabled = false;
+      document.getElementById('subscribe-error').style.display = 'block';
     }
+  }).catch(function() {
+    btn.disabled = false;
+    document.getElementById('subscribe-error').style.display = 'block';
   });
 }
 </script>

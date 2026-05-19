@@ -360,18 +360,17 @@ details.sess-block[open] .sess-date-chip{background:var(--color-accent);}
 </div>
 <div class="section-label-row"><span class="section-label">► Абонирай се за дайджеста</span></div>
 <div class="waitlist-section">
-  <div class="waitlist-heading">Бъди сред първите, когато отворим абонамента.</div>
-  <p class="waitlist-body">Парламентарните Doodles се публикуват безплатно на този сайт. Когато добавим опция за доставка по имейл, ще уведомим тези, които са оставили адреса си. Без спам — само едно съобщение, когато абонаментът стане достъпен.</p>
-  <form action="https://formspree.io/f/mreyvnaz" method="POST" onsubmit="parlWaitlist(event)">
-    <input type="hidden" name="_subject" value="Парламентарни Doodles — нов интерес">
-    <input type="hidden" name="source" value="parliament-digest">
+  <div class="waitlist-heading">Получавай дайджеста по имейл.</div>
+  <p class="waitlist-body">Безплатен седмичен дайджест за дейността на Народното събрание. Закони от Държавен вестник и резюмета на пленарни заседания, обобщени с изкуствен интелект.</p>
+  <form onsubmit="parlSubscribe(event)">
     <div class="waitlist-form">
       <input class="waitlist-input" type="email" name="email" placeholder="your@email.com" required>
-      <button class="waitlist-btn" type="submit">УВЕДОМИ МЕ</button>
+      <button class="waitlist-btn" type="submit">АБОНИРАЙ СЕ</button>
     </div>
   </form>
-  <p class="waitlist-fine">Имейлът ти остава при нас. Само едно известие — без бюлетини, докато не поискаш.</p>
-  <div id="parl-wl-ok" class="waitlist-ok">✓ Записахме те — ще се чуем.</div>
+  <p class="waitlist-fine">Без спам. Откажи се по всяко време.</p>
+  <div id="parl-wl-ok" class="waitlist-ok">✓ Абониран — ще те намерим в пощата.</div>
+  <div id="parl-wl-err" style="display:none;font-size:12px;color:#E03E2D;margin-top:8px;">Нещо се обърка — опитай отново или пиши на <a href="mailto:editor@bpdoodles.com">editor@bpdoodles.com</a>.</div>
 </div>
 <div class="section-label-row"><span class="section-label">► Контакт</span></div>
 <div class="contact-section">
@@ -387,15 +386,17 @@ details.sess-block[open] .sess-date-chip{background:var(--color-accent);}
 </div>
 </div>
 <script>
-function parlWaitlist(e){
+function parlSubscribe(e){
   e.preventDefault();
   var form=e.target,btn=form.querySelector('.waitlist-btn');
+  var email=form.querySelector('[type="email"]').value;
   btn.disabled=true;btn.textContent='...';
-  fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
-    .then(function(r){
-      if(r.ok){document.getElementById('parl-wl-ok').style.display='block';form.style.display='none';}
-      else{btn.disabled=false;btn.textContent='УВЕДОМИ МЕ';}
-    }).catch(function(){btn.disabled=false;btn.textContent='УВЕДОМИ МЕ';});
+  fetch('/subscribe',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({email:email,list_id:4})})
+    .then(function(r){return r.json();})
+    .then(function(d){
+      if(d.ok){document.getElementById('parl-wl-ok').style.display='block';form.style.display='none';}
+      else{btn.disabled=false;btn.textContent='АБОНИРАЙ СЕ';document.getElementById('parl-wl-err').style.display='block';}
+    }).catch(function(){btn.disabled=false;btn.textContent='АБОНИРАЙ СЕ';document.getElementById('parl-wl-err').style.display='block';});
 }
 </script>
 </body>
