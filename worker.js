@@ -1,14 +1,19 @@
+const LIST_NAMES = {
+  3: "Macro Newsletter",
+  4: "Parliament Digest",
+};
+
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
     if (url.pathname === "/subscribe" && request.method === "POST") {
-      return handleSubscribe(request, env);
+      return handleSubscribe(request, env, ctx);
     }
     return env.ASSETS.fetch(request);
   },
 };
 
-async function handleSubscribe(request, env) {
+async function handleSubscribe(request, env, ctx) {
   let email, list_id;
   const ct = request.headers.get("content-type") || "";
   if (ct.includes("application/json")) {
@@ -27,9 +32,7 @@ async function handleSubscribe(request, env) {
 
   const apiKey = env.BREVO_API_KEY;
   if (!apiKey) {
-    const keys = Object.keys(env).join(",") || "(none)";
-    const val = JSON.stringify(apiKey);
-    return json({ ok: false, error: `Not configured. keys=${keys} val=${val} type=${typeof apiKey}` }, 500);
+    return json({ ok: false, error: "Server not configured" }, 500);
   }
 
   const resp = await fetch("https://api.brevo.com/v3/contacts", {
@@ -42,7 +45,11 @@ async function handleSubscribe(request, env) {
     body: JSON.stringify({ email, listIds: [list_id], updateEnabled: true }),
   });
 
-  if (resp.status === 201 || resp.status === 204) {
+  const isNew = resp.status === 201;
+  const isExisting = resp.status === 204;
+
+  if (isNew || isExisting) {
+    ctx.waitUntil(sendAdminNotification(apiKey, email, list_id, isNew));
     return json({ ok: true });
   }
 
@@ -52,6 +59,25 @@ async function handleSubscribe(request, env) {
   }
 
   return json({ ok: false, error: err.message || "Subscription failed" }, 500);
+}
+
+async function sendAdminNotification(apiKey, email, list_id, isNew) {
+  const listName = LIST_NAMES[list_id] || `List ${list_id}`;
+  const action = isNew ? "New subscriber" : "Existing contact re-subscribed";
+  await fetch("https://api.brevo.com/v3/smtp/email", {
+    method: "POST",
+    headers: {
+      "api-key": apiKey,
+      "content-type": "application/json",
+      accept: "application/json",
+    },
+    body: JSON.stringify({
+      sender: { name: "Basepoint Doodles", email: "editor@bpdoodles.com" },
+      to: [{ email: "editor@bpdoodles.com" }],
+      subject: `${action} · ${listName}`,
+      textContent: `${action}\n\nEmail: ${email}\nList: ${listName} (${list_id})\n`,
+    }),
+  });
 }
 
 function json(body, status = 200) {
