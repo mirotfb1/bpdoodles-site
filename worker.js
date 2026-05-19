@@ -49,8 +49,8 @@ async function handleSubscribe(request, env, ctx) {
   const isExisting = resp.status === 204;
 
   if (isNew || isExisting) {
-    ctx.waitUntil(sendAdminNotification(apiKey, email, list_id, isNew));
-    return json({ ok: true });
+    const notif = await sendAdminNotification(apiKey, email, list_id, isNew);
+    return json({ ok: true, _notif: notif });
   }
 
   const err = await resp.json().catch(() => ({}));
@@ -64,7 +64,7 @@ async function handleSubscribe(request, env, ctx) {
 async function sendAdminNotification(apiKey, email, list_id, isNew) {
   const listName = LIST_NAMES[list_id] || `List ${list_id}`;
   const action = isNew ? "New subscriber" : "Existing contact re-subscribed";
-  await fetch("https://api.brevo.com/v3/smtp/email", {
+  const r = await fetch("https://api.brevo.com/v3/smtp/email", {
     method: "POST",
     headers: {
       "api-key": apiKey,
@@ -78,6 +78,8 @@ async function sendAdminNotification(apiKey, email, list_id, isNew) {
       textContent: `${action}\n\nEmail: ${email}\nList: ${listName} (${list_id})\n`,
     }),
   });
+  const body = await r.json().catch(() => ({}));
+  return { status: r.status, body };
 }
 
 function json(body, status = 200) {
