@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="utf-8">
+<title>Парламентарни Doodles · ДВ Дайджест · Седмица 19</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --navy:#1B2E5E; --gold:#B5821A; --ink:#1C1C1C; --ink2:#444;
+  --muted:#888; --muted-lt:#AAA; --border:#E8E8E8; --surf:#F8F8F8; --paper:#FFF;
+  --font-d:'Caveat',cursive; --font-h:'Nunito','Arial Black',sans-serif;
+  --font-b:'Nunito',Arial,sans-serif;
+}
+body{font-family:var(--font-b);background:#F0F2F5;color:var(--ink);line-height:1.6;}
+.wrapper{max-width:740px;margin:32px auto;background:#fff;border:1px solid var(--border);border-radius:4px;overflow:hidden;}
+
+/* top bar */
+.top-bar{display:flex;justify-content:space-between;align-items:center;padding:8px 16px;background:var(--navy);}
+.site-nav{display:flex;gap:20px;align-items:center;}
+.site-nav a{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none;}
+.site-nav a:hover{color:rgba(255,255,255,.9);}
+.site-nav a.active{color:var(--gold);}
+.top-bar-tag{font-family:'Courier New',monospace;font-size:10px;color:rgba(255,255,255,.25);}
+
+/* masthead */
+.masthead{background:var(--navy);padding:24px 28px 20px;display:flex;justify-content:space-between;align-items:flex-end;border-bottom:3px solid var(--gold);}
+.masthead-logo{display:flex;flex-direction:row;align-items:center;}
+.masthead-left{display:flex;flex-direction:column;align-items:flex-end;padding-right:14px;}
+.masthead-basepoint{font-family:var(--font-h);font-size:22px;font-weight:900;color:#fff;letter-spacing:-.3px;line-height:1;}
+.masthead-tagline{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:4px;}
+.masthead-divider{width:2px;height:52px;background:rgba(255,255,255,.2);}
+.masthead-doodles{font-family:var(--font-d);font-size:48px;font-weight:700;color:var(--gold);line-height:1;padding-left:14px;}
+.masthead-meta{text-align:right;}
+.masthead-issue{font-size:13px;font-weight:700;color:rgba(255,255,255,.85);display:block;line-height:1.5;}
+.masthead-date{font-size:11px;color:rgba(255,255,255,.4);display:block;}
+.masthead-pills{margin-top:8px;display:flex;gap:6px;justify-content:flex-end;flex-wrap:wrap;}
+.masthead-pill{font-size:10px;font-weight:700;letter-spacing:.05em;background:rgba(255,255,255,.12);color:rgba(255,255,255,.6);padding:3px 8px;border-radius:3px;}
+
+/* content sections */
+.section{padding:20px 28px;border-bottom:1px solid var(--border);}
+.section:last-of-type{border-bottom:none;}
+
+/* subsection (within DV edition) */
+.subsection{margin-bottom:24px;}
+.subsection:last-child{margin-bottom:0;}
+.subsection-hd{display:flex;align-items:baseline;gap:10px;margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid var(--border);}
+.subsection-tag{font-size:10px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);}
+.subsection-title{font-family:var(--font-h);font-size:16px;font-weight:900;color:var(--navy);}
+.subsection-count{font-size:11px;color:var(--muted);margin-left:auto;}
+
+/* section label row */
+.section-label-row{padding:10px 28px 8px;background:var(--surf);border-bottom:1px solid var(--border);}
+.section-label{font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);}
+
+/* page header */
+.page-header{padding:20px 28px 16px;border-bottom:1px solid var(--border);}
+.page-title{font-family:var(--font-h);font-size:20px;font-weight:900;color:var(--ink);letter-spacing:-.3px;margin-bottom:6px;}
+.page-subtitle{font-size:13px;color:var(--muted);}
+
+/* issue list rows */
+a.issue-row{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 28px;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:background .1s;}
+a.issue-row:hover{background:var(--surf);}
+a.issue-row:last-of-type{border-bottom:none;}
+.issue-row-left{flex:1;}
+.issue-row-meta{font-family:'Courier New',monospace;font-size:10px;color:var(--muted-lt);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;}
+.issue-row-title{font-size:15px;font-weight:900;color:var(--ink);letter-spacing:-.2px;line-height:1.3;}
+.issue-row-desc{font-size:12px;color:var(--muted);margin-top:3px;}
+.issue-row-arrow{font-size:18px;color:var(--gold);font-weight:900;flex-shrink:0;}
+
+/* footer */
+.nl-footer{padding:14px 28px;background:var(--surf);border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
+.nl-footer-logo{font-family:var(--font-d);font-size:18px;font-weight:700;color:#CCC;}
+.nl-footer-links{font-size:11px;display:flex;gap:16px;}
+.nl-footer-links a{color:var(--muted-lt);text-decoration:none;}
+.nl-footer-links a:hover{color:var(--muted);}
+
+/* DV cards */
+.dv-grid{display:flex;flex-direction:column;gap:8px;}
+details.dv-card{background:var(--paper);border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:border-color .15s;}
+details.dv-card:hover{border-color:var(--gold);}
+details.dv-card[open]{border-color:var(--gold);}
+.dv-card-compact{background:var(--paper);border:1px solid var(--border);border-radius:8px;overflow:hidden;opacity:.9;}
+.dv-sum{padding:14px 16px;cursor:pointer;list-style:none;user-select:none;}
+.dv-sum::-webkit-details-marker{display:none;}
+.dv-sum-static{padding:14px 16px;}
+.dv-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+.dv-meta{font-size:11px;color:var(--muted);font-weight:700;}
+.dv-title{font-family:var(--font-h);font-size:13px;font-weight:900;color:var(--ink);line-height:1.4;letter-spacing:-.1px;margin-bottom:4px;}
+.exec-organ{font-size:11px;color:var(--muted);margin-bottom:6px;font-style:italic;}
+.dv-lead{font-size:13px;color:var(--ink2);line-height:1.55;margin-bottom:8px;}
+.compact-bullets ul{list-style:none;padding:0;margin-top:6px;}
+.compact-bullets li{padding:3px 0 3px 14px;position:relative;color:var(--ink2);font-size:12px;line-height:1.5;}
+.compact-bullets li::before{content:"·";position:absolute;left:2px;color:var(--gold);font-weight:700;font-size:15px;line-height:1.1;}
+.expand-hint{font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.06em;margin-top:4px;}
+details.dv-card[open] .expand-hint{display:none;}
+.dv-body{padding:0 16px 16px;border-top:1px solid var(--border);}
+
+/* badges */
+.badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;}
+.dv-badges{display:flex;gap:6px;align-items:center;flex-wrap:wrap;}
+.b-zakon   {background:#dbeafe;color:#1a56db;}
+.b-reshenie{background:#cffafe;color:#0a6e8a;}
+.b-ukaz    {background:#ede9fe;color:#7c3aed;}
+.b-decl    {background:#fef3c7;color:#92400e;}
+.b-post    {background:#d1fae5;color:#065f46;}
+.b-naredba {background:#fce7f3;color:#9d174d;}
+.b-pravilnik{background:#f3e8ff;color:#6b21a8;}
+.b-inst    {background:#fef9c3;color:#713f12;}
+.b-razp    {background:#e0f2fe;color:#0369a1;}
+.b-spor    {background:#fff7ed;color:#c2410c;}
+.b-other   {background:#f3f4f6;color:#6b7280;}
+.b-cat     {background:#f3f4f6;color:#555;}
+
+/* factsheet sections */
+.fs-sec{margin:12px 0;font-size:13px;}
+.fs-sec h5,.parties-block h5,.notable-callout h5,.sess-col h5{font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:8px;padding-bottom:5px;border-bottom:1px solid var(--border);}
+.fs-sec ul,.parties-block ul{list-style:none;padding:0;}
+.fs-sec li,.parties-block li{padding:4px 0 4px 16px;position:relative;color:var(--ink2);border-bottom:1px solid #f3f4f6;font-size:13px;line-height:1.5;}
+.fs-sec li:last-child,.parties-block li:last-child{border-bottom:none;}
+.fs-sec li::before{content:"·";position:absolute;left:3px;color:var(--gold);font-weight:700;font-size:16px;line-height:1.1;}
+.fs-sec p,.parties-block p{color:var(--ink2);font-size:13px;margin-bottom:4px;}
+.fs-winners ul{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.fs-winners li{padding:8px 10px 8px 24px;border-radius:6px;border-bottom:none !important;}
+.fs-winners li:first-child{background:#f0fdf4;}
+.fs-winners li:first-child::before{content:"✓";color:#16a34a;font-size:13px;top:8px;}
+.fs-winners li:nth-child(2){background:#fef2f2;}
+.fs-winners li:nth-child(2)::before{content:"✗";color:#dc2626;font-size:13px;top:8px;}
+.fs-notable{background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:12px 14px;}
+.fs-notable h5{border-bottom-color:#fde68a;color:#92400e;}
+.fs-notable li,.fs-notable p{color:#78350f;}
+.fs-notable li::before{color:#d97706;}
+.fs-eu{background:#f0f9ff;border-radius:8px;padding:12px 14px;}
+.fs-eu h5{color:#0369a1;border-bottom-color:#bae6fd;}
+.fs-eu p{color:#0c4a6e;font-size:13px;}
+.ext-link{display:inline-block;margin-top:12px;font-size:12px;font-weight:700;color:var(--navy);text-decoration:none;}
+.ext-link:hover{text-decoration:underline;}
+.no-summ{color:var(--muted);font-size:13px;font-style:italic;padding:12px 0;}
+
+/* session blocks */
+details.sess-block{background:var(--paper);border:1px solid var(--border);border-left:4px solid var(--navy);border-radius:0 8px 8px 0;margin-bottom:10px;overflow:hidden;}
+details.sess-block:hover{box-shadow:0 2px 8px rgba(0,0,0,.06);}
+details.sess-block[open]{border-left-color:var(--gold);}
+.sess-sum{padding:14px 18px;cursor:pointer;list-style:none;user-select:none;}
+.sess-sum::-webkit-details-marker{display:none;}
+.sess-hd{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap;}
+.sess-date-chip{background:var(--navy);color:#fff;font-size:10px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:4px;white-space:nowrap;}
+details.sess-block[open] .sess-date-chip{background:var(--gold);}
+.sess-label{font-family:var(--font-h);font-size:14px;font-weight:900;color:var(--ink);}
+.sess-lead{font-size:13px;color:var(--ink2);line-height:1.55;margin-bottom:6px;}
+.sess-body{padding:0 18px 16px;border-top:1px solid var(--border);}
+.sess-lead-full{font-size:13px;color:var(--ink2);line-height:1.6;margin:12px 0;background:#f8fafc;border-left:3px solid var(--gold);padding:8px 12px;border-radius:0 6px 6px 0;}
+.sess-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0;}
+.sess-col{font-size:13px;}
+.sess-col ul{list-style:none;padding:0;}
+.sess-col li{padding:4px 0 4px 14px;position:relative;color:var(--ink2);border-bottom:1px solid #f3f4f6;font-size:13px;line-height:1.5;}
+.sess-col li:last-child{border-bottom:none;}
+.sess-col li::before{content:"·";position:absolute;left:2px;color:var(--navy);font-weight:700;font-size:15px;line-height:1.1;}
+.notable-callout{display:flex;gap:10px;align-items:flex-start;background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:10px 12px;margin:12px 0;}
+.notable-icon{font-size:16px;color:#d97706;flex-shrink:0;line-height:1.4;}
+.notable-callout h5{border-bottom-color:#fde68a;color:#92400e;}
+.notable-callout p,.notable-callout li{color:#78350f;font-size:13px;}
+.notable-callout ul{list-style:none;padding:0;}
+.notable-callout li{padding:3px 0 3px 14px;position:relative;}
+.notable-callout li::before{content:"·";position:absolute;left:2px;color:#d97706;font-weight:700;font-size:15px;line-height:1.1;}
+.parties-block{margin:12px 0;font-size:13px;}
+.sess-ft{margin-top:12px;padding-top:10px;border-top:1px solid var(--border);}
+
+/* landing track cards */
+.track-card{display:block;padding:20px 28px;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:background .1s;}
+.track-card:hover{background:var(--surf);}
+.track-card:last-of-type{border-bottom:none;}
+.track-label{font-size:10px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+.track-title{font-family:var(--font-h);font-size:18px;font-weight:900;color:var(--navy);letter-spacing:-.3px;line-height:1.3;margin-bottom:6px;}
+.track-desc{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px;}
+.track-latest{font-size:12px;color:var(--ink2);}
+.track-arrow{font-size:22px;color:var(--gold);font-weight:900;float:right;margin-top:-28px;}
+
+/* archive / intro */
+.arch-table{width:100%;border-collapse:collapse;}
+.arch-table th{padding:8px 0;text-align:left;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);border-bottom:1px solid var(--border);}
+.arch-table td{padding:12px 8px 12px 0;border-bottom:1px solid var(--border);font-size:13px;color:var(--ink2);}
+.arch-table tr:last-child td{border-bottom:none;}
+.arch-table a{color:var(--navy);font-weight:700;text-decoration:none;}
+.arch-table a:hover{text-decoration:underline;}
+.intro-block{padding:20px 28px;border-bottom:1px solid var(--border);font-size:14px;line-height:1.7;color:var(--ink);}
+.all-issues-wrap{padding:16px 28px;border-bottom:1px solid var(--border);}
+.all-issues-btn{width:100%;padding:13px;background:none;border:1.5px solid var(--navy);border-radius:3px;font-family:var(--font-h);font-size:11px;font-weight:900;color:var(--navy);cursor:pointer;text-align:center;letter-spacing:.14em;text-transform:uppercase;transition:background .15s,color .15s;}
+.all-issues-btn:hover{background:var(--navy);color:#fff;}
+.waitlist-section,.contact-section{padding:20px 28px;border-bottom:1px solid var(--border);}
+.waitlist-heading{font-family:var(--font-h);font-size:17px;font-weight:900;color:var(--ink);letter-spacing:-.2px;margin-bottom:8px;}
+.waitlist-body{font-size:14px;color:var(--ink2);line-height:1.6;margin-bottom:16px;}
+.waitlist-form{display:flex;gap:8px;margin-bottom:10px;}
+.waitlist-input{flex:1;padding:10px 12px;border:1px solid var(--border);border-radius:3px;font-family:var(--font-b);font-size:14px;color:var(--ink);min-width:0;}
+.waitlist-input:focus{outline:none;border-color:var(--navy);}
+.waitlist-btn{padding:10px 18px;background:var(--navy);color:#fff;border:none;border-radius:3px;font-family:var(--font-h);font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;white-space:nowrap;}
+.waitlist-btn:hover{background:#122348;}
+.waitlist-fine{font-size:12px;color:var(--muted-lt);line-height:1.5;}
+.waitlist-ok{display:none;font-size:14px;font-weight:700;color:#16a34a;margin-top:10px;}
+.contact-section p{font-size:14px;color:var(--ink2);line-height:1.6;}
+.contact-section a{color:var(--navy);font-weight:700;text-decoration:none;}
+.contact-section a:hover{text-decoration:underline;}
+
+@media(max-width:760px){
+  .wrapper{margin:0;border-radius:0;border-left:none;border-right:none;}
+  .masthead,.section,.nl-footer,.page-header,a.issue-row,.track-card,
+  .section-label-row,.intro-block,.waitlist-section,.contact-section,.all-issues-wrap{padding-left:16px;padding-right:16px;}
+  .masthead-pills{display:none;}
+  .sess-cols{grid-template-columns:1fr;}
+  .fs-winners ul{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+<div class="top-bar">
+  <nav class="site-nav">
+    <a href="../" class="active">ДВ Дайджест</a>
+    <a href="../../sessions/">Заседания</a>
+    <a href="https://bpdoodles.com">Basepoint Doodles</a>
+  </nav>
+  <span class="top-bar-tag">Парламентарни Doodles</span>
+</div>
+
+<div class="masthead">
+  <div class="masthead-logo">
+    <div class="masthead-left">
+      <span class="masthead-basepoint">Парламентарни</span>
+      <span class="masthead-tagline">Парламентарен дайджест</span>
+    </div>
+    <div class="masthead-divider"></div>
+    <span class="masthead-doodles">Doodles</span>
+  </div>
+  <div class="masthead-meta">
+    <span class="masthead-issue">ДВ Дайджест · Седмица 19 · 2026</span>
+    <span class="masthead-date">4–10 май 2026</span>
+    <div class="masthead-pills"><span class="masthead-pill">6 акта от НС</span><span class="masthead-pill">6 акта от МС</span><span class="masthead-pill">8 наредби/регулации</span></div>
+  </div>
+</div>
+<div class="section">
+
+<div class="subsection">
+  <div class="subsection-hd">
+    <span class="subsection-tag">01</span>
+    <span class="subsection-title">Народно събрание</span>
+    <span class="subsection-count">6 решения</span>
+  </div>
+  <div class="dv-grid">
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;41 &middot; 2026-05-05</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за приемане на процедурни правила за избиране на председател на Петдесет и второто Народно събрание</div>
+    <p class="dv-lead">Актът установява конкретните правила, по които 52-рото Народно събрание ще избере своя председател.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Кандидати могат да предлагат партии и коалиции, регистрирани в ЦИК за изборите на 19 април 2026 г., както и отделни народни представители.</li><li>Гласуването е явно – чрез компютризираната система, по азбучен ред на кандидатурите; тайно може да стане само ако НС изрично реши друго.</li><li>За избор на първи тур е необходимо абсолютно мнозинство: повече от половината гласове на <strong>присъстващите</strong> народни представители.</li><li>При липса на мнозинство на първи тур се провежда балотаж между двамата кандидати с най-много гласове; печели получилият повече гласове (обикновено мнозинство).</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Парламентарните групи и отделни депутати, тъй като всички имат право да издигат кандидати.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Правилата изрично допускат гласуване с тайна по изключение, ако мнозинството в залата реши – нетипична клауза, която оставя вратичка за промяна на прозрачността в последния момент.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><p>Влиза в сила от обнародването.</p></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Няма достатъчно сравнителни данни.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243226" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;41 &middot; 2026-05-05</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за избиране на председател на Петдесет и второто Народно събрание</div>
+    <p class="dv-lead">Народното събрание официално избира Михаела Милчева Доцова за председател на 52-рото Народно събрание.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Михаела Милчева Доцова е избрана за председател на Петдесет и второто Народно събрание с решение от 30 април 2026 г.</li><li>Решението се основава на чл. 76, ал. 3 и чл. 86, ал. 1 от Конституцията – стандартната правна основа за избор на ръководство на парламента.</li><li>Доцова сама е подписала решението за собствения си избор в качеството на вече встъпил в длъжност председател – стандартна процедурна практика.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Михаела Доцова и политическата сила, която я е издигнала</li><li>Губят: Не се открива явен губещ</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Решението е подписано от самата Доцова като председател – тоест тя удостоверява собствения си избор, което е правно коректно, но визуално парадоксално.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><p>Влиза в сила от обнародването.</p></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Няма достатъчно сравнителни данни.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243227" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;41 &middot; 2026-05-05</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за приемане на процедурни правила за избиране на заместник-председатели на Петдесет и второто Народно събрание</div>
+    <p class="dv-lead">Решението определя реда, по който 52-рото Народно събрание ще избере шестима свои заместник-председатели – по един от всяка парламентарна група.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Броят на заместник-председателите е фиксиран на <strong>шест</strong> – строго по един за всяка парламентарна група, без изключения.</li><li>Всяка парламентарна група сама предлага своя кандидат – Народното събрание не може да наложи чужд кандидат на дадена група.</li><li>Гласуването е <strong>явно</strong> чрез електронната система и се провежда <strong>едновременно за всички кандидати</strong> наведнъж, не поотделно.</li><li>За да бъде избран, кандидатът трябва да получи <strong>повече от половината гласове на присъстващите</strong> народни представители (обикновено мнозинство, не абсолютно).</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Всички шест парламентарни групи – всяка получава гарантирано място в ръководството на парламента.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Гласуването е „в цялост&quot; за всички шестима кандидати едновременно – ако блокът не мине, всички кандидати падат заедно, което създава взаимна зависимост между групите при избора.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><p>Влиза в сила от обнародването.</p></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Няма достатъчно сравнителни данни.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243228" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;41 &middot; 2026-05-05</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за избиране на заместник-председатели на Петдесет и второто Народно събрание</div>
+    <p class="dv-lead">Народното събрание официално избира шестимата заместник-председатели на 52-рото Народно събрание.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Избрани са шест заместник-председатели: Иван Илчев Ангелов, Рая Назар Назарян, Айтен Байрям Сабри, Атанас Петров Атанасов, Стою Теодоров Стоев и Цончо Томов Ганев.</li><li>Решението е взето на основание чл. 76, ал. 3 и чл. 86, ал. 1 от Конституцията – стандартната правна основа за конституиране на парламентарното ръководство.</li><li>Председател на НС е Михаела Доцова, чийто подпис удостоверява решението.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Шестимата новоизбрани заместник-председатели, които поемат ръководни парламентарни позиции.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><p>Влиза в сила от обнародването.</p></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Няма достатъчно сравнителни данни.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243229" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;41 &middot; 2026-05-05</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ по прилагането на Правилника за организацията и дейността на Народното събрание</div>
+    <p class="dv-lead">52-рото Народно събрание решава да работи по вече съществуващия правилник на предишния парламент, докато не приеме свой собствен.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>52-рото НС приема за своя работна основа Правилника за организацията и дейността на НС, обнародван в ДВ бр. 107/2024 г. и изменен с бр. 50/2025 г.</li><li>Правилото важи временно – само до момента, в който парламентът приеме собствен правилник.</li><li>НС си запазва правото да реши друго по всяко време, т.е. може да отстъпи от тази договореност с ново решение.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Новоизбраният парламент и гражданите – дейността на НС стартира без правен вакуум и забавяне.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Решението е подписано от Михаела Доцова като председател на НС – позиция, която към момента на приемане на акта все още не е широко известна публично.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><ul><li>Влиза в сила от деня на приемането му – 30 април 2026 г., без изчакване на обнародването.</li></ul></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Няма достатъчно сравнителни данни.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243230" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;41 &middot; 2026-05-05</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за избиране на секретари на Петдесет и второто Народно събрание</div>
+    <p class="dv-lead">Парламентът официално избира 12-те си секретари – административна длъжност, необходима за функционирането на 52-рото Народно събрание.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Избрани са точно 12 секретари – по двама представители от всяка парламентарна група, което означава, че в НС има 6 парламентарни групи.</li><li>Гласуването е явно, чрез компютризираната система, и е проведено наведнъж за всички 12 кандидати като единен пакет.</li><li>Промяна в метода на гласуване (напр. към тайно) е възможна само ако самото НС вземе отделно решение за това.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Дванадесетте новоизбрани секретари, всяка от 6-те парламентарни групи получава равно представителство в ръководството.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Гласуването е проведено наведнъж за всичките 12 секретари като блок – НС не е гласувало поотделно за всеки кандидат.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><p>Влиза в сила от обнародването.</p></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Няма достатъчно сравнителни данни.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243231" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details></div>
+</div>
+<div class="subsection">
+  <div class="subsection-hd">
+    <span class="subsection-tag">02</span>
+    <span class="subsection-title">Министерски съвет</span>
+    <span class="subsection-count">6 постановления</span>
+  </div>
+  <div class="dv-grid">
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;41 &middot; 2026-05-05</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 55 ОТ 30 АПРИЛ 2026 Г. за изменение на Наредбата за условията и реда за изплащане на компенсационни суми на държавните служители от Държавна агенция „Национална сигурност“, които ползват жилище при условията на свободно договаряне, приета с Постановление № 80 на Министерския съвет от</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Актуализират се месечните компенсационни суми за наем на служителите на ДАНС, които сами си намират жилище на свободния пазар.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Служителите на ДАНС в София, Пловдив, Варна, Бургас, Русе, Плевен и Сливен получават: 24,03 евро (единично), 32,21 евро (двама), 64,93 евро (трима), 77,21 евро (четирима), 90,50 евро (петима).</li><li>В останалите областни центрове и вилните зони към 7-те големи града: 19,94 евро (единично) до 82,32 евро (петчленно семейство).</li><li>В по-малките градове и вилните зони към областните центрове: 16,36 евро (единично) до 57,78 евро (петчленно семейство).</li><li>В останалите населени места и вилни зони: 12,27 евро (единично) до 53,69 евро (петчленно семейство).</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Служителите на ДАНС, наемащи жилище на свободния пазар – получават актуализирани (осъвременени) компенсации.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Компенсациите се изплащат в евро, а не в левове – необичайна практика за вътрешни държавни плащания в България.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>От деня на обнародването – 5 май 2026 г., без гратисен период.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243193" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;41 &middot; 2026-05-05</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 56 ОТ 30 АПРИЛ 2026 Г. за определяне на реда и начина на използване на ресурса, възстановен на финансовия инструмент по Оперативна програма „Инициатива за малки и средни предприятия“ 2014 – 2020 след края на периода на допустимост на разходите</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Урежда как ще бъдат преизползвани над 48 млн. евро, върнати от финансови инструменти по стара европейска програма за МСП, като средствата се насочват към нова подкрепа за бизнеса под формата на заеми, гаранции или безвъзмездни средства.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>48 353 532 евро</strong> е точният размер на възстановения ресурс – пари, върнати обратно след края на Оперативна програма „Инициатива за МСП&quot; 2014–2020, и сега се предоставят за преизползване под управлението на Министерството на иновациите и растежа.</li><li>Средствата могат да се предоставят в три форми: <strong>финансови инструменти</strong> (заеми, гаранции, капиталови инвестиции), <strong>безвъзмездни средства</strong> или <strong>комбинация от двете</strong> – изборът зависи от пазарна оценка, която трябва да бъде завършена в 6-месечен срок.</li><li>Парите са предназначени за <strong>малки и средни предприятия</strong>, които са финансово жизнеспособни, но не могат да получат достатъчно финансиране от пазара.</li><li>Ресурсът може да тече по три канала: чрез <strong>холдингов фонд</strong>, чрез <strong>специални фондове без холдингов фонд</strong> (директно заеми и гаранции) или <strong>директно от министерството</strong> при безвъзмездно финансиране.</li><li>Финансовата отговорност на Министерството на иновациите и растежа е <strong>ограничена до размера на 48,35 млн. евро</strong> – не може да надхвърли тази сума.</li><li>Всички споразумения с управляващи фондове трябва да съдържат задължително минимален набор от елементи: инвестиционна стратегия, бизнес план, мониторингови изисквания, одитна следа, правила за таксите за управление (обвързани с качеството на изпълнение) и условия за прекратяване.</li><li>Данните за всяка операция се въвеждат и съхраняват в <strong>ИСУН</strong> (информационната система за европейски фондове).</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: МСП без достъп до пазарно финансиране, които ще могат да кандидатстват за заеми, гаранции или безвъзмездни средства от преизползвания ресурс.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Таксите за управление на фондовете са изрично обвързани с <strong>качеството на изпълнение</strong> – необичайно конкретно изискване, което поставя управляващите под финансов стимул да постигат реални резултати, а не само да администрират средствата.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от деня на обнародването – 5 май 2026 г.</li><li>Министерството на иновациите и растежа трябва да завърши пазарната оценка (определяща формата на подкрепа) в срок до <strong>6 месеца</strong> от влизането в сила, тоест до 5 ноември 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243194" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;42 &middot; 2026-05-08</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 57 ОТ 30 АПРИЛ 2026 Г. за приемане на Наредба за условията и реда за осъществяване на дейностите, свързани с оръжията, боеприпасите и пиротехническите изделия, и контрола над тях в Главна дирекция „Охрана“ и в Главна дирекция „Изпълнение на наказанията“ при Министерството на правосъд</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Актът въвежда изцяло нова наредба, която урежда как двете затворнически и охранителни структури на Министерството на правосъдието (ГДО и ГДИН) придобиват, съхраняват, транспортират, ремонтират и унищожават оръжия, боеприпаси и пиротехнически изделия, и замества остарялата наредба от 2012 г.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Съхранение с конкретни лимити:</strong> В един склад или помещение могат да се държат максимум 20 кг пиротехнически изделия, 5 тона патрони и 2000 бр. запалки за ръчни гранати. Боеприпасите и пиротехниката задължително се съхраняват в неотопляеми складове под денонощна въоръжена охрана и сигнално-охранителна техника.</li><li><strong>Служебно оръжие у дома само за служители на ГДО:</strong> Охранителите от ГДО имат право да съхраняват пистолета и боеприпасите у дома – задължително без патрон в патронника и в неподвижно закрепен метален сейф. Служителите на ГДИН нямат това право – получават и сдават оръжието само при застъпване/напускане на дежурство.</li><li><strong>Задължително предаване при отпуск:</strong> Служителите на ГДО, които напускат страната или излизат в отпуск за повече от 30 календарни дни, са длъжни да предадат оръжието и боеприпасите на определено длъжностно лице.</li><li><strong>Въоръжена охрана при транспорт над конкретни прагове:</strong> При превоз на над 10 оръжия, над 20 000 боеприпаса или над 50 кг пиротехника се изисква задължителен въоръжен ескорт в съпровождащ автомобил със сирена и светлини, движещ се след колоната.</li><li><strong>Строги забрани при транспортиране:</strong> Забранено е пушенето на по-малко от 25 м от превозните средства, превозването на ОБПИ с ремаркета, спирането в населени места (освен при аварийна повреда), навлизането на по-малко от 100 м до зони с открит огън, и транспортиране при гъста мъгла, гръмотевици или хлъзгав път.</li><li><strong>Категоризиране определя съдбата на оръжията:</strong> Оръжията се делят на 5 категории – тези от 4-та и 5-та категория подлежат на бракуване и физическо претопяване в присъствие на комисия. В рамките на ГДО и ГДИН се извършва само текущ (незначителен) ремонт; среден и основен ремонт се възлага по обществена поръчка.</li><li><strong>Боеприпасите не се бракуват – унищожават се:</strong> Негодните боеприпаси и пиротехника се предават за утилизация или унищожаване само на лица с нужните разрешения. При изтекъл срок на годност на помощни боеприпаси (гумени, шокови куршуми, сълзотворни гранати) е допустимо удължаване на срока до 60% от първоначалния, ако комисия докаже годността им.</li><li><strong>При изгубване или кражба – 5 работни дни за доклад:</strong> Служителят е длъжен незабавно да уведоми командната верига, а ръководителят на звеното – незабавно да сигнализира областната дирекция на МВР. В срок от 5 работни дни се изготвя писмен доклад до главния директор.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Служителите на ГДО и ГДИН – получават ясни и актуализирани правила вместо 14-годишна наредба; служителите на ГДО изрично запазват правото да пазят оръжие вкъщи.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Наредбата включва пълна математическа формула с коефициенти за изчисляване на безопасното разстояние при взрив (R = K × √q), диференцирана според вида на сградата и релефа на терена – рядко срещан инженерен инструмент в текст на подзаконов нормативен акт.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от деня на обнародването – 8 май 2026 г.</li><li>Наредбата от 2012 г. (ПМС № 71/2012 г.) се отменя едновременно с влизането в сила на новата.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243256" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;42 &middot; 2026-05-08</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 58 ОТ 30 АПРИЛ 2026 Г. за изменение и допълнение на Наредбата за условията и реда за уведомяване на Агенцията за ядрено регулиране за събития в ядрени съоръжения, в обекти и при дейности с източници на йонизиращи лъчения и при превоз на радиоактивни вещества, приета с Постановление №</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Актуализират се правилата за задължително уведомяване на Агенцията за ядрено регулиране при инциденти в ядрени съоръжения и при превоз на радиоактивни материали – разширява се списъкът на събитията, за които трябва да се докладва, и се прецизират сроковете и форматите на докладите.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Нов праг за уведомяване при спад на мощност:</strong> Лицензиантите на ядрени централи вече са длъжни да уведомяват АЯР при намаляване на мощността на енергиен блок с 25% или повече, ако причината е отказ на оборудване или грешка на персонала.</li><li><strong>Пожарите на площадката стават самостоятелно уведомително събитие:</strong> Всеки пожар на територията на ядрено съоръжение подлежи на задължително докладване – преди това не беше изрично включено като отделна категория.</li><li><strong>Нови задължения при превоз на радиоактивни материали:</strong> Операторите, извършващи превоз, трябва да уведомяват АЯР при: пътнотранспортно произшествие без радиационни последствия, ако превозът не може да продължи; несъответствие на доставен материал с декларираната номенклатура; принудителен престой на непредвидено място при нарушени условия за безопасен превоз.</li><li><strong>Нова категория „аварии при превоз&quot;:</strong> Въвежда се изричен списък на аварийни събития при транспорт – включва дози над разрешените граници за персонала, разхерметизиране на опаковки при катастрофа, кражба или саботаж на радиоактивен материал от транспортно средство, и пожар/взрив с радиационни последствия.</li><li><strong>Срок за доклад след инцидент – 1 месец:</strong> Разследването и анализът на събитието, заедно с всички приложения, трябва да бъдат представени в АЯР не по-късно от един месец след регистриране на събитието – изискването е изрично разписано в наредбата.</li><li><strong>Изчистване на остарели понятия:</strong> Отпада задължението за съхраняване и предоставяне на магнетофонни записи на оперативни разговори; вместо „диаграми&quot; и „показания на записващи&quot; се говори за „данни&quot; и „данни от регистриращи&quot; устройства.</li><li><strong>Нови легални дефиниции:</strong> Въвеждат се точни определения за „аварийни условия&quot;, „вътрешно събитие&quot;, „външно събитие&quot;, „очаквано експлоатационно събитие&quot; и „нормална експлоатация&quot; – термини, използвани при класификация на инциденти.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li><strong>Печелят:</strong> Агенцията за ядрено регулиране (по-пълна и навременна информация за инциденти); обществеността (по-широко покритие на потенциално опасни събития).</li><li><strong>Губят:</strong> Оператори на ядрени съоръжения и превозвачи на радиоактивни материали – нарастват задълженията им за докладване и административната тежест.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>За първи път кражба или неразрешено проникване с цел отнемане на радиоактивен материал от транспортно средство е изрично наименована като авария, подлежаща на незабавно уведомяване – сигнал, че регулаторът третира физическата сигурност при превоз равностойно с радиационните аварии.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>В сила от деня на обнародването – 8 май 2026 г., без гратисни периоди.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243257" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;42 &middot; 2026-05-08</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 59 ОТ 30 АПРИЛ 2026 Г. за приемане на Списък на продуктите, свързани с отбраната, и на Списък на изделията и технологиите с двойна употреба, които подлежат на контрол при внос</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Актуализират се списъците на отбранителни продукти и изделия с двойна употреба, които изискват разрешение при внос в България, в съответствие с новия общ оръжеен списък на ЕС.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Приема се нов Списък на продуктите, свързани с отбраната (Приложение № 1), и нов Списък на изделията и технологиите с двойна употреба (Приложение № 2), подлежащи на контрол при внос.</li><li>Двата списъка заменят предишните, приети с Постановление № 54 от 2025 г. (ДВ, бр. 40/2025 г.), което се отменя изцяло.</li><li>Промяната отразява актуализирания Общ списък на оръжията на ЕС от 24 февруари 2025 г. – вносителите трябва да проверят дали стоките им попадат в обновените категории.</li><li>Контролът при внос на засегнатите продукти се прилага от министъра на икономиката и индустрията.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Държавата и националната сигурност – разполагат с актуален и хармонизиран с ЕС инструмент за контрол на вноса.</li><li>Губят: Търговци и вносители на отбранителни и двойноупотребими изделия, чиито стоки може да попаднат в разширени или променени категории и да изискват нови разрешителни.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Постановлението влиза в сила на <strong>5 юни 2026 г.</strong> – около месец след обнародването.</li><li>Вносителите разполагат с този период, за да проверят съответствието на стоките си с новите списъци и да набавят необходимите разрешения.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243258" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;42 &middot; 2026-05-08</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 60 ОТ 30 АПРИЛ 2026 Г. за изменение и допълнение на Наредбата за съществените изисквания и оценяване съответствието на играчките, приета с Постанов</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Актът въвежда нови изключения за употреба на кобалт в детски играчки, транспонирайки европейска директива от 2026 г.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Кобалтът е класифициран като канцероген, мутаген и репродуктивно токсичен (Carc 1B, Muta 2, Repr 1B), но получава три конкретни изключения, при които може да се съдържа в детски играчки.</li><li>Първо изключение: кобалт като примес в никела в играчки и части, изработени от неръждаема стомана – разрешен.</li><li>Второ изключение: кобалт в части на играчки, предназначени за провеждане на електрически ток – разрешен.</li><li>Трето изключение: кобалт в неодимови магнити в играчки, при условие че тези магнити не могат да бъдат погълнати или вдишани от деца – разрешен.</li><li>Паралелно се прецизира приложение № 5 – заглавието му вече не препраща към заличена разпоредба (чл. 52, т. 3), което отразява по-ранно структурно изменение в наредбата.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Производители и вносители на детски играчки, съдържащи неръждаема стомана, електрически компоненти или неодимови магнити – получават правна яснота, че продуктите им не нарушават изискванията за кобалт.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Неодимовите магнити са разрешени с кобалт само ако физически не могат да бъдат погълнати или вдишани – условие, което на практика изключва малките свободни магнитни части, известни с тежките наранявания при деца.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Повечето разпоредби влизат в сила от деня на обнародването – 8 май 2026 г.</li><li>Новият ред за кобалт в таблицата (трите изключения) влиза в сила на 29 август 2026 г. – гратисен период от около 4 месеца за производителите.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243259" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details></div>
+</div>
+<div class="subsection">
+  <div class="subsection-hd">
+    <span class="subsection-tag">03</span>
+    <span class="subsection-title">Министерства и ведомства</span>
+    <span class="subsection-count">5 наредби · 1 решение · 1 акт</span>
+  </div>
+  <div class="dv-grid">
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;41 &middot; 2026-05-05</span>
+    </div>
+    <div class="dv-title">НАРЕДБА № 38 от 22 април 2026 г. за придобиване на квалификация по професията „Кинология“</div>
+    <div class="exec-organ">Министерство на образованието и науката</div>
+    <p class="dv-lead">Наредбата въвежда държавен образователен стандарт за обучение по професията „Кинология&quot;, определяйки изискванията за придобиване на втора и трета степен на професионална квалификация.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Регламентира се официалното професионално образование по специалността „Кинология&quot; (код 081104), отнесена към направление „Растениевъдство, животновъдство и рибно стопанство&quot;.</li><li>Стандартът обхваща две степени на квалификация – втора и трета, като предвижда и възможност за придобиване на квалификация по част от професията или по отделни единици резултати от ученето.</li><li>Определят се задължителни изисквания към кандидатите за обучение, към материалната база (учебни помещения, оборудване) и към преподавателите/обучаващите.</li><li>Обучението включва три блока подготовка: обща, отраслова (животновъдство) и специфична професионална.</li><li>Въз основа на стандарта се разработват типови учебни планове – отделно за ученици и за лица над 16 години – и учебни програми.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Ученици и възрастни, които искат да придобият призната квалификация в областта на кинологията (развъждане, дресура и работа с кучета) по официален държавен стандарт; училища и центрове за обучение, получаващи ясна рамка за организиране на такива курсове.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Кинологията се включва в системата на професионалното образование като самостоятелна специалност за първи път с официален ДОС – факт, показващ институционализирането на работата с кучета като призната професия в България.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Наредбата влиза в сила от обнародването ѝ (5 май 2026 г.).</li><li>Новите учебни планове и програми се прилагат от учебната 2026/2027 г. само за ученици, постъпващи в VIII клас от тази година нататък.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243033" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;41 &middot; 2026-05-05</span>
+    </div>
+    <div class="dv-title">НАРЕДБА № 3 от 22 април 2026 г. за условията и реда за прилагане на интервенцията „Биологично животновъдство“, включена в Стратегическия план за развитието на земеделието и селските райони за периода 2023 – 2027 г.</div>
+    <div class="exec-organ">Министерство на земеделието и храните</div>
+    <p class="dv-lead">Наредбата урежда правилата, по които биологични животновъди могат да кандидатстват за евросубсидии до 516 евро/ха годишно в рамките на Стратегическия план 2023–2027 г.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Кой може да кандидатства:</strong> Земеделски стопани с говеда, биволи, овце, кози или Източнобалкански свине (пасищно отглеждане), които имат сключен договор за контрол и сертификация с лицензирано контролиращо лице до 31 декември на предходната година и са регистрирани в ИСАК.</li><li><strong>Задължително съотношение животни/площ:</strong> Между 0,3 и 1 животинска единица на хектар – ако не е спазено, плащането се отказва изцяло; таблицата с коефициенти: бик/крава &gt; 2 г. = 1,0 ЖЕ; говедо 6 м. – 2 г. = 0,6 ЖЕ; &lt; 6 м. = 0,4 ЖЕ; овца/коза = 0,15 ЖЕ; свиня-майка &gt; 50 кг = 0,5 ЖЕ; друга свиня = 0,3 ЖЕ.</li><li><strong>Минимални площи:</strong> Одобрение е възможно само при минимум 0,5 ха общо и минимален размер на отделен парцел 0,1 ха; под тези прагове – отказ.</li><li><strong>Ангажимент за 3 години:</strong> Стопанинът поема тригодишен ангажимент; площта може да се намалява с до 10% без последствия, но над 10% налага връщане на вече получени суми пропорционално за предходните години.</li><li><strong>Образователно изискване:</strong> Стопанинът или упълномощено лице трябва да докажат биологично/агроекологично обучение или опит от предишни програми (м. 10, м. 11, м. 214) – срок до 31 декември на втората година от ангажимента; проверката е служебна от ДФЗ.</li><li><strong>Плащане:</strong> До 516 евро/ха годишно; министърът може да намали размера при недостиг на бюджет; ДФЗ може да въведе таван на стопанство и пропорционално намаление за всички.</li><li><strong>Отказ на плащане при:</strong> „критично несъответствие&quot; (ниво 3) от контролиращото лице, липса на договор за сертификация, не всички животни от вида са в система на контрол, липса на произведена продукция по сертификат.</li><li><strong>При умишлено нарушение:</strong> Изключване от плащания по интервенцията за годината на констатацията и за следващата година.</li><li><strong>Доброволен отказ от ангажимент:</strong> Възможен, но изисква пълно връщане на получената до момента финансова помощ; ДФЗ информира в едномесечен срок за дължимата сума.</li><li><strong>Проверки на място:</strong> Минимум 3% от бенефициентите и 5% от декларираните площи годишно; 20–25% от извадката се избира на случаен принцип, останалите – на рискова основа; делът може да се намали до 1% при грешки под 2% за две последователни години.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Биологични животновъди с говеда, овце, кози, биволи и Източнобалкански свине, които вече са сертифицирани или са в преход – получават гарантирана субсидия до 516 евро/ха за 3 години.</li><li>Губят: Стопани с по-малко от 0,5 ха биологични площи или с неспазено съотношение животни/площ – изключени изцяло; тези с площи в националните паркове Рила, Пирин и Централен Балкан, резервати и поддържани резервати – недопустими.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Интервенцията изрично изключва площи в три национални парка и всички резервати от подпомагане – необичайно географско ограничение, което засяга стопани, чиито животни пасат в защитени територии.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от деня на обнародването – 5 май 2026 г.</li><li>Образователното изискване трябва да е изпълнено до 31 декември на втората година от поетия ангажимент.</li><li>Договорът за контрол и сертификация трябва да е сключен до 31 декември на предходната година спрямо годината на кандидатстване.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243104" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;41 &middot; 2026-05-05</span>
+    </div>
+    <div class="dv-title">НАРЕДБА № Н-5 от 28 април 2026 г. за оказване на медицинска помощ от разстояние</div>
+    <div class="exec-organ">Министерство на здравеопазването</div>
+    <p class="dv-lead">Наредбата въвежда правила за телемедицина в България – кой може да я предоставя, при какви условия, как се документира и какви технологии са допустими.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Кой може да предоставя телемедицина:</strong> Само лечебни заведения по Закона за лечебните заведения и медицинските специалисти в тях. Изрично се изключват болниците по чл. 10, т. 2 и 7 (диагностично-консултативни центрове и центрове за психично здраве).</li><li><strong>Какво е забранено дистанционно:</strong> Водене на раждане, установяване на смърт, дентална медицина (с изключение на консултации между зъболекари и интерпретация на образни изследвания), както и всеки случай, в който директният физически преглед е медицинска необходимост.</li><li><strong>Срокове за документиране:</strong> При планова помощ – до 16 ч. на следващия работен ден; при сложни случаи с образна обработка – до 2 работни дни; при спешна помощ – до 30 минути, а при сложен спешен случай – до 120 минути.</li><li><strong>Информирано съгласие задължително:</strong> Пациентът трябва да даде изрично съгласие преди услугата – в писмена или електронна форма. Аудио/видео запис се допуска само с отделно предварително съгласие, което може да бъде оттеглено.</li><li><strong>Технологични изисквания:</strong> Използваните платформи и медицински изделия трябва да притежават CE маркировка, да са интегрирани с Националната здравноинформационна система и да осигуряват надеждна идентификация на участниците. При AI/клинични системи за подпомагане на решения задължително се осигурява човешки контрол и прозрачност.</li><li><strong>Документация:</strong> Всяка дистанционна услуга се вписва като електронен здравен запис в НЗИС, подписан с квалифициран електронен подпис. Използването на AI или автоматизирани инструменти трябва изрично да е отбелязано в документацията.</li><li><strong>Съвместни центрове:</strong> Няколко лечебни заведения могат да обединят ресурси в „центрове за медицинска помощ от разстояние&quot; чрез договор, в който задължително се урежда разпределението на отговорностите за лични данни, достъпа до системи и механизмите за качество.</li><li><strong>Контрол:</strong> Изпълнителна агенция „Медицински надзор&quot; упражнява надзор над всички лечебни заведения, предоставящи телемедицина.</li><li><strong>Публичност:</strong> Лечебните заведения са длъжни да публикуват на сайта си списък на предлаганите дистанционни услуги, специалностите и конкретните специалисти, а на пациента трябва да се предостави уведомление по GDPR в момента на заявяване на услугата.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Пациенти с ограничена мобилност или в отдалечени райони, които получават правна рамка за достъп до законна телемедицина; лечебни заведения, които вече предлагат такива услуги и получават регулаторна яснота.</li><li>Губят: Нелицензирани платформи и приложения за дистанционни медицински консултации, които досега работеха в сива зона – те вече нямат правна основа.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Наредбата изрично задължава лечебните заведения да осигурят резервно електрозахранване и процедури при технически откази – ако връзката прекъсне по средата на консултация, лекарят е длъжен активно да насочи пациента към присъствена помощ.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от датата на обнародване – 5 май 2026 г.</li><li>Не са предвидени изрични гратисни периоди за привеждане в съответствие.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243156" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;41 &middot; 2026-05-05</span>
+    </div>
+    <div class="dv-title">Наредба за изменение и допълнение на Наредба № Е-РД-04-1 от 2020 г. за топлоснабдяването</div>
+    <div class="exec-organ">Министерство на енергетиката</div>
+    <p class="dv-lead">Наредбата въвежда точна формула за изчисляване на топлинната енергия от сградната инсталация, когато живущите в блок не са се споразумели за метод на разпределение, и задължава топлопреносните предприятия да информират потребителите ежемесечно за всички стойности, влизащи в сметката.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Нова задължителна формула:</strong> Когато жителите на етажна собственост не изберат метод за дялово разпределение на топлинната енергия от сградната инсталация, фирмата за дялово разпределение я изчислява по конкретна формула – произведение от инсталираната мощност на отоплителните тела (kW), отоплителните денградуси за месеца и броя часове в денонощието, делено на разликата между 19 °С (средна вътрешна температура) и изчислителната външна температура за климатичната зона.</li><li><strong>Два различни корекционни коефициента:</strong> При скрито изпълнение на инсталацията или при открито изпълнение в сгради от енергиен клас „А&quot; до „В&quot; коефициентът е 0,10; при открито изпълнение в сгради от клас „С&quot; до „G&quot; или с неустановен клас – 0,15. Изборът на коефициент пряко влияе върху начислената сума.</li><li><strong>Нова дефиниция:</strong> Въвежда се понятието „отоплителни денградуси&quot; – брой дни с денонощна температура ≤ +12 °С, умножен по разликата между 19 °С и средномесечната外部 температура по данни на НИМХ.</li><li><strong>Ежемесечна информация:</strong> Топлопреносното предприятие е задължено (вече без „може да&quot;) да предоставя на потребителите всеки месец всички компоненти, участващи в изчислението – т.е. пълна разбивка на сметката.</li><li><strong>Уведомяване по електронен път:</strong> Топлопреносното предприятие вече може да уведомява клиентите не само писмено, но и по електронен път.</li><li><strong>Разширен кръг от упълномощени лица:</strong> При дялово разпределение като страна по процеса изрично се добавят представителят на етажната собственост и управителят на асоциацията на клиентите.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li><strong>Печелят:</strong> Потребители в блокове без избран метод на разпределение – получават предвидима, стандартизирана формула вместо произволни практики; и сгради с по-висок енергиен клас (А–В), за които коефициентът е по-нисък (0,10 вместо 0,15).</li><li><strong>Губят:</strong> Потребители в по-стари, енергийно неефективни сгради (клас С–G или без клас), върху чиято сградна инсталация се прилага по-висок коефициент 0,15, което води до по-голям дял за разпределение.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Премахването на „може да&quot; от задължението за уведомяване превръща досегашната незадължителна практика в твърдо правно изискване – малка редакция с потенциално значим практически ефект за стотици хиляди топлофицирани домакинства.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>От деня на обнародването – 5 май 2026 г., без гратисен период.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243172" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;42 &middot; 2026-05-08</span>
+    </div>
+    <div class="dv-title">Наредба за изменение и допълнение на Наредба №</div>
+    <div class="exec-organ">Министерство на вътрешните работи</div>
+    <p class="dv-lead">Актът актуализира изискванията към шофьорите на автомобили със сирени и светлини и разширява кръга от МПС, които могат да ползват специален режим на движение – вече включва и превозните средства на доброволни формирования към общините.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Водач на МПС със специален режим задължително трябва да не е лишаван от шофьорска книжка за нарушение на пътя през <strong>последните 3 години</strong>.</li><li>Изисква се минимален шофьорски стаж: <strong>2 години</strong> за всички категории, но само <strong>1 година</strong> за мотоциклети (категория „А&quot;).</li><li>Доброволните формирования, създадени от общините за борба с бедствия, пожари и извънредни ситуации, вече могат да ползват специален режим – но само ако кметът изрично е определил конкретните превозни средства със заповед.</li><li>Направени са редакционни уточнения: „МВР&quot; се изписва с пълното наименование, а „НСО и НС&quot; – съответно като „Националната служба за охрана и Народното събрание&quot;.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Доброволни формирования към общините – получават правото да ползват специален режим при спешни ситуации; граждани – по-ясни и по-строги изисквания към шофьорите на приоритетни МПС.</li><li>Губят: Водачи без достатъчен стаж или с история на лишаване от книжка – вече не могат да управляват служебни МПС с привилегирован режим.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Включването на общинските доброволни формирования е съществена промяна в обхвата на наредбата – до момента специалният режим е бил запазен изключително за държавни структури (полиция, армия, спешна помощ и др.).</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от датата на обнародване – 8 май 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243074" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;41 &middot; 2026-05-05</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ № 3076 от 18 март 2026 г. по административно дело № 321 от 2025 г.</div>
+    <div class="exec-organ">Върховен административен съд (седмо отделение)</div>
+    <p class="dv-lead">Съдът обявява за нищожна общинска инструкция на Варна, с която от бизнеса са изисквани парични депозити при прокарване на газопроводи и технически съоръжения през общинска инфраструктура.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Инструкцията на кмета на Варна от 2020 г. е задължавала фирми като „Овергаз мрежи&quot; да внасят парични депозити, за да получат заповед за прокарване на отклонения от техническата инфраструктура – съдът я обявява за нищожна от самото начало.</li><li>Основният порок: кметът няма законово право да издава нормативни актове с общо действие към трети лица – инструкцията по съдържание е наредба, а наредби се приемат от Общинския съвет, не от кмета.</li><li>Инструкцията е действала от март 2020 г. до декември 2023 г., когато кметът сам я отменя и приема нова – нищожността обаче засяга целия тригодишен период на прилагане.</li><li>Нищожността означава, че актът не е породил правни последици от самото начало – което отваря врата за искане на обратно изплащане на събраните депозити.</li><li>Община Варна е осъдена да плати на „Овергаз мрежи&quot; 280 лв. (143,16 евро) разноски по делото.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Газоразпределителни оператори и всички фирми, плащали депозити по отменената инструкция – имат основание да искат парите обратно.</li><li>Губят: Община Варна – губи правовото основание за събраните депозити и плаща съдебни разноски; новата инструкция от 2023 г. не е предмет на делото, но е изложена на аналогичен правен риск.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Общината се е опитала да спре делото с аргумента, че инструкцията е вече отменена – съдът е отхвърлил довода, приемайки, че дружеството има интерес да я атакува дори след отмяната заради периода, в който тя е действала.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Решението е постановено на 18 март 2026 г. и обявява нищожност с обратна сила.</li><li>Може да се обжалва с касационна жалба пред петчленен състав на ВАС в 14-дневен срок от съобщението до страните.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=242982" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<div class="dv-card dv-card-compact">
+  <div class="dv-sum-static">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-other">ДРУГО</span></div>
+      <span class="dv-meta">Бр.&nbsp;41 &middot; 2026-05-05</span>
+    </div>
+    <div class="dv-title"></div>
+    <div class="exec-organ">Висш съдебен съвет</div>
+    <p class="dv-lead">Актът обновява формуляра за оценка от писмения изпит по наказателно право и процес, който се попълва при финалния изпит на кандидатите за младши следователи, завършващи обучението си в Националния институт на правосъдието през 2026 г.</p>
+    <div class="compact-bullets"><ul><li>Засегнати са единствено кандидатите за младши следователи, чието обучение в Националния институт на правосъдието приключва през 2026 г.</li><li>Променя се само формулярът за оценка (Приложение № 7) от писмения изпит по наказателно право и процес – съдържанието на самия изпит не се засяга.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243126" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</div>
+
+<div class="dv-card dv-card-compact">
+  <div class="dv-sum-static">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-spor">СПОРАЗУМЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;42 &middot; 2026-05-08</span>
+    </div>
+    <div class="dv-title">СПОРАЗУМЕНИЕ между Изпълнителна агенция „Проучване и поддържане на р. Дунав“, Република България, и Речна администрация за Долен Дунав – Галац, Румъния, за съвместно възлагане на обществени поръчки по проект „Подобряване на условията за корабоплаване в общия българо-румънски участък на р. Дунав – FA</div>
+    <div class="exec-organ">Министерство на транспорта и съобщенията</div>
+    <p class="dv-lead">Споразумението урежда как България и Румъния съвместно ще поръчат строителство и услуги за подобряване на корабоплаването по Дунав, като водещ партньор и ръководител на обществените поръчки е румънската страна.</p>
+    <div class="compact-bullets"><ul><li>Проектът FAST Danube 2 цели да увеличи броя на дните с осигурени условия за корабоплаване по общия българо-румънски участък на Дунав – от 280 на 340 дни годишно.</li><li>Финансирането идва от европейския Механизъм за свързване на Европа 2 (МСЕ 2) въз основа на споразумение за безвъзмездна помощ от 10 октомври 2024 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243103" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</div></div>
+</div>
+</div>
+
+<div class="nl-footer">
+  <span class="nl-footer-logo">Парламентарни Doodles</span>
+  <div class="nl-footer-links">
+    <a href="../">ДВ Дайджест</a>
+    <a href="../../sessions/">Заседания</a>
+    <a href="https://bpdoodles.com">Basepoint Doodles</a>
+  </div>
+</div>
+</div>
+</body>
+</html>

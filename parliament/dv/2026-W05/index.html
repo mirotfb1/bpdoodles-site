@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="utf-8">
+<title>Парламентарни Doodles · ДВ Дайджест · Седмица 5</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --navy:#1B2E5E; --gold:#B5821A; --ink:#1C1C1C; --ink2:#444;
+  --muted:#888; --muted-lt:#AAA; --border:#E8E8E8; --surf:#F8F8F8; --paper:#FFF;
+  --font-d:'Caveat',cursive; --font-h:'Nunito','Arial Black',sans-serif;
+  --font-b:'Nunito',Arial,sans-serif;
+}
+body{font-family:var(--font-b);background:#F0F2F5;color:var(--ink);line-height:1.6;}
+.wrapper{max-width:740px;margin:32px auto;background:#fff;border:1px solid var(--border);border-radius:4px;overflow:hidden;}
+
+/* top bar */
+.top-bar{display:flex;justify-content:space-between;align-items:center;padding:8px 16px;background:var(--navy);}
+.site-nav{display:flex;gap:20px;align-items:center;}
+.site-nav a{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none;}
+.site-nav a:hover{color:rgba(255,255,255,.9);}
+.site-nav a.active{color:var(--gold);}
+.top-bar-tag{font-family:'Courier New',monospace;font-size:10px;color:rgba(255,255,255,.25);}
+
+/* masthead */
+.masthead{background:var(--navy);padding:24px 28px 20px;display:flex;justify-content:space-between;align-items:flex-end;border-bottom:3px solid var(--gold);}
+.masthead-logo{display:flex;flex-direction:row;align-items:center;}
+.masthead-left{display:flex;flex-direction:column;align-items:flex-end;padding-right:14px;}
+.masthead-basepoint{font-family:var(--font-h);font-size:22px;font-weight:900;color:#fff;letter-spacing:-.3px;line-height:1;}
+.masthead-tagline{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:4px;}
+.masthead-divider{width:2px;height:52px;background:rgba(255,255,255,.2);}
+.masthead-doodles{font-family:var(--font-d);font-size:48px;font-weight:700;color:var(--gold);line-height:1;padding-left:14px;}
+.masthead-meta{text-align:right;}
+.masthead-issue{font-size:13px;font-weight:700;color:rgba(255,255,255,.85);display:block;line-height:1.5;}
+.masthead-date{font-size:11px;color:rgba(255,255,255,.4);display:block;}
+.masthead-pills{margin-top:8px;display:flex;gap:6px;justify-content:flex-end;flex-wrap:wrap;}
+.masthead-pill{font-size:10px;font-weight:700;letter-spacing:.05em;background:rgba(255,255,255,.12);color:rgba(255,255,255,.6);padding:3px 8px;border-radius:3px;}
+
+/* content sections */
+.section{padding:20px 28px;border-bottom:1px solid var(--border);}
+.section:last-of-type{border-bottom:none;}
+
+/* subsection (within DV edition) */
+.subsection{margin-bottom:24px;}
+.subsection:last-child{margin-bottom:0;}
+.subsection-hd{display:flex;align-items:baseline;gap:10px;margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid var(--border);}
+.subsection-tag{font-size:10px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);}
+.subsection-title{font-family:var(--font-h);font-size:16px;font-weight:900;color:var(--navy);}
+.subsection-count{font-size:11px;color:var(--muted);margin-left:auto;}
+
+/* section label row */
+.section-label-row{padding:10px 28px 8px;background:var(--surf);border-bottom:1px solid var(--border);}
+.section-label{font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);}
+
+/* page header */
+.page-header{padding:20px 28px 16px;border-bottom:1px solid var(--border);}
+.page-title{font-family:var(--font-h);font-size:20px;font-weight:900;color:var(--ink);letter-spacing:-.3px;margin-bottom:6px;}
+.page-subtitle{font-size:13px;color:var(--muted);}
+
+/* issue list rows */
+a.issue-row{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 28px;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:background .1s;}
+a.issue-row:hover{background:var(--surf);}
+a.issue-row:last-of-type{border-bottom:none;}
+.issue-row-left{flex:1;}
+.issue-row-meta{font-family:'Courier New',monospace;font-size:10px;color:var(--muted-lt);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;}
+.issue-row-title{font-size:15px;font-weight:900;color:var(--ink);letter-spacing:-.2px;line-height:1.3;}
+.issue-row-desc{font-size:12px;color:var(--muted);margin-top:3px;}
+.issue-row-arrow{font-size:18px;color:var(--gold);font-weight:900;flex-shrink:0;}
+
+/* footer */
+.nl-footer{padding:14px 28px;background:var(--surf);border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
+.nl-footer-logo{font-family:var(--font-d);font-size:18px;font-weight:700;color:#CCC;}
+.nl-footer-links{font-size:11px;display:flex;gap:16px;}
+.nl-footer-links a{color:var(--muted-lt);text-decoration:none;}
+.nl-footer-links a:hover{color:var(--muted);}
+
+/* DV cards */
+.dv-grid{display:flex;flex-direction:column;gap:8px;}
+details.dv-card{background:var(--paper);border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:border-color .15s;}
+details.dv-card:hover{border-color:var(--gold);}
+details.dv-card[open]{border-color:var(--gold);}
+.dv-card-compact{background:var(--paper);border:1px solid var(--border);border-radius:8px;overflow:hidden;opacity:.9;}
+.dv-sum{padding:14px 16px;cursor:pointer;list-style:none;user-select:none;}
+.dv-sum::-webkit-details-marker{display:none;}
+.dv-sum-static{padding:14px 16px;}
+.dv-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+.dv-meta{font-size:11px;color:var(--muted);font-weight:700;}
+.dv-title{font-family:var(--font-h);font-size:13px;font-weight:900;color:var(--ink);line-height:1.4;letter-spacing:-.1px;margin-bottom:4px;}
+.exec-organ{font-size:11px;color:var(--muted);margin-bottom:6px;font-style:italic;}
+.dv-lead{font-size:13px;color:var(--ink2);line-height:1.55;margin-bottom:8px;}
+.compact-bullets ul{list-style:none;padding:0;margin-top:6px;}
+.compact-bullets li{padding:3px 0 3px 14px;position:relative;color:var(--ink2);font-size:12px;line-height:1.5;}
+.compact-bullets li::before{content:"·";position:absolute;left:2px;color:var(--gold);font-weight:700;font-size:15px;line-height:1.1;}
+.expand-hint{font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.06em;margin-top:4px;}
+details.dv-card[open] .expand-hint{display:none;}
+.dv-body{padding:0 16px 16px;border-top:1px solid var(--border);}
+
+/* badges */
+.badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;}
+.dv-badges{display:flex;gap:6px;align-items:center;flex-wrap:wrap;}
+.b-zakon   {background:#dbeafe;color:#1a56db;}
+.b-reshenie{background:#cffafe;color:#0a6e8a;}
+.b-ukaz    {background:#ede9fe;color:#7c3aed;}
+.b-decl    {background:#fef3c7;color:#92400e;}
+.b-post    {background:#d1fae5;color:#065f46;}
+.b-naredba {background:#fce7f3;color:#9d174d;}
+.b-pravilnik{background:#f3e8ff;color:#6b21a8;}
+.b-inst    {background:#fef9c3;color:#713f12;}
+.b-razp    {background:#e0f2fe;color:#0369a1;}
+.b-spor    {background:#fff7ed;color:#c2410c;}
+.b-other   {background:#f3f4f6;color:#6b7280;}
+.b-cat     {background:#f3f4f6;color:#555;}
+
+/* factsheet sections */
+.fs-sec{margin:12px 0;font-size:13px;}
+.fs-sec h5,.parties-block h5,.notable-callout h5,.sess-col h5{font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:8px;padding-bottom:5px;border-bottom:1px solid var(--border);}
+.fs-sec ul,.parties-block ul{list-style:none;padding:0;}
+.fs-sec li,.parties-block li{padding:4px 0 4px 16px;position:relative;color:var(--ink2);border-bottom:1px solid #f3f4f6;font-size:13px;line-height:1.5;}
+.fs-sec li:last-child,.parties-block li:last-child{border-bottom:none;}
+.fs-sec li::before{content:"·";position:absolute;left:3px;color:var(--gold);font-weight:700;font-size:16px;line-height:1.1;}
+.fs-sec p,.parties-block p{color:var(--ink2);font-size:13px;margin-bottom:4px;}
+.fs-winners ul{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.fs-winners li{padding:8px 10px 8px 24px;border-radius:6px;border-bottom:none !important;}
+.fs-winners li:first-child{background:#f0fdf4;}
+.fs-winners li:first-child::before{content:"✓";color:#16a34a;font-size:13px;top:8px;}
+.fs-winners li:nth-child(2){background:#fef2f2;}
+.fs-winners li:nth-child(2)::before{content:"✗";color:#dc2626;font-size:13px;top:8px;}
+.fs-notable{background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:12px 14px;}
+.fs-notable h5{border-bottom-color:#fde68a;color:#92400e;}
+.fs-notable li,.fs-notable p{color:#78350f;}
+.fs-notable li::before{color:#d97706;}
+.fs-eu{background:#f0f9ff;border-radius:8px;padding:12px 14px;}
+.fs-eu h5{color:#0369a1;border-bottom-color:#bae6fd;}
+.fs-eu p{color:#0c4a6e;font-size:13px;}
+.ext-link{display:inline-block;margin-top:12px;font-size:12px;font-weight:700;color:var(--navy);text-decoration:none;}
+.ext-link:hover{text-decoration:underline;}
+.no-summ{color:var(--muted);font-size:13px;font-style:italic;padding:12px 0;}
+
+/* session blocks */
+details.sess-block{background:var(--paper);border:1px solid var(--border);border-left:4px solid var(--navy);border-radius:0 8px 8px 0;margin-bottom:10px;overflow:hidden;}
+details.sess-block:hover{box-shadow:0 2px 8px rgba(0,0,0,.06);}
+details.sess-block[open]{border-left-color:var(--gold);}
+.sess-sum{padding:14px 18px;cursor:pointer;list-style:none;user-select:none;}
+.sess-sum::-webkit-details-marker{display:none;}
+.sess-hd{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap;}
+.sess-date-chip{background:var(--navy);color:#fff;font-size:10px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:4px;white-space:nowrap;}
+details.sess-block[open] .sess-date-chip{background:var(--gold);}
+.sess-label{font-family:var(--font-h);font-size:14px;font-weight:900;color:var(--ink);}
+.sess-lead{font-size:13px;color:var(--ink2);line-height:1.55;margin-bottom:6px;}
+.sess-body{padding:0 18px 16px;border-top:1px solid var(--border);}
+.sess-lead-full{font-size:13px;color:var(--ink2);line-height:1.6;margin:12px 0;background:#f8fafc;border-left:3px solid var(--gold);padding:8px 12px;border-radius:0 6px 6px 0;}
+.sess-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0;}
+.sess-col{font-size:13px;}
+.sess-col ul{list-style:none;padding:0;}
+.sess-col li{padding:4px 0 4px 14px;position:relative;color:var(--ink2);border-bottom:1px solid #f3f4f6;font-size:13px;line-height:1.5;}
+.sess-col li:last-child{border-bottom:none;}
+.sess-col li::before{content:"·";position:absolute;left:2px;color:var(--navy);font-weight:700;font-size:15px;line-height:1.1;}
+.notable-callout{display:flex;gap:10px;align-items:flex-start;background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:10px 12px;margin:12px 0;}
+.notable-icon{font-size:16px;color:#d97706;flex-shrink:0;line-height:1.4;}
+.notable-callout h5{border-bottom-color:#fde68a;color:#92400e;}
+.notable-callout p,.notable-callout li{color:#78350f;font-size:13px;}
+.notable-callout ul{list-style:none;padding:0;}
+.notable-callout li{padding:3px 0 3px 14px;position:relative;}
+.notable-callout li::before{content:"·";position:absolute;left:2px;color:#d97706;font-weight:700;font-size:15px;line-height:1.1;}
+.parties-block{margin:12px 0;font-size:13px;}
+.sess-ft{margin-top:12px;padding-top:10px;border-top:1px solid var(--border);}
+
+/* landing track cards */
+.track-card{display:block;padding:20px 28px;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:background .1s;}
+.track-card:hover{background:var(--surf);}
+.track-card:last-of-type{border-bottom:none;}
+.track-label{font-size:10px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+.track-title{font-family:var(--font-h);font-size:18px;font-weight:900;color:var(--navy);letter-spacing:-.3px;line-height:1.3;margin-bottom:6px;}
+.track-desc{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px;}
+.track-latest{font-size:12px;color:var(--ink2);}
+.track-arrow{font-size:22px;color:var(--gold);font-weight:900;float:right;margin-top:-28px;}
+
+/* archive / intro */
+.arch-table{width:100%;border-collapse:collapse;}
+.arch-table th{padding:8px 0;text-align:left;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);border-bottom:1px solid var(--border);}
+.arch-table td{padding:12px 8px 12px 0;border-bottom:1px solid var(--border);font-size:13px;color:var(--ink2);}
+.arch-table tr:last-child td{border-bottom:none;}
+.arch-table a{color:var(--navy);font-weight:700;text-decoration:none;}
+.arch-table a:hover{text-decoration:underline;}
+.intro-block{padding:20px 28px;border-bottom:1px solid var(--border);font-size:14px;line-height:1.7;color:var(--ink);}
+.all-issues-wrap{padding:16px 28px;border-bottom:1px solid var(--border);}
+.all-issues-btn{width:100%;padding:13px;background:none;border:1.5px solid var(--navy);border-radius:3px;font-family:var(--font-h);font-size:11px;font-weight:900;color:var(--navy);cursor:pointer;text-align:center;letter-spacing:.14em;text-transform:uppercase;transition:background .15s,color .15s;}
+.all-issues-btn:hover{background:var(--navy);color:#fff;}
+.waitlist-section,.contact-section{padding:20px 28px;border-bottom:1px solid var(--border);}
+.waitlist-heading{font-family:var(--font-h);font-size:17px;font-weight:900;color:var(--ink);letter-spacing:-.2px;margin-bottom:8px;}
+.waitlist-body{font-size:14px;color:var(--ink2);line-height:1.6;margin-bottom:16px;}
+.waitlist-form{display:flex;gap:8px;margin-bottom:10px;}
+.waitlist-input{flex:1;padding:10px 12px;border:1px solid var(--border);border-radius:3px;font-family:var(--font-b);font-size:14px;color:var(--ink);min-width:0;}
+.waitlist-input:focus{outline:none;border-color:var(--navy);}
+.waitlist-btn{padding:10px 18px;background:var(--navy);color:#fff;border:none;border-radius:3px;font-family:var(--font-h);font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;white-space:nowrap;}
+.waitlist-btn:hover{background:#122348;}
+.waitlist-fine{font-size:12px;color:var(--muted-lt);line-height:1.5;}
+.waitlist-ok{display:none;font-size:14px;font-weight:700;color:#16a34a;margin-top:10px;}
+.contact-section p{font-size:14px;color:var(--ink2);line-height:1.6;}
+.contact-section a{color:var(--navy);font-weight:700;text-decoration:none;}
+.contact-section a:hover{text-decoration:underline;}
+
+@media(max-width:760px){
+  .wrapper{margin:0;border-radius:0;border-left:none;border-right:none;}
+  .masthead,.section,.nl-footer,.page-header,a.issue-row,.track-card,
+  .section-label-row,.intro-block,.waitlist-section,.contact-section,.all-issues-wrap{padding-left:16px;padding-right:16px;}
+  .masthead-pills{display:none;}
+  .sess-cols{grid-template-columns:1fr;}
+  .fs-winners ul{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+<div class="top-bar">
+  <nav class="site-nav">
+    <a href="../" class="active">ДВ Дайджест</a>
+    <a href="../../sessions/">Заседания</a>
+    <a href="https://bpdoodles.com">Basepoint Doodles</a>
+  </nav>
+  <span class="top-bar-tag">Парламентарни Doodles</span>
+</div>
+
+<div class="masthead">
+  <div class="masthead-logo">
+    <div class="masthead-left">
+      <span class="masthead-basepoint">Парламентарни</span>
+      <span class="masthead-tagline">Парламентарен дайджест</span>
+    </div>
+    <div class="masthead-divider"></div>
+    <span class="masthead-doodles">Doodles</span>
+  </div>
+  <div class="masthead-meta">
+    <span class="masthead-issue">ДВ Дайджест · Седмица 5 · 2026</span>
+    <span class="masthead-date">26 януари – 1 февруари 2026</span>
+    <div class="masthead-pills"><span class="masthead-pill">11 акта от МС</span><span class="masthead-pill">16 наредби/регулации</span></div>
+  </div>
+</div>
+<div class="section">
+
+<div class="subsection">
+  <div class="subsection-hd">
+    <span class="subsection-tag">02</span>
+    <span class="subsection-title">Министерски съвет</span>
+    <span class="subsection-count">8 постановления · 3 решения</span>
+  </div>
+  <div class="dv-grid">
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;10 &middot; 2026-01-27</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 12 ОТ 21 ЯНУАРИ 2026 Г. за изменение на нормативни актове на Министерския съвет</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Актът прецизира правилата за Механизма за възстановяване и устойчивост – заменя левовите прагове с евро, актуализира препратките към новия антикорупционен закон и преразпределя отговорностите по инвестициите на Плана за възстановяване и устойчивост.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Промяна на финансови прагове от левове в евро:</strong> Прагът, над който кандидатите по МВУ трябва да следват по-строги правила за избор на изпълнители, пада от 50 000 лв. на 25 565 евро (по-нисък в лева при фиксирания курс 1,95583), а вторият праг – от 30 000 лв. на 15 339 евро.</li><li><strong>Актуализация заради новия Закон за противодействие на корупцията:</strong> Всички препратки към стария „Закон за противодействие на корупцията и за отнемане на незаконно придобитото имущество&quot; са заменени с новото му съкратено наименование и нови номера на членове (чл. 72 вместо чл. 54; § 1, т. 9 вместо § 1, т. 15).</li><li><strong>Изключение при обществени поръчки:</strong> Изрично се уточнява, че изискването за липса на данъчни и осигурителни задължения (чл. 54, ал. 1, т. 3 от ЗОП) не се прилага, когато са налице законово предвидените изключения по чл. 54, ал. 5 от ЗОП.</li><li><strong>Ново разпределение на отговорностите по инвестициите на ПВУ:</strong> Актуализираното приложение преразпределя ролите „Структура за наблюдение и докладване&quot;, „Структура за наблюдение&quot; и „Краен получател&quot; за всички инвестиции – от образование и здравеопазване до транспорт, енергетика и цифрова инфраструктура.</li><li><strong>Финансовите документи преминават изцяло към евро:</strong> В приложенията към правилата за предоставяне на средства съкращението „лв.&quot; навсякъде се заменя с „евро&quot;.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Крайните получатели на средства по МВУ, тъй като правилата се синхронизират с действащото законодателство и се избягват правни несигурности при изпълнение на проекти.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Номиналното намаление на праговете (например от 50 000 лв. на 25 565 евро) изглежда като облекчение, но при фиксирания курс двете суми са почти идентични – това е чисто техническо преизчисляване, а не реална промяна на изискванията.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>По-голямата част от постановлението влиза в сила от деня на обнародването – 27 януари 2026 г.</li><li>Промените в евровите прагове и уточнението за изключенията по ЗОП влизат в сила с обратна дата – от 1 януари 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240870" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;10 &middot; 2026-01-27</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 13 ОТ 22 ЯНУАРИ 2026 Г. за приемане на Тарифа за таксите, събирани от органите по поземлена собственост</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Актът въвежда изцяло нова тарифа в евро за административни услуги, свързани с поземлена собственост (скици, преписи, справки, технически дейности), и отменя тарифата от 1997 г.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Скица на имот</strong> – 2,05 евро за брой; <strong>препис от решение на поземлена комисия</strong> – 10 евро; <strong>партида на имот</strong> – 1,02 евро.</li><li><strong>Справки от регистри:</strong> писмена справка за собственик – 0,77 евро (до 6 имота), 1,02 евро (7–15 имота), 1,28 евро (над 15 имота); справка за масив – 1,02 евро на всеки 15 имота; устна справка – 1,02 евро на имот.</li><li><strong>Технически дейности по картата на възстановената собственост:</strong> трасиране на граници – 4,60 евро/точка (земеделски) и 6,14 евро/точка (горски); скица-проект за делба – 3,58 евро на всеки дял; заснемане на сгради в стопански дворове до 1 дка – 102,26 евро + 25,56 евро на всеки следващ декар.</li><li><strong>Цифрови данни</strong> (карти на контури): от 1,53 евро/контур при малки обеми до базова ставка 352,79 евро + 0,20 евро/контур над 1000 контура; само графични данни – 50% намаление; носителят е за сметка на заявителя.</li><li><strong>Удостоверения:</strong> за реституционни претенции – 15 евро; за идентичност на имот – 2,56 евро; за данъчна оценка – 2,05 евро; установяване на промяна в начина на ползване – 25 евро.</li><li><strong>Бърза услуга (до 3 работни дни)</strong> – двойна такса; не важи за трасиране и заснемане на граници, цифрови данни и отделни административни услуги.</li><li><strong>Инфраструктурни обекти от национално значение</strong> – инвеститорите заплащат само 25% от стойността на услугите по отразяване на промени в картата.</li><li><strong>Таксите постъпват</strong> в бюджета на Министерството на земеделието и храните.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Инвеститори в национална инфраструктура (плащат само 1/4 от таксите); граждани, изискващи масови справки (стъпаловидни тарифи намаляват единичната цена при по-голям обем).</li><li>Губят: Физически лица и фирми, ползващи технически услуги по поземлена собственост – преходът от левове към евро фиксира нови нива, чиято реална стойност предстои да се провери спрямо старите.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Постановлението изрично обвързва влизането си в сила с датата на приемане на еврото от България съгласно решение на Съвета на ЕС от юли 2025 г. – тарифата е директна законодателна последица от евровъвеждането, а не самостоятелна реформа.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>В сила от 1 януари 2026 г. – датата, определена с Решение (ЕС) 2025/1407 на Съвета на ЕС относно приемането на еврото от България.</li><li>Старата тарифа от 1997 г. (с всички изменения до 2025 г.) се отменя едновременно.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240880" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;10 &middot; 2026-01-27</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 14 ОТ 22 ЯНУАРИ 2026 Г. за създаване на Регионален културен институт „Център за художествени занаяти и изкуства – Орешак“</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Правителството официално създава нова държавна културна институция в село Орешак, която ще опазва и популяризира художествени занаяти и нематериално наследство в осем общини от Ловешка област.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Новият институт е юридическо лице с бюджет, базирано на ул. „Стара планина&quot; № 256, с. Орешак, община Троян – ще работи като регионален хъб за занаяти, изкуства и нематериално културно наследство.</li><li>Обхватът му покрива 8 общини: Троян, Априлци, Летница, Ловеч, Луковит, Тетевен, Угърчин и Ябланица.</li><li>Институтът ще поддържа ателиета и резидентна програма за занаятчии, художници и творци в приложните изкуства, ще организира фестивали, базари, изложби и майсторски класове.</li><li>Ще изгражда и поддържа собствена колекция от произведения на художествените занаяти и изящните изкуства.</li><li>Стопанските дейности са ограничени до максимум 20% от общата дейност и капацитет на института – всичко над основната дейност се води отделно финансово-счетоводно.</li><li>Институтът ще си взаимодейства с висши и средни училища по изкуствата, музеи, галерии, БАН и занаятчийски камари и сдружения.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Занаятчии, художници и творци от региона, които получават институционална подкрепа, ателиета и резидентна програма; местните общности от осемте общини с достъп до културни събития и образователни програми; туристическият и творческият сектор в Троянско.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Управлението на институцията е поверено на Общинския съвет на Троян (не на Министерство на културата) – общинският съвет приема правилника за дейността му, само съгласувано с министъра на културата, което е нетипично разпределение на контрол за държавна институция с бюджет.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>В сила от датата на обнародване – 27 януари 2026 г.</li><li>Общинският съвет на Троян има 2 месеца (до края на март 2026 г.) да приеме правилник за устройството и дейността на института.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240881" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;10 &middot; 2026-01-27</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 15 ОТ 22 ЯНУАРИ 2026 Г. за изменение и допълнение на Постановление № 494 на Министерския съвет от 2024 г. за определяне на правила за прилагане на подхода „Водено от общностите местно развитие“ за периода 2021 – 2027 г.</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Актът прецизира процедурите за подбор и одобрение на проекти по подхода „Водено от общностите местно развитие&quot; (ВОМР) за програмния период 2021–2027 г., като въвежда ясни срокове и по-ясно разпределение на отговорностите между финансиращите органи и местните групи.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Срок за подписване на договор:</strong> Одобреният кандидат трябва да подпише административния договор за безвъзмездна помощ в рамките на <strong>30 дни</strong> от уведомяването. При пропускане на срока кандидатът <strong>губи правото</strong> да сключи договора.</li><li><strong>Срок за предоставяне на документи:</strong> В <strong>10-дневен срок</strong> от уведомяването кандидатът трябва да представи на финансиращия орган документите за проверка и сключване на договора.</li><li><strong>Одобрение на процедурата за подбор:</strong> Изпълнителният директор на ДФЗ или ръководителят на УО трябва в <strong>10-дневен срок</strong> от получаване на доклада да одобри проведената процедура за подбор или да я върне за повторна оценка от етапа, на който са допуснати нарушения.</li><li><strong>Финансиране за управление на стратегията:</strong> Безвъзмездната помощ за управление, мониторинг, оценка и популяризиране на стратегиите вече се предоставя въз основа на изричен административен договор между местната група (МИГ/МИРГ) и управляващия орган.</li><li><strong>Задължителни указания:</strong> Изпълнителният директор на ДФЗ утвърждава указания и образци на документи, които са задължителни за управителните съвети на местните групи и комисиите за подбор на проекти. Документите се публикуват на официалните интернет страници.</li><li><strong>Проекти за сътрудничество:</strong> Подборът на проекти за дейности за сътрудничество по стратегиите, финансирани от ЕЗФРСР, се извършва чрез процедура за директно предоставяне на безвъзмездна помощ.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li><strong>Печелят:</strong> Местните инициативни групи (МИГ/МИРГ) и кандидатите по ВОМР – получават по-ясни правила, срокове и процедури, което намалява административната несигурност.</li><li><strong>Губят:</strong> Кандидати, които не реагират навреме – пропускането на 30-дневния срок за подписване на договора автоматично отнема правото им на финансиране.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Въведена е автоматична санкция за пропуснат договорен срок – нещо нетипично за Bulgarian EU-фондова бюрократична практика, при която обикновено се допускат удължавания.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Постановлението влиза в сила от деня на обнародването – <strong>27 януари 2026 г.</strong></li><li>Изключение: Промените, заличаващи изискването за „левовата равностойност&quot; при финансовите прагове (§ 1 и § 2), влизат в сила <strong>retroактивно от 1 януари 2026 г.</strong></li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240882" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;10 &middot; 2026-01-27</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 16 ОТ 23 ЯНУАРИ 2026 Г. за изменение и допълнение на Правилника за прилагане на Закона за държавната собственост, приет с Постановление № 254 на Министерския съвет от 2006 г.</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Актуализира паричните прагове в правилата за държавна собственост от левове в евро и въвежда нова процедура за учредяване на право на строеж в съсобствени имоти между държавата и частни лица.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Всички ключови парични прагове се преизчисляват от левове в евро: 10 000 лв. стават 5 112,92 евро; 500 000 лв. стават 255 645,94 евро; 3 млн. лв. стават 1 533 875,64 евро; 1 лв. праг за наем/цена – 0,51 евро.</li><li>Нова процедура позволява в съсобствен имот (държава + физически или юридически лица) да се учреди право на строеж или надстрояване/пристрояване без търг – само чрез писмено съгласие на всички съсобственици, при условие че държавната част е частна държавна собственост.</li><li>Правото на строеж в съсобствен имот се учредява с заповед на областния управител, задължително предхождана от независима пазарна оценка; купувачът заплаща цената, данъците и таксите в едномесечен срок от заповедта.</li><li>При надстрояване на сграда в режим на етажна собственост се изисква нотариално заверена декларация-съгласие от всички собственици в етажната собственост.</li><li>Когато правото се учредява в полза на държавата и се дължи плащане към останалите съсобственици, средствата се предвиждат в бюджета за следващата година – без незабавно плащане.</li><li>Министърът на отбраната се изключва от кръга на оправомощените органи при редица процедури с държавна собственост (учредяване на вещни права, продажби, наеми над праговете), като единствен компетентен орган остава областният управител.</li><li>Договорът за право на строеж в съсобствен имот се сключва в писмена форма и задължително се вписва в службата по вписванията за сметка на приобретателя.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Частни лица и фирми – съсобственици с държавата, които получават по-лесен достъп до право на строеж без тръжна процедура; областните управители, чиито правомощия се разширяват.</li><li>Губят: Министерство на отбраната – губи редица изрични правомощия по управление и разпореждане с имоти, държавна собственост.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Голяма част от промените влизат в сила с обратна дата – от 1 януари 2026 г., макар постановлението да е прието на 23 януари и обнародвано на 27 януари 2026 г.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Промените на паричните прагове (преизчислени в евро) влизат в сила retroактивно от 1 януари 2026 г.</li><li>Новите членове за право на строеж в съсобствени имоти (чл. 60а–60в) и останалите разпоредби влизат в сила от датата на обнародване – 27 януари 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240899" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;12 &middot; 2026-01-30</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 17</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Наредбата установява единни технически правила за всеки, който проектира, изгражда или събаря инфраструктура за телекомуникационни мрежи и антенни станции – от подземни кабели до кули и покривни антени.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Подземна инфраструктура извън градовете:</strong> минимална дълбочина на изкоп 0,5 m по принцип, но 0,9 m при републикански пътища и земеделски земи; при пресичане на реки – минимум 1 m земно покритие и задължителна стоманена или HDPE тръба.</li><li><strong>Подземна инфраструктура в градовете:</strong> земно покритие под тротоари – минимум 0,5 m, под пътното платно – 0,9 m, под железопътна линия – 1,7 m; при над 16 канални тръби задължително се изгражда кабелен колектор с минимална светла височина 1,80 m и коридор 0,80 m.</li><li><strong>Маркировка на подземни трасета:</strong> репери на всеки 500 m извън градовете (с до 50 m отклонение), боядисани в бяло с червена ивица 0,10 m; при трасета на повече от 50 m от пътя – задължителни дублиращи маркери по трасето; сигнална лента се полага ~30 cm над тръбата по цялото трасе.</li><li><strong>Въздушна инфраструктура (стълбове):</strong> разстояние между стълбовете максимум 40 m, при пресичане на улица, път или неелектрифицирана жп линия – максимум 35 m; всеки стълб задължително се маркира с наименование на собственика и индивидуален номер.</li><li><strong>Антенни кули и мачти на терен (с бетонов фундамент):</strong> при самостоятелно изграждане – 5-та категория строеж; при едновременно изграждане с антени – 3-та категория с пълен инвестиционен проект, включително хигиенно-защитна зона за ЕМП; последващото монтиране на антени върху вече изградена мачта не изисква разрешение за строеж.</li><li><strong>Антени върху сгради (покриви, фасади):</strong> 6-та категория строеж; разрешение за строеж се издава само въз основа на договор със собственика и проектни решения на инженер-конструктор и електроинженер – без пълен инвестиционен проект; самото монтиране на антената не изисква разрешение.</li><li><strong>Основен ремонт на антенни станции:</strong> ако не се променя конструкцията и не се правят изкопи – 6-та категория строеж, изисква само проектно решение на инженер-конструктор (и електроинженер при промяна на захранването), без разрешение за строеж.</li><li><strong>Премахване:</strong> собственикът е длъжен да събори инфраструктура в чужд имот в срок до 2 месеца след прекратяване на правото на ползване; отговаря за преките вреди върху имота; разходите за почистване при наличие на чужда мрежа в инфраструктурата са за сметка на собственика на мрежата.</li><li><strong>Физическа инфраструктура в сгради:</strong> паралелно полагане до отоплителна/газова инсталация – минимум 0,30 m разстояние; до електрическа инсталация – минимум 0,20 m.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Телекомуникационни оператори – получават ясни и унифицирани правила, облекчени процедури за монтаж на антени върху съществуващи мачти и сгради (без ново разрешение за строеж), и предвидимост при проектиране.</li><li>Губят: Собственици на имоти, върху които е изградена телеком инфраструктура – след изтичане на договора операторът има 2 месеца да я премахне, но до тогава собственикът търпи присъствието й; обезщетение само за „преки вреди&quot;.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Монтирането на антена върху вече изградена мачта или върху покрив изобщо не изисква разрешение за строеж – достатъчно е уведомление, което на практика прави стотици нови антенни инсталации годишно административно невидими за местните власти.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Наредбата влиза в сила от деня на обнародването – 30 януари 2026 г.</li><li>Производства по одобряване на проекти и издаване на разрешения за строеж, започнати преди 29 април 2025 г., се довършват по старите правила.</li><li>Реконструкция и основен ремонт на строежи, въведени в експлоатация преди 29 април 2025 г., вече се извършват по новия ред.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240956" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;12 &middot; 2026-01-30</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 18</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Всички такси по Закона за лекарствените продукти, цените на лекарствата и помощите за хора с увреждания се преизчисляват от левове в евро по фиксирания курс 1,95583, без промяна в реалния им размер.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Всички такси за разрешаване на употреба на лекарствени продукти се деноминират в евро – например таксата за стандартно разрешение спада от 15 000 лв. на 7 669,38 евро, за комбинирани процедури – от 20 000 лв. на 10 225,84 евро.</li><li>Таксите за включване на лекарства в реимбурсните списъци (Позитивна листа) също минават в евро – за ново международно непатентно наименование с доклад за съвместна клинична оценка: 4 703,89 евро (включване) или 4 397,11 евро (генерик); за всяко следващо терапевтично показание – 50% от основната такса.</li><li>Въвежда се изрична нова такса за промяна на терапевтични показания с доклад за съвместна клинична оценка: 3 885,81 евро за първото показание, 50% за всяко следващо; без такъв доклад – 971,45 евро.</li><li>Административните такси за по-малки процедури (вписвания, заличавания, промени) вървят от символичните 10–50 лв. до техните евро-еквиваленти (5,11–25,56 евро).</li><li>В Наредбата за регулиране на цените на лекарствата праговете за минимална цена на опаковка също се преизчисляват: до 5,11 евро – едно ценово ниво; 5,12–15,34 евро – второ; над 15,34 евро – трето.</li><li>В правилника за хората с увреждания прагът от 1 000 лв. (свързан с финансови условия) става 511,29 евро; премахват се текстовете „левовата равностойност на&quot; пред евро-стойностите.</li><li>По време на двойното обращение (лев и евро) таксите могат да се плащат в брой в левове по официалния курс 1,95583, с математическо закръгляване до втория знак след десетичната запетая.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Фармацевтичните компании и производители на лекарства – операционната им среда се привежда в съответствие с евро-зоната без реално увеличение на таксите.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Постановлението е с обратна сила – официално влиза в сила от 1 януари 2026 г., но е обнародвано едва на 30 януари 2026 г.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>В сила от 1 януари 2026 г. (с обратно действие спрямо датата на обнародване).</li><li>През периода на двойно обращение плащанията в левове в брой остават допустими по фиксирания курс.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240957" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;12 &middot; 2026-01-30</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 19</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Новата наредба заменя правилата от 1999 г. и определя конкретни формули, проценти и минимални прагове за таксите, които минни и енергийни компании плащат на държавата за правото да добиват подземни богатства.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Метални полезни изкопаеми</strong> (мед, злато, олово, цинк и др.) плащат между 0,8% и 6% от стойността на добитото, изчислена по цените на Лондонската метална борса – конкретният процент расте с рентабилността на компанията; минималното годишно плащане се базира на 30% от предвидения средногодишен добив.</li><li><strong>Индустриални минерали</strong> (кварц, бентонит, флуорит, каменна сол и др.) дължат фиксирани 4% от продажната цена, но с твърди минимуми за тон: от 0,09 евро/т (каменна сол) до 0,80 евро/т (талк/кварц); минимумите се индексират ежегодно спрямо ценовата статистика на НСИ с база 2021 г.</li><li><strong>Нефт и природен газ</strong> – плащането е между 3,5% и 35% от общия приход, определено чрез „R-фактор&quot; (съотношение приходи/разходи от началото на концесията); колкото по-бързо компанията изплаща инвестициите си, толкова по-висок процент дава на държавата; минимумът се базира на 10% от средногодишния добив.</li><li><strong>Твърди горива</strong> (въглища) – същата R-фактор скала, но по-ниски ставки: от 2% (R &lt; 1,00) до 10% (R &gt; 3,00); минималното плащане също върху 10% от добива.</li><li><strong>Строителни материали</strong> плащат 7% от продажната цена (минимум 0,27–1,16 евро/т в зависимост от материала), а <strong>скалнооблицовъчни материали</strong> – 4% (минимум 8,89–10,67 евро/куб. м); минимумите се индексират ежегодно по НСИ с база 2021 г.</li><li><strong>Дълбоки геотермални ресурси</strong> – 4% от нетните приходи от продажби; ако концесионерът използва добитото за собствено потребление, плаща пак 4%, но изчислено на пазарна цена, а не на нулева себестойност.</li><li><strong>Облекчения за кризисни находища:</strong> Министерският съвет може да освободи напълно от плащане до 5 години или да намали таксата с до 50% за до 5 години – само за находища с доказани неблагоприятни условия или в общини с трайна безработица.</li><li><strong>Счетоводно задължение:</strong> всяка компания трябва да води аналитично счетоводство отделно за всяка концесия и да подава отчети на министъра на енергетиката.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li><strong>Печелят:</strong> Държавата (по-ясни и актуализирани правила с индексирани минимуми заменят 27-годишни наредби); общини с трайна безработица (потенциален стимул за възобновяване на добив).</li><li><strong>Губят:</strong> Минни и енергийни компании с висока рентабилност – при метали и нефт/газ ставките растат прогресивно с печалбите; компании, добиващи строителни материали и минерали, понасят ежегодно нарастващи минимуми.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>При нефт и газ максималната ставка достига 35% от целия приход (не от печалбата) при R-фактор над 3,00 – т.е. ако компанията е прибрала три пъти повече, отколкото е вложила, плаща над една трета от оборота само като концесионна такса, преди данъци.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>В сила от деня на обнародването – 30 януари 2026 г.</li><li>Отменя се изцяло старата наредба от 1999 г. (изменяна последно през 2007 г.) без преходен период.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241031" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;10 &middot; 2026-01-27</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ № 81 ОТ 23 ЯНУАРИ 2026 Г. за предоставяне на концесия за добив на подземни богатства по чл. 2, ал. 1, т. 2 от Закона за подземните богатства – неметални полезни изкопаеми – индустриални минерали – клиноптилолитови зеолити, от находище „Хриси“, разположено в землището на с. Мост, община Кърдж</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Държавата предоставя на Sofia-базираното дружество „ЕКО-ТЕХ&quot; ЕООД право да добива клиноптилолитови зеолити (природен минерал с промишлено приложение) от находище „Хриси&quot; край с. Мост, Кърджали, за срок от 35 години.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Концесионна площ и ресурс:</strong> Отредена площ от 100,8 дка, от която самото находище е 74,3 дка; добива се клиноптилолитов зеолит – индустриален минерал с приложение в селското стопанство, пречистването на вода и строителството.</li><li><strong>Срок:</strong> 35 години, считано от датата на влизане в сила на концесионния договор (а тя зависи от предоставянето на банкова гаранция).</li><li><strong>Концесионно плащане:</strong> 4% от среднопретеглената продажна цена на добитото количество за всеки шестмесечен период; при износ базата не може да е по-ниска от международните референтни цени по „Минералс Прайз Уотч&quot;. Минималната база за изчисляване е 30% от предвидения средногодишен добив – 4 257 тона на шестмесечие.</li><li><strong>Дял на общината:</strong> 50% от постъпилото концесионно плащане (без ДДС) се превежда директно в бюджета на Община Кърджали.</li><li><strong>Банкова гаранция:</strong> За първата година – 4 188 евро, предоставена до 14 дни след подписване на договора; за всяка следваща година – 100% от концесионното плащане за предходната година с ДДС, но не по-малко от минималното годишно плащане; валидна до последния ден на февруари на следващата година.</li><li><strong>Ключови задължения на концесионера:</strong> Изработване и съгласуване на цялостен работен проект за добив, годишни работни проекти, план за минни отпадъци и проект за рекултивация (актуализиран на всеки 5 години); шестмесечни отчети за добити и продадени количества; уведомяване на Областно пътно управление – Кърджали, преди старт на добива.</li><li><strong>Забрана за прехвърляне:</strong> Правата по концесията не могат да се прехвърлят на трети лица без разрешение на Министерския съвет.</li><li><strong>Концесионен договор:</strong> Трябва да се подпише в срок до 6 месеца от влизане в сила на решението; договаря го и контролира изпълнението му министърът на енергетиката.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li><strong>Печелят:</strong> „ЕКО-ТЕХ&quot; ЕООД – получава 35-годишно изключително право на добив и собственост върху добития минерал; Община Кърджали – получава половината от концесионните приходи.</li><li><strong>Губят:</strong> Не се открива явен губещ, но местното население около с. Мост поема рисковете от минодобивна дейност в близост (прах, транспорт, въздействие върху пътища и води).</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Концесионният договор влиза в сила не от подписването му, а едва от момента на предоставяне на банковата гаранция – което означава, че държавата е обвързала старта на правоотношението с реална финансова гаранция, а не само с подпис.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Решението подлежи на обжалване в 14-дневен срок от обнародването (27 януари 2026 г.) пред Върховния административен съд.</li><li>Концесионният договор трябва да се подпише в срок до 6 месеца от влизане в сила на решението.</li><li>Договорът поражда действие от датата на предоставяне на банковата гаранция (4 188 евро) – не по-късно от 14 дни след подписването му.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240927" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;12 &middot; 2026-01-30</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ № 87</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Актуализира се Националният план за разпределение на радиочестотния спектър, за да отрази съвременните технологии – от 5G и сателитни мрежи до устройства с малък обсег – и се синхронизира с актуалния Радиорегламент на Международния съюз по далекосъобщения.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Преразпределени са десетки радиочестотни ленти в целия спектър – от под 8.3 kHz до 275 GHz – като се актуализират приоритетите между граждански и национална сигурност; лентите с двоен режим се използват с приоритет за националната сигурност, а гражданско ползване на такива ленти изисква съгласуване.</li><li>Разширено е приложното поле на забележка 73 (устройства с малък обсег на действие): изрично са добавени нови категории, включително транспортни телематични устройства (5855–5935 MHz), устройства за широколентов пренос на данни (5945–6425 MHz и 57–71 GHz), PMR радио на нови честоти (38.44–84.99 MHz) и безжично аудио стрийминг по FM (87.5–108 MHz) – засяга производители и вносители на радиосъоръжения.</li><li>Лентата 117.975–137 MHz се обединява в едно разпределение за въздушна подвижна (R) радиослужба; честота 121.5 MHz остава въздушна аварийна, а 123.1 MHz – нейна спомагателна – задължително за авиационните оператори.</li><li>Лентата 1800–1930 MHz се обединява в едно разпределение (подвижна + неподвижна, гражданска и национална сигурност) – пряко засяга мобилните оператори, ползващи LTE/5G в тези честоти.</li><li>Лентата 3600–3800 MHz (ключова за 5G) получава ново условие: преди пускане в действие на подвижна станция плътността на потока на мощността на 3 м над земята не трябва да надвишава -154.5 dB(W/(m²/4 kHz)) за повече от 20% от времето на границата с друга администрация – задължение за телекомите при 5G разгръщане.</li><li>Лентите 312–315 MHz и 387–390 MHz се запазват само за национална сигурност (премахнато гражданско разпределение); сателитното им ползване от негеостационарни системи се допуска, но изисква координация.</li><li>Актуализирани са морски и авиационни аварийни честоти и международни честоти за морска безопасност (MSI), включително нови регионални честоти за NAVDAT система: 6337.5 kHz, 8443 kHz, 12 663.5 kHz, 16 909.5 kHz и 22 450.5 kHz.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Мобилни оператори (по-ясни правила за 5G лентите), производители на IoT и телематични устройства (разширен списък допустими честоти), авиационни и морски оператори (актуализирани аварийни и безопасностни честоти).</li><li>Губят: Граждански потребители на лентите 312–315 MHz и 387–390 MHz, които изцяло преминават към национална сигурност.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>За първи път в плана изрично се включват устройства за безжичен FM аудио стрийминг (87.5–108 MHz) в списъка с допустими граждански устройства с малък обсег – легализира на практика широко разпространените FM трансмитери за автомобили.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от датата на обнародване – 30 януари 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240958" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;12 &middot; 2026-01-30</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ № 89 ОТ 26 ЯНУАРИ 2026 Г. за приемане на актуализиран Списък на изследователските висши училища</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Правителството актуализира списъка на университетите с признат статут „изследователско висше училище&quot;, като определя кои 12 институции го получават за 2025 г.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Статутът „изследователско висше училище&quot; получават общо 12 университета в страната – без промяна в броя спрямо предишния списък.</li><li>В списъка влизат четири медицински университета (София, Варна, Пловдив, Плевен), три регионални университета (Русе, Благоевград, Бургас), два пловдивски университета и три столични технически и природонаучни вуза.</li><li>Статутът носи финансови и административни предимства – университетите с тази класификация получават допълнително финансиране за научна дейност по Закона за висшето образование.</li><li>Списъкът се актуализира периодично въз основа на показатели, определени с Постановление № 226 от 2021 г. (последно изменено през 2025 г.).</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: 12-те включени университети – запазват достъпа до допълнително държавно финансиране за научноизследователска дейност.</li><li>Губят: Висши училища, които не са включени в списъка и не получават статута и свързаните с него ресурси.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от датата на обнародване – 30 януари 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240959" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details></div>
+</div>
+<div class="subsection">
+  <div class="subsection-hd">
+    <span class="subsection-tag">03</span>
+    <span class="subsection-title">Министерства и ведомства</span>
+    <span class="subsection-count">12 наредби · 2 инструкции · 1 договор</span>
+  </div>
+  <div class="dv-grid">
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;10 &middot; 2026-01-27</span>
+    </div>
+    <div class="dv-title">Наредба за изменение и допълнение на Наредба № 1 от 10 юни 2022 г. за условията и реда за финансиране на проекти по национални програми за младежта</div>
+    <div class="exec-organ">Министерство на младежта и спорта</div>
+    <p class="dv-lead">Центърът за образователна интеграция на деца и ученици от етническите малцинства се добавя като допустим кандидат за финансиране по националните програми за младежта.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Центърът за образователна интеграция на децата и учениците от етническите малцинства вече може да кандидатства и да получава финансиране по националните програми за младежта – право, което досега нямаше.</li><li>Центърът се третира по същите правила като другите допустими организации (т. 1, 3 и 4 от предишния списък) – прилагат се едни и същи условия за финансиране.</li><li>Отменено е едно от досегашните ограничения/условия (ал. 4), без да се въвеждат нови задължения за останалите кандидати.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Центърът за образователна интеграция – получава достъп до публично финансиране по младежките програми; косвено печелят деца и ученици от етнически малцинства, чиято интеграция може да се финансира по тези програми.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><p>От деня на обнародването – 27 януари 2026 г.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240667" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;10 &middot; 2026-01-27</span>
+    </div>
+    <div class="dv-title">НАРЕДБА № 23 от 15 януари 2026 г. за придобиване на квалификация по професията „Планински водач“</div>
+    <div class="exec-organ">Министерство на образованието и науката</div>
+    <p class="dv-lead">Наредбата въвежда държавен образователен стандарт за обучение по професията „Планински водач&quot;, задавайки изисквания за съдържанието, оценяването и материалната база на това обучение.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Регламентира придобиването на <strong>втора и трета степен на професионална квалификация</strong> по професия „Планински водач&quot; (код 101505), включена в направление „Пътувания, туризъм и свободно време&quot;.</li><li>Определя какво трябва да знае и умее завършилият – стандартът обхваща обща, отраслова и специфична професионална подготовка с конкретни компетентности, гарантиращи реална работоспособност след обучението.</li><li>Предвижда и по-лека опция: <strong>придобиване на квалификация по част от професията</strong> или достигане на отделни учебни резултати – без задължително пълен курс.</li><li>Поставя <strong>изисквания към материалната база</strong> (учебни обекти, оборудване) и към <strong>обучаващите</strong> (преподаватели и инструктори), които трябва да отговарят на стандарта.</li><li>Въз основа на наредбата ще се разработят типови учебни планове и програми – <strong>отделни</strong> за ученици и за лица над 16 години.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Желаещите да работят като планински водачи – получават ясна, стандартизирана образователна рамка и официално призната квалификация; туристическата индустрия – по-предвидима подготовка на кадри.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Обучението за лица над 16 години започва по новите правила още от <strong>1 януари 2026 г.</strong> – тоест преди наредбата да е обнародвана (27 януари), което създава формална ретроактивност.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>За <strong>ученици в VIII клас</strong> – новите учебни планове и програми се прилагат от учебната <strong>2026/2027 г.</strong></li><li>За <strong>лица над 16 години</strong> (извънучилищно обучение) – стандартът се прилага от <strong>1 януари 2026 г.</strong></li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240743" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;10 &middot; 2026-01-27</span>
+    </div>
+    <div class="dv-title">НАРЕДБА № 24 от 16 януари 2026 г. за придобиване на квалификация по професията „Пчеларство“</div>
+    <div class="exec-organ">Министерство на образованието и науката</div>
+    <p class="dv-lead">Наредбата въвежда държавен образователен стандарт за професията „Пчеларство&quot;, като определя какво трябва да знае и умее всеки, който иска да се обучи и квалифицира официално по тази специалност.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Засегнати са ученици от VIII клас, кандидати за професионално образование, и лица над 16 години, желаещи да придобият квалификация по пчеларство.</li><li>Стандартът предвижда две степени на професионална квалификация – първа и втора, като може да се придобива и квалификация по част от професията или само отделни учебни единици.</li><li>Обучението включва три вида подготовка: обща, отраслова (за цялото земеделско направление) и специфична за пчеларството – всяка с точно определени компетентности.</li><li>Наредбата задава изисквания към кандидатите за обучение, към материалната база (оборудване, учебни пчелини и др.) и към преподавателите.</li><li>Въз основа на стандарта се разработват типови учебни планове и програми – те не са включени в самата наредба, а следват като отделни документи.</li><li>Оценяването е регламентирано с конкретни критерии и средства за всяка учебна единица резултат от ученето.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Желаещите да се квалифицират като пчелари получават официално призната рамка за обучение; училищата и центровете за професионално обучение имат ясна регулаторна основа.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Наредбата влиза в сила от обнародването – 27 януари 2026 г.</li><li>Учебните планове и програми, разработени по нея, се прилагат от учебната 2026/2027 г. за учениците, постъпващи в VIII клас.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240811" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;10 &middot; 2026-01-27</span>
+    </div>
+    <div class="dv-title">НАРЕДБА № 25 от 16 януари 2026 г. за придобиване на квалификация по професията „Лозаро-винарство“</div>
+    <div class="exec-organ">Министерство на образованието и науката</div>
+    <p class="dv-lead">Наредбата въвежда държавен образователен стандарт за обучение по професията „Лозаро-винарство&quot;, определяйки изискванията за придобиване на втора и трета степен на професионална квалификация.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Засегнати са ученици, кандидатстващи за професионално образование по специалността „Лозаро-винарство&quot; (код 081109), спадаща към направление „Растениевъдство, животновъдство и рибно стопанство&quot;.</li><li>Стандартът обхваща две степени на квалификация – втора и трета, като предвижда и възможност за придобиване на квалификация само по *част* от професията или по отделни учебни единици – гъвкавост за хора, които не искат пълен курс.</li><li>Определени са конкретни изисквания към кандидатите, описание на професията, критерии и методи за оценяване на всяка учебна единица.</li><li>Наредбата задължава разработването на типови учебни планове и програми – отделно за ученици и отделно за лица над 16 години.</li><li>Поставени са изисквания към материалната база и към обучаващите – условие за акредитация на училища и центрове, предлагащи тази специалност.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Ученици и възрастни, търсещи квалификация в лозаро-винарския сектор, тъй като получават ясна, стандартизирана рамка за обучение и признато свидетелство; работодатели в бранша, които ще наемат кадри с унифицирана подготовка.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Наредбата влиза в сила от датата на обнародване – 27 януари 2026 г.</li><li>Новите учебни планове и програми, разработени по нея, се прилагат от учебната 2026/2027 г. за ученици, постъпващи в VIII клас.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240812" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;11 &middot; 2026-01-29</span>
+    </div>
+    <div class="dv-title">НАРЕДБА № 26 от 16 януари 2026 г. за придобиване на квалификация по професията „Сладкарство и пекарство“</div>
+    <div class="exec-organ">Министерство на образованието и науката</div>
+    <p class="dv-lead">Наредбата въвежда държавен образователен стандарт за професията „Сладкарство и пекарство&quot;, като определя какво трябва да знаят и умеят учениците и обучаемите, за да получат официална квалификация по тази професия.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Стандартът обхваща четири степени на професионална квалификация по специалността (от първа до четвърта), като всяка степен има собствени изисквания за знания и умения.</li><li>Регламентира се и придобиването на квалификация по <strong>част от професията</strong>, както и постигането на отделни единици резултати от ученето – т.е. може да се учи на части, без задължително да се минава целият курс.</li><li>Стандартът определя изисквания към <strong>материалната база</strong> на училищата и центровете за обучение (оборудване, учебни работилници) и към <strong>квалификацията на преподавателите</strong>.</li><li>Засегнати са ученици, постъпващи в 8. клас в системата на професионалното образование, както и лица над 16 години, обучаващи се извън редовната училищна система.</li><li>За учениците се разработват <strong>типови учебни планове и програми</strong>; за лицата над 16 г. – отделни учебни планове по различни рамкови програми.</li><li>Критериите и средствата за оценяване на всяка единица резултат от учене са задължителна част от стандарта – т.е. изпитите и оценките трябва да следват единен национален модел.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li><strong>Печелят:</strong> Ученици и възрастни, желаещи да се обучат за сладкари и пекари – получават ясна, унифицирана рамка и официално призната квалификация; работодатели в хранително-вкусовата индустрия, които ще могат да разчитат на стандартизирано обучение.</li><li><strong>Губят:</strong> Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Наредбата влиза в сила от датата на обнародване (29 януари 2026 г.).</li><li>Новите учебни планове и програми, разработени по нея, се прилагат от учебната <strong>2026/2027 г.</strong> – само за ученици, постъпващи в 8. клас.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240815" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;11 &middot; 2026-01-29</span>
+    </div>
+    <div class="dv-title">НАРЕДБА № 27 от 16 януари 2026 г. за придобиване на квалификация по професията „Ресторантьорство и кетъринг“</div>
+    <div class="exec-organ">Министерство на образованието и науката</div>
+    <p class="dv-lead">Наредбата въвежда нов държавен образователен стандарт за обучение по професията „Ресторантьорство и кетъринг&quot;, уреждащ изискванията за придобиване на квалификация от първа до четвърта степен.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Обхванати са четири степени на професионална квалификация по професията (код 101302) – от първа до четвърта, включително квалификация по част от професията и отделни единици резултати от учене.</li><li>Стандартът определя изисквания към кандидатите, описание на самата професия, единици резултати от учене за всяка степен и критерии за оценяване.</li><li>Обучението включва три вида подготовка: обща, отраслова и специфична професионална, като завършването гарантира практическа способност за упражняване на професията.</li><li>Наредбата разграничава две групи обучавани: ученици в училищното образование (за тях се разработват типови учебни планове) и лица над 16 години в извънучилищни форми (за тях – отделни учебни планове по рамкови програми).</li><li>Материалната база и изискванията към преподавателите (обучаващите) са задължителна част от стандарта.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Ученици и курсисти над 16 години, обучаващи се по тази професия – получават актуализиран и стандартизиран образователен рамков документ; работодатели в ресторантьорството и кетъринга, които ще получават кадри с унифицирана и по-ясно дефинирана квалификация.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Новите учебни планове и програми, разработени по тази наредба, се прилагат от учебната 2026/2027 г. за ученици, постъпващи в VIII клас.</li><li>До началото на учебната 2026/2027 г. е необходимо разработването на типовите учебни планове и програми въз основа на стандарта.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240816" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;11 &middot; 2026-01-29</span>
+    </div>
+    <div class="dv-title">НАРЕДБА № 28 от 16 януари 2026 г. за придобиване на квалификация по професията „Готварство“</div>
+    <div class="exec-organ">Министерство на образованието и науката</div>
+    <p class="dv-lead">Наредбата установява новия държавен образователен стандарт за обучение по професията „Готварство&quot;, задавайки изисквания към четири степени на квалификация, обучаващите и материалната база.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Обхваща професия „Готварство&quot; (код 101301) от направление „Хотелиерство, ресторантьорство и кетъринг&quot; – засяга всички училища и центрове, провеждащи обучение по тази специалност.</li><li>Определят се четири степени на професионална квалификация – от първа до четвърта, включително възможност за придобиване на квалификация по част от професията или по отделни учебни единици.</li><li>Стандартът задължително включва три нива на подготовка: обща, отраслова и специфична професионална, с точно дефинирани компетентности за всяка.</li><li>Въвеждат се критерии и средства за оценяване на всяка учебна единица, т.е. училищата не могат сами да определят как измерват постиженията.</li><li>Поставят се конкретни изисквания към материалната база (учебни кухни, оборудване) и към квалификацията на обучаващите преподаватели.</li><li>Въз основа на стандарта се разработват нови типови учебни планове и програми – за ученици, постъпващи в VIII клас, и отделни програми за лица над 16 години по извънучилищни форми.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Бъдещи ученици и курсисти по „Готварство&quot; – получават по-ясно структурирано и стандартизирано обучение с признати степени; работодатели в сектора – могат да разчитат на унифицирана квалификация на завършилите.</li><li>Губят: Училища и центрове за обучение, които ще трябва да приведат учебните си планове, програми, бази и преподавателски екипи в съответствие с новите изисквания.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Наредбата влиза в сила от датата на обнародване – 29 януари 2026 г.</li><li>Новите учебни планове и програми, разработени по нея, започват да се прилагат от учебната 2026/2027 г. само за ученици, постъпващи в VIII клас – т.е. вече записаните в по-горни класове продължават по старите програми.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240817" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;11 &middot; 2026-01-29</span>
+    </div>
+    <div class="dv-title">НАРЕДБА № 29 от 19 януари 2026 г. за придобиване на квалификация по професията „Охранител – гражданска, корпоративна сигурност и опазване на обществения ред“</div>
+    <div class="exec-organ">Министерство на образованието и науката</div>
+    <p class="dv-lead">Наредбата въвежда нов държавен образователен стандарт, който определя изискванията за обучение и придобиване на трета и четвърта степен на професионална квалификация по професията „Охранител – гражданска, корпоративна сигурност и опазване на обществения ред&quot;.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Обхваща лица, навършили 16 години, които могат да се обучават по учебни планове и програми, разработени въз основа на наредбата.</li><li>Регламентира две степени на квалификация – трета и четвърта, като дава възможност и за придобиване на квалификация само по част от професията или по отделни единици резултати от ученето.</li><li>Стандартът включва три вида подготовка: обща, отраслова и специфична, като съвкупността от тях гарантира практическа годност за упражняване на охранителната професия след края на обучението.</li><li>Определят се конкретни изисквания към кандидатите, към материалната база за обучение и към квалификацията на обучаващите.</li><li>Въвеждат се критерии и средства за оценяване на всяка единица резултат от ученето, което стандартизира начина, по който се доказва придобитата компетентност.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Кандидати за охранители и работодатели в охранителния сектор – получават ясна и унифицирана рамка за обучение и признаване на квалификации; учебните заведения и центрове за професионално обучение, които получават стандарт, по който да изградят програмите си.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от датата на обнародването – 29 януари 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240819" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;12 &middot; 2026-01-30</span>
+    </div>
+    <div class="dv-title">НАРЕДБА № Н-1 от 19 януари 2026 г. за утвърждаване на медицински стандарт „Очни болести“</div>
+    <div class="exec-organ">Министерство на здравеопазването</div>
+    <p class="dv-lead">Наредбата утвърждава нов задължителен медицински стандарт за специалността „Очни болести&quot;, който определя кой какво може да прави в очната медицина, какво оборудване е задължително и какви обеми пациенти и операции трябва да изпълнява всяко ниво болница.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Оптометристите</strong> (магистри по оптометрия) могат да определят рефракция и да изписват очила само под контрола на лекар-специалист по очни болести; диагнозата и лечението остават изключително в ръцете на специалиста.</li><li><strong>Естетични процедури в периокуларната зона</strong> (ботокс, филъри, енергийни устройства) изискват допълнителна квалификация чрез сертифицирани курсове – дори от вече практикуващи очни лекари.</li><li><strong>Три нива на компетентност</strong> за болнични структури с конкретни прагове: I ниво – мин. 2 лекари (1 специалист), мин. 300 болни и 12 операции на легло годишно; II ниво – мин. 2 специалисти, мин. 400 болни и 28 операции на легло, поне 30% от тях сложни; III ниво – мин. 3 специалисти, мин. 600 болни и 50 операции на легло, поне 50% сложни.</li><li><strong>Медицински центрове и ДКЦ</strong> с кабинет по очни болести могат да разкрият до 10 легла за наблюдение до 48 часа и операционна зона, и да работят на II или III ниво на компетентност, ако отговарят на изискванията.</li><li><strong>Спешните центрове</strong> имат точно изброен ограничен набор от очни дейности: измерване на зрителна острота, промивка, отстраняване на свободни повърхностни чужди тела и дистанционна консултация с очен специалист – нищо повече.</li><li><strong>Телемедицината</strong> в офталмологията е формално регламентирана: заплаща се от пациента по ценоразпис, осъществява се от или под ръководството на специалист, и изрично се посочва, че не е равностойна на пълен клиничен преглед.</li><li><strong>Смяна на оператора по време на операция е забранена</strong> освен по медицински причини или в учебни структури; отговорността за изхода остава върху ръководителя на екипа независимо кой е на скалпела.</li><li><strong>Задължителен вътрешен контрол на качеството</strong> – оперативните усложнения се обсъждат редовно, всеки хирург получава обратна връзка за индивидуалния си рисков профил.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li><strong>Печелят:</strong> Пациентите – чрез по-ясни стандарти за компетентност и задължителен контрол на качеството; болниците с по-висок капацитет, които вече отговарят на изискванията за II и III ниво.</li><li><strong>Губят:</strong> По-малки очни структури, които не достигат минималните прагове за операции и персонал; лекари, практикуващи естетични процедури в очната зона без допълнителна сертификация.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Окулопластичната и естетичната хирургия около окото (включително ботокс и филъри) са включени в медицинския стандарт за очни болести и изискват специална допълнителна квалификация – това поставя тази зона под офталмологичен контрол и косвено ограничава практикуващите я лекари от други специалности.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Наредбата влиза в сила от деня на обнародването – 30 януари 2026 г.</li><li>Лечебните заведения имат 6 месеца (до края на юли 2026 г.) да приведат дейността си в съответствие с новите изисквания.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240791" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;12 &middot; 2026-01-30</span>
+    </div>
+    <div class="dv-title">НАРЕДБА № Н-2 от 19 януари 2026 г. за утвърждаване на медицински стандарт „Пневмология и фтизиатрия“</div>
+    <div class="exec-organ">Министерство на здравеопазването</div>
+    <p class="dv-lead">Наредбата въвежда задължителни правила за болниците и амбулаториите, които лекуват белодробни и туберкулозни заболявания – от оборудване и персонал до обем на дейността.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Три нива на болнична компетентност:</strong> I ниво – лечение на неусложнени случаи в рамките на вътрешно отделение, без инвазивни процедури; II ниво – диагностика и лечение на усложнени случаи, задължителен бронхоскоп и микробиологична лаборатория на адреса; III ниво – високоспециализирани интервенционални процедури, 2 бронхоскопа, подвижен рентгенов апарат, КФИД III ниво.</li><li><strong>Минимален обем дейност за II и III ниво:</strong> 380 преминали пациенти годишно на всеки 10 пневмологични легла и 40 пациенти на всеки 10 фтизиатрични легла – под тези прагове структурата не отговаря на стандарта.</li><li><strong>Функционални кабинети (КФИД) на три нива:</strong> I ниво – само спирометрия; II ниво – добавя бронходилататорен тест; III ниво – пълен набор (белодробни обеми, дифузионен капацитет, кръвно-газов анализ, провокационни тестове). Персоналът в КФИД II ниво минава минимум 30 дни обучение, за III ниво – минимум 60 дни.</li><li><strong>Бронхология само след допълнителна квалификация:</strong> Практикуват я единствено специалисти с призната специалност (пневмолог, УНГ, анестезиолог или гръден хирург) и след придобита квалификация по бронхология; структурата трябва да осъществява минимум 400 бронхоскопии годишно.</li><li><strong>Домашна кислородотерапия – конкретни прагове:</strong> Назначава се само от пневмолог при PaO₂ &lt; 55 mmHg (или 55–60 mmHg при белодробно сърце/полиглобулия); всяка индикация се документира писмено.</li><li><strong>Неинвазивна вентилация в домашни условия</strong> се назначава, настройва и контролира изключително от пневмолог с квалификация по нарушения на дишането по сън – промени в параметрите от неквалифицирано лице са забранени поради риск за живота.</li><li><strong>Специализантите</strong> могат да извършват диагностична и терапевтична плеврална пункция, но само под ръководство на специалист, като отговорността е на ръководителя.</li><li><strong>Туберкулозни структури</strong> от II и III ниво трябва да отговарят на хигиенните и инсталационните изисквания за инфекциозно отделение, включително изолатори.</li><li><strong>Тримесечен анализ:</strong> Всяка структура задължително анализира и обсъжда резултатите от дейността си на всеки три месеца.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Пациенти с белодробни болести и туберкулоза – гарантира се минимален стандарт на оборудване, квалификация и обем; пневмолози с допълнителни квалификации, тъй като се разширява обхватът им на компетентност.</li><li>Губят: Болници и амбулатории, които не покриват изискванията за оборудване, персонал или минимален брой пациенти – ще трябва да инвестират или да прекратят дейност по специалността.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Пациенти, заподозрени за активна белодробна туберкулоза, не могат да бъдат подлагани на функционално изследване на дишането, докато диагнозата не е изключена – или се ползва специален бактериален филтър.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от датата на обнародване – 30 януари 2026 г.</li><li>Лечебните заведения имат 6-месечен гратисен период, за да приведат дейността си в съответствие с наредбата.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240792" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;12 &middot; 2026-01-30</span>
+    </div>
+    <div class="dv-title">НАРЕДБА № 30</div>
+    <div class="exec-organ">Министерство на образованието и науката</div>
+    <p class="dv-lead">Наредбата въвежда нов държавен образователен стандарт за професията „Хотелиерство&quot;, който определя какво трябва да умеят и знаят учениците, за да получат квалификация в тази сфера.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Стандартът обхваща четири степени на професионална квалификация по професия „Хотелиерство&quot; (код 101303) – от първа до четвърта, включително квалификация по част от професията и отделни единици резултати от учене.</li><li>Определят се изисквания към кандидатите за обучение, описание на самата професия, критерии и средства за оценяване на всяка единица резултат от учене.</li><li>Стандартът включва три вида подготовка: обща, отраслова и специфична професионална, с конкретни компетентности, гарантиращи способност за упражняване на професията след завършване.</li><li>Предвидено е разработване на типови учебни планове и програми за ученици, както и на учебни планове за лица над 16 години, навършили тази възраст, по отделни рамкови програми.</li><li>Наредбата поставя изисквания и към материалната база и към обучаващите.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Ученици и обучаеми по специалността „Хотелиерство&quot;, които получават актуализирана и по-ясно структурирана рамка за квалификация; работодатели в хотелиерския бранш, получаващи кадри с унифицирани компетентности.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Новите учебни планове и програми по тази наредба се прилагат от учебната 2026/2027 г.</li><li>Засягат само учениците, които постъпват в VIII клас от учебната 2026/2027 г. нататък; вече обучаващите се довършват по досегашните правила.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240818" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;12 &middot; 2026-01-30</span>
+    </div>
+    <div class="dv-title">Наредба за изменение на Наредба № 4 от 20 април 2017 г. за нормиране и заплащане на труда</div>
+    <div class="exec-organ">Министерство на образованието и науката</div>
+    <p class="dv-lead">Актът повишава минималните заплати на педагогическите специалисти и адаптира множество наредби в сферата на образованието към въвеждането на еврото като национална валута.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Учители и възпитатели</strong> получават минимална основна заплата от <strong>2131 лв.</strong> (1089,57 евро) считано от 1 март 2025 г.; старши учители – <strong>2198 лв.</strong>, главни учители – <strong>2283 лв.</strong></li><li><strong>Директори на учебни заведения</strong> – минимум <strong>2596 лв.</strong>, а с придобита първа степен от кариерното развитие – до <strong>2665 лв.</strong>; заместник-директори – от <strong>2401 лв.</strong> до <strong>2470 лв.</strong> в зависимост от кариерната степен.</li><li><strong>Логопеди, психолози, педагогически съветници</strong> и сродни специалисти без кариерна степен получават същия минимум като учителите (2131 лв.), с втора степен – <strong>2165 лв.</strong>, с първа степен – <strong>2200 лв.</strong></li><li>Горната граница за <strong>компенсация на наем/транспорт</strong> на педагогически специалисти се фиксира на <strong>102,26 евро</strong> (вместо досегашните 200 лв.).</li><li>Прагът за определяне на <strong>ректорски възнаграждения</strong> се преизчислява: финансовият критерий от 5 млн. лв. се заменя с <strong>2,56 млн. евро</strong>.</li><li>В учебните програми по общообразователна подготовка понятията „стотинка&quot; и „лев&quot; се заменят с <strong>„евроцент&quot; и „евро&quot;</strong> – децата вече ще учат за европейската валута.</li><li>В правилника за оценка на научноизследователската дейност всички суми се преизчисляват от левове в <strong>евро</strong>.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li><strong>Печелят:</strong> Педагогическите специалисти с по-ниски заплати, които достигат новите, по-високи минимуми; директори и заместник-директори с кариерни степени.</li><li><strong>Губят:</strong> Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Промяната в учебната програма, която замества „лев и стотинка&quot; с „евро и евроцент&quot; при обучението на децата, е конкретен сигнал, че България е в напреднал етап на подготовка за въвеждане на еврото – реформата вече стига до класната стая.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Заплатите на педагогическите специалисти се прилагат <strong>с обратна сила от 1 март 2025 г.</strong></li><li>Останалите промени (евро-адаптации в наредбите и правилниците) влизат в сила <strong>от датата на обнародване – 30 януари 2026 г.</strong></li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240823" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-inst">ИНСТРУКЦИЯ</span></div>
+      <span class="dv-meta">Бр.&nbsp;10 &middot; 2026-01-27</span>
+    </div>
+    <div class="dv-title">ИНСТРУКЦИЯ № И-1 от 13 януари 2026 г. за взаимодействие между Националната служба за охрана и Главна дирекция „Охрана“ към министъра на правосъдието при осъществяване на дейностите им</div>
+    <div class="exec-organ">Министерство на правосъдието и Национална служба за охрана</div>
+    <p class="dv-lead">Инструкцията урежда как НСО и Главна дирекция „Охрана&quot; към Министерство на правосъдието си сътрудничат при охрана на лица и обекти, обмен на информация и съвместни обучения.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Двете служби обменят информация за терористични заплахи, застрашаващо поведение на лица, масови нарушения на обществения ред и заплахи към охранявани лица и обекти – чрез оперативните си дежурни центрове.</li><li>Обменът на информация може да включва и класифицирани данни (държавна или служебна тайна) при спазване на ЗЗКИ.</li><li>Всяка организация определя с вътрешна заповед конкретни точки за контакт (имена, телефони, електронни пощи), за да се осигури оперативна свързаност.</li><li>Служители на НСО и ГДО могат да влизат въоръжени в охранявани от другата организация сгради и обекти, ако изпълняват служебни задължения и спазват установения пропускателен режим.</li><li>Когато едната служба изпълнява самостоятелна задача на територия, охранявана от другата, тя е длъжна предварително да я уведоми.</li><li>Съвместните обучения се инициират от организацията, чиито служители имат нужда от повишаване на квалификацията; провеждат се съобразно наличната материално-техническа база и ресурсите на двете страни.</li><li>Разходите по изпълнението на инструкцията се поемат поотделно от всяка организация, освен ако не е договорено друго.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Охранявани от двете служби лица и обекти (по-добра координация и информационен обмен при заплахи); служителите на двете служби (достъп до съвместни обучения и ясни правила за съвместна работа).</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>От деня на обнародването – 27 януари 2026 г.; без гратисен период.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240713" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<div class="dv-card dv-card-compact">
+  <div class="dv-sum-static">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-spor">ДОГОВОР</span></div>
+      <span class="dv-meta">Бр.&nbsp;10 &middot; 2026-01-27</span>
+    </div>
+    <div class="dv-title">ФИНАНСОВ ДОГОВОР между Република България и Европейската инвестиционна банка за финансиране на Проект „България – съфинансиране по Фондовете на ЕС 2021 – 2027 (СПЗ)“ Б, подписан за Република България на 11 септември 2025 г. в София и за Европейската инвестиционна банка на 17 септември 2025 г. в Люкс</div>
+    <div class="exec-organ">Министерство на финансите</div>
+    <p class="dv-lead">България получава втори заем от 250 млн. евро от Европейската инвестиционна банка за съфинансиране на националния си дял по пет оперативни програми от периода 2021–2027 г.</p>
+    <div class="compact-bullets"><ul><li><strong>Размер и цел на заема:</strong> ЕИБ отпуска 250 млн. евро на България (чрез Министерството на финансите) за покриване на националния принос по програмите „Развитие на регионите&quot;, „Околна среда&quot;, „Конкурентоспособност и иновации&quot;, „Научни изследвания и дигитализация&quot; и „Транспортна свързаност&quot;; общата стойност на проекта е 10,18 млрд. евро.</li><li><strong>Обща рамка на финансиране от ЕИБ:</strong> Настоящият договор е вторият транш от планирания 1 млрд. евро – първите 250 млн. са договорени на 12 декември 2024 г., а оставащите до 500 млн. евро ще се договарят с отделни договори.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240770" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</div>
+
+<div class="dv-card dv-card-compact">
+  <div class="dv-sum-static">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-other">ДРУГО</span></div>
+      <span class="dv-meta">Бр.&nbsp;10 &middot; 2026-01-27</span>
+    </div>
+    <div class="dv-title"></div>
+    <div class="exec-organ">Министерство на околната среда и водите</div>
+    <p class="dv-lead">Два нови опасни пестицида влизат в международния режим на задължително предварително съгласие при внос и износ, което засяга всеки търговец или производител, работещ с тях.</p>
+    <div class="compact-bullets"><ul><li>Карбосулфан (CAS № 55285-14-8) се добавя в Приложение III на Ротердамската конвенция като пестицид – вносът и износът му изискват предварително обосновано съгласие от приемащата страна.</li><li>Фентион (CAS № 55-38-9) се добавя като „особено опасна пестицидна формулация&quot;, но само когато концентрацията е 640 g активна съставка на литър или повече (формулации за свръхмалък обем) – под този праг задължението не важи.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240771" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</div>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-inst">ИНСТРУКЦИЯ</span></div>
+      <span class="dv-meta">Бр.&nbsp;12 &middot; 2026-01-30</span>
+    </div>
+    <div class="dv-title">Инструкция за изменение и допълнение на Инструкция № 8121з-78 от 2015 г. за реда за осъществяване на задържане, оборудването на помещенията за настаняване на задържани лица и реда в тях в Министерството на вътрешните работи</div>
+    <div class="exec-organ">Министерство на вътрешните работи</div>
+    <p class="dv-lead">Актът разширява правата на задържаните лица, когато задържането е свързано с Европейска заповед за арест (ЕЗА) – те трябва изрично да бъдат информирани за тези права и да потвърдят запознаването с тях чрез декларация.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Задържан по ЕЗА има право на информация за фактическите основания на задържането; допълнителни детайли за съдържанието на заповедта му предоставя съдът.</li><li>Въвежда се изрично право пред съда да се съгласи или откаже предаването на издалата ЕЗА държава; изричното съгласие ускорява производството.</li><li>Задържаният по ЕЗА има право да бъде изслушан от съда преди решението за предаване.</li><li>Декларацията за правата на задържано лице (подписвана при задържане) се актуализира с три нови точки, в които лицето потвърждава, че е запознато с горните права по ЕЗА.</li><li>Технически: в образеца за парична гаранция (приложение № 3а) валутата се сменя от „лв.&quot; на „евро&quot;.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Лица, задържани в България по Европейска заповед за арест – получават формално гарантирани и писмено удостоверени процесуални права.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Промяната на валутата от лева на евро в образеца за парична гаранция по ЕЗА е косвен сигнал за практическо приближаване към еврозоната в административните процедури на МВР.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от датата на обнародване – 30 януари 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240830" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details></div>
+</div>
+</div>
+
+<div class="nl-footer">
+  <span class="nl-footer-logo">Парламентарни Doodles</span>
+  <div class="nl-footer-links">
+    <a href="../">ДВ Дайджест</a>
+    <a href="../../sessions/">Заседания</a>
+    <a href="https://bpdoodles.com">Basepoint Doodles</a>
+  </div>
+</div>
+</div>
+</body>
+</html>

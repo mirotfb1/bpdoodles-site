@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="utf-8">
+<title>Парламентарни Doodles · ДВ Дайджест · Седмица 7</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --navy:#1B2E5E; --gold:#B5821A; --ink:#1C1C1C; --ink2:#444;
+  --muted:#888; --muted-lt:#AAA; --border:#E8E8E8; --surf:#F8F8F8; --paper:#FFF;
+  --font-d:'Caveat',cursive; --font-h:'Nunito','Arial Black',sans-serif;
+  --font-b:'Nunito',Arial,sans-serif;
+}
+body{font-family:var(--font-b);background:#F0F2F5;color:var(--ink);line-height:1.6;}
+.wrapper{max-width:740px;margin:32px auto;background:#fff;border:1px solid var(--border);border-radius:4px;overflow:hidden;}
+
+/* top bar */
+.top-bar{display:flex;justify-content:space-between;align-items:center;padding:8px 16px;background:var(--navy);}
+.site-nav{display:flex;gap:20px;align-items:center;}
+.site-nav a{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none;}
+.site-nav a:hover{color:rgba(255,255,255,.9);}
+.site-nav a.active{color:var(--gold);}
+.top-bar-tag{font-family:'Courier New',monospace;font-size:10px;color:rgba(255,255,255,.25);}
+
+/* masthead */
+.masthead{background:var(--navy);padding:24px 28px 20px;display:flex;justify-content:space-between;align-items:flex-end;border-bottom:3px solid var(--gold);}
+.masthead-logo{display:flex;flex-direction:row;align-items:center;}
+.masthead-left{display:flex;flex-direction:column;align-items:flex-end;padding-right:14px;}
+.masthead-basepoint{font-family:var(--font-h);font-size:22px;font-weight:900;color:#fff;letter-spacing:-.3px;line-height:1;}
+.masthead-tagline{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:4px;}
+.masthead-divider{width:2px;height:52px;background:rgba(255,255,255,.2);}
+.masthead-doodles{font-family:var(--font-d);font-size:48px;font-weight:700;color:var(--gold);line-height:1;padding-left:14px;}
+.masthead-meta{text-align:right;}
+.masthead-issue{font-size:13px;font-weight:700;color:rgba(255,255,255,.85);display:block;line-height:1.5;}
+.masthead-date{font-size:11px;color:rgba(255,255,255,.4);display:block;}
+.masthead-pills{margin-top:8px;display:flex;gap:6px;justify-content:flex-end;flex-wrap:wrap;}
+.masthead-pill{font-size:10px;font-weight:700;letter-spacing:.05em;background:rgba(255,255,255,.12);color:rgba(255,255,255,.6);padding:3px 8px;border-radius:3px;}
+
+/* content sections */
+.section{padding:20px 28px;border-bottom:1px solid var(--border);}
+.section:last-of-type{border-bottom:none;}
+
+/* subsection (within DV edition) */
+.subsection{margin-bottom:24px;}
+.subsection:last-child{margin-bottom:0;}
+.subsection-hd{display:flex;align-items:baseline;gap:10px;margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid var(--border);}
+.subsection-tag{font-size:10px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);}
+.subsection-title{font-family:var(--font-h);font-size:16px;font-weight:900;color:var(--navy);}
+.subsection-count{font-size:11px;color:var(--muted);margin-left:auto;}
+
+/* section label row */
+.section-label-row{padding:10px 28px 8px;background:var(--surf);border-bottom:1px solid var(--border);}
+.section-label{font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);}
+
+/* page header */
+.page-header{padding:20px 28px 16px;border-bottom:1px solid var(--border);}
+.page-title{font-family:var(--font-h);font-size:20px;font-weight:900;color:var(--ink);letter-spacing:-.3px;margin-bottom:6px;}
+.page-subtitle{font-size:13px;color:var(--muted);}
+
+/* issue list rows */
+a.issue-row{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 28px;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:background .1s;}
+a.issue-row:hover{background:var(--surf);}
+a.issue-row:last-of-type{border-bottom:none;}
+.issue-row-left{flex:1;}
+.issue-row-meta{font-family:'Courier New',monospace;font-size:10px;color:var(--muted-lt);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;}
+.issue-row-title{font-size:15px;font-weight:900;color:var(--ink);letter-spacing:-.2px;line-height:1.3;}
+.issue-row-desc{font-size:12px;color:var(--muted);margin-top:3px;}
+.issue-row-arrow{font-size:18px;color:var(--gold);font-weight:900;flex-shrink:0;}
+
+/* footer */
+.nl-footer{padding:14px 28px;background:var(--surf);border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
+.nl-footer-logo{font-family:var(--font-d);font-size:18px;font-weight:700;color:#CCC;}
+.nl-footer-links{font-size:11px;display:flex;gap:16px;}
+.nl-footer-links a{color:var(--muted-lt);text-decoration:none;}
+.nl-footer-links a:hover{color:var(--muted);}
+
+/* DV cards */
+.dv-grid{display:flex;flex-direction:column;gap:8px;}
+details.dv-card{background:var(--paper);border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:border-color .15s;}
+details.dv-card:hover{border-color:var(--gold);}
+details.dv-card[open]{border-color:var(--gold);}
+.dv-card-compact{background:var(--paper);border:1px solid var(--border);border-radius:8px;overflow:hidden;opacity:.9;}
+.dv-sum{padding:14px 16px;cursor:pointer;list-style:none;user-select:none;}
+.dv-sum::-webkit-details-marker{display:none;}
+.dv-sum-static{padding:14px 16px;}
+.dv-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+.dv-meta{font-size:11px;color:var(--muted);font-weight:700;}
+.dv-title{font-family:var(--font-h);font-size:13px;font-weight:900;color:var(--ink);line-height:1.4;letter-spacing:-.1px;margin-bottom:4px;}
+.exec-organ{font-size:11px;color:var(--muted);margin-bottom:6px;font-style:italic;}
+.dv-lead{font-size:13px;color:var(--ink2);line-height:1.55;margin-bottom:8px;}
+.compact-bullets ul{list-style:none;padding:0;margin-top:6px;}
+.compact-bullets li{padding:3px 0 3px 14px;position:relative;color:var(--ink2);font-size:12px;line-height:1.5;}
+.compact-bullets li::before{content:"·";position:absolute;left:2px;color:var(--gold);font-weight:700;font-size:15px;line-height:1.1;}
+.expand-hint{font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.06em;margin-top:4px;}
+details.dv-card[open] .expand-hint{display:none;}
+.dv-body{padding:0 16px 16px;border-top:1px solid var(--border);}
+
+/* badges */
+.badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;}
+.dv-badges{display:flex;gap:6px;align-items:center;flex-wrap:wrap;}
+.b-zakon   {background:#dbeafe;color:#1a56db;}
+.b-reshenie{background:#cffafe;color:#0a6e8a;}
+.b-ukaz    {background:#ede9fe;color:#7c3aed;}
+.b-decl    {background:#fef3c7;color:#92400e;}
+.b-post    {background:#d1fae5;color:#065f46;}
+.b-naredba {background:#fce7f3;color:#9d174d;}
+.b-pravilnik{background:#f3e8ff;color:#6b21a8;}
+.b-inst    {background:#fef9c3;color:#713f12;}
+.b-razp    {background:#e0f2fe;color:#0369a1;}
+.b-spor    {background:#fff7ed;color:#c2410c;}
+.b-other   {background:#f3f4f6;color:#6b7280;}
+.b-cat     {background:#f3f4f6;color:#555;}
+
+/* factsheet sections */
+.fs-sec{margin:12px 0;font-size:13px;}
+.fs-sec h5,.parties-block h5,.notable-callout h5,.sess-col h5{font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:8px;padding-bottom:5px;border-bottom:1px solid var(--border);}
+.fs-sec ul,.parties-block ul{list-style:none;padding:0;}
+.fs-sec li,.parties-block li{padding:4px 0 4px 16px;position:relative;color:var(--ink2);border-bottom:1px solid #f3f4f6;font-size:13px;line-height:1.5;}
+.fs-sec li:last-child,.parties-block li:last-child{border-bottom:none;}
+.fs-sec li::before{content:"·";position:absolute;left:3px;color:var(--gold);font-weight:700;font-size:16px;line-height:1.1;}
+.fs-sec p,.parties-block p{color:var(--ink2);font-size:13px;margin-bottom:4px;}
+.fs-winners ul{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.fs-winners li{padding:8px 10px 8px 24px;border-radius:6px;border-bottom:none !important;}
+.fs-winners li:first-child{background:#f0fdf4;}
+.fs-winners li:first-child::before{content:"✓";color:#16a34a;font-size:13px;top:8px;}
+.fs-winners li:nth-child(2){background:#fef2f2;}
+.fs-winners li:nth-child(2)::before{content:"✗";color:#dc2626;font-size:13px;top:8px;}
+.fs-notable{background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:12px 14px;}
+.fs-notable h5{border-bottom-color:#fde68a;color:#92400e;}
+.fs-notable li,.fs-notable p{color:#78350f;}
+.fs-notable li::before{color:#d97706;}
+.fs-eu{background:#f0f9ff;border-radius:8px;padding:12px 14px;}
+.fs-eu h5{color:#0369a1;border-bottom-color:#bae6fd;}
+.fs-eu p{color:#0c4a6e;font-size:13px;}
+.ext-link{display:inline-block;margin-top:12px;font-size:12px;font-weight:700;color:var(--navy);text-decoration:none;}
+.ext-link:hover{text-decoration:underline;}
+.no-summ{color:var(--muted);font-size:13px;font-style:italic;padding:12px 0;}
+
+/* session blocks */
+details.sess-block{background:var(--paper);border:1px solid var(--border);border-left:4px solid var(--navy);border-radius:0 8px 8px 0;margin-bottom:10px;overflow:hidden;}
+details.sess-block:hover{box-shadow:0 2px 8px rgba(0,0,0,.06);}
+details.sess-block[open]{border-left-color:var(--gold);}
+.sess-sum{padding:14px 18px;cursor:pointer;list-style:none;user-select:none;}
+.sess-sum::-webkit-details-marker{display:none;}
+.sess-hd{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap;}
+.sess-date-chip{background:var(--navy);color:#fff;font-size:10px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:4px;white-space:nowrap;}
+details.sess-block[open] .sess-date-chip{background:var(--gold);}
+.sess-label{font-family:var(--font-h);font-size:14px;font-weight:900;color:var(--ink);}
+.sess-lead{font-size:13px;color:var(--ink2);line-height:1.55;margin-bottom:6px;}
+.sess-body{padding:0 18px 16px;border-top:1px solid var(--border);}
+.sess-lead-full{font-size:13px;color:var(--ink2);line-height:1.6;margin:12px 0;background:#f8fafc;border-left:3px solid var(--gold);padding:8px 12px;border-radius:0 6px 6px 0;}
+.sess-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0;}
+.sess-col{font-size:13px;}
+.sess-col ul{list-style:none;padding:0;}
+.sess-col li{padding:4px 0 4px 14px;position:relative;color:var(--ink2);border-bottom:1px solid #f3f4f6;font-size:13px;line-height:1.5;}
+.sess-col li:last-child{border-bottom:none;}
+.sess-col li::before{content:"·";position:absolute;left:2px;color:var(--navy);font-weight:700;font-size:15px;line-height:1.1;}
+.notable-callout{display:flex;gap:10px;align-items:flex-start;background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:10px 12px;margin:12px 0;}
+.notable-icon{font-size:16px;color:#d97706;flex-shrink:0;line-height:1.4;}
+.notable-callout h5{border-bottom-color:#fde68a;color:#92400e;}
+.notable-callout p,.notable-callout li{color:#78350f;font-size:13px;}
+.notable-callout ul{list-style:none;padding:0;}
+.notable-callout li{padding:3px 0 3px 14px;position:relative;}
+.notable-callout li::before{content:"·";position:absolute;left:2px;color:#d97706;font-weight:700;font-size:15px;line-height:1.1;}
+.parties-block{margin:12px 0;font-size:13px;}
+.sess-ft{margin-top:12px;padding-top:10px;border-top:1px solid var(--border);}
+
+/* landing track cards */
+.track-card{display:block;padding:20px 28px;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:background .1s;}
+.track-card:hover{background:var(--surf);}
+.track-card:last-of-type{border-bottom:none;}
+.track-label{font-size:10px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+.track-title{font-family:var(--font-h);font-size:18px;font-weight:900;color:var(--navy);letter-spacing:-.3px;line-height:1.3;margin-bottom:6px;}
+.track-desc{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px;}
+.track-latest{font-size:12px;color:var(--ink2);}
+.track-arrow{font-size:22px;color:var(--gold);font-weight:900;float:right;margin-top:-28px;}
+
+/* archive / intro */
+.arch-table{width:100%;border-collapse:collapse;}
+.arch-table th{padding:8px 0;text-align:left;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);border-bottom:1px solid var(--border);}
+.arch-table td{padding:12px 8px 12px 0;border-bottom:1px solid var(--border);font-size:13px;color:var(--ink2);}
+.arch-table tr:last-child td{border-bottom:none;}
+.arch-table a{color:var(--navy);font-weight:700;text-decoration:none;}
+.arch-table a:hover{text-decoration:underline;}
+.intro-block{padding:20px 28px;border-bottom:1px solid var(--border);font-size:14px;line-height:1.7;color:var(--ink);}
+.all-issues-wrap{padding:16px 28px;border-bottom:1px solid var(--border);}
+.all-issues-btn{width:100%;padding:13px;background:none;border:1.5px solid var(--navy);border-radius:3px;font-family:var(--font-h);font-size:11px;font-weight:900;color:var(--navy);cursor:pointer;text-align:center;letter-spacing:.14em;text-transform:uppercase;transition:background .15s,color .15s;}
+.all-issues-btn:hover{background:var(--navy);color:#fff;}
+.waitlist-section,.contact-section{padding:20px 28px;border-bottom:1px solid var(--border);}
+.waitlist-heading{font-family:var(--font-h);font-size:17px;font-weight:900;color:var(--ink);letter-spacing:-.2px;margin-bottom:8px;}
+.waitlist-body{font-size:14px;color:var(--ink2);line-height:1.6;margin-bottom:16px;}
+.waitlist-form{display:flex;gap:8px;margin-bottom:10px;}
+.waitlist-input{flex:1;padding:10px 12px;border:1px solid var(--border);border-radius:3px;font-family:var(--font-b);font-size:14px;color:var(--ink);min-width:0;}
+.waitlist-input:focus{outline:none;border-color:var(--navy);}
+.waitlist-btn{padding:10px 18px;background:var(--navy);color:#fff;border:none;border-radius:3px;font-family:var(--font-h);font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;white-space:nowrap;}
+.waitlist-btn:hover{background:#122348;}
+.waitlist-fine{font-size:12px;color:var(--muted-lt);line-height:1.5;}
+.waitlist-ok{display:none;font-size:14px;font-weight:700;color:#16a34a;margin-top:10px;}
+.contact-section p{font-size:14px;color:var(--ink2);line-height:1.6;}
+.contact-section a{color:var(--navy);font-weight:700;text-decoration:none;}
+.contact-section a:hover{text-decoration:underline;}
+
+@media(max-width:760px){
+  .wrapper{margin:0;border-radius:0;border-left:none;border-right:none;}
+  .masthead,.section,.nl-footer,.page-header,a.issue-row,.track-card,
+  .section-label-row,.intro-block,.waitlist-section,.contact-section,.all-issues-wrap{padding-left:16px;padding-right:16px;}
+  .masthead-pills{display:none;}
+  .sess-cols{grid-template-columns:1fr;}
+  .fs-winners ul{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+<div class="top-bar">
+  <nav class="site-nav">
+    <a href="../" class="active">ДВ Дайджест</a>
+    <a href="../../sessions/">Заседания</a>
+    <a href="https://bpdoodles.com">Basepoint Doodles</a>
+  </nav>
+  <span class="top-bar-tag">Парламентарни Doodles</span>
+</div>
+
+<div class="masthead">
+  <div class="masthead-logo">
+    <div class="masthead-left">
+      <span class="masthead-basepoint">Парламентарни</span>
+      <span class="masthead-tagline">Парламентарен дайджест</span>
+    </div>
+    <div class="masthead-divider"></div>
+    <span class="masthead-doodles">Doodles</span>
+  </div>
+  <div class="masthead-meta">
+    <span class="masthead-issue">ДВ Дайджест · Седмица 7 · 2026</span>
+    <span class="masthead-date">9–15 февруари 2026</span>
+    <div class="masthead-pills"><span class="masthead-pill">8 акта от НС</span><span class="masthead-pill">7 акта от МС</span><span class="masthead-pill">15 наредби/регулации</span></div>
+  </div>
+</div>
+<div class="section">
+
+<div class="subsection">
+  <div class="subsection-hd">
+    <span class="subsection-tag">01</span>
+    <span class="subsection-title">Народно събрание</span>
+    <span class="subsection-count">8 закони</span>
+  </div>
+  <div class="dv-grid">
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-zakon">ЗАКОН</span></div>
+      <span class="dv-meta">Бр.&nbsp;16 &middot; 2026-02-10</span>
+    </div>
+    <div class="dv-title">ЗАКОН за изменение и допълнение на Закона за здравето</div>
+    <p class="dv-lead">Законът легализира и урежда използването на публично поставени автоматични дефибрилатори (АЕД) от всеки човек – не само от медицински специалист – при внезапен сърдечен арест.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>При инцидент с възникнало спешно състояние вече се уведомява единствено номер <strong>112</strong> – не полицейско управление или избрано лечебно заведение, както беше преди.</li><li>Всяко лице – без медицинска квалификация – може законно да използва автоматичен дефибрилатор, поставен на обществено място, за помощ при внезапно спиране на сърцето.</li><li>Медицинските специалисти са посочени като приоритетни ползватели, но непрофесионалистите имат изрично право да действат при липса на такива.</li><li>Законът дава легална дефиниция: „първа помощ с АЕД&quot; е помощта до пристигане на медицинска помощ – т.е. тя е временна мярка, не заместител на медицинска интервенция.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Граждани с внезапен сърдечен арест на обществено място – получават шанс за помощ преди линейката; обикновените минувачи – вече не рискуват правна неяснота, ако се намесят с дефибрилатор.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>До момента законът не е предвиждал изрично право на немедицински лица да използват дефибрилатор – обичайният уред в търговски центрове и летища де факто е стоял без ясна правна рамка кой и кога може да го включи.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><ul><li>Влиза в сила от обнародването.</li></ul></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Повечето западноевропейски държави (Франция, Германия, Нидерландия, скандинавските страни) отдавна имат уредба за публични АЕД и право на немедицински лица да ги използват, като в някои страни се изисква и регистрация на устройствата в национален регистър. България се нарежда сред по-късно регулиращите тази материя. Типичната европейска практика включва и задължително разполагане на АЕД на определени обществени места – каквото задължение в настоящия закон засега липсва.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241026" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-zakon">ЗАКОН</span></div>
+      <span class="dv-meta">Бр.&nbsp;16 &middot; 2026-02-10</span>
+    </div>
+    <div class="dv-title">ЗАКОН за допълнение на Закона за гражданското въздухоплаване</div>
+    <p class="dv-lead">Законът въвежда понятието „оперативна площадка&quot; – място за кацане, излитане и товарни операции на самолети и хеликоптери извън летищата – и урежда правната му основа.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Ново понятие в закона:</strong> „Оперативна площадка&quot; е всяка площадка, различна от летище, която операторът или командирът на въздухоплавателното средство е определил за кацане, излитане или подемно-товарни операции.</li><li><strong>Кой може да я определи:</strong> самият оператор или командирът на съответния въздухоплавателен апарат – не е нужно предварително одобрение от държавен орган по самия закон.</li><li><strong>Ред за ползване:</strong> условията се определят с наредба (вече съществуваща по чл. 49, ал. 1), а не с нов отделен акт – засегнатите трябва да следят наредбата за конкретните правила.</li><li><strong>Приложение:</strong> засяга оператори на хеликоптери, дронове и леки самолети, използващи полета извън официални летища – например за селскостопански, строителни или спасителни операции.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: оператори на въздухоплавателни средства, работещи извън летища (хеликоптерни услуги, агро-авиация, товарни дронове) – получават ясна правна рамка за дейността си.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Законът позволява самият командир на въздухоплавателното средство – не държавен орган – да определя оперативната площадка, което е нетипично широко делегиране на правомощия на частно лице.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><p>Влиза в сила от обнародването.</p></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Понятието за площадки извън летищата съществува в европейското въздухоплавателно право – регламентите на EASA (Европейската агенция за авиационна безопасност) уреждат „operating sites&quot; при операции с хеликоптери и въздухоплавателни средства с вертикално излитане. България привежда националния си закон в съответствие с тази рамка, като доуточнява термините на местно ниво.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241027" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-zakon">ЗАКОН</span></div>
+      <span class="dv-meta">Бр.&nbsp;16 &middot; 2026-02-10</span>
+    </div>
+    <div class="dv-title">ЗАКОН за изменение и допълнение на Закона за движението по пътищата</div>
+    <p class="dv-lead">Законът въвежда задължителна регистрация на тротинетки и други индивидуални електрически превозни средства в общините и разрешава монтирането на камери за контрол на движението по пътищата.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Камерите за контрол стават разрешени:</strong> Досега пътната инфраструктура не можеше да включва устройства за видеонаблюдение и контрол – сега това изрично се допуска като изключение.</li><li><strong>Тротинетки и подобни превозни средства се регистрират задължително:</strong> Всеки собственик на индивидуално електрическо превозно средство (тротинетка, електрически скутер и др.) трябва да го впише в общински регистър.</li><li><strong>Регистрацията минава през общината:</strong> Заявлението се подава до кмета по постоянен адрес на собственика (за физически лица) или по седалище (за фирми). Кметът или упълномощен от него чиновник вписва или отказва регистрацията.</li><li><strong>Какво се вписва в регистъра:</strong> За превозното средство – марка, модел, сериен номер, мощност на мотора, максимална скорост и тегло. За собственика – три имена и ЕГН (физически лица) или ЕИК (фирми).</li><li><strong>Присвоява се регистрационен номер:</strong> Всяко вписано електрическо превозно средство получава регистрационен номер – аналогично на автомобилите.</li><li><strong>Отпада санкция:</strong> Отменя се т. 6 от чл. 183, ал. 1 – конкретната глоба, която е свързана с нерегистрирани индивидуални електрически превозни средства, отпада от списъка с нарушения (вероятно за да се преуреди с новата наредба).</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li><strong>Печелят:</strong> Общините (получават нова административна функция и база данни); контролните органи (камерите вече са легални); пострадали при инциденти с тротинетки (собственикът вече може да бъде идентифициран).</li><li><strong>Губят:</strong> Собствениците на тротинетки и електрически скутери – досега анонимни, сега трябва да минат през регистрация.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Регистрацията на тротинетки се въвежда, но конкретната санкция за липса на регистрация едновременно се отменя от закона – което означава, че задължението съществува, но наказанието за неизпълнението му е временно в правен вакуум до приемането на новата наредба.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><ul><li>Министерският съвет трябва да приеме наредбата за регистрация в <strong>срок до 3 месеца</strong> от влизането в сила на закона.</li><li>Регистърът на индивидуалните електрически превозни средства трябва да бъде изграден в <strong>срок до 5 месеца</strong> от влизането в сила.</li><li>Промяната в чл. 80а, ал. 2, т. 1 (препратката към новата алинея) влиза в сила <strong>от 1 юли 2026 г.</strong>, а не веднага.</li></ul></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Регистрацията на електрически тротинетки и подобни превозни средства се въвежда в различни европейски държави, но подходите се различават значително – Франция и Германия изискват задължителна застраховка и/или регистрация, докато други страни разчитат само на правила за движение без формален регистър. България е сред по-късно действащите държави в тази сфера. Специфичното тук е, че регистрацията е общинска, а не централна – нетипично за европейската практика.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241028" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-zakon">ЗАКОН</span></div>
+      <span class="dv-meta">Бр.&nbsp;16 &middot; 2026-02-10</span>
+    </div>
+    <div class="dv-title">ЗАКОН за изменение и допълнение на Закона за Сметната палата</div>
+    <p class="dv-lead">Законът закрива Комисията за противодействие на корупцията и прехвърля всичките й функции – превенция, декларации за имущество и конфликт на интереси – към Сметната палата, която се превръща в единен антикорупционен орган с одиторски функции.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Ликвидация на КПК:</strong> Комисията за противодействие на корупцията се закрива. Служителите от дирекциите „Превенция&quot;, „Публичен регистър&quot; и „Конфликт на интереси&quot; минават в Сметната палата; служителите от Специализирана дирекция „Противодействие на корупцията&quot; (разследваща) минават в ГД „Борба с организираната престъпност&quot; на МВР.</li><li><strong>Нови задачи на Сметната палата:</strong> Освен одити, тя вече води превенция на корупцията, проверява декларации за имущество и интереси на над 50 категории лица, заемащи публични длъжности, и установява конфликт на интереси.</li><li><strong>Задължени лица – огромен обхват:</strong> Декларации подават над 52 категории – от президента, народни представители и министри до ректори на държавни университети, кметове, директори на болници и управители на държавни предприятия. Встъпителна декларация – в 1 месец от заемане на длъжността; годишна – до 15 май.</li><li><strong>Какво се декларира:</strong> Недвижими имоти, превозни средства, парични суми над 5 000 евро, вземания над 5 000 евро, инвестиции над 5 000 евро, задължения и кредити над 5 000 евро, криптовалути, договорени лихви, участие в тайни организации и свързани лица.</li><li><strong>Прагове за ескалация при несъответствие:</strong> Над 5 000 евро несъответствие → материалите отиват в НАП; над 12 500 евро → Сметната палата образува проверка на имуществото и уведомява Комисията за отнемане на незаконно придобито имущество.</li><li><strong>Санкции за конфликт на интереси:</strong> Нарушение на забраните при изпълнение на длъжността – глоба 2 500–5 000 евро (при повторно: 5 000–10 000 евро). Нарушение на ограниченията след напускане – глоба 2 500–7 500 евро; фирмата, с която е сключен забранен договор – 5 000–10 000 евро (при повторно: до 25 000 евро).</li><li><strong>Санкции за недеклариране:</strong> Неподаване на декларация в срок – 500–1 500 евро (повторно: 1 750–3 000 евро). Невярно деклариране – 500–1 500 евро (повторно: до 3 000 евро). Непредоставяне на поискана информация от юридическо лице – 500–2 500 евро (повторно: до 10 000 евро).</li><li><strong>Ограничения след напускане:</strong> Бившият чиновник не може 1 година след освобождаването да работи за или да притежава дялове в дружества, които е регулирал, контролирал или с които е сключвал договори в последната година от мандата си.</li><li><strong>Защита на сигналоподателите:</strong> Анонимни сигнали за конфликт на интереси не се разглеждат. Проверката по сигнал приключва в 90 дни (удължима с още 30). Самоличността на сигналоподателя е защитена; при заплаха – МВР може да бъде привлечено по искане на председателя на Сметната палата.</li><li><strong>Информацията на служителите е класифицирана:</strong> Всичко, научено при проверки и производства, е класифицирана информация по смисъла на Закона за защита на класифицираната информация; служителите подписват декларация и след напускане.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li><strong>Печелят:</strong> Граждани и журналисти – по-централизиран и публично достъпен регистър на декларациите в отворен машинночетим формат; ГДБОП – получава разследващите инспектори и оперативните дела на КПК.</li><li><strong>Губят:</strong> КПК като институция – закрива се изцяло. Лицата, заемащи публични длъжности – значително разширен обхват на задълженията за деклариране и по-строги санкции.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Информацията, станала известна на служителите на Сметната палата при проверки, се третира като държавна тайна (класифицирана информация) – рядко широко приложение на режима на класификация спрямо антикорупционен административен орган.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><ul><li>Единната система за електронни декларации трябва да бъде изградена в срок от <strong>18 месеца</strong> от влизането на закона в сила.</li><li>Министерският съвет урежда закриването на КПК в <strong>1 месец</strong> от влизането в сила.</li><li>Лицата, подали вече встъпителни декларации по стария закон, не подават нови – продължават по новия ред.</li></ul></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Повечето държави членки имат специализирани органи за декларации за имущество и конфликт на интереси на публични длъжностни лица, но е сравнително рядко те да се обединяват с върховния одитен орган – типичният европейски модел разделя одитната от антикорупционната функция. Франция, Румъния и Словакия поддържат отделни агенции за интегритет. България е необичаен случай с тази концентрация на правомощия в Сметната палата, която едновременно одитира публичните средства и проверява декларациите на над 52 категории лица.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241044" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-zakon">ЗАКОН</span></div>
+      <span class="dv-meta">Бр.&nbsp;16 &middot; 2026-02-10</span>
+    </div>
+    <div class="dv-title">ЗАКОН за общите изисквания за безопасност при предоставяне на атракционни услуги, представляващи източник на повишена опасност</div>
+    <p class="dv-lead">Законът въвежда задължителна регистрация, застраховка и технически контрол за всички бизнеси, предлагащи срещу заплащане рискови развлечения – от увеселителни паркове и джетове до парашутни скокове и полети с парапланер.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Три вида услуги са обхванати: увеселителни съоръжения с висока скорост/височина (виенско колело, влакчета и др.), въздушноатракционни (тандемни скокове с парашут, полети с парапланер/делтапланер, аеростати) и водноатракционни (парасейлинг, джетове, теглене на надуваеми съоръжения). Изрично изключени са спортни и спортно-туристически дейности по Закона за физическото възпитание и спорта.</li><li>Никой не може да предоставя тези услуги без предварителна регистрация в Националния туристически регистър. Регистрацията се извършва по електронен път – при министъра на туризма за въздушни и морски/речни услуги, при кмета на общината за всички останали. Правото да се работи възниква от датата на вписването.</li><li>Преди регистрацията е задължителна първоначална техническа проверка от акредитиран орган тип А (по БДС EN ISO/IEC 17020), след което – периодична проверка всяка година, а при ремонт или модификация – и допълнителна. Без валиден сертификат за съответствие съоръжението не може да се ползва.</li><li>Задължителна застраховка „Злополука&quot; на ползвателите се сключва от датата на регистрацията; минималната застрахователна сума се определя от Министерския съвет. При изтичане на полицата новата трябва да е сключена в рамките на 14 дни, иначе регистрацията се заличава автоматично.</li><li>Всеки доставчик трябва да има назначено отговорно лице по безопасността (минимум средно образование + 1 година опит), утвърден писмен план за безопасност и ежедневен дневник с резултати от предексплоатационни проверки – дневникът се пази минимум 5 години.</li><li>Деца под 14 години се допускат само с пълнолетен придружител; лица в нетрезво състояние или под въздействие на наркотици се отстраняват задължително; всеки ползвател получава инструктаж преди началото на услугата.</li><li>Санкции за работа без регистрация или сертификат: 5 000 лв. глоба за физически лица, 10 000 лв. имуществена санкция за фирми; при повторно нарушение – 15 000 / 30 000 лв. Липсата на застраховка или на отговорно лице по безопасността носи по 5 000 / 10 000 лв. (повторно: 10 000 / 20 000 лв.). За издаване на сертификат без реална проверка акредитиран орган може да бъде глобен с 10 000–50 000 лв., а нерегистриран орган – с 20 000–100 000 лв.</li><li>При непосредствен риск (липса на сертификат, видими повреди, липса на застраховка и др.) контролният орган издава заповед за незабавно спиране на дейността, която подлежи на предварително изпълнение – обжалването не я спира, освен ако съдът разпореди друго.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: ползватели на рискови атракции (по-висока защита, задължителна застраховка и технически контроли); законосъобразните оператори (отпада нелоялната конкуренция от нерегистрирани доставчици).</li><li>Губят: малки и сезонни оператори на атракции (джетове на плажа, парапланеристи, забавни влакчета), върху които падат сериозни административни и финансови тежести – регистрация, годишни технически проверки, застраховка с праг по решение на МС, обучени кадри.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Заличаването на регистрацията при изтекла застраховка е автоматично и настъпва само 14 дни след края на полицата – без предупреждение или допълнителна процедура, което на практика може да спре дейността на оператор заради административно закъснение при подновяване.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><ul><li>Подзаконовите актове (наредби на МС и на министерствата) се приемат в 6-месечен срок от влизането на закона в сила.</li><li>В срок до 1 месец след приемането на наредбите министърът на туризма утвърждава образците на заявления и осигурява техническата готовност на регистъра.</li><li>Съществуващите оператори имат 8-месечен гратисен период от влизането на закона в сила, за да приведат дейността си в съответствие с новите изисквания.</li></ul></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Повечето държави членки регулират безопасността на увеселителни паркове и атракционни съоръжения, но правната рамка е силно фрагментирана – няма единна европейска директива, която да обхваща комплексно увеселителни, въздушни и водни атракции в един закон. България е сред малкото, създали единен хоризонтален режим за трите вида услуги едновременно, докато в повечето страни от ЕС тези дейности се регулират поотделно от различни секторни закони (въздухоплаване, морско право, потребителска защита).</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241045" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-zakon">ЗАКОН</span></div>
+      <span class="dv-meta">Бр.&nbsp;16 &middot; 2026-02-10</span>
+    </div>
+    <div class="dv-title">ЗАКОН за ратифициране на Споразумението между правителството на Република България и правителството на Италианската република за сътрудничество в областта на отбраната относно съвместното изграждане и използване на военни съоръжения на територията на войскови район „Кабиле“</div>
+    <p class="dv-lead">България официално одобрява споразумение с Италия за съвместно строителство и ползване на военни обекти в района на „Кабиле&quot;.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Ратифицира двустранно споразумение с Италия, подписано на 23 декември 2025 г. в България, за съвместна отбранителна инфраструктура.</li><li>Споразумението засяга конкретна военна локация – войскови район „Кабиле&quot; (в Ямболско), където ще се изграждат и използват съоръжения от двете страни съвместно.</li><li>Текстът на самото споразумение (права, задължения, финансиране, срокове) не е публикуван в обнародвания закон – ратификационният акт е едноелементен.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Италианските въоръжени сили (получават достъп до българска военна база); България (инвестиция в инфраструктура и задълбочаване на отбранителното сътрудничество с партньор от НАТО/ЕС).</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Споразумението е подписано и ратифицирано изключително бързо – само 37 дни разделят подписването (23 декември 2025 г.) от парламентарното гласуване (29 януари 2026 г.), което е нетипично кратък срок за ратификация на отбранителен договор.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><p>Влиза в сила от обнародването.</p></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Двустранните споразумения за съвместно използване на военни бази са стандартна практика между страните членки на НАТО и ЕС. Подобни договорености съществуват например между Германия и партньорски държави или в рамките на италианското военно присъствие в Балтика и Източна Европа. Няма обща европейска рамка, която да задължава страните към определен формат – всяко такова споразумение е строго двустранно.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241068" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-zakon">ЗАКОН</span></div>
+      <span class="dv-meta">Бр.&nbsp;17 &middot; 2026-02-13</span>
+    </div>
+    <div class="dv-title">ЗАКОН за изменение и допълнение на Закона за адвокатурата</div>
+    <p class="dv-lead">Законът реформира правилата за адвокатски хонорари, реклама и особени представители, като премахва фиксираните минимални тарифи и въвежда гъвкави критерии за определяне на възнаграждения.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Край на задължителните минимални хонорари:</strong> Адвокатското възнаграждение вече се определя свободно с договор между адвокат и клиент, а при липса на договор – по четири критерия (сложност, интерес, условия на поръчката, квалификация на адвоката). Наредба на министъра на правосъдието съвместно с Висшия адвокатски съвет ще уредни правилата за прилагане.</li><li><strong>Защита срещу прекомерни разноски в съда:</strong> Ако адвокатският хонорар е прекомерен, съдът може по мотивирано възражение на насрещната страна да присъди по-нисък размер – но не по-нисък от хонорара на адвоката на другата страна. Правилото важи в гражданския, административния и административнонаказателния процес.</li><li><strong>Особен представител чрез жребий:</strong> Когато съдът назначава особен представител, адвокатският съвет го определя на случаен принцип по реда на постъпване на исканията. Адвокатът е длъжен в 7 дни да отговори дали поема делото и го води с грижата на упълномощен.</li><li><strong>Реклама – разрешена, но с граници:</strong> Адвокатите вече могат открито да рекламират дейността си, но е забранено: невярна информация за цени, сравнения с колеги без обективна база, разкриване на клиентски данни без писмено съгласие и „лов на клиенти&quot; сред пострадали или жертви, неспособни свободно да изберат адвокат.</li><li><strong>Посредници за намиране на клиенти – допустими, но контролирани:</strong> Адвокатът може да ползва посредник за първоначален контакт с клиенти, но посредникът не може да се меси след установяване на контакта, да получава поверителна информация или да накърнява интересите на клиента. Хонорарът на посредника се определя отделно от адвокатското възнаграждение.</li><li><strong>Чуждестранни адвокати пред български съдилища:</strong> Адвокат от друга държава може да представлява свой гражданин пред български съд само заедно с български адвокат, при доказано владеене на български език и минимум 2 г. юридически стаж (5 г. за ВКС и ВАС), плюс застраховка за отговорност, покриваща рискове в България.</li><li><strong>По-дълъг стаж за вписване в адвокатурата:</strong> Изискуемият стаж за придобиване на адвокатска правоспособност нараства от 2 на 3 години.</li><li><strong>Изборите в адвокатските колегии:</strong> Въвежда се машинно гласуване като опция, гласуването е лично (без пълномощни), а председателите на адвокатски съвет и дисциплинарен съд се избират с мнозинство над 50% от действителните бюлетини.</li><li><strong>Давност за дисциплинарни нарушения:</strong> Срокът, в който може да се образува дисциплинарно производство, се удвоява – от 1 на 2 години.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li><strong>Печелят:</strong> Клиенти, които плащат разноски на спечелилата страна – съдът може да намали прекомерни хонорари; адвокати с висока квалификация, чието възнаграждение вече не е натиснато надолу от формален минимум; граждани, нуждаещи се от особен представител – назначаването е по-прозрачно и по-бързо.</li><li><strong>Губят:</strong> Адвокати, разчитали на гарантирани минимални тарифи като защита от ценова конкуренция; посредници („правни агенти&quot;), чиято роля е силно ограничена; чуждестранни адвокати, искащи достъп до български съдилища – изискванията са по-строги.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Законът изрично забранява на адвокатите да „ловят&quot; клиенти сред пострадали и жертви – практика, позната като „ambulance chasing&quot;, която рядко се регламентира толкова конкретно в българското законодателство.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><ul><li>Наредбите за критериите за хонорари при липса на договор и за назначаване на особени представители трябва да бъдат приети в <strong>6-месечен срок</strong> от влизането в сила на закона.</li><li>До приемане на наредбата за хонорарите се прилага по аналогия старата Наредба № 1 от 2004 г. за адвокатските възнаграждения.</li><li>Образувани до влизането в сила производства по стария чл. 10, ал. 3 (молби на чуждестранни адвокати) се довършват по досегашния ред; вече допуснати чуждестранни адвокати запазват статута си.</li></ul></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Либерализирането на адвокатските тарифи е широко разпространено в ЕС след решения на Европейската комисия и Съда на ЕС срещу задължителни минимални хонорари (дела срещу Австрия, Германия, Италия). България изостава спрямо повечето западноевропейски държави, където тарифните минимуми бяха премахнати или силно ограничени преди повече от десетилетие. Въвеждането на съдебен контрол върху прекомерни адвокатски хонорари при присъждане на разноски е стандартна практика в страни като Германия и Франция.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241067" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-zakon">ЗАКОН</span></div>
+      <span class="dv-meta">Бр.&nbsp;17 &middot; 2026-02-13</span>
+    </div>
+    <div class="dv-title">ЗАКОН за изменение и допълнение на Закона за киберсигурност</div>
+    <p class="dv-lead">Законът разширява и актуализира изискванията за киберсигурност в България, като въвежда разграничение между „съществени&quot; и „важни&quot; субекти, налага им конкретни задължения и санкции и транспонира европейската Директива МИС 2.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Кой попада под закона</strong> – задълженията обхващат широк кръг: административни органи, средни и големи предприятия от критични сектори (енергетика, транспорт, здравеопазване, банки, цифрова инфраструктура и др. по Приложения I и II), съдилища, образователни институции с критично научно-изследователска дейност, доставчици на електронни услуги по електронен път и органи на съдебната власт.</li><li><strong>Съществени vs. важни субекти</strong> – въвежда се ключово разграничение: „съществени&quot; са най-едрите и критично важните организации (надхвърлящи горната граница за средни предприятия или изрично определени); всички останали в обхвата са „важни&quot;. Съществените субекти подлежат на по-строг надзор – включително планови одити, проверки на място и възможност за временно спиране на лиценза.</li><li><strong>Задължения за докладване при инциденти</strong> – при значителен инцидент субектите имат стриктни срокове: ранно предупреждение до 24 часа, уведомление до 72 часа (за доставчиците на удостоверителни услуги – до 24 часа), окончателен доклад до 1 месец. Неспазването е самостоятелно нарушение.</li><li><strong>Задължително обучение на ръководства</strong> – членовете на управителните органи на съществените и важните субекти трябва на всеки 2 години да преминават обучение по киберсигурност и са длъжни да организират такова и за служителите си.</li><li><strong>Санкции за съществени субекти</strong> – до 10 млн. евро или до 2% от глобалния годишен оборот (която е по-висока), минимум 25 000 евро. Административните органи са изключени от тази имуществена санкция.</li><li><strong>Санкции за важни субекти</strong> – до 7 млн. евро или до 1,4% от глобалния оборот, минимум 12 500 евро.</li><li><strong>Санкции за неизпълнение на предписания</strong> – отделно от горните, неизпълнението на задължителни предписания се наказва с 2 500–12 000 евро (при повторно – 5 000–25 000 евро).</li><li><strong>Персонална отговорност на мениджъри</strong> – при нарушение на задълженията за управление (чл. 21) управителите и членовете на органите се глобяват лично с 500–5 000 евро. При тежки нарушения може да се иска от съд временна забрана за упражняване на управленски функции.</li><li><strong>Ограничаване на рискови технологии</strong> – Съветът по киберсигурността може да предложи на Министерски съвет забрана за ползване на конкретни технологии или вериги за доставка; субектите, вече ги използващи, имат 3 години за преустановяване (по-кратък срок при висок риск за националната сигурност).</li><li><strong>Регистърът на субектите не е публичен</strong> – Министерството на електронното управление води закрит регистър с данни за всички засегнати субекти, включително IP обхвати и данни за контакт.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li><strong>Печелят:</strong> Граждани и потребители на цифрови услуги (по-защитена инфраструктура); малки предприятия под прага за средни (извън обхвата на задълженията); ДАНС и МВР (разширени правомощия при киберинциденти с национална сигурност).</li><li><strong>Губят:</strong> Средни и големи компании в критични сектори – носят значителни разходи за съответствие, обучения, одити и потенциално огромни глоби; мениджърите им поемат лична отговорност.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>За нарушения, извършени до 1 юни 2026 г., санкциите са наполовина от законоустановените – законодателят изрично е предвидил гратисен период с намалени глоби, което на практика означава, че около 3,5 месеца след влизането в сила на закона нарушителите плащат 50% по-малко.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><ul><li>Министерски съвет приема ключовите наредби и определя компетентните органи в срок 6–9 месеца от влизането в сила на закона.</li><li>Националните компетентни органи определят кои субекти са „съществени&quot; и „важни&quot; в срок до 5 месеца след решението на МС (т.е. около 11 месеца след влизането в сила).</li><li>За нарушения до 1 юни 2026 г. се прилагат санкции, намалени с 50%.</li></ul></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Законът транспонира Директива МИС 2 (NIS2), задължителна за всички държави членки от октомври 2024 г. България е сред страните, завършващи транспонирането след изтичането на крайния срок на ЕС, а не сред пионерите. Характерна особеност е изричното включване на съдебната власт и органите с публични функции, предоставящи електронни услуги – подход, който не е задължителен по директивата, но е избран от България като по-широко покритие.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241234" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details></div>
+</div>
+<div class="subsection">
+  <div class="subsection-hd">
+    <span class="subsection-tag">02</span>
+    <span class="subsection-title">Министерски съвет</span>
+    <span class="subsection-count">6 постановления · 1 акт</span>
+  </div>
+  <div class="dv-grid">
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;16 &middot; 2026-02-10</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 26 ОТ 5 ФЕВРУАРИ 2026 Г. за приемане на Тарифа за таксите, които се събират от Комисията за регулиране на съобщенията по Закона за пощенските услуги</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Актът въвежда изцяло нова тарифа на таксите, които КРС събира от пощенски оператори за лицензиране, контрол и административни услуги по Закона за пощенските услуги, и отменя старата тарифа от 2002 г.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Пълна лицензия за всички универсални пощенски услуги</strong> (вкл. кореспонденция, пакети, колети, секограми) – първоначална такса <strong>1 789,52 евро</strong>; за отделни категории услуги (само кореспонденция/малки пакети или само колети) – <strong>1 278,23 евро</strong>.</li><li><strong>Лицензия за пощенски парични преводи</strong> – първоначална такса <strong>1 278,23 евро</strong>.</li><li><strong>Годишна такса за контрол</strong> на изпълнението на лицензията – <strong>1,2% от нетните приходи</strong> от лицензираната дейност, платима еднократно до <strong>15 юли</strong> на следващата година.</li><li><strong>Разглеждане на заявление</strong> за нова лицензия или за прехвърляне – <strong>178,95 евро</strong>; промяна само на идентификационни данни – <strong>15,34 евро</strong>; вписване в регистъра – <strong>7,67 евро</strong>.</li><li><strong>Отстъпка от 20%</strong> върху таксите за разглеждане на заявления (чл. 1, ал. 4 и чл. 2–4) при подаване на документите <strong>по електронен път</strong>.</li><li><strong>Дубликати и копия</strong> на документи/нормативни актове – от <strong>2,56 евро</strong> за първа страница + <strong>0,26 евро</strong> за всяка следваща; на електронен носител – <strong>2,56 евро</strong> + <strong>0,02 евро</strong> на всеки 1 KB.</li><li><strong>Недължимо платени такси</strong> се връщат по искане на заинтересованата страна без допълнителни условия.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li><strong>Печелят:</strong> Пощенски оператори, които подават документи електронно – спестяват 20% от административните такси.</li><li><strong>Губят:</strong> Пощенски оператори с по-голям оборот – годишната такса от 1,2% върху нетните приходи може да е чувствително по-висока от фиксираните стари суми по тарифата от 2002 г.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Тарифата се определя в евро, а не в лева – необичайна практика за административни такси в България, която автоматично ги предпазва от обезценяване.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от датата на обнародване – <strong>10 февруари 2026 г.</strong></li><li>Тарифата от 2002 г. (ПМС № 144/2002) се отменя едновременно с влизането в сила на новата.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241205" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;16 &middot; 2026-02-10</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 27 ОТ 5 ФЕВРУАРИ 2026 Г. за изменение и допълнение на Методиката за изчисляване на нетните разходи от извършване на универсалната пощенска услуга и за определяне на критерии за наличие на несправедлива финансова тежест, приета с Постановление № 131 на Министерския съвет от 2021 г.</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Актът прецизира как се изчисляват нетните разходи на универсалния пощенски оператор (Български пощи) и ограничава размера на допустимата му печалба при получаване на държавна компенсация.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>При изчисляване на нетните разходи от универсалната пощенска услуга вече се отчитат „всички относими елементи&quot;, включително нематериалните и пазарни ползи – формулировката е разширена спрямо предишния по-тесен обхват.</li><li>Приходите и разходите от неуниверсални пощенски услуги и търговски дейности вече не се включват в сметката поотделно с „подходящ дял&quot; – изчислението се опростява и се базира на консолидираните данни на оператора.</li><li>Географското разпределение на разходите вече се прави по административното деление на страната на области, а не по по-специфичния компонент „географско покритие&quot;.</li><li>Разумната печалба на оператора е изрично ограничена: тя не може да надвишава съответния суапов процент плюс 100 базисни пункта – конкретна числова горна граница, която преди не съществуваше.</li><li>Препратките към конкретното решение на Европейската комисия от 2011 г. за държавни помощи се заменят с „приложимия режим за държавни помощи&quot; – по-гъвкава формулировка, съобразена с евентуални промени в европейското право.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Регулаторът и държавата – по-строгият таван на печалбата и по-прозрачната методика ограничават риска от надкомпенсация.</li><li>Губят: Български пощи – таванът на разумната печалба е конкретизиран и потенциално ограничава размера на компенсацията, която операторът може да получи.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>За първи път се въвежда числово изразена горна граница на печалбата (суапов процент + 100 базисни пункта) – нещо, което преди беше оставено на тълкуване по европейско решение от 2011 г.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от датата на обнародване – 10 февруари 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241217" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;16 &middot; 2026-02-10</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 28 ОТ 5 ФЕВРУАРИ 2026 Г. за изменение и допълнение на нормативни актове на Министерския съвет</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Актуализират се минималните учебни програми и изисквания за висше образование по медицина, дентална медицина, фармация, медицинска сестра и акушерка, за да се въведат нови европейски стандарти за квалификация.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Дентална медицина:</strong> Добавено задължително изискване за минимум 7 календарни дни практика по обща медицина; въведени нови знания в областта на цифровата дентална медицина като задължителна компетентност. Общият хорариум по специални дентални дисциплини е 3095 часа.</li><li><strong>Дентална медицина – корекции в учебната програма:</strong> Поправени са технически грешки – „медицината&quot; се заменя с „денталната медицина&quot;, а „психологията&quot; с „физиологията&quot; в описанието на изискуемите познания.</li><li><strong>Фармация:</strong> Терминът „лекарства&quot; навсякъде се заменя с „лекарствени продукти&quot;; въвеждат се нови задължителни компетентности – клинична фармация, фармацевтични грижи, цифрови технологии и интерпрофесионална практика. Минималният хорариум по задължителни дисциплини е 3510 часа, включително нови дисциплини като фармакогеномика, медицински изделия и статистически методи.</li><li><strong>Медицинска сестра:</strong> Минималният хорариум по задължителни дисциплини е 1890 часа; добавени нови компетентности – персонализирани грижи, лидерски умения, технологични иновации и участие в научноизследователска дейност. Общото число задължителни часове за цялото обучение се намалява от 4675 на 4645.</li><li><strong>Медицинска сестра – изискване за преподаватели:</strong> Теоретичното обучение по двете основни сестрински дисциплини задължително се води от преподаватели с диплома по „Медицинска сестра&quot; и академична длъжност „доцент&quot; или „професор&quot;.</li><li><strong>Акушерка:</strong> Актуализиран хорариум по задължителни дисциплини – 1905 часа; общото задължително обучение нараства от 4625 на 4700 часа, а минималният хорариум по практически дисциплини се увеличава от 2025 на 2100 часа.</li><li><strong>Терминологична унификация:</strong> Думата „астрономически&quot; (часове) се заменя с „академични&quot; в наредбите за медицинска сестра, акушерка и лекарски асистент.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Бъдещи пациенти (по-добре подготвени специалисти); студенти по дентална медицина и фармация (по-актуална и практически ориентирана програма с цифрови компетентности).</li><li>Губят: Висши училища и катедри, които трябва да актуализират учебните планове и да осигурят преподаватели с конкретна специалност и академична длъжност за сестринските програми – потенциален административен и кадрови проблем.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Теоретичното обучение по двете ключови сестрински дисциплини може да се води само от хабилитирани лица (доцент или професор) с диплома именно по „Медицинска сестра&quot; – изискване, което при хроничен дефицит на академичен персонал в тази специалност може да е трудно изпълнимо.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от датата на обнародване – 10 февруари 2026 г.</li><li>Студенти, приети преди тази дата, могат да завършат по стария ред или – по решение на висшето училище – да продължат по актуализиран учебен план.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241218" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;17 &middot; 2026-02-13</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 29 ОТ 6 ФЕВРУАРИ 2026 Г. за изменение и допълнение на Тарифа № 14 за таксите, които се събират в системата на Министерството на регионалното развитие и благоустройството и от областните управители, приета с Постановление № 175 на Министерския съвет от 1998 г.</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Всички такси в системата на Министерството на регионалното развитие и благоустройството се преизчисляват от левове в евро – практически без промяна на реалните суми – и се добавят нови такси за регистрация на професионални управители на етажна собственост.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Таксите за разрешения за ползване на строежи от <strong>първа категория</strong> (автомагистрали, летища, метро, язовири, ядрени централи, производствени предприятия над 500 работни места и др.) се движат между <strong>204,52 евро/км</strong> за линейни обекти и <strong>1 533,88 евро/обект</strong> за опасни производства – максималните таванни суми достигат до <strong>7 669,38 евро</strong>.</li><li>Таксите за <strong>втора категория</strong> (пътища III клас, болници, ВЕИ 25–100 MW, мини, обекти 200–500 работни места) варират от <strong>153,39 до 1 533,88 евро/обект</strong>; за трета категория (жилищни сгради с високо застрояване, комунална инфраструктура, ВЕИ до 25 MW) – от <strong>102,26 до 766,94 евро/обект</strong>.</li><li>За <strong>четвърта категория</strong> (средно застрояване, малки търговски обекти, 50–100 работни места) се издава удостоверение за въвеждане в експлоатация срещу <strong>76,69–383,47 евро/обект</strong>; при вътрешно преустройство без конструктивна промяна – само <strong>75% от съответната такса</strong>.</li><li>За <strong>пета категория</strong> (ниско застрояване, до 50 работни места, аптеки, малки хотели) таксите са <strong>51,13–255,65 евро/обект</strong>; за допълващо застрояване – само <strong>76,69 евро</strong>.</li><li>Административните услуги поевтиняват символично: удостоверение – <strong>2,56 евро</strong>; заверено копие – <strong>1,28 евро/стр.</strong>; скица за имот в град – <strong>10,23 евро</strong>, в село – <strong>5,11 евро</strong>.</li><li>Геодезически данни от Геокартфонда: координати на точка – <strong>3,58–4,60 евро</strong>, картен лист 1:5 000 – <strong>5,62–8,18 евро</strong>, цифров кадастрален план – <strong>0,15–0,31 евро/имот</strong> (с таван при малки обеми).</li><li><strong>Нова такса</strong> за вписване в Регистъра на професионалните управители на етажна собственост: <strong>80 евро</strong> при подаване на хартия или <strong>72 евро</strong> по електронен път; промяна на обстоятелства – <strong>49 евро</strong> / <strong>44,10 евро</strong> съответно.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Инвеститори и строители, при които реалната тежест остава непроменена, а изчисленията ще съответстват директно на единната еврозона след въвеждането на еврото в България.</li><li>Губят: Фирми за управление на етажна собственост, които за първи път дължат регистрационна такса от 72–80 евро.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Въпреки масовото преизчисляване от левове в евро не е приложен точният официален курс 1,95583 лв./евро навсякъде – някои суми са леко закръглени, което на практика означава минимална фактическа промяна на отделни такси.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>В сила от деня на обнародването – 13 февруари 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241246" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;17 &middot; 2026-02-13</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 30 ОТ 11 ФЕВРУАРИ 2026 Г. за изменение и допълнение на Правилника за прилагане на Закона за Националната служба за охрана, приет с Постановление № 131 на Министерския съвет от 2016 г.</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Националната служба за охрана (НСО) официално получава ново задължение – да осигурява транспорт на администрацията на президента за служебни нужди.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>НСО вече може да предоставя транспортно подпомагане на президентската администрация и за дейности, които излизат извън охранителните функции, уредени в Закона за НСО – т.е. чисто логистична, а не охранителна услуга.</li><li>Разширяването на задачите на НСО е административно – не се предвиждат нови разходи, такси или задължения за граждани и бизнес.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Администрацията на президента – получава законова база за ползване на транспорт от НСО за по-широк кръг служебни нужди.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Досега НСО транспортираше президентската администрация само в контекста на охрана – сега това се разширява изрично извън охранителния обхват, което на практика превръща НСО частично в шофьорска служба за Дондуков 2.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>От деня на обнародването – 13 февруари 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241347" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;17 &middot; 2026-02-13</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 31 ОТ 11 ФЕВРУАРИ 2026 Г. за изменение на Постановление № 34 на Министерския съвет от 2025 г. за определяне на условията и реда за предоставяне и финансиране на високотехнологични помощни средства в рамките на Инвестиция „Предоставяне на помощни средства на лица с трайни увреждания“ </div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Актът удължава срока за получаване на високотехнологични помощни средства от хора с трайни увреждания и преизчислява всички ценови прагове от левове в евро, подготвяйки програмата за въвеждането на единната валута.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Крайният срок за предоставяне на помощните средства се удължава от 31 декември 2025 г. на <strong>30 юни 2026 г.</strong> – дава допълнителни шест месеца за изпълнение на инвестицията по НПВУ.</li><li>Всички ценови прагове (максимални цени и доплащания от ползвателя) за над 35 вида помощни средства се преизчисляват от левове в евро по фиксирания курс – например: скъп продукт от раздел XI достига до <strong>35 688,17 евро</strong> (преди 69 800 лв.), а доплащането от потребителя – до <strong>17 844,09 евро</strong> (преди 34 900 лв.).</li><li>По-достъпни средства като тези в раздел II запазват ниски нива – например таван от <strong>288,37 евро</strong> (преди 564 лв.) с доплащане от <strong>58,29 евро</strong> (преди 114 лв.).</li><li>Преизчисляването е технически характер – стойностите в евро отговарят точно на официалния курс 1,95583 лв./евро, без реално повишение или намаление на суми.</li><li>Министърът на труда и социалната политика трябва да утвърди актуализирани образци на формуляри в <strong>едномесечен срок</strong> от влизането в сила на постановлението.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Хората с трайни увреждания, кандидатстващи за помощни средства – получават шест месеца повече за подаване на заявления и получаване на финансиране.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Преобразуването на всички суми в евро е сред първите практически стъпки по програми, финансирани с публични средства, което сигнализира активна подготовка за влизане в еврозоната.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>В сила от деня на обнародването – <strong>13 февруари 2026 г.</strong></li><li>Нови образци на формуляри се утвърждават в срок до <strong>13 март 2026 г.</strong></li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241355" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<div class="dv-card dv-card-compact">
+  <div class="dv-sum-static">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-other">ДРУГО</span></div>
+      <span class="dv-meta">Бр.&nbsp;17 &middot; 2026-02-13</span>
+    </div>
+    <div class="dv-title"></div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Разменят се пътни участъци между държавата и общините в районите на с. Дерманци (Плевен) и общини Разлог/Белица, като се актуализират официалните списъци на общинските и републиканските пътища.</p>
+    <div class="compact-bullets"><ul><li>Участък от републикански път III-305, минаващ по ул. „Васил Levски&quot; през с. Дерманци с дължина <strong>1,787 км</strong>, преминава от държавна в общинска собственост – общината поема поддръжката му.</li><li>Срещу това участък от ул. „Околовръстна&quot; в с. Дерманци с дължина <strong>2,633 км</strong> преминава от общинска в държавна собственост – държавата поема поддръжката му.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241288" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</div></div>
+</div>
+<div class="subsection">
+  <div class="subsection-hd">
+    <span class="subsection-tag">03</span>
+    <span class="subsection-title">Министерства и ведомства</span>
+    <span class="subsection-count">8 решения · 6 наредби · 1 акт</span>
+  </div>
+  <div class="dv-grid">
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;16 &middot; 2026-02-10</span>
+    </div>
+    <div class="dv-title">НАРЕДБА № 1 от 23 януари 2026 г. за изискванията, условията и реда за приемане на военна служба в Служба „Военно разузнаване“ на лица, които са в трудови или служебни правоотношения с друг работодател или орган по назначаване</div>
+    <div class="exec-organ">Министерство на отбраната</div>
+    <p class="dv-lead">Наредбата урежда как служители на други работодатели или държавни органи могат да бъдат приети на военна служба в Служба „Военно разузнаване&quot; за изпълнение на разузнавателни задачи, докато са в активно трудово или служебно правоотношение.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Лица, които вече работят при друг работодател или са назначени в друг държавен орган, могат да бъдат едновременно приети на военна служба в Служба „Военно разузнаване&quot;.</li><li>Конкретните изисквания, условия и процедури за приемане са изцяло засекретени – съдържат се в Приложение № 1 с гриф „секретно&quot;, недостъпно публично.</li><li>Правното основание е чл. 50, ал. 2 от Закона за военното разузнаване, който изрично предвижда възможността за такъв тип назначения.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Служба „Военно разузнаване&quot; – получава законова рамка за набиране на хора с активни граждански позиции за прикрити разузнавателни задачи.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Цялата същностна регулация – кой точно може да бъде нает, при какви условия и по каква процедура – е скрита в секретно приложение, което означава, че наредбата е публична само на хартия, а реалното ѝ съдържание остава напълно непрозрачно за обществото.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>В сила от деня на обнародването – 10 февруари 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241089" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;16 &middot; 2026-02-10</span>
+    </div>
+    <div class="dv-title">Наредба за изменение и допълнение на Наредба № 6 от 2018 г. за утвърждаване на медицински стандарт „Медицинска онкология“</div>
+    <div class="exec-organ">Министерство на здравеопазването</div>
+    <p class="dv-lead">Наредбата заменя „националния раков регистър&quot; с нова, по-детайлна информационна база данни за онкоболни, която всички болници са длъжни да захранват с данни.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>„Националният раков регистър&quot; официално се преименува и реорганизира в „Информационна база данни за лицата със злокачествени новообразувания и карцином ин ситу&quot; – не е само смяна на надпис, а разширен обхват и нова структура.</li><li>Базата данни ще се администрира от Националния център по обществено здраве и анализи и ще функционира като интегрирана част от Националната здравноинформационна система.</li><li>Всяко лечебно заведение в страната, което диагностицира или лекува онкоболни, е задължено да подава данните в системата – без изключения.</li><li>За всеки пациент се събира изключително подробна информация: лични данни, точна диагноза (МКБ + TNM класификация), морфология на тумора, генетични и биомаркери, всички видове приложено лечение с начална и крайна дата, терапевтичен отговор и жизнен статус.</li><li>Записва се и причината за смъртта по МКБ, което позволява изчисляване на реална преживяемост по вид рак.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Пациентите с рак – по-пълното проследяване може да подобри качеството на лечение и здравната политика; изследователи и здравни власти получават структуриран масив от данни.</li><li>Губят: Болниците – поемат административна тежест за въвеждане на значително по-детайлни данни от преди.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Базата данни включва задължително събиране на генетични данни и предиктивни биомаркери за всеки онкоболен – ниво на детайлност, нетипично за държавни регистри до момента.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Наредбата влиза в сила <strong>6 месеца след обнародването</strong>, тоест около <strong>10 август 2026 г.</strong></li><li>До тази дата болниците трябва да приведат своите системи в съответствие с изискванията за подаване на данни.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241111" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;16 &middot; 2026-02-10</span>
+    </div>
+    <div class="dv-title">НАРЕДБА № Н-3 oт 30 януари 2026 г. за утвърждаване на медицински стандарт „Съдебна медицина и деонтология“</div>
+    <div class="exec-organ">Министерство на здравеопазването</div>
+    <p class="dv-lead">Наредбата въвежда задължителни стандарти за работа на съдебните лекари и лечебните заведения с отделения по съдебна медицина – от минимално оборудване и персонал до начина на документиране на аутопсии, прегледи на живи лица и ДНК анализи.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Три нива на компетентност</strong> за болнични структури: първо ниво не предвижда дейности по специалността; второ ниво извършва прегледи на живи лица и аутопсии; трето ниво добавя поне едно от четири специализирани направления – ДНК анализ, химико-токсикология, образна диагностика или ентомология.</li><li><strong>Задължително оборудване за второ ниво</strong> включва аутопсионна зала с аспирация и вентилация, хладилна камера с температура не по-висока от +4°С, осцилиращ трион, секционни набори и достъп до хистологична лаборатория – в същото заведение или по договор с друго в областта.</li><li><strong>За трето ниво с ДНК анализ</strong> се изискват минимум: генетичен анализатор за човешка идентификация, PCR апарат, криогенна мелница за кости и персонал с минимум 5 години опит в съдебно-генетичните изследвания.</li><li><strong>Всеки съдебномедицински документ</strong> задължително съдържа уводна, обстоятелствена и заключителна част, трите имена и ЕГН на изследваното лице и подпис на изготвилия го лекар; забранено е в един документ да се отразяват изследвания на повече от едно лице (с изключение при съпоставка на увреждания).</li><li><strong>Скала за сложност от 1 до 5 точки</strong> класифицира всяка дейност: прост преглед без документация – 2 т.; аутопсия, ДНК анализ, ентомологично и антропологично изследване – по 5 т.; цитологично изследване и имунохроматографски тестове – по 1 т.</li><li><strong>При прегледи на малолетни и непълнолетни</strong> за полово състояние е задължително присъствието на второ лице в кабинета (родител, педагог, медицинска сестра или друго).</li><li><strong>Съдебномедицинската документация</strong> в извънболничната помощ се съхранява 20 години; болничните структури нямат изрично различен срок, но спазват общата нормативна уредба.</li><li><strong>Лечебните заведения от второ и трето ниво</strong> са задължени да изготвят план за действие при масови бедствия с голям брой починали.</li><li><strong>Балсамирането</strong> може да се извършва извън лечебно заведение, но задължително се документира с метод, състав на течността, резултат и подпис на лекаря.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: следствие, прокуратура и съдилища – получават по-стандартизирани и доказателствено по-здрави съдебномедицински документи; пострадали лица – по-строги гаранции за достойнство и обективност при прегледите.</li><li>Губят: по-малки болници без ресурс да изградят напълно оборудвани аутопсионни зали и трупохранилища – изправени пред сериозни инвестиции, за да отговорят на изискванията.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Наредбата изрично забранява съдебните лекари да работят под влияние на съдебната или изпълнителната власт, държавни органи или обществен натиск – принцип за независимост, рядко срещан толкова директно формулиран в медицински стандарт.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от датата на обнародване – 10 февруари 2026 г.</li><li>Лечебните заведения привеждат дейността си в съответствие в срок до <strong>6 месеца</strong> от влизането в сила (т.е. до 10 август 2026 г.).</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241112" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;16 &middot; 2026-02-10</span>
+    </div>
+    <div class="dv-title">Наредба за изменение и допълнение на Наредба № 8121з-919 от 13 юли 2017 г. за размера на основните месечни възнаграждения на държавните служители по чл. 142, ал. 1, т. 1 и ал. 3 от Закона за Министерството на вътрешните работи и размера на началните и максималните заплати за длъжност на лицата, рабо</div>
+    <div class="exec-organ">Министерство на вътрешните работи</div>
+    <p class="dv-lead">Наредбата актуализира заплатите на всички служители на МВР – полицаи, пожарникари, гранични служители и граждански персонал – като ги преизчислява от левове в евро и добавя еднократна индексация от 5%.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Всички заплатни таблици за държавните служители на МВР с висше образование се преизразяват в евро; заплатите варират от 986,10 евро (стажант) до 4 743,67 евро (Главен секретар на МВР).</li><li>Служителите със средно образование (полицаи, пожарникари, спасители и др.) получават заплати между 1 232,63 евро (полицай, пожарникар, командос) и 1 362,01 евро (началник на противопожарен участък); стажантите – 986,10 евро.</li><li>Гражданският персонал по трудово правоотношение запазва начална заплата от 939,50 евро за специалисти с висше образование, с максимум до 2 718,65 евро (парламентарен секретар); за работниците начална заплата е 704,36 евро.</li><li>Два конкретни прага, обвързани с надбавки, също се преизразяват в евро: 2 337 лв. стават 1 254,63 евро и 1 668 лв. стават 895,48 евро.</li><li>Еднократна индексация от 5% върху всички основни месечни възнаграждения и заплати за длъжност, считано от 1 януари 2026 г., в съответствие с индекса на потребителските цени по данни на НСИ – прилага се до приемането на редовен държавен бюджет за 2026 г.</li><li>Конкретните размери на индивидуалните заплати се определят със заповеди на ръководителите на съответните структури; за Главния секретар и заместниците му – със заповед на министъра на вътрешните работи.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Всички служители на МВР – получават реална индексация от 5% и преминават към евро-деноминирани заплати, което ги подготвя за въвеждането на еврото.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Наредбата влиза в сила ретроактивно от 1 януари 2026 г., а 5-процентното увеличение се прилага временно – само докато парламентът приеме редовен бюджет за 2026 г., тоест е с неопределен краен срок.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Наредбата влиза в сила от 1 януари 2026 г. (с ретроактивно действие спрямо датата на обнародване – 10 февруари 2026 г.).</li><li>Петпроцентната индексация се прилага от 1 януари 2026 г. до приемането на Закона за държавния бюджет за 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241219" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;17 &middot; 2026-02-13</span>
+    </div>
+    <div class="dv-title">Наредба за изменение и допълнение на Наредба № РД-02-20-2 от 20 декември 2017 г. за планиране и проектиране на комуникационно-транспортната система на урбанизираните територии</div>
+    <div class="exec-organ">Министерство на регионалното развитие и благоустройството</div>
+    <p class="dv-lead">Актът определя задължителните технически стандарти за зарядни точки на електрически превозни средства – от леки коли до автобуси и тежкотоварни камиони – при проектиране на нова зарядна инфраструктура в градска среда.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Зарядни точки за леки електромобили (AC, нормална мощност):</strong> задължително се оборудват с конектор тип 2 (режим 3); изключение – ако мощността е ≤ 3,7 kW и предназначението е режим 2, допустими са стандартни домакински контакти по IEC 60884-1:2022.</li><li><strong>Зарядни точки за леки електромобили (DC):</strong> задължително се оборудват с конектор „Combo 2&quot; (режим 4) – важи както за нормална, така и за голяма мощност.</li><li><strong>Зарядни точки за двуколесни/триколесни ЕПС (категория L, ≤ 3,7 kW AC):</strong> трябва да имат поне конектор тип 3А (режим 3) или стандартен контакт за режим 1/2; при мощност над 3,7 kW – задължителен тип 2.</li><li><strong>Електробуси:</strong> освен тип 2 (AC) и Combo 2 (DC), при автоматизирано зареждане с пантограф (от инфраструктурата или от превозното средство) се изисква специализиран механичен и електрически интерфейс по стандарт БДС EN 50696.</li><li><strong>Безжично (индукционно) зареждане за леки ЕПС:</strong> проектирането вече е нормативно регламентирано и трябва да спазва три конкретни стандарта от серията БДС EN IEC 61980.</li><li><strong>Динамично наземно зареждане (контактни релси в платното):</strong> за леки и тежкотоварни ЕПС се въвежда изискване за проектиране по техническа спецификация CLC/TS 50717 – ново задължение без аналог в предишната наредба.</li><li><strong>Вече инсталирани зарядни точки:</strong> не се налага незабавна промяна; привеждане в съответствие с новите стандарти се изисква само при физическо обновяване (основна или пълна замяна на оборудването).</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: собственици на електромобили и оператори на зарядна инфраструктура, тъй като стандартизираните конектори гарантират оперативна съвместимост и избягват „заключване&quot; към конкретни производители; производители на оборудване Combo 2 и тип 2.</li><li>Губят: инвеститори в зарядна инфраструктура с нестандартни/патентовани конектори, за които новите проекти вече няма да бъдат одобрявани.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Наредбата за първи път нормативно урежда проектирането на зарядни релси, вградени в самото пътно платно – технология, която в момента е само в пилотна фаза в няколко европейски държави.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от деня на обнародването – 13 февруари 2026 г.</li><li>Започнати процедури по одобряване на проекти и издаване на разрешения за строеж се довършват по старите правила.</li><li>Съществуващи зарядни точки се привеждат в съответствие с новите стандарти едва при тяхното обновяване – без конкретен краен срок.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241201" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;17 &middot; 2026-02-13</span>
+    </div>
+    <div class="dv-title">Наредба за изменение и допълнение на Наредба № Н-13 от 2019 г. за съдържанието, сроковете, начина и реда за подаване и съхранение на данни от работодателите, осигурителите за осигурените при тях лица, както и от самоосигуряващите се лица</div>
+    <div class="exec-organ">Министерство на финансите</div>
+    <p class="dv-lead">Наредбата прецизира правилата за подаване на осигурителни данни, като добавя нова категория осигурени лица (курсанти и колежани от военни учебни заведения) и въвежда задължение за подаване на данни след предписание от НОИ.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Нова категория осигурени:</strong> Курсантите и колежаните по Закона за отбраната и въоръжените сили се добавят изрично към осигурителните правила, приравнени към студентите от висши училища.</li><li><strong>Нов код в здравното осигуряване:</strong> Позиция 53 в декларация образец № 3 вече включва изрично курсанти и колежани от военни учебни заведения, студенти до 26 г., докторанти на редовно обучение, лица по програми за българи в чужбина и граждани на Северна Македония, учещи в България, както и задържани под стража или лишени от свобода.</li><li><strong>Задължение след предписание на НОИ:</strong> Въвежда се нов случай, в който работодателят/осигурителят е длъжен да подаде осигурителни данни – когато данните са били заличени и е влязло в сила задължително предписание от контролните органи на НОИ.</li><li><strong>Разширена роля на НОИ:</strong> НОИ се добавя като субект, който може да инициира подаване или коригиране на данни, наред с осигурителните каси и самоосигуряващите се лица.</li><li><strong>Технически ред:</strong> Позиция 91 в декларация образец № 1 се актуализира, за да отразява коректно кръга на лицата по чл. 4, ал. 7 от Кодекса за социалното осигуряване.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Курсанти и колежани от военни учебни заведения, чийто осигурителен статус се урежда изрично; НОИ, който получава формален инструмент за принудително подаване на данни.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Наредбата влиза в сила от 1 януари 2026 г., но е обнародвана едва на 13 февруари 2026 г. – т.е. задълженията технически са „задни числа&quot; с повече от шест седмици.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Официална дата: 1 януари 2026 г.</li><li>Обнародвана на 13 февруари 2026 г. – разпоредбите са с обратна сила спрямо датата на публикуване.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241330" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;16 &middot; 2026-02-10</span>
+    </div>
+    <div class="dv-title"></div>
+    <div class="exec-organ">Министерство на труда и социалната политика</div>
+    <p class="dv-lead">Одобрен е двугодишен работен план за сътрудничество между България и УНИЦЕФ в областта на детското благополучие за периода юли 2025 г. – декември 2027 г.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Планът обхваща периода 01.07.2025 г. – 31.12.2027 г. и е частта от по-широката Програма за страната 2023–2027 г., сключена между българското правителство и УНИЦЕФ.</li><li>Документът е рамков – определя приоритетите и направленията на съвместна работа между двете страни, но конкретното съдържание на дейностите, бюджети и целеви групи не е оповестено в публикувания текст.</li><li>Подписан е от министъра на труда и социалната политика Борислав Гуцанов и от представителя на УНИЦЕФ в България Кристина де Бройн.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Деца и семейства в уязвимо положение, които са целева група на програмите на УНИЦЕФ в България.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>В сила от датата на подписването – 14.01.2026 г., преди обнародването в Държавен вестник.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241053" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;16 &middot; 2026-02-10</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ № 8060 от 21 юли 2025 г. по административно дело № 4656 от 2024 г.</div>
+    <div class="exec-organ">Върховен административен съд (шесто отделение)</div>
+    <p class="dv-lead">Съдът отменя правилото, което изискваше ректорът да „утвърди&quot; избора на спечелил конкурс академик, преди да възникне трудовото му правоотношение с университета.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Отменен е чл. 59 от Правилника за прилагане на ЗРАСРБ, който гласеше, че трудовото правоотношение между университета и спечелилия конкурс кандидат възниква от деня на <strong>утвърждаване на избора от ректора</strong> – допълнителна стъпка, която законите не предвиждат.</li><li>Според Кодекса на труда и Закона за висшето образование трудовото правоотношение възниква директно от <strong>деня на самия избор</strong> от Факултетния съвет – ректорът само сключва трудовия договор в едномесечен срок след това, но няма право да блокира или забавя правоотношението с отделен акт на „утвърждаване&quot;.</li><li>Съдът приема, че правилникът е „дописвал&quot; закона, като е добавял елемент (ректорско утвърждаване), какъвто нито ЗРАСРБ, нито ЗВО, нито КТ познават – това е дало на ректорите де факто власт да осуетяват резултати от конкурси.</li><li>Делото е образувано по жалба на преподавателка от Медицинския университет – Пловдив, участничка в конкурс за „доцент&quot;, чийто трудовоправен статут е бил оспорен именно заради тази норма.</li><li>Министерският съвет е осъден да плати на жалбоподателката разноски от <strong>1 040 лв.</strong> (адвокатско възнаграждение 1 000 лв. + държавна такса 10 лв. + такса за обнародване 30 лв.); искането за 2 500 лв. адвокатски хонорар е намалено до 1 000 лв. като прекомерно.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Академици (доценти, професори, главни асистенти), спечелили конкурс – трудовото им правоотношение вече не може да бъде блокирано или забавено с отказ на ректора да „утвърди&quot; избора.</li><li>Губят: Ректори на университети и ръководители на научни организации – губят инструмента за де факто вето върху резултатите от конкурси, проведени от факултетни съвети.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Собственото министерство на образованието е представило в хода на делото вътрешен доклад, с който служителите му предлагат отмяна на същата норма – т.е. изпълнителната власт сама е признала, че нейният подзаконов акт противоречи на закона, но не го е отменила преди съда да го направи.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Решението подлежи на касационно обжалване в <strong>14-дневен срок</strong> от съобщаването му пред петчленен състав на ВАС.</li><li>Ако не бъде обжалвано или обжалването бъде отхвърлено, решението се обнародва в „Държавен вестник&quot; и влиза в сила <strong>от деня на обнародването</strong>.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241090" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;16 &middot; 2026-02-10</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ № 12790 от 10 декември 2025 г. по административно дело № 9775 от 2025 г.</div>
+    <div class="exec-organ">Върховен административен съд (петчленен състав – II колегия)</div>
+    <p class="dv-lead">Съдът окончателно потвърди, че трудовото правоотношение на спечелил академичен конкурс кандидат възниква от деня на избора от факултетния съвет – не от последващо „утвърждаване&quot; от ректора, което беше незаконосъобразно изискване.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Чл. 59 от Правилника за прилагане на Закона за развитието на академичния състав (ППЗРАСРБ) е окончателно отменен – нормата задължаваше трудовото правоотношение да възниква от акт на ректора, а не от избора на факултетния съвет.</li><li>Трудовото правоотношение при спечелен академичен конкурс за длъжности „доцент&quot; и „професор&quot; възниква от деня на избора от факултетния съвет – ректорът няма законово правомощие да блокира или „утвърждава&quot; този избор.</li><li>Ректорът е длъжен да сключи трудов договор с избрания кандидат в едномесечен срок от избора – не разполага с право на отказ, тъй като изборното правомощие принадлежи на факултетния съвет.</li><li>Фактът, че Министерският съвет сам е отменил чл. 59 с ПМС № 130 (влязло в сила 25.07.2025 г.) – след като делото е образувано – не прави съдебното решение недопустимо; отмяната на нормата не заличава правния интерес на засегнатите лица от съдебна защита.</li><li>Министерският съвет е осъден да плати 1000 лв. разноски на жалбоподателката; претендираните от нея 2000 лв. адвокатско възнаграждение са намалени наполовина като прекомерни.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Академични кандидати, спечелили конкурс – ректорът не може да спре или забави трудовото им правоотношение чрез отказ да „утвърди&quot; избора.</li><li>Губят: Министерският съвет (осъден на разноски); ректори на висши училища, които са разполагали с де факто блокираща роля при академични назначения.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Министерският съвет се опита да обезсмисли делото, като отмени спорната норма в същия ден, в който тричленният състав постанови решението си – ВАС приема, че това не е допустима тактика за избягване на съдебен контрол.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Решението е окончателно и не подлежи на обжалване.</li><li>Отмяната на чл. 59 от ППЗРАСРБ е в сила от 25 юли 2025 г. (три дни след обнародването на ПМС № 130 на 22.07.2025 г.).</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241091" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;16 &middot; 2026-02-10</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ № 646 от 21 януари 2026 г. по административно дело № 4656 от 2024 г.</div>
+    <div class="exec-organ">Върховен административен съд – шесто отделение</div>
+    <p class="dv-lead">Съдът поправя технически правописни и граматически грешки в собствено предишно решение по дело за ректор на университет, без да променя същността му.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Коригират се девет отделни грешки в Решение № 8060 от 21.07.2025 г. – пропуснати думи, лишни думи и грешно посочено отделение на съда.</li><li>Най-съществената поправка: заличава се фразата „или обн. ДВ-к в размер на 30 лв.&quot;, която е попаднала погрешно в текста на решението.</li><li>Грешното „трето отделение&quot; се замества с „шесто отделение&quot; на две различни места, за да съвпада с реалния състав, постановил решението.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Страните по делото, тъй като официалният текст на решението вече отразява точно волята на съда.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Сред техническите поправки се заличава сума от 30 лв., която изобщо не е трябвало да фигурира в решението – което поражда въпрос как е попаднала там на първо място.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Решението за поправка влиза в сила незабавно от обнародването и не подлежи на обжалване.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241092" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;17 &middot; 2026-02-13</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ № 1947 от 26 февруари 2025 г. по административно дело № 6615 от 2024 г.</div>
+    <div class="exec-organ">Върховен административен съд (четвърто отделение)</div>
+    <p class="dv-lead">Съдът отменя разпоредба от Правилника за изпълнение на наказанията, която позволяваше получаване на колетни пратки в затвора единствено от чужди граждани и само от чужбина – занапред всички лишени от свобода имат право на една хранителна пратка месечно.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Отменената разпоредба (чл. 82, ал. 4 от Правилника) ограничаваше правото на хранителни пратки изключително до чужди граждани, получаващи пратки по пощата от чужбина – всички останали лишени от свобода (български граждани) бяха лишени от това право без дисциплинарна причина.</li><li>Законът (ЗИНЗС) изрично дава право на всеки лишен от свобода да получава <strong>една хранителна пратка месечно</strong> – подзаконовата норма е противоречала на закона с по-висока юридическа сила.</li><li>Правилникът е приет през 2010 г. без задължителните мотиви по Закона за нормативните актове и без предоставен <strong>14-дневен срок за обществени консултации</strong> – самостоятелно основание за отмяна.</li><li>Ограничаване на правото на хранителна пратка е допустимо само като <strong>дисциплинарно наказание</strong> или по време на престой в наказателна килия – не може да се прилага бланкетно спрямо цяла категория лица.</li><li>След отмяната пропастта в подзаконовата уредба се запълва директно от законовата норма: <strong>една хранителна пратка месечно</strong> за всички лишени от свобода.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Всички лишени от свобода български граждани, които до момента нямаха право да получават хранителни пратки по пощата.</li><li>Губят: Министерство на правосъдието – задължено да организира приемането и проверката на пратки от всички лишени от свобода, а не само от чужди граждани; отказано му е и присъждане на разноски по делото.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Разпоредбата е действала над 15 години (от 2010 г.), нарушавайки конституционната забрана за дискриминация по народност и директна законова норма – министерството е защитавало нейната законосъобразност с аргумента, че проверката на пратки е административно трудна.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Решението подлежи на обжалване с касационна жалба в <strong>14-дневен срок</strong> от съобщаването му пред петчленен състав на ВАС.</li><li>При необжалване влиза в сила след изтичане на 14-дневния срок; при обжалване – след произнасяне на петчленния състав.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241113" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;17 &middot; 2026-02-13</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ № 820 от 27 януари 2026 г. по административно дело № 4494 от 2025 г.</div>
+    <div class="exec-organ">Върховен административен съд (петчленен състав, І колегия)</div>
+    <p class="dv-lead">Съдът окончателно потвърждава отмяната на правило, което позволяваше на чужди затворници да получават колетни пратки с храна по пощата от чужбина – привилегия, която нямала законово основание.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Чл. 82, ал. 4 от Правилника за прилагане на Закона за изпълнение на наказанията и задържането под стража (ППЗИНЗС) е окончателно отменен – разпоредбата, позволяваща на чужди осъдени, подсъдими и обвиняеми да получават хранителни колети от чужбина по пощата, вече не съществува.</li><li>Отмяната е мотивирана с две основни нарушения: докладът, с който проектът е внесен за приемане (2009 г.), не е отговарял на законовите изисквания за съдържание, и не е проведено задължително обществено обсъждане.</li><li>Законът за изпълнение на наказанията (ЗИНЗС) не прави разлика между чужди и български затворници по отношение на правото за получаване на пратки – единственото законово право е до една хранителна пратка месечно за всички, плюс извънредна пратка само като награда или при свиждане/домашен отпуск.</li><li>Правилникът не може да въвежда нови права за затворници – той може само да конкретизира вече съществуващи в закона права, но не и да ги разширява или допълва.</li><li>Министерството на правосъдието е обжалвало отмяната, но касационната жалба е отхвърлена изцяло; решението е окончателно и не подлежи на по-нататъшно обжалване.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Принципът на законност – правата на затворниците се уреждат само със закон, а не по усмотрение на министерството чрез правилник.</li><li>Губят: Чужди граждани в български затвори, които са ползвали възможността да получават хранителни пратки от роднини в чужбина по пощата извън режима на свиждане.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Министерството на правосъдието само е признало в касационната жалба, че оспорената разпоредба е изключение от императивните норми на закона – и въпреки това е настоявало тя да остане в сила поради „целесъобразност&quot;.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Решението е окончателно от датата на постановяването му – 27 януари 2026 г.</li><li>Чл. 82, ал. 4 ППЗИНЗС е заличен от правния ред без гратисен период.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241114" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<div class="dv-card dv-card-compact">
+  <div class="dv-sum-static">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-other">ДРУГО</span></div>
+      <span class="dv-meta">Бр.&nbsp;17 &middot; 2026-02-13</span>
+    </div>
+    <div class="dv-title"></div>
+    <div class="exec-organ">Министерство на вътрешните работи</div>
+    <p class="dv-lead">Актуализира се рамката за полицейско сътрудничество между България и Румъния – обновяват се имената на компетентните органи, разширява се правото на преследване по горещи следи и се регламентира честотата на съвместните работни срещи.</p>
+    <div class="compact-bullets"><ul><li>Списъкът на българските органи по споразумението се актуализира: добавени са Главна дирекция „Жандармерия, специални операции и борба с тероризма&quot;, Дирекция „Миграция&quot;, Държавна агенция „Технически операции&quot; и Агенция „Митници&quot;; централен координиращ орган за България е Дирекция „Международно оперативно сътрудничество&quot; на МВР.</li><li>Терминът „трансгранично преследване&quot; навсякъде в споразумението се заменя с по-точния „трансгранично преследване по горещи следи&quot;.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241159" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</div>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;17 &middot; 2026-02-13</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ № 5050 от 15 май 2025 г. по административно дело № 444 от 2025 г.</div>
+    <div class="exec-organ">Върховен административен съд (осмо отделение) – отменя норми от Наредба № І-45 на Министерството на вътрешните работи</div>
+    <p class="dv-lead">Съдът отменя задължението собствениците на автомобили с прекратена регистрация да представят специален технически протокол („технотест&quot; от акредитирана лаборатория) при поискване на възстановяване на регистрацията.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Отпада изискването за протокол от акредитирана техническа служба (т.нар. технотест по приложение № 11) като задължително условие за възстановяване на прекратена регистрация на МПС – това изискване не е предвидено в закона и е надхвърляло законовата рамка.</li><li>Отменени са и свързаните разпоредби (чл. 15, ал. 13 и 14 и цялото приложение № 11), което означава, че целият пакет от допълнителни технически проверки при реактивиране на регистрация е обезсилен.</li><li>Основанието за отмяна е двойно: МВР не е провело задължително обществено обсъждане на тези конкретни промени (публикуваният проект не ги е съдържал), и нормите противоречат на европейски регламент (ЕС) № 168/2013, който предвижда, че технотестът при първоначална регистрация е с неограничен срок на действие.</li><li>МВР е осъдено да плати разноски: 990 лв. на асоциацията БАКСКАМ и 1 511 лв. на присъединения гражданин П. З. – общо 2 501 лв. от държавния бюджет.</li><li>Решението подлежи на обжалване пред 5-членен състав на ВАС в 14-дневен срок от уведомяването на страните.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Собственици на автомобили и мотоциклети с прекратена регистрация – вече не трябва да минават скъп и специализиран технически тест, за да я възстановят; особено засегнати позитивно са колекционерите на старинни и класически автомобили.</li><li>Губят: МВР (отменена е собствена наредба и е осъдено за разноски); акредитираните технически лаборатории губят законовото основание да извършват тези платени прегледи.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Въпреки че МВР частично е изменило спорната норма по време на съдебния процес (март 2025 г.), съдът все пак е разгледал делото по същество и е отменил разпоредбата – позовавайки се на решение на Съда на ЕС, което забранява производството да се прекратява само защото оспорената норма е изменена, ако страните поддържат интерес.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Решението влиза в сила след изтичане на 14-дневния срок за обжалване или след произнасяне на 5-членния състав на ВАС.</li><li>След влизане в сила се обнародва в „Държавен вестник&quot; и от тази дата отменените разпоредби официално престават да действат.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241160" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;17 &middot; 2026-02-13</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ № 881 от 27 януари 2026 г. по административно дело № 6384 от 2025 г.</div>
+    <div class="exec-organ">Върховен административен съд (петчленен състав, I колегия)</div>
+    <p class="dv-lead">Съдът окончателно потвърждава отмяната на текстове от Наредба № І-45/2000 г., задължаващи собственици на автомобили да представят технически преглед (технотест) при възстановяване на служебно прекратена регистрация поради липса на застраховка.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Отменените разпоредби са въведени с изменение от ноември 2024 г. и изискват технотест при възстановяване на регистрация, прекратена служебно заради липса на „Гражданска отговорност&quot;. Тези изисквания вече не се прилагат.</li><li>Регистрацията се възстановява служебно при представяне на валидна застраховка „Гражданска отговорност&quot; – без допълнителен технотест, независимо колко дълго МПС е стояло с прекратена регистрация.</li><li>Наредбата е отменена в тези части по две независими причини: процедурна (не е проведено обществено обсъждане и липсват мотиви за изменението) и материална (противоречие с националния Закон за движението по пътищата и с Регламент (ЕС) № 168/2013).</li><li>Европейската правна рамка прогласява, че технотестът при първоначална регистрация има неограничен срок на действие – новото изискване за повторна проверка е нямало правно основание.</li><li>Министерството на вътрешните работи е осъдено да плати 960 лв. на Асоциацията на клубовете за старинни и класически автомобили (БАКСКАМ) и 2 000 лв. на физическия жалбоподател от Димитровград.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Собственици на МПС с прекратена регистрация поради липса на застраховка – отпада задължението за скъп и времеемък технотест при възстановяване; колекционери на старинни и класически автомобили, чиято организация води делото.</li><li>Губят: Министерството на вътрешните работи – изгубва делото окончателно и плаща общо 2 960 лв. разноски.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Технотестът, въведен с наредбата, е отменен не само като процедурна грешка, но и защото влиза в противоречие с европейски регламент, установяващ, че техническата проверка при регистрация е безсрочно валидна – МВР е издало наредба, несъвместима с директно приложимо европейско право.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Решението е окончателно и не подлежи на обжалване.</li><li>Отменените разпоредби са невалидни от постановяване на първоначалното решение на тричленния състав (15 май 2025 г.), потвърдено с настоящото окончателно решение.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241161" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details></div>
+</div>
+</div>
+
+<div class="nl-footer">
+  <span class="nl-footer-logo">Парламентарни Doodles</span>
+  <div class="nl-footer-links">
+    <a href="../">ДВ Дайджест</a>
+    <a href="../../sessions/">Заседания</a>
+    <a href="https://bpdoodles.com">Basepoint Doodles</a>
+  </div>
+</div>
+</div>
+</body>
+</html>

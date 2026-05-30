@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="utf-8">
+<title>Парламентарни Doodles · ДВ Дайджест · Седмица 11</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --navy:#1B2E5E; --gold:#B5821A; --ink:#1C1C1C; --ink2:#444;
+  --muted:#888; --muted-lt:#AAA; --border:#E8E8E8; --surf:#F8F8F8; --paper:#FFF;
+  --font-d:'Caveat',cursive; --font-h:'Nunito','Arial Black',sans-serif;
+  --font-b:'Nunito',Arial,sans-serif;
+}
+body{font-family:var(--font-b);background:#F0F2F5;color:var(--ink);line-height:1.6;}
+.wrapper{max-width:740px;margin:32px auto;background:#fff;border:1px solid var(--border);border-radius:4px;overflow:hidden;}
+
+/* top bar */
+.top-bar{display:flex;justify-content:space-between;align-items:center;padding:8px 16px;background:var(--navy);}
+.site-nav{display:flex;gap:20px;align-items:center;}
+.site-nav a{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none;}
+.site-nav a:hover{color:rgba(255,255,255,.9);}
+.site-nav a.active{color:var(--gold);}
+.top-bar-tag{font-family:'Courier New',monospace;font-size:10px;color:rgba(255,255,255,.25);}
+
+/* masthead */
+.masthead{background:var(--navy);padding:24px 28px 20px;display:flex;justify-content:space-between;align-items:flex-end;border-bottom:3px solid var(--gold);}
+.masthead-logo{display:flex;flex-direction:row;align-items:center;}
+.masthead-left{display:flex;flex-direction:column;align-items:flex-end;padding-right:14px;}
+.masthead-basepoint{font-family:var(--font-h);font-size:22px;font-weight:900;color:#fff;letter-spacing:-.3px;line-height:1;}
+.masthead-tagline{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:4px;}
+.masthead-divider{width:2px;height:52px;background:rgba(255,255,255,.2);}
+.masthead-doodles{font-family:var(--font-d);font-size:48px;font-weight:700;color:var(--gold);line-height:1;padding-left:14px;}
+.masthead-meta{text-align:right;}
+.masthead-issue{font-size:13px;font-weight:700;color:rgba(255,255,255,.85);display:block;line-height:1.5;}
+.masthead-date{font-size:11px;color:rgba(255,255,255,.4);display:block;}
+.masthead-pills{margin-top:8px;display:flex;gap:6px;justify-content:flex-end;flex-wrap:wrap;}
+.masthead-pill{font-size:10px;font-weight:700;letter-spacing:.05em;background:rgba(255,255,255,.12);color:rgba(255,255,255,.6);padding:3px 8px;border-radius:3px;}
+
+/* content sections */
+.section{padding:20px 28px;border-bottom:1px solid var(--border);}
+.section:last-of-type{border-bottom:none;}
+
+/* subsection (within DV edition) */
+.subsection{margin-bottom:24px;}
+.subsection:last-child{margin-bottom:0;}
+.subsection-hd{display:flex;align-items:baseline;gap:10px;margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid var(--border);}
+.subsection-tag{font-size:10px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);}
+.subsection-title{font-family:var(--font-h);font-size:16px;font-weight:900;color:var(--navy);}
+.subsection-count{font-size:11px;color:var(--muted);margin-left:auto;}
+
+/* section label row */
+.section-label-row{padding:10px 28px 8px;background:var(--surf);border-bottom:1px solid var(--border);}
+.section-label{font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);}
+
+/* page header */
+.page-header{padding:20px 28px 16px;border-bottom:1px solid var(--border);}
+.page-title{font-family:var(--font-h);font-size:20px;font-weight:900;color:var(--ink);letter-spacing:-.3px;margin-bottom:6px;}
+.page-subtitle{font-size:13px;color:var(--muted);}
+
+/* issue list rows */
+a.issue-row{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 28px;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:background .1s;}
+a.issue-row:hover{background:var(--surf);}
+a.issue-row:last-of-type{border-bottom:none;}
+.issue-row-left{flex:1;}
+.issue-row-meta{font-family:'Courier New',monospace;font-size:10px;color:var(--muted-lt);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;}
+.issue-row-title{font-size:15px;font-weight:900;color:var(--ink);letter-spacing:-.2px;line-height:1.3;}
+.issue-row-desc{font-size:12px;color:var(--muted);margin-top:3px;}
+.issue-row-arrow{font-size:18px;color:var(--gold);font-weight:900;flex-shrink:0;}
+
+/* footer */
+.nl-footer{padding:14px 28px;background:var(--surf);border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
+.nl-footer-logo{font-family:var(--font-d);font-size:18px;font-weight:700;color:#CCC;}
+.nl-footer-links{font-size:11px;display:flex;gap:16px;}
+.nl-footer-links a{color:var(--muted-lt);text-decoration:none;}
+.nl-footer-links a:hover{color:var(--muted);}
+
+/* DV cards */
+.dv-grid{display:flex;flex-direction:column;gap:8px;}
+details.dv-card{background:var(--paper);border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:border-color .15s;}
+details.dv-card:hover{border-color:var(--gold);}
+details.dv-card[open]{border-color:var(--gold);}
+.dv-card-compact{background:var(--paper);border:1px solid var(--border);border-radius:8px;overflow:hidden;opacity:.9;}
+.dv-sum{padding:14px 16px;cursor:pointer;list-style:none;user-select:none;}
+.dv-sum::-webkit-details-marker{display:none;}
+.dv-sum-static{padding:14px 16px;}
+.dv-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+.dv-meta{font-size:11px;color:var(--muted);font-weight:700;}
+.dv-title{font-family:var(--font-h);font-size:13px;font-weight:900;color:var(--ink);line-height:1.4;letter-spacing:-.1px;margin-bottom:4px;}
+.exec-organ{font-size:11px;color:var(--muted);margin-bottom:6px;font-style:italic;}
+.dv-lead{font-size:13px;color:var(--ink2);line-height:1.55;margin-bottom:8px;}
+.compact-bullets ul{list-style:none;padding:0;margin-top:6px;}
+.compact-bullets li{padding:3px 0 3px 14px;position:relative;color:var(--ink2);font-size:12px;line-height:1.5;}
+.compact-bullets li::before{content:"·";position:absolute;left:2px;color:var(--gold);font-weight:700;font-size:15px;line-height:1.1;}
+.expand-hint{font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.06em;margin-top:4px;}
+details.dv-card[open] .expand-hint{display:none;}
+.dv-body{padding:0 16px 16px;border-top:1px solid var(--border);}
+
+/* badges */
+.badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;}
+.dv-badges{display:flex;gap:6px;align-items:center;flex-wrap:wrap;}
+.b-zakon   {background:#dbeafe;color:#1a56db;}
+.b-reshenie{background:#cffafe;color:#0a6e8a;}
+.b-ukaz    {background:#ede9fe;color:#7c3aed;}
+.b-decl    {background:#fef3c7;color:#92400e;}
+.b-post    {background:#d1fae5;color:#065f46;}
+.b-naredba {background:#fce7f3;color:#9d174d;}
+.b-pravilnik{background:#f3e8ff;color:#6b21a8;}
+.b-inst    {background:#fef9c3;color:#713f12;}
+.b-razp    {background:#e0f2fe;color:#0369a1;}
+.b-spor    {background:#fff7ed;color:#c2410c;}
+.b-other   {background:#f3f4f6;color:#6b7280;}
+.b-cat     {background:#f3f4f6;color:#555;}
+
+/* factsheet sections */
+.fs-sec{margin:12px 0;font-size:13px;}
+.fs-sec h5,.parties-block h5,.notable-callout h5,.sess-col h5{font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:8px;padding-bottom:5px;border-bottom:1px solid var(--border);}
+.fs-sec ul,.parties-block ul{list-style:none;padding:0;}
+.fs-sec li,.parties-block li{padding:4px 0 4px 16px;position:relative;color:var(--ink2);border-bottom:1px solid #f3f4f6;font-size:13px;line-height:1.5;}
+.fs-sec li:last-child,.parties-block li:last-child{border-bottom:none;}
+.fs-sec li::before{content:"·";position:absolute;left:3px;color:var(--gold);font-weight:700;font-size:16px;line-height:1.1;}
+.fs-sec p,.parties-block p{color:var(--ink2);font-size:13px;margin-bottom:4px;}
+.fs-winners ul{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.fs-winners li{padding:8px 10px 8px 24px;border-radius:6px;border-bottom:none !important;}
+.fs-winners li:first-child{background:#f0fdf4;}
+.fs-winners li:first-child::before{content:"✓";color:#16a34a;font-size:13px;top:8px;}
+.fs-winners li:nth-child(2){background:#fef2f2;}
+.fs-winners li:nth-child(2)::before{content:"✗";color:#dc2626;font-size:13px;top:8px;}
+.fs-notable{background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:12px 14px;}
+.fs-notable h5{border-bottom-color:#fde68a;color:#92400e;}
+.fs-notable li,.fs-notable p{color:#78350f;}
+.fs-notable li::before{color:#d97706;}
+.fs-eu{background:#f0f9ff;border-radius:8px;padding:12px 14px;}
+.fs-eu h5{color:#0369a1;border-bottom-color:#bae6fd;}
+.fs-eu p{color:#0c4a6e;font-size:13px;}
+.ext-link{display:inline-block;margin-top:12px;font-size:12px;font-weight:700;color:var(--navy);text-decoration:none;}
+.ext-link:hover{text-decoration:underline;}
+.no-summ{color:var(--muted);font-size:13px;font-style:italic;padding:12px 0;}
+
+/* session blocks */
+details.sess-block{background:var(--paper);border:1px solid var(--border);border-left:4px solid var(--navy);border-radius:0 8px 8px 0;margin-bottom:10px;overflow:hidden;}
+details.sess-block:hover{box-shadow:0 2px 8px rgba(0,0,0,.06);}
+details.sess-block[open]{border-left-color:var(--gold);}
+.sess-sum{padding:14px 18px;cursor:pointer;list-style:none;user-select:none;}
+.sess-sum::-webkit-details-marker{display:none;}
+.sess-hd{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap;}
+.sess-date-chip{background:var(--navy);color:#fff;font-size:10px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:4px;white-space:nowrap;}
+details.sess-block[open] .sess-date-chip{background:var(--gold);}
+.sess-label{font-family:var(--font-h);font-size:14px;font-weight:900;color:var(--ink);}
+.sess-lead{font-size:13px;color:var(--ink2);line-height:1.55;margin-bottom:6px;}
+.sess-body{padding:0 18px 16px;border-top:1px solid var(--border);}
+.sess-lead-full{font-size:13px;color:var(--ink2);line-height:1.6;margin:12px 0;background:#f8fafc;border-left:3px solid var(--gold);padding:8px 12px;border-radius:0 6px 6px 0;}
+.sess-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0;}
+.sess-col{font-size:13px;}
+.sess-col ul{list-style:none;padding:0;}
+.sess-col li{padding:4px 0 4px 14px;position:relative;color:var(--ink2);border-bottom:1px solid #f3f4f6;font-size:13px;line-height:1.5;}
+.sess-col li:last-child{border-bottom:none;}
+.sess-col li::before{content:"·";position:absolute;left:2px;color:var(--navy);font-weight:700;font-size:15px;line-height:1.1;}
+.notable-callout{display:flex;gap:10px;align-items:flex-start;background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:10px 12px;margin:12px 0;}
+.notable-icon{font-size:16px;color:#d97706;flex-shrink:0;line-height:1.4;}
+.notable-callout h5{border-bottom-color:#fde68a;color:#92400e;}
+.notable-callout p,.notable-callout li{color:#78350f;font-size:13px;}
+.notable-callout ul{list-style:none;padding:0;}
+.notable-callout li{padding:3px 0 3px 14px;position:relative;}
+.notable-callout li::before{content:"·";position:absolute;left:2px;color:#d97706;font-weight:700;font-size:15px;line-height:1.1;}
+.parties-block{margin:12px 0;font-size:13px;}
+.sess-ft{margin-top:12px;padding-top:10px;border-top:1px solid var(--border);}
+
+/* landing track cards */
+.track-card{display:block;padding:20px 28px;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:background .1s;}
+.track-card:hover{background:var(--surf);}
+.track-card:last-of-type{border-bottom:none;}
+.track-label{font-size:10px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+.track-title{font-family:var(--font-h);font-size:18px;font-weight:900;color:var(--navy);letter-spacing:-.3px;line-height:1.3;margin-bottom:6px;}
+.track-desc{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px;}
+.track-latest{font-size:12px;color:var(--ink2);}
+.track-arrow{font-size:22px;color:var(--gold);font-weight:900;float:right;margin-top:-28px;}
+
+/* archive / intro */
+.arch-table{width:100%;border-collapse:collapse;}
+.arch-table th{padding:8px 0;text-align:left;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);border-bottom:1px solid var(--border);}
+.arch-table td{padding:12px 8px 12px 0;border-bottom:1px solid var(--border);font-size:13px;color:var(--ink2);}
+.arch-table tr:last-child td{border-bottom:none;}
+.arch-table a{color:var(--navy);font-weight:700;text-decoration:none;}
+.arch-table a:hover{text-decoration:underline;}
+.intro-block{padding:20px 28px;border-bottom:1px solid var(--border);font-size:14px;line-height:1.7;color:var(--ink);}
+.all-issues-wrap{padding:16px 28px;border-bottom:1px solid var(--border);}
+.all-issues-btn{width:100%;padding:13px;background:none;border:1.5px solid var(--navy);border-radius:3px;font-family:var(--font-h);font-size:11px;font-weight:900;color:var(--navy);cursor:pointer;text-align:center;letter-spacing:.14em;text-transform:uppercase;transition:background .15s,color .15s;}
+.all-issues-btn:hover{background:var(--navy);color:#fff;}
+.waitlist-section,.contact-section{padding:20px 28px;border-bottom:1px solid var(--border);}
+.waitlist-heading{font-family:var(--font-h);font-size:17px;font-weight:900;color:var(--ink);letter-spacing:-.2px;margin-bottom:8px;}
+.waitlist-body{font-size:14px;color:var(--ink2);line-height:1.6;margin-bottom:16px;}
+.waitlist-form{display:flex;gap:8px;margin-bottom:10px;}
+.waitlist-input{flex:1;padding:10px 12px;border:1px solid var(--border);border-radius:3px;font-family:var(--font-b);font-size:14px;color:var(--ink);min-width:0;}
+.waitlist-input:focus{outline:none;border-color:var(--navy);}
+.waitlist-btn{padding:10px 18px;background:var(--navy);color:#fff;border:none;border-radius:3px;font-family:var(--font-h);font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;white-space:nowrap;}
+.waitlist-btn:hover{background:#122348;}
+.waitlist-fine{font-size:12px;color:var(--muted-lt);line-height:1.5;}
+.waitlist-ok{display:none;font-size:14px;font-weight:700;color:#16a34a;margin-top:10px;}
+.contact-section p{font-size:14px;color:var(--ink2);line-height:1.6;}
+.contact-section a{color:var(--navy);font-weight:700;text-decoration:none;}
+.contact-section a:hover{text-decoration:underline;}
+
+@media(max-width:760px){
+  .wrapper{margin:0;border-radius:0;border-left:none;border-right:none;}
+  .masthead,.section,.nl-footer,.page-header,a.issue-row,.track-card,
+  .section-label-row,.intro-block,.waitlist-section,.contact-section,.all-issues-wrap{padding-left:16px;padding-right:16px;}
+  .masthead-pills{display:none;}
+  .sess-cols{grid-template-columns:1fr;}
+  .fs-winners ul{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+<div class="top-bar">
+  <nav class="site-nav">
+    <a href="../" class="active">ДВ Дайджест</a>
+    <a href="../../sessions/">Заседания</a>
+    <a href="https://bpdoodles.com">Basepoint Doodles</a>
+  </nav>
+  <span class="top-bar-tag">Парламентарни Doodles</span>
+</div>
+
+<div class="masthead">
+  <div class="masthead-logo">
+    <div class="masthead-left">
+      <span class="masthead-basepoint">Парламентарни</span>
+      <span class="masthead-tagline">Парламентарен дайджест</span>
+    </div>
+    <div class="masthead-divider"></div>
+    <span class="masthead-doodles">Doodles</span>
+  </div>
+  <div class="masthead-meta">
+    <span class="masthead-issue">ДВ Дайджест · Седмица 11 · 2026</span>
+    <span class="masthead-date">9–15 март 2026</span>
+    <div class="masthead-pills"><span class="masthead-pill">4 акта от НС</span><span class="masthead-pill">5 наредби/регулации</span></div>
+  </div>
+</div>
+<div class="section">
+
+<div class="subsection">
+  <div class="subsection-hd">
+    <span class="subsection-tag">01</span>
+    <span class="subsection-title">Народно събрание</span>
+    <span class="subsection-count">4 закони</span>
+  </div>
+  <div class="dv-grid">
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-zakon">ЗАКОН</span></div>
+      <span class="dv-meta">Бр.&nbsp;25 &middot; 2026-03-10</span>
+    </div>
+    <div class="dv-title">ЗАКОН за допълнение на Закона за достъп и разкриване на документите и за обявяване на принадлежност на български граждани към Държавна сигурност и разузнавателните служби на Българската народна армия</div>
+    <p class="dv-lead">Когато Комисията по досиетата проверява кандидати за изборни длъжности, тя вече трябва да посочва не само имената им, но и ЕГН-то и от коя партия, коалиция или инициативен комитет са издигнати.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Промяната засяга чл. 26, ал. 2 от Закона за досиетата – разпоредбата, по която се проверяват регистрирани кандидати за изборни длъжности за принадлежност към бившата Държавна сигурност.</li><li>Задължително ново изискване: в списъците с проверявани кандидати се вписват трите имена, ЕГН и партийната принадлежност (партия, коалиция или инициативен комитет).</li><li>Преди тази поправка не е имало изрично задължение да се указва от кого е издигнат даден кандидат, което е затруднявало публичното идентифициране на засегнатите лица в контекста на конкретни избори.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Гражданите – получават по-пълна и по-лесно проследима информация кой кандидат от коя политическа сила е проверяван и с какъв резултат.</li><li>Губят: Политически партии и кандидати, чиято евентуална принадлежност към ДС до момента е можела да се „загуби&quot; в анонимността на списъците.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Едва сега – близо 20 години след влизането в сила на закона – се въвежда изискването публично да се посочва партийната принадлежност на проверяваните кандидати, въпреки че смисълът на закона от самото начало е бил политическата прозрачност.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><ul><li>Влиза в сила от обнародването.</li></ul></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Законодателство за проверка на кандидати за публични длъжности за сътрудничество с комунистическите тайни служби съществува в редица постсоциалистически държави от ЕС – Чехия, Полша, Румъния и балтийските страни. България е сред страните, приели такъв закон сравнително късно (2006 г.), а настоящото допълнение за партийна идентификация няма директен аналог в европейската практика – повечето сравними режими се фокусират върху самия факт на сътрудничество, без да обвързват изрично резултата с партийния контекст на кандидата.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241741" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-zakon">ЗАКОН</span></div>
+      <span class="dv-meta">Бр.&nbsp;25 &middot; 2026-03-10</span>
+    </div>
+    <div class="dv-title">ЗАКОН за изменение и допълнение на Закона за публичното предлагане на ценни книжа</div>
+    <p class="dv-lead">Законът задължава широк кръг финансови субекти (публични дружества, инвестиционни посредници, застрахователи, пенсионни дружества, издатели на криптоактиви и др.) да се регистрират в системата за сигурно електронно връчване и да започнат да подават финансова информация чрез европейската единна точка за достъп (ESAP).</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Задължителен електронен профил в 3 месеца:</strong> Фондове, емитенти, публични дружества, упълномощени съветници, инвестиционни посредници, пазарни оператори, застрахователни брокери, пенсионноосигурителни дружества, издатели на криптоактиви и редица други субекти трябва да регистрират персонален профил в системата за сигурно електронно връчване в рамките на 3 месеца от влизането на закона в сила и да уведомят КФН за него в 7-дневен срок от регистрацията.</li><li><strong>Задължителен идентификационен код (LEI) до 9 януари 2030 г.:</strong> Емитенти, банки-емитенти на покрити облигации, инвестиционни посредници, пазарни оператори, застрахователи и пенсионни фондове, които нямат LEI код, трябва да го получат до тази дата.</li><li><strong>Информацията се подава едновременно с публикуването:</strong> При всяко оповестяване на регулирана информация (отчети, протоколи от ОС, търгови предложения, доклади за платежоспособност и др.) засегнатите субекти едновременно я подават до КФН/БНБ в машинночетим формат с метаданни – наименование, LEI код, размер, вид информация, наличие на лични данни.</li><li><strong>КФН и БНБ стават органи за събиране на данни за ESAP:</strong> И двете институции получават официалната роля на „органи за събиране на данни&quot; по европейския регламент – КФН за капиталовите пазари, застраховането и пенсиите; БНБ за банките и покритите облигации; Агенцията по вписванията – за финансовите отчети в търговския регистър.</li><li><strong>Санкциите по ЗПФИ се вдигат драстично и се деноминират в евро:</strong> Минималните глоби за нарушения при финансовите инструменти нарастват от левови суми в порядъка на 1 000–20 000 лв. до 500–5 000 евро (първо нарушение), а таванът скача до 2 500 000 евро или 5% от годишния оборот; при повторно – до 5 000 000 евро или 10% от оборота.</li><li><strong>Уведомяването от КФН се счита за извършено автоматично:</strong> Ако адресат не изтегли електронното съобщение в 7-дневен срок, уведомяването се смята за извършено в първия ден след изтичането на срока; при невъзможност – с публикуване на сайта на КФН, удостоверено с протокол.</li><li><strong>Публичните дружества не са длъжни да превеждат уведомления:</strong> При оповестяване на информация в областта на международните финанси е достатъчен английски език – превод на езика на КФН не се изисква.</li><li><strong>Застрахователни холдинги и Гаранционният фонд</strong> също получават задължение за електронен профил в системата за сигурно електронно връчване.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li><strong>Печелят:</strong> Инвеститори и регулатори – получават централизиран и стандартизиран достъп до финансова информация чрез ESAP; малките инвеститори могат по-лесно да сравняват дружества на европейско ниво.</li><li><strong>Губят:</strong> Финансовите субекти (публични дружества, застрахователи, пенсионни дружества, инвестиционни посредници, издатели на криптоактиви и др.) – поемат значителни административни разходи за регистрация, получаване на LEI кодове, технически адаптации и паралелно подаване на информация в машинночетим формат.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Санкциите по Закона за пазарите на финансови инструменти се конвертират от левове в евро и таванът им скача десетократно – до 2,5 млн. евро или 5% от годишния оборот на дружеството, което е рядко срещана промяна в наказателната скала на един финансов закон.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><ul><li><strong>3-месечен срок</strong> от влизане в сила: всички засегнати субекти регистрират профили в системата за електронно връчване и уведомяват КФН.</li><li><strong>До 9 януари 2028 г.:</strong> колективните инвестиционни схеми трябва да имат LEI код и да започнат подаване на проспекти и отчети чрез ESAP (от 10 януари 2028 г.); счетоводните финансови отчети на предприятията също постъпват в ESAP от 10 януари 2028 г.</li><li><strong>До 9 януари 2030 г.:</strong> всички останали категории субекти (публични дружества, застрахователи, банки, пенсионни фондове, финансови конгломерати, покрити облигации) трябва да имат LEI и да подават информация чрез ESAP, считано от 10 януари 2030 г.; Министърът на правосъдието привежда наредбата за търговския регистър в съответствие в 6 месеца от обнародването.</li></ul></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Законът транспонира Директива (ЕС) 2023/2864, която е задължителна за всички държави членки и е свързана с изграждането на общоевропейската единна точка за достъп ESAP – проект с краен срок на поетапно въвеждане 2028–2030 г. България е сред страните, въвеждащи директивата в рамките на предвидения срок, без значително закъснение. Специфичното за България е едновременното въвеждане на задължението за електронно връчване чрез националната система за сигурно електронно връчване, което е добавена национална мярка извън минималните изисквания на директивата.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241742" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-zakon">ЗАКОН</span></div>
+      <span class="dv-meta">Бр.&nbsp;25 &middot; 2026-03-10</span>
+    </div>
+    <div class="dv-title">ЗАКОН за ратифициране на Споразумението за партньорство между Европейския съюз и неговите държави членки, от една страна, и членовете на Организацията на държавите от Африка, Карибите и Тихоокеанския басейн, от друга страна, подписано в Самоа на 15</div>
+    <p class="dv-lead">България официално се присъединява към новото рамково споразумение за партньорство между ЕС и над 70 държави от Африка, Карибите и Тихоокеанския басейн.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Ратифицира се Споразумението от Самоа, подписано на 15 ноември 2023 г. – наследник на Споразумението от Котону (2000), което уреждаше отношенията ЕС–АКТ в продължение на над 20 години.</li><li>Споразумението обхваща партньорство с членовете на Организацията на държавите от Африка, Карибите и Тихоокеанския басейн – група от около 79 развиващи се държави.</li><li>Рамката покрива области като търговия, развитие, права на човека, климат и мир – ангажименти, към които България се обвързва с ратификацията.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Българските фирми и институции, работещи с АКТ държави, получават по-предвидима правна рамка; държавите от АКТ – достъп до европейски партньорства и финансиране.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Самоа, дало името на споразумението, е островна тихоокеанска държава с население под 200 000 души – нетипичен домакин за договор с глобално значение, обхващащ близо 1,5 милиарда души.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><p>Влиза в сила от обнародването.</p></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Споразумението от Самоа е общо за целия ЕС и всички държави членки трябва да го ратифицират, за да влезе в пълна сила – България не изостава критично, тъй като процесът тече паралелно в повечето страни членки. Самото споразумение се прилага временно на ниво ЕС още от подписването му, но националните ратификации са необходими за окончателното му активиране.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241743" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-zakon">ЗАКОН</span></div>
+      <span class="dv-meta">Бр.&nbsp;25 &middot; 2026-03-10</span>
+    </div>
+    <div class="dv-title">ЗАКОН за ратифициране на Споразумението между правителството на Република България и Организацията на обединените нации за образование, наука и култура (ЮНЕСКО) относно определянето на Центъра за подводна археология за институт от категория</div>
+    <p class="dv-lead">България официално признава Центъра за подводна археология в Созопол за международна институция под егидата на ЮНЕСКО с ново наименование „Институт за подводно наследство&quot;.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Ратифицира споразумение, подписано на 19 януари 2026 г. в Париж между България и ЮНЕСКО.</li><li>Центърът за подводна археология получава статут на институт от категория 2 под егидата на ЮНЕСКО – международно признание, което го нарежда сред специализираните глобални центрове на организацията.</li><li>Институтът приема официалното наименование „Институт за подводно наследство&quot;.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Центърът за подводна археология (и България като страна домакин) – получават международна легитимност, достъп до мрежата на ЮНЕСКО и по-лесно финансиране за проекти.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Центърът за подводна археология в Созопол е единствената такава специализирана институция под егидата на ЮНЕСКО в Черноморския регион.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><p>Влиза в сила от обнародването.</p></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Няма достатъчно сравнителни данни.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241744" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details></div>
+</div>
+<div class="subsection">
+  <div class="subsection-hd">
+    <span class="subsection-tag">03</span>
+    <span class="subsection-title">Министерства и ведомства</span>
+    <span class="subsection-count">2 споразумения · 1 наредба · 1 решение</span>
+  </div>
+  <div class="dv-grid">
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;26 &middot; 2026-03-13</span>
+    </div>
+    <div class="dv-title">Наредба за изменение и допълнение на Наредба № 76 от 12.06.2025 г. за таксите, събирани от Комисията за финансов надзор</div>
+    <div class="exec-organ">Комисия за финансов надзор</div>
+    <p class="dv-lead">Наредбата въвежда нови такси за дейности с криптоактиви и разширява таксовия режим за инвестиционни посредници, управляващи дружества и застрахователни посредници от трети държави.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Криптоактиви – нови такси за придобиване на дялове:</strong> Купуването на под 50% участие в доставчик на услуги за криптоактиви струва 1 500 евро (пряко) / 800 евро (непряко); над 50% – 2 900 евро (пряко) / 800 евро (непряко); увеличение на вече притежавано участие – 800 евро на лице.</li><li><strong>Криптоактиви – издатели на обезпечени токени (ART):</strong> Придобиване под 50% – 1 500 евро (пряко) / 800 евро (непряко); над 50% – 2 500 евро (пряко) / 800 евро (непряко); увеличение – 800 евро на лице.</li><li><strong>Инвестиционни посредници – нови такси:</strong> Повторно издаване на банков лиценз за инвестиционни услуги – 10 000 евро; уведомление за свободно предоставяне на услуги в друга държава членка – 100 евро на държава; уведомление за клон в друга държава членка – 800 евро на държава.</li><li><strong>Управляващи дружества и АИФ – над 13 нови такси:</strong> Предлагане на колективни инвестиционни схеми в чужбина – 250 евро на фонд/подфонд на държава; уведомление за свободно предоставяне на услуги – 120 евро на държава; уведомление за клон – 800 евро; одобрение за преобразуване на главна схема – 2 600 евро.</li><li><strong>Годишна надзорна такса за застрахователни посредници скача рязко:</strong> Таксата по чл. 20, ал. 1, т. 29 се вдига от 178,95 евро на 1 073,71 евро – ръст от почти шест пъти.</li><li><strong>Клонове от трети държави:</strong> Застрахователни брокери, агенти и посредници от трети държави, опериращи в България чрез клон, се включват изрично в обхвата на надзорните такси и годишните вноски наравно с местните участници.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li><strong>Печелят:</strong> КФН – значително разширена приходна база от нови категории поднадзорни лица и дейности.</li><li><strong>Губят:</strong> Компании, работещи с криптоактиви (доставчици на услуги и издатели на токени), управляващи дружества с трансгранична дейност и застрахователни посредници – всички понасят нови или значително по-високи такси.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Годишната такса за определена категория застрахователни посредници скача почти шест пъти – от 179 на над 1 000 евро – без преходен период или поетапно въвеждане.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Наредбата влиза в сила от датата на обнародването – 13 март 2026 г.</li><li>Не са предвидени гратисни периоди или преходни разпоредби.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241798" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<div class="dv-card dv-card-compact">
+  <div class="dv-sum-static">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-spor">СПОРАЗУМЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;25 &middot; 2026-03-10</span>
+    </div>
+    <div class="dv-title">СПОРАЗУМЕНИЕ за изменение и допълнение на Рамковото споразумение между правителството на Република България и Европейския инвестиционен фонд относно изпълнението на Инициативата JEREMIE в Република България (Четвърто споразумение за изменение)</div>
+    <div class="exec-organ">Министерство на иновациите и растежа</div>
+    <p class="dv-lead">България и Европейският инвестиционен фонд удължават рамковото споразумение за инициативата JEREMIE – европейски инструмент за финансиране на малкия и среден бизнес – с 10 години, до края на 2035 г.</p>
+    <div class="compact-bullets"><ul><li>Срокът на Рамковото споразумение JEREMIE, изтекъл на 31 декември 2025 г., се удължава с обратна сила от 1 януари 2026 г. до 31 декември 2035 г. – без допълнителни финансови вноски от страна на България (реинвестират се само вече натрупаните средства).</li><li>Министерство на иновациите и растежа е официално признато за правоприемник на бившите МИЕТ и МИЕ по всички документи в рамките на споразумението.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241755" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</div>
+
+<div class="dv-card dv-card-compact">
+  <div class="dv-sum-static">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-spor">СПОРАЗУМЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;25 &middot; 2026-03-10</span>
+    </div>
+    <div class="dv-title">СПОРАЗУМЕНИЕ за изменение и допълнение на Финансовото споразумение между правителството на Република България и Европейския инвестиционен фонд относно изпълнението на Инициативата JEREMIE в Република България (Четвърто споразумение за изменение)</div>
+    <div class="exec-organ">Министерство на иновациите и растежа</div>
+    <p class="dv-lead">Споразумението удължава мандата на Европейския инвестиционен фонд да управлява средствата по инициативата JEREMIE (предназначени за финансиране на малки и средни предприятия) с 10 години и намалява таксите за управление.</p>
+    <div class="compact-bullets"><ul><li>Срокът на Финансовото споразумение с ЕИФ за управление на средствата по JEREMIE се удължава от изтеклия 31 декември 2025 г. до 31 декември 2035 г., с обратна сила от 1 януари 2026 г.</li><li>Годишната такса за управление, плащана на ЕИФ, се намалява от 0,84% на 0,7% от Средствата; свързаните разходи падат от 0,23% на 0,13% – и двете промени важат само за напред, без обратно действие за натрупаните такси до 31 декември 2025 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241756" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</div>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;25 &middot; 2026-03-10</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ № 4552-НС от 6 март 2026 г. относно утвърждаване на образци на изборни книжа за произвеждане на изборите за народни представители на 19 април 2026 г.</div>
+    <div class="exec-organ">Централна избирателна комисия</div>
+    <p class="dv-lead">ЦИК утвърждава официалните образци на изборните книжа, които ще се използват на парламентарните избори на 19 април 2026 г.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Утвърдени са общо 22 образеца на изборни книжа (номера 63-НС до 84-НС включително), предназначени за произвеждане на изборите за народни представители.</li><li>Образците обхващат различни варианти на книжа, включително версии, обозначени с допълнителни символи (х, хм, чх, чхм), което вероятно указва специализирани формуляри за различни условия на гласуване (напр. машинно гласуване, гласуване в чужбина).</li><li>Книжата са задължителни за използване от всички секционни и районни избирателни комисии при организацията и провеждането на изборния ден.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Избирателните комисии и администрацията, ангажирана с изборите – разполагат с утвърдени стандартни документи навреме преди изборния ден.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от обнародването – 10 март 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241916" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<div class="dv-card dv-card-compact">
+  <div class="dv-sum-static">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-other">ДРУГО</span></div>
+      <span class="dv-meta">Бр.&nbsp;26 &middot; 2026-03-13</span>
+    </div>
+    <div class="dv-title"></div>
+    <div class="exec-organ">Комисия за регулиране на съобщенията</div>
+    <p class="dv-lead">Актът установява нови общи правила за това как пощенските оператори – включително куриерски фирми и „Български пощи&quot; – трябва да доставят пратки до гражданите и бизнеса в България.</p>
+    <div class="compact-bullets"><ul><li><strong>Минимум 2 служебни известия</strong> при недоставена пратка (препоръчана, с наложен платеж, с обявена стойност или колет) – операторът е длъжен да уведоми получателя поне два пъти, като срокът за вземане от офис е между 20 и 30 дни от постъпване в пощенската служба.</li><li><strong>Куриерите са длъжни да направят поне 1 опит за доставка</strong> на адреса; след неуспешен опит по вина на получателя (отсъствие, непоето обаждане) пратката се оставя в най-близкия офис или автоматична пощенска станция (АПС) и получателят се уведомява по SMS/Viber, имейл или телефон.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241820" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</div></div>
+</div>
+</div>
+
+<div class="nl-footer">
+  <span class="nl-footer-logo">Парламентарни Doodles</span>
+  <div class="nl-footer-links">
+    <a href="../">ДВ Дайджест</a>
+    <a href="../../sessions/">Заседания</a>
+    <a href="https://bpdoodles.com">Basepoint Doodles</a>
+  </div>
+</div>
+</div>
+</body>
+</html>

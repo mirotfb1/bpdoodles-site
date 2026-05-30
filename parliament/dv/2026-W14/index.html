@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="utf-8">
+<title>Парламентарни Doodles · ДВ Дайджест · Седмица 14</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --navy:#1B2E5E; --gold:#B5821A; --ink:#1C1C1C; --ink2:#444;
+  --muted:#888; --muted-lt:#AAA; --border:#E8E8E8; --surf:#F8F8F8; --paper:#FFF;
+  --font-d:'Caveat',cursive; --font-h:'Nunito','Arial Black',sans-serif;
+  --font-b:'Nunito',Arial,sans-serif;
+}
+body{font-family:var(--font-b);background:#F0F2F5;color:var(--ink);line-height:1.6;}
+.wrapper{max-width:740px;margin:32px auto;background:#fff;border:1px solid var(--border);border-radius:4px;overflow:hidden;}
+
+/* top bar */
+.top-bar{display:flex;justify-content:space-between;align-items:center;padding:8px 16px;background:var(--navy);}
+.site-nav{display:flex;gap:20px;align-items:center;}
+.site-nav a{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none;}
+.site-nav a:hover{color:rgba(255,255,255,.9);}
+.site-nav a.active{color:var(--gold);}
+.top-bar-tag{font-family:'Courier New',monospace;font-size:10px;color:rgba(255,255,255,.25);}
+
+/* masthead */
+.masthead{background:var(--navy);padding:24px 28px 20px;display:flex;justify-content:space-between;align-items:flex-end;border-bottom:3px solid var(--gold);}
+.masthead-logo{display:flex;flex-direction:row;align-items:center;}
+.masthead-left{display:flex;flex-direction:column;align-items:flex-end;padding-right:14px;}
+.masthead-basepoint{font-family:var(--font-h);font-size:22px;font-weight:900;color:#fff;letter-spacing:-.3px;line-height:1;}
+.masthead-tagline{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:4px;}
+.masthead-divider{width:2px;height:52px;background:rgba(255,255,255,.2);}
+.masthead-doodles{font-family:var(--font-d);font-size:48px;font-weight:700;color:var(--gold);line-height:1;padding-left:14px;}
+.masthead-meta{text-align:right;}
+.masthead-issue{font-size:13px;font-weight:700;color:rgba(255,255,255,.85);display:block;line-height:1.5;}
+.masthead-date{font-size:11px;color:rgba(255,255,255,.4);display:block;}
+.masthead-pills{margin-top:8px;display:flex;gap:6px;justify-content:flex-end;flex-wrap:wrap;}
+.masthead-pill{font-size:10px;font-weight:700;letter-spacing:.05em;background:rgba(255,255,255,.12);color:rgba(255,255,255,.6);padding:3px 8px;border-radius:3px;}
+
+/* content sections */
+.section{padding:20px 28px;border-bottom:1px solid var(--border);}
+.section:last-of-type{border-bottom:none;}
+
+/* subsection (within DV edition) */
+.subsection{margin-bottom:24px;}
+.subsection:last-child{margin-bottom:0;}
+.subsection-hd{display:flex;align-items:baseline;gap:10px;margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid var(--border);}
+.subsection-tag{font-size:10px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);}
+.subsection-title{font-family:var(--font-h);font-size:16px;font-weight:900;color:var(--navy);}
+.subsection-count{font-size:11px;color:var(--muted);margin-left:auto;}
+
+/* section label row */
+.section-label-row{padding:10px 28px 8px;background:var(--surf);border-bottom:1px solid var(--border);}
+.section-label{font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);}
+
+/* page header */
+.page-header{padding:20px 28px 16px;border-bottom:1px solid var(--border);}
+.page-title{font-family:var(--font-h);font-size:20px;font-weight:900;color:var(--ink);letter-spacing:-.3px;margin-bottom:6px;}
+.page-subtitle{font-size:13px;color:var(--muted);}
+
+/* issue list rows */
+a.issue-row{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 28px;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:background .1s;}
+a.issue-row:hover{background:var(--surf);}
+a.issue-row:last-of-type{border-bottom:none;}
+.issue-row-left{flex:1;}
+.issue-row-meta{font-family:'Courier New',monospace;font-size:10px;color:var(--muted-lt);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;}
+.issue-row-title{font-size:15px;font-weight:900;color:var(--ink);letter-spacing:-.2px;line-height:1.3;}
+.issue-row-desc{font-size:12px;color:var(--muted);margin-top:3px;}
+.issue-row-arrow{font-size:18px;color:var(--gold);font-weight:900;flex-shrink:0;}
+
+/* footer */
+.nl-footer{padding:14px 28px;background:var(--surf);border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
+.nl-footer-logo{font-family:var(--font-d);font-size:18px;font-weight:700;color:#CCC;}
+.nl-footer-links{font-size:11px;display:flex;gap:16px;}
+.nl-footer-links a{color:var(--muted-lt);text-decoration:none;}
+.nl-footer-links a:hover{color:var(--muted);}
+
+/* DV cards */
+.dv-grid{display:flex;flex-direction:column;gap:8px;}
+details.dv-card{background:var(--paper);border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:border-color .15s;}
+details.dv-card:hover{border-color:var(--gold);}
+details.dv-card[open]{border-color:var(--gold);}
+.dv-card-compact{background:var(--paper);border:1px solid var(--border);border-radius:8px;overflow:hidden;opacity:.9;}
+.dv-sum{padding:14px 16px;cursor:pointer;list-style:none;user-select:none;}
+.dv-sum::-webkit-details-marker{display:none;}
+.dv-sum-static{padding:14px 16px;}
+.dv-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+.dv-meta{font-size:11px;color:var(--muted);font-weight:700;}
+.dv-title{font-family:var(--font-h);font-size:13px;font-weight:900;color:var(--ink);line-height:1.4;letter-spacing:-.1px;margin-bottom:4px;}
+.exec-organ{font-size:11px;color:var(--muted);margin-bottom:6px;font-style:italic;}
+.dv-lead{font-size:13px;color:var(--ink2);line-height:1.55;margin-bottom:8px;}
+.compact-bullets ul{list-style:none;padding:0;margin-top:6px;}
+.compact-bullets li{padding:3px 0 3px 14px;position:relative;color:var(--ink2);font-size:12px;line-height:1.5;}
+.compact-bullets li::before{content:"·";position:absolute;left:2px;color:var(--gold);font-weight:700;font-size:15px;line-height:1.1;}
+.expand-hint{font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.06em;margin-top:4px;}
+details.dv-card[open] .expand-hint{display:none;}
+.dv-body{padding:0 16px 16px;border-top:1px solid var(--border);}
+
+/* badges */
+.badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;}
+.dv-badges{display:flex;gap:6px;align-items:center;flex-wrap:wrap;}
+.b-zakon   {background:#dbeafe;color:#1a56db;}
+.b-reshenie{background:#cffafe;color:#0a6e8a;}
+.b-ukaz    {background:#ede9fe;color:#7c3aed;}
+.b-decl    {background:#fef3c7;color:#92400e;}
+.b-post    {background:#d1fae5;color:#065f46;}
+.b-naredba {background:#fce7f3;color:#9d174d;}
+.b-pravilnik{background:#f3e8ff;color:#6b21a8;}
+.b-inst    {background:#fef9c3;color:#713f12;}
+.b-razp    {background:#e0f2fe;color:#0369a1;}
+.b-spor    {background:#fff7ed;color:#c2410c;}
+.b-other   {background:#f3f4f6;color:#6b7280;}
+.b-cat     {background:#f3f4f6;color:#555;}
+
+/* factsheet sections */
+.fs-sec{margin:12px 0;font-size:13px;}
+.fs-sec h5,.parties-block h5,.notable-callout h5,.sess-col h5{font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:8px;padding-bottom:5px;border-bottom:1px solid var(--border);}
+.fs-sec ul,.parties-block ul{list-style:none;padding:0;}
+.fs-sec li,.parties-block li{padding:4px 0 4px 16px;position:relative;color:var(--ink2);border-bottom:1px solid #f3f4f6;font-size:13px;line-height:1.5;}
+.fs-sec li:last-child,.parties-block li:last-child{border-bottom:none;}
+.fs-sec li::before{content:"·";position:absolute;left:3px;color:var(--gold);font-weight:700;font-size:16px;line-height:1.1;}
+.fs-sec p,.parties-block p{color:var(--ink2);font-size:13px;margin-bottom:4px;}
+.fs-winners ul{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.fs-winners li{padding:8px 10px 8px 24px;border-radius:6px;border-bottom:none !important;}
+.fs-winners li:first-child{background:#f0fdf4;}
+.fs-winners li:first-child::before{content:"✓";color:#16a34a;font-size:13px;top:8px;}
+.fs-winners li:nth-child(2){background:#fef2f2;}
+.fs-winners li:nth-child(2)::before{content:"✗";color:#dc2626;font-size:13px;top:8px;}
+.fs-notable{background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:12px 14px;}
+.fs-notable h5{border-bottom-color:#fde68a;color:#92400e;}
+.fs-notable li,.fs-notable p{color:#78350f;}
+.fs-notable li::before{color:#d97706;}
+.fs-eu{background:#f0f9ff;border-radius:8px;padding:12px 14px;}
+.fs-eu h5{color:#0369a1;border-bottom-color:#bae6fd;}
+.fs-eu p{color:#0c4a6e;font-size:13px;}
+.ext-link{display:inline-block;margin-top:12px;font-size:12px;font-weight:700;color:var(--navy);text-decoration:none;}
+.ext-link:hover{text-decoration:underline;}
+.no-summ{color:var(--muted);font-size:13px;font-style:italic;padding:12px 0;}
+
+/* session blocks */
+details.sess-block{background:var(--paper);border:1px solid var(--border);border-left:4px solid var(--navy);border-radius:0 8px 8px 0;margin-bottom:10px;overflow:hidden;}
+details.sess-block:hover{box-shadow:0 2px 8px rgba(0,0,0,.06);}
+details.sess-block[open]{border-left-color:var(--gold);}
+.sess-sum{padding:14px 18px;cursor:pointer;list-style:none;user-select:none;}
+.sess-sum::-webkit-details-marker{display:none;}
+.sess-hd{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap;}
+.sess-date-chip{background:var(--navy);color:#fff;font-size:10px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:4px;white-space:nowrap;}
+details.sess-block[open] .sess-date-chip{background:var(--gold);}
+.sess-label{font-family:var(--font-h);font-size:14px;font-weight:900;color:var(--ink);}
+.sess-lead{font-size:13px;color:var(--ink2);line-height:1.55;margin-bottom:6px;}
+.sess-body{padding:0 18px 16px;border-top:1px solid var(--border);}
+.sess-lead-full{font-size:13px;color:var(--ink2);line-height:1.6;margin:12px 0;background:#f8fafc;border-left:3px solid var(--gold);padding:8px 12px;border-radius:0 6px 6px 0;}
+.sess-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0;}
+.sess-col{font-size:13px;}
+.sess-col ul{list-style:none;padding:0;}
+.sess-col li{padding:4px 0 4px 14px;position:relative;color:var(--ink2);border-bottom:1px solid #f3f4f6;font-size:13px;line-height:1.5;}
+.sess-col li:last-child{border-bottom:none;}
+.sess-col li::before{content:"·";position:absolute;left:2px;color:var(--navy);font-weight:700;font-size:15px;line-height:1.1;}
+.notable-callout{display:flex;gap:10px;align-items:flex-start;background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:10px 12px;margin:12px 0;}
+.notable-icon{font-size:16px;color:#d97706;flex-shrink:0;line-height:1.4;}
+.notable-callout h5{border-bottom-color:#fde68a;color:#92400e;}
+.notable-callout p,.notable-callout li{color:#78350f;font-size:13px;}
+.notable-callout ul{list-style:none;padding:0;}
+.notable-callout li{padding:3px 0 3px 14px;position:relative;}
+.notable-callout li::before{content:"·";position:absolute;left:2px;color:#d97706;font-weight:700;font-size:15px;line-height:1.1;}
+.parties-block{margin:12px 0;font-size:13px;}
+.sess-ft{margin-top:12px;padding-top:10px;border-top:1px solid var(--border);}
+
+/* landing track cards */
+.track-card{display:block;padding:20px 28px;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:background .1s;}
+.track-card:hover{background:var(--surf);}
+.track-card:last-of-type{border-bottom:none;}
+.track-label{font-size:10px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+.track-title{font-family:var(--font-h);font-size:18px;font-weight:900;color:var(--navy);letter-spacing:-.3px;line-height:1.3;margin-bottom:6px;}
+.track-desc{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px;}
+.track-latest{font-size:12px;color:var(--ink2);}
+.track-arrow{font-size:22px;color:var(--gold);font-weight:900;float:right;margin-top:-28px;}
+
+/* archive / intro */
+.arch-table{width:100%;border-collapse:collapse;}
+.arch-table th{padding:8px 0;text-align:left;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);border-bottom:1px solid var(--border);}
+.arch-table td{padding:12px 8px 12px 0;border-bottom:1px solid var(--border);font-size:13px;color:var(--ink2);}
+.arch-table tr:last-child td{border-bottom:none;}
+.arch-table a{color:var(--navy);font-weight:700;text-decoration:none;}
+.arch-table a:hover{text-decoration:underline;}
+.intro-block{padding:20px 28px;border-bottom:1px solid var(--border);font-size:14px;line-height:1.7;color:var(--ink);}
+.all-issues-wrap{padding:16px 28px;border-bottom:1px solid var(--border);}
+.all-issues-btn{width:100%;padding:13px;background:none;border:1.5px solid var(--navy);border-radius:3px;font-family:var(--font-h);font-size:11px;font-weight:900;color:var(--navy);cursor:pointer;text-align:center;letter-spacing:.14em;text-transform:uppercase;transition:background .15s,color .15s;}
+.all-issues-btn:hover{background:var(--navy);color:#fff;}
+.waitlist-section,.contact-section{padding:20px 28px;border-bottom:1px solid var(--border);}
+.waitlist-heading{font-family:var(--font-h);font-size:17px;font-weight:900;color:var(--ink);letter-spacing:-.2px;margin-bottom:8px;}
+.waitlist-body{font-size:14px;color:var(--ink2);line-height:1.6;margin-bottom:16px;}
+.waitlist-form{display:flex;gap:8px;margin-bottom:10px;}
+.waitlist-input{flex:1;padding:10px 12px;border:1px solid var(--border);border-radius:3px;font-family:var(--font-b);font-size:14px;color:var(--ink);min-width:0;}
+.waitlist-input:focus{outline:none;border-color:var(--navy);}
+.waitlist-btn{padding:10px 18px;background:var(--navy);color:#fff;border:none;border-radius:3px;font-family:var(--font-h);font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;white-space:nowrap;}
+.waitlist-btn:hover{background:#122348;}
+.waitlist-fine{font-size:12px;color:var(--muted-lt);line-height:1.5;}
+.waitlist-ok{display:none;font-size:14px;font-weight:700;color:#16a34a;margin-top:10px;}
+.contact-section p{font-size:14px;color:var(--ink2);line-height:1.6;}
+.contact-section a{color:var(--navy);font-weight:700;text-decoration:none;}
+.contact-section a:hover{text-decoration:underline;}
+
+@media(max-width:760px){
+  .wrapper{margin:0;border-radius:0;border-left:none;border-right:none;}
+  .masthead,.section,.nl-footer,.page-header,a.issue-row,.track-card,
+  .section-label-row,.intro-block,.waitlist-section,.contact-section,.all-issues-wrap{padding-left:16px;padding-right:16px;}
+  .masthead-pills{display:none;}
+  .sess-cols{grid-template-columns:1fr;}
+  .fs-winners ul{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+<div class="top-bar">
+  <nav class="site-nav">
+    <a href="../" class="active">ДВ Дайджест</a>
+    <a href="../../sessions/">Заседания</a>
+    <a href="https://bpdoodles.com">Basepoint Doodles</a>
+  </nav>
+  <span class="top-bar-tag">Парламентарни Doodles</span>
+</div>
+
+<div class="masthead">
+  <div class="masthead-logo">
+    <div class="masthead-left">
+      <span class="masthead-basepoint">Парламентарни</span>
+      <span class="masthead-tagline">Парламентарен дайджест</span>
+    </div>
+    <div class="masthead-divider"></div>
+    <span class="masthead-doodles">Doodles</span>
+  </div>
+  <div class="masthead-meta">
+    <span class="masthead-issue">ДВ Дайджест · Седмица 14 · 2026</span>
+    <span class="masthead-date">30 март – 5 април 2026</span>
+    <div class="masthead-pills"><span class="masthead-pill">2 акта от НС</span><span class="masthead-pill">1 акт от МС</span><span class="masthead-pill">7 наредби/регулации</span></div>
+  </div>
+</div>
+<div class="section">
+
+<div class="subsection">
+  <div class="subsection-hd">
+    <span class="subsection-tag">01</span>
+    <span class="subsection-title">Народно събрание</span>
+    <span class="subsection-count">2 закони</span>
+  </div>
+  <div class="dv-grid">
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-zakon">ЗАКОН</span></div>
+      <span class="dv-meta">Бр.&nbsp;32 &middot; 2026-04-01</span>
+    </div>
+    <div class="dv-title">ЗАКОН за обществения транспорт</div>
+    <p class="dv-lead">Законът създава единна национална рамка за планиране, финансиране и контрол на целия обществен транспорт в България, въвежда цифрова система за единен билет и клирингова система за разпределение на приходите между превозвачи.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Единен електронен билет за всички видове транспорт:</strong> Въвежда се Национална система за единен превозен документ – един билет покрива автобус, влак, метро, трамвай, кораб и самолет в рамките на едно плащане. Превозвачите получават безплатен модул (включително мобилно приложение) за продажба и проверка на билети.</li><li><strong>Клирингова система:</strong> Приходите от продажба на единни билети се разпределят автоматично между участващите превозвачи; парите трябва да бъдат преведени в срок не по-дълъг от <strong>7 дни</strong> от разпределянето.</li><li><strong>Разписания с гарантирана свързаност:</strong> Националната транспортна схема изисква прекачване с не повече от <strong>15 минути</strong> престой; отвеждащият транспорт след влак – до <strong>20 минути</strong>, довеждащият – поне <strong>30 минути</strong> преди тръгване на влака. Целта е поне <strong>3 транспортни връзки дневно</strong> за всяко населено място.</li><li><strong>Транспортна бедност като правна категория:</strong> За първи път в закон се дефинира „транспортна бедност&quot; (липса на достъп, прекомерна цена, недостатъчна честота, физическа недостъпност) и се задължават компетентните органи да предприемат мерки срещу нея, включително превози по заявка за отдалечени места.</li><li><strong>Зарядни станции задължително в автогарите:</strong> Общините трябва да осигурят публично достъпни бързи зарядни станции (мин. <strong>22 kW</strong>) – от 1 станция (над 5 000 жители) до 10 станции (над 300 000 жители).</li><li><strong>Субсидии само за линии в Националната схема:</strong> Държавни субсидии и компенсации се изплащат единствено за превози, включени в утвърдената Национална транспортна схема. Линии с предимно исторически или туристически характер не получават средства.</li><li><strong>Система „бонус-малус&quot; за превозвачи:</strong> Качеството на услугата (точност, чистота, достъпност, емисии, жалби) се измерва с ключови показатели и коригира размера на печалбата, която не може да е под <strong>5%</strong> или над <strong>10%</strong>.</li><li><strong>Сериозни санкции за жп превозвачи:</strong> За неизплащане на авансово обезщетение при смърт на пътник – <strong>27 600 евро</strong> фиксирана санкция; за неизплащане при телесно увреждане – от <strong>6 900 до 13 800 евро</strong>; за некоординиране при извънредни ситуации – до <strong>10 500 евро</strong>.</li><li><strong>Санкции за автобусни превозвачи:</strong> За неиздаден билет по редовна линия – <strong>500 евро</strong>; нередовен пътник плаща <strong>десетократната</strong> стойност на билета; водач, отказал да превози пътник с редовен документ – <strong>250 евро</strong>.</li><li><strong>Договор за жп услуги до 15 години:</strong> Задължението за обществена жп услуга се възлага с договор до 15 години (с условие за валидна лицензия), актуализиран ежегодно; водните превози – до 5 години.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li><strong>Печелят:</strong> Пътници (особено в малки и отдалечени населени места), хора с увреждания и намалена подвижност, превозвачи с добро качество на услугата (бонуси), общини с ясна рамка за съвместно планиране.</li><li><strong>Губят:</strong> Превозвачи с лошо качество (малус, отнети субсидии), собственици на автогари (ценови таван и задължителен недискриминационен достъп), превозвачи по туристически/исторически линии (лишени от субсидии), системи за билети, несъвместими с националната платформа (задължителна оперативна съвместимост).</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Законът въвежда фиксирана санкция от <strong>27 600 евро</strong> за всеки случай на неизплатено авансово обезщетение при смърт на пътник в жп транспорт – конкретна сума в основен закон, вместо оставянето й на преценка на съда.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><ul><li>Законът влиза в сила <strong>14 дни след обнародването</strong> (около 15 април 2026 г.), а подзаконовите актове трябва да се издадат в <strong>4 месеца</strong>.</li><li>Министърът на транспорта изгражда Интелигентната система и клиринговата система в <strong>12 месеца</strong>; след още <strong>6 месеца</strong> се утвърждава Националната транспортна схема и съществуващите системи за билети се привеждат в съвместимост.</li><li>Разпоредбите за търговски жп превози (чл. 51) влизат в сила след <strong>12 месеца</strong>; части от санкциите за жп закъснения и обезщетения – от <strong>7 юни 2028 г.</strong> и <strong>4 декември 2029 г.</strong></li></ul></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Рамката за обществен транспорт, субсидии и права на пътниците е стандартна за ЕС и се основава на регламенти, задължителни за всички членки (1370/2007, 181/2011, 2021/782). Повечето западноевропейски страни отдавна имат интегрирани билетни системи и национални транспортни модели – България е сред по-късно действащите в тази посока. Специфичното за България е, че целият механизъм (единен билет, клиринг, схеми) се изгражда централизирано от нулата с един закон, докато в по-развитите системи (Германия, Нидерландия, Австрия) интеграцията е настъпила постепенно и децентрализирано.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=242220" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-zakon">ЗАКОН</span></div>
+      <span class="dv-meta">Бр.&nbsp;32 &middot; 2026-04-01</span>
+    </div>
+    <div class="dv-title">ЗАКОН за изменение и допълнение на Наказателния кодекс</div>
+    <p class="dv-lead">Законът затяга значително наказанията за сексуални престъпления срещу деца, трафик на хора и незаконно преминаване на граница, удължава давностните срокове за престъпления срещу малолетни и непълнолетни, и разширява конфискацията на превозни средства.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Давност за престъпления срещу деца:</strong> при престъпления срещу малолетни и непълнолетни (глави 2 и 4 от НК) давността вече не тече от деня на деянието, а от момента, в който жертвата навърши 18 години – ключова промяна, която дава повече време за наказателно преследване.</li><li><strong>Блудство с дете под 10 години</strong> (чл. 149): добавена е изрична квалификация за жертви под 10-годишна възраст, което води до по-тежко наказание по ал. 4.</li><li><strong>Принуда към полов акт</strong> (чл. 150): новата ал. 3 предвижда 3 до 15 г. затвор при групово деяние, повторност или жертва, неразбираща значението на случващото се; новата ал. 4 – 5 до 20 г. при множество жертви, тежка телесна повреда, опит за самоубийство или опасен рецидив.</li><li><strong>Полово сношение с лице под 14 г.</strong> (чл. 151): горната граница на наказанието по ал. 2 скача от 10 на 15 г.; добавена е повторността като квалифициращо обстоятелство; въведена е нова ал. 4 с 5 до 20 г. за най-тежките случаи (множество жертви, тежка повреда, рецидив).</li><li><strong>Трафик на хора и сексуална експлоатация</strong> (чл. 155а–155в, 157, 158а): масово покачване на минималните и максималните наказания – напр. по чл. 155а от „3–10 г.&quot; на „5–12 г.&quot;, по чл. 158а ал. 6 максимумът скача от 12 на 20 г.; глобите по чл. 155а се удвояват (от 10 000–20 000 лв. на 20 000–50 000 лв.).</li><li><strong>Разпространение на порнография</strong> (чл. 154а, 155): въведен е задължителен минимум от 1 г. (преди – „до 3 г.&quot;); глобата по чл. 155 ал. 1 расте от 3 000 на 10 000 лв. максимум.</li><li><strong>Незаконно превеждане на хора през граница</strong> (чл. 159): наказанията скачат драстично по всички алинеи – напр. ал. 4 от „3–6 г.&quot; на „5–10 г.&quot;, ал. 5 от „3–10 г.&quot; на „5–15 г.&quot;; глобите се утрояват и вече имат задължителни минимуми.</li><li><strong>Конфискация на превозни средства</strong> (чл. 280, 281, 343, 343б): при незаконно превеждане на хора и шофиране след употреба на алкохол/наркотици – ако колата не е собственост на извършителя или е съсобственост, съдът присъжда нейната <strong>парична равностойност</strong> вместо да я отнема; правилото важи и за кораби и въздухоплавателни средства.</li><li><strong>Нелегално изхвърляне на отпадъци</strong> (чл. 353б и 353в): криминализира се изхвърлянето на битови, производствени или строителни отпадъци „в големи количества&quot; на неразрешени места; за опасни отпадъци минимумът скача от „до 5 г.&quot; на „1–6 г.&quot;, а глобите растат от 20 000 на 30 000 лв. (ал. 1) и от 30 000 на 40 000 лв. (ал. 2).</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li><strong>Печелят:</strong> деца и непълнолетни жертви на сексуални престъпления (по-дълга давност, по-строги наказания); обществото (по-твърда реакция срещу трафик на хора и нелегална миграция); държавата (разширена конфискация и парична равностойност).</li><li><strong>Губят:</strong> извършители на сексуални и трафик-престъпления (значително по-тежки санкции); нарушители на режима за отпадъци (вече рискуват реална присъда, не само глоба).</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>При конфискация на превозно средство, което не е собственост на осъдения, съдът не просто се отказва от отнемането – той е длъжен да присъди паричната му равностойност, което на практика означава, че осъденият плаща „цената&quot; на чуждата кола от собствения си джоб.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><ul><li>Всички неприключени наказателни производства към датата на влизане в сила се довършват по <strong>старите правила</strong> – новите по-тежки наказания не се прилагат с обратна сила.</li><li>Законът влиза в сила от обнародването (1 април 2026 г.), без гратисен период.</li></ul></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Удължаването на давността за сексуални престъпления срещу деца до навършване на тяхното пълнолетие е утвърдена практика в повечето западноевропейски страни (Германия, Франция, Нидерландия) и е препоръчано от Конвенцията на Съвета на Европа от Лансароте (2007 г.). България изостава в прилагането на тези стандарти и сегашната промяна я доближава до европейската норма. Криминализирането на масовото нелегално изхвърляне на отпадъци също съответства на изискванията на Директива 2008/99/ЕО за наказателноправна защита на околната среда.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=242222" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details></div>
+</div>
+<div class="subsection">
+  <div class="subsection-hd">
+    <span class="subsection-tag">02</span>
+    <span class="subsection-title">Министерски съвет</span>
+    <span class="subsection-count">1 постановление</span>
+  </div>
+  <div class="dv-grid">
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;31 &middot; 2026-03-31</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 41 ОТ 27 МАРТ 2026 Г. за изменение и допълнение на Постановление № 38 на Министерския съвет от 2026 г. за приемане на план-сметка за разходите/трансферите по подготовката и произвеждането на изборите за народни представители на 19 април 2026 г.</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Бюджетът за изборите за народни представители на 19 април 2026 г. се увеличава с 400 000 лв. за закупуване на паравани за гласуване с хартиени бюлетини.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Общият бюджет за подготовка и произвеждане на изборите нараства от 65 635 300 лв. на 66 035 300 лв. – ръст от 400 000 лв.</li><li>Създава се нова бюджетна позиция: 400 000 лв. целево за изработка и доставка на паравани за гласуване с хартиени бюлетини.</li><li>Разходите по перо № 2 (в което попада новата позиция) се увеличават от 5 100 000 лв. на 5 500 000 лв.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Изпълнителите, спечелили поръчката за доставка на паравани; избирателите, тъй като се осигурява физическа защита на тайната на вота при хартиено гласуване.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Отделното финансиране на паравани като самостоятелна бюджетна позиция е косвен сигнал, че към датата на приемане на първоначалния бюджет тази нужда не е била предвидена – само три седмици преди изборния ден.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>От деня на обнародването – 31 март 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=242355" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details></div>
+</div>
+<div class="subsection">
+  <div class="subsection-hd">
+    <span class="subsection-tag">03</span>
+    <span class="subsection-title">Министерства и ведомства</span>
+    <span class="subsection-count">5 наредби · 2 решения</span>
+  </div>
+  <div class="dv-grid">
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;31 &middot; 2026-03-31</span>
+    </div>
+    <div class="dv-title">Наредба за изменение и допълнение на Наредба № 45 от 17 април 2025 г. относно установяване и регламентиране на правоотношенията на Българската народна банка с контрагенти по парична политика</div>
+    <div class="exec-organ">Българска народна банка</div>
+    <p class="dv-lead">Наредбата прави три терминологични и структурни корекции в правилата за отношенията на БНБ с контрагентите по парична политика, без да въвежда нови задължения или права за бизнеса и гражданите.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Терминът „нетиране&quot; в правилата за сделки с контрагенти се уточнява като „приключващо нетиране&quot; – прецизира се видът на механизма за прихващане при прекратяване на договори.</li><li>Отменя се една от дефинициите в допълнителната разпоредба (т. 14), което означава, че съответното понятие вече не се нуждае от самостоятелно определение в наредбата.</li><li>Премахва се конкретна подточка от друга дефиниция (т. 30, буква „г&quot;), стеснявайки обхвата на съответното понятие.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Банки и финансови институции – контрагенти на БНБ по парична политика, тъй като терминологията се привежда в по-голяма правна яснота.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от 30 март 2026 г. – един ден преди официалното обнародване в Държавен вестник.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=242369" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;33 &middot; 2026-04-03</span>
+    </div>
+    <div class="dv-title">Наредба за изменение и допълнение на Наредба № 10 от 2003 г. за защита на работещите от рискове, свързани с експозиция на канцерогени, мутагени или токсични за репродукцията вещества при работа</div>
+    <div class="exec-organ">Министерство на труда и социалната политика и Министерство на здравеопазването</div>
+    <p class="dv-lead">Наредбата въвежда значително по-строги норми за допустимо олово в кръвта на работещите и единна гранична стойност за диизоцианати, за да приведе България в съответствие с европейска директива от 2024 г.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Олово в кръвта – нова дългосрочна норма:</strong> От 1 януари 2029 г. биологичната гранична стойност спада от 30 на <strong>15 µg Pb/100 ml кръв</strong> за всички работещи, а за жени в детеродна възраст задължителното медицинско наблюдение се задейства вече при <strong>4,5 µg Pb/100 ml кръв</strong>.</li><li><strong>Преходна норма за олово до края на 2028 г.:</strong> До 31 декември 2028 г. задължителната стойност остава <strong>30 µg Pb/100 ml кръв</strong>; работници с нива между 30 и 70 µg (от стара експозиция) могат да продължат работа при редовен медицински контрол и доказана низходяща тенденция.</li><li><strong>Медицинско наблюдение за олово се задейства при:</strong> концентрация на олово във въздуха над <strong>0,015 mg/m³</strong> (претеглена за 40-часова работна седмица) или индивидуално измерено ниво над <strong>9 µg Pb/100 ml кръв</strong>.</li><li><strong>Гранична стойност за въздушна експозиция на олово:</strong> Определена на <strong>0,03 mg/m³</strong>; оловото е класифицирано като непрагово токсично за репродукцията вещество.</li><li><strong>Диизоцианати – нова единна норма от 2029 г.:</strong> Граничната стойност е <strong>0,006 mg/m³</strong> (8-часова) и <strong>0,012 mg/m³</strong> (краткосрочна); веществата носят предупреждение за кожна и дихателна сенсибилизация.</li><li><strong>Диизоцианати – преходни стойности до края на 2028 г.:</strong> По-меки прагове от <strong>0,010 mg/m³</strong> (8 ч.) и <strong>0,020 mg/m³</strong> (краткосрочна).</li><li><strong>Никел – нов биологичен маркер:</strong> Въвежда се гранична стойност за никел в урина от <strong>45 µg/l</strong>, измерена след няколко работни смени.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li><strong>Печелят:</strong> Работещи в металургия, производство на батерии, бои, заваряване и обработка на пластмаси – получават по-строга защита от хронично натравяне с олово и сенсибилизация от диизоцианати; особено защитени са жените в детеродна възраст.</li><li><strong>Губят:</strong> Работодатели в засегнатите сектори – поемат разходи за по-чести биологични мониторинги, евентуално преустройство на работни процеси и отстраняване на работници, чиито нива надвишават новите прагове.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Нормата за олово в кръвта на жени в детеродна възраст (4,5 µg/100 ml) е два пъти по-строга от общата за всички работещи (9 µg/100 ml) – рядко срещана полово диференцирана биологична гранична стойност в трудовото законодателство.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>По-голямата част от наредбата влиза в сила на <strong>9 април 2026 г.</strong></li><li>Новата биологична норма за олово (15 µg/100 ml) и окончателните норми за диизоцианати влизат в сила на <strong>1 януари 2029 г.</strong></li><li>До <strong>31 декември 2028 г.</strong> се прилагат по-меките преходни стойности – 30 µg/100 ml за олово в кръвта и 0,010/0,020 mg/m³ за диизоцианати.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=242243" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;33 &middot; 2026-04-03</span>
+    </div>
+    <div class="dv-title">НАРЕДБА № 34 от 23 март 2026 г. за придобиване на квалификация по професията „Спортен масаж“</div>
+    <div class="exec-organ">Министерство на образованието и науката</div>
+    <p class="dv-lead">Наредбата въвежда държавен образователен стандарт за професията „Спортен масаж&quot;, определяйки изискванията за обучение и придобиване на четвърта степен на професионална квалификация.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Създава се официална професия с код 101402 „Спортен масаж&quot; в област „Персонални услуги&quot;, направление „Спорт&quot; – вече може да се придобива призната държавна квалификация по нея.</li><li>Обучението води до <strong>четвърта степен на професионална квалификация</strong> – най-високата степен в системата за професионално образование, което поставя спортния масаж наравно с технически и управленски специалности.</li><li>Кандидатите за обучение трябва да са навършили <strong>най-малко 16 години</strong>.</li><li>Стандартът задава конкретни изисквания към: съдържанието на учебните планове и програми, материалната база, квалификацията на обучаващите и критериите за оценяване.</li><li>Обучението обхваща три вида подготовка: обща, отраслова и специфична професионална, с ясно дефинирани компетентности, необходими за упражняване на професията.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Хора, желаещи да работят като спортни масажисти – получават официална, призната квалификация; учебни заведения и центрове за обучение, които могат да лицензират програми по новата специалност.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Спортният масаж се легитимира като четвърта степен квалификация – същото ниво като редица инженерни и педагогически специалности, което е нетипично висок статут за масажна дейност.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от датата на обнародване – 3 април 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=242257" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;33 &middot; 2026-04-03</span>
+    </div>
+    <div class="dv-title">НАРЕДБА № 35 от 23 март 2026 г. за придобиване на квалификация по професията „Фитнес и здраве“</div>
+    <div class="exec-organ">Министерство на образованието и науката</div>
+    <p class="dv-lead">Въвежда се държавен образователен стандарт за нова професия „Фитнес и здраве&quot; с четвърта степен на професионална квалификация, а едновременно се коригират технически грешки в 29 по-рано издадени наредби за професионално образование.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Новата професия „Фитнес и здраве&quot; (код 101204) получава официален държавен стандарт – четвърта (най-висока за средното ниво) степен на професионална квалификация, в рамките на направление „Фризьорски и козметични услуги&quot;.</li><li>За обучение по тази професия могат да кандидатстват лица, навършили 16 години; стандартът определя изискванията към кандидатите, учебното съдържание, материалната база и обучаващите.</li><li>Масова техническа корекция: 14 наредби за транспортни и технически специалности (хибридни коли, железопътна техника, корабостроене, пристанищна механизация и др.) сменят областта на образование от „Транспортни средства&quot; на „Техника&quot; – за да съответстват на актуалния Списък на професиите.</li><li>В 25 наредби (от края на 2025 г. и началото на 2026 г.) се заличава специален срок за лица над 16 г. („от 1 януари 2026 г.&quot;), като обучението се подчинява само на общия режим за влизане в сила.</li><li>В две наредби (за „Козметични услуги&quot; и „Фризьорство&quot;) се поправя грешно понятие: „центровете за професионална квалификация&quot; стават „центровете за професионално обучение&quot;.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Желаещите да се обучават и работят легитимно като фитнес специалисти – вече има ясна правна рамка и призната квалификация; центровете за професионално обучение получават коректна правна база за съществуващи програми.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Наредбата за изцяло новата професия „Фитнес и здраве&quot; е поставена в направление „Фризьорски и козметични услуги&quot; – класификационен избор, който може да изглежда нелогичен за сектора на физическата активност и здравето.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Наредбата влиза в сила от датата на обнародване – 3 април 2026 г.</li><li>Корекциите в останалите 29 наредби са в сила незабавно от същата дата.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=242258" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;33 &middot; 2026-04-03</span>
+    </div>
+    <div class="dv-title">Наредба за изменение и допълнение на Наредба № 1 от 2020 г. за изискванията за дейността на здравните медиатори</div>
+    <div class="exec-organ">Министерство на здравеопазването</div>
+    <p class="dv-lead">Наредбата разширява правомощията на здравните медиатори, въвежда областни координатори и задължителна електронна система за отчитане на дейността им.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Здравните медиатори вече могат да работят и в болници – обясняват на пациентите как се постъпва и изписва, помагат с документи, разясняват болничния ред и информацията от лекарите за диагнозата и лечението.</li><li>За всяка от 28-те области се назначава областен координатор – здравен медиатор с надзорни и наставнически функции: обучава новите колеги на терен, участва в подбора им и организира регулярни срещи за надграждане на знанията.</li><li>Всяко извършено действие по здравна медиация трябва да се въведе в нова електронна информационна система в срок до 5 работни дни; данните се потвърждават от прекия ръководител и заместват досегашното хартиено отчитане.</li><li>Годишният работен план на медиаторите вече се съгласува с регионалната здравна инспекция и трябва да е готов преди началото на съответната календарна година.</li><li>Кметът е задължен да осигури транспорт на медиатора, когато трябва да работи в населено място в общината, различно от основното му месторабота.</li><li>Кметът изготвя ежегоден доклад за дейността на медиаторите съвместно с регионалната здравна инспекция и го изпраща в Министерството на здравеопазването до края на януари на следващата година.</li><li>Терминът „тютюнопушене&quot; в задълженията на медиаторите е разширен до „употреба на тютюневи и свързани с тях изделия&quot; (включва електронни цигари и подгряван тютюн).</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Пациенти от уязвими общности, които вече ще получават помощ и в болнична среда; здравните медиатори, чиято роля и институционална подкрепа се разширяват.</li><li>Губят: Общините – поемат допълнително задължение за транспорт и по-тежки изисквания за планиране и отчетност без видима нова финансова компенсация.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Списъкът с областни координатори не се изготвя от държавен орган, а по предложение на неправителствена организация, имаща отношение към дейността на медиаторите – нетипична делегация на публична функция към НПО сектора.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Повечето промени влизат в сила на 10 април 2026 г. (7 дни след обнародването).</li><li>Областните координатори и включването им в комисиите за подбор влизат в сила два месеца след обнародването на Закона за държавния бюджет за 2026 г. (датата все още не е известна).</li><li>Преходни срокове: годишният план за 2026 г. се изготвя в рамките на 1 месец от обнародването; докладът за 2025 г. се представя в Министерството също в рамките на 1 месец от обнародването.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=242407" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;31 &middot; 2026-03-31</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ № 12004 от 26 ноември 2025 г. по административно дело № 4870 от 2025 г.</div>
+    <div class="exec-organ">Върховен административен съд (четвърто отделение)</div>
+    <p class="dv-lead">Съдът отменя конкретна разпоредба от Наредбата за опаковките и отпадъците от опаковки, защото тя е приета при сериозни процедурни нарушения, включително непълни мотиви и нередовна обществена консултация.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Отменена е разпоредбата на чл. 24, ал. 1, т. 4, буква „а&quot; от Наредбата за опаковките и отпадъците от опаковки – частта, уреждаща изискванията към системите за разделно събиране, организирани от организациите по оползотворяване.</li><li>Основната причина за отмяната е процедурна: докладът на вносителя е публикуван за обществено обсъждане 8 дни по-късно от самия проект на наредбата, което е осакатило правото на заинтересованите да формират информирана позиция.</li><li>Второ нарушение: докладът, с който е внесен проектът, не съдържа задължителните мотиви – липсват анализ на финансовите последици, очакваните резултати и реален анализ за съответствие с правото на ЕС.</li><li>Жалбоподателят „Еко партнърс България&quot; АД – организация по оползотворяване на отпадъци от опаковки с разрешение, валидно до 31.12.2026 г. – е доказал правен интерес, тъй като отмененото правило пряко регулира дейността му.</li><li>Министерският съвет е осъден да плати на дружеството разноски от 80 лв. (50 лв. държавна такса + 30 лв. такса за обнародване в ДВ).</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Организациите по оползотворяване на отпадъци от опаковки, за които отпада конкретното задължение по отменената разпоредба; косвено – всички, чиято дейност е регулирана от наредбата, тъй като се утвърждава принципът за пълноценно обществено обсъждане.</li><li>Губят: Министерският съвет – отменена е негова наредба и е осъден да плати разноски.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Съдът отменя разпоредбата единствено на процедурни основания – непълни мотиви и закъсняло публикуване на доклада – без изобщо да разглежда дали самото съдържание на нормата противоречи на закона.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Решението подлежи на обжалване пред петчленен състав на ВАС в 14-дневен срок от съобщаването му на страните.</li><li>При влизане в сила отменената разпоредба престава да съществува и Министерският съвет е длъжен да проведе предвидената процедура по уведомяване и обнародване на отмяната.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=242175" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;31 &middot; 2026-03-31</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ № 2889 от 16 март 2026 г. по административно дело № 818 от 2026 г.</div>
+    <div class="exec-organ">Върховен административен съд (петчленен състав – I колегия)</div>
+    <p class="dv-lead">Съдът окончателно потвърждава отмяната на изискването организациите за рециклиране на опаковки да притежават официално разрешение за въвеждане в експлоатация на съоръженията си за предварително третиране на отпадъци.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Разпоредбата на чл. 24, ал. 1, т. 4, буква „а&quot; от Наредбата за опаковките и отпадъците от опаковки (ПМС № 271/2012 г.) е окончателно отменена – организациите по оползотворяване вече не са задължени по тази норма да имат издадено разрешение за въвеждане в експлоатация на съоръженията за сепариране и предварително третиране.</li><li>Основанието за отмяна е процедурно: докладът на вносителя е публикуван 8 дни след проекта на наредбата (едва на 27 септември 2012 г., вместо едновременно на 19 септември), което е нарушило правото на заинтересованите страни да се запознаят с мотивите преди изтичане на 14-дневния срок за становища.</li><li>Докладът към наредбата не е съдържал задължителните елементи: липсвали са конкретни мотиви защо чл. 23, 24 и 25 влизат в сила по-късно (от 1 януари 2013 г.), липсвал е анализ на финансовите резултати (само лаконично „не се изискват средства от бюджета&quot;), липсвал е реален анализ за съответствие с европейското право.</li><li>Министерският съвет е обжалвал отмяната пред петчленен състав, но жалбата е отхвърлена като неоснователна – решението е окончателно и не подлежи на обжалване.</li><li>Министерският съвет е осъден да плати на „Еко партнърс България&quot; АД съдебни разноски в размер на 100 евро.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Организациите по оползотворяване на отпадъци от опаковки (като „Еко партнърс България&quot; АД) – отпада конкретно административно изискване за разрешение за експлоатация на съоръженията им.</li><li>Губят: Министерският съвет – касационната жалба е отхвърлена и е осъден за разноски; регулаторната рамка за опаковки получава празнина, която ще трябва да бъде запълнена с нова, процедурно издържана наредба.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Наредбата е приета през 2012 г. и е отменена в частта си заради процедурен пропуск от осем дни при публикуването на доклада – грешка в нормотворческия процес, довела 13 години по-късно до окончателна съдебна отмяна.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Решението е окончателно от датата на постановяването му – 16 март 2026 г.</li><li>Отмяната на чл. 24, ал. 1, т. 4, буква „а&quot; от Наредбата поражда действие незабавно; Министерският съвет следва да приеме нова уредба по законосъобразен ред, ако желае да запази подобно изискване.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=242176" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details></div>
+</div>
+</div>
+
+<div class="nl-footer">
+  <span class="nl-footer-logo">Парламентарни Doodles</span>
+  <div class="nl-footer-links">
+    <a href="../">ДВ Дайджест</a>
+    <a href="../../sessions/">Заседания</a>
+    <a href="https://bpdoodles.com">Basepoint Doodles</a>
+  </div>
+</div>
+</div>
+</body>
+</html>

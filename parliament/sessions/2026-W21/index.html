@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="utf-8">
+<title>Парламентарни Doodles · Заседания · Седмица 21</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --navy:#1B2E5E; --gold:#B5821A; --ink:#1C1C1C; --ink2:#444;
+  --muted:#888; --muted-lt:#AAA; --border:#E8E8E8; --surf:#F8F8F8; --paper:#FFF;
+  --font-d:'Caveat',cursive; --font-h:'Nunito','Arial Black',sans-serif;
+  --font-b:'Nunito',Arial,sans-serif;
+}
+body{font-family:var(--font-b);background:#F0F2F5;color:var(--ink);line-height:1.6;}
+.wrapper{max-width:740px;margin:32px auto;background:#fff;border:1px solid var(--border);border-radius:4px;overflow:hidden;}
+
+/* top bar */
+.top-bar{display:flex;justify-content:space-between;align-items:center;padding:8px 16px;background:var(--navy);}
+.site-nav{display:flex;gap:20px;align-items:center;}
+.site-nav a{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none;}
+.site-nav a:hover{color:rgba(255,255,255,.9);}
+.site-nav a.active{color:var(--gold);}
+.top-bar-tag{font-family:'Courier New',monospace;font-size:10px;color:rgba(255,255,255,.25);}
+
+/* masthead */
+.masthead{background:var(--navy);padding:24px 28px 20px;display:flex;justify-content:space-between;align-items:flex-end;border-bottom:3px solid var(--gold);}
+.masthead-logo{display:flex;flex-direction:row;align-items:center;}
+.masthead-left{display:flex;flex-direction:column;align-items:flex-end;padding-right:14px;}
+.masthead-basepoint{font-family:var(--font-h);font-size:22px;font-weight:900;color:#fff;letter-spacing:-.3px;line-height:1;}
+.masthead-tagline{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:4px;}
+.masthead-divider{width:2px;height:52px;background:rgba(255,255,255,.2);}
+.masthead-doodles{font-family:var(--font-d);font-size:48px;font-weight:700;color:var(--gold);line-height:1;padding-left:14px;}
+.masthead-meta{text-align:right;}
+.masthead-issue{font-size:13px;font-weight:700;color:rgba(255,255,255,.85);display:block;line-height:1.5;}
+.masthead-date{font-size:11px;color:rgba(255,255,255,.4);display:block;}
+.masthead-pills{margin-top:8px;display:flex;gap:6px;justify-content:flex-end;flex-wrap:wrap;}
+.masthead-pill{font-size:10px;font-weight:700;letter-spacing:.05em;background:rgba(255,255,255,.12);color:rgba(255,255,255,.6);padding:3px 8px;border-radius:3px;}
+
+/* content sections */
+.section{padding:20px 28px;border-bottom:1px solid var(--border);}
+.section:last-of-type{border-bottom:none;}
+
+/* subsection (within DV edition) */
+.subsection{margin-bottom:24px;}
+.subsection:last-child{margin-bottom:0;}
+.subsection-hd{display:flex;align-items:baseline;gap:10px;margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid var(--border);}
+.subsection-tag{font-size:10px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);}
+.subsection-title{font-family:var(--font-h);font-size:16px;font-weight:900;color:var(--navy);}
+.subsection-count{font-size:11px;color:var(--muted);margin-left:auto;}
+
+/* section label row */
+.section-label-row{padding:10px 28px 8px;background:var(--surf);border-bottom:1px solid var(--border);}
+.section-label{font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);}
+
+/* page header */
+.page-header{padding:20px 28px 16px;border-bottom:1px solid var(--border);}
+.page-title{font-family:var(--font-h);font-size:20px;font-weight:900;color:var(--ink);letter-spacing:-.3px;margin-bottom:6px;}
+.page-subtitle{font-size:13px;color:var(--muted);}
+
+/* issue list rows */
+a.issue-row{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 28px;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:background .1s;}
+a.issue-row:hover{background:var(--surf);}
+a.issue-row:last-of-type{border-bottom:none;}
+.issue-row-left{flex:1;}
+.issue-row-meta{font-family:'Courier New',monospace;font-size:10px;color:var(--muted-lt);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;}
+.issue-row-title{font-size:15px;font-weight:900;color:var(--ink);letter-spacing:-.2px;line-height:1.3;}
+.issue-row-desc{font-size:12px;color:var(--muted);margin-top:3px;}
+.issue-row-arrow{font-size:18px;color:var(--gold);font-weight:900;flex-shrink:0;}
+
+/* footer */
+.nl-footer{padding:14px 28px;background:var(--surf);border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
+.nl-footer-logo{font-family:var(--font-d);font-size:18px;font-weight:700;color:#CCC;}
+.nl-footer-links{font-size:11px;display:flex;gap:16px;}
+.nl-footer-links a{color:var(--muted-lt);text-decoration:none;}
+.nl-footer-links a:hover{color:var(--muted);}
+
+/* DV cards */
+.dv-grid{display:flex;flex-direction:column;gap:8px;}
+details.dv-card{background:var(--paper);border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:border-color .15s;}
+details.dv-card:hover{border-color:var(--gold);}
+details.dv-card[open]{border-color:var(--gold);}
+.dv-card-compact{background:var(--paper);border:1px solid var(--border);border-radius:8px;overflow:hidden;opacity:.9;}
+.dv-sum{padding:14px 16px;cursor:pointer;list-style:none;user-select:none;}
+.dv-sum::-webkit-details-marker{display:none;}
+.dv-sum-static{padding:14px 16px;}
+.dv-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+.dv-meta{font-size:11px;color:var(--muted);font-weight:700;}
+.dv-title{font-family:var(--font-h);font-size:13px;font-weight:900;color:var(--ink);line-height:1.4;letter-spacing:-.1px;margin-bottom:4px;}
+.exec-organ{font-size:11px;color:var(--muted);margin-bottom:6px;font-style:italic;}
+.dv-lead{font-size:13px;color:var(--ink2);line-height:1.55;margin-bottom:8px;}
+.compact-bullets ul{list-style:none;padding:0;margin-top:6px;}
+.compact-bullets li{padding:3px 0 3px 14px;position:relative;color:var(--ink2);font-size:12px;line-height:1.5;}
+.compact-bullets li::before{content:"·";position:absolute;left:2px;color:var(--gold);font-weight:700;font-size:15px;line-height:1.1;}
+.expand-hint{font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.06em;margin-top:4px;}
+details.dv-card[open] .expand-hint{display:none;}
+.dv-body{padding:0 16px 16px;border-top:1px solid var(--border);}
+
+/* badges */
+.badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;}
+.dv-badges{display:flex;gap:6px;align-items:center;flex-wrap:wrap;}
+.b-zakon   {background:#dbeafe;color:#1a56db;}
+.b-reshenie{background:#cffafe;color:#0a6e8a;}
+.b-ukaz    {background:#ede9fe;color:#7c3aed;}
+.b-decl    {background:#fef3c7;color:#92400e;}
+.b-post    {background:#d1fae5;color:#065f46;}
+.b-naredba {background:#fce7f3;color:#9d174d;}
+.b-pravilnik{background:#f3e8ff;color:#6b21a8;}
+.b-inst    {background:#fef9c3;color:#713f12;}
+.b-razp    {background:#e0f2fe;color:#0369a1;}
+.b-spor    {background:#fff7ed;color:#c2410c;}
+.b-other   {background:#f3f4f6;color:#6b7280;}
+.b-cat     {background:#f3f4f6;color:#555;}
+
+/* factsheet sections */
+.fs-sec{margin:12px 0;font-size:13px;}
+.fs-sec h5,.parties-block h5,.notable-callout h5,.sess-col h5{font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:8px;padding-bottom:5px;border-bottom:1px solid var(--border);}
+.fs-sec ul,.parties-block ul{list-style:none;padding:0;}
+.fs-sec li,.parties-block li{padding:4px 0 4px 16px;position:relative;color:var(--ink2);border-bottom:1px solid #f3f4f6;font-size:13px;line-height:1.5;}
+.fs-sec li:last-child,.parties-block li:last-child{border-bottom:none;}
+.fs-sec li::before{content:"·";position:absolute;left:3px;color:var(--gold);font-weight:700;font-size:16px;line-height:1.1;}
+.fs-sec p,.parties-block p{color:var(--ink2);font-size:13px;margin-bottom:4px;}
+.fs-winners ul{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.fs-winners li{padding:8px 10px 8px 24px;border-radius:6px;border-bottom:none !important;}
+.fs-winners li:first-child{background:#f0fdf4;}
+.fs-winners li:first-child::before{content:"✓";color:#16a34a;font-size:13px;top:8px;}
+.fs-winners li:nth-child(2){background:#fef2f2;}
+.fs-winners li:nth-child(2)::before{content:"✗";color:#dc2626;font-size:13px;top:8px;}
+.fs-notable{background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:12px 14px;}
+.fs-notable h5{border-bottom-color:#fde68a;color:#92400e;}
+.fs-notable li,.fs-notable p{color:#78350f;}
+.fs-notable li::before{color:#d97706;}
+.fs-eu{background:#f0f9ff;border-radius:8px;padding:12px 14px;}
+.fs-eu h5{color:#0369a1;border-bottom-color:#bae6fd;}
+.fs-eu p{color:#0c4a6e;font-size:13px;}
+.ext-link{display:inline-block;margin-top:12px;font-size:12px;font-weight:700;color:var(--navy);text-decoration:none;}
+.ext-link:hover{text-decoration:underline;}
+.no-summ{color:var(--muted);font-size:13px;font-style:italic;padding:12px 0;}
+
+/* session blocks */
+details.sess-block{background:var(--paper);border:1px solid var(--border);border-left:4px solid var(--navy);border-radius:0 8px 8px 0;margin-bottom:10px;overflow:hidden;}
+details.sess-block:hover{box-shadow:0 2px 8px rgba(0,0,0,.06);}
+details.sess-block[open]{border-left-color:var(--gold);}
+.sess-sum{padding:14px 18px;cursor:pointer;list-style:none;user-select:none;}
+.sess-sum::-webkit-details-marker{display:none;}
+.sess-hd{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap;}
+.sess-date-chip{background:var(--navy);color:#fff;font-size:10px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:4px;white-space:nowrap;}
+details.sess-block[open] .sess-date-chip{background:var(--gold);}
+.sess-label{font-family:var(--font-h);font-size:14px;font-weight:900;color:var(--ink);}
+.sess-lead{font-size:13px;color:var(--ink2);line-height:1.55;margin-bottom:6px;}
+.sess-body{padding:0 18px 16px;border-top:1px solid var(--border);}
+.sess-lead-full{font-size:13px;color:var(--ink2);line-height:1.6;margin:12px 0;background:#f8fafc;border-left:3px solid var(--gold);padding:8px 12px;border-radius:0 6px 6px 0;}
+.sess-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0;}
+.sess-col{font-size:13px;}
+.sess-col ul{list-style:none;padding:0;}
+.sess-col li{padding:4px 0 4px 14px;position:relative;color:var(--ink2);border-bottom:1px solid #f3f4f6;font-size:13px;line-height:1.5;}
+.sess-col li:last-child{border-bottom:none;}
+.sess-col li::before{content:"·";position:absolute;left:2px;color:var(--navy);font-weight:700;font-size:15px;line-height:1.1;}
+.notable-callout{display:flex;gap:10px;align-items:flex-start;background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:10px 12px;margin:12px 0;}
+.notable-icon{font-size:16px;color:#d97706;flex-shrink:0;line-height:1.4;}
+.notable-callout h5{border-bottom-color:#fde68a;color:#92400e;}
+.notable-callout p,.notable-callout li{color:#78350f;font-size:13px;}
+.notable-callout ul{list-style:none;padding:0;}
+.notable-callout li{padding:3px 0 3px 14px;position:relative;}
+.notable-callout li::before{content:"·";position:absolute;left:2px;color:#d97706;font-weight:700;font-size:15px;line-height:1.1;}
+.parties-block{margin:12px 0;font-size:13px;}
+.sess-ft{margin-top:12px;padding-top:10px;border-top:1px solid var(--border);}
+
+/* landing track cards */
+.track-card{display:block;padding:20px 28px;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:background .1s;}
+.track-card:hover{background:var(--surf);}
+.track-card:last-of-type{border-bottom:none;}
+.track-label{font-size:10px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+.track-title{font-family:var(--font-h);font-size:18px;font-weight:900;color:var(--navy);letter-spacing:-.3px;line-height:1.3;margin-bottom:6px;}
+.track-desc{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px;}
+.track-latest{font-size:12px;color:var(--ink2);}
+.track-arrow{font-size:22px;color:var(--gold);font-weight:900;float:right;margin-top:-28px;}
+
+/* archive / intro */
+.arch-table{width:100%;border-collapse:collapse;}
+.arch-table th{padding:8px 0;text-align:left;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);border-bottom:1px solid var(--border);}
+.arch-table td{padding:12px 8px 12px 0;border-bottom:1px solid var(--border);font-size:13px;color:var(--ink2);}
+.arch-table tr:last-child td{border-bottom:none;}
+.arch-table a{color:var(--navy);font-weight:700;text-decoration:none;}
+.arch-table a:hover{text-decoration:underline;}
+.intro-block{padding:20px 28px;border-bottom:1px solid var(--border);font-size:14px;line-height:1.7;color:var(--ink);}
+.all-issues-wrap{padding:16px 28px;border-bottom:1px solid var(--border);}
+.all-issues-btn{width:100%;padding:13px;background:none;border:1.5px solid var(--navy);border-radius:3px;font-family:var(--font-h);font-size:11px;font-weight:900;color:var(--navy);cursor:pointer;text-align:center;letter-spacing:.14em;text-transform:uppercase;transition:background .15s,color .15s;}
+.all-issues-btn:hover{background:var(--navy);color:#fff;}
+.waitlist-section,.contact-section{padding:20px 28px;border-bottom:1px solid var(--border);}
+.waitlist-heading{font-family:var(--font-h);font-size:17px;font-weight:900;color:var(--ink);letter-spacing:-.2px;margin-bottom:8px;}
+.waitlist-body{font-size:14px;color:var(--ink2);line-height:1.6;margin-bottom:16px;}
+.waitlist-form{display:flex;gap:8px;margin-bottom:10px;}
+.waitlist-input{flex:1;padding:10px 12px;border:1px solid var(--border);border-radius:3px;font-family:var(--font-b);font-size:14px;color:var(--ink);min-width:0;}
+.waitlist-input:focus{outline:none;border-color:var(--navy);}
+.waitlist-btn{padding:10px 18px;background:var(--navy);color:#fff;border:none;border-radius:3px;font-family:var(--font-h);font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;white-space:nowrap;}
+.waitlist-btn:hover{background:#122348;}
+.waitlist-fine{font-size:12px;color:var(--muted-lt);line-height:1.5;}
+.waitlist-ok{display:none;font-size:14px;font-weight:700;color:#16a34a;margin-top:10px;}
+.contact-section p{font-size:14px;color:var(--ink2);line-height:1.6;}
+.contact-section a{color:var(--navy);font-weight:700;text-decoration:none;}
+.contact-section a:hover{text-decoration:underline;}
+
+@media(max-width:760px){
+  .wrapper{margin:0;border-radius:0;border-left:none;border-right:none;}
+  .masthead,.section,.nl-footer,.page-header,a.issue-row,.track-card,
+  .section-label-row,.intro-block,.waitlist-section,.contact-section,.all-issues-wrap{padding-left:16px;padding-right:16px;}
+  .masthead-pills{display:none;}
+  .sess-cols{grid-template-columns:1fr;}
+  .fs-winners ul{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+<div class="top-bar">
+  <nav class="site-nav">
+    <a href="../../dv/">ДВ Дайджест</a>
+    <a href="../" class="active">Заседания</a>
+    <a href="https://bpdoodles.com">Basepoint Doodles</a>
+  </nav>
+  <span class="top-bar-tag">Парламентарни Doodles</span>
+</div>
+
+<div class="masthead">
+  <div class="masthead-logo">
+    <div class="masthead-left">
+      <span class="masthead-basepoint">Парламентарни</span>
+      <span class="masthead-tagline">Парламентарен дайджест</span>
+    </div>
+    <div class="masthead-divider"></div>
+    <span class="masthead-doodles">Doodles</span>
+  </div>
+  <div class="masthead-meta">
+    <span class="masthead-issue">В залата · Седмица 21 · 2026</span>
+    <span class="masthead-date">18–24 май 2026</span>
+    <div class="masthead-pills"><span class="masthead-pill">3 заседания</span></div>
+  </div>
+</div>
+<div class="section">
+  <span class="section-tag" style="display:block;margin-bottom:14px">Пленарни заседания</span>
+  
+<details class="sess-block">
+  <summary class="sess-sum">
+    <div class="sess-hd">
+      <span class="sess-date-chip">сряда, 20 май 2026</span>
+      <span class="sess-label">52 НС, 7-о заседание</span>
+    </div>
+    <p class="sess-lead">Парламентът прие на първо четене три законопроекта за промени в Наказателно-процесуалния кодекс, въвеждащи съдебен контрол върху прокурорски решения за прекратя…</p>
+    <div class="expand-hint">Виж подробности ▾</div>
+  </summary>
+  <div class="sess-body">
+    <p class="sess-lead-full">Парламентът прие на първо четене три законопроекта за промени в Наказателно-процесуалния кодекс, въвеждащи съдебен контрол върху прокурорски решения за прекратяване на дела и разширяващи правата на задържаните, и гласува за ратифициране на присъединяването на България към Европейския механизъм за стабилност.</p>
+    
+    <div class="sess-cols"><div class="sess-col"><h5>Обсъждани теми</h5><ul><li><strong>Съдебен контрол върху прокуратурата при корупционни дела:</strong> Правителствен законопроект въвежда задължителен съдебен контрол при прекратяване или спиране на дела за корупция от висши публични длъжности – прокурорът сам изпраща преписката в съда, без да чака жалба; въвежда се и контролиращ прокурор-съдия от ВКС при разследване на главния прокурор.</li><li><strong>Права на задържани и обвиняеми – европейски директиви:</strong> Втори правителствен законопроект транспонира шест европейски директиви: задържаните трябва да бъдат информирани за правата си (адвокат, превод, мълчание) още преди да станат формално обвиняеми; неизпълнението води до финансови санкции от ЕС.</li><li><strong>Съдебен контрол при 72-часово прокурорско задържане:</strong> Законопроект на ДБ дава право на задържания незабавно да обжалва пред съд прокурорската заповед за задържане до 72 часа – практика, която по думите на вносителите е използвана за репресии и нарушава Европейската конвенция за правата на човека.</li><li><strong>Присъединяване на България към Европейския механизъм за стабилност:</strong> България ратифицира членството си в механизма, създаден за финансова помощ на държави от еврозоната; страната ще внесе начален капитал от 603 млн. евро на пет годишни вноски, ползвайки се от 12-годишна облекчена вноска заради нисък БВП на глава.</li><li><strong>Блокирано изслушване на министъра на вътрешните работи:</strong> ВЪЗРАЖДАНЕ поиска извикване на министър Демерджиев за сигурността на гражданите предвид серия инциденти с украински граждани и твърдяна украинска криминална групировка „Куб&quot; във Варна – искането бе отхвърлено с мнозинство.</li><li><strong>Блокирана временна комисия за „Осемте джуджета&quot; и Нотариуса:</strong> ДБ поиска създаване на анкетна комисия за влияние на фигури като Петьо Петров – Еврото и Мартин Божанов – Нотариуса върху съдебната власт – предложението не получи необходимата подкрепа.</li><li><strong>Декларация на ДБ срещу промени в Правилника:</strong> Надежда Йорданова обяви, че управляващото мнозинство подготвя промени в правилника на НС, които ограничават правата на опозицията – съкращават срокове, вдигат прага за временни комисии до 48 подписа и премахват задължението на институциите да предоставят документи на депутати.</li></ul></div><div class="sess-col"><h5>Гласувания</h5><ul><li><strong>НПК – съдебен контрол при корупционни дела (правителствен законопроект от 30 април):</strong> ЗА 182, ПРОТИВ 15, ВЪЗ 0 — ДПС гласува против в комисия; в пленарна зала всички останали партии подкрепиха</li><li><strong>НПК – права на задържани, транспониране на директиви (правителствен законопроект от 5 май):</strong> ЗА 185, ПРОТИВ 16, ВЪЗ 0 — широка подкрепа</li><li><strong>НПК – съдебен контрол при 72-часово задържане (законопроект на ДБ):</strong> ЗА 199, ПРОТИВ 0, ВЪЗ 0 — единодушно приет</li><li><strong>Ратифициране на присъединяването към Европейския механизъм за стабилност:</strong> ЗА 19, ПРОТИВ 1 (ВЪЗРАЖДАНЕ), ВЪЗ 0 — в комисия; в пленарна зала не е отразен резултат</li><li><strong>Изслушване на министър Демерджиев (искане на ВЪЗРАЖДАНЕ):</strong> ЗА 13–14, ПРОТИВ 42–72, ВЪЗ 134–164 — отхвърлено два пъти</li><li><strong>Временна комисия за „Осемте джуджета&quot;/Нотариуса (искане на ДБ):</strong> ЗА 44–46, ПРОТИВ 20–21, ВЪЗ 151–152 — отхвърлено два пъти</li></ul></div></div><div class="notable-callout"><span class="notable-icon">★</span><div><h5>Забележително</h5><p>Законопроектът на ДБ за съдебен контрол при 72-часово прокурорско задържане бе приет с пълно единодушие – 199 гласа „за&quot;, нито един „против&quot; или „въздържал се&quot;, което е изключително рядко в настоящия парламент.</p></div></div><div class="parties-block"><h5>Позиции по партии</h5><ul><li><strong>Прогресивна България:</strong> Подкрепи трите НПК законопроекта и ратификацията на ЕМС; гласува против изслушването на Демерджиев и временната комисия</li><li><strong>ГЕРБ-СДС:</strong> Подкрепи и трите НПК законопроекта; гласува против или се въздържа по исканията на опозицията за изслушване и комисия</li><li><strong>ДБ:</strong> Вносител на единия НПК законопроект; подкрепи всички три; настоява за временна комисия за съдебни зависимости</li><li><strong>Продължаваме Промяната:</strong> Подкрепи трите НПК законопроекта</li><li><strong>ДПС:</strong> Гласува против два от трите НПК законопроекта в комисия; в пленарна зала гласуванията не са детайлно разбити</li><li><strong>ВЪЗРАЖДАНЕ:</strong> Подкрепи и трите НПК законопроекта; гласува против ратификацията на ЕМС; настояваше за изслушване на Демерджиев</li></ul></div>
+    <div class="sess-ft">
+      <a href="https://www.parliament.bg/bg/plenaryst/ns/55/ID/11127" target="_blank" class="ext-link">Отвори в parliament.bg ↗</a>
+    </div>
+  </div>
+</details>
+
+<details class="sess-block">
+  <summary class="sess-sum">
+    <div class="sess-hd">
+      <span class="sess-date-chip">четвъртък, 21 май 2026</span>
+      <span class="sess-label">52 НС, 8-о заседание</span>
+    </div>
+    <p class="sess-lead">Парламентът изслуша министъра на регионалното развитие Иван Шишков за голямото свлачище, което от 1 май блокира пътя Смолян–Пампорово, и прие промени в Закона з…</p>
+    <div class="expand-hint">Виж подробности ▾</div>
+  </summary>
+  <div class="sess-body">
+    <p class="sess-lead-full">Парламентът изслуша министъра на регионалното развитие Иван Шишков за голямото свлачище, което от 1 май блокира пътя Смолян–Пампорово, и прие промени в Закона за държавната финансова инспекция.</p>
+    
+    <div class="sess-cols"><div class="sess-col"><h5>Обсъждани теми</h5><ul><li><strong>Свлачището на пътя Смолян–Пампорово:</strong> На 1 май над 6 декара терен се свлякоха, унищожавайки 300 м от пътя. Свлачището е все още активно, причината е преовлажняване на терена, чийто точен източник се издирва – изследват се резервоар, ВиК мрежа, язовир за изкуствен сняг.</li><li><strong>Липса на регистрация и контрол:</strong> Министър Шишков разкри, че свлачището не е регистрирано в МРРБ, а съседно такова е укрепвано през 2001 г. с разрешение от Община Смолян, без уведомяване на министерството – строително и административно беззаконие от десетилетия.</li><li><strong>Липса на общ устройствен план на Пампорово:</strong> Курортът няма одобрен устройствен план, строителството е хаотично – хотели са строени без регулация, без паркинги при лифтовете, водопроводи без сервитути и без отразяване в кадастъра.</li><li><strong>Планирано решение – мостово съоръжение:</strong> Министърът се ангажира с най-бързото, а не най-евтиното решение – вероятно мост над свлачището; строителството може да започне преди издаване на разрешение за строеж по извънреден законов ред.</li><li><strong>Обходни маршрути и свлачища по тях:</strong> Алтернативните пътища през Стойките и Рожен са затруднени – по тях също има свлачища, някои нерешени от 4–8 години; министърът обяви приоритетното им укрепване преди зимния сезон.</li><li><strong>По-широката свързаност на Родопите:</strong> Депутати от всички групи повдигнаха темата за скоростния път Пловдив–Асеновград–Смолян–Рудозем–Ксанти, за който са заложени средства за проектиране; министърът потвърди приоритета, но отбеляза, че проектната готовност в цялата страна е критично ниска.</li><li><strong>Промени в Закона за държавната финансова инспекция:</strong> Законопроектът беше гласуван на първо и веднага на второ четене в рамките на същото заседание.</li></ul></div><div class="sess-col"><h5>Гласувания</h5><ul><li><strong>Закон за държавната финансова инспекция – първо гласуване:</strong> ЗА 153, ПРОТИВ 10, ВЪЗ 0 — „Възраждане&quot; гласува против; всички останали партии „за&quot;</li><li><strong>Закон за държавната финансова инспекция – второ гласуване (наименование и параграфи):</strong> ЗА 167, ПРОТИВ 9, ВЪЗ 0 — същото разпределение, „Възраждане&quot; единствено против</li></ul></div></div><div class="notable-callout"><span class="notable-icon">★</span><div><h5>Забележително</h5><p>Министър Шишков разкри, че свлачището – описано като най-голямото в България още от 80-те години – никога не е bilo регистрирано в държавен регистър, а строителство в непосредствена близост е одобрявано от общината без знанието на министерството дори след 2000 г.</p></div></div><div class="parties-block"><h5>Позиции по партии</h5><ul><li><strong>ПБ:</strong> Подкрепи закона във всички гласувания; министърът е от квотата им и получи аплодисменти многократно</li><li><strong>ГЕРБ-СДС:</strong> Гласува „за&quot; закона; в изслушването зададе критични въпроси за липсата на конкретни срокове и упрекна министъра, че за година служебен мандат не е подготвил проекти</li><li><strong>ДПС:</strong> Гласува „за&quot; закона; акцентира върху изолираността на Родопите и подкрепи подхода на министъра</li><li><strong>ДБ:</strong> Гласува „за&quot; закона; питанията се фокусираха върху безопасността на обходния маршрут през Стойките</li><li><strong>ПП:</strong> Гласува „за&quot; закона; поставиха въпроса за отговорността и неусвоените договори за укрепване на свлачища от 2019 г.</li><li><strong>Възраждане:</strong> Гласува <strong>против</strong> закона във всички гласувания; в изслушването питаха за персонална отговорност и евентуална корупция</li></ul></div>
+    <div class="sess-ft">
+      <a href="https://www.parliament.bg/bg/plenaryst/ns/55/ID/11128" target="_blank" class="ext-link">Отвори в parliament.bg ↗</a>
+    </div>
+  </div>
+</details>
+
+<details class="sess-block">
+  <summary class="sess-sum">
+    <div class="sess-hd">
+      <span class="sess-date-chip">петък, 22 май 2026</span>
+      <span class="sess-label">52 НС, 9-о заседание</span>
+    </div>
+    <p class="sess-lead">Парламентът прие на първо гласуване нов Закон за противодействие на корупцията, с който се създава петчленна независима комисия – стъпка, необходима за отблокир…</p>
+    <div class="expand-hint">Виж подробности ▾</div>
+  </summary>
+  <div class="sess-body">
+    <p class="sess-lead-full">Парламентът прие на първо гласуване нов Закон за противодействие на корупцията, с който се създава петчленна независима комисия – стъпка, необходима за отблокиране на над 258 млн. евро от Плана за възстановяване и устойчивост.</p>
+    
+    <div class="sess-cols"><div class="sess-col"><h5>Обсъждани теми</h5><ul><li><strong>Нов антикорупционен закон:</strong> Правителството предложи създаването на петчленна Комисия за противодействие на корупцията, чиито членове се излъчват от Народното събрание, президента, ВКС, ВАС и Висшия адвокатски съвет – с мандат 5 години без право на преизбиране и ротационно председателство чрез жребий на всяка година.</li><li><strong>Замразени европейски пари:</strong> Поради неизпълнение на антикорупционната реформа ЕК е спряла плащания по Плана за възстановяване в размер на 258 млн. евро; приемането на закона е условие за тяхното отпускане.</li><li><strong>Спор за разследващите функции:</strong> „Демократична България&quot; подкрепи закона на първо гласуване, но заяви, че на второ ще се противопостави на разследващите правомощия на комисията, смятайки ги за неефективни без реформа в прокуратурата; „Прогресивна България&quot; ги защити като задължителни.</li><li><strong>Критика от „Възраждане&quot;:</strong> Партията изнесе данни, че предишната подобна комисия годишно е получавала ~800 сигнала, но е постигала едва по 1-2 осъдителни присъди срещу публични длъжностни лица, и не е обжалвала нито един от ~300-350 прокурорски отказа годишно.</li><li><strong>Бежански лагери в Средец и Симеоновград:</strong> На парламентарен контрол министър-председателят Румен Радев изложи два варианта – изграждане на новите центрове или пренасочване на 15 млн. евро за разширяване на съществуващи такива; заяви лично предпочитание към втория вариант, без да е взето окончателно решение.</li><li><strong>Декларации за 24 май:</strong> Три парламентарни групи (ДБ, ПП и ДПС) направиха декларации по случай Деня на българската азбука и просвета с призиви за реално финансиране на образование, култура и библиотеки.</li></ul></div><div class="sess-col"><h5>Гласувания</h5><ul><li><strong>Закон за противодействие на корупцията – първо гласуване:</strong> ЗА 153, ПРОТИВ 13, ВЪЗ 0 — ПБ, ГЕРБ, ДБ и ПП гласуваха „за&quot;; ДПС гласува „против&quot;; „Възраждане&quot; не участва в гласуването</li><li><strong>Скъсяване на срока за предложения от 7 на 4 дни:</strong> ЗА 158, ПРОТИВ 20, ВЪЗ 2 — ДПС и „Възраждане&quot; против; ПП с 2 „въздържал се&quot;</li></ul></div></div><div class="notable-callout"><span class="notable-icon">★</span><div><h5>Забележително</h5><p>„Възраждане&quot; изнесе конкретни данни, че предишната антикорупционна комисия не е обжалвала нито един от стотиците прокурорски откази годишно, което подкопава основния аргумент за ефективността на новия закон – и никой от поддръжниците му не оспори тези факти по същество.</p></div></div><div class="parties-block"><h5>Позиции по партии</h5><ul><li><strong>Прогресивна България:</strong> Водеща сила зад закона; подкрепи изцяло, включително разследващите функции на комисията.</li><li><strong>ГЕРБ-СДС:</strong> Подкрепи закона на първо гласуване без забележки.</li><li><strong>Демократична България:</strong> Подкрепи на първо гласуване, но с изрична резерва – ще се противопостави на разследващите функции на второ гласуване.</li><li><strong>Продължаваме Промяната:</strong> Подкрепи закона; двама депутати се въздържаха по процедурата за скъсяване на срока.</li><li><strong>ДПС:</strong> Гласува „против&quot; закона и против скъсяването на срока – единствената партия с пълна опозиция.</li><li><strong>Възраждане:</strong> Не участва в гласуването по същество (бойкот); гласува „против&quot; процедурни въпроси; изрази намерение да внесе предложения на второ гласуване.</li></ul></div>
+    <div class="sess-ft">
+      <a href="https://www.parliament.bg/bg/plenaryst/ns/55/ID/11129" target="_blank" class="ext-link">Отвори в parliament.bg ↗</a>
+    </div>
+  </div>
+</details>
+</div>
+
+<div class="nl-footer">
+  <span class="nl-footer-logo">Парламентарни Doodles</span>
+  <div class="nl-footer-links">
+    <a href="../../dv/">ДВ Дайджест</a>
+    <a href="../">Заседания</a>
+    <a href="https://bpdoodles.com">Basepoint Doodles</a>
+  </div>
+</div>
+</div>
+</body>
+</html>

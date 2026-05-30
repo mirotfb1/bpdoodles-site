@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="utf-8">
+<title>Парламентарни Doodles · Заседания · Седмица 20</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --navy:#1B2E5E; --gold:#B5821A; --ink:#1C1C1C; --ink2:#444;
+  --muted:#888; --muted-lt:#AAA; --border:#E8E8E8; --surf:#F8F8F8; --paper:#FFF;
+  --font-d:'Caveat',cursive; --font-h:'Nunito','Arial Black',sans-serif;
+  --font-b:'Nunito',Arial,sans-serif;
+}
+body{font-family:var(--font-b);background:#F0F2F5;color:var(--ink);line-height:1.6;}
+.wrapper{max-width:740px;margin:32px auto;background:#fff;border:1px solid var(--border);border-radius:4px;overflow:hidden;}
+
+/* top bar */
+.top-bar{display:flex;justify-content:space-between;align-items:center;padding:8px 16px;background:var(--navy);}
+.site-nav{display:flex;gap:20px;align-items:center;}
+.site-nav a{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none;}
+.site-nav a:hover{color:rgba(255,255,255,.9);}
+.site-nav a.active{color:var(--gold);}
+.top-bar-tag{font-family:'Courier New',monospace;font-size:10px;color:rgba(255,255,255,.25);}
+
+/* masthead */
+.masthead{background:var(--navy);padding:24px 28px 20px;display:flex;justify-content:space-between;align-items:flex-end;border-bottom:3px solid var(--gold);}
+.masthead-logo{display:flex;flex-direction:row;align-items:center;}
+.masthead-left{display:flex;flex-direction:column;align-items:flex-end;padding-right:14px;}
+.masthead-basepoint{font-family:var(--font-h);font-size:22px;font-weight:900;color:#fff;letter-spacing:-.3px;line-height:1;}
+.masthead-tagline{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:4px;}
+.masthead-divider{width:2px;height:52px;background:rgba(255,255,255,.2);}
+.masthead-doodles{font-family:var(--font-d);font-size:48px;font-weight:700;color:var(--gold);line-height:1;padding-left:14px;}
+.masthead-meta{text-align:right;}
+.masthead-issue{font-size:13px;font-weight:700;color:rgba(255,255,255,.85);display:block;line-height:1.5;}
+.masthead-date{font-size:11px;color:rgba(255,255,255,.4);display:block;}
+.masthead-pills{margin-top:8px;display:flex;gap:6px;justify-content:flex-end;flex-wrap:wrap;}
+.masthead-pill{font-size:10px;font-weight:700;letter-spacing:.05em;background:rgba(255,255,255,.12);color:rgba(255,255,255,.6);padding:3px 8px;border-radius:3px;}
+
+/* content sections */
+.section{padding:20px 28px;border-bottom:1px solid var(--border);}
+.section:last-of-type{border-bottom:none;}
+
+/* subsection (within DV edition) */
+.subsection{margin-bottom:24px;}
+.subsection:last-child{margin-bottom:0;}
+.subsection-hd{display:flex;align-items:baseline;gap:10px;margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid var(--border);}
+.subsection-tag{font-size:10px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);}
+.subsection-title{font-family:var(--font-h);font-size:16px;font-weight:900;color:var(--navy);}
+.subsection-count{font-size:11px;color:var(--muted);margin-left:auto;}
+
+/* section label row */
+.section-label-row{padding:10px 28px 8px;background:var(--surf);border-bottom:1px solid var(--border);}
+.section-label{font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);}
+
+/* page header */
+.page-header{padding:20px 28px 16px;border-bottom:1px solid var(--border);}
+.page-title{font-family:var(--font-h);font-size:20px;font-weight:900;color:var(--ink);letter-spacing:-.3px;margin-bottom:6px;}
+.page-subtitle{font-size:13px;color:var(--muted);}
+
+/* issue list rows */
+a.issue-row{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 28px;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:background .1s;}
+a.issue-row:hover{background:var(--surf);}
+a.issue-row:last-of-type{border-bottom:none;}
+.issue-row-left{flex:1;}
+.issue-row-meta{font-family:'Courier New',monospace;font-size:10px;color:var(--muted-lt);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;}
+.issue-row-title{font-size:15px;font-weight:900;color:var(--ink);letter-spacing:-.2px;line-height:1.3;}
+.issue-row-desc{font-size:12px;color:var(--muted);margin-top:3px;}
+.issue-row-arrow{font-size:18px;color:var(--gold);font-weight:900;flex-shrink:0;}
+
+/* footer */
+.nl-footer{padding:14px 28px;background:var(--surf);border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
+.nl-footer-logo{font-family:var(--font-d);font-size:18px;font-weight:700;color:#CCC;}
+.nl-footer-links{font-size:11px;display:flex;gap:16px;}
+.nl-footer-links a{color:var(--muted-lt);text-decoration:none;}
+.nl-footer-links a:hover{color:var(--muted);}
+
+/* DV cards */
+.dv-grid{display:flex;flex-direction:column;gap:8px;}
+details.dv-card{background:var(--paper);border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:border-color .15s;}
+details.dv-card:hover{border-color:var(--gold);}
+details.dv-card[open]{border-color:var(--gold);}
+.dv-card-compact{background:var(--paper);border:1px solid var(--border);border-radius:8px;overflow:hidden;opacity:.9;}
+.dv-sum{padding:14px 16px;cursor:pointer;list-style:none;user-select:none;}
+.dv-sum::-webkit-details-marker{display:none;}
+.dv-sum-static{padding:14px 16px;}
+.dv-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+.dv-meta{font-size:11px;color:var(--muted);font-weight:700;}
+.dv-title{font-family:var(--font-h);font-size:13px;font-weight:900;color:var(--ink);line-height:1.4;letter-spacing:-.1px;margin-bottom:4px;}
+.exec-organ{font-size:11px;color:var(--muted);margin-bottom:6px;font-style:italic;}
+.dv-lead{font-size:13px;color:var(--ink2);line-height:1.55;margin-bottom:8px;}
+.compact-bullets ul{list-style:none;padding:0;margin-top:6px;}
+.compact-bullets li{padding:3px 0 3px 14px;position:relative;color:var(--ink2);font-size:12px;line-height:1.5;}
+.compact-bullets li::before{content:"·";position:absolute;left:2px;color:var(--gold);font-weight:700;font-size:15px;line-height:1.1;}
+.expand-hint{font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.06em;margin-top:4px;}
+details.dv-card[open] .expand-hint{display:none;}
+.dv-body{padding:0 16px 16px;border-top:1px solid var(--border);}
+
+/* badges */
+.badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;}
+.dv-badges{display:flex;gap:6px;align-items:center;flex-wrap:wrap;}
+.b-zakon   {background:#dbeafe;color:#1a56db;}
+.b-reshenie{background:#cffafe;color:#0a6e8a;}
+.b-ukaz    {background:#ede9fe;color:#7c3aed;}
+.b-decl    {background:#fef3c7;color:#92400e;}
+.b-post    {background:#d1fae5;color:#065f46;}
+.b-naredba {background:#fce7f3;color:#9d174d;}
+.b-pravilnik{background:#f3e8ff;color:#6b21a8;}
+.b-inst    {background:#fef9c3;color:#713f12;}
+.b-razp    {background:#e0f2fe;color:#0369a1;}
+.b-spor    {background:#fff7ed;color:#c2410c;}
+.b-other   {background:#f3f4f6;color:#6b7280;}
+.b-cat     {background:#f3f4f6;color:#555;}
+
+/* factsheet sections */
+.fs-sec{margin:12px 0;font-size:13px;}
+.fs-sec h5,.parties-block h5,.notable-callout h5,.sess-col h5{font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:8px;padding-bottom:5px;border-bottom:1px solid var(--border);}
+.fs-sec ul,.parties-block ul{list-style:none;padding:0;}
+.fs-sec li,.parties-block li{padding:4px 0 4px 16px;position:relative;color:var(--ink2);border-bottom:1px solid #f3f4f6;font-size:13px;line-height:1.5;}
+.fs-sec li:last-child,.parties-block li:last-child{border-bottom:none;}
+.fs-sec li::before{content:"·";position:absolute;left:3px;color:var(--gold);font-weight:700;font-size:16px;line-height:1.1;}
+.fs-sec p,.parties-block p{color:var(--ink2);font-size:13px;margin-bottom:4px;}
+.fs-winners ul{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.fs-winners li{padding:8px 10px 8px 24px;border-radius:6px;border-bottom:none !important;}
+.fs-winners li:first-child{background:#f0fdf4;}
+.fs-winners li:first-child::before{content:"✓";color:#16a34a;font-size:13px;top:8px;}
+.fs-winners li:nth-child(2){background:#fef2f2;}
+.fs-winners li:nth-child(2)::before{content:"✗";color:#dc2626;font-size:13px;top:8px;}
+.fs-notable{background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:12px 14px;}
+.fs-notable h5{border-bottom-color:#fde68a;color:#92400e;}
+.fs-notable li,.fs-notable p{color:#78350f;}
+.fs-notable li::before{color:#d97706;}
+.fs-eu{background:#f0f9ff;border-radius:8px;padding:12px 14px;}
+.fs-eu h5{color:#0369a1;border-bottom-color:#bae6fd;}
+.fs-eu p{color:#0c4a6e;font-size:13px;}
+.ext-link{display:inline-block;margin-top:12px;font-size:12px;font-weight:700;color:var(--navy);text-decoration:none;}
+.ext-link:hover{text-decoration:underline;}
+.no-summ{color:var(--muted);font-size:13px;font-style:italic;padding:12px 0;}
+
+/* session blocks */
+details.sess-block{background:var(--paper);border:1px solid var(--border);border-left:4px solid var(--navy);border-radius:0 8px 8px 0;margin-bottom:10px;overflow:hidden;}
+details.sess-block:hover{box-shadow:0 2px 8px rgba(0,0,0,.06);}
+details.sess-block[open]{border-left-color:var(--gold);}
+.sess-sum{padding:14px 18px;cursor:pointer;list-style:none;user-select:none;}
+.sess-sum::-webkit-details-marker{display:none;}
+.sess-hd{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap;}
+.sess-date-chip{background:var(--navy);color:#fff;font-size:10px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:4px;white-space:nowrap;}
+details.sess-block[open] .sess-date-chip{background:var(--gold);}
+.sess-label{font-family:var(--font-h);font-size:14px;font-weight:900;color:var(--ink);}
+.sess-lead{font-size:13px;color:var(--ink2);line-height:1.55;margin-bottom:6px;}
+.sess-body{padding:0 18px 16px;border-top:1px solid var(--border);}
+.sess-lead-full{font-size:13px;color:var(--ink2);line-height:1.6;margin:12px 0;background:#f8fafc;border-left:3px solid var(--gold);padding:8px 12px;border-radius:0 6px 6px 0;}
+.sess-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0;}
+.sess-col{font-size:13px;}
+.sess-col ul{list-style:none;padding:0;}
+.sess-col li{padding:4px 0 4px 14px;position:relative;color:var(--ink2);border-bottom:1px solid #f3f4f6;font-size:13px;line-height:1.5;}
+.sess-col li:last-child{border-bottom:none;}
+.sess-col li::before{content:"·";position:absolute;left:2px;color:var(--navy);font-weight:700;font-size:15px;line-height:1.1;}
+.notable-callout{display:flex;gap:10px;align-items:flex-start;background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:10px 12px;margin:12px 0;}
+.notable-icon{font-size:16px;color:#d97706;flex-shrink:0;line-height:1.4;}
+.notable-callout h5{border-bottom-color:#fde68a;color:#92400e;}
+.notable-callout p,.notable-callout li{color:#78350f;font-size:13px;}
+.notable-callout ul{list-style:none;padding:0;}
+.notable-callout li{padding:3px 0 3px 14px;position:relative;}
+.notable-callout li::before{content:"·";position:absolute;left:2px;color:#d97706;font-weight:700;font-size:15px;line-height:1.1;}
+.parties-block{margin:12px 0;font-size:13px;}
+.sess-ft{margin-top:12px;padding-top:10px;border-top:1px solid var(--border);}
+
+/* landing track cards */
+.track-card{display:block;padding:20px 28px;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:background .1s;}
+.track-card:hover{background:var(--surf);}
+.track-card:last-of-type{border-bottom:none;}
+.track-label{font-size:10px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+.track-title{font-family:var(--font-h);font-size:18px;font-weight:900;color:var(--navy);letter-spacing:-.3px;line-height:1.3;margin-bottom:6px;}
+.track-desc{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px;}
+.track-latest{font-size:12px;color:var(--ink2);}
+.track-arrow{font-size:22px;color:var(--gold);font-weight:900;float:right;margin-top:-28px;}
+
+/* archive / intro */
+.arch-table{width:100%;border-collapse:collapse;}
+.arch-table th{padding:8px 0;text-align:left;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);border-bottom:1px solid var(--border);}
+.arch-table td{padding:12px 8px 12px 0;border-bottom:1px solid var(--border);font-size:13px;color:var(--ink2);}
+.arch-table tr:last-child td{border-bottom:none;}
+.arch-table a{color:var(--navy);font-weight:700;text-decoration:none;}
+.arch-table a:hover{text-decoration:underline;}
+.intro-block{padding:20px 28px;border-bottom:1px solid var(--border);font-size:14px;line-height:1.7;color:var(--ink);}
+.all-issues-wrap{padding:16px 28px;border-bottom:1px solid var(--border);}
+.all-issues-btn{width:100%;padding:13px;background:none;border:1.5px solid var(--navy);border-radius:3px;font-family:var(--font-h);font-size:11px;font-weight:900;color:var(--navy);cursor:pointer;text-align:center;letter-spacing:.14em;text-transform:uppercase;transition:background .15s,color .15s;}
+.all-issues-btn:hover{background:var(--navy);color:#fff;}
+.waitlist-section,.contact-section{padding:20px 28px;border-bottom:1px solid var(--border);}
+.waitlist-heading{font-family:var(--font-h);font-size:17px;font-weight:900;color:var(--ink);letter-spacing:-.2px;margin-bottom:8px;}
+.waitlist-body{font-size:14px;color:var(--ink2);line-height:1.6;margin-bottom:16px;}
+.waitlist-form{display:flex;gap:8px;margin-bottom:10px;}
+.waitlist-input{flex:1;padding:10px 12px;border:1px solid var(--border);border-radius:3px;font-family:var(--font-b);font-size:14px;color:var(--ink);min-width:0;}
+.waitlist-input:focus{outline:none;border-color:var(--navy);}
+.waitlist-btn{padding:10px 18px;background:var(--navy);color:#fff;border:none;border-radius:3px;font-family:var(--font-h);font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;white-space:nowrap;}
+.waitlist-btn:hover{background:#122348;}
+.waitlist-fine{font-size:12px;color:var(--muted-lt);line-height:1.5;}
+.waitlist-ok{display:none;font-size:14px;font-weight:700;color:#16a34a;margin-top:10px;}
+.contact-section p{font-size:14px;color:var(--ink2);line-height:1.6;}
+.contact-section a{color:var(--navy);font-weight:700;text-decoration:none;}
+.contact-section a:hover{text-decoration:underline;}
+
+@media(max-width:760px){
+  .wrapper{margin:0;border-radius:0;border-left:none;border-right:none;}
+  .masthead,.section,.nl-footer,.page-header,a.issue-row,.track-card,
+  .section-label-row,.intro-block,.waitlist-section,.contact-section,.all-issues-wrap{padding-left:16px;padding-right:16px;}
+  .masthead-pills{display:none;}
+  .sess-cols{grid-template-columns:1fr;}
+  .fs-winners ul{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+<div class="top-bar">
+  <nav class="site-nav">
+    <a href="../../dv/">ДВ Дайджест</a>
+    <a href="../" class="active">Заседания</a>
+    <a href="https://bpdoodles.com">Basepoint Doodles</a>
+  </nav>
+  <span class="top-bar-tag">Парламентарни Doodles</span>
+</div>
+
+<div class="masthead">
+  <div class="masthead-logo">
+    <div class="masthead-left">
+      <span class="masthead-basepoint">Парламентарни</span>
+      <span class="masthead-tagline">Парламентарен дайджест</span>
+    </div>
+    <div class="masthead-divider"></div>
+    <span class="masthead-doodles">Doodles</span>
+  </div>
+  <div class="masthead-meta">
+    <span class="masthead-issue">В залата · Седмица 20 · 2026</span>
+    <span class="masthead-date">11–17 май 2026</span>
+    <div class="masthead-pills"><span class="masthead-pill">3 заседания</span></div>
+  </div>
+</div>
+<div class="section">
+  <span class="section-tag" style="display:block;margin-bottom:14px">Пленарни заседания</span>
+  
+<details class="sess-block">
+  <summary class="sess-sum">
+    <div class="sess-hd">
+      <span class="sess-date-chip">сряда, 13 май 2026</span>
+      <span class="sess-label">52 НС, 4-то заседание</span>
+    </div>
+    <p class="sess-lead">Парламентът обсъди на първо четене закон срещу нелоялни търговски практики и прекомерно високи цени по веригата на доставки на храни, като повечето партии израз…</p>
+    <div class="expand-hint">Виж подробности ▾</div>
+  </summary>
+  <div class="sess-body">
+    <p class="sess-lead-full">Парламентът обсъди на първо четене закон срещу нелоялни търговски практики и прекомерно високи цени по веригата на доставки на храни, като повечето партии изразиха сериозни резерви дали мерките ще свалят цените реално и бързо.</p>
+    
+    <div class="sess-cols"><div class="sess-col"><h5>Обсъждани теми</h5><ul><li><strong>Нови народни представители:</strong> Деветима народни представители от „Прогресивна България&quot; положиха клетва – те заместват министрите от коалицията (Румен Радев, Гълъб Донев, Александър Пулев, Иван Демерджиев, Димитър Стоянов, Иван Шишков, Росица Карамфилова-Благова, Илин Димитров) за времето, в което те изпълняват правителствени функции.</li><li><strong>Закон за защита на конкуренцията – борба с нелоялни практики:</strong> Внесеният от „Прогресивна България&quot; законопроект разширява списъка на забранените нелоялни търговски практики с 20 нови (скрити бонуси, ретроактивни плащания, обезличаване на марки и др.), засягащи основно веригата доставки на храни и земеделска продукция.</li><li><strong>Централен електронен регистър за проследяване на доставки:</strong> Законопроектът предвижда създаване на регистър по модел на Франция, в който търговците на едро ще вписват движението на продукти – с цел прозрачност и ранно засичане на пазарни нарушения; малките земеделци и преките доставчици са изключени от него.</li><li><strong>„Прекомерно висока цена&quot; и „съвместно господстващо положение&quot;:</strong> Въвеждат се нови понятия, позволяващи на КЗК да санкционира цени, надвишаващи икономически обоснованите разходи плюс разумна печалба, но само при доказано господстващо или съвместно господстващо положение – по германски модел.</li><li><strong>Спор за ефекта върху цените:</strong> Опозиционни партии (ДБ, ПП, ВЪЗРАЖДАНЕ) предупредиха, че мерките ще влязат в сила не по-рано от 6–12 месеца и рискуват да имат обратен ефект – търговците да вдигнат цени превантивно; призоваха за мерки по бюджетния дефицит, горивата и прага за ДДС регистрация.</li><li><strong>Обърната тежест на доказване:</strong> Спорна клауза в законопроекта дава право на КЗК при съмнение за нелоялна практика да изиска от бизнеса сам да докаже, че не нарушава закона – критикувано от ПП, ДБ и ВЪЗРАЖДАНЕ като нарушение на презумпцията за невиновност.</li><li><strong>Дискусия за административна тежест:</strong> Работодателски и синдикални организации, а и няколко парламентарни групи изразиха опасения, че регистърът и новите правомощия на КЗК ще увеличат разходите на бизнеса и ще изискват значително разширяване на администрацията и бюджета на КЗК.</li></ul></div><div class="sess-col"><h5>Гласувания</h5><ul><li><strong>Закон за изменение на Закона за защита на конкуренцията (първо четене – в комисия):</strong> ЗА 17, ПРОТИВ 2, ВЪЗДЪРЖАЛИ СЕ 2 — в комисия: за: ПБ (13), ГЕРБ-СДС (1), ДПС (2), ВЪЗРАЖДАНЕ (1); против: ПП (2); въздържали се: ДБ (2)</li></ul></div></div><div class="notable-callout"><span class="notable-icon">★</span><div><h5>Забележително</h5><p>Докато правителството и парламентарното мнозинство представят законопроекта като антиинфлационна мярка, представители на почти всички опозиционни партии – включително и подкрепящият ГЕРБ-СДС – признаха открито в пленарната зала, че реалният ефект върху цените е невъзможен преди края на 2026 г.</p></div></div><div class="parties-block"><h5>Позиции по партии</h5><ul><li><strong>Прогресивна България:</strong> Вносител – категорично „за&quot;; представя закона като стъпка към по-справедлив пазар и защита на производителите.</li><li><strong>ГЕРБ-СДС:</strong> Подкрепя на първо четене, но иска съкращаване на сроковете за наредбите и предупреждава за административна тежест.</li><li><strong>ДПС:</strong> Подкрепя на първо четене; изразява притеснения за тежестта върху малкия бизнес при регистъра.</li><li><strong>Демократична България:</strong> Въздържа се в комисия; критикува липсата на бързи мерки и свръхконцентрацията на правомощия в КЗК, но не е категорично против.</li><li><strong>Продължаваме Промяната:</strong> Против; твърди, че законопроектът въвежда скрит ценови контрол и ще вдигне, а не свали цените.</li><li><strong>ВЪЗРАЖДАНЕ:</strong> Въздържа се; признава положителните намерения, но не иска да „купува котка в чувал&quot; заради неизвестното съдържание на бъдещите наредби.</li></ul></div>
+    <div class="sess-ft">
+      <a href="https://www.parliament.bg/bg/plenaryst/ns/55/ID/11124" target="_blank" class="ext-link">Отвори в parliament.bg ↗</a>
+    </div>
+  </div>
+</details>
+
+<details class="sess-block">
+  <summary class="sess-sum">
+    <div class="sess-hd">
+      <span class="sess-date-chip">четвъртък, 14 май 2026</span>
+      <span class="sess-label">52 НС, 5-о заседание</span>
+    </div>
+    <p class="sess-lead">Парламентът прие на първо четене закон, който удължава защитата на потребителите от необосновано вдигане на цените след въвеждането на еврото и въвежда понятиет…</p>
+    <div class="expand-hint">Виж подробности ▾</div>
+  </summary>
+  <div class="sess-body">
+    <p class="sess-lead-full">Парламентът прие на първо четене закон, който удължава защитата на потребителите от необосновано вдигане на цените след въвеждането на еврото и въвежда понятието „справедлива цена&quot;, но опозицията предупреди, че мярката може да има обратен ефект.</p>
+    
+    <div class="sess-cols"><div class="sess-col"><h5>Обсъждани теми</h5><ul><li><strong>Оставки на трима депутати:</strong> Илко Илиев (Търговище, ПБ), Марио Смърков (Варна) и Крум Неделков (Стара Загора) подадоха оставки като народни представители и пълномощията им бяха прекратени с гласуване.</li><li><strong>Закон за защита на потребителите – първо четене:</strong> Предложен от Явор Гечев (ПБ) законопроект, който пренася механизмите от Закона за въвеждане на еврото в постоянното законодателство и ги удължава с още година (до август 2027 г.), удвоява глобите при нарушения (до 100 хил. евро) и въвежда задължение за ежедневно публикуване на цени от големите търговци.</li><li><strong>„Справедлива цена&quot; – спорен нов термин:</strong> Законопроектът въвежда аналитичен индекс „справедлива цена&quot; за стоки от потребителската кошница, който няма задължителен характер, но служи за ориентир. Опозицията (ПП и ДБ) предупреди, че това може да доведе до административно ценообразуване и да вдигне, а не да свали цените.</li><li><strong>Дебат за ефективността на антиинфлационните мерки:</strong> Депутати от ВЪЗРАЖДАНЕ, ПП и ДБ оспориха дали законопроектът реално ще свали цените, като посочиха, че основните причини са зависимостта от внос, енергийните разходи и влизането в еврозоната, а не липсата на регулация.</li><li><strong>Портал за публични цени:</strong> Дебатира се неработещият сайт за сравняване на цени – ДБ настоя той да заработи до юни-юли 2026 г., а ВЪЗРАЖДАНЕ го определи като неефективна мярка.</li><li><strong>Декларация на ВЪЗРАЖДАНЕ за референдум:</strong> Костадин Костадинов призова парламента да разгледа предложение от граждански комитет за референдум (над 300 хил. подписа) по въпроси, свързани с финансовата система и еврозоната, и предизвика правителството на Румен Радев да докаже дали ще се придържа към позициите си от 2025 г.</li></ul></div><div class="sess-col"><h5>Гласувания</h5><ul><li><strong>Прекратяване пълномощията на Илко Илиев:</strong> ЗА 186, ПРОТИВ 13, ВЪЗ 13</li><li><strong>Прекратяване пълномощията на Марио Смърков:</strong> ЗА 193, ПРОТИВ 8, ВЪЗ 11</li><li><strong>Прекратяване пълномощията на Крум Неделков:</strong> ЗА 189, ПРОТИВ 11, ВЪЗ 8</li><li><strong>Закон за защита на потребителите – първо четене (в комисия):</strong> ЗА 17 (вкл. 13 ПБ, 1 ГЕРБ, 2 ДПС, 1 ВЪЗРАЖДАНЕ), ПРОТИВ 2 (ПП), ВЪЗ 2 (ДБ) — гласуването в пленарна зала не е приключило в наличната стенограма</li></ul></div></div><div class="notable-callout"><span class="notable-icon">★</span><div><h5>Забележително</h5><p>Представителят на управляващата партия ПБ в комисията заяви, че „справедливата цена&quot; ще се изчислява по методика за едва около 20 артикула, следени от КНСБ – значително по-тесен обхват от първоначално обявения, което опозицията определи като признание, че първоначалната идея е неприложима.</p></div></div><div class="parties-block"><h5>Позиции по партии</h5><ul><li><strong>Прогресивна България (ПБ):</strong> Вносител и основен защитник на законопроекта; настоява, че мерките са временни, информативни и не въвеждат ценови тавани.</li><li><strong>ГЕРБ-СДС:</strong> Подкрепя в комисия (1 глас „за&quot;), но изразява резерви за административния капацитет на КЗП и риска от бюрократичен провал.</li><li><strong>ДПС – Ново начало:</strong> Подкрепя в комисия, но поставя конкретни условия – ясна методика, секторни правила, критерии за сезонност; конструктивен тон.</li><li><strong>Демократична България (ДБ):</strong> Въздържа се в комисия; подкрепя принципа за прозрачност на цените, но иска премахване на „справедливата цена&quot; и настоява за бърз старт на ценовия портал.</li><li><strong>Продължаваме Промяната (ПП):</strong> Против – смята, че законът не работи, създава правна несигурност и може да доведе до допълнителна инфлация; позовава се на унгарския опит с Орбан.</li><li><strong>ВЪЗРАЖДАНЕ:</strong> Разделено (1 глас „за&quot; в комисия); в пленарна зала изказванията са критични – атакува еврозоната като основна причина за поскъпването и отхвърля мерките като козметични.</li></ul></div>
+    <div class="sess-ft">
+      <a href="https://www.parliament.bg/bg/plenaryst/ns/55/ID/11125" target="_blank" class="ext-link">Отвори в parliament.bg ↗</a>
+    </div>
+  </div>
+</details>
+
+<details class="sess-block">
+  <summary class="sess-sum">
+    <div class="sess-hd">
+      <span class="sess-date-chip">петък, 15 май 2026</span>
+      <span class="sess-label">52 НС, 6-о заседание</span>
+    </div>
+    <p class="sess-lead">Парламентът прие на първо четене закон за преструктуриране на министерствата в икономическата сфера и удължи сроковете за предложения по три важни законопроекта…</p>
+    <div class="expand-hint">Виж подробности ▾</div>
+  </summary>
+  <div class="sess-body">
+    <p class="sess-lead-full">Парламентът прие на първо четене закон за преструктуриране на министерствата в икономическата сфера и удължи сроковете за предложения по три важни законопроекта – за съдебна власт, защита на конкуренцията и защита на потребителите.</p>
+    
+    <div class="sess-cols"><div class="sess-col"><h5>Обсъждани теми</h5><ul><li><strong>Нови народни представители положиха клетва:</strong> Мирослав Митков (Старозагорски район) и Таня Гюрюшева-Николова (Търговищки район) от „Прогресивна България&quot; влязоха в парламента след освобождаване на места от назначени министри.</li><li><strong>Конституционният съд отмени решение на предишния парламент:</strong> Прието на 13 март решение за мерки срещу ценовия шок от петрол и газ беше обявено за противоконституционно.</li><li><strong>Удължаване на срока за предложения по Закона за съдебната власт:</strong> Вместо обещаната бърза съдебна реформа, срокът между първо и второ четене беше удължен с две седмици (общо 21 дни), за да могат ВКС и ВАС да дадат становища чрез своите пленуми. ВЪЗРАЖДАНЕ и ПП настояваха за по-кратък срок.</li><li><strong>Удължени срокове и за антимонополните закони:</strong> Законопроектите за изменение на Закона за защита на конкуренцията и Закона за защита на потребителите – внесени като спешни мерки срещу високите цени – получиха допълнителна седмица за предложения, след среща на премиера с търговски вериги и бизнес организации. ВЪЗРАЖДАНЕ обвини управляващите, че се „калибрират с хипермаркетите&quot;.</li><li><strong>Закон за насърчаване на инвестициите – първо четене:</strong> Законопроектът преименува Министерството на икономиката и обединява функции от три в две министерства, като създава и Координационен съвет по инвестициите към Министерския съвет. ГЕРБ и ДБ го подкрепиха с резерви, ВЪЗРАЖДАНЕ – против.</li><li><strong>Декларация на ВЪЗРАЖДАНЕ:</strong> Партията цитира изявление на американския държавен секретар Рубио, в което България е сред четирите страни, оказали логистична подкрепа на САЩ по време на военните операции срещу Иран, и поиска обяснение дали чуждите самолети ще останат на летище София след 17 май.</li><li><strong>Парламентарен контрол – ромски побой в Габрово:</strong> Министърът на вътрешните работи Иван Демерджиев отговори на въпрос за групов побой от 6 май, обяви, че е образувано дело, един обвиняем е с мярка домашен арест, а в Габрово тече специализирана полицейска операция.</li><li><strong>Парламентарен контрол – магистрала Видин–Ботевград:</strong> Министърът на регионалното развитие Иван Шишков потвърди, че пътят е правителствен приоритет, признал „безхаберно харчене&quot; при предишни управления и липса на проекти за някои участъци. Прогнозен срок за завършване – юни 2029 г.</li></ul></div><div class="sess-col"><h5>Гласувания</h5><ul><li><strong>Удължаване срока за ЗСВ с 2 седмици (предложение на Тянкова/ПБ):</strong> ЗА 168, ПРОТИВ 13, ВЪЗ 30 — прието; ПБ и ГЕРБ гласуваха „за&quot;, ВЪЗРАЖДАНЕ и ПП – против/въздържали се.</li><li><strong>Удължаване срока за Закона за защита на конкуренцията с 1 седмица:</strong> ЗА 168, ПРОТИВ 32, ВЪЗ 0 — прието; 32-те гласа „против&quot; са предимно от ВЪЗРАЖДАНЕ и ПП.</li><li><strong>Удължаване срока за Закона за защита на потребителите с 1 седмица:</strong> ЗА 169, ПРОТИВ 32, ВЪЗ 0 — прието; идентично разпределение.</li><li><strong>Закон за изменение на Закона за насърчаване на инвестициите – първо четене:</strong> ЗА 181, ПРОТИВ 9, ВЪЗ 12 — прието; ВЪЗРАЖДАНЕ гласува „против&quot;, ДБ и ГЕРБ подкрепиха с уговорка за предложения на второ четене.</li></ul></div></div><div class="notable-callout"><span class="notable-icon">★</span><div><h5>Забележително</h5><p>Правителството внесе като „спешни&quot; антимонополни закони срещу високите цени, а само дни по-късно поиска удължаване на срока за тях след среща с търговските вериги – което дори депутати от опозицията нарекоха „калибриране с хипермаркетите&quot;.</p></div></div><div class="parties-block"><h5>Позиции по партии</h5><ul><li><strong>Прогресивна България (ПБ):</strong> Гласува „за&quot; по всички точки; вносител на законите; поиска удължаване на сроковете след натиск от бизнеса.</li><li><strong>ГЕРБ-СДС:</strong> Подкрепи управляващите по всички гласувания, но постоянно заявява резерви и намерение за предложения между четенията.</li><li><strong>Демократична България (ДБ):</strong> Подкрепи законопроектите; задава конкретни въпроси за инфраструктура (Видин–Ботевград).</li><li><strong>ДПС:</strong> Подкрепи управляващите.</li><li><strong>ВЪЗРАЖДАНЕ:</strong> Гласува „против&quot; по всички основни точки; води декларативна опозиция по темите за американски самолети, ромска престъпност и „бавене на реформи&quot;.</li><li><strong>Продължаваме Промяната (ПП):</strong> Гласува „против&quot; удължаванията на срокове, настоявайки за по-бърза работа.</li></ul></div>
+    <div class="sess-ft">
+      <a href="https://www.parliament.bg/bg/plenaryst/ns/55/ID/11126" target="_blank" class="ext-link">Отвори в parliament.bg ↗</a>
+    </div>
+  </div>
+</details>
+</div>
+
+<div class="nl-footer">
+  <span class="nl-footer-logo">Парламентарни Doodles</span>
+  <div class="nl-footer-links">
+    <a href="../../dv/">ДВ Дайджест</a>
+    <a href="../">Заседания</a>
+    <a href="https://bpdoodles.com">Basepoint Doodles</a>
+  </div>
+</div>
+</div>
+</body>
+</html>

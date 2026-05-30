@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="utf-8">
+<title>Парламентарни Doodles · ДВ Дайджест · Седмица 2</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --navy:#1B2E5E; --gold:#B5821A; --ink:#1C1C1C; --ink2:#444;
+  --muted:#888; --muted-lt:#AAA; --border:#E8E8E8; --surf:#F8F8F8; --paper:#FFF;
+  --font-d:'Caveat',cursive; --font-h:'Nunito','Arial Black',sans-serif;
+  --font-b:'Nunito',Arial,sans-serif;
+}
+body{font-family:var(--font-b);background:#F0F2F5;color:var(--ink);line-height:1.6;}
+.wrapper{max-width:740px;margin:32px auto;background:#fff;border:1px solid var(--border);border-radius:4px;overflow:hidden;}
+
+/* top bar */
+.top-bar{display:flex;justify-content:space-between;align-items:center;padding:8px 16px;background:var(--navy);}
+.site-nav{display:flex;gap:20px;align-items:center;}
+.site-nav a{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none;}
+.site-nav a:hover{color:rgba(255,255,255,.9);}
+.site-nav a.active{color:var(--gold);}
+.top-bar-tag{font-family:'Courier New',monospace;font-size:10px;color:rgba(255,255,255,.25);}
+
+/* masthead */
+.masthead{background:var(--navy);padding:24px 28px 20px;display:flex;justify-content:space-between;align-items:flex-end;border-bottom:3px solid var(--gold);}
+.masthead-logo{display:flex;flex-direction:row;align-items:center;}
+.masthead-left{display:flex;flex-direction:column;align-items:flex-end;padding-right:14px;}
+.masthead-basepoint{font-family:var(--font-h);font-size:22px;font-weight:900;color:#fff;letter-spacing:-.3px;line-height:1;}
+.masthead-tagline{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:4px;}
+.masthead-divider{width:2px;height:52px;background:rgba(255,255,255,.2);}
+.masthead-doodles{font-family:var(--font-d);font-size:48px;font-weight:700;color:var(--gold);line-height:1;padding-left:14px;}
+.masthead-meta{text-align:right;}
+.masthead-issue{font-size:13px;font-weight:700;color:rgba(255,255,255,.85);display:block;line-height:1.5;}
+.masthead-date{font-size:11px;color:rgba(255,255,255,.4);display:block;}
+.masthead-pills{margin-top:8px;display:flex;gap:6px;justify-content:flex-end;flex-wrap:wrap;}
+.masthead-pill{font-size:10px;font-weight:700;letter-spacing:.05em;background:rgba(255,255,255,.12);color:rgba(255,255,255,.6);padding:3px 8px;border-radius:3px;}
+
+/* content sections */
+.section{padding:20px 28px;border-bottom:1px solid var(--border);}
+.section:last-of-type{border-bottom:none;}
+
+/* subsection (within DV edition) */
+.subsection{margin-bottom:24px;}
+.subsection:last-child{margin-bottom:0;}
+.subsection-hd{display:flex;align-items:baseline;gap:10px;margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid var(--border);}
+.subsection-tag{font-size:10px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);}
+.subsection-title{font-family:var(--font-h);font-size:16px;font-weight:900;color:var(--navy);}
+.subsection-count{font-size:11px;color:var(--muted);margin-left:auto;}
+
+/* section label row */
+.section-label-row{padding:10px 28px 8px;background:var(--surf);border-bottom:1px solid var(--border);}
+.section-label{font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);}
+
+/* page header */
+.page-header{padding:20px 28px 16px;border-bottom:1px solid var(--border);}
+.page-title{font-family:var(--font-h);font-size:20px;font-weight:900;color:var(--ink);letter-spacing:-.3px;margin-bottom:6px;}
+.page-subtitle{font-size:13px;color:var(--muted);}
+
+/* issue list rows */
+a.issue-row{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 28px;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:background .1s;}
+a.issue-row:hover{background:var(--surf);}
+a.issue-row:last-of-type{border-bottom:none;}
+.issue-row-left{flex:1;}
+.issue-row-meta{font-family:'Courier New',monospace;font-size:10px;color:var(--muted-lt);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;}
+.issue-row-title{font-size:15px;font-weight:900;color:var(--ink);letter-spacing:-.2px;line-height:1.3;}
+.issue-row-desc{font-size:12px;color:var(--muted);margin-top:3px;}
+.issue-row-arrow{font-size:18px;color:var(--gold);font-weight:900;flex-shrink:0;}
+
+/* footer */
+.nl-footer{padding:14px 28px;background:var(--surf);border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
+.nl-footer-logo{font-family:var(--font-d);font-size:18px;font-weight:700;color:#CCC;}
+.nl-footer-links{font-size:11px;display:flex;gap:16px;}
+.nl-footer-links a{color:var(--muted-lt);text-decoration:none;}
+.nl-footer-links a:hover{color:var(--muted);}
+
+/* DV cards */
+.dv-grid{display:flex;flex-direction:column;gap:8px;}
+details.dv-card{background:var(--paper);border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:border-color .15s;}
+details.dv-card:hover{border-color:var(--gold);}
+details.dv-card[open]{border-color:var(--gold);}
+.dv-card-compact{background:var(--paper);border:1px solid var(--border);border-radius:8px;overflow:hidden;opacity:.9;}
+.dv-sum{padding:14px 16px;cursor:pointer;list-style:none;user-select:none;}
+.dv-sum::-webkit-details-marker{display:none;}
+.dv-sum-static{padding:14px 16px;}
+.dv-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+.dv-meta{font-size:11px;color:var(--muted);font-weight:700;}
+.dv-title{font-family:var(--font-h);font-size:13px;font-weight:900;color:var(--ink);line-height:1.4;letter-spacing:-.1px;margin-bottom:4px;}
+.exec-organ{font-size:11px;color:var(--muted);margin-bottom:6px;font-style:italic;}
+.dv-lead{font-size:13px;color:var(--ink2);line-height:1.55;margin-bottom:8px;}
+.compact-bullets ul{list-style:none;padding:0;margin-top:6px;}
+.compact-bullets li{padding:3px 0 3px 14px;position:relative;color:var(--ink2);font-size:12px;line-height:1.5;}
+.compact-bullets li::before{content:"·";position:absolute;left:2px;color:var(--gold);font-weight:700;font-size:15px;line-height:1.1;}
+.expand-hint{font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.06em;margin-top:4px;}
+details.dv-card[open] .expand-hint{display:none;}
+.dv-body{padding:0 16px 16px;border-top:1px solid var(--border);}
+
+/* badges */
+.badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;}
+.dv-badges{display:flex;gap:6px;align-items:center;flex-wrap:wrap;}
+.b-zakon   {background:#dbeafe;color:#1a56db;}
+.b-reshenie{background:#cffafe;color:#0a6e8a;}
+.b-ukaz    {background:#ede9fe;color:#7c3aed;}
+.b-decl    {background:#fef3c7;color:#92400e;}
+.b-post    {background:#d1fae5;color:#065f46;}
+.b-naredba {background:#fce7f3;color:#9d174d;}
+.b-pravilnik{background:#f3e8ff;color:#6b21a8;}
+.b-inst    {background:#fef9c3;color:#713f12;}
+.b-razp    {background:#e0f2fe;color:#0369a1;}
+.b-spor    {background:#fff7ed;color:#c2410c;}
+.b-other   {background:#f3f4f6;color:#6b7280;}
+.b-cat     {background:#f3f4f6;color:#555;}
+
+/* factsheet sections */
+.fs-sec{margin:12px 0;font-size:13px;}
+.fs-sec h5,.parties-block h5,.notable-callout h5,.sess-col h5{font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:8px;padding-bottom:5px;border-bottom:1px solid var(--border);}
+.fs-sec ul,.parties-block ul{list-style:none;padding:0;}
+.fs-sec li,.parties-block li{padding:4px 0 4px 16px;position:relative;color:var(--ink2);border-bottom:1px solid #f3f4f6;font-size:13px;line-height:1.5;}
+.fs-sec li:last-child,.parties-block li:last-child{border-bottom:none;}
+.fs-sec li::before{content:"·";position:absolute;left:3px;color:var(--gold);font-weight:700;font-size:16px;line-height:1.1;}
+.fs-sec p,.parties-block p{color:var(--ink2);font-size:13px;margin-bottom:4px;}
+.fs-winners ul{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.fs-winners li{padding:8px 10px 8px 24px;border-radius:6px;border-bottom:none !important;}
+.fs-winners li:first-child{background:#f0fdf4;}
+.fs-winners li:first-child::before{content:"✓";color:#16a34a;font-size:13px;top:8px;}
+.fs-winners li:nth-child(2){background:#fef2f2;}
+.fs-winners li:nth-child(2)::before{content:"✗";color:#dc2626;font-size:13px;top:8px;}
+.fs-notable{background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:12px 14px;}
+.fs-notable h5{border-bottom-color:#fde68a;color:#92400e;}
+.fs-notable li,.fs-notable p{color:#78350f;}
+.fs-notable li::before{color:#d97706;}
+.fs-eu{background:#f0f9ff;border-radius:8px;padding:12px 14px;}
+.fs-eu h5{color:#0369a1;border-bottom-color:#bae6fd;}
+.fs-eu p{color:#0c4a6e;font-size:13px;}
+.ext-link{display:inline-block;margin-top:12px;font-size:12px;font-weight:700;color:var(--navy);text-decoration:none;}
+.ext-link:hover{text-decoration:underline;}
+.no-summ{color:var(--muted);font-size:13px;font-style:italic;padding:12px 0;}
+
+/* session blocks */
+details.sess-block{background:var(--paper);border:1px solid var(--border);border-left:4px solid var(--navy);border-radius:0 8px 8px 0;margin-bottom:10px;overflow:hidden;}
+details.sess-block:hover{box-shadow:0 2px 8px rgba(0,0,0,.06);}
+details.sess-block[open]{border-left-color:var(--gold);}
+.sess-sum{padding:14px 18px;cursor:pointer;list-style:none;user-select:none;}
+.sess-sum::-webkit-details-marker{display:none;}
+.sess-hd{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap;}
+.sess-date-chip{background:var(--navy);color:#fff;font-size:10px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:4px;white-space:nowrap;}
+details.sess-block[open] .sess-date-chip{background:var(--gold);}
+.sess-label{font-family:var(--font-h);font-size:14px;font-weight:900;color:var(--ink);}
+.sess-lead{font-size:13px;color:var(--ink2);line-height:1.55;margin-bottom:6px;}
+.sess-body{padding:0 18px 16px;border-top:1px solid var(--border);}
+.sess-lead-full{font-size:13px;color:var(--ink2);line-height:1.6;margin:12px 0;background:#f8fafc;border-left:3px solid var(--gold);padding:8px 12px;border-radius:0 6px 6px 0;}
+.sess-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0;}
+.sess-col{font-size:13px;}
+.sess-col ul{list-style:none;padding:0;}
+.sess-col li{padding:4px 0 4px 14px;position:relative;color:var(--ink2);border-bottom:1px solid #f3f4f6;font-size:13px;line-height:1.5;}
+.sess-col li:last-child{border-bottom:none;}
+.sess-col li::before{content:"·";position:absolute;left:2px;color:var(--navy);font-weight:700;font-size:15px;line-height:1.1;}
+.notable-callout{display:flex;gap:10px;align-items:flex-start;background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:10px 12px;margin:12px 0;}
+.notable-icon{font-size:16px;color:#d97706;flex-shrink:0;line-height:1.4;}
+.notable-callout h5{border-bottom-color:#fde68a;color:#92400e;}
+.notable-callout p,.notable-callout li{color:#78350f;font-size:13px;}
+.notable-callout ul{list-style:none;padding:0;}
+.notable-callout li{padding:3px 0 3px 14px;position:relative;}
+.notable-callout li::before{content:"·";position:absolute;left:2px;color:#d97706;font-weight:700;font-size:15px;line-height:1.1;}
+.parties-block{margin:12px 0;font-size:13px;}
+.sess-ft{margin-top:12px;padding-top:10px;border-top:1px solid var(--border);}
+
+/* landing track cards */
+.track-card{display:block;padding:20px 28px;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:background .1s;}
+.track-card:hover{background:var(--surf);}
+.track-card:last-of-type{border-bottom:none;}
+.track-label{font-size:10px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+.track-title{font-family:var(--font-h);font-size:18px;font-weight:900;color:var(--navy);letter-spacing:-.3px;line-height:1.3;margin-bottom:6px;}
+.track-desc{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px;}
+.track-latest{font-size:12px;color:var(--ink2);}
+.track-arrow{font-size:22px;color:var(--gold);font-weight:900;float:right;margin-top:-28px;}
+
+/* archive / intro */
+.arch-table{width:100%;border-collapse:collapse;}
+.arch-table th{padding:8px 0;text-align:left;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);border-bottom:1px solid var(--border);}
+.arch-table td{padding:12px 8px 12px 0;border-bottom:1px solid var(--border);font-size:13px;color:var(--ink2);}
+.arch-table tr:last-child td{border-bottom:none;}
+.arch-table a{color:var(--navy);font-weight:700;text-decoration:none;}
+.arch-table a:hover{text-decoration:underline;}
+.intro-block{padding:20px 28px;border-bottom:1px solid var(--border);font-size:14px;line-height:1.7;color:var(--ink);}
+.all-issues-wrap{padding:16px 28px;border-bottom:1px solid var(--border);}
+.all-issues-btn{width:100%;padding:13px;background:none;border:1.5px solid var(--navy);border-radius:3px;font-family:var(--font-h);font-size:11px;font-weight:900;color:var(--navy);cursor:pointer;text-align:center;letter-spacing:.14em;text-transform:uppercase;transition:background .15s,color .15s;}
+.all-issues-btn:hover{background:var(--navy);color:#fff;}
+.waitlist-section,.contact-section{padding:20px 28px;border-bottom:1px solid var(--border);}
+.waitlist-heading{font-family:var(--font-h);font-size:17px;font-weight:900;color:var(--ink);letter-spacing:-.2px;margin-bottom:8px;}
+.waitlist-body{font-size:14px;color:var(--ink2);line-height:1.6;margin-bottom:16px;}
+.waitlist-form{display:flex;gap:8px;margin-bottom:10px;}
+.waitlist-input{flex:1;padding:10px 12px;border:1px solid var(--border);border-radius:3px;font-family:var(--font-b);font-size:14px;color:var(--ink);min-width:0;}
+.waitlist-input:focus{outline:none;border-color:var(--navy);}
+.waitlist-btn{padding:10px 18px;background:var(--navy);color:#fff;border:none;border-radius:3px;font-family:var(--font-h);font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;white-space:nowrap;}
+.waitlist-btn:hover{background:#122348;}
+.waitlist-fine{font-size:12px;color:var(--muted-lt);line-height:1.5;}
+.waitlist-ok{display:none;font-size:14px;font-weight:700;color:#16a34a;margin-top:10px;}
+.contact-section p{font-size:14px;color:var(--ink2);line-height:1.6;}
+.contact-section a{color:var(--navy);font-weight:700;text-decoration:none;}
+.contact-section a:hover{text-decoration:underline;}
+
+@media(max-width:760px){
+  .wrapper{margin:0;border-radius:0;border-left:none;border-right:none;}
+  .masthead,.section,.nl-footer,.page-header,a.issue-row,.track-card,
+  .section-label-row,.intro-block,.waitlist-section,.contact-section,.all-issues-wrap{padding-left:16px;padding-right:16px;}
+  .masthead-pills{display:none;}
+  .sess-cols{grid-template-columns:1fr;}
+  .fs-winners ul{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+<div class="top-bar">
+  <nav class="site-nav">
+    <a href="../" class="active">ДВ Дайджест</a>
+    <a href="../../sessions/">Заседания</a>
+    <a href="https://bpdoodles.com">Basepoint Doodles</a>
+  </nav>
+  <span class="top-bar-tag">Парламентарни Doodles</span>
+</div>
+
+<div class="masthead">
+  <div class="masthead-logo">
+    <div class="masthead-left">
+      <span class="masthead-basepoint">Парламентарни</span>
+      <span class="masthead-tagline">Парламентарен дайджест</span>
+    </div>
+    <div class="masthead-divider"></div>
+    <span class="masthead-doodles">Doodles</span>
+  </div>
+  <div class="masthead-meta">
+    <span class="masthead-issue">ДВ Дайджест · Седмица 2 · 2026</span>
+    <span class="masthead-date">5–11 януари 2026</span>
+    <div class="masthead-pills"><span class="masthead-pill">12 акта от МС</span><span class="masthead-pill">3 наредби/регулации</span></div>
+  </div>
+</div>
+<div class="section">
+
+<div class="subsection">
+  <div class="subsection-hd">
+    <span class="subsection-tag">02</span>
+    <span class="subsection-title">Министерски съвет</span>
+    <span class="subsection-count">11 постановления · 1 решение</span>
+  </div>
+  <div class="dv-grid">
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;1 &middot; 2026-01-06</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 365 ОТ 29 ДЕКЕМВРИ 2025 Г. за създаване на Специализирана оперативна група за анализ и противодействие на изпирането на пари</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Създава се нова междуведомствена група за борба с изпирането на пари, която обединява полицията, ДАНС, НАП и митниците под общ покрив в МВР.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Новата Специализирана оперативна група е физически настанена в Главна дирекция „Национална полиция&quot; на МВР, която поема и цялото логистично осигуряване.</li><li>В групата участват на ротационен принцип служители от четири структури: ГДНП и ГДБОП (МВР), ДАНС, НАП и Агенция „Митници&quot; – всеки работи в рамките на собствената си законова компетентност.</li><li>Оперативното ръководство се осъществява от служител на ГДНП, назначен лично от министъра на вътрешните работи.</li><li>Групата ще работи с обща комуникационно-информационна система в МВР, в която се стича информация от всички партньорски структури, а при нужда – и от други министерства и ведомства.</li><li>Финансирането идва от съществуващите бюджети на участващите институции – без допълнителни средства.</li><li>Правилата за работа трябва да бъдат съвместно утвърдени от ръководителите на всички четири структури в 20-дневен срок.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Държавата като цяло – обединяването на разпръснати капацитети в една оперативна точка би трябвало да повиши ефективността срещу финансовите престъпления.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Цялото финансиране е за сметка на вече утвърдените бюджети на участниците – новата структура се създава без нито един допълнителен лев.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от обнародването – 6 януари 2026 г.</li><li>В 20-дневен срок четиримата ръководители трябва да утвърдят съвместни правила за работа на групата.</li><li>В 1-месечен срок всяка структура определя конкретните служители и лицата за контакт.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240382" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;1 &middot; 2026-01-06</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 367 ОТ 29 ДЕКЕМВРИ 2025 Г. за изменение и допълнение на Постановление № 341 на Министерския съвет от 2025 г. за одобряване на допълнителни разходи по бюджета на Министерския съвет за 2025 г.</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Актът прехвърля отговорността за изплащане на одобрени допълнителни средства от главния секретар на МС към областния управител на област Варна, като разрешава използването на сметката за чужди средства на Варненската областна администрация.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Плащанията по вече одобрените допълнителни разходи по бюджета на МС за 2025 г. вече могат да минат през сметката за чужди средства на Областна администрация – Варна.</li><li>Суми, преведени по тази сметка до 31 декември 2025 г., се признават за изпълнени разходи по бюджета на МС за 2025 г. – т.е. не остават като „висящи&quot; за следващата година.</li><li>Изпълнението на постановлението се възлага на областния управител на Варна вместо на главния секретар на МС, което показва, че плащанията са свързани с дейност на територията на областта.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Получателите на средствата в област Варна, чиито плащания се осигуряват технически навреме и се отчитат в рамките на 2025 г.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Рядко е областна администрация да бъде натоварена с разплащателна функция за средства от бюджета на Министерски съвет – това подсказва спешно оперативно решение в последните дни на бюджетната година.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от обнародването – 6 януари 2026 г.</li><li>Финансовото отражение е ретроактивно: плащанията, извършени до 31 декември 2025 г., се отчитат към бюджет 2025 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240388" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;1 &middot; 2026-01-06</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 366 ОТ 29 ДЕКЕМВРИ 2025 Г. за приемане на Класификатор на длъжностите в администрацията и на Номенклатура на кодовете на длъжностите от Класификатора на дипломатическите длъжности</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Приема изцяло нов класификатор на длъжностите в държавната администрация, заменящ документа от 2012 г., и въвежда 12-цифрени кодове за служебните длъжности вместо досегашните кодове по НКПД.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Старият класификатор от 2012 г. (многократно кърпен – над 25 изменения за 13 години) се отменя изцяло и се заменя с нов документ.</li><li>Въвежда се нов 12-цифрен код за всяка длъжност по служебно правоотношение: първите 8 цифри са от Националната класификация на професиите, деветата е 0, последните три – пореден номер от класификатора. Длъжностите по трудово правоотношение запазват 8-цифрения код по НКПД.</li><li>Добавя се нова длъжност „младши социален работник&quot; – занимава се с анализ на информация, бази данни, регистрация и изготвяне на справки за помощи и социални услуги, може да извършва административно обслужване.</li><li>Длъжността „държавен здравен инспектор&quot; получава официална дефиниция и се разпределя в 7 степени – три в Министерството на здравеопазването, три в регионалните здравни инспекции и една обща четвърта степен.</li><li>Длъжността „инспектор по ядрена безопасност и радиационна защита&quot; се степенува в 4 нива (от инспектор до държавен инспектор) и получава детайлно описание на правомощията – включително право да съставя актове, дава задължителни предписания и предлага отнемане на лицензии.</li><li>В длъжностните разписания на администрацията колоните за заплати вече се попълват в евро (не в лева) – промяна в образците на поименното разписание и рекапитулацията.</li><li>Навсякъде в наредбата препратките към „Закона за противодействие на корупцията и за отнемане на незаконно придобитото имущество&quot; се актуализират към новото му съкратено наименование „Закон за противодействие на корупцията&quot;.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Новоназначените „младши социални работници&quot; получават официален статут; здравните и ядрените инспектори – ясна правна рамка и степенуване.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Образците на длъжностните разписания вече изискват заплатите да се вписват в евро – тихо, без фанфари, което сигнализира административна подготовка за въвеждане на еврото.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Постановлението влиза в сила от датата на обнародване – 6 януари 2026 г.</li><li>Органите по назначаване имат <strong>2-месечен срок</strong> (до около 6 март 2026 г.) да приведат длъжностните разписания в съответствие и да уредят правоотношенията на служителите, чиито длъжности преминават в друго длъжностно ниво.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240389" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;1 &middot; 2026-01-06</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 368 ОТ 30 ДЕКЕМВРИ 2025 Г. за изменение и допълнение на Наредбата за условията и реда за организиране на дейностите по държавните резерви и военновременните запаси, приета с Постановление № 234 на Министерския съвет от 2003 г.</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Актуализира правилата за държавните резерви и военновременните запаси, като разширява обхвата им – освен лекарствени продукти вече изрично се включват медицински изделия, лични предпазни средства и ветеринарномедицински продукти.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Медицинските изделия и личните предпазни средства официално влизат в обхвата на държавните резерви и военновременните запаси – навсякъде в наредбата те се добавят редом с лекарствените продукти.</li><li>Ветеринарномедицинските продукти също се добавят към списъка на стоките, за чието окомплектоване и съхранение се следи при извънредни ситуации.</li><li>Нова основание за действие: изтеглянето от пазара или забраната за пускане на медицински изделия вече е изрично посочено като условие, при което може да се задейства процедура по държавните резерви.</li><li>Цените на лекарствените продукти от резервите се определят по специалния ред на Закона за лекарствените продукти в хуманната медицина, а останалото медицинско имущество – по общия ред на наредбата.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Държавата и гражданите – по-широка и по-ясна рамка за кризисно снабдяване с медицински консумативи и лични предпазни средства при бедствия или въоръжени конфликти.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><p>От деня на обнародването – 6 януари 2026 г.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240406" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;1 &middot; 2026-01-06</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 369 ОТ 30 ДЕКЕМВРИ 2025 Г. за приемане на Тарифа за таксите, които се събират от Центъра за оценка на риска по хранителната верига</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Актът въвежда нова тарифа в евро за таксите, които фирмите и заявителите плащат на Центъра за оценка на риска по хранителната верига за научни оценки, одобрения и разрешения на пестициди и активни вещества.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Стандартна научна оценка</strong> по хранителната верига струва <strong>1 431,62 евро</strong>; при бърза процедура до 3 работни дни – <strong>2 863,24 евро</strong> (двоен размер).</li><li><strong>Одобряване или подновяване на активно вещество/пестицид</strong>, когато България е докладчик: <strong>766,94 евро</strong> за допустимост на заявлението + <strong>20 543,71 евро</strong> за оценка с доклад – за всяка отделна област на оценка; оценката на потвърждаваща информация е <strong>7 055,83 евро</strong>.</li><li>Когато България е <strong>съдокладчик</strong>, оценката с доклад е същата – <strong>20 543,71 евро</strong> на област, а прегледът и коментарите по доклад на друга държава – <strong>8 998,74 евро</strong> на област.</li><li><strong>Разрешаване на продукт за растителна защита (ПРЗ)</strong> на пазара: ако България разглежда заявлението – <strong>10 737,13 евро</strong> на област; ако е заинтересована държава членка – <strong>869,20 евро</strong> на област; за идентичен ПРЗ – <strong>1 257,78 евро</strong>.</li><li><strong>Сравнителна оценка</strong> (когато се търси заместване на опасно вещество) добавя <strong>2 147,43 евро</strong> към основната такса.</li><li><strong>ПРЗ с нисък риск</strong> – разрешение струва <strong>6 800,18 евро</strong>; за паралелна търговия – <strong>1 278,23 евро</strong>; за изменение на разрешение – <strong>869,20 евро</strong>.</li><li><strong>Оценка на идентичност/еквивалентност</strong> на производствен източник на активно вещество – <strong>5 624,21 евро</strong> на източник; промяна на максимално допустима граница на остатъчно вещество – <strong>8 691,96 евро</strong>.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li><strong>Печелят:</strong> Центърът за оценка на риска по хранителната верига – получава актуализирани и деноминирани в евро приходи; заявителите получават предвидима и прозрачна тарифа.</li><li><strong>Губят:</strong> Производители и вносители на пестициди и активни вещества, подаващи заявления – таксите вече са фиксирани в евро, което при многобройни области на оценка може да означава значителни общи разходи.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Плащането в брой в левове ще е позволено само в рамките на <strong>един месец</strong> от въвеждането на еврото – след това изключително в евро, което означава, че тарифата на практика маркира края на левовите плащания към центъра.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>В сила от <strong>1 януари 2026 г.</strong> – датата, определена с решението на Съвета на ЕС за приемане на еврото от България.</li><li>Старата тарифа от 2024 г. е отменена едновременно с влизането в сила на новата.</li><li>Плащания в брой в левове са допустими само през едномесечния период на двойно обращение на лева и еврото.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240407" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;1 &middot; 2026-01-06</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 370 ОТ 30 ДЕКЕМВРИ 2025 Г. за изменение на Наредбата за таксите за използване на летищата за обществено ползване и за аеронавигационно обслужване в Република България, приета с Постановление № 280 на Министерския съвет от 1998 г.</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Актуализира се кръгът от лица, които имат право да участват в консултациите при определяне на летищните такси – вместо отделни ползватели или техни упълномощени лица, вече изрично се включват и официалните представители и сдружения на ползватели на летища, регламентирани в Закона за гражданското въздухоплаване.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Разширява се и прецизира списъкът на участниците в процедурата по определяне на летищните такси – добавени са представители и сдружения на ползватели, признати по Закона за гражданското въздухоплаване (чл. 122е, ал. 1).</li><li>Вече не е достатъчно да си просто „ползвател&quot; или „сдружение на ползватели&quot; без законово основание – участниците трябва да отговарят на конкретната правна дефиниция от ЗГВ.</li><li>Упълномощените лица запазват правото си на участие, но само ако са упълномощени от субектите, отговарящи на новото определение.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Официално признатите сдружения и представители на авиокомпании и оператори, чийто статут вече е законово гарантиран при преговорите за такси.</li><li>Губят: Неформални групи или ползватели, които не отговарят на законовата дефиниция по ЗГВ и губят автоматичното право на участие в консултациите.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>От датата на обнародването – 6 януари 2026 г., без гратисен период.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240408" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;1 &middot; 2026-01-06</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 371 ОТ 30 ДЕКЕМВРИ 2025 Г. за изменение на нормативни актове на Министерския съвет</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Постановлението заменя всички суми в левове с еквивалентни суми в евро в десетки нормативни акта от сферата на образованието и науката, в сила от 1 януари 2026 г. – деня, в който България приема еврото.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Студентски стипендии:</strong> Минималната стипендия вече е 76,69 евро, максималната – 127,82 евро месечно. Стипендия за успех – от 38,35 до 115,04 евро; за научна дейност – до 204,52 евро; специални стипендии варират между 71,58 и 295,02 евро месечно.</li><li><strong>Ученически стипендии:</strong> Редовна стипендия – от 10,74 до 30,68 евро; специална стипендия до 51,13 евро; минималната стипендия за определени случаи е 16,87 евро.</li><li><strong>Безплатни учебници:</strong> Таваните за финансиране на учебни комплекти се движат от 15,85 евро (1. клас) до 153,39 евро (за ученици със специални потребности и в болнични условия), като частта за авторски права/издателски права е изрично посочена.</li><li><strong>Академичен персонал:</strong> Минималната основна заплата за най-ниска академична длъжност (асистент) – 1 421,39 евро; за лекторски и сходни позиции – от 910,10 до 1 136,60 евро.</li><li><strong>Акредитация на висши училища:</strong> Таксите за акредитационни процедури варират от 1 124,84 евро (докторска програма в рамките на програмна акредитация) до 17 281,67 евро (програмна акредитация на направление с 16–30 специалности).</li><li><strong>Лицензиране на центрове за професионално обучение:</strong> Таксата за издаване на лиценз нараства в зависимост от броя на специалностите – от 971,45 евро (до 5 специалности) до 1 585 евро (над 20 специалности); такса за промяна в лиценза – 51,13 евро.</li><li><strong>Наука:</strong> Членовете на управителния съвет на Фонд „Научни изследвания&quot; получават 920,33 евро; хонорарите по проекти са в диапазона 138,05–276,10 евро. При академично израстване в природни и технически науки – 1 точка се начислява за всеки привлечени 2 556,46 евро финансиране.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Студенти, ученици, академичен персонал и висши училища – получават правна яснота и предвидимост на сумите в новата валута без промяна в реалната им стойност.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Всички суми са конвертирани по фиксирания курс 1,95583 лв. за 1 евро, което означава, че нито едно плащане не се увеличава или намалява реално – промяната е изцяло техническа, но засяга едновременно над 10 отделни нормативни акта с хиляди получатели.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>В сила от 1 януари 2026 г. – датата на официалното приемане на еврото от България съгласно Решение (ЕС) 2025/1407 на Съвета от 8 юли 2025 г.</li><li>Няма гратисен период – всички промени са приложими незабавно от 1 януари 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240409" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;2 &middot; 2026-01-08</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 372 ОТ 30 ДЕКЕМВРИ 2025 Г. за изменение на Наредбата за оценка на поземлени имоти в горски територии, приета с Постановление № 236 на Министерския съвет от 2011 г.</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Наредбата за оценка на горски имоти се привежда в съответствие с въвеждането на еврото – всички цени и оценки вече се изразяват в евро вместо в левове.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Навсякъде в наредбата, където пишеше „левове&quot;, вече пише „евро&quot; – засяга всички оценки на поземлени имоти в горски територии (покупко-продажби, замени, обезщетения).</li><li>Шест приложения към наредбата (формуляри и таблици за оценка) са актуализирани, за да отразят новата валута.</li><li>Един месец от датата на въвеждане на еврото плащанията могат да се правят и в левове в брой – това е т.нар. период на двойно обращение.</li><li>При плащане в левове по време на двойното обращение задължително се прилага официалният валутен курс, изразен с шест цифри (пет знака след десетичната запетая), и правилото за закръгляване по Закона за въвеждане на еврото.</li><li>Оценки, изготвени и представени преди влизането в сила на постановлението, остават валидни до изтичането на своя срок – не е нужно да се преправят.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Собственици и купувачи на горски имоти – получават правна яснота и актуални формуляри за оценка в евро без преходни затруднения.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>В сила от 1 януари 2026 г. – датата, определена с Решение на Съвета на ЕС (ЕС) 2025/1407 от 8 юли 2025 г. за приемане на еврото от България.</li><li>Едномесечен гратисен период за плащания в левове в брой (период на двойно обращение).</li><li>Вече издадените оценки запазват валидността си до изтичане на собствения си срок.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240410" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;3 &middot; 2026-01-09</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 373 ОТ 30 ДЕКЕМВРИ 2025 Г. за изменение на Тарифа за таксите, които се събират от органите на държавния здравен контрол и националните центрове по проблемите на общественото здраве по Закона за здравето, приета с Постановление № 242 на Министерския съвет от 2007 г.</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Всички такси за здравен контрол и лабораторни услуги, плащани от граждани и бизнес към здравните инспекции и националните центрове, се преизчисляват от левове в евро в подготовка за въвеждането на еврото.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Таксите по цялата тарифа вече са деноминирани в евро – не е въведено увеличение, а техническо преизчисляване по фиксирания курс (1 евро = 1,95583 лв.); например таксата за регистрация/вписване от 95 лв. става 48,57 евро.</li><li>Стотици конкретни лабораторни изследвания и измервания покриват широк спектър: питейни и минерални води, козметика, храни, въздух на работното място, електромагнитни полета, радиационен контрол, вирусологични и паразитологични тестове, ХИВ диагностика, дезинфектанти и много други – всички с посочена евро-стойност.</li><li>Таксите за регулаторни дейности при източници на йонизиращи лъчения варират между 17,90 евро (удължаване на разрешително при непроменени условия) и 306,78 евро (пълно изпитване на компютъртомографска уредба).</li><li>Най-скъпите единични услуги включват: изследване за антиретровирусна резистентност на ХИВ-1 – 982,70 евро; оценка на хранителния прием на 100 лица – 1 636,13 евро; курс за правоспособност за ДДД ръководители – 791,48 евро.</li><li>Микро-таксите за прости анализи остават символични – напр. измерване на осветеност на работно място: 2,81 евро; алкохоли в урина: 0,51 евро; тиражиране на въпросници (10 стр.): 0,51 евро.</li><li>По време на периода на двойно обращение на лева и еврото плащането може да се извършва в левове в брой, като сумата се преизчислява по официалния валутен курс с шест значими цифри и се закръглява по математическото правило до втория знак след десетичната запетая.</li><li>Засегнати са физически и юридически лица, които поръчват услуги от НЦОЗА, НЦЗПБ, НЦРРЗ и 28-те регионални здравни инспекции в цялата страна.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Органите на здравния контрол – получават тарифа, готова за работа в евро зона без нужда от допълнителни изменения при въвеждането на еврото.</li><li>Губят: Не се открива явен губещ – реалните суми остават практически непроменени.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Таксата за изследване за антиретровирусна резистентност на ХИВ-1 чрез генотипиране е 982,70 евро – далеч най-скъпата единична услуга в целия тарифен документ, почти двойно повече от следващата по стойност.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Постановлението е в сила от 1 януари 2026 г. (обнародвано с обратна дата).</li><li>Няма гратисен период – таксите в евро са приложими незабавно.</li><li>По време на двойното обращение на лева и еврото плащането в левове в брой остава допустимо по официалния валутен курс.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240411" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;3 &middot; 2026-01-09</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 374 ОТ 30 ДЕКЕМВРИ 2025 Г. за одобряване на вътрешнокомпенсирани промени на утвърдените разходи по области на политики/бюджетни програми по бюджета на Министерството на културата за 2025 г.</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Правителството прехвърля пари между бюджетни пера на Министерството на културата за 2025 г., без да променя общия бюджет – намалява разходите за филми, популяризиране в чужбина и администрация, и насочва средства към сценични изкуства и опазване на наследството.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Разходите за <strong>филмово изкуство</strong> се намаляват с <strong>4 000 000 лв.</strong> по пера за издръжка – най-голямото единично съкращение в пакета.</li><li>Разходите за <strong>популяризиране на българската култура в чужбина</strong> се режат с <strong>1 045 456 лв.</strong>, от които 640 000 лв. са за персонал и 405 456 лв. за издръжка.</li><li>Разходите за <strong>опазване на недвижимото културно наследство</strong> се намаляват с 329 448 лв. за издръжка, но едновременно получават 494 425 лв. за капиталови разходи – т.е. парите се пренасочват от текущи към инвестиционни цели.</li><li><strong>Сценичните изкуства</strong> печелят: получават допълнителни 1 865 548 лв., почти изцяло (1 836 100 лв.) за капиталови разходи (инвестиции в инфраструктура и оборудване).</li><li>Бюджетната програма <strong>„Администрация&quot;</strong> губи 2 330 525 лв. капиталови разходи, но получава 5 340 000 лв. допълнително – 640 000 лв. за персонал и 4 700 000 лв. за издръжка, което означава нетно увеличение от над 3 млн. лв.</li><li><strong>Национален фонд „Култура&quot;</strong> и <strong>„Фестивали, конкурси, събития и чествания&quot;</strong> търпят малки съкращения – съответно 32 708 лв. и 47 854 лв.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Сценичните изкуства (почти 1,9 млн. лв. повече, предимно за инвестиции); администрацията на министерството (нетно +3 млн. лв.); опазването на недвижимото наследство (повече капиталови пари).</li><li>Губят: Филмовата индустрия (−4 млн. лв. за издръжка); институциите, популяризиращи България в чужбина (съкращение на персонал и издръжка).</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Докато филмовото изкуство губи 4 млн. лв., администрацията на министерството получава нетно над 3 млн. лв. повече – включително 4,7 млн. лв. допълнителна издръжка в края на бюджетната година.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>В сила от <strong>30 декември 2025 г.</strong> – датата на приемане, преди обнародването.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240412" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;3 &middot; 2026-01-09</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 375 ОТ 30 ДЕКЕМВРИ 2025 Г. за изменение и допълнение на Наредбата за удостоверенията за електронен подпис в администрациите, приета с Постановление № 97 на Министерския съвет от 2008 г.</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Актуализира правилата за електронни подписи на държавните служители, като въвежда задължителни квалифицирани удостоверения за достъп до регистри, информационни системи и системи за документооборот.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Всички служители в администрациите, работещи по трудово или служебно правоотношение, военнослужещите и членовете на колегиални органи трябва да използват само <strong>квалифицирани</strong> удостоверения за квалифициран електронен подпис – по-нисши видове отпадат.</li><li>Квалифицираното удостоверение вече е задължително за всеки служител, който вписва, заличава, извлича или изпраща данни от регистри и информационни системи, а също и за достъп до системи за електронен документооборот.</li><li>За изпращане на електронни изявления от името на администрацията е необходима изрична заповед на ръководителя или изрична клауза в длъжностната характеристика – без такова овластяване правото не е налице.</li><li>Издаването на удостоверение минава през конкретно овластено от ръководителя лице, което представлява администрацията пред доставчика; то одобрява исканията и при отказ уведомява служителя и неговия пряк ръководител.</li><li>Всяка администрация трябва да поддържа актуален регистър с всички издадени удостоверения – включително номер, валидност, длъжност на титуляря и дата на прекратяване; обновяването е задължение на изрично определен служител.</li><li>При съмнение за компрометиран частен ключ служителят е длъжен <strong>незабавно</strong> да уведоми овластеното лице и доставчика за спиране на удостоверението.</li><li>Силовите структури (МО, МВР, ДАНС, ДАР, ДАТО, Военното разузнаване, НСО) са изключени от обхвата на наредбата – освен когато предоставят е-услуги или обменят документи с други администрации.</li><li>Референтният стандарт за хардуерна сигурност се актуализира от остарялата версия „ISO/IEC 15408:1999&quot; към „последната му редакция&quot;, а компетентността за списъка с надеждни доставчици преминава от министъра на електронното управление към <strong>Европейската комисия</strong>.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Доставчиците на квалифицирани удостоверителни услуги (вписани в европейския доверителен списък), тъй като търсенето им нараства; служителите получават по-ясни правила за ползване на подписа и в лично качество.</li><li>Губят: Администрации с разхлабена практика – поемат нови организационни задължения (регистри, заповеди за овластяване, уведомления при напускане на служители).</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Силовите структури са изрично изключени от правилата за електронен подпис, освен когато предоставят административни услуги на гражданите – рядко срещано легално изключение в наредба с общ обхват за цялата администрация.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>В сила от деня на обнародването – 9 януари 2026 г., без гратисен период.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240413" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;1 &middot; 2026-01-06</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ № 933 ОТ 29 ДЕКЕМВРИ 2025 Г. за предоставяне на концесия за добив на подземни богатства по чл. 2, ал. 1, т. 5 от Закона за подземните богатства – строителни материали – варовици, от находище „Карлуково“, разположено в землището на с. Карлуково, община Луковит, област Ловеч, на Държавно предп</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Държавната железопътна компания НКЖИ получава право да добива варовик от находище край Карлуково за собствени нужди – поддръжка и ремонт на жп инфраструктурата – без да плаща концесионна такса.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Концесионна площ и срок:</strong> НКЖИ получава концесия върху 212,1 дка (от които 176,6 дка е самото находище „Карлуково&quot;, с. Карлуково, общ. Луковит, обл. Ловеч) за 35 години, считано от влизането в сила на концесионния договор.</li><li><strong>Нулева концесионна такса:</strong> Като държавно предприятие НКЖИ не дължи никакво концесионно плащане – нетипично изключение, изрично записано в решението.</li><li><strong>Строга забрана за търговия:</strong> Добитият варовик може да се използва единствено за жп инфраструктура (развитие, ремонт, поддръжка, експлоатация); продажбата или предоставянето му срещу заплащане на трети лица е изрично забранена. Изключение: безвъзмездно даряване на общини и бюджетни организации на негодни минни отпадъци.</li><li><strong>Условие за стартиране:</strong> Договорът влиза в сила едва след като е издадено решение по ОВОС (или решение, че ОВОС не е необходима) и след представяне на банкова гаранция от 79 493 лв. За периода до тогава НКЖИ има само права на възложител на инвестиционното предложение.</li><li><strong>Банкова гаранция:</strong> За първата година – 79 493 лв., безусловна и неотменяема; за всяка следваща година – по-голямата от сумата, индексирана с инфлацията спрямо база 2025 г., или размера на годишната вноска за рекултивация. При усвояване от държавата концесионерът възстановява сумата в 10 дни.</li><li><strong>Отчетност:</strong> На всеки 6 месеца НКЖИ подава отчет с точни количества добит, вложен и складиран варовик, придружен с доказателства; ежегодно – отчет за инвестициите и промяната на запасите.</li><li><strong>Рекултивация:</strong> На всеки 5 години се актуализира проектът за ликвидация/консервация на обекта и рекултивация на засегнатите земи; разходите са изцяло за сметка на концесионера.</li><li><strong>Срок за подписване на договор:</strong> Министърът на енергетиката трябва да сключи концесионния договор с НКЖИ в рамките на 3 месеца от влизането в сила на решението.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li><strong>Печелят:</strong> НКЖИ – осигурява си собствен безплатен източник на строителни материали за жп ремонти; косвено – данъкоплатците, ако това намали разходите за поддръжка на жп мрежата.</li><li><strong>Губят:</strong> Частни кариерни фирми, които досега са доставяли варовик на НКЖИ – губят потенциален клиент.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Концесията се предоставя „по право&quot; без конкурс или търг и без концесионна такса – привилегия, достъпна само за държавни предприятия, чийто предмет на дейност е естествен монопол по закон.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Решението е в сила от обнародването (6 януари 2026 г.) и подлежи на обжалване пред ВАС в 14-дневен срок.</li><li>Концесионният договор трябва да се подпише до 3 месеца от влизането в сила на решението.</li><li>Самата концесионна дейност (добивът) може да започне едва след получаване на решение по ОВОС и предоставяне на банковата гаранция от 79 493 лв.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240387" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details></div>
+</div>
+<div class="subsection">
+  <div class="subsection-hd">
+    <span class="subsection-tag">03</span>
+    <span class="subsection-title">Министерства и ведомства</span>
+    <span class="subsection-count">3 наредби</span>
+  </div>
+  <div class="dv-grid">
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;1 &middot; 2026-01-06</span>
+    </div>
+    <div class="dv-title">Наредба за изменение и допълнение на Наредба № 6 от 2021 г. за компетентност на морските лица в Република България</div>
+    <div class="exec-organ">Министерство на транспорта и съобщенията</div>
+    <p class="dv-lead">Наредбата въвежда нови правоспособности за капитани на търговски яхти и водачи на джетове, облекчава признаването на тренажорен стаж и актуализира изискванията за морски персонал съобразно новата европейска директива.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Нови правоспособности за яхти:</strong> Създават се две нови категории – „капитан на търговска яхта до 500 БТ&quot; (минимум 20 г., 12 месеца стаж, изпит пред ИАМА) и „капитан на търговска яхта до 200 БТ&quot; (минимум 18 г., 6 месеца стаж на яхта над 12 m, изпит пред ИАМА); носителят на по-ниската категория може да служи като вахтен помощник-капитан на яхта до 500 БТ.</li><li><strong>Нова правоспособност „водач на джет&quot;:</strong> Изисква навършени 18 години, основно образование и курс при инструктори на Българската федерация по водомоторен спорт, завършен с изпит в рамките на курса; лицата вече с „водач до 40 БТ&quot;, „шкипер до 300 БТ&quot; или „водач на малък кораб&quot; автоматично се считат за придобили тази правоспособност.</li><li><strong>Тренажорен стаж:</strong> При първоначална правоспособност еднократно 5 дни на одобрен навигационен тренажор или тренажор на машинно отделение се приравняват на 15 дни реален плавателен стаж на море.</li><li><strong>Плавателен стаж на търговска яхта:</strong> Въвежда се нов документ – „Документ за плавателен стаж на търговска яхта&quot; (приложение № 4а); минимум 4 часа дежурство в 24-часов период се броят за 1 пълен ден стаж.</li><li><strong>Актуализация на европейската рамка:</strong> Директива 2008/106/ЕО навсякъде в наредбата се заменя с Директива (ЕС) 2022/993 от 8 юни 2022 г. относно минималното ниво на обучение на морските лица.</li><li><strong>Опростяване на изпитите:</strong> Изпитите вече се провеждат чрез компютърни тестове под наблюдение на служители на ИАМА и/или пред комисия – отпада специалната „изпитна комисия&quot; като отделен орган; данните за правоспособност се отразяват изцяло електронно.</li><li><strong>Промени за капитани на риболовни кораби до 200 БТ:</strong> Преструктурирани са изискванията с три различни пътеки (6, 12 или 24 месеца стаж в зависимост от образованието и предишната правоспособност), а лицата с правоспособност по чл. 32, т. 1–5 автоматично могат да кандидатстват за свидетелство в тази категория.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li><strong>Печелят:</strong> Яхтени капитани и оператори на търговски яхти (нова регулирана кариерна стъпка), начинаещи моряци (по-лесно признаване на тренажорен стаж), водачи на джетове (ясна правна рамка за правоспособност), лица с опит във вахтена служба (опростени преходни признавания).</li><li><strong>Губят:</strong> Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>5 дни на тренажор се приравняват на 15 дни реален морски стаж – тоест симулаторното обучение е три пъти по-„ценно&quot; от времето на море при изчисляване на минималния стаж за първоначална правоспособност.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Наредбата влиза в сила от деня на обнародването – 6 януари 2026 г.</li><li>Изключение: разпоредбите за новите правоспособности „капитан на търговска яхта до 500 БТ&quot;, „капитан на търговска яхта до 200 БТ&quot; и „водач на джет&quot; (включително изискванията за тях) влизат в сила <strong>6 месеца след обнародването</strong>, т.е. около 6 юли 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240329" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;3 &middot; 2026-01-09</span>
+    </div>
+    <div class="dv-title">НАРЕДБА № 124 от 17 декември 2025 г. за придобиване на квалификация по професията „Логистични услуги“</div>
+    <div class="exec-organ">Министерство на образованието и науката</div>
+    <p class="dv-lead">Въвежда се държавен образователен стандарт за новата професия „Логистични услуги&quot;, който определя какво трябва да знаят и умеят завършилите я ученици и курсисти.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Създава се официална професия с код 104107 „Логистични услуги&quot; в направление „Транспортни услуги&quot; – тя вече може да се изучава в професионални училища и центрове за обучение.</li><li>Предвидени са четири степени на професионална квалификация (от първа до четвърта), като може да се придобива и квалификация само по част от професията.</li><li>Стандартът задава изисквания към кандидатите за обучение, към учебната база и към самите преподаватели и инструктори.</li><li>Обучението включва три вида подготовка: обща, отраслова (за транспортния сектор) и специфична за логистиката – заедно те трябва да гарантират реална работоспособност след дипломирането.</li><li>За курсисти над 16 години (извън редовното училище) обучението по новия стандарт може да започне веднага – от 1 януари 2026 г.</li><li>За редовните ученици новите учебни планове и програми се въвеждат от учебната 2026/2027 г. за осмокласниците, постъпващи тогава.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Ученици и възрастни, търсещи призната квалификация в логистиката; работодатели от сектора, които ще имат достъп до кадри с унифицирана подготовка.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>За курсисти над 16 г. (извънучилищно обучение): от 1 януари 2026 г.</li><li>За ученици в редовно професионално образование: от учебната 2026/2027 г., считано от постъпването в VIII клас.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240258" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;3 &middot; 2026-01-09</span>
+    </div>
+    <div class="dv-title">Наредба за изменение и допълнение на Наредба № 15 от 2005 г. за имунизациите в Република България</div>
+    <div class="exec-organ">Министерство на здравеопазването</div>
+    <p class="dv-lead">Наредбата въвежда две нови задължителни ваксини в имунизационния календар – срещу варицела за деца, родени от 1.01.2025 г., и срещу респираторно-синцитиален вирус (RSV) за бременни жени, и уточнява условията за прилагането им.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Варицела става задължителна планова ваксина</strong> за деца, родени от 1.01.2025 г.: първа доза на 12–15-месечна възраст, втора доза на 4-годишна възраст. Не подлежат на втора доза деца, при които след първата доза е документирано преболедуване.</li><li><strong>Имунизация срещу RSV се въвежда като целева (безплатна) ваксина</strong> за всички бременни жени между 24-та и 36-а гестационна седмица – целта е защита на новороденото чрез майчини антитела. Използва се задължително двувалентна рекомбинантна ваксина.</li><li><strong>Ваксинацията срещу RSV при бременни</strong> се извършва от лекари в болнични и извънболнични заведения или в имунизационни кабинети на РЗИ, определени със заповед на министъра.</li><li><strong>Варицелната ваксина като препоръчителна</strong> (досегашният ред) вече важи само за лица, <strong>родени преди 1.01.2025 г.</strong>, за които няма документация за преболедуване – те не са в задължителния календар.</li><li><strong>Специфично изискване към ваксината срещу варицела:</strong> трябва да е атенюирана моноваксина с ваксинален щам Ока – по-евтините или комбинирани алтернативи не са допустими за задължителната схема.</li><li><strong>Препоръчителна ваксинация срещу RSV</strong> се препоръчва и за лица на 18 и повече години (извън задължителния календар).</li><li><strong>МПР ваксината и ваксината срещу варицела</strong> трябва да се прилагат едновременно или с интервал от точно 30 дни – изричен нов технически стандарт.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li><strong>Печелят:</strong> Бременни жени и техните новородени (безплатна RSV защита); деца, родени от 2025 г. (безплатна защита срещу варицела); обществено здраве (разширен обхват на задължителния имунизационен календар).</li><li><strong>Губят:</strong> Не се открива явен губещ, но производители на комбинирани варицелни ваксини (различни от щам Ока моноваксини) са практически изключени от обществените поръчки за задължителни ваксини.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Децата, чиито майки са ваксинирани срещу коклюш по време на бременността, вече започват задължителните имунизации от 2-месечна възраст вместо от 6-та седмица – изричен нов ред в имунизационния календар, отчитащ майчиния имунитет.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Основната част от наредбата влиза в сила от <strong>1 юли 2026 г.</strong></li><li>Разпоредбите за отчетни кодове на коклюш при бременни (27–36 г.с.) и за нов код в системата за проследяване влизат в сила <strong>незабавно – от 9 януари 2026 г.</strong></li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240425" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details></div>
+</div>
+</div>
+
+<div class="nl-footer">
+  <span class="nl-footer-logo">Парламентарни Doodles</span>
+  <div class="nl-footer-links">
+    <a href="../">ДВ Дайджест</a>
+    <a href="../../sessions/">Заседания</a>
+    <a href="https://bpdoodles.com">Basepoint Doodles</a>
+  </div>
+</div>
+</div>
+</body>
+</html>

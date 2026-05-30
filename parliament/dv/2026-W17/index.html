@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="utf-8">
+<title>Парламентарни Doodles · ДВ Дайджест · Седмица 17</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --navy:#1B2E5E; --gold:#B5821A; --ink:#1C1C1C; --ink2:#444;
+  --muted:#888; --muted-lt:#AAA; --border:#E8E8E8; --surf:#F8F8F8; --paper:#FFF;
+  --font-d:'Caveat',cursive; --font-h:'Nunito','Arial Black',sans-serif;
+  --font-b:'Nunito',Arial,sans-serif;
+}
+body{font-family:var(--font-b);background:#F0F2F5;color:var(--ink);line-height:1.6;}
+.wrapper{max-width:740px;margin:32px auto;background:#fff;border:1px solid var(--border);border-radius:4px;overflow:hidden;}
+
+/* top bar */
+.top-bar{display:flex;justify-content:space-between;align-items:center;padding:8px 16px;background:var(--navy);}
+.site-nav{display:flex;gap:20px;align-items:center;}
+.site-nav a{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none;}
+.site-nav a:hover{color:rgba(255,255,255,.9);}
+.site-nav a.active{color:var(--gold);}
+.top-bar-tag{font-family:'Courier New',monospace;font-size:10px;color:rgba(255,255,255,.25);}
+
+/* masthead */
+.masthead{background:var(--navy);padding:24px 28px 20px;display:flex;justify-content:space-between;align-items:flex-end;border-bottom:3px solid var(--gold);}
+.masthead-logo{display:flex;flex-direction:row;align-items:center;}
+.masthead-left{display:flex;flex-direction:column;align-items:flex-end;padding-right:14px;}
+.masthead-basepoint{font-family:var(--font-h);font-size:22px;font-weight:900;color:#fff;letter-spacing:-.3px;line-height:1;}
+.masthead-tagline{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:4px;}
+.masthead-divider{width:2px;height:52px;background:rgba(255,255,255,.2);}
+.masthead-doodles{font-family:var(--font-d);font-size:48px;font-weight:700;color:var(--gold);line-height:1;padding-left:14px;}
+.masthead-meta{text-align:right;}
+.masthead-issue{font-size:13px;font-weight:700;color:rgba(255,255,255,.85);display:block;line-height:1.5;}
+.masthead-date{font-size:11px;color:rgba(255,255,255,.4);display:block;}
+.masthead-pills{margin-top:8px;display:flex;gap:6px;justify-content:flex-end;flex-wrap:wrap;}
+.masthead-pill{font-size:10px;font-weight:700;letter-spacing:.05em;background:rgba(255,255,255,.12);color:rgba(255,255,255,.6);padding:3px 8px;border-radius:3px;}
+
+/* content sections */
+.section{padding:20px 28px;border-bottom:1px solid var(--border);}
+.section:last-of-type{border-bottom:none;}
+
+/* subsection (within DV edition) */
+.subsection{margin-bottom:24px;}
+.subsection:last-child{margin-bottom:0;}
+.subsection-hd{display:flex;align-items:baseline;gap:10px;margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid var(--border);}
+.subsection-tag{font-size:10px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);}
+.subsection-title{font-family:var(--font-h);font-size:16px;font-weight:900;color:var(--navy);}
+.subsection-count{font-size:11px;color:var(--muted);margin-left:auto;}
+
+/* section label row */
+.section-label-row{padding:10px 28px 8px;background:var(--surf);border-bottom:1px solid var(--border);}
+.section-label{font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);}
+
+/* page header */
+.page-header{padding:20px 28px 16px;border-bottom:1px solid var(--border);}
+.page-title{font-family:var(--font-h);font-size:20px;font-weight:900;color:var(--ink);letter-spacing:-.3px;margin-bottom:6px;}
+.page-subtitle{font-size:13px;color:var(--muted);}
+
+/* issue list rows */
+a.issue-row{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 28px;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:background .1s;}
+a.issue-row:hover{background:var(--surf);}
+a.issue-row:last-of-type{border-bottom:none;}
+.issue-row-left{flex:1;}
+.issue-row-meta{font-family:'Courier New',monospace;font-size:10px;color:var(--muted-lt);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;}
+.issue-row-title{font-size:15px;font-weight:900;color:var(--ink);letter-spacing:-.2px;line-height:1.3;}
+.issue-row-desc{font-size:12px;color:var(--muted);margin-top:3px;}
+.issue-row-arrow{font-size:18px;color:var(--gold);font-weight:900;flex-shrink:0;}
+
+/* footer */
+.nl-footer{padding:14px 28px;background:var(--surf);border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
+.nl-footer-logo{font-family:var(--font-d);font-size:18px;font-weight:700;color:#CCC;}
+.nl-footer-links{font-size:11px;display:flex;gap:16px;}
+.nl-footer-links a{color:var(--muted-lt);text-decoration:none;}
+.nl-footer-links a:hover{color:var(--muted);}
+
+/* DV cards */
+.dv-grid{display:flex;flex-direction:column;gap:8px;}
+details.dv-card{background:var(--paper);border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:border-color .15s;}
+details.dv-card:hover{border-color:var(--gold);}
+details.dv-card[open]{border-color:var(--gold);}
+.dv-card-compact{background:var(--paper);border:1px solid var(--border);border-radius:8px;overflow:hidden;opacity:.9;}
+.dv-sum{padding:14px 16px;cursor:pointer;list-style:none;user-select:none;}
+.dv-sum::-webkit-details-marker{display:none;}
+.dv-sum-static{padding:14px 16px;}
+.dv-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+.dv-meta{font-size:11px;color:var(--muted);font-weight:700;}
+.dv-title{font-family:var(--font-h);font-size:13px;font-weight:900;color:var(--ink);line-height:1.4;letter-spacing:-.1px;margin-bottom:4px;}
+.exec-organ{font-size:11px;color:var(--muted);margin-bottom:6px;font-style:italic;}
+.dv-lead{font-size:13px;color:var(--ink2);line-height:1.55;margin-bottom:8px;}
+.compact-bullets ul{list-style:none;padding:0;margin-top:6px;}
+.compact-bullets li{padding:3px 0 3px 14px;position:relative;color:var(--ink2);font-size:12px;line-height:1.5;}
+.compact-bullets li::before{content:"·";position:absolute;left:2px;color:var(--gold);font-weight:700;font-size:15px;line-height:1.1;}
+.expand-hint{font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.06em;margin-top:4px;}
+details.dv-card[open] .expand-hint{display:none;}
+.dv-body{padding:0 16px 16px;border-top:1px solid var(--border);}
+
+/* badges */
+.badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;}
+.dv-badges{display:flex;gap:6px;align-items:center;flex-wrap:wrap;}
+.b-zakon   {background:#dbeafe;color:#1a56db;}
+.b-reshenie{background:#cffafe;color:#0a6e8a;}
+.b-ukaz    {background:#ede9fe;color:#7c3aed;}
+.b-decl    {background:#fef3c7;color:#92400e;}
+.b-post    {background:#d1fae5;color:#065f46;}
+.b-naredba {background:#fce7f3;color:#9d174d;}
+.b-pravilnik{background:#f3e8ff;color:#6b21a8;}
+.b-inst    {background:#fef9c3;color:#713f12;}
+.b-razp    {background:#e0f2fe;color:#0369a1;}
+.b-spor    {background:#fff7ed;color:#c2410c;}
+.b-other   {background:#f3f4f6;color:#6b7280;}
+.b-cat     {background:#f3f4f6;color:#555;}
+
+/* factsheet sections */
+.fs-sec{margin:12px 0;font-size:13px;}
+.fs-sec h5,.parties-block h5,.notable-callout h5,.sess-col h5{font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:8px;padding-bottom:5px;border-bottom:1px solid var(--border);}
+.fs-sec ul,.parties-block ul{list-style:none;padding:0;}
+.fs-sec li,.parties-block li{padding:4px 0 4px 16px;position:relative;color:var(--ink2);border-bottom:1px solid #f3f4f6;font-size:13px;line-height:1.5;}
+.fs-sec li:last-child,.parties-block li:last-child{border-bottom:none;}
+.fs-sec li::before{content:"·";position:absolute;left:3px;color:var(--gold);font-weight:700;font-size:16px;line-height:1.1;}
+.fs-sec p,.parties-block p{color:var(--ink2);font-size:13px;margin-bottom:4px;}
+.fs-winners ul{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.fs-winners li{padding:8px 10px 8px 24px;border-radius:6px;border-bottom:none !important;}
+.fs-winners li:first-child{background:#f0fdf4;}
+.fs-winners li:first-child::before{content:"✓";color:#16a34a;font-size:13px;top:8px;}
+.fs-winners li:nth-child(2){background:#fef2f2;}
+.fs-winners li:nth-child(2)::before{content:"✗";color:#dc2626;font-size:13px;top:8px;}
+.fs-notable{background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:12px 14px;}
+.fs-notable h5{border-bottom-color:#fde68a;color:#92400e;}
+.fs-notable li,.fs-notable p{color:#78350f;}
+.fs-notable li::before{color:#d97706;}
+.fs-eu{background:#f0f9ff;border-radius:8px;padding:12px 14px;}
+.fs-eu h5{color:#0369a1;border-bottom-color:#bae6fd;}
+.fs-eu p{color:#0c4a6e;font-size:13px;}
+.ext-link{display:inline-block;margin-top:12px;font-size:12px;font-weight:700;color:var(--navy);text-decoration:none;}
+.ext-link:hover{text-decoration:underline;}
+.no-summ{color:var(--muted);font-size:13px;font-style:italic;padding:12px 0;}
+
+/* session blocks */
+details.sess-block{background:var(--paper);border:1px solid var(--border);border-left:4px solid var(--navy);border-radius:0 8px 8px 0;margin-bottom:10px;overflow:hidden;}
+details.sess-block:hover{box-shadow:0 2px 8px rgba(0,0,0,.06);}
+details.sess-block[open]{border-left-color:var(--gold);}
+.sess-sum{padding:14px 18px;cursor:pointer;list-style:none;user-select:none;}
+.sess-sum::-webkit-details-marker{display:none;}
+.sess-hd{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap;}
+.sess-date-chip{background:var(--navy);color:#fff;font-size:10px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:4px;white-space:nowrap;}
+details.sess-block[open] .sess-date-chip{background:var(--gold);}
+.sess-label{font-family:var(--font-h);font-size:14px;font-weight:900;color:var(--ink);}
+.sess-lead{font-size:13px;color:var(--ink2);line-height:1.55;margin-bottom:6px;}
+.sess-body{padding:0 18px 16px;border-top:1px solid var(--border);}
+.sess-lead-full{font-size:13px;color:var(--ink2);line-height:1.6;margin:12px 0;background:#f8fafc;border-left:3px solid var(--gold);padding:8px 12px;border-radius:0 6px 6px 0;}
+.sess-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0;}
+.sess-col{font-size:13px;}
+.sess-col ul{list-style:none;padding:0;}
+.sess-col li{padding:4px 0 4px 14px;position:relative;color:var(--ink2);border-bottom:1px solid #f3f4f6;font-size:13px;line-height:1.5;}
+.sess-col li:last-child{border-bottom:none;}
+.sess-col li::before{content:"·";position:absolute;left:2px;color:var(--navy);font-weight:700;font-size:15px;line-height:1.1;}
+.notable-callout{display:flex;gap:10px;align-items:flex-start;background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:10px 12px;margin:12px 0;}
+.notable-icon{font-size:16px;color:#d97706;flex-shrink:0;line-height:1.4;}
+.notable-callout h5{border-bottom-color:#fde68a;color:#92400e;}
+.notable-callout p,.notable-callout li{color:#78350f;font-size:13px;}
+.notable-callout ul{list-style:none;padding:0;}
+.notable-callout li{padding:3px 0 3px 14px;position:relative;}
+.notable-callout li::before{content:"·";position:absolute;left:2px;color:#d97706;font-weight:700;font-size:15px;line-height:1.1;}
+.parties-block{margin:12px 0;font-size:13px;}
+.sess-ft{margin-top:12px;padding-top:10px;border-top:1px solid var(--border);}
+
+/* landing track cards */
+.track-card{display:block;padding:20px 28px;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:background .1s;}
+.track-card:hover{background:var(--surf);}
+.track-card:last-of-type{border-bottom:none;}
+.track-label{font-size:10px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+.track-title{font-family:var(--font-h);font-size:18px;font-weight:900;color:var(--navy);letter-spacing:-.3px;line-height:1.3;margin-bottom:6px;}
+.track-desc{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px;}
+.track-latest{font-size:12px;color:var(--ink2);}
+.track-arrow{font-size:22px;color:var(--gold);font-weight:900;float:right;margin-top:-28px;}
+
+/* archive / intro */
+.arch-table{width:100%;border-collapse:collapse;}
+.arch-table th{padding:8px 0;text-align:left;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);border-bottom:1px solid var(--border);}
+.arch-table td{padding:12px 8px 12px 0;border-bottom:1px solid var(--border);font-size:13px;color:var(--ink2);}
+.arch-table tr:last-child td{border-bottom:none;}
+.arch-table a{color:var(--navy);font-weight:700;text-decoration:none;}
+.arch-table a:hover{text-decoration:underline;}
+.intro-block{padding:20px 28px;border-bottom:1px solid var(--border);font-size:14px;line-height:1.7;color:var(--ink);}
+.all-issues-wrap{padding:16px 28px;border-bottom:1px solid var(--border);}
+.all-issues-btn{width:100%;padding:13px;background:none;border:1.5px solid var(--navy);border-radius:3px;font-family:var(--font-h);font-size:11px;font-weight:900;color:var(--navy);cursor:pointer;text-align:center;letter-spacing:.14em;text-transform:uppercase;transition:background .15s,color .15s;}
+.all-issues-btn:hover{background:var(--navy);color:#fff;}
+.waitlist-section,.contact-section{padding:20px 28px;border-bottom:1px solid var(--border);}
+.waitlist-heading{font-family:var(--font-h);font-size:17px;font-weight:900;color:var(--ink);letter-spacing:-.2px;margin-bottom:8px;}
+.waitlist-body{font-size:14px;color:var(--ink2);line-height:1.6;margin-bottom:16px;}
+.waitlist-form{display:flex;gap:8px;margin-bottom:10px;}
+.waitlist-input{flex:1;padding:10px 12px;border:1px solid var(--border);border-radius:3px;font-family:var(--font-b);font-size:14px;color:var(--ink);min-width:0;}
+.waitlist-input:focus{outline:none;border-color:var(--navy);}
+.waitlist-btn{padding:10px 18px;background:var(--navy);color:#fff;border:none;border-radius:3px;font-family:var(--font-h);font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;white-space:nowrap;}
+.waitlist-btn:hover{background:#122348;}
+.waitlist-fine{font-size:12px;color:var(--muted-lt);line-height:1.5;}
+.waitlist-ok{display:none;font-size:14px;font-weight:700;color:#16a34a;margin-top:10px;}
+.contact-section p{font-size:14px;color:var(--ink2);line-height:1.6;}
+.contact-section a{color:var(--navy);font-weight:700;text-decoration:none;}
+.contact-section a:hover{text-decoration:underline;}
+
+@media(max-width:760px){
+  .wrapper{margin:0;border-radius:0;border-left:none;border-right:none;}
+  .masthead,.section,.nl-footer,.page-header,a.issue-row,.track-card,
+  .section-label-row,.intro-block,.waitlist-section,.contact-section,.all-issues-wrap{padding-left:16px;padding-right:16px;}
+  .masthead-pills{display:none;}
+  .sess-cols{grid-template-columns:1fr;}
+  .fs-winners ul{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+<div class="top-bar">
+  <nav class="site-nav">
+    <a href="../" class="active">ДВ Дайджест</a>
+    <a href="../../sessions/">Заседания</a>
+    <a href="https://bpdoodles.com">Basepoint Doodles</a>
+  </nav>
+  <span class="top-bar-tag">Парламентарни Doodles</span>
+</div>
+
+<div class="masthead">
+  <div class="masthead-logo">
+    <div class="masthead-left">
+      <span class="masthead-basepoint">Парламентарни</span>
+      <span class="masthead-tagline">Парламентарен дайджест</span>
+    </div>
+    <div class="masthead-divider"></div>
+    <span class="masthead-doodles">Doodles</span>
+  </div>
+  <div class="masthead-meta">
+    <span class="masthead-issue">ДВ Дайджест · Седмица 17 · 2026</span>
+    <span class="masthead-date">20–26 април 2026</span>
+    <div class="masthead-pills"><span class="masthead-pill">2 акта от МС</span><span class="masthead-pill">7 наредби/регулации</span></div>
+  </div>
+</div>
+<div class="section">
+
+<div class="subsection">
+  <div class="subsection-hd">
+    <span class="subsection-tag">02</span>
+    <span class="subsection-title">Министерски съвет</span>
+    <span class="subsection-count">2 постановления</span>
+  </div>
+  <div class="dv-grid">
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;37 &middot; 2026-04-21</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 47 ОТ 16 АПРИЛ 2026 Г. за изменение и допълнение на Устройствения правилник на Министерския съвет и на неговата администрация, приет с Постановление № 229 на Министерския съвет от 2009 г.</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Преструктурира администрацията на Министерския съвет – сливат се няколко дирекции, намалява щатът с 6 щатни бройки, а дирекция „Сигурност&quot; получава разширени правомощия и преминава на пряко подчинение на министър-председателя.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Щатът на администрацията се намалява от 497 на 491 служители</strong> – ликвидирани са дирекция „Информационни и комуникационни технологии&quot; и дирекция „Управление на собствеността&quot;, чиито функции се поглъщат от преименуваната дирекция „Административно и правно обслужване и управление на собствеността&quot; (79 бройки).</li><li><strong>Отделът за контрол по изпълнение на актовете и договорите се закрива</strong> – дейността му се разпределя другаде; отдел „Регионална координация&quot; получава 1 допълнителна бройка (от 8 на 9).</li><li><strong>Дирекция „Сигурност&quot; е издигната от „звено по сигурността&quot; на пълноценна дирекция с 14 щатни бройки</strong> и е поставена на пряко подчинение на министър-председателя; директорът е едновременно служител по сигурността на информацията; дирекцията поема и киберсигурността, мрежовата сигурност и функцията на национален координатор на sTESTA мрежата.</li><li><strong>Работното време вече се отчита електронно</strong> чрез системата за контрол на достъпа в сградите; министър-председателят може да установява различно работно време за отделни звена или длъжности.</li><li><strong>Приемът на граждани</strong> е всеки работен ден от 9:30 до 12:30 ч. без записване; анонимни сигнали не се разглеждат, а сигнали за нарушения от преди повече от 2 години се прекратяват.</li><li><strong>В три областни администрации</strong> (по приложения № 1, № 2 и № 22) щатът се увеличава с по 1–3 бройки; в областна администрация по приложение № 22 се създава нова длъжност „Служител по сигурността на информацията&quot;.</li><li><strong>Всички суми в правилника се преизчисляват от левове в евро</strong> – засяга финансовите прагове и разходните лимити в приложенията.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Министър-председателят – получава концентрирани правомощия (пряк контрол над сигурността, работното време, вътрешните правила); служителите в дирекция „Сигурност&quot; – разширен мандат и по-висок статут.</li><li>Губят: Служителите от закритите дирекции „ИКТ&quot; и „Управление на собствеността&quot; – сливането редуцира общия щат; отделът за контрол по договорите се ликвидира изцяло.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Цялата киберсигурност и мрежова защита на правителствената администрация се прехвърля от самостоятелна ИТ дирекция към дирекция „Сигурност&quot;, подчинена пряко на министър-председателя – нетипична концентрация на ИТ и класифицирана информация в едно звено.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от датата на обнародване – 21 април 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=242794" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;38 &middot; 2026-04-24</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 48 ОТ 22 АПРИЛ 2026 Г. за изменение и допълнение на нормативни актове</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Актът вдига значително таксите за задгранични паспорти, карти за самоличност и редица документи за чужденци, въвежда нова временна карта за самоличност и военна карта за самоличност, и актуализира наредба за нередности по европейски фондове към евро.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Паспорти стават по-скъпи:</strong> 5-годишен паспорт за лица от 14 до 70 г. – 27 евро; за деца до 14 г. – 7 евро (първи) или 14 евро (следващ); за лица над 70 г. – 7 евро; за хора с увреждане ≥50% – 2 евро. Нов 10-годишен паспорт за лица от 18 до 70 г. – 29 евро.</li><li><strong>Дипломатически и служебни паспорти с огромен скок:</strong> дипломатически – 59 евро (от 20,45), служебен – 89 евро (от 25,56), моряшки – 57 евро.</li><li><strong>Нова временна карта за самоличност</strong> – такса 40 евро; лицата с мярка за неотклонение по НПК (чл. 68, ал. 2) са освободени от такса за първата такава карта.</li><li><strong>Нова военна карта за самоличност</strong> – такса 38 евро; Министерството на отбраната превежда на МВР по 38 евро на тримесечие за всяка издадена карта на служител в структура на НАТО или зависимо лице.</li><li><strong>Срокът за заявление при изгубен/откраднат документ</strong> е съкратен от 60 на 30 дни.</li><li><strong>Такса за бързо изготвяне на лична карта</strong> – вдигната на 14 евро (от 12,78 евро).</li><li><strong>Удостоверения за пътуване зад граница на чужденци</strong> с нови такси: за бежанец – 11 евро; за лице с убежище – 33 евро; с хуманитарен статут – 20 евро; без гражданство – 28 евро.</li><li><strong>Наредбата за нередности по европейски фондове</strong> се актуализира терминологично – „лева&quot; се заменя с „евро&quot; навсякъде в относимите членове и приложение.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Лица с увреждания ≥50% и деца (запазват ниски такси); лица под мярка по НПК (безплатна първа временна карта); държавният бюджет (по-високи приходи от такси).</li><li>Губят: Всички граждани, нуждаещи се от нов паспорт или специализиран документ – плащат значително повече; особено засегнати са притежателите на дипломатически и служебни паспорти.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Таксата за служебен паспорт скача от 25,56 на 89 евро – ръст от почти 250%, което е най-големият относителен скок в целия пакет.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Постановлението влиза в сила на <strong>27 април 2026 г.</strong> – три дни след обнародването.</li><li>Няма гратисен период или преходни разпоредби за привеждане в съответствие.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243034" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details></div>
+</div>
+<div class="subsection">
+  <div class="subsection-hd">
+    <span class="subsection-tag">03</span>
+    <span class="subsection-title">Министерства и ведомства</span>
+    <span class="subsection-count">4 решения · 3 наредби</span>
+  </div>
+  <div class="dv-grid">
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;38 &middot; 2026-04-24</span>
+    </div>
+    <div class="dv-title">Наредба за отменяне на Наредба № 21 от 2007 г. за правилата за изграждане на мобилни далекосъобщителни мрежи и съоръжения</div>
+    <div class="exec-organ">Министерство на транспорта и съобщенията и Министерство на регионалното развитие и благоустройството</div>
+    <p class="dv-lead">Отменят се действащите от 2007 г. правила за изграждане на мобилни далекосъобщителни мрежи и съоръжения, което премахва нормативната рамка, по която операторите са строили и разполагали антени и мрежова инфраструктура близо две десетилетия.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Наредба № 21 от 2007 г. – единственият специализиран регулаторен документ за изграждане на мобилни мрежи и съоръжения – престава да действа изцяло и незабавно.</li><li>Телекомуникационните оператори губят действащата правна основа за проектиране и изграждане на мобилна инфраструктура по досегашния ред; дейността им ще трябва да се съобразява с останалото общо строително и телекомуникационно законодателство.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Оператори и инвеститори, ако отмяната е стъпка към по-лека или по-актуална регулация (напр. улесняване на 5G разгръщане).</li><li>Губят: Общини, проектанти и оператори, които дотук са разчитали на ясни специфични правила – до приемане на нов нормативен акт остават без конкретна уредба за сектора.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Наредбата се отменя без едновременно приемане на заместващ акт, което оставя строителството на мобилна инфраструктура в нормативен вакуум.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от датата на обнародването – 24 април 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=242741" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;38 &middot; 2026-04-24</span>
+    </div>
+    <div class="dv-title">Наредба за отменяне на Наредба № 35 от 2012 г. за правилата и нормите за проектиране, изграждане и въвеждане в експлоатация на кабелни електронни съобщителни мрежи и прилежащата им инфраструктура</div>
+    <div class="exec-organ">Министерство на транспорта и съобщенията и Министерство на регионалното развитие и благоустройството</div>
+    <p class="dv-lead">Отменя се наредбата от 2012 г., която определяше техническите правила за проектиране, изграждане и въвеждане в експлоатация на кабелни интернет и телекомуникационни мрежи и тяхната инфраструктура.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Наредба № 35 от 2012 г. – единственият нормативен акт, регулиращ техническите норми при изграждане на кабелни електронни съобщителни мрежи – престава да действа изцяло.</li><li>Проектантите, строителите и операторите на кабелни мрежи (кабелна телевизия, интернет по кабел и др.) губят досегашната нормативна рамка, по която са работили над 13 години.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Телекомуникационни оператори и строителни фирми, за които остарелите технически изисквания от 2012 г. са представлявали административна тежест.</li><li>Губят: Проектанти и строителни надзорници, тъй като остават без ясна нормативна база за нови проекти до приемането на заместващ акт.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Наредбата се отменя без едновременно приемане на нов заместващ нормативен акт, което оставя сектора в регулаторен вакуум.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от датата на обнародване – 24 април 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=242742" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;38 &middot; 2026-04-24</span>
+    </div>
+    <div class="dv-title">Наредба за изменение и допълнение на Наредба № 4 от 2015 г. за учебния план</div>
+    <div class="exec-organ">Министерство на образованието и науката</div>
+    <p class="dv-lead">Наредбата разширява възможностите за адаптиране на учебния план за ученици със специални образователни потребности – те вече могат да не изучават определени предмети или да имат наполовина по-малко учебни часове.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Ученици със специални образователни потребности могат да бъдат освободени от отделни учебни предмети (от задължителната или избираемата част), ако медицински документ удостоверява, че обучението по тях е невъзможно и екипът за подкрепа го е препоръчал с мотиви – задължително след информирано съгласие на родителя.</li><li>Същите ученици могат да имат намален брой учебни часове с до 50% от предвидените в училищния план за задължителната и избираемата учебна подготовка.</li><li>Възможността за отсъствие на учебни предмети от плана (вече съществуваща в наредбата) се уточнява изрично като приложима само за ученици с изявени дарби – текстът е прецизиран, за да се разграничат двете категории ученици.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Ученици със специални образователни потребности и техните семейства – получават законова основа за реална индивидуализация на натоварването.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Намалението на часовете може да достигне до 50% от целия план – това е съществено отстъпление от стандартния учебен обем, което до момента не е било изрично уредено.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Наредбата влиза в сила от учебната 2026/2027 година, т.е. от септември 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243030" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;37 &middot; 2026-04-21</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ № 8126 от 23 юли 2025 г. по административно дело № 2313 от 2025 г.</div>
+    <div class="exec-organ">Върховен административен съд (седмо отделение)</div>
+    <p class="dv-lead">Съдът отменя два текста от наредбата, определяща как работодателски организации доказват представителност, заради нарушена процедура при приемането им – без реален 14-дневен срок за обществени консултации.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Отменени са две разпоредби от Наредбата за представителност на организациите на работодателите (ПМС № 152/2003 г.), въведени с изменение от 27 януари 2016 г.: изискването за списък на „работодателите-членове&quot; с ЕИК и данни за наети по трудов договор, и задължението НОИ да предоставя на министъра брой лица с непрекратени трудови договори по икономически дейности за оценка на представителност.</li><li>Причината за отмяната е процедурна: проектът е публикуван на 15 януари 2016 г. със срок за обсъждане до 28 януари, но е внесен в МС на 25 януари и приет на 27 януари – т.е. без да са изтекли задължителните 14 дни за становища от граждани и бизнес.</li><li>Запазен е в сила чл. 6, ал. 3, т. 1 от наредбата (членски състав по отраслов критерий), тъй като при приемането му през 2012 г. 14-дневният срок е бил спазен – проектът е публикуван на 10 януари, а внесен на 24 януари 2012 г.</li><li>Съдът потвърждава, че член на работодателска организация може да бъде само субект, който реално е работодател (има наети по трудов договор) – аргументът за „стартиращи фирми без служители&quot; е отхвърлен като несъответстващ на Кодекса на труда.</li><li>Министерският съвет е осъден да плати на жалбоподателя (БРАИТ/БАСКОМ) 1 900 лв. разноски по делото.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Работодателски организации, кандидатстващи за представителност – отпадат конкретни доказателствени изисквания и начинът, по който НОИ-данните се използват срещу тях при оценката.</li><li>Губят: Министерски съвет – губи делото частично и плаща разноски; нормативната рамка за проверка на представителност временно остава с „дупки&quot;, докато не бъде поправена.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Нормата е приета в нарушение на процедурата не защото не е публикувана, а защото МС я е гласувал само 12 дни след публикуването – с два дни преди официално обявения край на консултациите.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Отмяната поражда действие след влизане на решението в сила – то подлежи на касационно обжалване в 14-дневен срок пред петчленен състав на ВАС.</li><li>При неподаване на касационна жалба решението се разгласява публично по реда на чл. 194 АПК и отменените текстове спират да се прилагат.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=242558" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;37 &middot; 2026-04-21</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ № 3462 от 26 март 2026 г. по административно дело № 11612 от 2025 г.</div>
+    <div class="exec-organ">Върховен административен съд (петчленен състав, II колегия)</div>
+    <p class="dv-lead">Съдът отменя три разпоредби от Наредбата за представителност на работодателски организации, защото Министерският съвет ги е приел, без да спази задължителния 14-дневен срок за обществено обсъждане.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Три разпоредби от Наредбата за представителност на организациите на работниците/служителите и работодателите (ПМС № 152/2003 г.) са обявени за незаконосъобразни и отменени: чл. 6, ал. 2, т. 1, буква „а&quot;, чл. 6, ал. 3, т. 1 и чл. 7а, ал. 1, т. 2.</li><li>Основният порок: МС е приемал изменения на наредбата, без да изчака изтичането на задължителния 14-дневен срок за предложения и становища от граждани и организации – това се приема за особено съществено нарушение, независимо че никой не е подал становища в тези срокове.</li><li>При процедурата от 2012 г.: проектът е публикуван на 10.01.2012 г., но е внесен в МС на 24.01.2012 г. – точно в последния ден на срока, а не след него. Съдът установи, че срокът изтича на 24.01. и процедурата е можела да продължи законосъобразно едва след тази дата.</li><li>При процедурата от 2016 г.: проектът е публикуван на 15.01.2016 г., внесен в МС на 25.01.2016 г. и приет на 27.01.2016 г. – отново без реален 14-дневен срок за обсъждане.</li><li>Дългогодишното прилагане на отменените текстове (над 10 години без оспорване) не санира нарушението на процедурата и не е основание да се запазят незаконосъобразните разпоредби.</li><li>Министерският съвет е осъден да плати на Сдружение БРАИТ разноски за двете съдебни инстанции в размер на <strong>2855,76 евро</strong>.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Сдружение БРАИТ и по-широко – работодателски организации, чиито членове може да не притежават постоянно качеството „работодател&quot; (напр. при временно отсъствие на наети лица), тъй като ограничителните критерии за членство отпадат.</li><li>Губят: Министерският съвет – осъден за разноски и с отменени три подзаконови разпоредби; потенциално се разхлабват изискванията за представителност на работодателски организации.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Нарушението е установено не защото никой не се е включил в обсъждането, а само защото МС математически е сбъркал изчисляването на 14-дневния срок – подал е документите в последния ден на срока вместо след него.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Решението е окончателно и не подлежи на обжалване.</li><li>Отменените разпоредби престават да действат от датата на обнародване – 21 април 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=242559" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;37 &middot; 2026-04-21</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ № 4355 от 28 април 2025 г. по административно дело № 11179 от 2024 г.</div>
+    <div class="exec-organ">Върховен административен съд (осмо отделение)</div>
+    <p class="dv-lead">Съдът отменя текст от правителствена наредба, който изискваше съдебното решение за издръжка да е влязло в сила, преди държавата да започне да я изплаща.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Отменената разпоредба задължаваше детето да чака съдебното решение да стане окончателно (влезе в сила), преди държавата да поеме изплащането на издръжката вместо неплатящия родител – забавяне, което не е предвидено в Семейния кодекс.</li><li>Семейният кодекс предвижда изплащане от датата, на която е установено, че длъжникът (неплатящият родител) няма доходи и имущество – без изискване за влязло в сила решение.</li><li>Гражданският процесуален кодекс изрично предвижда предварително изпълнение на всички решения за издръжка, т.е. те се изпълняват още преди да са окончателни – текстът от наредбата противоречеше на това правило.</li><li>При приемането на наредбата през 2011 г. не е проведено задължителното обществено обсъждане – проектът не е публикуван предварително за становища от граждани и организации, което е самостоятелно основание за отмяна.</li><li>Правителството (Министерски съвет, Министерство на правосъдието и Министерство на финансите) защитаваше отменения текст, но съдът отхвърли аргумента им, че държавата не е „длъжник&quot;, а само изпълнява социална функция.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Деца, чиито родители не плащат присъдена издръжка – вече могат да получат плащане от държавата по-рано, без да чакат окончателно съдебно решение.</li><li>Губят: Министерство на финансите – отпада административна бариера, която на практика е отлагала държавните плащания за издръжка.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Наредбата е от 2011 г. и е действала над 13 години с незаконосъобразен текст – нито един предходен контролен механизъм не я е засякъл, докато граждански сдружения не я оспориха в съда.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Решението подлежи на обжалване в 14-дневен срок пред петчленен състав на ВАС.</li><li>Ако не бъде обжалвано или касационната жалба бъде отхвърлена, решението се обнародва в „Държавен вестник&quot; и влиза в сила от деня на обнародването.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=242638" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;37 &middot; 2026-04-21</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ № 3737 от 2 април 2026 г. по административно дело № 8287 от 2025 г.</div>
+    <div class="exec-organ">Върховен административен съд (петчленен състав, I колегия)</div>
+    <p class="dv-lead">Съдът окончателно потвърждава отмяната на правило, което задължаваше деца да чакат влизането в сила на съдебното решение, за да получат издръжка, изплащана от държавата вместо неплатящия родител.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Отменена е разпоредбата на чл. 10, ал. 3, изр. 1 от Наредбата за изплащане от държавата на присъдена издръжка (ПМС № 167/2011 г.), която казваше, че държавната издръжка се дължи едва от датата на влизане в сила на съдебното решение.</li><li>Семейният кодекс изисква издръжката от държавата да тече от 1-во число на месеца, следващ установяването, че длъжникът няма доходи и имущество – наредбата е въвеждала по-късен и по-неизгоден начален момент, надхвърляйки правомощията на Министерския съвет.</li><li>ГПК изрично предвижда предварително изпълнение на всички решения за издръжка, т.е. изплащането не може да се отлага до окончателност на акта – отмененото правило е нарушавало пряко тази норма.</li><li>Наредбата е приета и без задължителното публикуване на проекта в интернет и на портала за обществени консултации, което е самостоятелно и непоправимо процедурно нарушение.</li><li>Касационните жалби на Министерския съвет, министъра на правосъдието и министъра на финансите са отхвърлени; аргументът, че нормата е действала 14 години без проблем, е приет за неотносим.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Деца, чиито родители-длъжници нямат доходи и имущество – вече ще получават държавна издръжка от по-ранен момент, без да чакат влизане в сила на съдебното решение.</li><li>Губят: Държавата (бюджетът) – задължена да изплаща издръжка за по-дълъг период, включително преди окончателност на съдебния акт.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Наредбата е действала 14 години (от 2011 г.), преди да бъде атакувана – съдът изрично отхвърля аргумента, че дългото безпроблемно прилагане лекува незаконосъобразността.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Решението е окончателно и влиза в сила от датата на постановяването му – 2 април 2026 г.</li><li>Министерският съвет е длъжен да приведе наредбата в съответствие, като определи нов начален момент за изплащане на издръжката, съгласуван с разпоредбите на Семейния кодекс.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=242639" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details></div>
+</div>
+</div>
+
+<div class="nl-footer">
+  <span class="nl-footer-logo">Парламентарни Doodles</span>
+  <div class="nl-footer-links">
+    <a href="../">ДВ Дайджест</a>
+    <a href="../../sessions/">Заседания</a>
+    <a href="https://bpdoodles.com">Basepoint Doodles</a>
+  </div>
+</div>
+</div>
+</body>
+</html>

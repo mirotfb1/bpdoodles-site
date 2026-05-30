@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="utf-8">
+<title>Парламентарни Doodles · ДВ Дайджест · Седмица 16</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --navy:#1B2E5E; --gold:#B5821A; --ink:#1C1C1C; --ink2:#444;
+  --muted:#888; --muted-lt:#AAA; --border:#E8E8E8; --surf:#F8F8F8; --paper:#FFF;
+  --font-d:'Caveat',cursive; --font-h:'Nunito','Arial Black',sans-serif;
+  --font-b:'Nunito',Arial,sans-serif;
+}
+body{font-family:var(--font-b);background:#F0F2F5;color:var(--ink);line-height:1.6;}
+.wrapper{max-width:740px;margin:32px auto;background:#fff;border:1px solid var(--border);border-radius:4px;overflow:hidden;}
+
+/* top bar */
+.top-bar{display:flex;justify-content:space-between;align-items:center;padding:8px 16px;background:var(--navy);}
+.site-nav{display:flex;gap:20px;align-items:center;}
+.site-nav a{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none;}
+.site-nav a:hover{color:rgba(255,255,255,.9);}
+.site-nav a.active{color:var(--gold);}
+.top-bar-tag{font-family:'Courier New',monospace;font-size:10px;color:rgba(255,255,255,.25);}
+
+/* masthead */
+.masthead{background:var(--navy);padding:24px 28px 20px;display:flex;justify-content:space-between;align-items:flex-end;border-bottom:3px solid var(--gold);}
+.masthead-logo{display:flex;flex-direction:row;align-items:center;}
+.masthead-left{display:flex;flex-direction:column;align-items:flex-end;padding-right:14px;}
+.masthead-basepoint{font-family:var(--font-h);font-size:22px;font-weight:900;color:#fff;letter-spacing:-.3px;line-height:1;}
+.masthead-tagline{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:4px;}
+.masthead-divider{width:2px;height:52px;background:rgba(255,255,255,.2);}
+.masthead-doodles{font-family:var(--font-d);font-size:48px;font-weight:700;color:var(--gold);line-height:1;padding-left:14px;}
+.masthead-meta{text-align:right;}
+.masthead-issue{font-size:13px;font-weight:700;color:rgba(255,255,255,.85);display:block;line-height:1.5;}
+.masthead-date{font-size:11px;color:rgba(255,255,255,.4);display:block;}
+.masthead-pills{margin-top:8px;display:flex;gap:6px;justify-content:flex-end;flex-wrap:wrap;}
+.masthead-pill{font-size:10px;font-weight:700;letter-spacing:.05em;background:rgba(255,255,255,.12);color:rgba(255,255,255,.6);padding:3px 8px;border-radius:3px;}
+
+/* content sections */
+.section{padding:20px 28px;border-bottom:1px solid var(--border);}
+.section:last-of-type{border-bottom:none;}
+
+/* subsection (within DV edition) */
+.subsection{margin-bottom:24px;}
+.subsection:last-child{margin-bottom:0;}
+.subsection-hd{display:flex;align-items:baseline;gap:10px;margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid var(--border);}
+.subsection-tag{font-size:10px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);}
+.subsection-title{font-family:var(--font-h);font-size:16px;font-weight:900;color:var(--navy);}
+.subsection-count{font-size:11px;color:var(--muted);margin-left:auto;}
+
+/* section label row */
+.section-label-row{padding:10px 28px 8px;background:var(--surf);border-bottom:1px solid var(--border);}
+.section-label{font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);}
+
+/* page header */
+.page-header{padding:20px 28px 16px;border-bottom:1px solid var(--border);}
+.page-title{font-family:var(--font-h);font-size:20px;font-weight:900;color:var(--ink);letter-spacing:-.3px;margin-bottom:6px;}
+.page-subtitle{font-size:13px;color:var(--muted);}
+
+/* issue list rows */
+a.issue-row{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 28px;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:background .1s;}
+a.issue-row:hover{background:var(--surf);}
+a.issue-row:last-of-type{border-bottom:none;}
+.issue-row-left{flex:1;}
+.issue-row-meta{font-family:'Courier New',monospace;font-size:10px;color:var(--muted-lt);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;}
+.issue-row-title{font-size:15px;font-weight:900;color:var(--ink);letter-spacing:-.2px;line-height:1.3;}
+.issue-row-desc{font-size:12px;color:var(--muted);margin-top:3px;}
+.issue-row-arrow{font-size:18px;color:var(--gold);font-weight:900;flex-shrink:0;}
+
+/* footer */
+.nl-footer{padding:14px 28px;background:var(--surf);border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
+.nl-footer-logo{font-family:var(--font-d);font-size:18px;font-weight:700;color:#CCC;}
+.nl-footer-links{font-size:11px;display:flex;gap:16px;}
+.nl-footer-links a{color:var(--muted-lt);text-decoration:none;}
+.nl-footer-links a:hover{color:var(--muted);}
+
+/* DV cards */
+.dv-grid{display:flex;flex-direction:column;gap:8px;}
+details.dv-card{background:var(--paper);border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:border-color .15s;}
+details.dv-card:hover{border-color:var(--gold);}
+details.dv-card[open]{border-color:var(--gold);}
+.dv-card-compact{background:var(--paper);border:1px solid var(--border);border-radius:8px;overflow:hidden;opacity:.9;}
+.dv-sum{padding:14px 16px;cursor:pointer;list-style:none;user-select:none;}
+.dv-sum::-webkit-details-marker{display:none;}
+.dv-sum-static{padding:14px 16px;}
+.dv-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+.dv-meta{font-size:11px;color:var(--muted);font-weight:700;}
+.dv-title{font-family:var(--font-h);font-size:13px;font-weight:900;color:var(--ink);line-height:1.4;letter-spacing:-.1px;margin-bottom:4px;}
+.exec-organ{font-size:11px;color:var(--muted);margin-bottom:6px;font-style:italic;}
+.dv-lead{font-size:13px;color:var(--ink2);line-height:1.55;margin-bottom:8px;}
+.compact-bullets ul{list-style:none;padding:0;margin-top:6px;}
+.compact-bullets li{padding:3px 0 3px 14px;position:relative;color:var(--ink2);font-size:12px;line-height:1.5;}
+.compact-bullets li::before{content:"·";position:absolute;left:2px;color:var(--gold);font-weight:700;font-size:15px;line-height:1.1;}
+.expand-hint{font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.06em;margin-top:4px;}
+details.dv-card[open] .expand-hint{display:none;}
+.dv-body{padding:0 16px 16px;border-top:1px solid var(--border);}
+
+/* badges */
+.badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;}
+.dv-badges{display:flex;gap:6px;align-items:center;flex-wrap:wrap;}
+.b-zakon   {background:#dbeafe;color:#1a56db;}
+.b-reshenie{background:#cffafe;color:#0a6e8a;}
+.b-ukaz    {background:#ede9fe;color:#7c3aed;}
+.b-decl    {background:#fef3c7;color:#92400e;}
+.b-post    {background:#d1fae5;color:#065f46;}
+.b-naredba {background:#fce7f3;color:#9d174d;}
+.b-pravilnik{background:#f3e8ff;color:#6b21a8;}
+.b-inst    {background:#fef9c3;color:#713f12;}
+.b-razp    {background:#e0f2fe;color:#0369a1;}
+.b-spor    {background:#fff7ed;color:#c2410c;}
+.b-other   {background:#f3f4f6;color:#6b7280;}
+.b-cat     {background:#f3f4f6;color:#555;}
+
+/* factsheet sections */
+.fs-sec{margin:12px 0;font-size:13px;}
+.fs-sec h5,.parties-block h5,.notable-callout h5,.sess-col h5{font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:8px;padding-bottom:5px;border-bottom:1px solid var(--border);}
+.fs-sec ul,.parties-block ul{list-style:none;padding:0;}
+.fs-sec li,.parties-block li{padding:4px 0 4px 16px;position:relative;color:var(--ink2);border-bottom:1px solid #f3f4f6;font-size:13px;line-height:1.5;}
+.fs-sec li:last-child,.parties-block li:last-child{border-bottom:none;}
+.fs-sec li::before{content:"·";position:absolute;left:3px;color:var(--gold);font-weight:700;font-size:16px;line-height:1.1;}
+.fs-sec p,.parties-block p{color:var(--ink2);font-size:13px;margin-bottom:4px;}
+.fs-winners ul{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.fs-winners li{padding:8px 10px 8px 24px;border-radius:6px;border-bottom:none !important;}
+.fs-winners li:first-child{background:#f0fdf4;}
+.fs-winners li:first-child::before{content:"✓";color:#16a34a;font-size:13px;top:8px;}
+.fs-winners li:nth-child(2){background:#fef2f2;}
+.fs-winners li:nth-child(2)::before{content:"✗";color:#dc2626;font-size:13px;top:8px;}
+.fs-notable{background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:12px 14px;}
+.fs-notable h5{border-bottom-color:#fde68a;color:#92400e;}
+.fs-notable li,.fs-notable p{color:#78350f;}
+.fs-notable li::before{color:#d97706;}
+.fs-eu{background:#f0f9ff;border-radius:8px;padding:12px 14px;}
+.fs-eu h5{color:#0369a1;border-bottom-color:#bae6fd;}
+.fs-eu p{color:#0c4a6e;font-size:13px;}
+.ext-link{display:inline-block;margin-top:12px;font-size:12px;font-weight:700;color:var(--navy);text-decoration:none;}
+.ext-link:hover{text-decoration:underline;}
+.no-summ{color:var(--muted);font-size:13px;font-style:italic;padding:12px 0;}
+
+/* session blocks */
+details.sess-block{background:var(--paper);border:1px solid var(--border);border-left:4px solid var(--navy);border-radius:0 8px 8px 0;margin-bottom:10px;overflow:hidden;}
+details.sess-block:hover{box-shadow:0 2px 8px rgba(0,0,0,.06);}
+details.sess-block[open]{border-left-color:var(--gold);}
+.sess-sum{padding:14px 18px;cursor:pointer;list-style:none;user-select:none;}
+.sess-sum::-webkit-details-marker{display:none;}
+.sess-hd{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap;}
+.sess-date-chip{background:var(--navy);color:#fff;font-size:10px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:4px;white-space:nowrap;}
+details.sess-block[open] .sess-date-chip{background:var(--gold);}
+.sess-label{font-family:var(--font-h);font-size:14px;font-weight:900;color:var(--ink);}
+.sess-lead{font-size:13px;color:var(--ink2);line-height:1.55;margin-bottom:6px;}
+.sess-body{padding:0 18px 16px;border-top:1px solid var(--border);}
+.sess-lead-full{font-size:13px;color:var(--ink2);line-height:1.6;margin:12px 0;background:#f8fafc;border-left:3px solid var(--gold);padding:8px 12px;border-radius:0 6px 6px 0;}
+.sess-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0;}
+.sess-col{font-size:13px;}
+.sess-col ul{list-style:none;padding:0;}
+.sess-col li{padding:4px 0 4px 14px;position:relative;color:var(--ink2);border-bottom:1px solid #f3f4f6;font-size:13px;line-height:1.5;}
+.sess-col li:last-child{border-bottom:none;}
+.sess-col li::before{content:"·";position:absolute;left:2px;color:var(--navy);font-weight:700;font-size:15px;line-height:1.1;}
+.notable-callout{display:flex;gap:10px;align-items:flex-start;background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:10px 12px;margin:12px 0;}
+.notable-icon{font-size:16px;color:#d97706;flex-shrink:0;line-height:1.4;}
+.notable-callout h5{border-bottom-color:#fde68a;color:#92400e;}
+.notable-callout p,.notable-callout li{color:#78350f;font-size:13px;}
+.notable-callout ul{list-style:none;padding:0;}
+.notable-callout li{padding:3px 0 3px 14px;position:relative;}
+.notable-callout li::before{content:"·";position:absolute;left:2px;color:#d97706;font-weight:700;font-size:15px;line-height:1.1;}
+.parties-block{margin:12px 0;font-size:13px;}
+.sess-ft{margin-top:12px;padding-top:10px;border-top:1px solid var(--border);}
+
+/* landing track cards */
+.track-card{display:block;padding:20px 28px;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:background .1s;}
+.track-card:hover{background:var(--surf);}
+.track-card:last-of-type{border-bottom:none;}
+.track-label{font-size:10px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+.track-title{font-family:var(--font-h);font-size:18px;font-weight:900;color:var(--navy);letter-spacing:-.3px;line-height:1.3;margin-bottom:6px;}
+.track-desc{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px;}
+.track-latest{font-size:12px;color:var(--ink2);}
+.track-arrow{font-size:22px;color:var(--gold);font-weight:900;float:right;margin-top:-28px;}
+
+/* archive / intro */
+.arch-table{width:100%;border-collapse:collapse;}
+.arch-table th{padding:8px 0;text-align:left;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);border-bottom:1px solid var(--border);}
+.arch-table td{padding:12px 8px 12px 0;border-bottom:1px solid var(--border);font-size:13px;color:var(--ink2);}
+.arch-table tr:last-child td{border-bottom:none;}
+.arch-table a{color:var(--navy);font-weight:700;text-decoration:none;}
+.arch-table a:hover{text-decoration:underline;}
+.intro-block{padding:20px 28px;border-bottom:1px solid var(--border);font-size:14px;line-height:1.7;color:var(--ink);}
+.all-issues-wrap{padding:16px 28px;border-bottom:1px solid var(--border);}
+.all-issues-btn{width:100%;padding:13px;background:none;border:1.5px solid var(--navy);border-radius:3px;font-family:var(--font-h);font-size:11px;font-weight:900;color:var(--navy);cursor:pointer;text-align:center;letter-spacing:.14em;text-transform:uppercase;transition:background .15s,color .15s;}
+.all-issues-btn:hover{background:var(--navy);color:#fff;}
+.waitlist-section,.contact-section{padding:20px 28px;border-bottom:1px solid var(--border);}
+.waitlist-heading{font-family:var(--font-h);font-size:17px;font-weight:900;color:var(--ink);letter-spacing:-.2px;margin-bottom:8px;}
+.waitlist-body{font-size:14px;color:var(--ink2);line-height:1.6;margin-bottom:16px;}
+.waitlist-form{display:flex;gap:8px;margin-bottom:10px;}
+.waitlist-input{flex:1;padding:10px 12px;border:1px solid var(--border);border-radius:3px;font-family:var(--font-b);font-size:14px;color:var(--ink);min-width:0;}
+.waitlist-input:focus{outline:none;border-color:var(--navy);}
+.waitlist-btn{padding:10px 18px;background:var(--navy);color:#fff;border:none;border-radius:3px;font-family:var(--font-h);font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;white-space:nowrap;}
+.waitlist-btn:hover{background:#122348;}
+.waitlist-fine{font-size:12px;color:var(--muted-lt);line-height:1.5;}
+.waitlist-ok{display:none;font-size:14px;font-weight:700;color:#16a34a;margin-top:10px;}
+.contact-section p{font-size:14px;color:var(--ink2);line-height:1.6;}
+.contact-section a{color:var(--navy);font-weight:700;text-decoration:none;}
+.contact-section a:hover{text-decoration:underline;}
+
+@media(max-width:760px){
+  .wrapper{margin:0;border-radius:0;border-left:none;border-right:none;}
+  .masthead,.section,.nl-footer,.page-header,a.issue-row,.track-card,
+  .section-label-row,.intro-block,.waitlist-section,.contact-section,.all-issues-wrap{padding-left:16px;padding-right:16px;}
+  .masthead-pills{display:none;}
+  .sess-cols{grid-template-columns:1fr;}
+  .fs-winners ul{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+<div class="top-bar">
+  <nav class="site-nav">
+    <a href="../" class="active">ДВ Дайджест</a>
+    <a href="../../sessions/">Заседания</a>
+    <a href="https://bpdoodles.com">Basepoint Doodles</a>
+  </nav>
+  <span class="top-bar-tag">Парламентарни Doodles</span>
+</div>
+
+<div class="masthead">
+  <div class="masthead-logo">
+    <div class="masthead-left">
+      <span class="masthead-basepoint">Парламентарни</span>
+      <span class="masthead-tagline">Парламентарен дайджест</span>
+    </div>
+    <div class="masthead-divider"></div>
+    <span class="masthead-doodles">Doodles</span>
+  </div>
+  <div class="masthead-meta">
+    <span class="masthead-issue">ДВ Дайджест · Седмица 16 · 2026</span>
+    <span class="masthead-date">13–19 април 2026</span>
+    <div class="masthead-pills"><span class="masthead-pill">4 акта от МС</span><span class="masthead-pill">10 наредби/регулации</span></div>
+  </div>
+</div>
+<div class="section">
+
+<div class="subsection">
+  <div class="subsection-hd">
+    <span class="subsection-tag">02</span>
+    <span class="subsection-title">Министерски съвет</span>
+    <span class="subsection-count">4 постановления</span>
+  </div>
+  <div class="dv-grid">
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;36 &middot; 2026-04-17</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 43 ОТ 9 АПРИЛ 2026 Г. за откриване на филиал в структурата на Национална музикална академия „Проф. Панчо Владигеров“ в гр. Бургас</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Открива се филиал на Националната музикална академия „Проф. Панчо Владигеров&quot; в Бургас, което дава на студентите от региона възможност да учат музика и танцово изкуство на висше ниво без да се местят в София.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Новият филиал е структурно звено на НМА „Проф. Панчо Владигеров&quot; – Sofia остава основното учебно заведение.</li><li>Обучението е по специалности от професионално направление 8.3 „Музикално и танцово изкуство&quot; – единственото направление, за което е разрешен филиалът.</li><li>Филиалът е в Бургас – осигурява висше музикално образование за Черноморския регион за първи път в рамките на тази академия.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Кандидат-студенти и студенти от Бургас и Южна България, които ще имат достъп до висше музикално образование близо до дома си; НМА разширява своя капацитет и географски обхват.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от датата на обнародване – 17 април 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=242685" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;36 &middot; 2026-04-17</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 44 ОТ 9 АПРИЛ 2026 Г. за изменениe и допълнениe на Правилника за прилагане на Закона за публичните предприятия, приет с Постановление № 85 на Министерския съвет от 2020 г.</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Публичните предприятия (държавни и общински дружества) са задължени да въведат конкретни механизми за борба с корупцията и контрол на почтеността на своите служители и ръководители, включително чрез нова длъжност „служител по почтеността&quot;.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Нова длъжност „служител по почтеността&quot;:</strong> Всяко публично предприятие трябва да определи или назначи такова лице – приоритетно независим член на управителния/контролния орган, а ако такъв няма – назначен отвън служител. Той отговаря за проверки на спазването на Кодекса за етично поведение и за оценка на корупционния риск.</li><li><strong>Задължителни годишни проверки:</strong> Служителят по почтеността извършва системни проверки поне веднъж годишно и изготвя доклад с констатации, проблеми и предложени мерки, който се предава на ръководния орган в 7-дневен срок от изготвянето му.</li><li><strong>Индивидуални проверки на конкретни лица:</strong> Допускат се два вида – преди назначаване (първоначална) и по време на заемане на длъжността (текуща, но не повече от два пъти годишно за едно лице). Анонимни сигнали не се разглеждат.</li><li><strong>Права на проверяваното лице:</strong> При всяка текуща проверка лицето има право да преглежда документите, да дава писмено обяснение (срок не по-кратък от 14 дни), да прави възражения и да е уведомено за резултата.</li><li><strong>Декларация при назначаване:</strong> Всеки новопостъпващ служител подписва декларация, че е запознат с Кодекса за етично поведение и се задължава да го спазва – това важи и за вече заетите лица в 3-месечен срок след активиране на системата.</li><li><strong>Разширено публично отчитане:</strong> Годишните доклади на публичните предприятия вече трябва да включват отчет за въведената антикорупционна система и за спазването на Кодекса за етично поведение от членовете на управителните и контролните органи.</li><li><strong>Архив на проверките:</strong> Всички доклади и събрани доказателства от проверките се съхраняват в отделен архив на предприятието.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li><strong>Печелят:</strong> Граждани и бизнес партньори на публични предприятия (по-голяма прозрачност и отчетност); служители, подали сигнали (защита на самоличността им).</li><li><strong>Губят:</strong> Ръководители и служители на публични предприятия – поемат нови задължения, подлежат на проверки за почтеност и са длъжни да оказват съдействие на служителя по почтеността.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Анонимните сигнали са изрично изключени от разглеждане при индивидуалните проверки – нетипично ограничение на фона на общата европейска тенденция за насърчаване на анонимното подаване на сигнали за нередности.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>В сила от деня на обнародването – 17 април 2026 г.</li><li>Изключение: вече заетите служители и членове на органи за управление и контрол подписват декларации за почтеност в 3-месечен срок, но само след като системата по Закона за публичните предприятия бъде официално въведена (стартът на системата е отделно условие, което не е уредено с този акт).</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=242686" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;36 &middot; 2026-04-17</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 45 ОТ 9 АПРИЛ 2026 Г. за изменение и допълнение на Устройствения правилник на Изпълнителната агенция по околна среда, приет с Постановление № 331 на Министерския съвет от 2022 г.</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Актът реорганизира структурата на Изпълнителната агенция по околна среда (ИАОС), като създава нова дирекция за климата и емисиите, преименува съществуваща и увеличава щата с нови бройки.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>ИАОС вече има три (вместо две) специализирани дирекции – добавя се изцяло нова дирекция „Ограничаване на изменението на климата и инвентаризация на емисии&quot; с 23 щатни бройки.</li><li>Новата дирекция издава и отменя разрешителни за емисии на парникови газове на промишлени инсталации и авиационни оператори, администрира Националния регистър за търговия с квоти и следи корабните дружества за въглеродни емисии от морски транспорт.</li><li>Дирекцията с предишното название „Разрешителни режими&quot; е преименувана на „Комплексно предотвратяване и ограничаване на промишленото замърсяване&quot; – отпадат четири от досегашните ѝ функции (т. 6–9).</li><li>Общият щат на ИАОС е фиксиран на 392 щатни бройки: 1 изпълнителен директор, 2 заместника, 40 души обща администрация и 346 в специализираната, от които 262 в лабораторната главна дирекция.</li><li>Главната лаборатория разширява дейността си: вече официално извършва и калибриране (не само изпитване), включително по заявки от външни клиенти по ценоразпис, утвърден от изпълнителния директор.</li><li>Ръководителят на Главна дирекция „Лабораторно-аналитична дейност&quot; трябва да е с висше образование в „Природни науки&quot; или „Технически науки&quot; – изрично записано изискване за квалификация.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Индустриални оператори и авиационни/корабни компании, засегнати от квоти за емисии – получават ясно обособен единен административен орган за всички климатични разрешителни вместо разпръснати компетенции.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Новата климатична дирекция поема едновременно контрол върху промишлеността, авиацията, корабоплаването и горивата – необичайно широк мандат за звено от едва 23 души.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>От датата на обнародване – 17 април 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=242706" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;36 &middot; 2026-04-17</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 46 ОТ 15 АПРИЛ 2026 Г. за приемане на Наредба за критериите, условията и реда за определяне на статут на домакинство в положение на енергийна бедност и на статут на уязвим клиент за снабдяване с електрическа енергия</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Наредбата определя точно кой се смята за „енергийно беден&quot; или „уязвим клиент&quot; на ток и въвежда автоматизирана система, която служебно установява и вписва тези статути без да се налага гражданинът да доказва всичко сам.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Две различни категории с различни права:</strong> „Домакинство в енергийна бедност&quot; се определя по формула (доход минус разход за ток и отопление спрямо линията на бедност + характеристики на жилището); „Уязвим клиент&quot; е отделен статут за хора в критична зависимост от електрическо оборудване – пенсионери над 65 г. живеещи сами с нисък доход, хора с 50%+ трайно увреждане с нисък доход, ползватели на животоподдържащи уреди на ток, получатели на социални или отоплителни помощи.</li><li><strong>Служебно (автоматично) признаване без заявление:</strong> Ако АСП (месечни социални помощи) или НЗОК (животоподдържащи медицински уреди) вече имат данни за даден човек, системата сама го вписва като уязвим клиент – той не трябва да прави нищо. АСП подава данни до 15-о число на месеца, НЗОК – ежемесечно.</li><li><strong>Формула за изчисление на разхода за ток</strong> ползва типова площ (40 м² за един човек, +10 м² за всеки следващ член, до 90 м² за шестима) и три типа сграда: необновена = 400 kWh/м²/г.; обновена без сертификат = 135 kWh/м²/г.; строена след 01.01.2024 г. = 90 kWh/м²/г. За домакинства с дете до 18 г., пенсионер над 65 г. или човек с увреждане се прилага коефициент за уязвимост 1,3 (т.е. разходът се смята 30% по-висок).</li><li><strong>Заявление-декларация за останалите случаи:</strong> Подава се лично или по електронен път до АСП. При установено несъответствие заявителят получава 30-дневен срок за отстраняването му; ако не го отстрани – директорът на „Социално подпомагане&quot; издава заповед за отказ, която се обжалва пред регионалната дирекция. При подаване до 14 октомври се ползват данни за доходите от годината преди предходната; при подаване от 15 октомври – от предходната година.</li><li><strong>Статутът важи 12 месеца</strong> от 1-во число на месеца след издаването. При смърт на титуляря членовете на домакинството имат 2 месеца да прехвърлят партидата (ИТН), иначе статутът се прекратява.</li><li><strong>Крайните снабдители</strong> са длъжни да отбелязват статута на уязвим клиент в издаваните фактури и произтичащите от него права. Не могат да прекъснат тока на уязвим клиент по причини извън изрично предвидените в Закона за енергетиката.</li><li><strong>Лични данни:</strong> Системата обменя информация с НАП, НЕЛК, НЗОК, АСП, МВР, АУЕР, КЕВР и операторите на мрежи. Здравна информация се пази само като „наличен/липсващ критерий&quot; – конкретни диагнози не се съхраняват. Данните с удостоверен статут се пазят 5 години след изтичането му; при отказ – 3 години; системните логове – 10 години.</li><li><strong>Ежегодна оценка на броя енергийно бедни:</strong> НСИ предоставя данни на АУЕР до 1 март всяка година; АУЕР публикува оценката в годишния си енергиен анализ.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li><strong>Печелят:</strong> Домакинства с ниски доходи и високи разходи за ток – особено пенсионери, хора с увреждания и ползватели на животоподдържащи уреди, които сега получават защита от спиране на тока и евентуални финансови помощи автоматично, без бюрократични усилия.</li><li><strong>Губят:</strong> Не се открива явен губещ; административна и техническа тежест се поема от редица институции (АСП, НЗОК, НЕЛК, НАП, оператори на мрежи), но това е вътрешна реорганизация.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Системата не пита гражданина за доходите му – НАП сама изчислява дали средномесечният доход след приспадане на разхода за ток пада под линията на бедност и връща само „да&quot; или „не&quot;, без да предава конкретните суми на другите органи.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>В сила от 17 април 2026 г. (деня на обнародването).</li><li>АСП подава първоначалните данни за социални и отоплителни помощи до 30 април 2026 г. (еднократен преходен срок).</li><li>АУЕР предоставя коефициента за преобразуване на енергията и за годината преди предходната само през първата година на прилагане.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=242745" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details></div>
+</div>
+<div class="subsection">
+  <div class="subsection-hd">
+    <span class="subsection-tag">03</span>
+    <span class="subsection-title">Министерства и ведомства</span>
+    <span class="subsection-count">9 наредби · 1 споразумение</span>
+  </div>
+  <div class="dv-grid">
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;35 &middot; 2026-04-14</span>
+    </div>
+    <div class="dv-title">НАРЕДБА № 3 от 27 март 2026 г. за метеорологичното осигуряване на въздушна навигация за гражданското въздухоплаване</div>
+    <div class="exec-organ">Министерство на транспорта и съобщенията</div>
+    <p class="dv-lead">Наредбата определя новите правила за метеорологично обслужване на гражданското въздухоплаване в България – кой може да го предоставя, при какви условия и как се осъществява надзорът.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Кой може да предоставя услугата:</strong> Само доставчици на аеронавигационно обслужване (ДАНО) с валидно свидетелство, издадено по EU Регламент 2017/373 и Наредба № 26. Допускат се и доставчици от други държави – членки на ЕС, чието свидетелство е признато от ГД „Гражданска въздухоплавателна администрация&quot;.</li><li><strong>Персоналът задължително се сертифицира:</strong> Специалистите трябва да отговарят на стандартите на Световната метеорологична организация (документи WMO-49 и WMO-1209). Компетентността се удостоверява с удостоверение, издадено от самия доставчик, по одобрена от ГД ГВА схема.</li><li><strong>Периодична преоценка на компетентността:</strong> На работното място – поне веднъж на три години; при прекъсване на работа за повече от 9 последователни месеца се изисква нова оценка преди връщане към обслужване.</li><li><strong>Задължителна система за управление на качеството (СУК):</strong> Всеки доставчик трябва да поддържа СУК, сертифицирана от акредитирана организация по стандарт ISO 9000. Системата трябва да засича и регистрира закъснели метеорологични съобщения; информация, която не отговаря на изискванията, не се предоставя, докато не бъде потвърдена от изготвилия я.</li><li><strong>Авиационните оператори искат промени с предизвестие:</strong> При нужда от ново или променено метеорологично обслужване (нови маршрути, промяна в разписание и др.) операторът отправя предизвестие до доставчика след одобрение от ГД ГВА; срокът се договаря индивидуално между трите страни.</li><li><strong>Летищните метеорологични служби може да покриват няколко летища:</strong> Главният директор на ГД ГВА може със заповед да назначи една служба за отговорна за повече от едно летище.</li><li><strong>При аварийна ситуация на въздухоплавателно средство</strong> метеорологичната информация се предоставя „възможно най-бързо&quot; – без определен краен срок в минути, но задължението е изрично.</li><li><strong>Форматите на метеорологичните данни са стандартизирани:</strong> Допустими са шест формата – IWXXM/GML, буквено-цифров код, GRIB, BUFR, PNG и съкратен обикновен език; произволни формати не се допускат.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Авиационните оператори и екипажи – получават по-ясно регламентирано и качествено контролирано метеорологично обслужване съгласно актуалните европейски стандарти.</li><li>Губят: Доставчиците на метеорологично обслужване – поемат по-тежки административни и финансови задължения (сертификация на персонал, ISO-сертифицирана СУК, схеми за компетентност с одобрение от регулатора).</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Наредбата не определя конкретен срок (в минути или часове) за предоставяне на метеорологична информация при аварийна ситуация на борда – задължението е само „възможно най-бързо&quot;, което оставя правна неяснота при евентуален инцидент.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от датата на обнародване – 14 април 2026 г.</li><li>Отменя Наредба № 3 от 7 март 2012 г. (обн. ДВ, бр. 25/2012 г.) незабавно, без преходен период за доставчиците да се приведат в съответствие.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=242477" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;35 &middot; 2026-04-14</span>
+    </div>
+    <div class="dv-title">НАРЕДБА № Н-4 от 30 март 2026 г. за организацията на профилактиката и контрола на инфекциите, свързани с медицинското обслужване</div>
+    <div class="exec-organ">Министерство на здравеопазването</div>
+    <p class="dv-lead">Наредбата въвежда нови задължителни правила за всички лечебни заведения в България как да предотвратяват, регистрират и контролират вътреболничните инфекции и да ограничават антибиотичната резистентност.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Кой е засегнат:</strong> Всички лечебни заведения – болници, центрове за психично здраве, онкологични центрове, хосписи, домове за медико-социални грижи, медицински центрове с до 10 легла и др. Задълженията се отнасят до лекари, медицински сестри, немедицински персонал, студенти и специализанти.</li><li><strong>Лице по контрол на инфекциите:</strong> Ръководителите на болниците и изброените специализирани заведения са длъжни да определят едно или повече лица по контрол на инфекциите – лекар с призната специалност по епидемиология, микробиология или инфекциозни болести, или медицинска сестра/акушерка/рехабилитатор с обучение в областта. Това лице следи за спазването на противоепидемичния режим, регистрира случаи и координира действията при взрив.</li><li><strong>Задължителни структури и планове:</strong> Болниците трябва да имат комисия по вътреболнични инфекции, мултидисциплинарен екип по антибиотична политика и звено за централно снабдяване със стерилни материали. Ръководителят утвърждава годишен план за профилактика и годишна програма за ограничаване на антибиотичната резистентност.</li><li><strong>Отчетност с конкретни срокове:</strong> Лечебните заведения подават тримесечни справки за специфичните здравни проблеми до РЗИ – до 5-о число на месеца след края на тримесечието. РЗИ обобщава до 10-о число на същия месец. НЦЗПБ публикува годишен анализ до края на април всяка година.</li><li><strong>Микробиологична лаборатория:</strong> До края на февруари всяка година изпраща в НЦЗПБ данни за антимикробната резистентност и антибиотичната употреба за предходната година. При изолиране на щам с множествена резистентност уведомява незабавно лицето по контрол на инфекциите.</li><li><strong>Скрининг на персонала:</strong> При постъпване в рискови структури (интензивно лечение, хирургия, неонатология, онкохематология и др.) новият персонал задължително се изследва за носителство на патогенни и множествено-резистентни микроорганизми. Положителните лица се преместват в структури без риск за пациентите до саниране на носителството. Оценка на риска от заразяване на персонала се провежда най-малко веднъж на 5 години.</li><li><strong>При епидемичен взрив:</strong> Ръководителят на лечебното заведение е длъжен да уведоми незабавно РЗИ, да сформира екип по управление на взрива и да изпрати микробни изолати в националните референтни лаборатории на НЦЗПБ за генетично типизиране.</li><li><strong>Детайлни технически стандарти:</strong> Наредбата съдържа изчерпателни правила за хигиена на ръцете (6-стъпков протокол, минимум 20 секунди миене), дезинфекция и стерилизация (автоклавиране при 121°C/20 мин. или 134°C/3–5 мин.), изолация на пациенти, „пакетни мерки&quot; при катетри, вентилация и Clostridioides difficile, както и деколонизиращи хигиенни грижи за лежащи пациенти (метод „сухо къпане&quot; на 8 зони минимум веднъж дневно).</li><li><strong>Концентрации и прагове за въздух в операционни зали:</strong> В операционни зали за трансплантации и сложни интервенции – до 5 CFU/m³ в зоната на масата; в стандартни болнични стаи – до 500 CFU/m³. UVC лампите се подменят при спад от 30% на интензитета или при стойности под 4 µW/cm².</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Пациентите – чрез по-строга защита от вътреболнични инфекции и резистентни бактерии; персоналът в рискови структури – чрез задължителен скрининг и постекспозиционна профилактика при наранявания с остри предмети.</li><li>Губят: Ръководителите на лечебни заведения и техните администрации – значително нарастване на административната и организационна тежест: нови длъжности, планове, отчети, задължителни структури и документация.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Наредбата задължава болниците да изпращат микробни изолати с множествена резистентност в националните референтни лаборатории за ДНК типизиране при всеки епидемичен взрив – изискване, което поставя молекулярната епидемиология като стандартна болнична практика, а не изключение.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от датата на обнародване – 14 април 2026 г.</li><li>Отменя Наредба № 2 от 2005 г. и Наредба № 3 от 2013 г. за вътреболничните инфекции, считано от същата дата.</li><li>Не са предвидени изрични гратисни периоди за привеждане в съответствие.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=242497" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;35 &middot; 2026-04-14</span>
+    </div>
+    <div class="dv-title">Наредба за изменение и допълнение на Наредба № 3 от 12 август 2016 г. за условията и реда за утвърждаване на държавния план-прием за училищата по изкуствата и училищата по културата</div>
+    <div class="exec-organ">Министерство на културата</div>
+    <p class="dv-lead">Актът актуализира терминологията в наредбата за прием в училищата по изкуствата и културата, като заменя думата „специалности&quot; с по-точния термин „видове специализирана подготовка по професия&quot;.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>В два члена на наредбата старият термин „специалности&quot; се заменя с „видове специализирана подготовка по професия&quot; – промяната е терминологична и отразява актуалната номенклатура в системата на професионалното образование.</li><li>Засегнати са училищата по изкуствата и училищата по културата, чийто държавен план-прием се утвърждава по реда на наредбата.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Училищата по изкуствата и културата – получават правна яснота и съответствие с актуалната терминология в образователното законодателство.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>От деня на обнародването – 14 април 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=242528" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;35 &middot; 2026-04-14</span>
+    </div>
+    <div class="dv-title">Наредба за изменение и допълнение на Наредба № 2 от 12 август 2016 г. за приемане и преместване на ученици в училищата по изкуствата</div>
+    <div class="exec-organ">Министерство на културата</div>
+    <p class="dv-lead">Наредбата актуализира правилата за прием в училищата по изкуствата, като замества остарялото понятие „специалност&quot; с „вид специализирана подготовка по професия&quot; и привежда списъците с професии и изпити в съответствие с действащото образователно законодателство.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Кандидатите могат да кандидатстват едновременно в неограничен брой училища по изкуствата и за неограничен брой специализирани подготовки/професии, но се записват само в едно училище по един вид подготовка/професия.</li><li>В VIII клас се приемат ученици по точно изброени 20 професии – включително музикално изкуство (с 30+ конкретни инструмента и вида пеене), танцово изкуство (класически, народни, модерен танц), актьорство (драматичен, куклен театър, пантомима) и библиотекознание.</li><li>Изпитните изисквания са прецизирани по вид: за изобразителните и дизайнерски специалности – изпит по рисуване; за полиграфия и библиотекознание – изпит по български език и литература; за лютиерство – рисуване И музика; за актьорство – изпит по съответния вид специализирана подготовка.</li><li>Медицинските документи при кандидатстване са обвързани конкретно с вида подготовка: ортопед за танцово изкуство (гръбначен стълб, крайници, плоскостъпие), фониатър/УНГ за вокално изкуство, и специален документ за дихателни и сърдечни увреждания при духови инструменти.</li><li>При преглед на изпитни работи вече изрично се забранява заснемане или копиране.</li><li>Директорът на приемащото училище има право да не формира маломерна паралелка или група и да закрие приема по даден вид подготовка/професия, като преразпредели утвърдените места към друг вид подготовка.</li><li>Актуализирани са и четирите образца на заявления – за приемане/преместване до VII клас, след VII клас, и за записване до и след VII клас – с новата терминология и до 8 наредени желания за ученици след VII клас.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Кандидати за прием – получават по-ясна и терминологично последователна нормативна рамка и формално неограничен брой училища и специалности, за които могат да кандидатстват.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Библиотекознание е включено в списъка с професии за VIII клас в училищата по изкуствата – нетипично съседство с живопис, танц и актьорство, изискващо единствено изпит по български език и литература.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от деня на обнародването – 14 април 2026 г.</li><li>Прилага се за прием в подготвителни групи и в I, V и VIII клас (т.е. важи за текущата приемна кампания).</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=242529" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;35 &middot; 2026-04-14</span>
+    </div>
+    <div class="dv-title">Наредба за изменение и допълнение на Наредба № 6 от 28.03.2024 г. за присъединяване на обекти към електрическите мрежи</div>
+    <div class="exec-organ">Комисия за енергийно и водно регулиране</div>
+    <p class="dv-lead">Наредбата премахва излишната бюрократична тежест при монтаж на зарядни станции, батерии и малки консуматори към вече свързани обекти, въвежда „споделено ползване&quot; на мрежова мощност между производители/складиращи, и актуализира финансовите гаранции и електронните процедури пред КЕВР.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Без ново искане за присъединяване</strong> при добавяне на зарядна точка/заряден център/зарядна станция за собствено ползване или допълнителни консуматори към вече присъединен обект – ако не се променя предоставената мощност и не се отдава енергия в мрежата. Важи и за обекти за потребление, и за обекти за производство.</li><li><strong>При техническа възможност за отдаване в мрежата</strong> (дори да не се планира) се подава само писмено уведомление до мрежовия оператор; операторът е длъжен да предостави допълнително споразумение в <strong>14-дневен срок</strong>.</li><li><strong>Батерии (съхранение) към съществуващи обекти</strong> – също не изискват ново искане за присъединяване, стига присъединената мощност да не се увеличава; процедурата отново е уведомление + споразумение до 14 дни.</li><li><strong>Ново право: „споделена мрежова мощност&quot;</strong> – две или повече лица могат да се договорят (с нотариално заверен договор) да ползват съвместно капацитета на мрежата; при разтрогване на договора процедурите за присъединяване се прекратяват или се определят нови условия.</li><li><strong>Финансовата гаранция</strong> за присъединяване на обекти за съхранение се променя от <strong>50 000 лв. на 25 564,59 евро</strong> (левовата равностойност е почти същата, но валутата вече е евро); при свръхобезпечение операторът може да освободи частично гаранцията при сключване на договора за присъединяване.</li><li><strong>Вятърни електроцентрали</strong> получават удължен срок за влизане в сила на становището за присъединяване – от 2 на <strong>3 години</strong> (спрямо останалите производители, за които остава 2 години).</li><li><strong>Електронни заявления до КЕВР</strong> (за цени на ток, газ, топлина, лицензии, сертификати за произход) вече се подават задължително с <strong>квалифициран електронен подпис и квалифициран електронен времеви печат</strong> с точност до секунда; заявление без такъв подпис не стартира административно производство.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li><strong>Печелят:</strong> Домакинства и бизнеси, монтиращи зарядни станции или батерии към съществуващ обект – спестяват месеци процедура; разработчици на ВЕИ и батерийни паркове, които могат да споделят мрежов капацитет вместо да чакат ново присъединяване; ветроенергийни проекти с по-дълъг срок на становището.</li><li><strong>Губят:</strong> Мрежовите оператори – получават нов 14-дневен задължителен срок и допълнителна административна тежест при обработка на уведомления и изготвяне на споразумения.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Гаранцията се превалутира в евро (25 564,59 €), което при сегашния фиксинг е практически идентично на 50 000 лв. – промяната изглежда козметична, но означава, че при евентуална промяна на курса размерът автоматично ще се различи.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Наредбата влиза в сила от деня на обнародването – 14 април 2026 г.; няма гратисни периоди.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=242626" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;36 &middot; 2026-04-17</span>
+    </div>
+    <div class="dv-title">Наредба за изменение на Наредба № 11 от 21 декември 2005 г. за определяне на условията и реда за осигуряване на безплатна храна и/или добавки към нея</div>
+    <div class="exec-organ">Министерство на труда и социалната политика и Министерство на здравеопазването</div>
+    <p class="dv-lead">Актът преизчислява паричните прагове за безплатна храна на работното място от левове в евро – директна последица от въвеждането на еврото в България.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Стойността на безплатната храна, която работодателят може да осигурява, се променя от <strong>2 лева на 2 евро</strong> на ден.</li><li>Стойността на добавките към храната се променя от <strong>1 лев на 1 евро</strong> на ден.</li><li>Засегнати са всички работодатели, задължени да осигуряват безплатна храна при вредни условия на труд, и техните служители.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Работници с право на безплатна храна – реалната стойност на придобивката нараства, тъй като 2 евро са приблизително два пъти повече от 2 лева по фиксирания курс 1,95583 лв./евро.</li><li>Губят: Работодатели – разходите за задължителната безплатна храна почти се удвояват в абсолютна стойност.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Числата остават формално същите (2 и 1), но смяната на валутата означава автоматично увеличение на разхода с около 95% – без изрично повишаване на прага.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от <strong>1 септември 2026 г.</strong></li><li>Работодателите разполагат с около <strong>4,5 месеца</strong> след обнародването, за да приведат практиките и вътрешните си документи в съответствие.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=242516" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;36 &middot; 2026-04-17</span>
+    </div>
+    <div class="dv-title">НАРЕДБА № 37 от 3 април 2026 г. за придобиване на квалификация по професията „Автобояджийство“</div>
+    <div class="exec-organ">Министерство на образованието и науката</div>
+    <p class="dv-lead">Наредбата въвежда държавен образователен стандарт за професията „Автобояджийство&quot;, с което официално регламентира изискванията за обучение и придобиване на първа степен на професионална квалификация по тази специалност.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Засегнати са ученици, кандидати за обучение и учебни заведения, предлагащи професионалното направление „Транспортни средства&quot; (код 0716).</li><li>Стандартът урежда само <strong>първа степен</strong> на професионална квалификация по специалността – най-начално ниво в системата за ПОО.</li><li>Определени са конкретни изисквания към кандидатите, описание на професията и критерии за оценяване на всяка единица резултат от учене.</li><li>Обучението включва три компонента: обща, отраслова и специфична професионална подготовка, обединени в необходими компетентности за реална работа.</li><li>Стандартът задава изисквания и към <strong>материалната база</strong> на обучаващите институции, и към <strong>квалификацията на преподавателите</strong>.</li><li>Въз основа на наредбата се разработват типови учебни планове за ученици и отделни планове за лица над 16 години, търсещи квалификация извън училищната система.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Ученици и курсисти, търсещи призната квалификация в автобояджийството; работодатели в автосервизния сектор, получаващи кадри с унифицирана подготовка.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Наредбата влиза в сила от датата на обнародване – 17 април 2026 г.</li><li>Учебните планове и програми по новия стандарт се прилагат от <strong>учебната 2026/2027 г.</strong>, само за ученици, постъпващи в <strong>VIII клас</strong> – по-ранните випуски продължават по старите програми.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=242566" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;36 &middot; 2026-04-17</span>
+    </div>
+    <div class="dv-title">Наредба за изменение на Наредба № 11 от 17 октомври 2019 г. за приемане на фармако-терапевтично ръководство по медицинска онкология</div>
+    <div class="exec-organ">Национален съвет по цени и реимбурсиране на лекарствените продукти</div>
+    <p class="dv-lead">Актуализира се фармако-терапевтичното ръководство по медицинска онкология, което определя кои лечения и лекарства са стандарт на грижа за онкоболните в България.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Приложението към наредбата – тоест самото фармако-терапевтично ръководство по медицинска онкология – се заменя с ново, актуализирано издание.</li><li>Конкретното съдържание на промените (нови протоколи, добавени или премахнати лекарства, схеми на лечение) не е публикувано в Държавен вестник, а е качено като притурка на интернет страницата на Държавен вестник.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Пациенти с онкологични заболявания, ако новото ръководство включва по-съвременни терапии; лекарствени компании, чиито продукти са добавени в протоколите.</li><li>Губят: Евентуално производители, чиито лекарства са изключени от актуализираните протоколи.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Цялото съдържание на измененото ръководство е достъпно единствено онлайн като притурка, а не в печатния брой на Държавен вестник – което означава, че гражданите и лекарите не могат да разберат какво точно е променено от самия вестник.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от датата на обнародване – 17 април 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=242574" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;36 &middot; 2026-04-17</span>
+    </div>
+    <div class="dv-title">Наредба за изменение на Наредба № 14 от 14 ноември 2019 г. за приемане на фармако-терапевтично ръководство по ревматология</div>
+    <div class="exec-organ">Национален съвет по цени и реимбурсиране на лекарствените продукти</div>
+    <p class="dv-lead">Актуализира се фармако-терапевтичното ръководство по ревматология, което определя стандартите за лечение и реимбурсираните терапии за пациенти с ревматологични заболявания.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Изцяло се сменя приложението към наредбата – то съдържа конкретните терапевтични схеми, лекарствени продукти и условия за тяхното предписване и заплащане от НЗОК.</li><li>Новото приложение е публикувано само като притурка на сайта на „Държавен вестник&quot;, а не в печатния брой – достъпно е единствено онлайн.</li><li>Промяната е шестата поредна актуализация на ръководството от 2019 г. насам, което сигнализира за редовно осъвременяване на терапевтичните протоколи.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Пациенти с ревматологични заболявания, ако новото ръководство разширява достъпа до реимбурсирани терапии; лекари-ревматолози, получаващи актуализирани клинични насоки.</li><li>Губят: Не се открива явен губещ – потенциално фармацевтични компании, чиито продукти биха могли да отпаднат от ръководството, но конкретното съдържание на приложението не е публикувано в текста на акта.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Цялото съдържание на промяната – конкретните терапии и условия – е скрито в онлайн притурка и не е видимо от текста на наредбата в Държавен вестник, което на практика прави акта непрозрачен без допълнителна справка.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от датата на обнародване – 17 април 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=242575" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<div class="dv-card dv-card-compact">
+  <div class="dv-sum-static">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-spor">СПОРАЗУМЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;35 &middot; 2026-04-14</span>
+    </div>
+    <div class="dv-title">СПОРАЗУМЕНИЕ между правителството на Република България и правителството на Република Северна Македония за подготовката, изграждането и експлоатацията на трансгранично железопътно тунелно съоръжение, подписано на 6 ноември 2025 г. в с. Гюешево</div>
+    <div class="exec-organ">Министерство на транспорта и съобщенията</div>
+    <p class="dv-lead">България и Северна Македония официализират изграждането на железопътен тунел под прохода Деве баир по Коридор VIII, свързващ София и Скопие.</p>
+    <div class="compact-bullets"><ul><li>Тунелът е с проектна дължина <strong>2383 м</strong> – 1193,70 м на българска територия и 1189,30 м на македонска; точните размери се финализират с одобрения строителен проект.</li><li>Линията минава по направлението <strong>София – Перник – Радомир – Гюешево – граница – Крива паланка – Куманово – Скопие</strong>; тунелът е сред последните „липсващи звена&quot; по Паневропейски коридор VIII.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=242394" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</div></div>
+</div>
+</div>
+
+<div class="nl-footer">
+  <span class="nl-footer-logo">Парламентарни Doodles</span>
+  <div class="nl-footer-links">
+    <a href="../">ДВ Дайджест</a>
+    <a href="../../sessions/">Заседания</a>
+    <a href="https://bpdoodles.com">Basepoint Doodles</a>
+  </div>
+</div>
+</div>
+</body>
+</html>

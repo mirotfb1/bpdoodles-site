@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="utf-8">
+<title>Парламентарни Doodles · ДВ Дайджест · Седмица 20</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --navy:#1B2E5E; --gold:#B5821A; --ink:#1C1C1C; --ink2:#444;
+  --muted:#888; --muted-lt:#AAA; --border:#E8E8E8; --surf:#F8F8F8; --paper:#FFF;
+  --font-d:'Caveat',cursive; --font-h:'Nunito','Arial Black',sans-serif;
+  --font-b:'Nunito',Arial,sans-serif;
+}
+body{font-family:var(--font-b);background:#F0F2F5;color:var(--ink);line-height:1.6;}
+.wrapper{max-width:740px;margin:32px auto;background:#fff;border:1px solid var(--border);border-radius:4px;overflow:hidden;}
+
+/* top bar */
+.top-bar{display:flex;justify-content:space-between;align-items:center;padding:8px 16px;background:var(--navy);}
+.site-nav{display:flex;gap:20px;align-items:center;}
+.site-nav a{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none;}
+.site-nav a:hover{color:rgba(255,255,255,.9);}
+.site-nav a.active{color:var(--gold);}
+.top-bar-tag{font-family:'Courier New',monospace;font-size:10px;color:rgba(255,255,255,.25);}
+
+/* masthead */
+.masthead{background:var(--navy);padding:24px 28px 20px;display:flex;justify-content:space-between;align-items:flex-end;border-bottom:3px solid var(--gold);}
+.masthead-logo{display:flex;flex-direction:row;align-items:center;}
+.masthead-left{display:flex;flex-direction:column;align-items:flex-end;padding-right:14px;}
+.masthead-basepoint{font-family:var(--font-h);font-size:22px;font-weight:900;color:#fff;letter-spacing:-.3px;line-height:1;}
+.masthead-tagline{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:4px;}
+.masthead-divider{width:2px;height:52px;background:rgba(255,255,255,.2);}
+.masthead-doodles{font-family:var(--font-d);font-size:48px;font-weight:700;color:var(--gold);line-height:1;padding-left:14px;}
+.masthead-meta{text-align:right;}
+.masthead-issue{font-size:13px;font-weight:700;color:rgba(255,255,255,.85);display:block;line-height:1.5;}
+.masthead-date{font-size:11px;color:rgba(255,255,255,.4);display:block;}
+.masthead-pills{margin-top:8px;display:flex;gap:6px;justify-content:flex-end;flex-wrap:wrap;}
+.masthead-pill{font-size:10px;font-weight:700;letter-spacing:.05em;background:rgba(255,255,255,.12);color:rgba(255,255,255,.6);padding:3px 8px;border-radius:3px;}
+
+/* content sections */
+.section{padding:20px 28px;border-bottom:1px solid var(--border);}
+.section:last-of-type{border-bottom:none;}
+
+/* subsection (within DV edition) */
+.subsection{margin-bottom:24px;}
+.subsection:last-child{margin-bottom:0;}
+.subsection-hd{display:flex;align-items:baseline;gap:10px;margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid var(--border);}
+.subsection-tag{font-size:10px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);}
+.subsection-title{font-family:var(--font-h);font-size:16px;font-weight:900;color:var(--navy);}
+.subsection-count{font-size:11px;color:var(--muted);margin-left:auto;}
+
+/* section label row */
+.section-label-row{padding:10px 28px 8px;background:var(--surf);border-bottom:1px solid var(--border);}
+.section-label{font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);}
+
+/* page header */
+.page-header{padding:20px 28px 16px;border-bottom:1px solid var(--border);}
+.page-title{font-family:var(--font-h);font-size:20px;font-weight:900;color:var(--ink);letter-spacing:-.3px;margin-bottom:6px;}
+.page-subtitle{font-size:13px;color:var(--muted);}
+
+/* issue list rows */
+a.issue-row{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 28px;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:background .1s;}
+a.issue-row:hover{background:var(--surf);}
+a.issue-row:last-of-type{border-bottom:none;}
+.issue-row-left{flex:1;}
+.issue-row-meta{font-family:'Courier New',monospace;font-size:10px;color:var(--muted-lt);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;}
+.issue-row-title{font-size:15px;font-weight:900;color:var(--ink);letter-spacing:-.2px;line-height:1.3;}
+.issue-row-desc{font-size:12px;color:var(--muted);margin-top:3px;}
+.issue-row-arrow{font-size:18px;color:var(--gold);font-weight:900;flex-shrink:0;}
+
+/* footer */
+.nl-footer{padding:14px 28px;background:var(--surf);border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
+.nl-footer-logo{font-family:var(--font-d);font-size:18px;font-weight:700;color:#CCC;}
+.nl-footer-links{font-size:11px;display:flex;gap:16px;}
+.nl-footer-links a{color:var(--muted-lt);text-decoration:none;}
+.nl-footer-links a:hover{color:var(--muted);}
+
+/* DV cards */
+.dv-grid{display:flex;flex-direction:column;gap:8px;}
+details.dv-card{background:var(--paper);border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:border-color .15s;}
+details.dv-card:hover{border-color:var(--gold);}
+details.dv-card[open]{border-color:var(--gold);}
+.dv-card-compact{background:var(--paper);border:1px solid var(--border);border-radius:8px;overflow:hidden;opacity:.9;}
+.dv-sum{padding:14px 16px;cursor:pointer;list-style:none;user-select:none;}
+.dv-sum::-webkit-details-marker{display:none;}
+.dv-sum-static{padding:14px 16px;}
+.dv-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+.dv-meta{font-size:11px;color:var(--muted);font-weight:700;}
+.dv-title{font-family:var(--font-h);font-size:13px;font-weight:900;color:var(--ink);line-height:1.4;letter-spacing:-.1px;margin-bottom:4px;}
+.exec-organ{font-size:11px;color:var(--muted);margin-bottom:6px;font-style:italic;}
+.dv-lead{font-size:13px;color:var(--ink2);line-height:1.55;margin-bottom:8px;}
+.compact-bullets ul{list-style:none;padding:0;margin-top:6px;}
+.compact-bullets li{padding:3px 0 3px 14px;position:relative;color:var(--ink2);font-size:12px;line-height:1.5;}
+.compact-bullets li::before{content:"·";position:absolute;left:2px;color:var(--gold);font-weight:700;font-size:15px;line-height:1.1;}
+.expand-hint{font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.06em;margin-top:4px;}
+details.dv-card[open] .expand-hint{display:none;}
+.dv-body{padding:0 16px 16px;border-top:1px solid var(--border);}
+
+/* badges */
+.badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;}
+.dv-badges{display:flex;gap:6px;align-items:center;flex-wrap:wrap;}
+.b-zakon   {background:#dbeafe;color:#1a56db;}
+.b-reshenie{background:#cffafe;color:#0a6e8a;}
+.b-ukaz    {background:#ede9fe;color:#7c3aed;}
+.b-decl    {background:#fef3c7;color:#92400e;}
+.b-post    {background:#d1fae5;color:#065f46;}
+.b-naredba {background:#fce7f3;color:#9d174d;}
+.b-pravilnik{background:#f3e8ff;color:#6b21a8;}
+.b-inst    {background:#fef9c3;color:#713f12;}
+.b-razp    {background:#e0f2fe;color:#0369a1;}
+.b-spor    {background:#fff7ed;color:#c2410c;}
+.b-other   {background:#f3f4f6;color:#6b7280;}
+.b-cat     {background:#f3f4f6;color:#555;}
+
+/* factsheet sections */
+.fs-sec{margin:12px 0;font-size:13px;}
+.fs-sec h5,.parties-block h5,.notable-callout h5,.sess-col h5{font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:8px;padding-bottom:5px;border-bottom:1px solid var(--border);}
+.fs-sec ul,.parties-block ul{list-style:none;padding:0;}
+.fs-sec li,.parties-block li{padding:4px 0 4px 16px;position:relative;color:var(--ink2);border-bottom:1px solid #f3f4f6;font-size:13px;line-height:1.5;}
+.fs-sec li:last-child,.parties-block li:last-child{border-bottom:none;}
+.fs-sec li::before{content:"·";position:absolute;left:3px;color:var(--gold);font-weight:700;font-size:16px;line-height:1.1;}
+.fs-sec p,.parties-block p{color:var(--ink2);font-size:13px;margin-bottom:4px;}
+.fs-winners ul{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.fs-winners li{padding:8px 10px 8px 24px;border-radius:6px;border-bottom:none !important;}
+.fs-winners li:first-child{background:#f0fdf4;}
+.fs-winners li:first-child::before{content:"✓";color:#16a34a;font-size:13px;top:8px;}
+.fs-winners li:nth-child(2){background:#fef2f2;}
+.fs-winners li:nth-child(2)::before{content:"✗";color:#dc2626;font-size:13px;top:8px;}
+.fs-notable{background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:12px 14px;}
+.fs-notable h5{border-bottom-color:#fde68a;color:#92400e;}
+.fs-notable li,.fs-notable p{color:#78350f;}
+.fs-notable li::before{color:#d97706;}
+.fs-eu{background:#f0f9ff;border-radius:8px;padding:12px 14px;}
+.fs-eu h5{color:#0369a1;border-bottom-color:#bae6fd;}
+.fs-eu p{color:#0c4a6e;font-size:13px;}
+.ext-link{display:inline-block;margin-top:12px;font-size:12px;font-weight:700;color:var(--navy);text-decoration:none;}
+.ext-link:hover{text-decoration:underline;}
+.no-summ{color:var(--muted);font-size:13px;font-style:italic;padding:12px 0;}
+
+/* session blocks */
+details.sess-block{background:var(--paper);border:1px solid var(--border);border-left:4px solid var(--navy);border-radius:0 8px 8px 0;margin-bottom:10px;overflow:hidden;}
+details.sess-block:hover{box-shadow:0 2px 8px rgba(0,0,0,.06);}
+details.sess-block[open]{border-left-color:var(--gold);}
+.sess-sum{padding:14px 18px;cursor:pointer;list-style:none;user-select:none;}
+.sess-sum::-webkit-details-marker{display:none;}
+.sess-hd{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap;}
+.sess-date-chip{background:var(--navy);color:#fff;font-size:10px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:4px;white-space:nowrap;}
+details.sess-block[open] .sess-date-chip{background:var(--gold);}
+.sess-label{font-family:var(--font-h);font-size:14px;font-weight:900;color:var(--ink);}
+.sess-lead{font-size:13px;color:var(--ink2);line-height:1.55;margin-bottom:6px;}
+.sess-body{padding:0 18px 16px;border-top:1px solid var(--border);}
+.sess-lead-full{font-size:13px;color:var(--ink2);line-height:1.6;margin:12px 0;background:#f8fafc;border-left:3px solid var(--gold);padding:8px 12px;border-radius:0 6px 6px 0;}
+.sess-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0;}
+.sess-col{font-size:13px;}
+.sess-col ul{list-style:none;padding:0;}
+.sess-col li{padding:4px 0 4px 14px;position:relative;color:var(--ink2);border-bottom:1px solid #f3f4f6;font-size:13px;line-height:1.5;}
+.sess-col li:last-child{border-bottom:none;}
+.sess-col li::before{content:"·";position:absolute;left:2px;color:var(--navy);font-weight:700;font-size:15px;line-height:1.1;}
+.notable-callout{display:flex;gap:10px;align-items:flex-start;background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:10px 12px;margin:12px 0;}
+.notable-icon{font-size:16px;color:#d97706;flex-shrink:0;line-height:1.4;}
+.notable-callout h5{border-bottom-color:#fde68a;color:#92400e;}
+.notable-callout p,.notable-callout li{color:#78350f;font-size:13px;}
+.notable-callout ul{list-style:none;padding:0;}
+.notable-callout li{padding:3px 0 3px 14px;position:relative;}
+.notable-callout li::before{content:"·";position:absolute;left:2px;color:#d97706;font-weight:700;font-size:15px;line-height:1.1;}
+.parties-block{margin:12px 0;font-size:13px;}
+.sess-ft{margin-top:12px;padding-top:10px;border-top:1px solid var(--border);}
+
+/* landing track cards */
+.track-card{display:block;padding:20px 28px;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:background .1s;}
+.track-card:hover{background:var(--surf);}
+.track-card:last-of-type{border-bottom:none;}
+.track-label{font-size:10px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+.track-title{font-family:var(--font-h);font-size:18px;font-weight:900;color:var(--navy);letter-spacing:-.3px;line-height:1.3;margin-bottom:6px;}
+.track-desc{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px;}
+.track-latest{font-size:12px;color:var(--ink2);}
+.track-arrow{font-size:22px;color:var(--gold);font-weight:900;float:right;margin-top:-28px;}
+
+/* archive / intro */
+.arch-table{width:100%;border-collapse:collapse;}
+.arch-table th{padding:8px 0;text-align:left;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);border-bottom:1px solid var(--border);}
+.arch-table td{padding:12px 8px 12px 0;border-bottom:1px solid var(--border);font-size:13px;color:var(--ink2);}
+.arch-table tr:last-child td{border-bottom:none;}
+.arch-table a{color:var(--navy);font-weight:700;text-decoration:none;}
+.arch-table a:hover{text-decoration:underline;}
+.intro-block{padding:20px 28px;border-bottom:1px solid var(--border);font-size:14px;line-height:1.7;color:var(--ink);}
+.all-issues-wrap{padding:16px 28px;border-bottom:1px solid var(--border);}
+.all-issues-btn{width:100%;padding:13px;background:none;border:1.5px solid var(--navy);border-radius:3px;font-family:var(--font-h);font-size:11px;font-weight:900;color:var(--navy);cursor:pointer;text-align:center;letter-spacing:.14em;text-transform:uppercase;transition:background .15s,color .15s;}
+.all-issues-btn:hover{background:var(--navy);color:#fff;}
+.waitlist-section,.contact-section{padding:20px 28px;border-bottom:1px solid var(--border);}
+.waitlist-heading{font-family:var(--font-h);font-size:17px;font-weight:900;color:var(--ink);letter-spacing:-.2px;margin-bottom:8px;}
+.waitlist-body{font-size:14px;color:var(--ink2);line-height:1.6;margin-bottom:16px;}
+.waitlist-form{display:flex;gap:8px;margin-bottom:10px;}
+.waitlist-input{flex:1;padding:10px 12px;border:1px solid var(--border);border-radius:3px;font-family:var(--font-b);font-size:14px;color:var(--ink);min-width:0;}
+.waitlist-input:focus{outline:none;border-color:var(--navy);}
+.waitlist-btn{padding:10px 18px;background:var(--navy);color:#fff;border:none;border-radius:3px;font-family:var(--font-h);font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;white-space:nowrap;}
+.waitlist-btn:hover{background:#122348;}
+.waitlist-fine{font-size:12px;color:var(--muted-lt);line-height:1.5;}
+.waitlist-ok{display:none;font-size:14px;font-weight:700;color:#16a34a;margin-top:10px;}
+.contact-section p{font-size:14px;color:var(--ink2);line-height:1.6;}
+.contact-section a{color:var(--navy);font-weight:700;text-decoration:none;}
+.contact-section a:hover{text-decoration:underline;}
+
+@media(max-width:760px){
+  .wrapper{margin:0;border-radius:0;border-left:none;border-right:none;}
+  .masthead,.section,.nl-footer,.page-header,a.issue-row,.track-card,
+  .section-label-row,.intro-block,.waitlist-section,.contact-section,.all-issues-wrap{padding-left:16px;padding-right:16px;}
+  .masthead-pills{display:none;}
+  .sess-cols{grid-template-columns:1fr;}
+  .fs-winners ul{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+<div class="top-bar">
+  <nav class="site-nav">
+    <a href="../" class="active">ДВ Дайджест</a>
+    <a href="../../sessions/">Заседания</a>
+    <a href="https://bpdoodles.com">Basepoint Doodles</a>
+  </nav>
+  <span class="top-bar-tag">Парламентарни Doodles</span>
+</div>
+
+<div class="masthead">
+  <div class="masthead-logo">
+    <div class="masthead-left">
+      <span class="masthead-basepoint">Парламентарни</span>
+      <span class="masthead-tagline">Парламентарен дайджест</span>
+    </div>
+    <div class="masthead-divider"></div>
+    <span class="masthead-doodles">Doodles</span>
+  </div>
+  <div class="masthead-meta">
+    <span class="masthead-issue">ДВ Дайджест · Седмица 20 · 2026</span>
+    <span class="masthead-date">11–17 май 2026</span>
+    <div class="masthead-pills"><span class="masthead-pill">10 акта от НС</span><span class="masthead-pill">3 акта от МС</span><span class="masthead-pill">36 наредби/регулации</span></div>
+  </div>
+</div>
+<div class="section">
+
+<div class="subsection">
+  <div class="subsection-hd">
+    <span class="subsection-tag">01</span>
+    <span class="subsection-title">Народно събрание</span>
+    <span class="subsection-count">10 решения</span>
+  </div>
+  <div class="dv-grid">
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;43 &middot; 2026-05-12</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за избиране на министър-председател на Република България</div>
+    <p class="dv-lead">Народното събрание официално избира Румен Радев за министър-председател на България.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Румен Георгиев Радев е избран за министър-председател на Република България.</li><li>Изборът се основава на президентски указ № 152 от 7 май 2026 г., с който Радев е бил натоварен с мандат за съставяне на правителство.</li><li>Решението е взето от 52-рото Народно събрание под председателството на Михаела Доцова.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Румен Радев и политическите сили, подкрепили мандата му.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Румен Радев е известен преди всичко като президент на България (два мандата от 2017 г.), което прави евентуалното му назначение за министър-председател изключително нетипично и прецедент в новата конституционна история на страната.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><p>Влиза в сила от обнародването.</p></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Няма достатъчно сравнителни данни.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243332" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;43 &middot; 2026-05-12</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за приемане на структура на Министерския съвет на Република България</div>
+    <p class="dv-lead">Решението определя новата структура на правителството – 1 министър-председател, 4 заместници и 18 министри, като прегрупира и преименува две министерства.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Кабинетът се състои от министър-председател, 4-ма заместник министър-председатели и 18 министри – това е пълният брой хора в изпълнителната власт на върха.</li><li>Министерството на икономиката и индустрията се преименува на Министерство на икономиката, инвестициите и индустрията – добавя се акцент върху инвестициите.</li><li>Министерството на иновациите и растежа и Министерството на електронното управление се сливат в едно – Министерство на иновациите и дигиталната трансформация; електронното управление губи самостоятелност.</li><li>Министерският съвет има точно един месец да уреди всички правоотношения, свързани с преобразуването – назначения, функции, активи.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Новосформираните министерства с разширен мандат (иновации + дигитализация в едно), което потенциално им дава по-голям ресурс и влияние.</li><li>Губят: Служителите на Министерството на електронното управление, което престава да съществува като самостоятелна структура.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Министерството на електронното управление – създадено като символ на дигиталната модернизация – е ликвидирано и погълнато от друга структура само няколко години след основаването си.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><ul><li>Влиза в сила от обнародването (12 май 2026 г.).</li><li>Министерският съвет трябва в едномесечен срок да уреди всички правоотношения по преобразуването – функции, служители, имущество.</li></ul></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Няма достатъчно сравнителни данни за точната структура на кабинетите в ЕС, тъй като броят и наименованието на министерствата са изцяло национална компетентност. Като цяло обаче сливането на дигитализацията с иновациите е тенденция, наблюдавана в редица европейски правителства, които обединяват тези ресори в единно „мега-министерство&quot; за технологии и растеж.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243333" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;43 &middot; 2026-05-12</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за избиране на Министерски съвет на Република България</div>
+    <p class="dv-lead">Народното събрание избира новото редовно правителство на България с министър-председател и 20 членове на Министерски съвет, като едновременно прекратява мандата на служебния кабинет.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Избрани са четирима заместник министър-председатели: Гълъб Донев (финанси), Александър Пулев (икономика, инвестиции и индустрия), Иво Петков и Атанас Пеканов – без конкретен ресор за последните двама.</li><li>Съставени са 16 министерски поста, покриващи всички основни ресори: вътрешен ред, отбрана, външна политика, правосъдие, финанси, здраве, образование, енергетика, транспорт, земеделие, екология, култура, туризъм, младеж и спорт.</li><li>Служебното правителство, назначено с президентски указ на 19 февруари 2026 г., губи правомощията си незабавно с приемането на решението.</li><li>Решението е подписано от председателя на НС Михаела Доцова и подпечатано с държавния печат от новоизбрания министър на правосъдието Николай Найденов – в деня на самото му встъпване.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: политическите партии, договорили правителствената коалиция, и 20-те новоназначени министри; България получава редовно правителство след период на служебно управление.</li><li>Губят: членовете на служебния кабинет, чийто мандат е прекратен.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Решението е подпечатано от министъра на правосъдието Николай Найденов – т.е. новоизбран министър удостоверява собственото си назначение, което е необичайна, макар и формално допустима процедурна ситуация.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><ul><li>Влиза в сила от обнародването.</li><li>Правомощията на служебното правителство (Указ № 57/19.02.2026 г.) са прекратени с момента на приемане на решението – 8 май 2026 г.</li></ul></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Няма достатъчно сравнителни данни.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243334" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;43 &middot; 2026-05-12</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за освобождаване и избиране на секретар на Петдесет и второто Народно събрание</div>
+    <p class="dv-lead">Народното събрание сменя секретаря си – освобождава Катя Панева и на нейно място избира Любен Иванов Иванов.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Катя Максимова Панева е освободена от длъжността секретар на 52-рото Народно събрание.</li><li>Любен Иванов Иванов е избран за нов секретар на 52-рото Народно събрание.</li><li>Решението се основава на чл. 86, ал. 1 от Конституцията и чл. 6 от Правилника за организацията и дейността на НС – стандартна правна рамка за такива кадрови решения.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Любен Иванов Иванов, който заема нова институционална позиция.</li><li>Губят: Катя Максимова Панева, която е освободена от поста.</li></ul></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><p>Влиза в сила от обнародването.</p></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Няма достатъчно сравнителни данни.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243387" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;43 &middot; 2026-05-12</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за създаване на Временна комисия по приемането на Правилник за организацията и дейността на Петдесет и второто Народно събрание</div>
+    <p class="dv-lead">Народното събрание създава временна 16-членна комисия, която да изготви нов правилник за работата на 52-рото Народно събрание.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Комисията е от 16 депутати с мнозинство за управляващата коалиция: 9 места за „Прогресивна България&quot;, по 3 за ГЕРБ-СДС и по 1 за ДПС, „Демократична България&quot;, „Продължаваме Промяната&quot; и „ВЪЗРАЖДАНЕ&quot;.</li><li>За основа на новия правилник се взима действащият правилник (обн. ДВ, бр. 107/2024 г., изм. бр. 50/2025 г.) – не се започва от нулата.</li><li>Крайният срок за писмени предложения от народните представители е 18 май 2026 г. включително.</li><li>Комисията съществува само до момента, в който новият правилник бъде приет – след това се разпуска автоматично.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: „Прогресивна България&quot; – с 9 от 16 места контролира комисията и може да определя посоката на новия правилник.</li><li>Губят: По-малките парламентарни групи – всяка получава само по 1 място, без реална тежест при гласуване вътре в комисията.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>„Прогресивна България&quot; държи над половината от местата (9 от 16) в комисията, което й дава едностранна мнозинствена власт над текста на правилника, по който ще работи целият парламент.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><ul><li>Решението влиза в сила от обнародването (12 май 2026 г.).</li><li>Срокът за предложения изтича на 18 май 2026 г.</li><li>Комисията се прекратява автоматично при приемане на новия правилник – без фиксирана крайна дата.</li></ul></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Няма достатъчно сравнителни данни.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243388" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;43 &middot; 2026-05-12</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за създаване на Временна комисия по правни въпроси</div>
+    <p class="dv-lead">Народното събрание създава временна комисия, която да обработва законопроекти и решения по правни въпроси, докато бъдат избрани постоянните парламентарни комисии на 52-рото НС.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Комисията е от 24 народни представители, като „Прогресивна България&quot; държи мнозинство с 13 места – повече от всички останали партии взети заедно.</li><li>ГЕРБ-СДС получава 4 места; ДПС, „Демократична България&quot; и „Продължаваме Промяната&quot; – по 2; „ВЪЗРАЖДАНЕ&quot; – само 1 място.</li><li>Председател е Янка Тенева Тянкова (тя е едновременно и в списъка с членове).</li><li>Комисията е компетентна само за материали, постъпили в НС преди избирането на постоянни комисии – след това мандатът ѝ приключва автоматично.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: „Прогресивна България&quot; – доминира комисията с над 54% от местата, което дава контрол над дневния ред и докладите по ключови законопроекти в преходния период.</li><li>Губят: По-малките парламентарни групи – „ВЪЗРАЖДАНЕ&quot; е представено с едва 1 глас от 24.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Председателят Янка Тянкова фигурира едновременно като председател и като редови член в списъка с членове – двойно вписване, което е необичайно за подобни решения.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><ul><li>Комисията действа единствено до момента, в който 52-рото НС избере постоянна комисия по правни въпроси – след това се саморазпуска без допълнително решение.</li></ul></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Няма достатъчно сравнителни данни.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243389" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;43 &middot; 2026-05-12</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за създаване на Временна комисия по бюджет и финанси</div>
+    <p class="dv-lead">Парламентът създава временна бюджетна комисия от 24 депутати, която да обработва финансовото законодателство, докато се сформират постоянните комисии на новото 52-ро Народно събрание.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Комисията има 24 члена; мнозинството – 13 места – принадлежи на „Прогресивна България&quot;; останалите са разпределени между ГЕРБ-СДС (4), ДПС (2), „Демократична България&quot; (2), „Продължаваме промяната&quot; (2) и „Възраждане&quot; (1).</li><li>Тя е водеща комисия – изготвя доклади за първо и второ гласуване по бюджетни и финансови законопроекти, а не само съпътстваща.</li><li>Разглежда само актове, постъпили преди избирането на постоянните комисии – мандатът е изрично ограничен по обхват.</li><li>Председател е Константин Проданов; разпределението на законопроекти се прави от председателя на НС Михаела Доцова.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: „Прогресивна България&quot; – с 13 от 24 места контролира гласуванията в комисията.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>„Прогресивна България&quot; държи повече от половината места в комисията (13 от 24), което ѝ осигурява самостоятелно мнозинство без нужда от партньори.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><ul><li>Комисията е временна – прекратява съществуването си автоматично при създаването на постоянна комисия по бюджет и финанси.</li></ul></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Няма достатъчно сравнителни данни.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243390" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;45 &middot; 2026-05-15</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за прекратяване на пълномощията на народен представител</div>
+    <p class="dv-lead">Народното събрание прекратява депутатския мандат на Илко Пенков Илиев от Търговищкия изборен район.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Илко Пенков Илиев губи статута на народен представител от 28-и изборен район – Търговищки.</li><li>Прекратяването е на основание чл. 72, ал. 1, т. 1 от Конституцията – тази разпоредба урежда доброволна оставка от депутата (а не принудително отнемане на мандата).</li><li>При предсрочно прекратяване на мандат по оставка следва произвеждане на частичен избор или заместване от следващия в листата кандидат.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: следващият кандидат в листата от 28-и район, който може да встъпи в мандата.</li><li>Губят: Илко Пенков Илиев – прекратява парламентарните си правомощия.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Основанието е доброволна оставка по чл. 72, ал. 1, т. 1 – т.е. депутатът сам е поискал прекратяване на мандата си, а не е отстранен принудително.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><p>Влиза в сила от обнародването.</p></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Няма достатъчно сравнителни данни.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243431" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;45 &middot; 2026-05-15</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за прекратяване на пълномощията на народен представител</div>
+    <p class="dv-lead">Народното събрание прекратява мандата на народния представител Марио Василев Смърков от Варненски изборен район.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Марио Василев Смърков губи статута си на народен представител от Трети изборен район – Варненски, считано от датата на решението.</li><li>Правното основание е чл. 72, ал. 1, т. 1 от Конституцията – доброволна оставка от страна на народния представител (най-честото приложение на тази разпоредба).</li><li>Съгласно конституционната процедура (чл. 72, ал. 2) мандатът се прекратява с решение на самото Народно събрание, не автоматично.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Следващият по листа кандидат от Варненски район, който вероятно ще получи мандата.</li><li>Губят: Марио Василев Смърков – прекратява се парламентарният му мандат.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Актът не посочва причината за прекратяването, което е нетипично с оглед на прозрачността – гражданите не могат да разберат дали става въпрос за оставка, несъвместимост или друго основание.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><p>Влиза в сила от обнародването.</p></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Няма достатъчно сравнителни данни.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243432" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;45 &middot; 2026-05-15</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за прекратяване на пълномощията на народен представител</div>
+    <p class="dv-lead">Народното събрание прекратява мандата на народния представител Крум Неделков от Старозагорски изборен район.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Крум Владимиров Неделков губи статута си на народен представител от 27. изборен район – Старозагорски.</li><li>Основанието е чл. 72, ал. 1, т. 1 от Конституцията – доброволна оставка (стандартната хипотеза при подаден личен отказ от мандат).</li><li>Решението поражда незабавен ефект – пълномощията се прекратяват с приемането му.</li><li>Свободното място се заема от следващия кандидат в листата на съответната партия от 27. изборен район по реда на изборното законодателство.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Следващият в листата кандидат от Старозагорски район, който получава депутатско място.</li><li>Губят: Крум Неделков – губи депутатски статут, имунитет и свързаните с него права.</li></ul></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><p>Влиза в сила от обнародването.</p></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Няма достатъчно сравнителни данни.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243433" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details></div>
+</div>
+<div class="subsection">
+  <div class="subsection-hd">
+    <span class="subsection-tag">02</span>
+    <span class="subsection-title">Министерски съвет</span>
+    <span class="subsection-count">2 постановления · 1 решение</span>
+  </div>
+  <div class="dv-grid">
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;43 &middot; 2026-05-12</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 61 ОТ 7 МАЙ 2026 Г. за изменение на нормативни актове на Министерския съвет</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Постановлението привежда заплатите и паричните прагове в наредбите за държавните служители от левове в евро, като фиксира нови таблици с основни заплати в евро за цялата държавна администрация и дипломатическата служба.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Нова таблица за заплати в евро:</strong> Основните месечни заплати на всичките 28 нива в държавната администрация вече са определени в евро. Минималният праг за почти всички нива е 620,20 евро; максималните варират от 652 евро (ниво изпълнител, степен 1) до 3 678 евро (ръководно ниво 1, степен 4).</li><li><strong>Дипломатическа служба:</strong> Новата таблица обхваща 13 длъжностни нива (А1–В6). Минималните заплати са между 620,20 и 767 евро, максималните – между 1 611 и 2 900 евро.</li><li><strong>Командировъчни пари при запор:</strong> Защитеният минимум при запорни съобщения и обезщетения при прекратяване на служебно правоотношение се изразява занапред в евро; конкретните прагове в Наредбата за служебното положение стават до 231 евро (т. 1) и до 128 евро (т. 2).</li><li><strong>Стипендиантска програма:</strong> Максималният размер на стипендиите по програмата за стипендианти в държавната администрация се фиксира на 169 евро (вместо 330 лв.).</li><li><strong>Оценка на въздействието:</strong> Праговете и финансовите стойности в наредбата за методологията на оценка на въздействието се деноминират в евро; референтният праг „1 лев&quot; за значимост на нормативни актове вече е „1 евро&quot;.</li><li><strong>Декларации за имущество:</strong> Препратките в наредбата за документите за държавна служба вече сочат към Закона за Сметната палата вместо към вече отменения Закон за противодействие на корупцията и отнемане на незаконно придобитото имущество.</li><li><strong>Служебни книжки:</strong> При вписвания след въвеждането на еврото заплати, обезщетения и запорни суми задължително се отбелязват в евро.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li><strong>Печелят:</strong> Държавните служители и дипломатите – получават нормативно закрепени нови заплатни таблици в евро, премахващи неяснотата при валутния преход.</li><li><strong>Губят:</strong> Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Постановлението е обнародвано на 12 май 2026 г., но заплатните таблици и прагът за запори влизат в сила retroактивно – от 1 януари 2026 г., което означава, че заплатите вече се изплащат в евро по тези стойности от началото на годината, а актът само формално ги легализира.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Повечето промени (деноминации на валута, препратки към нови закони, правила за служебни книжки) – от деня на обнародването, 12 май 2026 г.</li><li>Новите таблици за заплати (Приложения № 1 и № 2) и прагове за запори/обезщетения – retroактивно от <strong>1 януари 2026 г.</strong></li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243330" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;45 &middot; 2026-05-15</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 62 ОТ 13 МАЙ 2026 Г. за изменение и допълнение на Устройствения правилник на Министерския съвет и на неговата администрация, приет с Постановление № 229 на Министерския съвет от 2009 г.</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Актът преструктурира кабинета, като официално урежда новия брой и ресори на заместник-министър-председателите и синхронизира десетки свързани постановления с актуалния състав на правителството.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Кабинетът вече включва 21 члена: министър-председател, 4-ма заместник-министър-председатели и 16 министри – две позиции вицепремиер без самостоятелно министерство са изрично закрепени в правилника за първи път.</li><li>Единият от двамата „чисти&quot; вицепремиери (т. 4) отговаря за стратегическо развитие и координация на политики; другият (т. 5) – изцяло за управление на европейски средства.</li><li>Вицепремиерът по финансите и вицепремиерът по икономиката, инвестициите и индустрията запазват двойните длъжности и ръководят министерства.</li><li>Политическите кабинети са общо 34 щатни бройки, разпределени така: 14 за кабинета на министър-председателя и по 5 за всеки от четиримата вицепремиери.</li><li>Министерството на електронното управление вече не съществува като наименование – функциите му са прехвърлени на Министерство на иновациите и дигиталната трансформация; промяната се отразява в работни групи и координационни структури по ЕС.</li><li>Министърът на правосъдието губи статута на вицепремиер – позицията „заместник министър-председател и министър на правосъдието&quot; е заличена.</li><li>Над 10 отделни постановления (включително за европейски фондове, Плана за възстановяване и устойчивост, Социалния план за климата) се актуализират терминологично, за да препращат към новата структура.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Двамата нови „чисти&quot; вицепремиери, получаващи формален мандат и по 5 щатни бройки политически кабинет; Министерство на икономиката, инвестициите и индустрията, придобиващо по-висок ранг чрез двойна длъжност.</li><li>Губят: Министърът на правосъдието – губи вицепремиерски пост и произтичащото от него политическо тегло.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Разпределението на конкретните ресори между двамата вицепремиери без министерства не е записано в правилника, а се оставя изцяло на свободна преценка на министър-председателя чрез заповед – което означава, че реалните им правомощия могат да се сменят по всяко време без промяна на нормативния акт.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от датата на приемане – 13 май 2026 г., преди дори да е обнародвано в „Държавен вестник&quot;.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243430" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;43 &middot; 2026-05-12</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ № 387 ОТ 7 МАЙ 2026 Г. за даване на разрешение за частично прехвърляне на правата и задълженията, произтичащи от Решение № 845 на Министерския съвет от 2024 г. за издаване на разрешение за търсене и проучване на нефт и природен газ – подземни богатства по чл. 2, ал. 1, т. 3 от Закона за подз</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Правителството разрешава на Shell да продаде 25% от правата си за търсене на нефт и газ в Черно море (блок „Хан Тервел&quot;) на румънската компания OMV Petrom.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Shell прехвърля 25% дял</strong> от лиценза за проучване в блок „Хан Тервел&quot; (изключителна икономическа зона на България в Черно море) на румънската OMV Petrom E&amp;P България – тя влиза като съдружник в проекта.</li><li><strong>Получателят</strong> е OMV Petrom E&amp;P България СРЛ – дружество, учредено по румънско право, регистрирано в Букурещ, което досега не фигурира по договора.</li><li><strong>Shell запазва мнозинствения дял</strong> (75%) и продължава да е основен изпълнител по договора за търсене и проучване, сключен с правителството на 15 април 2025 г.</li><li><strong>Министърът на енергетиката</strong> трябва да сключи допълнително споразумение с двете компании в срок от <strong>1 месец</strong> след обнародването на решението.</li><li><strong>Предварително изпълнение</strong> е допуснато веднага – решението се прилага още преди да изтекат сроковете за обжалване, тъй като правителството го обявява за „особено важен държавен интерес&quot; и приоритет за енергийна независимост.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: OMV Petrom, която влиза в перспективен офшорен проект в Черно море; Shell, която разпределя риска и вероятно набира капитал за проучването.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Правителството е допуснало предварително изпълнение на решението – то се прилага незабавно, без да се чака изтичането на 14-дневния срок за обжалване, което е нетипична мярка за такъв тип административни актове.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Решението влиза в сила от обнародването (12 май 2026 г.) с допуснато предварително изпълнение.</li><li>Предварителното изпълнение може да се обжалва пред Върховния административен съд в <strong>3-дневен срок</strong> от обнародването.</li><li>Цялото решение може да се обжалва пред ВАС в <strong>14-дневен срок</strong> от обнародването.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243329" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details></div>
+</div>
+<div class="subsection">
+  <div class="subsection-hd">
+    <span class="subsection-tag">03</span>
+    <span class="subsection-title">Министерства и ведомства</span>
+    <span class="subsection-count">20 наредби · 15 решения · 1 споразумение</span>
+  </div>
+  <div class="dv-grid">
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;43 &middot; 2026-05-12</span>
+    </div>
+    <div class="dv-title">НАРЕДБА № 41 от 5 май 2026 г. за придобиване на квалификация по професията „Лютиерство“</div>
+    <div class="exec-organ">Министерство на образованието и науката</div>
+    <p class="dv-lead">Наредбата въвежда държавен образователен стандарт за професията „Лютиерство&quot; (майстор на струнни инструменти), по който ще се обучават ученици в системата на професионалното образование.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Определя се трета степен на професионална квалификация по специалността „Лютиерство&quot; (код 021402), включена в profesionалното направление „Приложни изкуства&quot;.</li><li>Стандартът задава изискванията към кандидатите за обучение, описание на професията и конкретни единици резултати от ученето, които трябва да се постигнат.</li><li>Включена е обща, отраслова и специфична професионална подготовка – трите компонента заедно гарантират, че завършилият може реално да упражнява занаята.</li><li>Предвидени са критерии и средства за оценяване на всяка учебна единица, изисквания към материалната база (работилници, инструменти) и към квалификацията на преподавателите.</li><li>Въз основа на стандарта ще се разработят типови учебни планове – отделно за ученици и за лица над 16 години, включително учебни програми.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Ученици и възрастни, желаещи да се обучат като майстори на струнни инструменти – получават официално призната, стандартизирана квалификация; занаятчийският сектор печели регламентиран канал за подготвени кадри.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>България е сред малкото страни в ЕС, въвели лютиерството като официална държавно регламентирана професионална специалност в училищното образование – стъпка, рядка дори за страни с по-дълга традиция в производството на класически инструменти.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Наредбата влиза в сила от датата на обнародване – 12 май 2026 г.</li><li>Учебните планове и програми по новия стандарт се прилагат от учебната 2026/2027 г., само за ученици, постъпващи в VIII клас.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243309" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;43 &middot; 2026-05-12</span>
+    </div>
+    <div class="dv-title">Наредба за изменение и допълнение на Наредба № 31 от 2 август 2006 г. за условията и реда за провеждане на изпит и за признаване на правоспособност на отговорен актюер, за признаване на правоспособност, придобита извън Република България, за формата на актюерската заверка, формата и съдържанието на </div>
+    <div class="exec-organ">Комисия за финансов надзор</div>
+    <p class="dv-lead">Наредбата реформира изпитния ред за придобиване на правоспособност на отговорен актюер – улеснява явяването на отделни модули, удължава срокове и повишава таксите за изпит.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Гъвкавост при явяване на изпит:</strong> Кандидатите вече могат да се явяват само на базов модул (ако вече са положили специализиран) или само на специализирани модули (ако вече са положили базов) – без задължително едновременно явяване. Отпада и предишното изискване последният положен изпит да е от не повече от 2 години преди заявлението.</li><li><strong>Изпитът е писмен и анонимен</strong> – изрично записано за първи път в наредбата.</li><li><strong>Изпитната комисия</strong> трябва да е от поне трима членове – отговорни актюери с пълна правоспособност, хабилитирани преподаватели по актюерство/застраховане/статистика/икономика/инвестиции или служители на КФН с подходяща квалификация. Информацията за датата и условията на изпита се публикува <strong>не по-късно от 4 месеца</strong> преди изпита.</li><li><strong>Удължени срокове за кандидатите:</strong> Срокът за подаване на заявление за изпит се увеличава от 14 на <strong>30 дни</strong>, а срокът за коригиране на непълно заявление – от 7 на <strong>14 дни</strong>. Сроковете за запознаване с резултатите след обжалване се увеличават от 7 дни на <strong>един месец</strong> (на три различни места в наредбата).</li><li><strong>Заявленията по образец</strong> вече са стандартизирани като приложения към наредбата (приложения № 26–30), вместо да се утвърждават отделно от КФН.</li><li><strong>Таксите за изпит скачат значително:</strong> За явяване на изпит – от 317 евро на <strong>500 евро</strong>; за явяване само на специализиран/базов модул – от ~210 евро на <strong>400 евро</strong>. Промяната важи и за таксите при признаване на правоспособност, придобита в чужбина.</li><li><strong>Преходни права:</strong> Лица, вече положили успешно само базовия или само специализиран(и) модул(и) на предишни изпити, могат да продължат и да се явят на останалата(ите) части по новия ред.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Кандидати за актюери – получават по-гъвкав изпитен режим, по-дълги срокове за подготовка и яснота за условията на изпита 4 месеца предварително.</li><li>Губят: Същите кандидати в материален план – таксата за изпит нараства с близо 58–90%.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Таксата за явяване на изпит се увеличава с около 58% (от 317 на 500 евро) едновременно с либерализиране на условията – рядко съчетание на улеснен достъп и по-висока цена в един и същи акт.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Наредбата влиза в сила от деня на обнародването – 12 май 2026 г.</li><li>Лицата с частично положени модули от предишни изпити могат незабавно да се възползват от новия ред на явяване.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243169" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;43 &middot; 2026-05-12</span>
+    </div>
+    <div class="dv-title">Наредба за изменение и допълнение на Наредба № 8 от 2011 г. за сечите в горите</div>
+    <div class="exec-organ">Министерство на земеделието и храните</div>
+    <p class="dv-lead">Наредбата разширява кръга на лицата, които могат да вземат решение за спешно отсичане на дървета при пожари, бедствия и аварии, и въвежда конкретни срокове и процедури за документиране на тези сечи.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Спешно отсичане при пожари и бедствия</strong> – решение могат да вземат служители на МВР, Министерство на отбраната, Изпълнителна агенция по горите, областни управители, кметове, собственици на горски територии, стопански структури и титуляри на ограничени вещни права (напр. енергийни дружества). Не се изисква предварително позволително за сеч.</li><li><strong>Превантивно отсичане</strong> (за предотвратяване на бъдещи пожари/аварии) – енергийни и инфраструктурни дружества могат да отсичат дървета в сервитутните зони на обектите си самостоятелно, без да чакат разрешение от горски орган; собствениците на частни гори трябва да съгласуват решението с директора на съответната регионална дирекция по горите.</li><li><strong>Констативен протокол</strong> – лицето, взело решението, задължително съставя протокол с описание на причините, място, дата, брой и вид на дърветата, приблизителен обем и място на складиране. При реактивни сечи (пожар/бедствие) срокът за съставяне е <strong>7 дни</strong> от приключване на събитието.</li><li><strong>Публичност при сервитутни сечи</strong> – титулярят на сервитут (напр. електроразпределително дружество) трябва да уведоми засегнатите управляващи на горски имоти и кмета <strong>най-малко 14 дни преди</strong> издаване на позволителното; кметът публикува уведомлението в <strong>3-дневен срок</strong>.</li><li><strong>Позволително за сеч след факта</strong> – при липса на предварително издадено позволително, то се издава въз основа на констативния протокол, без да се съставят сортиментна ведомост, карнет-опис и технологичен план – опростена процедура.</li><li><strong>Разходите</strong> за отсичането са за сметка на собственика на инфраструктурния обект или на лицето, по чието предложение е взето решението; в останалите случаи – за сметка на собственика/стопанисващия горската територия.</li><li><strong>Лесовъди с регистрирана практика</strong> получават право да съставят горскостопански документи за горски територии, върху които има учредено ограничено вещно право – ново правомощие, каквото досега не съществуваше за тази категория.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li><strong>Печелят:</strong> Енергийни и инфраструктурни дружества – получават по-широки и ясно уредени правомощия да отсичат дървета в сервитутните си зони без бавна административна процедура; частни лесовъди с регистрирана практика – разширени правомощия.</li><li><strong>Губят:</strong> Собственици на частни горски имоти – при превантивни сечи по инициатива на инфраструктурни дружества имат ограничен контрол върху дърветата в сервитутната зона на обекта.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Инфраструктурни дружества (напр. ЧЕЗ, ЕВН) могат да отсичат дървета в сервитута на съоръженията си превантивно – без предварително позволително и без съгласуване с горски орган – което на практика им дава широки правомощия върху чужди горски имоти.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>В сила от деня на обнародването – 12 май 2026 г., без гратисен период.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243244" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;43 &middot; 2026-05-12</span>
+    </div>
+    <div class="dv-title">НАРЕДБА № 39 от 30 април 2026 г. за придобиване на квалификация по професията „Ръководител движение“</div>
+    <div class="exec-organ">Министерство на образованието и науката</div>
+    <p class="dv-lead">Наредбата въвежда държавен стандарт за обучение по професията „Ръководител движение&quot; и определя изискванията за получаване на трета степен на професионална квалификация в сферата на транспортните услуги.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Професията „Ръководител движение&quot; (код 104102) получава официален държавен образователен стандарт – с това обучението по нея става формално регламентирано в системата на професионалното образование.</li><li>Стандартът определя трета степен на професионална квалификация – средното ниво в петстепенната национална система, което дава право за самостоятелно упражняване на професията.</li><li>Предвидена е и възможност за придобиване на квалификация по <strong>част от професията</strong> или по <strong>отделни единици резултати от ученето</strong> – т.е. не е задължително пълният курс на обучение.</li><li>Стандартът включва три блока подготовка: обща, отраслова (транспортна) и специфична – с конкретни професионални компетентности, необходими за реална работа.</li><li>Определени са изисквания към <strong>материалната база</strong> и към <strong>обучаващите</strong> – училищата и центровете за обучение трябва да отговарят на тях, за да провеждат курсове по тази професия.</li><li>Въз основа на стандарта се разработват учебни планове и програми – отделно за ученици и отделно за лица над 16 години (в частта за продължаващо обучение).</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Ученици и възрастни, които искат да се квалифицират като ръководители на движение – вече имат ясна, стандартизирана образователна рамка и официално призната диплома; транспортният сектор печели от стандартизирано обучение.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Наредбата влиза в сила от датата на обнародване – 12 май 2026 г.</li><li>Учебните планове и програми по новия стандарт се прилагат от учебната <strong>2026/2027 г.</strong> – само за ученици, постъпващи в <strong>VIII клас</strong> от тази година нататък.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243260" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;43 &middot; 2026-05-12</span>
+    </div>
+    <div class="dv-title">НАРЕДБА № 40 от 5 май 2026 г. за придобиване на квалификация по професията „Експлоатация и техническо обслужване на въздухоплавателни средства“</div>
+    <div class="exec-organ">Министерство на образованието и науката</div>
+    <p class="dv-lead">Наредбата въвежда държавен образователен стандарт за обучение по новата авиационна техническа специалност, задавайки изисквания за учениците, преподавателите и учебната база.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Засяга ученици, постъпващи в VIII клас от учебната 2026/2027 г., които ще могат да се обучават по специалността „Експлоатация и техническо обслужване на въздухоплавателни средства&quot; (код 071617).</li><li>Обучението дава трета или четвърта степен на професионална квалификация – тоест завършилите могат да работят пряко в авиационната техническа поддръжка.</li><li>Стандартът определя конкретни изисквания към кандидатите за прием, описание на самата професия и критерии за оценяване на всяка учебна единица.</li><li>Учебното съдържание включва три нива на подготовка: обща, отраслова и специфична професионална, като всяко покрива необходимите компетентности за реална работа след дипломирането.</li><li>Наредбата задава изисквания и към материалната база (оборудване, учебни зали/работилници) и към преподавателите, без чието изпълнение школата не може да предлага специалността.</li><li>Обучението е достъпно и за лица над 16 години извън редовната училищна форма, чрез отделни рамкови програми и самостоятелно разработвани учебни планове.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Ученици, търсещи авиационна техническа кариера; авиационна индустрия, получаваща стандартизирано обучени кадри; училища, получаващи правна рамка да открият специалността.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Наредбата е в сила от обнародването – 12 май 2026 г.</li><li>Новите учебни планове и програми, разработени по нея, се прилагат от учебната 2026/2027 г. за осмокласници, постъпващи за пръв път в специалността.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243301" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;44 &middot; 2026-05-14</span>
+    </div>
+    <div class="dv-title">НАРЕДБА № 42 от 5 май 2026 г. за придобиване на квалификация по професията „Танцово изкуство (класически танц, български народни танци, модерен танц)“</div>
+    <div class="exec-organ">Министерство на образованието и науката</div>
+    <p class="dv-lead">Наредбата въвежда държавен образователен стандарт за професионалното обучение по танцово изкуство (класически танц, български народни танци, модерен танц) и определя какво трябва да знаят и умеят завършилите, за да получат трета степен на професионална квалификация.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Засегнати са ученици, постъпващи в VIII клас в професионални училища от учебната 2026–2027 г. нататък, както и лица над 16 години, обучаващи се по тази професия.</li><li>Професията е с код 021502, отнесена към направление „Музикални и сценични изкуства&quot; – обучението завършва с придобиване на <strong>трета степен</strong> на професионална квалификация (от общо четири възможни).</li><li>Стандартът фиксира три блока подготовка: обща, отраслова и специфична – с конкретни компетентности, които гарантират, че завършилият може реално да упражнява професията.</li><li>Определят се критерии и средства за оценяване на всяка учебна единица, изисквания към материалната база (зали, техника и др.) и изисквания към преподавателите.</li><li>Въз основа на стандарта се разработват типови учебни планове и програми – те стават задължителна рамка за всички училища, предлагащи тази специалност.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Ученици и млади хора, търсещи призната държавна квалификация в танцовите изкуства; работодатели в сферата на сценичните изкуства, получаващи кадри с унифицирана подготовка.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Наредбата влиза в сила от обнародването – 14 май 2026 г.</li><li>Новите учебни планове и програми, разработени по нея, започват да се прилагат от учебната <strong>2026–2027 г.</strong> за учениците, постъпващи в VIII клас.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243310" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;44 &middot; 2026-05-14</span>
+    </div>
+    <div class="dv-title">НАРЕДБА № 43 от 5 май 2026 г. за придобиване на квалификация по професията „Изящни изкуства (живопис, графика, стенопис, скулптура, дигитални изкуства, илюстрация и оформление на книги)“</div>
+    <div class="exec-organ">Министерство на образованието и науката</div>
+    <p class="dv-lead">Наредбата въвежда нов държавен образователен стандарт за обучението по изящни изкуства, който задължително се прилага от учебните заведения при подготовката на ученици и възрастни по тази професия.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Засегнати са ученици, кандидати за специалността и обучаващи в профила „Изящни изкуства&quot; – стандартът важи за живопис, графика, стенопис, скулптура, дигитални изкуства, илюстрация и оформление на книги.</li><li>Обучението води до трета или четвърта степен на професионална квалификация – двата най-високи практически нива в системата на средното професионално образование.</li><li>Стандартът задава конкретни изисквания към кандидатите за прием, описание на самата професия и единици резултати от учене, по които се измерва напредъкът.</li><li>Въвеждат се задължителни критерии и средства за оценяване за всяка отделна учебна единица – школата не може да определя свои независими методи за оценка.</li><li>Определени са изисквания към материалната база (ателиета, оборудване и пр.) и към квалификацията на обучаващите – заведения, които не отговарят, трябва да се приведат в съответствие.</li><li>За лица над 16 години, които не са в редовно училищно обучение, се разработват отделни учебни планове по специални рамкови програми – достъпът до квалификацията е отворен и извън класната стая.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Ученици и обучаеми, получаващи ясно дефинирана и официално призната квалификация; работодатели в творческия сектор, които ще имат единен ориентир за уменията на завършилите.</li><li>Губят: Училища и центрове за обучение с по-свободни или остарели програми, които ще трябва да актуализират материална база и учителски персонал.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Новите учебни планове и програми се прилагат от учебната 2026–2027 г.</li><li>Засяга единствено ученици, постъпващи в VIII клас от тази учебна година нататък – вече обучаващите се завършват по старите правила.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243311" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;44 &middot; 2026-05-14</span>
+    </div>
+    <div class="dv-title">НАРЕДБА № 44 от 5 май 2026 г. за придобиване на квалификация по професията „Музикално изкуство (арфа, пиано, цигулка, виола, виолончело, контрабас, флейта, обой, кларинет, фагот, валдхорна, тромпет, цугтромбон, туба, саксофон, ударни инструменти, класическа китара, акордеон, гайда, кавал, гъдулка, т</div>
+    <div class="exec-organ">Министерство на образованието и науката</div>
+    <p class="dv-lead">Наредбата въвежда държавен стандарт за професионално образование по музикални инструменти и пеене, по който ще се обучават ученици от 8. клас нататък.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Засегнати са ученици, постъпващи в 8. клас в училищно професионално образование по музика, считано от учебната 2026/2027 г.</li><li>Обхванати са 27 специализации: от класически инструменти (арфа, пиано, цигулка, виола, виолончело, контрабас, флейта, обой, кларинет, фагот, валдхорна, тромпет, цугтромбон, туба, саксофон, ударни, класическа китара, акордеон) до народни инструменти (гайда, кавал, гъдулка, тамбура) и вокални специализации (класическо, народно, поп и джаз пеене).</li><li>Завършилите придобиват трета степен на професионална квалификация – това е официално признато ниво в националната квалификационна рамка.</li><li>Стандартът задава конкретни изисквания към материалната база и към обучаващите (преподавателите) в съответните училища.</li><li>Учебните планове и програми трябва да бъдат разработени въз основа на новия стандарт и да се прилагат от учебната 2026/2027 г.</li><li>Обучението включва три компонента: обща, отраслова и специфична професионална подготовка с дефинирани компетентности за всяка специализация.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Ученици в музикални професионални училища – получават официално призната трета степен квалификация; училищата получават ясна нормативна рамка за учебните си планове.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Наредбата влиза в сила от обнародването – 14 май 2026 г.</li><li>Новите учебни планове и програми се прилагат от учебната 2026/2027 г. за учениците, постъпващи в 8. клас.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243313" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;44 &middot; 2026-05-14</span>
+    </div>
+    <div class="dv-title">НАРЕДБА № 45 от 5 май 2026 г. за придобиване на квалификация по професията „Рекламна графика“</div>
+    <div class="exec-organ">Министерство на образованието и науката</div>
+    <p class="dv-lead">Наредбата въвежда държавен стандарт за обучение по професията „Рекламна графика&quot; и определя какво трябва да знае и умее всеки, завършил тази специалност.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Урежда се професия с код 021103 „Рекламна графика&quot; от областта на изкуствата, направление „Аудио-визуални техники и производство на медийни продукти&quot;.</li><li>Завършилите придобиват <strong>трета степен на професионална квалификация</strong> – средното ниво в петстепенната национална скала.</li><li>Стандартът задава конкретни единици резултати от учене (знания, умения, компетентности), по които се оценява всеки обучаем.</li><li>Предвидена е и по-кратка форма: придобиване на квалификация <strong>по част от професията</strong> или само по отделни учебни единици – без да се минава целият курс.</li><li>Определят се изисквания към <strong>материалната база</strong> (оборудване, зали) и към <strong>преподавателите</strong> в тези програми.</li><li>На база на стандарта се разработват типови учебни планове – отделно за ученици в редовно образование и отделно за лица над 16 години в курсова форма.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Ученици и курсисти, избрали рекламна графика – получават призната трета степен квалификация; работодатели в рекламната индустрия, които ще наемат кадри с унифицирана подготовка.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Наредбата влиза в сила от обнародването – 14 май 2026 г.</li><li>Новите учебни планове и програми, разработени по стандарта, се прилагат от <strong>учебната 2026/2027 г.</strong> за осмокласниците, постъпващи в професионално образование.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243314" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;44 &middot; 2026-05-14</span>
+    </div>
+    <div class="dv-title">НАРЕДБА № 46 от 5 май 2026 г. за придобиване на квалификация по професията „Каменоделство“</div>
+    <div class="exec-organ">Министерство на образованието и науката</div>
+    <p class="dv-lead">Наредбата въвежда държавен образователен стандарт за професията „Каменоделство&quot;, с който се определят изискванията за обучение и придобиване на втора степен на професионална квалификация по тази специалност.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Засегнати са ученици, кандидатстващи за професионално образование по специалността „Каменоделство&quot; (код 021403), която е класифицирана в областта „Изкуства&quot; и направление „Приложни изкуства&quot;.</li><li>Стандартът определя втора степен на професионална квалификация – тоест обучението не води до най-висока, а до средна степен на квалификация по тази занаятчийска професия.</li><li>Наредбата задължава учебните заведения да разработят типови учебни планове и програми, съобразени с новия стандарт – за ученици, навършили 16 години, и за редовни ученици.</li><li>Стандартът включва три вида подготовка: обща, отраслова и специфична професионална, всички с конкретни компетентности, необходими за упражняване на професията.</li><li>Залага се изрично задължение за критерии и средства за оценяване на всяка учебна единица, изисквания към материалната база и към квалификацията на преподавателите.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Ученици, търсещи формална квалификация в каменоделството; работодатели в сектора, които получават кадри с унифицирана подготовка.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Наредбата влиза в сила от обнародването – 14 май 2026 г.</li><li>Новите учебни планове и програми започват да се прилагат от учебната 2026/2027 г., но само за ученици, постъпващи в VIII клас от тази година нататък.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243315" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;44 &middot; 2026-05-14</span>
+    </div>
+    <div class="dv-title">НАРЕДБА № 47 от 5 май 2026 г. за придобиване на квалификация по професията „Анимация“</div>
+    <div class="exec-organ">Министерство на образованието и науката</div>
+    <p class="dv-lead">Наредбата въвежда държавен образователен стандарт за обучение по професията „Анимация&quot;, определяйки какво трябва да знаят и умеят завършилите и как се оценяват.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Въвежда се нова регулирана професия с код 021106 „Анимация&quot; от професионално направление „Аудио-визуални техники и производство на медийни продукти&quot;.</li><li>Обучението завършва с <strong>трета степен на професионална квалификация</strong> – средното ниво в петстепенната система, подходящо за средно профессионално образование.</li><li>Стандартът обхваща три блока подготовка: обща, отраслова и специфична, като всички заедно гарантират готовност за реална работа след завършване.</li><li>Предвидена е възможност за придобиване на <strong>квалификация по част от професията</strong> или по отделни единици резултати от ученето – т.е. не е задължително пълното обучение.</li><li>На базата на наредбата се разработват типови учебни планове за редовни ученици и отделни планове за лица над 16 години, влезли в системата по-късно.</li><li>Стандартът включва изисквания към <strong>материалната база</strong> (оборудване, зали) и към <strong>обучаващите</strong> (квалификация на преподавателите).</li><li>Критериите и инструментите за оценяване на всяка учебна единица са фиксирани в стандарта, което означава единни изпити навсякъде в страната.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Ученици и млади хора, желаещи да се обучават по анимация – получават официално призната квалификация; работодатели в анимационната индустрия – получават кадри с унифицирана подготовка.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Наредбата влиза в сила от обнародването – 14 май 2026 г.</li><li>Учебните планове и програми, разработени по нея, се прилагат от <strong>учебната 2026/2027 г.</strong> за ученици, постъпващи в <strong>VIII клас</strong>.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243316" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;44 &middot; 2026-05-14</span>
+    </div>
+    <div class="dv-title">Наредба за допълнение на Наредба № 11 от 2016 г. за оценяване на резултатите от обучението на учениците</div>
+    <div class="exec-organ">Министерство на образованието и науката</div>
+    <p class="dv-lead">Наредбата дава на зрелостниците право да преглеждат оценената си матурна работа в училище, но едновременно с това залага изрично, че оценките от матурите са окончателни и неоспорими.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Оценките от държавните зрелостни изпити са окончателни – не могат да бъдат променяни по никакъв ред.</li><li>Всеки зрелостник може да провери индивидуалния си резултат в училището, завършило XII клас, и/или онлайн през електронната система.</li><li>Оценената изпитна работа може да се разгледа само на място в училището – в рамките на три работни дни след обявяване на резултатите.</li><li>За преглед на изпитната работа са необходими документ за самоличност и присъствие на членове на училищната зрелостна комисия.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Зрелостниците – получават ново право да видят физически своята оценена изпитна работа, което досега не беше изрично уредено.</li><li>Губят: Зрелостници, разчитали на възможност за преоценка или оспорване – правото на преглед е само информационно, без каквато и да е процедура за промяна на резултата.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Правото да видиш работата си съществува само 3 работни дни и не води до никаква правна последица – наредбата буквално дава прозрачност с едната ръка и блокира всяко оспорване с другата.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>От деня на обнародването – 14 май 2026 г., без гратисен период.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243411" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;45 &middot; 2026-05-15</span>
+    </div>
+    <div class="dv-title">НАРЕДБА № 1 от 5 май 2026 г. за условията и реда за съхраняване на запаси по Закона за запасите от нефт и нефтопродукти</div>
+    <div class="exec-organ">Държавна агенция „Държавен резерв и военновременни запаси&quot;</div>
+    <p class="dv-lead">Наредбата урежда как България приема и предоставя стратегически нефтени запаси за съхранение – в собствени петролни бази, при частни съхранители в страната и в рамките на ЕС – включително условията, процедурите и договорните изисквания за всеки случай.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Ежегодно до 30 ноември</strong> агенцията публикува на сайта си на български и английски какви свободни резервоари предлага за съхранение на чужди запаси – брой, вместимост, видове горива, цена на тон на месец/ден и проект на договор. Всеки резервоар се приема пълен – частично запълване не се допуска.</li><li><strong>Чужди централни структури и компетентни органи на ЕС</strong>, желаещи да съхраняват запаси в България, подават писмено искане до 30 дни преди началото на периода. При две или повече искания за един и същи вид гориво – разглеждат се по реда на постъпване. Договорът задължително предвижда приложимост на българското право при съдебни спорове.</li><li><strong>Агенцията избира частен съхранител</strong> в страната чрез конкурс по единствен критерий „най-ниска цена&quot; (месечна цена на тон). Договорът е <strong>за 10 години</strong>. Участниците трябва да са регистрирани складодържатели с лиценз по акцизното законодателство (РОПА), осигурена охрана и без данъчни задължения. Подизпълнители са забранени.</li><li><strong>При извънредни обстоятелства</strong> (бедствие, авария) агенцията може да премести запасите при частен съхранител <strong>без конкурс</strong>, за максимум <strong>1 година и 6 месеца</strong>, при цена не по-висока от последно установената пазарна.</li><li><strong>Задължените лица</strong> (търговци с горива) могат да делегират създаването и/или съхранението на запаси в друга държава – членка на ЕС, само след разрешение от председателя на агенцията. Съгласието на чуждия компетентен орган трябва да постъпи в <strong>14-дневен срок</strong> от подаване на искането. Делегирането започва от <strong>първо число на съответния месец</strong>.</li><li><strong>Ако два поредни конкурса не дадат резултат</strong>, агенцията може да предложи на Министерски съвет съхранение в друга държава – членка на ЕС. МС приема решение и упълномощава председателя на агенцията за сключване на договор.</li><li><strong>Качеството на запасите</strong> на територията на страната се доказва задължително с протоколи от акредитирани лаборатории (БДС EN ISO/IEC 17025) и протоколи за вземане на проби (БДС EN 3170). За чуждестранни запаси – с декларации и сертификати на английски и български.</li><li><strong>При заличаване на регистрацията на склад</strong>, в който се съхраняват чужди запаси, съхранителят ги премества незабавно в предварително посочен резервен склад – задължение, договорено при самото разрешаване на съхранението.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Частни складодържатели с регистрирани резервоари – получават достъп до дългосрочни 10-годишни договори с държавата; чуждестранни ЕС-структури – ясна и достъпна процедура за ползване на български петролни бази.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Резервоарите на агенцията изрично <strong>не са публични складове</strong> по Търговския закон – тоест влогодателите нямат стандартните търговскоправни защити, а отношенията се уреждат единствено по специалния договор и ЗЗНН.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от датата на обнародването – 15 май 2026 г.</li><li>Заварените конкурсни процедури се довършват по старата наредба от 2013 г.</li><li>Складовете, регистрирани по отменения закон, запазват регистрацията си до изрична заповед за заличаване.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243302" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;45 &middot; 2026-05-15</span>
+    </div>
+    <div class="dv-title">НАРЕДБА № 48 от 5 май 2026 г. за придобиване на квалификация по професията „Приложни изкуства (художествена дърворезба, художествена керамика, художествена тъкан, художествено обработване на метали, художествено обработване на стъкло и порцелан, иконопис, бижутерия, детски играчки и сувенири)“</div>
+    <div class="exec-organ">Министерство на образованието и науката</div>
+    <p class="dv-lead">Наредбата въвежда нов държавен образователен стандарт за обучение по приложни изкуства (дърворезба, керамика, тъкан, обработване на метали, стъкло и порцелан, иконопис, бижутерия, играчки и сувенири), който определя какво трябва да умеят завършилите тази специалност.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Обхваща специалността с код 021401 „Приложни изкуства&quot; – една единствена професия с осем специализации: художествена дърворезба, керамика, тъкан, обработване на метали, стъкло и порцелан, иконопис, бижутерия, детски играчки и сувенири.</li><li>Стандартът определя изисквания за придобиване на <strong>трета и четвърта степен</strong> на професионална квалификация – най-високите степени в средното професионално образование.</li><li>Включва конкретни единици резултати от учене с критерии и средства за оценяване – т.е. школата и учителят трябва да доказват, че всеки обучаем е придобил точно описани умения.</li><li>Задава изисквания към <strong>материалната база</strong> (ателиета, инструменти, оборудване) и към <strong>квалификацията на обучаващите</strong> – преподавателите трябва да отговарят на стандарта.</li><li>Обхваща <strong>две групи обучавани</strong>: ученици в класическото училищно образование (VIII–XII клас) и лица над 16 години, обучавани по отделни рамкови програми за курсово обучение.</li><li>Учебните планове и програми по новия стандарт се разработват от училищата въз основа на наредбата, а не са централно утвърдени – школите имат оперативна самостоятелност в рамките на стандарта.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Ученици и курсисти в тези специалности, тъй като получават ясно дефинирани и признати компетентности; работодатели в занаятчийския и творческия сектор, които ще наемат кадри с унифицирана подготовка.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Наредбата влиза в сила от обнародването – 15 май 2026 г.</li><li>Новите учебни планове и програми се прилагат от <strong>учебната 2026/2027 г.</strong> за ученици, постъпващи в <strong>VIII клас</strong> – съществуващите паралелки довършват обучението си по стария стандарт.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243317" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;45 &middot; 2026-05-15</span>
+    </div>
+    <div class="dv-title">НАРЕДБА № 49 от 5 май 2026 г. за придобиване на квалификация по професията „Актьорство (драматичен театър, куклен театър, пантомима/невербален театър)“</div>
+    <div class="exec-organ">Министерство на образованието и науката</div>
+    <p class="dv-lead">Наредбата въвежда държавен образователен стандарт за обучение по професията „Актьорство&quot; (драматичен, куклен и невербален театър), определяйки изискванията за придобиване на трета степен на професионална квалификация.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Засегнати са ученици, кандидатстващи за професионално образование по специалността, центрове за обучение и училища, предлагащи актьорски програми.</li><li>Въвежда се трета степен на професионална квалификация по професия с код 021503 – най-висока степен в системата на средното професионално образование.</li><li>Стандартът обхваща три вида подготовка: обща, отраслова (изкуства) и специфична (актьорско майсторство), като всички три са задължителни за завършване на квалификацията.</li><li>Определят се конкретни изисквания към кандидатите за обучение, към материалната база на обучаващите институции и към квалификацията на преподавателите.</li><li>Всяка единица резултат от учене се оценява по предварително дефинирани критерии и средства за оценяване – не се допуска произволно оценяване.</li><li>На база стандарта задължително се разработват типови учебни планове – за редовни ученици и за лица над 16 години, търсещи квалификация извън редовното обучение.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Ученици и обучаеми, които получават ясна рамка и призната квалификация; театрални школи и центрове за обучение, които вече имат стандарт за акредитация.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Наредбата влиза в сила от обнародването – 15 май 2026 г.</li><li>Новите учебни планове и програми се прилагат от учебната 2026/2027 г., но само за ученици, постъпващи в VIII клас – вече обучаващите се завършват по досегашните правила.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243320" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;45 &middot; 2026-05-15</span>
+    </div>
+    <div class="dv-title">НАРЕДБА № 50 от 5 май 2026 г. за придобиване на квалификация по професията „Силикатен дизайн“</div>
+    <div class="exec-organ">Министерство на образованието и науката</div>
+    <p class="dv-lead">Наредбата въвежда държавен образователен стандарт за нова професия „Силикатен дизайн&quot;, което дава официална рамка за обучение и придобиване на квалификация в тази специалност.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Официално се регламентира обучение по професия код 021204 „Силикатен дизайн&quot; от направление „Моден, интериорен и промишлен дизайн&quot; – учениците ще могат да я изучават в системата на професионалното образование.</li><li>Завършилите придобиват <strong>трета степен на професионална квалификация</strong> – средната степен в четиристепенната система, достатъчна за самостоятелно упражняване на занаята.</li><li>Предвидена е и възможност за <strong>частична квалификация</strong> – обучаваният може да завърши само отделни модули (единици резултати от учене), без да минава пълния курс.</li><li>Стандартът определя изисквания към <strong>материалната база и преподавателите</strong> – училищата трябва да отговарят на конкретни условия, за да предлагат специалността.</li><li>Въз основа на стандарта се разработват типови учебни планове и програми – <strong>за ученици</strong> и отделно <strong>за лица над 16 години</strong> (включително извън редовното училище).</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Ученици и обучаеми, интересуващи се от стъкло, керамика и силикатни материали – получават официален образователен път и призната квалификация; училища, желаещи да разкрият тази специалност.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Новите учебни планове и програми се прилагат от <strong>учебната 2026/2027 г.</strong> за ученици, постъпващи в <strong>VIII клас</strong> – тоест наредбата не засяга вече обучаващи се.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243321" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;45 &middot; 2026-05-15</span>
+    </div>
+    <div class="dv-title">Наредба за изменение и допълнение на Наредба № 3 от 2023 г. за условията и реда за прилагане на интервенциите под формата на директни плащания, включени в Стратегическия план, за проверките, намаления на плащанията и реда за налагане на административни санкции</div>
+    <div class="exec-organ">Министерство на земеделието и храните</div>
+    <p class="dv-lead">Актът затяга изискванията към животновъдите за получаване на обвързани директни плащания – въвежда задължителен контрол на суровото мляко и доказана реализация на продукция, без право на подпомагане при неизпълнение на нито едно условие.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Доказана реализация на продукция е задължителна:</strong> Животновъди, кандидатстващи за обвързано подпомагане за говеда, овце, кози и застрашени породи, трябва да докажат, че в периода 1 октомври – 30 септември са продавали мляко (с договор с изкупвач), преработвали го сами или са реализирали животни за клане/износ/вътрешна търговия в ЕС с ветеринарен документ.</li><li><strong>Задължителна система за контрол на суровото мляко:</strong> Стопанства, кандидатстващи за подпомагане на животни с предназначение за мляко, трябва да имат поне един животновъден обект включен в система за контрол и мониторинг на суровото мляко.</li><li><strong>Нулево подпомагане при неизпълнение:</strong> Ако кандидатът не отговаря на поне едно от изискванията, не получава субсидия за нито едно от заявените животни – не само за несъответстващите.</li><li><strong>Премахнат минимален среден брой животни:</strong> Заличено е изискването за „среден брой животни за стопанство не по-малко от 0,2&quot; при две интервенции, но се добавя изискване за наличие на поне един документ за придвижване на животни.</li><li><strong>„Млечен симентал&quot; и „Месодаен симентал&quot; отпадат от списъците:</strong> Тези породи се заличават съответно от списъка на подпомаганите породи за мляко (крави) и за месо, което означава, че техните отглеждачи губят достъп до конкретни интервенции.</li><li><strong>Краен срок за заявления за кампания 2026 г. – 19 юни 2026 г.:</strong> Заявление, подадено след тази дата, е недопустимо и не води до никакво подпомагане.</li><li><strong>Отменени са три члена и приложение:</strong> Членове 20а, 20б и 20в (заедно с Приложение № 7) се премахват изцяло – премахва се цяла интервенция с нейните правила.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li><strong>Печелят:</strong> Животновъди, които вече реализират продукция по легални канали и имат документация – те отговарят на новите изисквания и не губят позиции.</li><li><strong>Губят:</strong> Животновъди, отглеждащи симентал (млечен и месодаен), и такива без договор с изкупвач, без собствена преработка и без документи за реализация – при тях субсидията може да отпадне изцяло.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Принципът „всичко или нищо&quot; е особено жесток – едно липсващо условие заличава субсидията за целия животинския инвентар, включително за животните, които фактически отговарят на изискванията.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Повечето разпоредби (промените по реализация, мляко, санкции) влизат в сила от <strong>2 юни 2026 г.</strong></li><li>Останалите промени (административни, отпадане на членове и приложения, промени в Наредба № 4) влизат в сила <strong>от деня на обнародването – 15 май 2026 г.</strong></li><li>Краен срок за подаване на заявления за кампания 2026 г.: <strong>19 юни 2026 г.</strong> – след него заявленията са недопустими.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243435" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;45 &middot; 2026-05-15</span>
+    </div>
+    <div class="dv-title">Наредба за изменение и допълнение на Наредба № 8121з-413 от 29 март 2024 г. за реда за изграждане, поддържане, развитие и използване на системата BG-ALERT за разпространение на съобщения за предупреждение на населението</div>
+    <div class="exec-organ">Министерство на вътрешните работи</div>
+    <p class="dv-lead">Наредбата разширява обхвата на системата BG-ALERT, като я включва и при опасност от тероризъм (не само при вече осъществен акт) и уточнява кой има право да изпраща предупредителни съобщения до населението.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Системата BG-ALERT вече може да се задейства и при <strong>заплаха от терористичен акт</strong> – не само след като такъв вече е настъпил, както беше по-рано.</li><li>Съобщенията при терористична опасност и при издирване на <strong>безследно изчезнали лица</strong> се изпращат единствено от служители, <strong>изрично упълномощени със заповед на министъра на вътрешните работи</strong> – не може всяка институция или длъжностно лице да задейства системата за тези случаи.</li><li>Когато основанията за издирване на лице отпаднат, съобщенията се <strong>спират незабавно</strong> и личните данни на издирваното лице се <strong>заличават от системата</strong>.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Граждани – получават по-ранно предупреждение при терористична заплаха, преди да е настъпил акт; издирваните лица имат гаранция, че данните им се изтриват след приключване на търсенето.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Заличаването на личните данни е обвързано с конкретен автоматичен тригър – отпадане на основанието за издирване – което е рядко срещана изрична GDPR-гаранция в оперативен полицейски контекст.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>В сила от деня на обнародването – 15 май 2026 г., без гратисен период.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243276" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;45 &middot; 2026-05-15</span>
+    </div>
+    <div class="dv-title">Наредба за изменение и допълнение на Наредба № I-183 от 4 декември 2002 г. за условията и реда за взаимодействието между контролните органи на Министерството на вътрешните работи и лечебните заведения при оказване на помощ на пострадали при пътнотранспортни произшествия</div>
+    <div class="exec-organ">Министерство на вътрешните работи и Министерство на здравеопазването</div>
+    <p class="dv-lead">Наредбата въвежда задължителна цифрова отчетност за пострадалите при пътни инциденти и урежда по-ясно кой точно прави какво – полиция, спешна помощ и болници – на местопроизшествието и след него.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Медицинските екипи на ЦСМП са задължени да въвеждат данни за всеки пострадал при ПТП в националната здравноинформационна система (НЗИС) <strong>до края на работната си смяна</strong> – включително час, място, диагноза с код по МКБ10, обем на лечението и накъде е насочен пациентът.</li><li>Болниците, поели пострадалия, също трябва да въвеждат данни в НЗИС – при приемане, по време на лечението и при изписване с окончателна диагноза по МКБ10.</li><li>Ако пострадал сам потърси помощ в спешно отделение или ЦСМП и заяви, че е пострадал при ПТП, медицинският персонал го отбелязва в системата и <strong>своевременно уведомява МВР</strong>.</li><li>Полицаите от „Пътна полиция&quot; получават безплатен достъп до медицинските данни за пострадалия чрез собствената си информационна система – но <strong>за не повече от 30 дни</strong> от инцидента или до приключване на лечението.</li><li>Служителите на „Пътна полиция&quot;, посещаващи ПТП, трябва да преминат обучение по първа долекарска помощ – в центрове за спешна помощ с одобрение от МЗ, в учебни заведения на МВР или Червения кръст.</li><li>Директорите на ЦСМП са задължени периодично да организират обучение за безопасно шофиране на водачите на линейките.</li><li>Полицейският служител на място е длъжен да осигури физически достъп на медицинския екип до пострадалите и да обезопаси района.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Пострадалите при ПТП – получават по-координирана помощ и проследяване на лечението; МВР – достъп до реални медицински данни за статистика и разследвания.</li><li>Губят: Медицинският персонал в ЦСМП и болниците – нова административна тежест за въвеждане на данни в срок до края на всяка смяна.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Достъпът на полицията до личните медицински данни на пострадалия е ограничен с твърд таван от 30 дни – но форматът и честотата на обмена между МВР и МЗ се уреждат не с наредба, а само със съвместен вътрешен протокол между двете министерства, без публичен контрол.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Основната част от наредбата влиза в сила <strong>един месец след обнародването</strong> (около 15 юни 2026 г.).</li><li>Разпоредбите за цифрова отчетност и достъп на МВР до НЗИС влизат в сила след техническа готовност на системите, <strong>но не по-късно от 1 януари 2028 г.</strong></li><li>До тогава данните се събират и обработват по стария ред.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243284" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;45 &middot; 2026-05-15</span>
+    </div>
+    <div class="dv-title">НАРЕДБА № 3 от 5 май 2026 г. за реда за водене на регистъра по чл. 14, ал. 4а от Закона за закрила и развитие на културата</div>
+    <div class="exec-organ">Министерство на културата</div>
+    <p class="dv-lead">Наредбата въвежда публичен електронен регистър на професионалните артисти и специалистите в сферата на културата, като урежда как се вписват, актуализират и заличават техните данни.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Кой подлежи на вписване:</strong> Всеки, който упражнява професионална дейност в областта на културата и изкуствата – от актьори, музиканти и танцьори до преводачи, дизайнери, куратори, технически специалисти и изследователи на културното наследство.</li><li><strong>Седем признати сфери на дейност:</strong> сценични изкуства, литература (вкл. художествен превод), визуални/изобразителни изкуства, аудио-визуални изкуства, културно наследство, управление на културния продукт и техническа реализация на културния продукт.</li><li><strong>Как се вписват:</strong> Заявлението се подава само по електронен път; при пълни данни Министерството на културата вписва лицето в срок от <strong>7 дни</strong>. При непълно заявление кандидатът има <strong>7 дни</strong> да отстрани пропуските, иначе процедурата се прекратява.</li><li><strong>Задължение за промени:</strong> При всяка промяна в данните вписаното лице трябва да подаде заявление в <strong>14-дневен срок</strong> от настъпването ѝ.</li><li><strong>Задължително ежегодно потвърждаване:</strong> Всяка година до <strong>31 януари</strong> вписаните лица трябва да потвърдят данните си. При неизпълнение регистрацията се заличава служебно.</li><li><strong>Публична vs. служебна информация:</strong> Публично видими са само трите имена, код на професията, форма на осигуряване и основна дейност. ЕГН, дати на дейност и адрес за контакт остават в служебната (непублична) част.</li><li><strong>Заличаване:</strong> Става по лично заявление (в 7 дни), служебно при смърт или автоматично при неподадено годишно потвърждение.</li><li><strong>Достъп до лични данни:</strong> Министерството проверява данни служебно от НБД „Население&quot;, БУЛСТАТ, регистъра на заетостта и осигурителните декларации към НАП – лицата не трябва да носят допълнителни документи.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li><strong>Печелят:</strong> Артисти и културни специалисти, които получават официален публичен статут и по-лесно доказване на професионалната си дейност; администрацията – чрез автоматизирана проверка на данни.</li><li><strong>Губят:</strong> Не се открива явен губещ, но вписаните лица поемат ново ежегодно административно задължение (потвърждение до 31 януари), чието неизпълнение води до автоматично заличаване.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Ако вписано лице пропусне само веднъж годишното потвърждение до 31 януари, то автоматично губи регистрацията си – без предупреждение и без преходен срок.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>В сила от датата на обнародването – 15 май 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243296" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;43 &middot; 2026-05-12</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ № 4855-НС от 8 май 2026 г. относно обявяване на Александра Павлова Ангелакова за народен представител в Двадесет и пети изборен район – София, в 52-рото Народно събрание</div>
+    <div class="exec-organ">Централна избирателна комисия</div>
+    <p class="dv-lead">ЦИК обявява Александра Ангелакова за народен представител от София, тъй като Румен Радев напуска парламента, за да поеме поста министър-председател.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Румен Георгиев Радев, народен представител от 25. изборен район – София, издигнат от коалиция „Прогресивна България&quot;, е избран за министър-председател на 8 май 2026 г.</li><li>Конституцията изисква народен представител, станал министър, да прекъсне депутатските си пълномощия за целия период на министерската служба.</li><li>На негово място автоматично влиза следващият в листата – Александра Павлова Ангелакова, № 9 от листата на „Прогресивна България&quot;.</li><li>Мандатът на Ангелакова е временен: прекратява се в момента, в който Радев се върне като народен представител.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Александра Ангелакова, която получава депутатски мандат; коалиция „Прогресивна България&quot;, която запазва пълния брой места в парламента.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Решението фактически потвърждава, че Румен Радев – однофамилец на президента – е новият министър-председател на България, сформиран от 52-рото Народно събрание.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от датата на обнародването – 12 май 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243348" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;43 &middot; 2026-05-12</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ № 4856-НС от 8 май 2026 г. относно обявяване на Васка Александрова Милушева за народен представител в Тринадесети изборен район – Пазарджишки, в 52-рото Народно събрание</div>
+    <div class="exec-organ">Централна избирателна комисия</div>
+    <p class="dv-lead">Васка Александрова Милушева заема депутатското място на Гълъб Донев в Пазарджишкия район, след като той е назначен за вицепремиер и министър на финансите.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Гълъб Спасов Донев, народен представител от Тринадесети изборен район – Пазарджишки, е избран за заместник министър-председател и министър на финансите, което временно прекъсва депутатските му пълномощия.</li><li>На негово място влиза Васка Александрова Милушева – следващата в листата на коалиция „Прогресивна България&quot; под №6.</li><li>Мандатът на Милушева е строго временен – прекратява се автоматично в момента, в който Донев напусне министерския пост и поиска да се върне в парламента.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Васка Милушева, която получава депутатски мандат; коалиция „Прогресивна България&quot;, която запазва пълното си представителство в НС.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Мандатът на новия депутат може да приключи по всяко време по едностранно решение на министъра – необичайна правна нестабилност за парламентарна позиция.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>В сила от датата на обнародване – 12 май 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243349" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;43 &middot; 2026-05-12</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ № 4857-НС от 8 май 2026 г. относно обявяване на Момчил Бончев Петров за народен представител в Двадесет и седми изборен район – Старозагорски, в 52-рото Народно събрание</div>
+    <div class="exec-organ">Централна избирателна комисия</div>
+    <p class="dv-lead">ЦИК обявява Момчил Бончев Петров за временен народен представител от Старозагорски район, след като Александър Пулев напуска парламента заради назначението му за вицепремиер и министър на икономиката.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Александър Георгиев Пулев, народен представител от коалиция „Прогресивна България&quot; – Старозагорски район, е избран за заместник министър-председател и министър на икономиката, инвестициите и индустрията, с което пълномощията му като депутат се прекъсват автоматично по Конституция.</li><li>На негово място влиза Момчил Бончев Петров – следващият в листата на коалицията под номер 7, без провеждане на нов избор.</li><li>Мандатът на Петров е строго временен – приключва в момента, в който Пулев напусне правителството и поиска да се върне в парламента.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Момчил Бончев Петров, който получава депутатски мандат без избори; Старозагорският район, който не остава без представителство.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Пулев е обявен за вицепремиер и министър на икономиката на същия ден, на който ЦИК вече е издала решението за заместника му – административната машина работи синхронизирано в рамките на един ден.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от обнародването – 12 май 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243350" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;43 &middot; 2026-05-12</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ № 4858-НС от 8 май 2026 г. относно обявяване на Емине Фикри Гюлестан за народен представител в Девети изборен район – Кърджалийски, в 52-рото Народно събрание</div>
+    <div class="exec-organ">Централна избирателна комисия</div>
+    <p class="dv-lead">ЦИК замества народния представител Иван Демерджиев от Кърджалийски район с Емине Гюлестан, след като той е назначен за министър на вътрешните работи.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Иван Петев Демерджиев, избран за министър на вътрешните работи на 8 май 2026 г., прекъсва депутатските си пълномощия за времето на министерския си мандат.</li><li>На негово място за народен представител от Девети изборен район – Кърджалийски, е обявена Емине Фикри Гюлестан – следващата в листата на коалиция „Прогресивна България&quot; (позиция № 2).</li><li>Мандатът на Гюлестан е временен – прекратява се автоматично в момента, в който Демерджиев напусне поста министър и възстанови депутатските си правомощия.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Емине Гюлестан, която получава депутатски мандат в 52-рото Народно събрание.</li><li>Губят: Не се открива явен губещ – Демерджиев запазва правото си да се върне в парламента след края на министерския си мандат.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от обнародването – 12 май 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243351" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;43 &middot; 2026-05-12</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ № 4859-НС от 8 май 2026 г. относно обявяване на Тефик Ахмедов Парафитов за народен представител в Двадесет и девети изборен район – Хасковски, в 52-рото Народно събрание</div>
+    <div class="exec-organ">Централна избирателна комисия</div>
+    <p class="dv-lead">ЦИК замества народния представител Димитър Стоянов от Хасково с Тефик Парафитов, след като Стоянов е назначен за министър на отбраната.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Димитър Желязков Стоянов, избран за 52-рото Народно събрание от Хасковски район с коалиция „Прогресивна България&quot;, е избран за министър на отбраната и временно прекъсва депутатските си пълномощия.</li><li>На негово място за народен представител се обявява Тефик Ахмедов Парафитов – следващият в листата на коалицията (под № 6).</li><li>Парафитов е депутат само временно – мандатът му автоматично се прекратява в момента, в който Стоянов напусне поста министър и се върне в парламента.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Тефик Парафитов, който получава депутатски мандат; коалиция „Прогресивна България&quot;, която запазва пълния си брой места в НС.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Мандатът на Парафитов няма фиксиран срок – зависи единствено от това колко дълго Стоянов ще остане министър на отбраната.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от обнародването – 12 май 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243352" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;43 &middot; 2026-05-12</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ № 4860-НС от 8 май 2026 г. относно обявяване на Стела Николаева Илиева за народен представител в Шести изборен район – Врачански, в 52-рото Народно събрание</div>
+    <div class="exec-organ">Централна избирателна комисия</div>
+    <p class="dv-lead">ЦИК обявява Стела Николаева Илиева за народен представител от Врачански район на мястото на Иван Шишков, докато той изпълнява поста министър на регионалното развитие.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Иван Димитров Шишков, избран за министър на регионалното развитие и благоустройството на 8 май 2026 г., временно прекъсва депутатските си пълномощия за времето на министерския мандат.</li><li>На негово място в 52-рото Народно събрание влиза Стела Николаева Илиева – следващата в листата на коалиция „Прогресивна България&quot; за Шести изборен район (Врачански), под №5.</li><li>Мандатът на Илиева е строго временен – пълномощията ѝ се прекратяват автоматично в момента, в който Шишков се върне като депутат.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Стела Илиева, която получава депутатско място; избирателите от Врачански район, чийто район остава с пълен брой представители в парламента.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Решението влиза в сила от датата на обнародването му – 12 май 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243353" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;43 &middot; 2026-05-12</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ № 4861-НС от 8 май 2026 г. относно обявяване на Георги Валериев Кунчев за народен представител в Първи изборен район – Благоевградски, в 52-рото Народно събрание</div>
+    <div class="exec-organ">Централна избирателна комисия</div>
+    <p class="dv-lead">ЦИК обявява Георги Валериев Кунчев за временен народен представител от Благоевградски район, след като Росица Карамфилова-Благова е назначена за министър на околната среда и водите.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Росица Карамфилова-Благова от коалиция „Прогресивна България&quot; е избрана за министър на околната среда и водите, с което автоматично прекъсва депутатския си мандат за срока на министерството.</li><li>На нейно място за народен представител в 52-рото НС от Първи изборен район – Благоевградски, е обявен следващият в листата – Георги Валериев Кунчев, под № 6.</li><li>Мандатът на Кунчев е временен – прекратява се автоматично в момента, в който Карамфилова-Благова напусне министерския пост и поиска възстановяване на депутатските си пълномощия.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Георги Кунчев, който получава депутатски мандат без ново гласуване.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>В сила от обнародването – 12 май 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243354" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;43 &middot; 2026-05-12</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ № 4862-НС от 8 май 2026 г. относно обявяване на Юлиан Георгиев Димитров за народен представител в Трети изборен район – Варненски, в 52-рото Народно събрание</div>
+    <div class="exec-organ">Централна избирателна комисия</div>
+    <p class="dv-lead">ЦИК замества народния представител Илин Павлинов Димитров от Варненски район с Юлиан Георгиев Димитров, докато първият изпълнява функциите на министър на туризма.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Илин Павлинов Димитров (коалиция „Прогресивна България&quot;, Трети изборен район – Варненски) е избран за министър на туризма и по Конституцията прекъсва депутатските си пълномощия за времето на министерския пост.</li><li>На негово място за народен представител е обявен Юлиан Георгиев Димитров – следващият в листата на коалицията под № 10.</li><li>Мандатът на Юлиан Георгиев Димитров е временен: прекратява се автоматично в момента, в който Илин Павлинов Димитров напусне правителството и поиска възстановяване на депутатските си права.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Юлиан Георгиев Димитров, който получава депутатски мандат в 52-рото Народно събрание.</li><li>Губят: Не се открива явен губещ – процедурата е конституционно предвидена.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от обнародването – 12 май 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243355" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;43 &middot; 2026-05-12</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ № 4863-НС от 8 май 2026 г. относно обявяване на Добромир Деянов Георгиев за народен представител в Тридесет и първи изборен район – Ямболски, в 52-рото Народно събрание</div>
+    <div class="exec-organ">Централна избирателна комисия</div>
+    <p class="dv-lead">ЦИК обявява Добромир Деянов Георгиев за временен народен представител от Ямболски район, след като Енчо Керязов е назначен за министър на младежта и спорта.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Енчо Ангелов Керязов, народен представител от Тридесет и първи изборен район – Ямболски (коалиция „Прогресивна България&quot;), е избран за министър на младежта и спорта, с което автоматично прекъсва депутатския си мандат за периода на министерския пост.</li><li>На негово място влиза Добромир Деянов Георгиев – следващият в листата на „Прогресивна България&quot; под № 3 – като народен представител в 52-рото Народно събрание.</li><li>Мандатът на Георгиев е строго временен: прекратява се автоматично в момента, в който Керязов напусне министерския пост и поиска възстановяване на депутатските си пълномощия.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Добромир Георгиев, който получава депутатско място без нов избор.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>От датата на обнародване – 12 май 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243356" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;43 &middot; 2026-05-12</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ № 3305 от 28 март 2025 г. по административно дело № 9519 от 2024 г.</div>
+    <div class="exec-organ">Върховен административен съд (второ отделение)</div>
+    <p class="dv-lead">Съдът обявява за нищожни двете разпоредби от наредбата за оценяване, които казваха, че оценките от държавните зрелостни изпити са „окончателни&quot; и уреждаха единствено пасивното право на зрелостника да се запознае с работата си – без каквато и да е възможност за оспорване.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Отменени правила:</strong> Чл. 82, ал. 1 („Оценките от ДЗИ са окончателни.&quot;) и чл. 82, ал. 3 (зрелостникът може само да разгледа работата си в училище, в срок по преценка на директора) са обявени за нищожни.</li><li><strong>Защо нищожни, не просто незаконосъобразни:</strong> Министърът на образованието е нямал законово овластяване да урежда тези отношения – делегацията му се отнася до правила за *оценяване*, не до това какво се случва *след* оценяването и дали резултатът може да се оспорва.</li><li><strong>Допълнителен порок на ал. 1:</strong> При приемането на наредбата през 2016 г. не са изготвени изискуемите по закон мотиви/доклад – самостоятелно основание за отмяна.</li><li><strong>Практически ефект:</strong> Зрелостниците вече не са блокирани от текст, който обявява оценката за „окончателна&quot; без правен механизъм за защита; отпада и дискреционният срок на директора за преглед на работата.</li><li><strong>Конкретен казус:</strong> Жалбоподателката е получила 28 точки (оценка „слаб 2&quot;) на ДЗИ по биология и здравно образование (сесия август–септември 2023/2024 г.) и е нямала никаква правна възможност да оспори резултата.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Всички зрелостници, особено тези с оспорими резултати от ДЗИ – отпада нормата, която ги лишаваше от правна защита.</li><li>Губят: Министерство на образованието – трябва да създаде нова законосъобразна уредба за оспорване на резултати от ДЗИ чрез надлежна законова делегация.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Съдът не просто отменя текстовете като незаконосъобразни, а ги обявява за *нищожни* – тоест те се считат за несъществували от самото им приемане, а не само занапред.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Решението подлежи на касационно обжалване в 14-дневен срок пред петчленен състав на ВАС.</li><li>След влизане в сила се обнародва в „Държавен вестник&quot; – от този момент нищожността е официално установена.</li><li>До законодателна или подзаконова уредба на нова процедура въпросът за оспорване на оценки от ДЗИ остава без изрична регламентация.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243173" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;43 &middot; 2026-05-12</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ № 4418 от 22 април 2026 г. по административно дело № 6285 от 2025 г.</div>
+    <div class="exec-organ">Върховен административен съд (петчленен състав, II колегия)</div>
+    <p class="dv-lead">Съдът окончателно заличава правилата в наредбата на МОН, които уреждаха как зрелостниците се запознават с резултатите си от държавните зрелостни изпити и как могат да поискат проверка на оценката.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Отменени са две разпоредби от Наредба № 11/2016 г. за оценяване на учениците – чл. 82, ал. 1 (в сила от 2016 г.) и чл. 82, ал. 3 (в сила от 2019 г.), уреждащи реда за запознаване с оценките от ДЗИ и за оспорване на резултати.</li><li>Причината за отмяната не е, че министърът нямал право да издава тези правила (петчленният състав коригира по-ранното решение), а че при приемането им липсвали задължителните мотиви и доклад – нарушение на Закона за нормативните актове.</li><li>Делото е образувано по жалба на зрелостник, получил 28 точки (оценка „слаб 2&quot;) на ДЗИ по биология и здравно образование в сесия август–септември 2023/2024 г., чийто личен интерес е признат за достатъчен правен интерес.</li><li>Петчленният състав приема, че процедурата по запознаване с индивидуален резултат от ДЗИ е логична част от процеса по оценяване и не надхвърля законовата делегация – но тя трябва да е еднакво уредена за всички училища и зрелостници, а не да зависи от срок, определен от директора на съответното училище.</li><li>Решението е окончателно и не подлежи на обжалване.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Зрелостници, тъй като неравноправната и произволна (зависеща от директора) процедура за преглед на изпитни работи е премахната – остава задължение на МОН да въведе нова, законосъобразно приета и еднаква за всички уредба.</li><li>Губят: Министерството на образованието и науката – съществуващата регулация пада и ведомството трябва да приеме нова с надлежни мотиви; временно съществува правен вакуум относно реда за запознаване с резултати от ДЗИ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>По-ранният тричленен състав обяви правилата за нищожни (т.е. изобщо несъществували), но петчленният ги квалифицира само като незаконосъобразни и ги отменя – разликата е принципна, защото нищожността би означавала, че всички действия по тях никога не са имали правно действие.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Решението е окончателно и влиза в сила от датата на постановяването му – 22 април 2026 г.</li><li>От тази дата чл. 82, ал. 1 и ал. 3 от Наредба № 11/2016 г. престават да действат; МОН трябва да приеме нова законосъобразна уредба, но решението не поставя конкретен срок за това.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243174" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;45 &middot; 2026-05-15</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ № 4877-НС от 12 май 2026 г. относно обявяване на Мирена Николаева Гуглева-Иванова за народен представител от Тридесет и първи изборен район – Ямболски, в Петдесет и второто Народно събрание</div>
+    <div class="exec-organ">Централна избирателна комисия</div>
+    <p class="dv-lead">ЦИК замества двама поредни отказали се кандидати от листата на „Прогресивна България&quot; в Ямболски район и обявява Мирена Гуглева-Иванова за народен представител в 52-рото Народно събрание.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Добромир Георгиев, първоначално обявен за избран с решение от 8 май 2026 г., уведомява НС, че отказва да встъпи в пълномощия и да положи клетва – стандартна процедура по чл. 76, ал. 2 от Конституцията.</li><li>Следващият в листата – Георги Караиванов (№ 5 от списък Б) – е подал заявление още на 8 май 2026 г., с което сам се отказва от мандата; ЦИК го заличава от списък Б.</li><li>Мирена Николаева Гуглева-Иванова, стояща под № 6 в листата на коалиция „Прогресивна България&quot;, е обявена за народен представител от Тридесет и първи изборен район – Ямболски.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Мирена Гуглева-Иванова, която получава депутатски мандат.</li><li>Губят: Не се открива явен губещ – и двамата пропуснати кандидати сами са се отказали от мандата.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Двама поредни кандидати от една и съща листа отказват мандата – необичайна ситуация, която принуждава ЦИК да слезе чак до шестия кандидат в листата.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Решението влиза в сила от обнародването му на 15 май 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243410" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;45 &middot; 2026-05-15</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ № 4884-НС от 14 май 2026 г. относно обявяване на Таня Петрова Гюрюшева-Николова за народен представител от Двадесет и осми изборен район – Търговищки, в Петдесет и второто Народно събрание</div>
+    <div class="exec-organ">Централна избирателна комисия</div>
+    <p class="dv-lead">ЦИК обявява Таня Петрова Гюрюшева-Николова за народен представител от Търговищки район след предсрочното прекратяване на мандата на досегашния депутат Илко Пенков Илиев.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Народното събрание е прекратило пълномощията на Илко Пенков Илиев (коалиция „Прогресивна България&quot;, 28-и Търговищки район) по конституционния ред за доброволна оставка или несъвместимост.</li><li>На негово място встъпва следващият в листата кандидат – Таня Петрова Гюрюшева-Николова, която е под № 3 в листата на „Прогресивна България&quot; от същия район.</li><li>Смяната е в рамките на 52-рото Народно събрание и не променя политическото представителство на коалицията.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Таня Гюрюшева-Николова, която получава депутатски мандат без нови избори.</li><li>Губят: Илко Илиев, чийто мандат е прекратен предсрочно.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>От датата на обнародване – 15 май 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243444" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;45 &middot; 2026-05-15</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ № 4885-НС от 14 май 2026 г. относно обявяване на Юлиан Георгиев Димитров и Месут Ердинч Рушид за народни представители в Трети изборен район – Варненски, в Петдесет и второто Народно събрание</div>
+    <div class="exec-organ">Централна избирателна комисия</div>
+    <p class="dv-lead">ЦИК попълва две овакантени места от листата на „Прогресивна България&quot; във Варненски район – едно постоянно и едно временно – с нови народни представители.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Марио Василев Смърков губи мандата си като народен представител от Варненски район след решение на Народното събрание на основание Конституцията.</li><li>Юлиан Георгиев Димитров (№ 10 в листата) поема постоянния мандат, освободен от Смърков.</li><li>Месут Ердинч Рушид (№ 11 в листата) влиза временно на мястото на Илин Павлинов Димитров – само докато последният изпълнява функциите на министър на туризма.</li><li>При прекратяване на министерските функции на Илин Димитров, Месут Рушид автоматично напуска НС и Димитров се връща.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Юлиан Димитров (получава постоянен мандат) и Месут Рушид (получава временен мандат)</li><li>Губят: Марио Смърков (окончателно губи депутатското си място)</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Едновременно се попълват две различни по характер места от една и съща листа – едно постоянно и едно временно – което е нетипична ситуация, наложила позоваване на конституционно дело от 1993 г. за изясняване на реда.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от обнародването – 15 май 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243445" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;45 &middot; 2026-05-15</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ № 4886-НС от 14 май 2026 г. относно обявяване на Момчил Бончев Петров и Мирослав Недялков Митков за народни представители в Двадесет и седми изборен район – Старозагорски, в Петдесет и второто Народно събрание</div>
+    <div class="exec-organ">Централна избирателна комисия</div>
+    <p class="dv-lead">ЦИК попълва две овакантени места в парламента от Старозагорски район, като обявява двама нови народни представители от коалиция „Прогресивна България&quot;.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Крум Владимиров Неделков е загубил мандата си като народен представител от Старозагорски район – пълномощията му са прекратени с решение на Народното събрание на 14 май 2026 г.</li><li>На овакантения постоянен мандат е обявен Момчил Бончев Петров – следващият в листата на „Прогресивна България&quot; (позиция №7).</li><li>Александър Георгиев Пулев е встъпил в длъжност като заместник министър-председател и министър на икономиката, инвестициите и индустрията, което временно освобождава парламентарното му място.</li><li>На временното място на Пулев е обявен Мирослав Недялков Митков (позиция №8 в листата) – само за периода, докато Пулев изпълнява министерски функции.</li><li>При евентуално освобождаване на Пулев от министерския пост Митков напуска парламента и Пулев се връща на депутатското си място.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Момчил Бончев Петров (постоянен мандат) и Мирослав Недялков Митков (временен мандат), както и избирателите от Старозагорски район, чийто район остава с пълно представителство.</li><li>Губят: Крум Владимиров Неделков – лишен от депутатски мандат.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Митков получава мандат, който е изрично временен и обвързан с министерската длъжност на друг човек – при всяка промяна в кабинета автоматично губи мястото си в парламента.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>В сила от датата на обнародване – 15 май 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243446" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<div class="dv-card dv-card-compact">
+  <div class="dv-sum-static">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-spor">СПОРАЗУМЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;45 &middot; 2026-05-15</span>
+    </div>
+    <div class="dv-title">СПОРАЗУМЕНИЕ между правителството на Република България и правителството на Италианската република за сътрудничество в областта на отбраната относно съвместното изграждане и използване на военни съоръжения на територията на войскови район „Кабиле“</div>
+    <div class="exec-organ">Министерство на отбраната</div>
+    <p class="dv-lead">Споразумението урежда условията, при които Италия строи и ползва военни съоръжения в България (войскови район „Кабиле&quot;) като рамкова нация на натовската многонационална бойна група на източния фланг.</p>
+    <div class="compact-bullets"><ul><li>Италианските въоръжени сили получават право да използват две военни съоръжения в „Кабиле&quot; – едно временно (сглобяеми жилища, офиси, битови удобства) и едно постоянно; временното се ползва до преместването в постоянното, след което се връща на България.</li><li>България предоставя терена и съоръженията безплатно (без наем); Италия поема всички разходи за експлоатация и поддръжка на ползваното от нея.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243151" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</div></div>
+</div>
+</div>
+
+<div class="nl-footer">
+  <span class="nl-footer-logo">Парламентарни Doodles</span>
+  <div class="nl-footer-links">
+    <a href="../">ДВ Дайджест</a>
+    <a href="../../sessions/">Заседания</a>
+    <a href="https://bpdoodles.com">Basepoint Doodles</a>
+  </div>
+</div>
+</div>
+</body>
+</html>

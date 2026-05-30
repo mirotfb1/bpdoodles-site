@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="utf-8">
+<title>Парламентарни Doodles · Заседания · Седмица 6</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --navy:#1B2E5E; --gold:#B5821A; --ink:#1C1C1C; --ink2:#444;
+  --muted:#888; --muted-lt:#AAA; --border:#E8E8E8; --surf:#F8F8F8; --paper:#FFF;
+  --font-d:'Caveat',cursive; --font-h:'Nunito','Arial Black',sans-serif;
+  --font-b:'Nunito',Arial,sans-serif;
+}
+body{font-family:var(--font-b);background:#F0F2F5;color:var(--ink);line-height:1.6;}
+.wrapper{max-width:740px;margin:32px auto;background:#fff;border:1px solid var(--border);border-radius:4px;overflow:hidden;}
+
+/* top bar */
+.top-bar{display:flex;justify-content:space-between;align-items:center;padding:8px 16px;background:var(--navy);}
+.site-nav{display:flex;gap:20px;align-items:center;}
+.site-nav a{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none;}
+.site-nav a:hover{color:rgba(255,255,255,.9);}
+.site-nav a.active{color:var(--gold);}
+.top-bar-tag{font-family:'Courier New',monospace;font-size:10px;color:rgba(255,255,255,.25);}
+
+/* masthead */
+.masthead{background:var(--navy);padding:24px 28px 20px;display:flex;justify-content:space-between;align-items:flex-end;border-bottom:3px solid var(--gold);}
+.masthead-logo{display:flex;flex-direction:row;align-items:center;}
+.masthead-left{display:flex;flex-direction:column;align-items:flex-end;padding-right:14px;}
+.masthead-basepoint{font-family:var(--font-h);font-size:22px;font-weight:900;color:#fff;letter-spacing:-.3px;line-height:1;}
+.masthead-tagline{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:4px;}
+.masthead-divider{width:2px;height:52px;background:rgba(255,255,255,.2);}
+.masthead-doodles{font-family:var(--font-d);font-size:48px;font-weight:700;color:var(--gold);line-height:1;padding-left:14px;}
+.masthead-meta{text-align:right;}
+.masthead-issue{font-size:13px;font-weight:700;color:rgba(255,255,255,.85);display:block;line-height:1.5;}
+.masthead-date{font-size:11px;color:rgba(255,255,255,.4);display:block;}
+.masthead-pills{margin-top:8px;display:flex;gap:6px;justify-content:flex-end;flex-wrap:wrap;}
+.masthead-pill{font-size:10px;font-weight:700;letter-spacing:.05em;background:rgba(255,255,255,.12);color:rgba(255,255,255,.6);padding:3px 8px;border-radius:3px;}
+
+/* content sections */
+.section{padding:20px 28px;border-bottom:1px solid var(--border);}
+.section:last-of-type{border-bottom:none;}
+
+/* subsection (within DV edition) */
+.subsection{margin-bottom:24px;}
+.subsection:last-child{margin-bottom:0;}
+.subsection-hd{display:flex;align-items:baseline;gap:10px;margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid var(--border);}
+.subsection-tag{font-size:10px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);}
+.subsection-title{font-family:var(--font-h);font-size:16px;font-weight:900;color:var(--navy);}
+.subsection-count{font-size:11px;color:var(--muted);margin-left:auto;}
+
+/* section label row */
+.section-label-row{padding:10px 28px 8px;background:var(--surf);border-bottom:1px solid var(--border);}
+.section-label{font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);}
+
+/* page header */
+.page-header{padding:20px 28px 16px;border-bottom:1px solid var(--border);}
+.page-title{font-family:var(--font-h);font-size:20px;font-weight:900;color:var(--ink);letter-spacing:-.3px;margin-bottom:6px;}
+.page-subtitle{font-size:13px;color:var(--muted);}
+
+/* issue list rows */
+a.issue-row{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 28px;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:background .1s;}
+a.issue-row:hover{background:var(--surf);}
+a.issue-row:last-of-type{border-bottom:none;}
+.issue-row-left{flex:1;}
+.issue-row-meta{font-family:'Courier New',monospace;font-size:10px;color:var(--muted-lt);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;}
+.issue-row-title{font-size:15px;font-weight:900;color:var(--ink);letter-spacing:-.2px;line-height:1.3;}
+.issue-row-desc{font-size:12px;color:var(--muted);margin-top:3px;}
+.issue-row-arrow{font-size:18px;color:var(--gold);font-weight:900;flex-shrink:0;}
+
+/* footer */
+.nl-footer{padding:14px 28px;background:var(--surf);border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
+.nl-footer-logo{font-family:var(--font-d);font-size:18px;font-weight:700;color:#CCC;}
+.nl-footer-links{font-size:11px;display:flex;gap:16px;}
+.nl-footer-links a{color:var(--muted-lt);text-decoration:none;}
+.nl-footer-links a:hover{color:var(--muted);}
+
+/* DV cards */
+.dv-grid{display:flex;flex-direction:column;gap:8px;}
+details.dv-card{background:var(--paper);border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:border-color .15s;}
+details.dv-card:hover{border-color:var(--gold);}
+details.dv-card[open]{border-color:var(--gold);}
+.dv-card-compact{background:var(--paper);border:1px solid var(--border);border-radius:8px;overflow:hidden;opacity:.9;}
+.dv-sum{padding:14px 16px;cursor:pointer;list-style:none;user-select:none;}
+.dv-sum::-webkit-details-marker{display:none;}
+.dv-sum-static{padding:14px 16px;}
+.dv-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+.dv-meta{font-size:11px;color:var(--muted);font-weight:700;}
+.dv-title{font-family:var(--font-h);font-size:13px;font-weight:900;color:var(--ink);line-height:1.4;letter-spacing:-.1px;margin-bottom:4px;}
+.exec-organ{font-size:11px;color:var(--muted);margin-bottom:6px;font-style:italic;}
+.dv-lead{font-size:13px;color:var(--ink2);line-height:1.55;margin-bottom:8px;}
+.compact-bullets ul{list-style:none;padding:0;margin-top:6px;}
+.compact-bullets li{padding:3px 0 3px 14px;position:relative;color:var(--ink2);font-size:12px;line-height:1.5;}
+.compact-bullets li::before{content:"·";position:absolute;left:2px;color:var(--gold);font-weight:700;font-size:15px;line-height:1.1;}
+.expand-hint{font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.06em;margin-top:4px;}
+details.dv-card[open] .expand-hint{display:none;}
+.dv-body{padding:0 16px 16px;border-top:1px solid var(--border);}
+
+/* badges */
+.badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;}
+.dv-badges{display:flex;gap:6px;align-items:center;flex-wrap:wrap;}
+.b-zakon   {background:#dbeafe;color:#1a56db;}
+.b-reshenie{background:#cffafe;color:#0a6e8a;}
+.b-ukaz    {background:#ede9fe;color:#7c3aed;}
+.b-decl    {background:#fef3c7;color:#92400e;}
+.b-post    {background:#d1fae5;color:#065f46;}
+.b-naredba {background:#fce7f3;color:#9d174d;}
+.b-pravilnik{background:#f3e8ff;color:#6b21a8;}
+.b-inst    {background:#fef9c3;color:#713f12;}
+.b-razp    {background:#e0f2fe;color:#0369a1;}
+.b-spor    {background:#fff7ed;color:#c2410c;}
+.b-other   {background:#f3f4f6;color:#6b7280;}
+.b-cat     {background:#f3f4f6;color:#555;}
+
+/* factsheet sections */
+.fs-sec{margin:12px 0;font-size:13px;}
+.fs-sec h5,.parties-block h5,.notable-callout h5,.sess-col h5{font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:8px;padding-bottom:5px;border-bottom:1px solid var(--border);}
+.fs-sec ul,.parties-block ul{list-style:none;padding:0;}
+.fs-sec li,.parties-block li{padding:4px 0 4px 16px;position:relative;color:var(--ink2);border-bottom:1px solid #f3f4f6;font-size:13px;line-height:1.5;}
+.fs-sec li:last-child,.parties-block li:last-child{border-bottom:none;}
+.fs-sec li::before{content:"·";position:absolute;left:3px;color:var(--gold);font-weight:700;font-size:16px;line-height:1.1;}
+.fs-sec p,.parties-block p{color:var(--ink2);font-size:13px;margin-bottom:4px;}
+.fs-winners ul{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.fs-winners li{padding:8px 10px 8px 24px;border-radius:6px;border-bottom:none !important;}
+.fs-winners li:first-child{background:#f0fdf4;}
+.fs-winners li:first-child::before{content:"✓";color:#16a34a;font-size:13px;top:8px;}
+.fs-winners li:nth-child(2){background:#fef2f2;}
+.fs-winners li:nth-child(2)::before{content:"✗";color:#dc2626;font-size:13px;top:8px;}
+.fs-notable{background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:12px 14px;}
+.fs-notable h5{border-bottom-color:#fde68a;color:#92400e;}
+.fs-notable li,.fs-notable p{color:#78350f;}
+.fs-notable li::before{color:#d97706;}
+.fs-eu{background:#f0f9ff;border-radius:8px;padding:12px 14px;}
+.fs-eu h5{color:#0369a1;border-bottom-color:#bae6fd;}
+.fs-eu p{color:#0c4a6e;font-size:13px;}
+.ext-link{display:inline-block;margin-top:12px;font-size:12px;font-weight:700;color:var(--navy);text-decoration:none;}
+.ext-link:hover{text-decoration:underline;}
+.no-summ{color:var(--muted);font-size:13px;font-style:italic;padding:12px 0;}
+
+/* session blocks */
+details.sess-block{background:var(--paper);border:1px solid var(--border);border-left:4px solid var(--navy);border-radius:0 8px 8px 0;margin-bottom:10px;overflow:hidden;}
+details.sess-block:hover{box-shadow:0 2px 8px rgba(0,0,0,.06);}
+details.sess-block[open]{border-left-color:var(--gold);}
+.sess-sum{padding:14px 18px;cursor:pointer;list-style:none;user-select:none;}
+.sess-sum::-webkit-details-marker{display:none;}
+.sess-hd{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap;}
+.sess-date-chip{background:var(--navy);color:#fff;font-size:10px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:4px;white-space:nowrap;}
+details.sess-block[open] .sess-date-chip{background:var(--gold);}
+.sess-label{font-family:var(--font-h);font-size:14px;font-weight:900;color:var(--ink);}
+.sess-lead{font-size:13px;color:var(--ink2);line-height:1.55;margin-bottom:6px;}
+.sess-body{padding:0 18px 16px;border-top:1px solid var(--border);}
+.sess-lead-full{font-size:13px;color:var(--ink2);line-height:1.6;margin:12px 0;background:#f8fafc;border-left:3px solid var(--gold);padding:8px 12px;border-radius:0 6px 6px 0;}
+.sess-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0;}
+.sess-col{font-size:13px;}
+.sess-col ul{list-style:none;padding:0;}
+.sess-col li{padding:4px 0 4px 14px;position:relative;color:var(--ink2);border-bottom:1px solid #f3f4f6;font-size:13px;line-height:1.5;}
+.sess-col li:last-child{border-bottom:none;}
+.sess-col li::before{content:"·";position:absolute;left:2px;color:var(--navy);font-weight:700;font-size:15px;line-height:1.1;}
+.notable-callout{display:flex;gap:10px;align-items:flex-start;background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:10px 12px;margin:12px 0;}
+.notable-icon{font-size:16px;color:#d97706;flex-shrink:0;line-height:1.4;}
+.notable-callout h5{border-bottom-color:#fde68a;color:#92400e;}
+.notable-callout p,.notable-callout li{color:#78350f;font-size:13px;}
+.notable-callout ul{list-style:none;padding:0;}
+.notable-callout li{padding:3px 0 3px 14px;position:relative;}
+.notable-callout li::before{content:"·";position:absolute;left:2px;color:#d97706;font-weight:700;font-size:15px;line-height:1.1;}
+.parties-block{margin:12px 0;font-size:13px;}
+.sess-ft{margin-top:12px;padding-top:10px;border-top:1px solid var(--border);}
+
+/* landing track cards */
+.track-card{display:block;padding:20px 28px;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:background .1s;}
+.track-card:hover{background:var(--surf);}
+.track-card:last-of-type{border-bottom:none;}
+.track-label{font-size:10px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+.track-title{font-family:var(--font-h);font-size:18px;font-weight:900;color:var(--navy);letter-spacing:-.3px;line-height:1.3;margin-bottom:6px;}
+.track-desc{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px;}
+.track-latest{font-size:12px;color:var(--ink2);}
+.track-arrow{font-size:22px;color:var(--gold);font-weight:900;float:right;margin-top:-28px;}
+
+/* archive / intro */
+.arch-table{width:100%;border-collapse:collapse;}
+.arch-table th{padding:8px 0;text-align:left;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);border-bottom:1px solid var(--border);}
+.arch-table td{padding:12px 8px 12px 0;border-bottom:1px solid var(--border);font-size:13px;color:var(--ink2);}
+.arch-table tr:last-child td{border-bottom:none;}
+.arch-table a{color:var(--navy);font-weight:700;text-decoration:none;}
+.arch-table a:hover{text-decoration:underline;}
+.intro-block{padding:20px 28px;border-bottom:1px solid var(--border);font-size:14px;line-height:1.7;color:var(--ink);}
+.all-issues-wrap{padding:16px 28px;border-bottom:1px solid var(--border);}
+.all-issues-btn{width:100%;padding:13px;background:none;border:1.5px solid var(--navy);border-radius:3px;font-family:var(--font-h);font-size:11px;font-weight:900;color:var(--navy);cursor:pointer;text-align:center;letter-spacing:.14em;text-transform:uppercase;transition:background .15s,color .15s;}
+.all-issues-btn:hover{background:var(--navy);color:#fff;}
+.waitlist-section,.contact-section{padding:20px 28px;border-bottom:1px solid var(--border);}
+.waitlist-heading{font-family:var(--font-h);font-size:17px;font-weight:900;color:var(--ink);letter-spacing:-.2px;margin-bottom:8px;}
+.waitlist-body{font-size:14px;color:var(--ink2);line-height:1.6;margin-bottom:16px;}
+.waitlist-form{display:flex;gap:8px;margin-bottom:10px;}
+.waitlist-input{flex:1;padding:10px 12px;border:1px solid var(--border);border-radius:3px;font-family:var(--font-b);font-size:14px;color:var(--ink);min-width:0;}
+.waitlist-input:focus{outline:none;border-color:var(--navy);}
+.waitlist-btn{padding:10px 18px;background:var(--navy);color:#fff;border:none;border-radius:3px;font-family:var(--font-h);font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;white-space:nowrap;}
+.waitlist-btn:hover{background:#122348;}
+.waitlist-fine{font-size:12px;color:var(--muted-lt);line-height:1.5;}
+.waitlist-ok{display:none;font-size:14px;font-weight:700;color:#16a34a;margin-top:10px;}
+.contact-section p{font-size:14px;color:var(--ink2);line-height:1.6;}
+.contact-section a{color:var(--navy);font-weight:700;text-decoration:none;}
+.contact-section a:hover{text-decoration:underline;}
+
+@media(max-width:760px){
+  .wrapper{margin:0;border-radius:0;border-left:none;border-right:none;}
+  .masthead,.section,.nl-footer,.page-header,a.issue-row,.track-card,
+  .section-label-row,.intro-block,.waitlist-section,.contact-section,.all-issues-wrap{padding-left:16px;padding-right:16px;}
+  .masthead-pills{display:none;}
+  .sess-cols{grid-template-columns:1fr;}
+  .fs-winners ul{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+<div class="top-bar">
+  <nav class="site-nav">
+    <a href="../../dv/">ДВ Дайджест</a>
+    <a href="../" class="active">Заседания</a>
+    <a href="https://bpdoodles.com">Basepoint Doodles</a>
+  </nav>
+  <span class="top-bar-tag">Парламентарни Doodles</span>
+</div>
+
+<div class="masthead">
+  <div class="masthead-logo">
+    <div class="masthead-left">
+      <span class="masthead-basepoint">Парламентарни</span>
+      <span class="masthead-tagline">Парламентарен дайджест</span>
+    </div>
+    <div class="masthead-divider"></div>
+    <span class="masthead-doodles">Doodles</span>
+  </div>
+  <div class="masthead-meta">
+    <span class="masthead-issue">В залата · Седмица 6 · 2026</span>
+    <span class="masthead-date">2–8 февруари 2026</span>
+    <div class="masthead-pills"><span class="masthead-pill">2 заседания</span></div>
+  </div>
+</div>
+<div class="section">
+  <span class="section-tag" style="display:block;margin-bottom:14px">Пленарни заседания</span>
+  
+<details class="sess-block">
+  <summary class="sess-sum">
+    <div class="sess-hd">
+      <span class="sess-date-chip">сряда, 4 февруари 2026</span>
+      <span class="sess-label">51 НС, 141-во заседание</span>
+    </div>
+    <p class="sess-lead">Парламентът отхвърли изслушвания за двойните сметки за ток и за закриването на детска хирургия във Варна, а като основна точка разгледа закон за защита на турис…</p>
+    <div class="expand-hint">Виж подробности ▾</div>
+  </summary>
+  <div class="sess-body">
+    <p class="sess-lead-full">Парламентът отхвърли изслушвания за двойните сметки за ток и за закриването на детска хирургия във Варна, а като основна точка разгледа закон за защита на туристите при фалит на туроператор.</p>
+    
+    <div class="sess-cols"><div class="sess-col"><h5>Обсъждани теми</h5><ul><li><strong>Сметки за ток:</strong> Депутати от ПП МЕЧ поискаха изслушване на енергийния министър Жечо Станков за рязко поскъпналите сметки за електроенергия от януари 2026 г. – отхвърлено два пъти при прегласуване</li><li><strong>Детска хирургия във Варна:</strong> ВЪЗРАЖДАНЕ поиска изслушване на здравния министър и директора на НЗОК за предстоящото закриване на отделението по детска хирургия в МБАЛ „Св. Анна&quot; – Варна, което обслужва деца от цяла Североизточна България; предложението мина на първо гласуване, но след поискано прегласуване (от ВЕЛИЧИЕ) беше отхвърлено</li><li><strong>Лукойл и особеният управител:</strong> ПП-ДБ поискаха изслушване на министъра на икономиката и особения управител на „Лукойл – България&quot; за износната забрана на дизел и авиационно гориво, изтичащата британска дерогация (14 февруари) и финансовите потоци в рафинерията – отхвърлено</li><li><strong>Закон за туризма – Туристически гаранционен фонд:</strong> Разгледан на първо четене законопроект, създаващ механизъм за защита на туристите при несъстоятелност на туроператор чрез гаранционен фонд; в момента застрахователите покриват само до 20% от рисковете; законопроектът е внесен от БСП, подкрепен от министерството, но критикуван от ВЪЗРАЖДАНЕ и браншовите организации като недостатъчно съгласуван</li><li><strong>Бюджет 2025 – декларация на ВЪЗРАЖДАНЕ:</strong> Партията заяви, че реалният дефицит надхвърля 5% от БВП (а не декларираните 3,1%), тъй като разходите за отбрана и капитали за държавни дружества се записват „под черта&quot;; критика и за нов дълг от около 1 млрд. лв. само от началото на 2026 г.</li><li><strong>Конституция и „домова книга&quot; – декларация на ВЕЛИЧИЕ:</strong> Партията призова за премахване на ограничения списък, от който президентът избира служебен премиер; констатира, че 5 от 10-те лица в конституционния списък са отказали поста, което обезсмисля реформата</li><li><strong>ТИР паркинг Русе:</strong> ПП-ДБ сигнализира за схема, при която Община Русе набързо е гласувала покупка на частен ТИР паркинг за 10 млн. евро с публични средства – точно след като влизането в Шенген е лишило паркинга от изкуствено поддържания монопол</li></ul></div><div class="sess-col"><h5>Гласувания</h5><ul><li><strong>Изслушване на енергийния министър за сметките за ток:</strong> ЗА 95, ПРОТИВ 74, ВЪЗ 35 (при прегласуване) — не е прието</li><li><strong>Изслушване за детска хирургия във Варна:</strong> ЗА 99, ПРОТИВ 80, ВЪЗ 19 (при прегласуване) — не е прието; при първото гласуване бе прието, но ВЕЛИЧИЕ поиска прегласуване</li><li><strong>Изслушване за Лукойл и особения управител:</strong> ЗА 90, ПРОТИВ 34, ВЪЗ 77 (при прегласуване) — не е прието</li><li><strong>Законопроект за Закона за туризма (1-во гласуване):</strong> гласуван в хода на заседанието; в комисия – 7 за, 1 против, 4 въздържали се</li><li><strong>Законопроект за киберсигурност да отпадне от дневния ред:</strong> ЗА 65, ПРОТИВ 92, ВЪЗ 19 — не е прието; ВЪЗРАЖДАНЕ настояваше за отпадане</li></ul></div></div><div class="notable-callout"><span class="notable-icon">★</span><div><h5>Забележително</h5><p>При първото гласуване изслушването за детската хирургия мина с мнозинство, но след като ВЕЛИЧИЕ поиска прегласуване (депутатка от партията твърди, че случайно е натиснала грешен бутон), залата обърна вота и изслушването отпадна — пряк пример как техническа грешка и прегласуване могат да блокират парламентарен контрол по здравна криза.</p></div></div><div class="parties-block"><h5>Позиции по партии</h5><ul><li><strong>ГЕРБ-СДС:</strong> Подкрепи Закона за туризма; блокира включването на извънредни изслушвания в дневния ред</li><li><strong>ПП-ДБ:</strong> Настоя за изслушване на Лукойл и особения управител; декларация срещу сделката с ТИР паркинга в Русе; подкрепи Закона за туризма в комисия (въздържал се)</li><li><strong>БСП – Обединена левица:</strong> Вносител на Закона за туризма; гласува против изслушванията</li><li><strong>ИТН:</strong> Гласува против изслушванията; Тошко Йорданов обясни, че цените на тока се регулират от КЕВР, не от министъра</li><li><strong>ВЪЗРАЖДАНЕ:</strong> Против Закона за туризма в настоящия вид; поиска изслушване за детската хирургия; декларация срещу бюджетната политика; искаше киберсигурността да отпадне от дневния ред</li><li><strong>ПП МЕЧ:</strong> Настоя за изслушване на енергийния министър за сметките за ток; гласува против повечето предложения на мнозинството</li><li><strong>ВЕЛИЧИЕ:</strong> Поиска прегласуване на детската хирургия, с което гласуването се обърна и изслушването отпадна; декларация срещу конституционните промени за служебния кабинет</li><li><strong>ДПС – Ново начало:</strong> Без постъпило предложение за дневния ред; не е регистрирана специфична позиция</li></ul></div>
+    <div class="sess-ft">
+      <a href="https://www.parliament.bg/bg/plenaryst/ns/55/ID/11100" target="_blank" class="ext-link">Отвори в parliament.bg ↗</a>
+    </div>
+  </div>
+</details>
+
+<details class="sess-block">
+  <summary class="sess-sum">
+    <div class="sess-hd">
+      <span class="sess-date-chip">четвъртък, 5 февруари 2026</span>
+      <span class="sess-label">51 НС, 142-ро заседание</span>
+    </div>
+    <p class="sess-lead">Парламентът разглежда на второ четене промени в Изборния кодекс, ограничаващи броя на избирателните секции извън ЕС до максимум 20, при остри спорове дали това …</p>
+    <div class="expand-hint">Виж подробности ▾</div>
+  </summary>
+  <div class="sess-body">
+    <p class="sess-lead-full">Парламентът разглежда на второ четене промени в Изборния кодекс, ограничаващи броя на избирателните секции извън ЕС до максимум 20, при остри спорове дали това е противоконституционно.</p>
+    
+    <div class="sess-cols"><div class="sess-col"><h5>Обсъждани теми</h5><ul><li><strong>Ограничаване на секциите в чужбина извън ЕС:</strong> Законопроектът на ВЪЗРАЖДАНЕ (подкрепен от ГЕРБ) предвижда не повече от 20 секции извън дипломатическите представителства в страни извън ЕС – опонентите твърдят, че това на практика лишава десетки хиляди българи в Турция, Великобритания и другаде от реална възможност да гласуват</li><li><strong>Конституционносъобразност:</strong> ПП-ДБ и АПС настояват, че ограничението нарушава конституционното право на всеобщо и равно избирателно право – обявено е намерение за сезиране на Конституционния съд и европейски институции</li><li><strong>Политически мотиви зад промяната:</strong> Опозицията цитира Бойко Борисов, заявил публично „обещал съм на ВЪЗРАЖДАНЕ&quot;, и пита каква е насрещната услуга; обвинения за тайни политически сделки между ГЕРБ, ВЪЗРАЖДАНЕ и „ДПС – Ново начало&quot;</li><li><strong>Отхвърлени предложения на ПП-ДБ:</strong> Мнозинството не прие предложенията за задължително подписване на декларации пред комисията в секцията (мярка срещу контролиран вот) и за въвеждане на дистанционно електронно гласуване като компенсация за ограничените секции</li><li><strong>Кризата в болница „Св. Анна&quot; – Варна (декларация на ВЪЗРАЖДАНЕ):</strong> Лекарите в детската хирургия подават оставки заради заплати от 1000–1200 лв. и неизплатени от НЗОК над 1,3 млн. лв.; отделението спира работа от 1 март, обслужвало е спешните случаи за цяла Североизточна България</li><li><strong>154 години от рождението на Гоце Делчев (декларация на ГЕРБ):</strong> Тържествена декларация в памет на революционера</li><li><strong>Еврото и неговите противници (декларация на ПП-ДБ):</strong> Явор Божанков изброява публични лъжи на ВЪЗРАЖДАНЕ и президента Радев срещу еврото; цитира решение на Конституционния съд, отхвърлило референдума срещу еврозоната като противоконституционен</li></ul></div><div class="sess-col"><h5>Гласувания</h5><ul><li><strong>Допускане за обсъждане на предложението за дистанционно електронно гласуване:</strong> ЗА 80, ПРОТИВ 89, ВЪЗ 41 — предложението не е прието; ГЕРБ и „ДПС – Ново начало&quot; гласуват против</li><li><strong>Прегласуване на същото предложение:</strong> ЗА 82, ПРОТИВ 88, ВЪЗ 46 — отново не е прието</li></ul><p>*(Пълни данни за гласуванията по параграфите на законопроекта не са налични в предоставените данни)*</p></div></div><div class="notable-callout"><span class="notable-icon">★</span><div><h5>Забележително</h5><p>Бойко Борисов публично е признал, че е „обещал&quot; на ВЪЗРАЖДАНЕ да подкрепи ограничаването на секциите в чужбина – нито един народен представител на ГЕРБ не излезе на трибуната да обясни мотивите или да отрече твърдението.</p></div></div><div class="parties-block"><h5>Позиции по партии</h5><ul><li><strong>ГЕРБ-СДС:</strong> Подкрепя законопроекта с ограничението от 20 секции; гласува против допускане на електронното гласуване за обсъждане; не излиза с обяснение от трибуната защо подкрепя промяната</li><li><strong>ВЪЗРАЖДАНЕ:</strong> Вносител на законопроекта; настоява ограничението е срещу контролиран вот; подкрепя някои предложения на ПП-ДБ в комисия (по декларациите и есемес-верификацията), но общо е в мнозинството за приемане на закона</li><li><strong>ПП-ДБ:</strong> Категорично против; внася алтернативни предложения (електронно гласуване, по-строги мерки срещу контролиран вот), всички отхвърлени; заявява намерение за Конституционен съд</li><li><strong>АПС (Алианс за права и свободи):</strong> Против законопроекта; предлага §1 и §2 да отпаднат; обявява сезиране на КС и международни институции</li><li><strong>БСП – Обединена левица:</strong> Драгомир Стойнев защитава ограниченията с аргумента, че гласуващите в чужбина не плащат данъци в България – позиция, критикувана от всички останали страни като противоконституционна</li><li><strong>„ДПС – Ново начало&quot;:</strong> Не участва активно в дебата, но по данни от изказванията е осигурило кворум в комисия и е сред тихите поддръжници на законопроекта</li></ul></div>
+    <div class="sess-ft">
+      <a href="https://www.parliament.bg/bg/plenaryst/ns/55/ID/11101" target="_blank" class="ext-link">Отвори в parliament.bg ↗</a>
+    </div>
+  </div>
+</details>
+</div>
+
+<div class="nl-footer">
+  <span class="nl-footer-logo">Парламентарни Doodles</span>
+  <div class="nl-footer-links">
+    <a href="../../dv/">ДВ Дайджест</a>
+    <a href="../">Заседания</a>
+    <a href="https://bpdoodles.com">Basepoint Doodles</a>
+  </div>
+</div>
+</div>
+</body>
+</html>

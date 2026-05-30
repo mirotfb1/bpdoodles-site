@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="utf-8">
+<title>Парламентарни Doodles · ДВ Дайджест · Седмица 9</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --navy:#1B2E5E; --gold:#B5821A; --ink:#1C1C1C; --ink2:#444;
+  --muted:#888; --muted-lt:#AAA; --border:#E8E8E8; --surf:#F8F8F8; --paper:#FFF;
+  --font-d:'Caveat',cursive; --font-h:'Nunito','Arial Black',sans-serif;
+  --font-b:'Nunito',Arial,sans-serif;
+}
+body{font-family:var(--font-b);background:#F0F2F5;color:var(--ink);line-height:1.6;}
+.wrapper{max-width:740px;margin:32px auto;background:#fff;border:1px solid var(--border);border-radius:4px;overflow:hidden;}
+
+/* top bar */
+.top-bar{display:flex;justify-content:space-between;align-items:center;padding:8px 16px;background:var(--navy);}
+.site-nav{display:flex;gap:20px;align-items:center;}
+.site-nav a{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none;}
+.site-nav a:hover{color:rgba(255,255,255,.9);}
+.site-nav a.active{color:var(--gold);}
+.top-bar-tag{font-family:'Courier New',monospace;font-size:10px;color:rgba(255,255,255,.25);}
+
+/* masthead */
+.masthead{background:var(--navy);padding:24px 28px 20px;display:flex;justify-content:space-between;align-items:flex-end;border-bottom:3px solid var(--gold);}
+.masthead-logo{display:flex;flex-direction:row;align-items:center;}
+.masthead-left{display:flex;flex-direction:column;align-items:flex-end;padding-right:14px;}
+.masthead-basepoint{font-family:var(--font-h);font-size:22px;font-weight:900;color:#fff;letter-spacing:-.3px;line-height:1;}
+.masthead-tagline{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:4px;}
+.masthead-divider{width:2px;height:52px;background:rgba(255,255,255,.2);}
+.masthead-doodles{font-family:var(--font-d);font-size:48px;font-weight:700;color:var(--gold);line-height:1;padding-left:14px;}
+.masthead-meta{text-align:right;}
+.masthead-issue{font-size:13px;font-weight:700;color:rgba(255,255,255,.85);display:block;line-height:1.5;}
+.masthead-date{font-size:11px;color:rgba(255,255,255,.4);display:block;}
+.masthead-pills{margin-top:8px;display:flex;gap:6px;justify-content:flex-end;flex-wrap:wrap;}
+.masthead-pill{font-size:10px;font-weight:700;letter-spacing:.05em;background:rgba(255,255,255,.12);color:rgba(255,255,255,.6);padding:3px 8px;border-radius:3px;}
+
+/* content sections */
+.section{padding:20px 28px;border-bottom:1px solid var(--border);}
+.section:last-of-type{border-bottom:none;}
+
+/* subsection (within DV edition) */
+.subsection{margin-bottom:24px;}
+.subsection:last-child{margin-bottom:0;}
+.subsection-hd{display:flex;align-items:baseline;gap:10px;margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid var(--border);}
+.subsection-tag{font-size:10px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);}
+.subsection-title{font-family:var(--font-h);font-size:16px;font-weight:900;color:var(--navy);}
+.subsection-count{font-size:11px;color:var(--muted);margin-left:auto;}
+
+/* section label row */
+.section-label-row{padding:10px 28px 8px;background:var(--surf);border-bottom:1px solid var(--border);}
+.section-label{font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);}
+
+/* page header */
+.page-header{padding:20px 28px 16px;border-bottom:1px solid var(--border);}
+.page-title{font-family:var(--font-h);font-size:20px;font-weight:900;color:var(--ink);letter-spacing:-.3px;margin-bottom:6px;}
+.page-subtitle{font-size:13px;color:var(--muted);}
+
+/* issue list rows */
+a.issue-row{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 28px;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:background .1s;}
+a.issue-row:hover{background:var(--surf);}
+a.issue-row:last-of-type{border-bottom:none;}
+.issue-row-left{flex:1;}
+.issue-row-meta{font-family:'Courier New',monospace;font-size:10px;color:var(--muted-lt);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;}
+.issue-row-title{font-size:15px;font-weight:900;color:var(--ink);letter-spacing:-.2px;line-height:1.3;}
+.issue-row-desc{font-size:12px;color:var(--muted);margin-top:3px;}
+.issue-row-arrow{font-size:18px;color:var(--gold);font-weight:900;flex-shrink:0;}
+
+/* footer */
+.nl-footer{padding:14px 28px;background:var(--surf);border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
+.nl-footer-logo{font-family:var(--font-d);font-size:18px;font-weight:700;color:#CCC;}
+.nl-footer-links{font-size:11px;display:flex;gap:16px;}
+.nl-footer-links a{color:var(--muted-lt);text-decoration:none;}
+.nl-footer-links a:hover{color:var(--muted);}
+
+/* DV cards */
+.dv-grid{display:flex;flex-direction:column;gap:8px;}
+details.dv-card{background:var(--paper);border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:border-color .15s;}
+details.dv-card:hover{border-color:var(--gold);}
+details.dv-card[open]{border-color:var(--gold);}
+.dv-card-compact{background:var(--paper);border:1px solid var(--border);border-radius:8px;overflow:hidden;opacity:.9;}
+.dv-sum{padding:14px 16px;cursor:pointer;list-style:none;user-select:none;}
+.dv-sum::-webkit-details-marker{display:none;}
+.dv-sum-static{padding:14px 16px;}
+.dv-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+.dv-meta{font-size:11px;color:var(--muted);font-weight:700;}
+.dv-title{font-family:var(--font-h);font-size:13px;font-weight:900;color:var(--ink);line-height:1.4;letter-spacing:-.1px;margin-bottom:4px;}
+.exec-organ{font-size:11px;color:var(--muted);margin-bottom:6px;font-style:italic;}
+.dv-lead{font-size:13px;color:var(--ink2);line-height:1.55;margin-bottom:8px;}
+.compact-bullets ul{list-style:none;padding:0;margin-top:6px;}
+.compact-bullets li{padding:3px 0 3px 14px;position:relative;color:var(--ink2);font-size:12px;line-height:1.5;}
+.compact-bullets li::before{content:"·";position:absolute;left:2px;color:var(--gold);font-weight:700;font-size:15px;line-height:1.1;}
+.expand-hint{font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.06em;margin-top:4px;}
+details.dv-card[open] .expand-hint{display:none;}
+.dv-body{padding:0 16px 16px;border-top:1px solid var(--border);}
+
+/* badges */
+.badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;}
+.dv-badges{display:flex;gap:6px;align-items:center;flex-wrap:wrap;}
+.b-zakon   {background:#dbeafe;color:#1a56db;}
+.b-reshenie{background:#cffafe;color:#0a6e8a;}
+.b-ukaz    {background:#ede9fe;color:#7c3aed;}
+.b-decl    {background:#fef3c7;color:#92400e;}
+.b-post    {background:#d1fae5;color:#065f46;}
+.b-naredba {background:#fce7f3;color:#9d174d;}
+.b-pravilnik{background:#f3e8ff;color:#6b21a8;}
+.b-inst    {background:#fef9c3;color:#713f12;}
+.b-razp    {background:#e0f2fe;color:#0369a1;}
+.b-spor    {background:#fff7ed;color:#c2410c;}
+.b-other   {background:#f3f4f6;color:#6b7280;}
+.b-cat     {background:#f3f4f6;color:#555;}
+
+/* factsheet sections */
+.fs-sec{margin:12px 0;font-size:13px;}
+.fs-sec h5,.parties-block h5,.notable-callout h5,.sess-col h5{font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:8px;padding-bottom:5px;border-bottom:1px solid var(--border);}
+.fs-sec ul,.parties-block ul{list-style:none;padding:0;}
+.fs-sec li,.parties-block li{padding:4px 0 4px 16px;position:relative;color:var(--ink2);border-bottom:1px solid #f3f4f6;font-size:13px;line-height:1.5;}
+.fs-sec li:last-child,.parties-block li:last-child{border-bottom:none;}
+.fs-sec li::before{content:"·";position:absolute;left:3px;color:var(--gold);font-weight:700;font-size:16px;line-height:1.1;}
+.fs-sec p,.parties-block p{color:var(--ink2);font-size:13px;margin-bottom:4px;}
+.fs-winners ul{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.fs-winners li{padding:8px 10px 8px 24px;border-radius:6px;border-bottom:none !important;}
+.fs-winners li:first-child{background:#f0fdf4;}
+.fs-winners li:first-child::before{content:"✓";color:#16a34a;font-size:13px;top:8px;}
+.fs-winners li:nth-child(2){background:#fef2f2;}
+.fs-winners li:nth-child(2)::before{content:"✗";color:#dc2626;font-size:13px;top:8px;}
+.fs-notable{background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:12px 14px;}
+.fs-notable h5{border-bottom-color:#fde68a;color:#92400e;}
+.fs-notable li,.fs-notable p{color:#78350f;}
+.fs-notable li::before{color:#d97706;}
+.fs-eu{background:#f0f9ff;border-radius:8px;padding:12px 14px;}
+.fs-eu h5{color:#0369a1;border-bottom-color:#bae6fd;}
+.fs-eu p{color:#0c4a6e;font-size:13px;}
+.ext-link{display:inline-block;margin-top:12px;font-size:12px;font-weight:700;color:var(--navy);text-decoration:none;}
+.ext-link:hover{text-decoration:underline;}
+.no-summ{color:var(--muted);font-size:13px;font-style:italic;padding:12px 0;}
+
+/* session blocks */
+details.sess-block{background:var(--paper);border:1px solid var(--border);border-left:4px solid var(--navy);border-radius:0 8px 8px 0;margin-bottom:10px;overflow:hidden;}
+details.sess-block:hover{box-shadow:0 2px 8px rgba(0,0,0,.06);}
+details.sess-block[open]{border-left-color:var(--gold);}
+.sess-sum{padding:14px 18px;cursor:pointer;list-style:none;user-select:none;}
+.sess-sum::-webkit-details-marker{display:none;}
+.sess-hd{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap;}
+.sess-date-chip{background:var(--navy);color:#fff;font-size:10px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:4px;white-space:nowrap;}
+details.sess-block[open] .sess-date-chip{background:var(--gold);}
+.sess-label{font-family:var(--font-h);font-size:14px;font-weight:900;color:var(--ink);}
+.sess-lead{font-size:13px;color:var(--ink2);line-height:1.55;margin-bottom:6px;}
+.sess-body{padding:0 18px 16px;border-top:1px solid var(--border);}
+.sess-lead-full{font-size:13px;color:var(--ink2);line-height:1.6;margin:12px 0;background:#f8fafc;border-left:3px solid var(--gold);padding:8px 12px;border-radius:0 6px 6px 0;}
+.sess-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0;}
+.sess-col{font-size:13px;}
+.sess-col ul{list-style:none;padding:0;}
+.sess-col li{padding:4px 0 4px 14px;position:relative;color:var(--ink2);border-bottom:1px solid #f3f4f6;font-size:13px;line-height:1.5;}
+.sess-col li:last-child{border-bottom:none;}
+.sess-col li::before{content:"·";position:absolute;left:2px;color:var(--navy);font-weight:700;font-size:15px;line-height:1.1;}
+.notable-callout{display:flex;gap:10px;align-items:flex-start;background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:10px 12px;margin:12px 0;}
+.notable-icon{font-size:16px;color:#d97706;flex-shrink:0;line-height:1.4;}
+.notable-callout h5{border-bottom-color:#fde68a;color:#92400e;}
+.notable-callout p,.notable-callout li{color:#78350f;font-size:13px;}
+.notable-callout ul{list-style:none;padding:0;}
+.notable-callout li{padding:3px 0 3px 14px;position:relative;}
+.notable-callout li::before{content:"·";position:absolute;left:2px;color:#d97706;font-weight:700;font-size:15px;line-height:1.1;}
+.parties-block{margin:12px 0;font-size:13px;}
+.sess-ft{margin-top:12px;padding-top:10px;border-top:1px solid var(--border);}
+
+/* landing track cards */
+.track-card{display:block;padding:20px 28px;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:background .1s;}
+.track-card:hover{background:var(--surf);}
+.track-card:last-of-type{border-bottom:none;}
+.track-label{font-size:10px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+.track-title{font-family:var(--font-h);font-size:18px;font-weight:900;color:var(--navy);letter-spacing:-.3px;line-height:1.3;margin-bottom:6px;}
+.track-desc{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px;}
+.track-latest{font-size:12px;color:var(--ink2);}
+.track-arrow{font-size:22px;color:var(--gold);font-weight:900;float:right;margin-top:-28px;}
+
+/* archive / intro */
+.arch-table{width:100%;border-collapse:collapse;}
+.arch-table th{padding:8px 0;text-align:left;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);border-bottom:1px solid var(--border);}
+.arch-table td{padding:12px 8px 12px 0;border-bottom:1px solid var(--border);font-size:13px;color:var(--ink2);}
+.arch-table tr:last-child td{border-bottom:none;}
+.arch-table a{color:var(--navy);font-weight:700;text-decoration:none;}
+.arch-table a:hover{text-decoration:underline;}
+.intro-block{padding:20px 28px;border-bottom:1px solid var(--border);font-size:14px;line-height:1.7;color:var(--ink);}
+.all-issues-wrap{padding:16px 28px;border-bottom:1px solid var(--border);}
+.all-issues-btn{width:100%;padding:13px;background:none;border:1.5px solid var(--navy);border-radius:3px;font-family:var(--font-h);font-size:11px;font-weight:900;color:var(--navy);cursor:pointer;text-align:center;letter-spacing:.14em;text-transform:uppercase;transition:background .15s,color .15s;}
+.all-issues-btn:hover{background:var(--navy);color:#fff;}
+.waitlist-section,.contact-section{padding:20px 28px;border-bottom:1px solid var(--border);}
+.waitlist-heading{font-family:var(--font-h);font-size:17px;font-weight:900;color:var(--ink);letter-spacing:-.2px;margin-bottom:8px;}
+.waitlist-body{font-size:14px;color:var(--ink2);line-height:1.6;margin-bottom:16px;}
+.waitlist-form{display:flex;gap:8px;margin-bottom:10px;}
+.waitlist-input{flex:1;padding:10px 12px;border:1px solid var(--border);border-radius:3px;font-family:var(--font-b);font-size:14px;color:var(--ink);min-width:0;}
+.waitlist-input:focus{outline:none;border-color:var(--navy);}
+.waitlist-btn{padding:10px 18px;background:var(--navy);color:#fff;border:none;border-radius:3px;font-family:var(--font-h);font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;white-space:nowrap;}
+.waitlist-btn:hover{background:#122348;}
+.waitlist-fine{font-size:12px;color:var(--muted-lt);line-height:1.5;}
+.waitlist-ok{display:none;font-size:14px;font-weight:700;color:#16a34a;margin-top:10px;}
+.contact-section p{font-size:14px;color:var(--ink2);line-height:1.6;}
+.contact-section a{color:var(--navy);font-weight:700;text-decoration:none;}
+.contact-section a:hover{text-decoration:underline;}
+
+@media(max-width:760px){
+  .wrapper{margin:0;border-radius:0;border-left:none;border-right:none;}
+  .masthead,.section,.nl-footer,.page-header,a.issue-row,.track-card,
+  .section-label-row,.intro-block,.waitlist-section,.contact-section,.all-issues-wrap{padding-left:16px;padding-right:16px;}
+  .masthead-pills{display:none;}
+  .sess-cols{grid-template-columns:1fr;}
+  .fs-winners ul{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+<div class="top-bar">
+  <nav class="site-nav">
+    <a href="../" class="active">ДВ Дайджест</a>
+    <a href="../../sessions/">Заседания</a>
+    <a href="https://bpdoodles.com">Basepoint Doodles</a>
+  </nav>
+  <span class="top-bar-tag">Парламентарни Doodles</span>
+</div>
+
+<div class="masthead">
+  <div class="masthead-logo">
+    <div class="masthead-left">
+      <span class="masthead-basepoint">Парламентарни</span>
+      <span class="masthead-tagline">Парламентарен дайджест</span>
+    </div>
+    <div class="masthead-divider"></div>
+    <span class="masthead-doodles">Doodles</span>
+  </div>
+  <div class="masthead-meta">
+    <span class="masthead-issue">ДВ Дайджест · Седмица 9 · 2026</span>
+    <span class="masthead-date">23 февруари – 1 март 2026</span>
+    <div class="masthead-pills"><span class="masthead-pill">7 акта от НС</span><span class="masthead-pill">2 акта от МС</span><span class="masthead-pill">10 наредби/регулации</span></div>
+  </div>
+</div>
+<div class="section">
+
+<div class="subsection">
+  <div class="subsection-hd">
+    <span class="subsection-tag">01</span>
+    <span class="subsection-title">Народно събрание</span>
+    <span class="subsection-count">6 закони · 1 решение</span>
+  </div>
+  <div class="dv-grid">
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-zakon">ЗАКОН</span></div>
+      <span class="dv-meta">Бр.&nbsp;22 &middot; 2026-02-24</span>
+    </div>
+    <div class="dv-title">ЗАКОН за ратифициране на Споразумението между правителството на Република България и правителството на Република Северна Македония за подготовката, изграждането и експлоатацията на трансгранично железопътно тунелно съоръжение, подписано на 6 ноември 2025 г. в с. Гюешево</div>
+    <p class="dv-lead">България официално приема международното споразумение за изграждане на железопътен тунел на границата с Република Северна Македония при Гюешево.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Ратифицира споразумение, подписано на 6 ноември 2025 г. в с. Гюешево, което урежда трите фази по проекта: подготовка, изграждане и последваща експлоатация на тунела.</li><li>Тунелът е трансгранично съоръжение – договорената рамка обвързва двете правителства съвместно, не само България.</li><li>Споразумението е рамково – конкретни технически и финансови параметри (дължина, цена, срокове) не са публикувани в ратификационния закон.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Товарният и пътническият железопътен транспорт между България и Северна Македония; региони около Гюешево и Крива Паланка; интеграцията на двете страни в европейската жп мрежа.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Споразумението е подписано в самото село Гюешево – на самата граница – което е необичайно символично място за подписване на двустранен договор от такъв мащаб.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><p>Влиза в сила от обнародването.</p></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Трансграничните железопътни тунели между страни членки и кандидат-членки са сравнително рядкост и обичайно се предшестват от дългогодишни проучвания и съфинансиране по механизми като CEF (Connecting Europe Facility). Подобни двустранни рамкови споразумения за жп инфраструктура съществуват в ЕС (напр. Австрия–Италия за Бренерския тунел), но те обичайно включват публично оповестен финансов модел още при ратификацията. Липсата на конкретни цифри в настоящото споразумение е по-скоро нетипична за европейската практика.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241407" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-zakon">ЗАКОН</span></div>
+      <span class="dv-meta">Бр.&nbsp;22 &middot; 2026-02-24</span>
+    </div>
+    <div class="dv-title">ЗАКОН за ратифициране на Споразумение за изменение и допълнение на Рамковото споразумение между правителството на Република България и Европейския инвестиционен фонд относно изпълнението на Инициативата JEREMIE в Република България (Четвърто споразумение за изменение) и Споразумение за изменение и д</div>
+    <p class="dv-lead">България официално потвърждава четвъртото по ред изменение на договорите си с Европейския инвестиционен фонд за управление на средствата по програмата JEREMIE, насочена към финансиране на малки и средни предприятия.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Ратифицират се две отделни споразумения – едно за рамката и едно за финансите – и двете подписани на 22 декември 2025 г. в София.</li><li>Това е четвъртото поредно изменение на първоначалните договори с Европейския инвестиционен фонд (ЕИФ) по инициативата JEREMIE, което показва дългогодишна и активна програма.</li><li>Законът не разкрива конкретни нови суми, срокове или условия – те се съдържат в самите споразумения, а не в ратификационния текст.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Малки и средни предприятия, които потенциално получават достъп до финансови инструменти по JEREMIE при актуализирани условия.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><p>Влиза в сила от обнародването.</p></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Няма достатъчно сравнителни данни.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241428" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-zakon">ЗАКОН</span></div>
+      <span class="dv-meta">Бр.&nbsp;23 &middot; 2026-02-27</span>
+    </div>
+    <div class="dv-title">ЗАКОН за изменение и допълнение на Закона за закрила на детето</div>
+    <p class="dv-lead">Гражданите получават безплатен публичен онлайн достъп до Националния регистър на осъдените за престъпления срещу деца – виждат три имена, дата на раждане, адрес, вид престъпление и размер на наказанието.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Националният регистър на лицата, осъдени за престъпления срещу деца, вече е публично достъпен – всеки гражданин може да провери информацията без да подава заявление и без да плаща такса.</li><li>Видимите данни включват: три имена на извършителя, дата на раждане, постоянен и настоящ адрес, вид престъпление и размер на наказанието.</li><li>За осъдени лица с чуждо гражданство или произход от друга държава се публикуват и данни за държавите по произход – допълнително поле спрямо останалите.</li><li>До момента регистърът е съществувал, но явно без публичен достъп – промяната го отваря към широката аудитория, не създава нов регистър.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: родители и граждани, които могат сами да проверяват дали лице, работещо с деца или от близкото обкръжение, фигурира в регистъра.</li><li>Губят: осъдените лица в регистъра – личните им данни и адресът им стават публично достъпни за неограничен кръг хора.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Публикуването на постоянния и настоящия адрес на осъдения е необичайно смело за европейски стандарти и поражда въпроси за баланса между защита на децата и правото на личен живот на осъдените, вкл. след изтърпяване на наказанието.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><p>Влиза в сила от обнародването.</p></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Публичните регистри на осъдени сексуални престъпници срещу деца съществуват в няколко държави от ЕС (напр. Великобритания преди Брекзит, Франция), но повечето европейски страни ограничават достъпа само до работодатели и органи, а не до широката публика. България с тази стъпка се доближава до модела на САЩ (т.нар. „Megan&#x27;s Law&quot;), който е нетипичен за континентална Европа. Европейският съд по правата на човека е имал резерви към неограничения публичен достъп до подобни данни, което прави закона потенциално уязвим.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241537" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-zakon">ЗАКОН</span></div>
+      <span class="dv-meta">Бр.&nbsp;23 &middot; 2026-02-27</span>
+    </div>
+    <div class="dv-title">ЗАКОН за ратифициране на Международен договор (Letter of Offer and Аcceptance – LOA) BU-P-AAL „Придобиване на мобилна ракетна (NSM) система за брегова отбрана (CDS) и свързаните с нея оборудване, резервни части, обучение и свързаната с тях поддръжка“ и на Международен договор (Letter of Offer and Ac</div>
+    <p class="dv-lead">България официално потвърждава два военни договора със САЩ – за закупуване на брегова ракетна система NSM и на тактически радиосистеми MIDS JTRS.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>С първия договор (LOA BU-P-AAL) България придобива мобилна ракетна система за брегова отбрана NSM (Naval Strike Missile) заедно с резервни части, оборудване и обучение – договорът е подписан на 22 август 2025 г. в САЩ и на 6 февруари 2026 г. в София.</li><li>С втория договор (LOA BU-P-LBR) се закупуват мултифункционални тактически радиосистеми MIDS JTRS за обмен на бойна информация в реално време – подписан на 25 септември 2025 г. в САЩ и на 6 февруари 2026 г. в София.</li><li>И двата договора са сключени по американския механизъм „Правителство за правителство&quot; (FMS – Foreign Military Sales), при който САЩ са гарант за качество и доставка.</li><li>Съдържанието на двата договора остава тайно – законът изрично забранява обнародването им в „Държавен вестник&quot;.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Българската армия и ВМС (нови способности за брегова отбрана и тактически комуникации, съвместими с НАТО); американските отбранителни компании (доставчици).</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Съдържанието на двата договора е изрично укрито от публичността – гражданите знаят, че България е похарчила пари за ракети и радиосистеми, но не и колко.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><p>Влиза в сила от обнародването.</p></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Закупуването на отбранително оборудване по американския механизъм FMS е стандартна практика сред повечето източноевропейски членки на НАТО – Полша, Румъния и Гърция имат подобни договори. NSM е система, използвана и от Норвегия и Полша, което я прави добре интегрирана в натовската архитектура. Няма специфично европейско законодателство, което да регулира тези двустранни отбранителни сделки.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241618" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-zakon">ЗАКОН</span></div>
+      <span class="dv-meta">Бр.&nbsp;23 &middot; 2026-02-27</span>
+    </div>
+    <div class="dv-title">ЗАКОН за ратифициране на Многостранното споразумение между компетентните органи за автоматичен обмен на информация съгласно Рамката за предоставяне на информация за криптоактиви и на Допълнението към Многостранното споразумение между компетентните органи за автоматичен обмен на информация за финансо</div>
+    <p class="dv-lead">България се присъединява към международна система за автоматичен обмен на данни за криптоактиви и финансови сметки между данъчните администрации на участващите държави.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Ратифицирано е споразумение, подписано на 26 ноември 2024 г. в Асунсион, което задължава България да обменя автоматично информация за криптоактиви с данъчните органи на другите страни по споразумението – т.нар. CARF рамка на ОИСР.</li><li>Доставчиците на услуги с криптоактиви (борси, платформи, посредници), работещи в България, ще трябва да събират и докладват данни за транзакциите на клиентите си пред НАП.</li><li>Ратифицирано е и допълнение към съществуващото споразумение за обмен на данни за финансови сметки (CRS), подписано от България още през 2015 г. – актуализацията разширява или прецизира обхвата му.</li><li>Информацията ще тече автоматично – без нужда от конкретно запитване от чужда данъчна служба, което затруднява укриването на доходи от крипто в чужбина.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: НАП и фиска – получават достъп до данни за крипто доходи на български граждани в чужбина и обратно; данъкоплатци, спазващи правилата (по-равна конкуренция).</li><li>Губят: Лица, укривали досега доходи от криптоактиви чрез сметки и платформи в чужди юрисдикции.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Споразумението е подписано в Асунсион, Парагвай – необичайно място за финансов договор с глобални последици, тъй като Парагвай не е типичен домакин на такива форуми на ОИСР.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><p>Влиза в сила от обнародването.</p></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>CARF рамката на ОИСР е отразена в европейското законодателство чрез Директивата DAC8, приета от ЕС през 2023 г., която задължава всички държави членки да въведат автоматичен обмен на данни за криптоактиви. България не е сред първите ратификатори – повечето страни членки се съобразиха с изискванията на DAC8 в рамките на 2024–2025 г. Настоящата ратификация привежда България в съответствие с общоевропейския стандарт, без съществено отклонение от него.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241619" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-zakon">ЗАКОН</span></div>
+      <span class="dv-meta">Бр.&nbsp;23 &middot; 2026-02-27</span>
+    </div>
+    <div class="dv-title">ЗАКОН за изменение на Изборния кодекс</div>
+    <p class="dv-lead">Законът разширява възможностите за гласуване на българи извън страната, като урежда по-детайлно кога и как се образуват секции извън дипломатическите представителства – и в ЕС, и извън него.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>В страни от ЕС</strong> може да се открие секция извън посолство/консулство, ако поне <strong>40 избиратели</strong> са подали заявление за гласуване на конкретното място.</li><li><strong>Автоматично</strong> се запазват места в ЕС, където на предишни избори (до 5 години назад) е имало секция с поне <strong>100 гласували</strong> – ЦИК обявява списъка не по-късно от <strong>50 дни</strong> преди изборния ден.</li><li><strong>Извън ЕС</strong> секции извън дипломатическите представителства се образуват само с решение на ЦИК, по предложение на съответния посланик/консул, и отново при минимум <strong>40 заявления</strong>. Предложението трябва да постъпи не по-късно от <strong>22 дни</strong> преди изборния ден.</li><li><strong>Твърда горна граница извън ЕС:</strong> в една държава може да се открият максимум <strong>20 секции</strong> извън официалните представителства.</li><li>На <strong>избори за евродепутати</strong> правилото за секции извън ЕС (ал. 3) изобщо не се прилага – тези избори се провеждат само в и около представителствата в трети страни.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li><strong>Печелят:</strong> Българи в ЕС с достатъчна концентрация в дадено място – получават по-лесен достъп до урна без да пътуват до посолство. Общности в трети страни, чиито посланици преценят, че отговарят на условията.</li><li><strong>Губят:</strong> Не се открива явен губещ, но общности извън ЕС остават зависими от преценката на дипломатическото ръководство и от твърдия лимит от 20 секции на държава.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Законът е приет на 5 февруари, президентът го е върнал (за повторно гласуване на 25 февруари), но въпреки това една от разпоредбите (§ 4) влиза в сила retroактивно – от <strong>1 януари 2025 г.</strong>, тоест над година преди обнародването му.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><ul><li>Основният закон влиза в сила от <strong>27 февруари 2026 г.</strong> (деня на обнародването).</li><li>§ 4 – отлагането на срок от Закона за изменение от 2022 г. (от „1 януари 2025 г.&quot; на „1 януари 2028 г.&quot;) – влиза в сила retroактивно от <strong>1 януари 2025 г.</strong></li></ul></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Повечето държави – членки на ЕС осигуряват гласуване в чужбина предимно чрез посолства и консулства, а изнесените секции на неутрални места са по-рядка практика. България е сред малкото страни, които изрично регламентират прагове (брой заявления) за автоматично разкриване на секции в чужбина. Ключовата разлика е, че много западноевропейски държави залагат на гласуване по пощата или електронно, докато България разчита изцяло на физически секции.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241669" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;23 &middot; 2026-02-27</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за приемане на Процедурни правила за условията и реда за предлагането на кандидат за подуправител – ръководител на управление „Емисионно“, на Българската народна банка, представяне и публично оповестяване на документите и изслушването на кандидата в Комисията по бюджет и финанси, както и про</div>
+    <p class="dv-lead">Решението установява точните стъпки – документи, срокове, изслушване и гласуване – по които Народното събрание ще избере новия подуправител на БНБ, ръководещ управление „Емисионно&quot;.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Управителят на БНБ има <strong>7 дни</strong> от приемането на правилата, за да внесе писмено предложение с мотиви и пакет документи до Комисията по бюджет и финанси.</li><li>Кандидатът трябва да е български гражданин с минимум <strong>магистърска степен</strong> в икономика, финанси или банково дело и да не е член на политическа партия, нейн ръководен орган, нито роднина до четвърта степен по съребрена линия с друг член на УС на БНБ.</li><li>Документите се публикуват онлайн <strong>не по-малко от 7 дни</strong> преди изслушването; НПО и медии могат да изпращат въпроси, а кандидатът ги получава писмено <strong>поне 24 часа</strong> предварително.</li><li>На изслушването: управителят на БНБ представя кандидата (<strong>до 7 мин.</strong>), кандидатът излага концепция (<strong>до 10 мин.</strong>), народните представители задават въпроси (<strong>до 2 мин.</strong> на човек), а кандидатът отговаря накуп (<strong>до 10 мин.</strong>).</li><li>Кандидатът се проверява служебно за принадлежност към Държавна сигурност; резултатът се публикува публично.</li><li>Изборът в пленарна зала е <strong>явен</strong>, чрез компютризирана система; необходимо е <strong>мнозинство от повече от половината присъстващи</strong> народни представители.</li><li>При отказ на кандидата на <strong>всеки етап</strong> (изслушване или гласуване) или при неполучаване на нужните гласове – НС открива <strong>нова процедура от начало</strong>.</li><li>След избора новият подуправител декларира несъвместимост пред Сметната палата и е длъжен да актуализира декларацията при <strong>всяка промяна</strong> в обстоятелствата.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Гражданите и НПО – прозрачна, публично излъчвана процедура с възможност за участие чрез въпроси и становища.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Анонимни сигнали и становища изрично не се разглеждат – рядко срещана клауза в подобни процедурни правила на НС.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><ul><li>Влиза в сила от обнародването.</li><li>Единственият вграден срок за изпълнение е 7-дневният срок за управителя на БНБ да внесе кандидатурата, който тече от датата на приемане (25 февруари 2026 г.).</li></ul></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Изборът на ръководството на централните банки от националните парламенти е сравнително рядко явление в ЕС – в повечето държави управителите и подуправителите се назначават от правителството или президента. България е сред малкото страни, където НС пряко избира членове на управителния съвет на централната банка, което засилва парламентарния контрол, но крие риск от политизиране, несъвместим с изискванията за независимост на ЕЦБ и Договора от Маастрихт.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241690" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details></div>
+</div>
+<div class="subsection">
+  <div class="subsection-hd">
+    <span class="subsection-tag">02</span>
+    <span class="subsection-title">Министерски съвет</span>
+    <span class="subsection-count">2 постановления</span>
+  </div>
+  <div class="dv-grid">
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;23 &middot; 2026-02-27</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 38 ОТ 23 ФЕВРУАРИ 2026 Г. за приемане на план-сметка за разходите/трансферите по подготовката и произвеждането на изборите за народни представители на 19 април 2026 г.</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Правителството отпуска над 65,6 млн. евро за провеждането на парламентарните избори на 19 април 2026 г., разпределени между централни ведомства, общини и медии.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Общият бюджет за изборите е <strong>65 635,3 хил. евро</strong> – най-голямата единична перо е трансферът към общините: <strong>35 099,4 хил. евро</strong>, трябва да бъде преведен не по-късно от <strong>19 март 2026 г.</strong></li><li>Членовете на секционните и подвижните секционни избирателни комисии (СИК/ПСИК) получават допълнително възнаграждение, но <strong>само ако комисията е представила верен протокол</strong> с данните от гласуването; за тази цел са заделени <strong>2 084,6 хил. евро</strong> от общинските трансфери.</li><li>За логистика в общините са предвидени <strong>7 704,0 хил. евро</strong>, а за възнаграждения на членовете на СИК/ПСИК – <strong>27 395,4 хил. евро</strong>, разпределени поименно по всички 265 общини в две отделни таблици.</li><li>МВР получава най-големия институционален дял – <strong>11 999,0 хил. евро</strong>; Министерството на външните работи (за задгранично гласуване) – <strong>6 835,5 хил. евро</strong>.</li><li>БНТ получава <strong>1 500,0 хил. евро</strong>, БНР – <strong>500,0 хил. евро</strong>, а партиите и коалициите ще ползват медийни пакети за <strong>650,0 хил. евро</strong>, заплатени от ЦИК.</li><li>Разходите за машинно гласуване, хартиени бюлетини и обработка на данните <strong>не са включени</strong> в тази план-сметка – ще се осигурят допълнително с отделно решение, след като ЦИК сключи съответните договори.</li><li>Общините, на които са преведени повече средства, отколкото реално са изразходвали, <strong>връщат остатъка в държавния бюджет до 31 август 2026 г.</strong>; отчети пред министъра на финансите подават: първостепенните разпоредители до <strong>19 юни 2026 г.</strong>, кметовете до <strong>31 юли 2026 г.</strong>, МВнР до <strong>10 септември 2026 г.</strong></li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Общините (получават над 35 млн. евро трансфер предварително); членовете на СИК/ПСИК (допълнително възнаграждение при коректно отчитане); БНТ, БНР и партиите (финансиране на медийно присъствие).</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Бонусното възнаграждение за членовете на СИК/ПСИК е обвързано с условие за верен протокол – комисии с допуснати грешки при отчитането на резултатите губят правото на тези пари.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от <strong>23 февруари 2026 г.</strong> (датата на приемане, преди обнародването).</li><li>Трансферите към общините трябва да бъдат преведени до <strong>19 март 2026 г.</strong></li><li>Неизразходваните средства се връщат до <strong>31 август 2026 г.</strong></li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241646" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;23 &middot; 2026-02-27</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 39 ОТ 23 ФЕВРУАРИ 2026 Г. за изменение на Устройствения правилник на Министерския съвет и на неговата администрация, приет с Постановление № 229 на Министерския съвет от 2009 г.</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Актът отразява промяната в структурата на правителството – създаден е нов заместник министър-председател по европейските средства, а контролът върху имуществените декларации на служителите на МС се прехвърля от Комисията за противодействие на корупцията към Сметната палата.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Правителството официално се разширява до 21 члена: добавен е нов „заместник министър-председател по европейските средства&quot; като самостоятелна позиция (без портфейл на министерство).</li><li>Позицията „заместник министър-председател и министър на правосъдието&quot; остава, но вече не е единственият зам.-премиер – наред с нея съществува и зам.-премиерът по европейските средства.</li><li>Политическият кабинет на министър-председателя получава 22 щатни бройки; кабинетът на зам.-премиера по европейските средства – 9 бройки; кабинетът на зам.-премиера и министър на правосъдието – 3 бройки.</li><li>Имуществените декларации на служителите в администрацията на МС вече се подават и проверяват от Сметната палата (по Закона за Сметната палата, чл. 71, ал. 2), а не от Комисията за противодействие на корупцията.</li><li>В координацията по въпросите на ЕС зам.-премиерът по европейските средства замества предишния зам.-премиер и министър на иновациите и растежа като водещо лице по европейски досиета.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Новият заместник министър-председател по европейските средства, чийто кабинет получава 9 щатни позиции; Сметната палата, която придобива нови контролни правомощия над декларациите на служителите на МС.</li><li>Губят: Комисията за противодействие на корупцията, която губи надзорни функции върху имуществените декларации на администрацията на МС.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Контролът върху имуществените декларации се прехвърля от антикорупционната комисия към Сметната палата – орган с одитна, а не с разследваща функция, което отслабва антикорупционния фокус върху тази администрация.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от датата на приемане – 23 февруари 2026 г. (преди обнародването).</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241647" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details></div>
+</div>
+<div class="subsection">
+  <div class="subsection-hd">
+    <span class="subsection-tag">03</span>
+    <span class="subsection-title">Министерства и ведомства</span>
+    <span class="subsection-count">4 наредби · 4 решения · 2 правилници</span>
+  </div>
+  <div class="dv-grid">
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;22 &middot; 2026-02-24</span>
+    </div>
+    <div class="dv-title">Наредба за изменение и допълнение на Наредба № Iз-2539 от 17 декември 2012 г. за определяне максималния размер на контролните точки, условията и реда за отнемането и възстановяването им, списъка на нарушенията, при извършването на които от наличните контролни точки на водача, извършил нарушението, с</div>
+    <div class="exec-organ">Министерство на вътрешните работи</div>
+    <p class="dv-lead">Наредбата прецизира системата с контролните точки за шофьори – разширява предпазния буфер за „чисти&quot; водачи, повишава прага за отнемане на точки при ключово нарушение и урежда отнемането на точки по електронни фишове.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Повече точки се отнемат за шофиране без свидетелство за управление:</strong> Прагът се вдига от 8 на 10 контролни точки за това нарушение – т.е. наказанието е по-тежко от преди.</li><li><strong>„Чист&quot; водач губи защита при сериозни нарушения:</strong> Водачите с статут „Водач без наказания&quot; досега не губеха точки при нито едно нарушение; отсега нататък при нарушение, за което е предвидено лишаване от права, точките им се отнемат нормално – изключението е заличено.</li><li><strong>Шофьор, напуснал местопроизшествие без участие в катастрофа:</strong> Уточнено е, че разпоредбата за водач, напуснал МПС или самоходна машина, важи само ако той не е участвал в пътнотранспортно произшествие – прецизира се приложното поле.</li><li><strong>Точки по електронен фиш:</strong> Изрично се регламентира, че контролни точки се отнемат и при влязъл в сила електронен фиш (включително при регистрирано нарушение без установен водач с последваща отговорност на собственика).</li><li><strong>Информация в документа за наказанието:</strong> Броят на отнетите и на оставащите точки задължително се вписва директно в наказателното постановление или фиша – шофьорът вижда салдото си веднага.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Шофьори с чист лист при дребни нарушения – запазват буфера си; по-голяма прозрачност за всички водачи чрез вписването на точките директно в документа.</li><li>Губят: Водачи с досегашен статут „без наказания&quot;, извършили тежко нарушение (лишаване от права) – губят предишния пълен имунитет от отнемане на точки.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Водачите с „чист&quot; статут са се ползвали до момента с пълна защита срещу отнемане на точки при всякакви нарушения – сега тя отпада именно при най-тежките случаи, което на практика обезсмисля статута при сериозни прегрешения.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>По-голямата част от промените влизат в сила от 24 февруари 2026 г. (деня на обнародването).</li><li>Разпоредбите за отнемане на точки въз основа на електронен фиш влизат в сила от <strong>7 май 2026 г.</strong></li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241388" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;22 &middot; 2026-02-24</span>
+    </div>
+    <div class="dv-title">Наредба за изменение и допълнение на Наредба № 8 от 2023 г. за условията и реда за прилагане на интервенциите от Стратегическия план за развитие на земеделието и селските райони за периода 2023 – 2027 г. в сектора на пчеларството</div>
+    <div class="exec-organ">Министерство на земеделието и храните</div>
+    <p class="dv-lead">Наредбата актуализира правилата за европейски субсидии към пчелари – вдига таваните на помощите, разширява допустимото оборудване и облекчава някои изисквания за кандидатстване.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Таван за инвестиционна помощ удвоен:</strong> максималният размер на помощта за закупуване на активи скача от 2 556,46 евро на 5 113,67 евро на проект.</li><li><strong>По-високи ставки по групи пчелари:</strong> лимитите за едно одобрено активче нарастват – Група I: от 843,63 на 1 025,14 евро; Група II: от 1 406,05 на 1 708,23 евро; Група III: от 1 968,47 на 2 391,82 евро. Горен праг за подпомагане за кошерен транспорт e 5 624,21 евро, а ставката за транспорт – от 6,39 на 7,16 евро.</li><li><strong>Изискванията за номадско пчеларство са сериозно занижени:</strong> минималният брой кошери пада от 50 на 10, изискуемото разстояние за придвижване – от 15 на 10 км, а броят паши – от „поне две&quot; на „паша&quot; (т.е. достатъчна е само една).</li><li><strong>Нова техника влиза в допустимия списък:</strong> пчелари вече могат да получат субсидия за стакери, лебедки, транспортни и палетни колички, генератори, електропастири, леки ажурни огради, фотоволтаични системи до 10 kWp и автоматизирани поилки със сондаж (последните две само за Група III – с най-много кошери).</li><li><strong>Забрана за дублиране на сходни активи:</strong> в един и същ пчелин не може да се финансират едновременно соларна система и генератор, стакер и палетна количка, или електропастир и лека ограда за целия период на плана.</li><li><strong>Обученията получават нови ставки на обучаем:</strong> въведена е подробна тарифа – от 18 евро (онлайн, без разходи) до 230 евро (тридневно присъствено с настаняване и посещение на база), а изискването за минимална продължителност на обучение е намалено от „над 6 часа&quot; на „4 часа и повече&quot;.</li><li><strong>Дейността за генетично подобрение на пчелните семейства</strong> може да се заявява само веднъж за целия период на Стратегическия план (2023–2027 г.), докато всички останали дейности може да се заявяват веднъж годишно.</li><li><strong>Срокова корекция:</strong> ако крайният срок за заявление за плащане (31 август) пада в неработен ден, той автоматично се прехвърля на следващия работен ден.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Пчелари с малки и средни стопанства – облекченият праг от 10 кошери (вместо 50) отваря субсидиите за номадско пчеларство пред много повече кандидати; всички пчелари печелят от по-високи тавани и по-широк списък с допустимо оборудване.</li><li>Губят: Не се открива явен губещ, но пчелари, планирали да финансират едновременно соларна система и генератор в един пчелин, вече не могат.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Автоматизирана поилка за пчели със собствен сондаж е допустим субсидиран актив – за да го получат, пчеларите трябва да разполагат с влязло в сила разрешително за водовземане от подземни води по Закона за водите.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>В сила от деня на обнародването – 24 февруари 2026 г., без гратисен период.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241410" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;22 &middot; 2026-02-24</span>
+    </div>
+    <div class="dv-title">Наредба за изменение на Наредба № 10 от 2014 г. за здравните изисквания при изготвяне и спазване на седмичните учебни разписания</div>
+    <div class="exec-organ">Министерство на здравеопазването</div>
+    <p class="dv-lead">Отменят се конкретни здравни изисквания към седмичните учебни разписания в училищата, с което се намалява обхватът на задължителните правила, по които директорите и учителите трябва да ги съставят.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Членове 9–12 от Наредба № 10/2014 г. се отменят изцяло – заедно с тях отпадат конкретните здравни ограничения и изисквания, които са регулирали съдържанието и структурата на учебните разписания.</li><li>Държавният здравен контрол върху учебните разписания продължава да съществува, но занапред се свежда само до проверка дали остатъчните (неотменени) разпоредби на Наредба № 10/2014 г. се спазват.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Директорите и администрациите на училищата – получават по-голяма свобода при съставяне на разписанията, без да са обвързани от отменените здравни изисквания.</li><li>Губят: Ученици и родители, за които отменените разпоредби са осигурявали здравна защита (напр. ограничения на натоварването по дни и часове).</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Актът не оповестява публично какво точно са съдържали отменените членове 9–12 – гражданите не могат директно от текста да разберат кои конкретни здравни правила отпадат.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от началото на втория учебен срок на учебната 2025/2026 г. (приблизително февруари 2026 г.).</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241422" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;23 &middot; 2026-02-27</span>
+    </div>
+    <div class="dv-title">Наредба за изменение на Наредба № 8121з-1006 от 2015 г. за реда за осъществяване на пожарогасителната и спасителната дейност от органите за пожарна безопасност и защита на населението на Министерството на вътрешните работи</div>
+    <div class="exec-organ">Министерство на вътрешните работи</div>
+    <p class="dv-lead">Наредбата за пожарогасителната и спасителната дейност се актуализира терминологично – навсякъде, където досега е писало „лв.&quot;, вече ще пише „евро&quot;.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Единствената промяна е замяната на съкращението „лв.&quot; с „евро&quot; на всички места в наредбата – засяга всички суми, прагове и такси, посочени в нея.</li><li>Не се променят конкретни числени стойности, изисквания, процедури или задължения за граждани и бизнес.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Не се открива явен печеливш – промяната е чисто техническа.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Актът не въвежда никакви нови задължения или права – влиза в сила едва когато България официално приеме еврото, което означава, че реалното му действие е отложено за неопределено бъдеще.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от датата на въвеждане на еврото в Република България – конкретната дата не е посочена и зависи от отделно политическо и законодателно решение.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241455" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-pravilnik">ПРАВИЛНИК</span></div>
+      <span class="dv-meta">Бр.&nbsp;22 &middot; 2026-02-24</span>
+    </div>
+    <div class="dv-title">Правилник за изменение на Правилника за устройството и дейността на Националната здравноосигурителна каса</div>
+    <div class="exec-organ">Национална здравноосигурителна каса</div>
+    <p class="dv-lead">Актът заменя всички левови прагове и стойности в Правилника за устройството на НЗОК с техните евро еквиваленти, в подготовка за въвеждането на еврото.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Прагът от 150 000 лв. (за определени правомощия и решения на ръководните органи на НЗОК) се заменя с 76 500 евро.</li><li>Прагът от 1000 лв. (фигуриращ на шест различни места в правилника – за различни правомощия на директори и комисии) се заменя навсякъде с 511,29 евро.</li><li>Промените засягат вътрешните финансови правомощия на управителните органи на НЗОК – касаят се директори на регионални здравноосигурителни каси и централното ръководство.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Не се открива пряк граждански печеливш – промяната е техническа и административна.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Правилникът е приет на 12 февруари 2026 г., но влиза в сила retroактивно от 1 януари 2026 г. – тоест е действал повече от месец преди официалното обнародване.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>В сила от 1 януари 2026 г. – с обратна дата спрямо обнародването (24 февруари 2026 г.).</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241392" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;22 &middot; 2026-02-24</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ № 4446-НС от 20 февруари 2026 г. относно обявяване на Едис Рухиев Даудов за народен представител в Осемнадесети изборен район – Разградски, в 51-вото Народно събрание</div>
+    <div class="exec-organ">Централна избирателна комисия</div>
+    <p class="dv-lead">ЦИК замества временно народния представител Хасан Адемов, встъпил като министър, с Едис Даудов от същата листа за периода на министерския му мандат.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Хасан Ахмед Адемов е положил клетва като министър в служебния Министерски съвет, което автоматично прекъсва депутатските му пълномощия за времето на министерството.</li><li>На негово място за народен представител от Разградски изборен район (18-ти) в 51-вото НС е обявен Едис Рухиев Даудов – следващият в листата на „Алианс за права и свободи&quot; под №4.</li><li>Мандатът на Даудов е изцяло временен – щом Адемов напусне правителството и поиска да се върне в парламента, пълномощията на Даудов автоматично се прекратяват.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Едис Даудов – получава депутатски мандат, макар и временен.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Смяната засяга служебно правителство – Адемов е министър в кабинет без парламентарна инвеститура, което прави периодът на заместването изключително неопределен по продължителност.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от обнародването – 24 февруари 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241607" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-pravilnik">ПРАВИЛНИК</span></div>
+      <span class="dv-meta">Бр.&nbsp;23 &middot; 2026-02-27</span>
+    </div>
+    <div class="dv-title">Правилник за изменение и допълнение на Правилника за устройството и дейността на Гаранционния фонд</div>
+    <div class="exec-organ">Комисия за финансов надзор</div>
+    <p class="dv-lead">Актът актуализира вътрешните правила на Гаранционния фонд – органа, който изплаща обезщетения при катастрофи с незастраховани коли – като променя начина, по който застрахователите изчисляват и внасят вноските си, и уточнява задълженията на управителния съвет.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Нова формула за разпределяне на вноските:</strong> Вместо да се брои средният брой регистрирани МПС по активни полици, отсега нататък делът на всеки застраховател се изчислява спрямо неговия пазарен дял по начислени премии за последните три финансови години – по-голям дял от пазара означава по-голяма вноска.</li><li><strong>Разширен обхват на вноските:</strong> Въвежда се отделна методология за застрахователи, работещи при условията на свободно предоставяне на услуги (чуждестранни дружества с дейност в България), като те също се включват в разпределянето на допълнителните вноски по животозастраховане и задължителни застраховки.</li><li><strong>Гаранция за управителите – минимум 3 месечни заплати:</strong> Всеки член на управителния съвет на Гаранционния фонд трябва да внесе парична гаранция в евро, блокирана в банка, в размер не по-малък от 3 брутни месечни заплати – в 7-дневен срок от избирането му. При неспазване не получава възнаграждение до пълното внасяне.</li><li><strong>Лихвите от гаранцията остават за управителя:</strong> Натрупаните лихви върху блокираните суми са свободни и могат да се теглят по всяко време от вносителя.</li><li><strong>Данни за вноските подават самите застрахователи:</strong> Информацията за изчисляване на вноските вече се предоставя директно от застрахователите на Гаранционния фонд – в сроковете за годишна отчетност, а не се събира по друг ред.</li><li><strong>Ежегоден преглед на методиките до 31 декември:</strong> Съветът на Гаранционния фонд е задължен да преразглежда методиките за изчисляване на вноските всяка година до 31 декември.</li><li><strong>Премахнати излишни изисквания:</strong> Отпада задължението одиторът на Гаранционния фонд да е международно специализирано одиторско предприятие и да се съгласува предварително с КФН – достатъчен е регистриран одитор.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li><strong>Печелят:</strong> По-малки застрахователи с нисък пазарен дял – плащат по-малко вноски при новата формула спрямо старата, базирана на брой МПС.</li><li><strong>Губят:</strong> Застрахователи с висок пазарен дял по начислени премии, особено ако досега са поддържали голям брой евтини полици с нисък премиен приход.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Управителите на Гаранционния фонд губят възнаграждение изцяло, ако не блокират гаранцията си в банка в рамките на 7 дни от избирането – твърда финансова санкция, рядко срещана в правилниците на публични органи.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от датата на обнародване – 27 февруари 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241454" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;23 &middot; 2026-02-27</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ № 1520 от 18 февруари 2025 г. по административно дело № 5042 от 2024 г.</div>
+    <div class="exec-organ">Върховен административен съд (пето отделение)</div>
+    <p class="dv-lead">Съдът отменя образеца на запорно съобщение за налагане на запор като обезпечителна мярка (Приложение № 24 към Наредба № 7 от 2008 г.), защото Министерството на правосъдието е приело наредбата без задължителните мотиви и публично обсъждане.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Отменен е чл. 3, т. 5 – Приложение № 24 от Наредба № 7/2008 г., което представлява официалния образец на запорно съобщение за обезпечителен запор, използван от съдебни изпълнители.</li><li>Причината за отмяната е процедурна: през 2008 г. Министерството на правосъдието не е публикувало проекта на наредбата на интернет страницата си заедно с мотиви и не е осигурило задължителния 14-дневен срок за обществени предложения и становища.</li><li>Липсват и изискуемите по закон мотиви към проекта (причини за приемане, цели, финансови средства, очаквани резултати, анализ за съответствие с правото на ЕС) – нарушение, което съдът квалифицира като съществено.</li><li>Фактът, че при изменението на наредбата през 2018 г. процедурата е спазена, не санира нарушението от 2008 г., тъй като оспорената разпоредба е непроменена от самото начало.</li><li>Министерството на правосъдието е осъдено да плати на жалбоподателя – частен съдебен изпълнител – 40 лв. разноски (10 лв. държавна такса + 30 лв. такса за обявление в „Държавен вестник&quot;).</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Частни съдебни изпълнители и страни в граждански дела, ако считат, че образецът е несъответен на закона; жалбоподателят получава и разноските си.</li><li>Губят: Министерството на правосъдието – задължено да разработи нов образец при спазване на законните изисквания; практиката по налагане на обезпечителни запори остава временно без утвърден образец.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Наредбата е приета преди 17 години и е прилагана безпроблемно, но съдът е длъжен да я отмени, тъй като законодателят не е предвидил давностен срок за оспорване на нормативни актове – нарушение от 2008 г. води до отмяна чак през 2025 г.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Решението подлежи на касационно обжалване пред петчленен състав на ВАС в 14-дневен срок от съобщаването му.</li><li>При влизане в сила отмяната действа от датата на решението; до тогава Приложение № 24 формално остава в сила.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241489" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;23 &middot; 2026-02-27</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ № 1582 от 19 февруари 2025 г. по административно дело № 10811 от 2024 г.</div>
+    <div class="exec-organ">Върховен административен съд – осмо отделение</div>
+    <p class="dv-lead">Съдът отменя правилата, по които НЗОК и аптеките сключват индивидуални договори за заплащане на лекарства, медицински изделия и диетични храни, защото са приети без законоустановена процедура и са им дали незаконна обратна сила.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Отменените правила са приети от НЗОК и Българския фармацевтичен съюз (БФС) и обнародвани в ДВ, бр. 61 от 19 юли 2024 г. – те определят условията, при които аптеките сключват договори с РЗОК за отпускане на лекарства, заплащани от НЗОК.</li><li>Ключовото нарушение: НЗОК и БФС са приели окончателния текст, без предварително да са дали възможност на заинтересованите страни (аптеки и др.) да подадат становища, предложения и възражения – съобщението в интернет е публикувано едва дни преди обнародването на вече готовия акт.</li><li>Второ самостоятелно основание за отмяна: на части от акта е придадена обратна сила, без да е мотивирана изключителна необходимост за това и без самият Закон за здравното осигуряване да предвижда обратно действие.</li><li>НЗОК и БФС са осъдени солидарно да платят на жалбоподателя „Варнафарма – М&quot; ООД съдебни разноски от <strong>58 674,90 лв.</strong></li><li>Решението подлежи на касационно обжалване пред петчленен състав на ВАС в <strong>14-дневен срок</strong> от съобщаването му на страните.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Аптеките, сключващи договори с НЗОК – отпадат правила, приети без участие на бранша и с незаконна обратна сила; „Варнафарма – М&quot; ООД получава близо 59 000 лв. разноски.</li><li>Губят: НЗОК и БФС – отменен акт, осъдени за разноски; трябва да преминат през законосъобразна процедура при приемане на нови правила.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Съдът отказва да прекрати делото въпреки че актът вече е бил отменен преди произнасянето – позовавайки се на решение на Съда на ЕС от 2022 г., приема, че отмяната на акта с последваща норма не заличава вече настъпилите правни последици за жалбоподателя.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Отмяната поражда действие след влизане на решението в сила – т.е. след изтичане на 14-дневния касационен срок, ако не се обжалва, или след произнасяне на петчленния състав на ВАС.</li><li>При необжалване решението се обнародва служебно в Държавен вестник.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241594" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;23 &middot; 2026-02-27</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ № 1900 от 18 февруари 2026 г. по административно дело № 7190 от 2025 г.</div>
+    <div class="exec-organ">Върховен административен съд (петчленен състав, I колегия)</div>
+    <p class="dv-lead">Съдът потвърждава отмяната на условията за сключване на договори между НЗОК и аптеките за заплащане на лекарства, и намалява присъдените адвокатски разноски от 58 674,90 лв. на 14 668,73 лв.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Условията за сключване на индивидуални договори между НЗОК и аптеки за заплащане на лекарствени продукти (обн. юли 2024 г.) са отменени, защото при приемането им не е спазена задължителната процедура – заинтересованите страни не са получили възможност да подадат становища, предложения и възражения преди финалното приемане на акта.</li><li>Вторият самостоятелен мотив за отмяна: на акта е придадено обратно действие, без издателите да са обосновали изключителна нужда за това и без законът (ЗЗО), въз основа на който е издаден, да притежава обратно действие.</li><li>Дори след като НЗОК и БФС приели нови Условия (в сила от 1.01.2025 г.), с което de facto отменили спорния акт, съдът приема, че делото не може да бъде прекратено – образуваното съдебно производство блокира компетентността на издателя да се разпорежда с предмета на делото.</li><li>Адвокатският хонорар, присъден на аптека „Варнафарма – М&quot; ООД, е намален от 58 674,90 лв. (30 000 евро) на 14 668,73 лв. (7500 евро), тъй като делото е проведено в едно заседание, без експертизи и без събиране на множество доказателства.</li><li>НЗОК и Български фармацевтичен съюз (БФС) губят и двете касационни жалби – нито искането за прекратяване на делото, нито доводите им по същество не са приети.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Аптека „Варнафарма – М&quot; ООД (и потенциално всички аптеки, засегнати от отменения акт), тъй като незаконосъобразните условия са окончателно отменени; частично печели и БФС – разноските срещу него са намалени с близо 75%.</li><li>Губят: НЗОК и БФС като издатели на отменения акт; „Варнафарма – М&quot; ООД губи частично – получава 4 пъти по-малко разноски от претендираните.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Съдът изрично постановява, че след като аптеката е завела дело, НЗОК и БФС са нямали право да „обезсмислят&quot; процеса, като сами отменят спорния акт – подобна практика би поставила съдебния контрол изцяло в зависимост от волята на органа, издал незаконния акт.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Решението е окончателно от датата на обнародването му – 27 февруари 2026 г.</li><li>Отмяната на спорните Условия от юли 2024 г. е вече факт (новите Условия са в сила от 1.01.2025 г.); решението я потвърждава окончателно.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241595" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details></div>
+</div>
+</div>
+
+<div class="nl-footer">
+  <span class="nl-footer-logo">Парламентарни Doodles</span>
+  <div class="nl-footer-links">
+    <a href="../">ДВ Дайджест</a>
+    <a href="../../sessions/">Заседания</a>
+    <a href="https://bpdoodles.com">Basepoint Doodles</a>
+  </div>
+</div>
+</div>
+</body>
+</html>

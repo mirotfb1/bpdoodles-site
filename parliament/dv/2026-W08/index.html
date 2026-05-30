@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="utf-8">
+<title>Парламентарни Doodles · ДВ Дайджест · Седмица 8</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --navy:#1B2E5E; --gold:#B5821A; --ink:#1C1C1C; --ink2:#444;
+  --muted:#888; --muted-lt:#AAA; --border:#E8E8E8; --surf:#F8F8F8; --paper:#FFF;
+  --font-d:'Caveat',cursive; --font-h:'Nunito','Arial Black',sans-serif;
+  --font-b:'Nunito',Arial,sans-serif;
+}
+body{font-family:var(--font-b);background:#F0F2F5;color:var(--ink);line-height:1.6;}
+.wrapper{max-width:740px;margin:32px auto;background:#fff;border:1px solid var(--border);border-radius:4px;overflow:hidden;}
+
+/* top bar */
+.top-bar{display:flex;justify-content:space-between;align-items:center;padding:8px 16px;background:var(--navy);}
+.site-nav{display:flex;gap:20px;align-items:center;}
+.site-nav a{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none;}
+.site-nav a:hover{color:rgba(255,255,255,.9);}
+.site-nav a.active{color:var(--gold);}
+.top-bar-tag{font-family:'Courier New',monospace;font-size:10px;color:rgba(255,255,255,.25);}
+
+/* masthead */
+.masthead{background:var(--navy);padding:24px 28px 20px;display:flex;justify-content:space-between;align-items:flex-end;border-bottom:3px solid var(--gold);}
+.masthead-logo{display:flex;flex-direction:row;align-items:center;}
+.masthead-left{display:flex;flex-direction:column;align-items:flex-end;padding-right:14px;}
+.masthead-basepoint{font-family:var(--font-h);font-size:22px;font-weight:900;color:#fff;letter-spacing:-.3px;line-height:1;}
+.masthead-tagline{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:4px;}
+.masthead-divider{width:2px;height:52px;background:rgba(255,255,255,.2);}
+.masthead-doodles{font-family:var(--font-d);font-size:48px;font-weight:700;color:var(--gold);line-height:1;padding-left:14px;}
+.masthead-meta{text-align:right;}
+.masthead-issue{font-size:13px;font-weight:700;color:rgba(255,255,255,.85);display:block;line-height:1.5;}
+.masthead-date{font-size:11px;color:rgba(255,255,255,.4);display:block;}
+.masthead-pills{margin-top:8px;display:flex;gap:6px;justify-content:flex-end;flex-wrap:wrap;}
+.masthead-pill{font-size:10px;font-weight:700;letter-spacing:.05em;background:rgba(255,255,255,.12);color:rgba(255,255,255,.6);padding:3px 8px;border-radius:3px;}
+
+/* content sections */
+.section{padding:20px 28px;border-bottom:1px solid var(--border);}
+.section:last-of-type{border-bottom:none;}
+
+/* subsection (within DV edition) */
+.subsection{margin-bottom:24px;}
+.subsection:last-child{margin-bottom:0;}
+.subsection-hd{display:flex;align-items:baseline;gap:10px;margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid var(--border);}
+.subsection-tag{font-size:10px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);}
+.subsection-title{font-family:var(--font-h);font-size:16px;font-weight:900;color:var(--navy);}
+.subsection-count{font-size:11px;color:var(--muted);margin-left:auto;}
+
+/* section label row */
+.section-label-row{padding:10px 28px 8px;background:var(--surf);border-bottom:1px solid var(--border);}
+.section-label{font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);}
+
+/* page header */
+.page-header{padding:20px 28px 16px;border-bottom:1px solid var(--border);}
+.page-title{font-family:var(--font-h);font-size:20px;font-weight:900;color:var(--ink);letter-spacing:-.3px;margin-bottom:6px;}
+.page-subtitle{font-size:13px;color:var(--muted);}
+
+/* issue list rows */
+a.issue-row{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 28px;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:background .1s;}
+a.issue-row:hover{background:var(--surf);}
+a.issue-row:last-of-type{border-bottom:none;}
+.issue-row-left{flex:1;}
+.issue-row-meta{font-family:'Courier New',monospace;font-size:10px;color:var(--muted-lt);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;}
+.issue-row-title{font-size:15px;font-weight:900;color:var(--ink);letter-spacing:-.2px;line-height:1.3;}
+.issue-row-desc{font-size:12px;color:var(--muted);margin-top:3px;}
+.issue-row-arrow{font-size:18px;color:var(--gold);font-weight:900;flex-shrink:0;}
+
+/* footer */
+.nl-footer{padding:14px 28px;background:var(--surf);border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
+.nl-footer-logo{font-family:var(--font-d);font-size:18px;font-weight:700;color:#CCC;}
+.nl-footer-links{font-size:11px;display:flex;gap:16px;}
+.nl-footer-links a{color:var(--muted-lt);text-decoration:none;}
+.nl-footer-links a:hover{color:var(--muted);}
+
+/* DV cards */
+.dv-grid{display:flex;flex-direction:column;gap:8px;}
+details.dv-card{background:var(--paper);border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:border-color .15s;}
+details.dv-card:hover{border-color:var(--gold);}
+details.dv-card[open]{border-color:var(--gold);}
+.dv-card-compact{background:var(--paper);border:1px solid var(--border);border-radius:8px;overflow:hidden;opacity:.9;}
+.dv-sum{padding:14px 16px;cursor:pointer;list-style:none;user-select:none;}
+.dv-sum::-webkit-details-marker{display:none;}
+.dv-sum-static{padding:14px 16px;}
+.dv-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+.dv-meta{font-size:11px;color:var(--muted);font-weight:700;}
+.dv-title{font-family:var(--font-h);font-size:13px;font-weight:900;color:var(--ink);line-height:1.4;letter-spacing:-.1px;margin-bottom:4px;}
+.exec-organ{font-size:11px;color:var(--muted);margin-bottom:6px;font-style:italic;}
+.dv-lead{font-size:13px;color:var(--ink2);line-height:1.55;margin-bottom:8px;}
+.compact-bullets ul{list-style:none;padding:0;margin-top:6px;}
+.compact-bullets li{padding:3px 0 3px 14px;position:relative;color:var(--ink2);font-size:12px;line-height:1.5;}
+.compact-bullets li::before{content:"·";position:absolute;left:2px;color:var(--gold);font-weight:700;font-size:15px;line-height:1.1;}
+.expand-hint{font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.06em;margin-top:4px;}
+details.dv-card[open] .expand-hint{display:none;}
+.dv-body{padding:0 16px 16px;border-top:1px solid var(--border);}
+
+/* badges */
+.badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;}
+.dv-badges{display:flex;gap:6px;align-items:center;flex-wrap:wrap;}
+.b-zakon   {background:#dbeafe;color:#1a56db;}
+.b-reshenie{background:#cffafe;color:#0a6e8a;}
+.b-ukaz    {background:#ede9fe;color:#7c3aed;}
+.b-decl    {background:#fef3c7;color:#92400e;}
+.b-post    {background:#d1fae5;color:#065f46;}
+.b-naredba {background:#fce7f3;color:#9d174d;}
+.b-pravilnik{background:#f3e8ff;color:#6b21a8;}
+.b-inst    {background:#fef9c3;color:#713f12;}
+.b-razp    {background:#e0f2fe;color:#0369a1;}
+.b-spor    {background:#fff7ed;color:#c2410c;}
+.b-other   {background:#f3f4f6;color:#6b7280;}
+.b-cat     {background:#f3f4f6;color:#555;}
+
+/* factsheet sections */
+.fs-sec{margin:12px 0;font-size:13px;}
+.fs-sec h5,.parties-block h5,.notable-callout h5,.sess-col h5{font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:8px;padding-bottom:5px;border-bottom:1px solid var(--border);}
+.fs-sec ul,.parties-block ul{list-style:none;padding:0;}
+.fs-sec li,.parties-block li{padding:4px 0 4px 16px;position:relative;color:var(--ink2);border-bottom:1px solid #f3f4f6;font-size:13px;line-height:1.5;}
+.fs-sec li:last-child,.parties-block li:last-child{border-bottom:none;}
+.fs-sec li::before{content:"·";position:absolute;left:3px;color:var(--gold);font-weight:700;font-size:16px;line-height:1.1;}
+.fs-sec p,.parties-block p{color:var(--ink2);font-size:13px;margin-bottom:4px;}
+.fs-winners ul{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.fs-winners li{padding:8px 10px 8px 24px;border-radius:6px;border-bottom:none !important;}
+.fs-winners li:first-child{background:#f0fdf4;}
+.fs-winners li:first-child::before{content:"✓";color:#16a34a;font-size:13px;top:8px;}
+.fs-winners li:nth-child(2){background:#fef2f2;}
+.fs-winners li:nth-child(2)::before{content:"✗";color:#dc2626;font-size:13px;top:8px;}
+.fs-notable{background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:12px 14px;}
+.fs-notable h5{border-bottom-color:#fde68a;color:#92400e;}
+.fs-notable li,.fs-notable p{color:#78350f;}
+.fs-notable li::before{color:#d97706;}
+.fs-eu{background:#f0f9ff;border-radius:8px;padding:12px 14px;}
+.fs-eu h5{color:#0369a1;border-bottom-color:#bae6fd;}
+.fs-eu p{color:#0c4a6e;font-size:13px;}
+.ext-link{display:inline-block;margin-top:12px;font-size:12px;font-weight:700;color:var(--navy);text-decoration:none;}
+.ext-link:hover{text-decoration:underline;}
+.no-summ{color:var(--muted);font-size:13px;font-style:italic;padding:12px 0;}
+
+/* session blocks */
+details.sess-block{background:var(--paper);border:1px solid var(--border);border-left:4px solid var(--navy);border-radius:0 8px 8px 0;margin-bottom:10px;overflow:hidden;}
+details.sess-block:hover{box-shadow:0 2px 8px rgba(0,0,0,.06);}
+details.sess-block[open]{border-left-color:var(--gold);}
+.sess-sum{padding:14px 18px;cursor:pointer;list-style:none;user-select:none;}
+.sess-sum::-webkit-details-marker{display:none;}
+.sess-hd{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap;}
+.sess-date-chip{background:var(--navy);color:#fff;font-size:10px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:4px;white-space:nowrap;}
+details.sess-block[open] .sess-date-chip{background:var(--gold);}
+.sess-label{font-family:var(--font-h);font-size:14px;font-weight:900;color:var(--ink);}
+.sess-lead{font-size:13px;color:var(--ink2);line-height:1.55;margin-bottom:6px;}
+.sess-body{padding:0 18px 16px;border-top:1px solid var(--border);}
+.sess-lead-full{font-size:13px;color:var(--ink2);line-height:1.6;margin:12px 0;background:#f8fafc;border-left:3px solid var(--gold);padding:8px 12px;border-radius:0 6px 6px 0;}
+.sess-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0;}
+.sess-col{font-size:13px;}
+.sess-col ul{list-style:none;padding:0;}
+.sess-col li{padding:4px 0 4px 14px;position:relative;color:var(--ink2);border-bottom:1px solid #f3f4f6;font-size:13px;line-height:1.5;}
+.sess-col li:last-child{border-bottom:none;}
+.sess-col li::before{content:"·";position:absolute;left:2px;color:var(--navy);font-weight:700;font-size:15px;line-height:1.1;}
+.notable-callout{display:flex;gap:10px;align-items:flex-start;background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:10px 12px;margin:12px 0;}
+.notable-icon{font-size:16px;color:#d97706;flex-shrink:0;line-height:1.4;}
+.notable-callout h5{border-bottom-color:#fde68a;color:#92400e;}
+.notable-callout p,.notable-callout li{color:#78350f;font-size:13px;}
+.notable-callout ul{list-style:none;padding:0;}
+.notable-callout li{padding:3px 0 3px 14px;position:relative;}
+.notable-callout li::before{content:"·";position:absolute;left:2px;color:#d97706;font-weight:700;font-size:15px;line-height:1.1;}
+.parties-block{margin:12px 0;font-size:13px;}
+.sess-ft{margin-top:12px;padding-top:10px;border-top:1px solid var(--border);}
+
+/* landing track cards */
+.track-card{display:block;padding:20px 28px;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:background .1s;}
+.track-card:hover{background:var(--surf);}
+.track-card:last-of-type{border-bottom:none;}
+.track-label{font-size:10px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+.track-title{font-family:var(--font-h);font-size:18px;font-weight:900;color:var(--navy);letter-spacing:-.3px;line-height:1.3;margin-bottom:6px;}
+.track-desc{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px;}
+.track-latest{font-size:12px;color:var(--ink2);}
+.track-arrow{font-size:22px;color:var(--gold);font-weight:900;float:right;margin-top:-28px;}
+
+/* archive / intro */
+.arch-table{width:100%;border-collapse:collapse;}
+.arch-table th{padding:8px 0;text-align:left;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);border-bottom:1px solid var(--border);}
+.arch-table td{padding:12px 8px 12px 0;border-bottom:1px solid var(--border);font-size:13px;color:var(--ink2);}
+.arch-table tr:last-child td{border-bottom:none;}
+.arch-table a{color:var(--navy);font-weight:700;text-decoration:none;}
+.arch-table a:hover{text-decoration:underline;}
+.intro-block{padding:20px 28px;border-bottom:1px solid var(--border);font-size:14px;line-height:1.7;color:var(--ink);}
+.all-issues-wrap{padding:16px 28px;border-bottom:1px solid var(--border);}
+.all-issues-btn{width:100%;padding:13px;background:none;border:1.5px solid var(--navy);border-radius:3px;font-family:var(--font-h);font-size:11px;font-weight:900;color:var(--navy);cursor:pointer;text-align:center;letter-spacing:.14em;text-transform:uppercase;transition:background .15s,color .15s;}
+.all-issues-btn:hover{background:var(--navy);color:#fff;}
+.waitlist-section,.contact-section{padding:20px 28px;border-bottom:1px solid var(--border);}
+.waitlist-heading{font-family:var(--font-h);font-size:17px;font-weight:900;color:var(--ink);letter-spacing:-.2px;margin-bottom:8px;}
+.waitlist-body{font-size:14px;color:var(--ink2);line-height:1.6;margin-bottom:16px;}
+.waitlist-form{display:flex;gap:8px;margin-bottom:10px;}
+.waitlist-input{flex:1;padding:10px 12px;border:1px solid var(--border);border-radius:3px;font-family:var(--font-b);font-size:14px;color:var(--ink);min-width:0;}
+.waitlist-input:focus{outline:none;border-color:var(--navy);}
+.waitlist-btn{padding:10px 18px;background:var(--navy);color:#fff;border:none;border-radius:3px;font-family:var(--font-h);font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;white-space:nowrap;}
+.waitlist-btn:hover{background:#122348;}
+.waitlist-fine{font-size:12px;color:var(--muted-lt);line-height:1.5;}
+.waitlist-ok{display:none;font-size:14px;font-weight:700;color:#16a34a;margin-top:10px;}
+.contact-section p{font-size:14px;color:var(--ink2);line-height:1.6;}
+.contact-section a{color:var(--navy);font-weight:700;text-decoration:none;}
+.contact-section a:hover{text-decoration:underline;}
+
+@media(max-width:760px){
+  .wrapper{margin:0;border-radius:0;border-left:none;border-right:none;}
+  .masthead,.section,.nl-footer,.page-header,a.issue-row,.track-card,
+  .section-label-row,.intro-block,.waitlist-section,.contact-section,.all-issues-wrap{padding-left:16px;padding-right:16px;}
+  .masthead-pills{display:none;}
+  .sess-cols{grid-template-columns:1fr;}
+  .fs-winners ul{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+<div class="top-bar">
+  <nav class="site-nav">
+    <a href="../" class="active">ДВ Дайджест</a>
+    <a href="../../sessions/">Заседания</a>
+    <a href="https://bpdoodles.com">Basepoint Doodles</a>
+  </nav>
+  <span class="top-bar-tag">Парламентарни Doodles</span>
+</div>
+
+<div class="masthead">
+  <div class="masthead-logo">
+    <div class="masthead-left">
+      <span class="masthead-basepoint">Парламентарни</span>
+      <span class="masthead-tagline">Парламентарен дайджест</span>
+    </div>
+    <div class="masthead-divider"></div>
+    <span class="masthead-doodles">Doodles</span>
+  </div>
+  <div class="masthead-meta">
+    <span class="masthead-issue">ДВ Дайджест · Седмица 8 · 2026</span>
+    <span class="masthead-date">16–22 февруари 2026</span>
+    <div class="masthead-pills"><span class="masthead-pill">1 акт от НС</span><span class="masthead-pill">8 акта от МС</span><span class="masthead-pill">5 наредби/регулации</span></div>
+  </div>
+</div>
+<div class="section">
+
+<div class="subsection">
+  <div class="subsection-hd">
+    <span class="subsection-tag">01</span>
+    <span class="subsection-title">Народно събрание</span>
+    <span class="subsection-count">1 решение</span>
+  </div>
+  <div class="dv-grid">
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;19 &middot; 2026-02-19</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за прекратяване на правомощията на заместник-председателя на Комисията за отнемане на незаконно придобитото имущество</div>
+    <p class="dv-lead">Народното събрание освобождава Антон Томов Славчев от длъжността заместник-председател на Комисията за отнемане на незаконно придобитото имущество (КОНПИ).</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Прекратяват се правомощията на Антон Томов Славчев като заместник-председател на КОНПИ – единственото действие, което решението извършва.</li><li>Правното основание е чл. 11, ал. 1, т. 2 от Закона за отнемане на незаконно придобитото имущество, който урежда хипотезите, при които мандатът може да бъде прекратен предсрочно – но конкретната причина не е посочена в акта.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Не се открива явен печеливш.</li><li>Губят: Антон Томов Славчев – губи поста си на заместник-председател на КОНПИ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Решението не посочва никаква причина за освобождаването – гражданите не научават дали Славчев е подал оставка, дали е нарушил закона, или е отстранен по политическо решение.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><p>Влиза в сила от обнародването.</p></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Комисии или агенции от подобен тип – за отнемане на активи с престъпен произход – съществуват в повечето държави от ЕС, включително Ирландия, Италия и Румъния. Решенията за предсрочно прекратяване на мандат на техни ръководители обичайно се придружават от публично оповестена мотивировка. Липсата на каквото и да е обяснение в българския акт е нетипична спрямо практиката на повечето западноевропейски аналози.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241406" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details></div>
+</div>
+<div class="subsection">
+  <div class="subsection-hd">
+    <span class="subsection-tag">02</span>
+    <span class="subsection-title">Министерски съвет</span>
+    <span class="subsection-count">6 постановления · 2 решения</span>
+  </div>
+  <div class="dv-grid">
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;18 &middot; 2026-02-17</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 32 ОТ 12 ФЕВРУАРИ 2026 Г. за изменение и допълнение на Тарифата за държавните такси, които се събират от съдилищата по Гражданския процесуален кодекс, приета с Постановление № 38 на Министерския съвет от 2008 г.</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Всички съдебни такси по Гражданския процесуален кодекс се преизчисляват от левове в евро по фиксирания курс, а с въвеждането на Закона за несъстоятелност на физическите лица се добавят изцяло нови такси за това производство.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Стандартната минимална такса за граждански дела (чл. 1 и 2) пада от 50 лв. на 25,56 евро – разликата е чисто техническа (фиксиран курс 1,95583), без реално поскъпване или поевтиняване.</li><li>Максималната такса при изпълнителни производства остава ограничена: не по-малко от 25,56 евро и не повече от 1 533,88 евро (преди: 50–3 000 лв.).</li><li>Прогресивната скала за такси върху материален интерес (изпълнителни дела) се запазва: до 51,13 евро – фиксирани 5,11 евро; над 51 129,19 евро – 2 668,94 евро + 2% върху горницата.</li><li>Нова такса по Закона за несъстоятелност на физическите лица: 10 евро за молба за откриване на производство; при обжалване пред въззивна или касационна инстанция – по 5 евро.</li><li>Нови такси за държавния съдебен изпълнител по същия закон: 50 евро за списък на вземанията, 25 евро за опис на имуществото, 50 евро за план за погасяване, 15 евро за сметка за разпределение.</li><li>Минималната такса за издаване на документи и преписи (чл. 23) слиза до 0,04–0,05 евро на страница – практически символична сума.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Физически лица в несъстоятелност, които получават ясна и относително ниска тарифа (10 евро за образуване на дело) за новото производство по лична несъстоятелност.</li><li>Губят: Не се открива явен губещ – преизчислението е неутрално по курс, а новите такси са нови задължения само за ново производство.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Таксите по несъстоятелността на физически лица влизат в сила не от обнародването, а от бъдеща заповед на министъра на правосъдието – което означава, че самият закон за личната несъстоятелност все още не е оперативен.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Преизчислените такси в евро влизат в сила от обнародването – 17 февруари 2026 г.</li><li>Таксите по чл. 25а (несъстоятелност на физически лица – съд) и чл. 58б (държавен съдебен изпълнител) влизат в сила от датата на специална заповед на министъра на правосъдието по Закона за несъстоятелност на физическите лица.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241387" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;18 &middot; 2026-02-17</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 33 ОТ 13 ФЕВРУАРИ 2026 Г. за изменение и допълнение на Наредбата за реда и начина за организиране на националните инвентаризации на емисиите на вредни вещества и парникови газове в атмосферата, приета с Постановление № 261 на Министерския съвет от 2014 г.</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Актуализират се правилата за националните инвентаризации на емисии на замърсители и парникови газове, като се добавят нови задължения за докладване на земеделски данни и се прецизират срокове за ключови институции.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Земеделски производители и институции</strong>: Министерството на земеделието вече трябва да подава значително по-подробни данни за сектора – количества синтетични и органични торове, площи с азотфиксиращи култури, видове системи за хранене на животни, методи за отглеждане (вързано/свободно), видове подове в животновъдните помещения, системи за улавяне на емисии (биофилтри, скрубери), практики за съхранение на оборски тор и брой дни, прекарани от животните на пасище.</li><li><strong>Нов срок за Министерството на земеделието</strong>: Данните трябва да бъдат подадени до <strong>ноември</strong> (вместо досегашния септември), с което се удължава времето за събирането им.</li><li><strong>Българската агенция по безопасност на храните</strong>: Запазва задължението да предоставя годишни данни за популацията на коне, мулета и магарета.</li><li><strong>Министерство на енергетиката</strong>: Ежегодно до <strong>20 януари</strong> изпраща в ИАОС данни за емисии от енергетика, промишленост и добив на изкопаеми горива за годината X-2; ежегодно до <strong>25 февруари</strong> предоставя на ИАОС допълнителна информация за изчисления на емисии за целите на международния доклад.</li><li><strong>РИОСВ и управление на отпадъци</strong>: Предварителни данни за отпадъци се предоставят на НСИ до <strong>30 юни</strong>, а окончателните – до <strong>31 декември</strong> на текущата година.</li><li><strong>Планове за действие при грешки в инвентаризациите</strong>: Плановете вече се утвърждават от изпълнителния директор на ИАОС след съгласуване с МОСВ и се изпращат до всички задължени органи за изпълнение.</li><li><strong>Площи по биологично земеделие</strong>: Добавено е задължение за докладване на площи, сертифицирани по европейския регламент за биологично производство, разбити по култури в хектари.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li><strong>Печелят:</strong> Европейската комисия и международните органи по климата – получават по-детайлни и стандартизирани данни от България; ИАОС – придобива по-ясни правомощия и по-структуриран входящ поток от данни.</li><li><strong>Губят:</strong> Министерство на земеделието и свързаните агенции – значително нараства административната тежест заради множеството нови категории данни, които трябва да събират и докладват ежегодно.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Въпреки удължаването на срока за подаване на данни от земеделието (от септември на ноември), броят на новите показатели, които трябва да се събират, е над дузина – включително съдържанието на суров протеин във фуража по категории животни – което на практика многократно увеличава реалния обем работа.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>В сила от деня на обнародването – 17 февруари 2026 г., без гратисен период.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241403" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;20 &middot; 2026-02-20</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 34 ОТ 16 ФЕВРУАРИ 2026 Г. за изменение и допълнение на Правилника за прилагане на Закона за филмовата индустрия, приет с Постановление № 274 на Министерския съвет от 2018 г.</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Актуализира правилата за държавна и минимална помощ във филмовата индустрия съобразно нов европейски регламент и вдига тавана на безвъзмездна подкрепа за филмово производство от 2 млн. лв. на 5 млн. евро.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Нов таван за финансиране на филмово производство:</strong> Максималният размер на средствата по схемата за подпомагане се увеличава от 2 000 000 лв. на <strong>5 000 000 евро</strong> – увеличение от близо 5 пъти в реално изражение.</li><li><strong>Нов праг за минимална (de minimis) помощ при промоция и показ на филми:</strong> Таванът се определя на <strong>300 000 евро за три години</strong> на предприятие (изчислявани на подвижна база), в съответствие с новия европейски регламент; надвишаването се коригира служебно.</li><li><strong>Смяна на европейския регламент за de minimis:</strong> Навсякъде в правилника старият Регламент (ЕС) № 1407/2013 е заменен с новия Регламент (ЕС) № 2023/2831 – задължително условие за законосъобразно отпускане на помощи.</li><li><strong>Облекчено доказване на професионален опит:</strong> При кандидатстване трудова книжка се изисква само за стаж преди 1 юни 2025 г., ако данните не фигурират в електронния трудов регистър; за по-нов стаж администрацията проверява служебно. Допускат се и договори или списък с филми като алтернативно доказателство.</li><li><strong>Срокове на схемите за помощ:</strong> Схемите по Регламент (ЕС) № 651/2014 (основни държавни помощи) действат до <strong>31 декември 2026 г.</strong>, а схемата за минимална помощ – до <strong>31 декември 2030 г.</strong>; нови помощи след тези дати са забранени, но вече сключени договори могат да се изплащат.</li><li><strong>Гратисен период при изтичане на регламентите:</strong> 6 месеца след изтичане на срока за привеждане в съответствие по всяка от двете схеми, в изпълнение на европейските изисквания.</li><li><strong>Актуализирани приложения и формуляри:</strong> Седем приложения са преработени; навсякъде „e-mail&quot; се заменя с „електронен адрес или профил в ССЕВ&quot;.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Филмови продуценти и компании за промоция и показ на филми – получават значително по-висок таван на финансиране и по-лесно административно доказване на опит.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Таванът за подпомагане на филмово производство скача от 2 млн. лв. на 5 млн. евро – почти петкратно увеличение – без публично обявена мотивировка в самия акт.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от деня на обнародването – 20 февруари 2026 г.</li><li>Започнали, но незавършени процедури за държавна помощ се довършват по старите правила.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241452" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;20 &middot; 2026-02-20</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 35 ОТ 17 ФЕВРУАРИ 2026 Г. за изменение на Постановление № 263 на Министерския съвет от 2021 г. за определяне на второстепенните разпоредители с бюджет по бюджета на Министерството на културата</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Актът преразпределя броя на второстепенните разпоредители с бюджет между две структури към Министерството на културата.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Структурата по т. 5 в приложението губи един второстепенен разпоредител с бюджет – намалява от 3 на 2.</li><li>Структурата по т. 11 печели един второстепенен разпоредител с бюджет – нараства от 2 на 3.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Структурата по т. 11 в приложението, която получава допълнителен разпоредител с бюджет.</li><li>Губят: Структурата по т. 5, която губи един разпоредител с бюджет.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><p>От деня на обнародването – 20 февруари 2026 г.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241478" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;20 &middot; 2026-02-20</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 36 ОТ 18 ФЕВРУАРИ 2026 Г. за изменение на Тарифа за таксите, които събират музеите, Националният институт за недвижимо културно наследство и Националната библиотека „Св. св. Кирил и Методий“ за извършване на услуги и за издаване на документи и дубликати, приета с Постановление № 290 </div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Актът заменя всички такси в левове с еквивалентни суми в евро в тарифата, по която музеи, Националният институт за недвижимо културно наследство и Националната библиотека „Св. св. Кирил и Методий&quot; събират плащания от граждани и организации.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Всички суми в тарифата се преизчисляват от левове в евро по официалния фиксиран курс – например входен билет от 5 лв. става 2,56 евро, такса от 100 лв. става 51,13 евро, а най-високата единична такса в тарифата (676 лв.) се превръща в 345,63 евро.</li><li>Засегнати са посетители на музеи, заявители на услуги по опазване на недвижимо културно наследство (разрешения, документи, дубликати) и потребители на услуги на Националната библиотека – всички вече плащат в евро.</li><li>Най-ниските такси в тарифата падат до 0,05 евро (копиране на материали), а обхватът на тарифата е изключително широк – стотици конкретни ценови позиции за различни видове обекти, дейности и документи.</li><li>В продължение на един месец след въвеждането на еврото плащането може да се извършва и в брой в левове по официалния валутен курс с всичките пет знака след десетичната запетая и при правилата за закръгляване по Закона за въвеждане на еврото.</li><li>Отпада препратката към чл. 143, ал. 2 от Закона за устройство на територията в заключителната разпоредба на тарифата.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Гражданите и фирмите, които вече няма да се налага да конвертират суми при плащане – таксите са директно в евро.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Постановлението е прието и обнародвано, но влиза в сила чак от датата, която Съветът на ЕС официално определи за приемане на еврото от България – т.е. актът е публикуван предварително и остава „замразен&quot; до настъпването на това събитие.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от датата на въвеждане на еврото в България, определена с решение на Съвета на ЕС.</li><li>Един месец след тази дата таксите могат да се плащат още и в левове в брой по официалния курс.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241492" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;20 &middot; 2026-02-20</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 37 ОТ 18 ФЕВРУАРИ 2026 Г. за изменение и допълнение на Правилника за устройството и дейността на Министерството на вътрешните работи, приет с Постановление № 207 на Министерския съвет от 2014 г.</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Актът увеличава с 47 броя щатните бройки в Министерството на вътрешните работи.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Максималният брой щатни длъжности в МВР нараства от 51 518 на 51 565 бройки.</li><li>Промяната е изключително техническа и засяга единствено вътрешната кадрова рамка на ведомството – не въвежда задължения, изисквания или права за граждани и бизнес.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: МВР получава възможност да назначи до 47 нови служители.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><p>От деня на обнародването – 20 февруари 2026 г.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241493" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;20 &middot; 2026-02-20</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ № 189 ОТ 17 ФЕВРУАРИ 2026 Г. за признаване на Кооперация „Национална потребителна кооперация на слепите в България“ за национално представителна организация на хора с увреждания</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Кооперацията на слепите в България получава официален статут на национално представителна организация на хора с увреждания, което ѝ дава право на участие в консултативни и нормотворчески процеси на национално ниво.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Кооперация „Национална потребителна кооперация на слепите в България&quot; (ЕИК 000627259, София) е призната за национално представителна организация на хора с увреждания.</li><li>Признаването е за срок от 4 години, считано от 18 февруари 2026 г. – тоест статутът важи до 18 февруари 2030 г.</li><li>Статутът дава право на организацията да участва в работата на Националния съвет за хората с увреждания и да влияе върху политики и законодателство, засягащи хората с увреждания.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Кооперацията на слепите и нейните членове – организацията получава институционален глас при вземането на решения на национално ниво.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Признаването е в сила от 18 февруари 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241490" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;20 &middot; 2026-02-20</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ № 191 ОТ 17 ФЕВРУАРИ 2026 Г. за изменение на Решение № 642 на Министерския съвет от 2016 г. за утвърждаване на образци на регистрационни карти, които се издават от Държавната агенция за бежанците при Министерския съвет, изменено и допълнено с Решениe № 242 на Министерския съвет от 2022 г., Р</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Удължава валидността на регистрационните карти на украински и други разселени лица с временна закрила с почти два месеца – до 30 април 2026 г.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Регистрационните карти на чужденци с временна закрила, чийто срок изтича на 4 март 2026 г., автоматично се удължават до 30 април 2026 г.</li><li>Нова регистрационна карта може да бъде издадена и преди 30 април 2026 г. – не е нужно да се чака изтичането на старата, ако лицето поиска смяна.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Чужденци с предоставена временна закрила (основно украински граждани), които получават допълнително време без нужда от незабавна смяна на документа.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Това е вече петото поредно удължаване на същото решение от 2016 г. – поправките идват почти всяка година от 2022 г. насам, което показва системно „кърпене&quot; вместо трайно законодателно решение.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от обнародването – 20 февруари 2026 г.</li><li>Ключов краен срок: 30 април 2026 г. – до тогава важат удължените карти.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241491" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details></div>
+</div>
+<div class="subsection">
+  <div class="subsection-hd">
+    <span class="subsection-tag">03</span>
+    <span class="subsection-title">Министерства и ведомства</span>
+    <span class="subsection-count">3 наредби · 1 правилник · 1 решение</span>
+  </div>
+  <div class="dv-grid">
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;18 &middot; 2026-02-17</span>
+    </div>
+    <div class="dv-title">Наредба за изменение и допълнение на Наредба № 9 от 2019 г. за определяне на пакета от здравни дейности, гарантиран от бюджета на Националната здравноосигурителна каса</div>
+    <div class="exec-organ">Министерство на здравеопазването</div>
+    <p class="dv-lead">Наредбата разширява пакета здравни дейности, заплащани от НЗОК, с нови лечения за рак на простатата и невроендокринни тумори с луций-177, педиатрично интензивно лечение, заместителна имунотерапия и нови клинични пътеки, а също актуализира диспансеризацията за бъбречни болести, мигрена и атаксия.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Радионуклидна терапия с луций-177 влиза в НЗОК пакета</strong> – създадени са две нови амбулаторни процедури (№ 51 и № 52): едната за пациенти с невроендокринни тумори (C00–C97), другата за мъже с метастатичен рак на простатата (C61), резистентен на кастрация и с PSMA-позитивни лезии. Лечението се прилага само в клиники по нуклеарна медицина на трето ниво на компетентност с фиксирана доза 7,4 GBq на курс; пациентът престоява до 12 часа и се изписва след измерване на дозата.</li><li><strong>Две нови клинични процедури за педиатрично интензивно лечение (№ 8 и № 9)</strong> – обхващат деца до 18 г. в критично състояние. Процедура № 8 е за случаи с механична вентилация и/или парентерално хранене; № 9 – без тези нужди. Критериите за прием включват подробни прагове: напр. Glasgow скала &lt; 13, хиперкалиемия K ≥ 6 mEq/L, изгаряния &gt; 10% от телесната повърхност. При GCS = 3 и отпадане на ≥ 3 мозъчно-стволови рефлекса е задължително уведомяване на трансплантационен координатор.</li><li><strong>Нова амбулаторна процедура № 53</strong> – заместително лечение с човешки имуноглобулин при вторични хипогамаглобулинемии (D84.8) при лица над 18 г., провеждано от специалист по клинична имунология.</li><li><strong>Диспансеризацията за хронично бъбречно заболяване (ХБЗ) е изцяло реструктурирана</strong> – старите кодове N18.0/N18.8 са заменени с N18.1–N18.5 и N18.9 (стадии 1–5). ОПЛ поемат диспансеризацията на стадии 1–3, нефролозите – на стадии 4–5. Въведени са нови показатели eGFR и uACR с конкретна честота: от 1 до 3 пъти годишно в зависимост от стойностите.</li><li><strong>Мигрената (G43.0 и G43.1) влиза в списъка за диспансеризация при възрастни</strong>, заплащана от НЗОК – наблюдение от невролог до края на живота, до 2 прегледа на 6 месеца.</li><li><strong>Гонококовата инфекция (N. gonorrhoeae) се добавя към 7 микробиологични изследвания</strong>, вече покрити от НЗОК в рамките на специализираната извънболнична помощ – директно следствие от актуализацията на сексуално-здравните дейности в акушерско-гинекологичния пакет.</li><li><strong>Създадени са две нови клинични пътеки</strong>: № 269 „Транзиторна исхемична атака&quot; (G45.0–G45.9) в неврологично отделение второ ниво и № 270 „Инфекции на пикочо-половата система&quot; (N10, N30, N41, N45 и др.) в урология/хирургия/акушерство второ ниво. КП 249 „Триизмерна конвенционална телегаматерапия&quot; се заличава, а КП 250 се преименува на „Триизмерно конформално лъчелечение&quot;.</li><li><strong>Лицево-челюстната хирургия получава самостоятелен пакет</strong> в специализираната извънболнична помощ и се включва като допустима специалност в три клинични пътеки за УНГ операции (136, 137, 138).</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Пациенти с рак на простатата и невроендокринни тумори (достъп до луций-177 терапия за сметка на НЗОК); деца в тежко критично състояние (педиатрично интензивно лечение в НЗОК пакета); пациенти с ХИВ/имунодефицити (нова процедура с имуноглобулин); пациенти с мигрена и атаксия (право на диспансеризация); болниците с лицево-челюстна хирургия и нуклеарна медицина трето ниво (нови НЗОК-заплащани дейности).</li><li>Губят: Не се открива явен губещ, но лечебните заведения без трето ниво на компетентност по нуклеарна медицина остават извън новите процедури за луций-177 терапия.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>За пациенти с рак на простатата, лекувани с луций-177, наредбата изрично разрешава болниците сами да синтезират радиофармацевтика (177-лутециев хлорид с прекурсори) – т.е. вътреболнично производство на радиоактивно лекарство е официално въведено в НЗОК процедурите.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Основният текст влиза в сила от датата на обнародване на Закона за бюджета на НЗОК за 2026 г. (не от датата на тази наредба).</li><li>Изключение: промените в кодификационната наредба за болестите (§ 7, т. 1 – добавяне на J09 грип и ТОРС) влизат в сила от 1 януари 2027 г.</li><li>Преходна разпоредба: през 2026 г. хроничното бъбречно заболяване стадии 1–4 и неуточненото продължават да се кодират по старите кодове N18.9/N18.0 за целите на смъртността.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241249" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;18 &middot; 2026-02-17</span>
+    </div>
+    <div class="dv-title">НАРЕДБА № Н-2 от 5 февруари 2026 г. за условията и реда за унищожаване на имущества, придобити от държавата в производство по несъстоятелност, конфискувани, отнети и изоставени в полза на държавата имущества и задържани стоки от органите на Националната агенция за приходите</div>
+    <div class="exec-organ">Министерство на финансите</div>
+    <p class="dv-lead">Наредбата определя точните правила, по които НАП може да унищожи имущество в своите складове – конфискувано, отнето, изоставено или задържано – вместо да го продава или съхранява.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>НАП унищожава имущество в три случая: вещите са негодни, съхранението им е невъзможно или прекалено скъпо, или задържани стоки са признати за опасни за хора, животни, растения или околната среда.</li><li>„Негодност&quot; е дефинирана с пет критерия: лошо физическо състояние, изтекъл срок на годност, загубени потребителски качества, несъответствие с нормативни изисквания, или наличие на недостатъци, правещи продажбата невъзможна.</li><li>За задържани стоки унищожаване е допустимо само след писмено заключение от компетентен орган – здравна инспекция, БАБХ, Комисия за защита на потребителите, ДАМТН и др.</li><li>Процедурата е двустепенна: ръководителят на звеното изготвя доклад с мотиви и описание на вещите, след което директорът на съответната териториална дирекция на НАП издава изрична заповед за унищожаване.</li><li>Унищожаването се извършва по четири допустими начина: предаване на лицензирана фирма за отпадъци, механично унищожаване от служители на НАП (само за неопасни отпадъци), изхвърляне като битови отпадъци, или друг ред, предвиден в закон.</li><li>Специална категория – лекарства, наркотици, медицински изделия, оръжия, взривни вещества и пиротехника – се унищожава не по тази наредба, а по специалните закони за съответния вид стока.</li><li>За всяко унищожаване служителите съставят протокол с приложени документи; контролът по цялата наредба е възложен на изпълнителния директор на НАП.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: НАП (ясна правна рамка за разтоварване на складове без риск от обжалване); данъкоплатците (намаляват разходите за безсмислено съхранение на негодно имущество).</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Служителите на НАП имат право сами, механично, да унищожават неопасни отпадъци – без да ангажират외на фирма – което е необичайно широко оперативно правомощие за данъчна администрация.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от датата на обнародване – 17 февруари 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241250" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;20 &middot; 2026-02-20</span>
+    </div>
+    <div class="dv-title">НАРЕДБА № РД-02-20-1 от 5 февруари 2026 г. за Единната информационна система на етажната собственост</div>
+    <div class="exec-organ">Министерство на регионалното развитие и благоустройството</div>
+    <p class="dv-lead">Наредбата създава единна дигитална система, в която се регистрират всички етажни собствености и професионални управители на сгради в България.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Два публични регистъра в един портал:</strong> Министерството поддържа Регистър на професионалните управители (търговци) и Регистър на етажната собственост (сдружения и управителни съвети); и двата са безплатно достъпни онлайн – на сайта на МРРБ и на съответната община.</li><li><strong>Управителните съвети са длъжни да се регистрират в срок:</strong> Новоизбран управителен съвет (управител) трябва да подаде заявление до общината в рамките на 1 месец от избирането; общинското длъжностно лице въвежда данните в системата до 14 дни; при промяна на обстоятелствата – отново 14-дневен срок за заявяване.</li><li><strong>Задължителна застраховка „Професионална отговорност&quot; за търговците-управители:</strong> Минималният лимит е 12 780 евро за едно застрахователно събитие и 25 560 евро агрегатен лимит за година; застраховката не покрива глоби, санкции и неустойки на самия управител.</li><li><strong>Регистрацията на търговец-управител е срочна:</strong> При изтичане на срока правото да се упражнява дейност автоматично се погасява; подновяване може да се заяви до 1 месец преди изтичане; при заличаване удостоверението за регистрация губи валидност от датата на заличаването.</li><li><strong>Държавна такса се дължи само от търговците-управители:</strong> За първоначално вписване и за последваща промяна на обстоятелства в регистъра – размерите се определят с отделна тарифа на Министерския съвет (все още не е приета).</li><li><strong>Личните данни са защитени:</strong> Публичните регистри се обявяват без лични данни (по GDPR); системата поддържа безплатен интерфейс за отворени данни с анонимизирана информация.</li><li><strong>Данните се пазят безсрочно:</strong> Базата данни се архивира веднъж годишно; документи, вече приложени в електронните досиета, не могат да се изтриват.</li><li><strong>Общините имат 12 месеца да мигрират старите данни:</strong> След като ЕИСЕС заработи, общинските администрации трябва да въведат всички съществуващи данни за етажни собствености и сдружения в новата система в рамките на 1 година.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li><strong>Печелят:</strong> Собствениците в етажна собственост получават публичен достъп до информация кой управлява сградата им и дали управителят е редовно регистриран; общините получават централизиран инструмент за контрол.</li><li><strong>Губят:</strong> Търговците-управители поемат нов административен и финансов ангажимент – задължителна застраховка с конкретни минимални суми плюс държавна такса за регистрация.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Таксите за регистрация на търговците-управители – ключово условие за старта на регистъра – все още не са определени с тарифа, което означава, че тази регистрация реално не може да започне, докато Министерският съвет не приеме отделен акт.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>По-голямата част от наредбата влиза в сила от 20 февруари 2026 г. (датата на обнародване).</li><li>Разпоредбите за регистрация на сдружения, управителни съвети и съдържанието на партидите им влизат в сила едва от момента, в който ЕИСЕС реално заработи (дата не е фиксирана).</li><li>До стартирането на ЕИСЕС регистрацията продължава по старата Наредба № РД-02-20-8 от 2012 г., която се отменя, но временно остава в сила.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241331" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-pravilnik">ПРАВИЛНИК</span></div>
+      <span class="dv-meta">Бр.&nbsp;18 &middot; 2026-02-17</span>
+    </div>
+    <div class="dv-title">Правилник за изменение и допълнение на Правилника за устройството и дейността на Комисията за финансов надзор и на нейната администрация</div>
+    <div class="exec-organ">Комисия за финансов надзор</div>
+    <p class="dv-lead">Актът реорганизира вътрешното управление на КФН – прехвърля ключови административни правомощия към главния секретар и премахва изискването за хартиени документи при определени вътрешни актове.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Задължителната хартия отпада: вътрешните актове на комисията вече не се съставят „на хартиен носител&quot;, а протоколите се съставят задължително (не само по избор) и в електронен вид.</li><li>Пет дирекции и едно звено – „Правна&quot;, „Деловодство и административно обслужване&quot;, „Финансово-стопански дейности&quot;, „Информационни технологии&quot; и „Комуникации и протокол&quot; – вече се ръководят пряко от главния секретар, а не от отделни ръководители без общ координатор.</li><li>Редът за замяна на отсъстващ член на комисията се опростява – премахва се условието заместването да се прилага само при отсъствие от страната или законоустановен отпуск.</li><li>Надзорът на главния секретар се разширява и формално: председателят на КФН вече го включва изрично в списъка на лицата, на които дава задължителни указания.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Главният секретар на КФН – получава значително разширени правомощия и пряк контрол върху административните дирекции.</li><li>Губят: Не се открива явен губещ сред граждани или бизнес; вътрешно – ръководителите на засегнатите дирекции губят пряката си независимост от главния секретар.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Концентрацията на пет различни дирекции под един главен секретар е сериозна централизация на административната власт в КФН – стъпка, която при по-малки организации обичайно се счита за риск за вътрешния контрол.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от датата на обнародване – 17 февруари 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241226" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;21 &middot; 2026-02-21</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ № 4436-НС от 19 февруари 2026 г.</div>
+    <div class="exec-organ">Централна избирателна комисия</div>
+    <p class="dv-lead">ЦИК утвърждава 62 образеца на изборни книжа, които ще се използват при парламентарните избори на 19 април 2026 г.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Утвърдени са точно 62 образеца на изборни книжа (номерирани 1-НС до 62-НС включително), задължителни за всички секционни и районни комисии в изборния процес.</li><li>Книжата касаят пряко избирателите, партиите, коалициите и независимите кандидати – всяка официална процедура на изборния ден и около него се документира по тези образци.</li><li>Решението е взето на основание Изборния кодекс и е задължително за прилагане при организацията и произвеждането на изборите.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Всички участници в изборния процес (избиратели, партии, кандидати, секционни комисии) – разполагат с унифицирани и правно утвърдени документи навреме преди изборния ден.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от обнародването – 21 февруари 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241538" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details></div>
+</div>
+</div>
+
+<div class="nl-footer">
+  <span class="nl-footer-logo">Парламентарни Doodles</span>
+  <div class="nl-footer-links">
+    <a href="../">ДВ Дайджест</a>
+    <a href="../../sessions/">Заседания</a>
+    <a href="https://bpdoodles.com">Basepoint Doodles</a>
+  </div>
+</div>
+</div>
+</body>
+</html>

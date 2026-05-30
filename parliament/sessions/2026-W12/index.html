@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="utf-8">
+<title>Парламентарни Doodles · Заседания · Седмица 12</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --navy:#1B2E5E; --gold:#B5821A; --ink:#1C1C1C; --ink2:#444;
+  --muted:#888; --muted-lt:#AAA; --border:#E8E8E8; --surf:#F8F8F8; --paper:#FFF;
+  --font-d:'Caveat',cursive; --font-h:'Nunito','Arial Black',sans-serif;
+  --font-b:'Nunito',Arial,sans-serif;
+}
+body{font-family:var(--font-b);background:#F0F2F5;color:var(--ink);line-height:1.6;}
+.wrapper{max-width:740px;margin:32px auto;background:#fff;border:1px solid var(--border);border-radius:4px;overflow:hidden;}
+
+/* top bar */
+.top-bar{display:flex;justify-content:space-between;align-items:center;padding:8px 16px;background:var(--navy);}
+.site-nav{display:flex;gap:20px;align-items:center;}
+.site-nav a{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none;}
+.site-nav a:hover{color:rgba(255,255,255,.9);}
+.site-nav a.active{color:var(--gold);}
+.top-bar-tag{font-family:'Courier New',monospace;font-size:10px;color:rgba(255,255,255,.25);}
+
+/* masthead */
+.masthead{background:var(--navy);padding:24px 28px 20px;display:flex;justify-content:space-between;align-items:flex-end;border-bottom:3px solid var(--gold);}
+.masthead-logo{display:flex;flex-direction:row;align-items:center;}
+.masthead-left{display:flex;flex-direction:column;align-items:flex-end;padding-right:14px;}
+.masthead-basepoint{font-family:var(--font-h);font-size:22px;font-weight:900;color:#fff;letter-spacing:-.3px;line-height:1;}
+.masthead-tagline{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:4px;}
+.masthead-divider{width:2px;height:52px;background:rgba(255,255,255,.2);}
+.masthead-doodles{font-family:var(--font-d);font-size:48px;font-weight:700;color:var(--gold);line-height:1;padding-left:14px;}
+.masthead-meta{text-align:right;}
+.masthead-issue{font-size:13px;font-weight:700;color:rgba(255,255,255,.85);display:block;line-height:1.5;}
+.masthead-date{font-size:11px;color:rgba(255,255,255,.4);display:block;}
+.masthead-pills{margin-top:8px;display:flex;gap:6px;justify-content:flex-end;flex-wrap:wrap;}
+.masthead-pill{font-size:10px;font-weight:700;letter-spacing:.05em;background:rgba(255,255,255,.12);color:rgba(255,255,255,.6);padding:3px 8px;border-radius:3px;}
+
+/* content sections */
+.section{padding:20px 28px;border-bottom:1px solid var(--border);}
+.section:last-of-type{border-bottom:none;}
+
+/* subsection (within DV edition) */
+.subsection{margin-bottom:24px;}
+.subsection:last-child{margin-bottom:0;}
+.subsection-hd{display:flex;align-items:baseline;gap:10px;margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid var(--border);}
+.subsection-tag{font-size:10px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);}
+.subsection-title{font-family:var(--font-h);font-size:16px;font-weight:900;color:var(--navy);}
+.subsection-count{font-size:11px;color:var(--muted);margin-left:auto;}
+
+/* section label row */
+.section-label-row{padding:10px 28px 8px;background:var(--surf);border-bottom:1px solid var(--border);}
+.section-label{font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);}
+
+/* page header */
+.page-header{padding:20px 28px 16px;border-bottom:1px solid var(--border);}
+.page-title{font-family:var(--font-h);font-size:20px;font-weight:900;color:var(--ink);letter-spacing:-.3px;margin-bottom:6px;}
+.page-subtitle{font-size:13px;color:var(--muted);}
+
+/* issue list rows */
+a.issue-row{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 28px;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:background .1s;}
+a.issue-row:hover{background:var(--surf);}
+a.issue-row:last-of-type{border-bottom:none;}
+.issue-row-left{flex:1;}
+.issue-row-meta{font-family:'Courier New',monospace;font-size:10px;color:var(--muted-lt);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;}
+.issue-row-title{font-size:15px;font-weight:900;color:var(--ink);letter-spacing:-.2px;line-height:1.3;}
+.issue-row-desc{font-size:12px;color:var(--muted);margin-top:3px;}
+.issue-row-arrow{font-size:18px;color:var(--gold);font-weight:900;flex-shrink:0;}
+
+/* footer */
+.nl-footer{padding:14px 28px;background:var(--surf);border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
+.nl-footer-logo{font-family:var(--font-d);font-size:18px;font-weight:700;color:#CCC;}
+.nl-footer-links{font-size:11px;display:flex;gap:16px;}
+.nl-footer-links a{color:var(--muted-lt);text-decoration:none;}
+.nl-footer-links a:hover{color:var(--muted);}
+
+/* DV cards */
+.dv-grid{display:flex;flex-direction:column;gap:8px;}
+details.dv-card{background:var(--paper);border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:border-color .15s;}
+details.dv-card:hover{border-color:var(--gold);}
+details.dv-card[open]{border-color:var(--gold);}
+.dv-card-compact{background:var(--paper);border:1px solid var(--border);border-radius:8px;overflow:hidden;opacity:.9;}
+.dv-sum{padding:14px 16px;cursor:pointer;list-style:none;user-select:none;}
+.dv-sum::-webkit-details-marker{display:none;}
+.dv-sum-static{padding:14px 16px;}
+.dv-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+.dv-meta{font-size:11px;color:var(--muted);font-weight:700;}
+.dv-title{font-family:var(--font-h);font-size:13px;font-weight:900;color:var(--ink);line-height:1.4;letter-spacing:-.1px;margin-bottom:4px;}
+.exec-organ{font-size:11px;color:var(--muted);margin-bottom:6px;font-style:italic;}
+.dv-lead{font-size:13px;color:var(--ink2);line-height:1.55;margin-bottom:8px;}
+.compact-bullets ul{list-style:none;padding:0;margin-top:6px;}
+.compact-bullets li{padding:3px 0 3px 14px;position:relative;color:var(--ink2);font-size:12px;line-height:1.5;}
+.compact-bullets li::before{content:"·";position:absolute;left:2px;color:var(--gold);font-weight:700;font-size:15px;line-height:1.1;}
+.expand-hint{font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.06em;margin-top:4px;}
+details.dv-card[open] .expand-hint{display:none;}
+.dv-body{padding:0 16px 16px;border-top:1px solid var(--border);}
+
+/* badges */
+.badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;}
+.dv-badges{display:flex;gap:6px;align-items:center;flex-wrap:wrap;}
+.b-zakon   {background:#dbeafe;color:#1a56db;}
+.b-reshenie{background:#cffafe;color:#0a6e8a;}
+.b-ukaz    {background:#ede9fe;color:#7c3aed;}
+.b-decl    {background:#fef3c7;color:#92400e;}
+.b-post    {background:#d1fae5;color:#065f46;}
+.b-naredba {background:#fce7f3;color:#9d174d;}
+.b-pravilnik{background:#f3e8ff;color:#6b21a8;}
+.b-inst    {background:#fef9c3;color:#713f12;}
+.b-razp    {background:#e0f2fe;color:#0369a1;}
+.b-spor    {background:#fff7ed;color:#c2410c;}
+.b-other   {background:#f3f4f6;color:#6b7280;}
+.b-cat     {background:#f3f4f6;color:#555;}
+
+/* factsheet sections */
+.fs-sec{margin:12px 0;font-size:13px;}
+.fs-sec h5,.parties-block h5,.notable-callout h5,.sess-col h5{font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:8px;padding-bottom:5px;border-bottom:1px solid var(--border);}
+.fs-sec ul,.parties-block ul{list-style:none;padding:0;}
+.fs-sec li,.parties-block li{padding:4px 0 4px 16px;position:relative;color:var(--ink2);border-bottom:1px solid #f3f4f6;font-size:13px;line-height:1.5;}
+.fs-sec li:last-child,.parties-block li:last-child{border-bottom:none;}
+.fs-sec li::before{content:"·";position:absolute;left:3px;color:var(--gold);font-weight:700;font-size:16px;line-height:1.1;}
+.fs-sec p,.parties-block p{color:var(--ink2);font-size:13px;margin-bottom:4px;}
+.fs-winners ul{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.fs-winners li{padding:8px 10px 8px 24px;border-radius:6px;border-bottom:none !important;}
+.fs-winners li:first-child{background:#f0fdf4;}
+.fs-winners li:first-child::before{content:"✓";color:#16a34a;font-size:13px;top:8px;}
+.fs-winners li:nth-child(2){background:#fef2f2;}
+.fs-winners li:nth-child(2)::before{content:"✗";color:#dc2626;font-size:13px;top:8px;}
+.fs-notable{background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:12px 14px;}
+.fs-notable h5{border-bottom-color:#fde68a;color:#92400e;}
+.fs-notable li,.fs-notable p{color:#78350f;}
+.fs-notable li::before{color:#d97706;}
+.fs-eu{background:#f0f9ff;border-radius:8px;padding:12px 14px;}
+.fs-eu h5{color:#0369a1;border-bottom-color:#bae6fd;}
+.fs-eu p{color:#0c4a6e;font-size:13px;}
+.ext-link{display:inline-block;margin-top:12px;font-size:12px;font-weight:700;color:var(--navy);text-decoration:none;}
+.ext-link:hover{text-decoration:underline;}
+.no-summ{color:var(--muted);font-size:13px;font-style:italic;padding:12px 0;}
+
+/* session blocks */
+details.sess-block{background:var(--paper);border:1px solid var(--border);border-left:4px solid var(--navy);border-radius:0 8px 8px 0;margin-bottom:10px;overflow:hidden;}
+details.sess-block:hover{box-shadow:0 2px 8px rgba(0,0,0,.06);}
+details.sess-block[open]{border-left-color:var(--gold);}
+.sess-sum{padding:14px 18px;cursor:pointer;list-style:none;user-select:none;}
+.sess-sum::-webkit-details-marker{display:none;}
+.sess-hd{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap;}
+.sess-date-chip{background:var(--navy);color:#fff;font-size:10px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:4px;white-space:nowrap;}
+details.sess-block[open] .sess-date-chip{background:var(--gold);}
+.sess-label{font-family:var(--font-h);font-size:14px;font-weight:900;color:var(--ink);}
+.sess-lead{font-size:13px;color:var(--ink2);line-height:1.55;margin-bottom:6px;}
+.sess-body{padding:0 18px 16px;border-top:1px solid var(--border);}
+.sess-lead-full{font-size:13px;color:var(--ink2);line-height:1.6;margin:12px 0;background:#f8fafc;border-left:3px solid var(--gold);padding:8px 12px;border-radius:0 6px 6px 0;}
+.sess-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0;}
+.sess-col{font-size:13px;}
+.sess-col ul{list-style:none;padding:0;}
+.sess-col li{padding:4px 0 4px 14px;position:relative;color:var(--ink2);border-bottom:1px solid #f3f4f6;font-size:13px;line-height:1.5;}
+.sess-col li:last-child{border-bottom:none;}
+.sess-col li::before{content:"·";position:absolute;left:2px;color:var(--navy);font-weight:700;font-size:15px;line-height:1.1;}
+.notable-callout{display:flex;gap:10px;align-items:flex-start;background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:10px 12px;margin:12px 0;}
+.notable-icon{font-size:16px;color:#d97706;flex-shrink:0;line-height:1.4;}
+.notable-callout h5{border-bottom-color:#fde68a;color:#92400e;}
+.notable-callout p,.notable-callout li{color:#78350f;font-size:13px;}
+.notable-callout ul{list-style:none;padding:0;}
+.notable-callout li{padding:3px 0 3px 14px;position:relative;}
+.notable-callout li::before{content:"·";position:absolute;left:2px;color:#d97706;font-weight:700;font-size:15px;line-height:1.1;}
+.parties-block{margin:12px 0;font-size:13px;}
+.sess-ft{margin-top:12px;padding-top:10px;border-top:1px solid var(--border);}
+
+/* landing track cards */
+.track-card{display:block;padding:20px 28px;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:background .1s;}
+.track-card:hover{background:var(--surf);}
+.track-card:last-of-type{border-bottom:none;}
+.track-label{font-size:10px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+.track-title{font-family:var(--font-h);font-size:18px;font-weight:900;color:var(--navy);letter-spacing:-.3px;line-height:1.3;margin-bottom:6px;}
+.track-desc{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px;}
+.track-latest{font-size:12px;color:var(--ink2);}
+.track-arrow{font-size:22px;color:var(--gold);font-weight:900;float:right;margin-top:-28px;}
+
+/* archive / intro */
+.arch-table{width:100%;border-collapse:collapse;}
+.arch-table th{padding:8px 0;text-align:left;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);border-bottom:1px solid var(--border);}
+.arch-table td{padding:12px 8px 12px 0;border-bottom:1px solid var(--border);font-size:13px;color:var(--ink2);}
+.arch-table tr:last-child td{border-bottom:none;}
+.arch-table a{color:var(--navy);font-weight:700;text-decoration:none;}
+.arch-table a:hover{text-decoration:underline;}
+.intro-block{padding:20px 28px;border-bottom:1px solid var(--border);font-size:14px;line-height:1.7;color:var(--ink);}
+.all-issues-wrap{padding:16px 28px;border-bottom:1px solid var(--border);}
+.all-issues-btn{width:100%;padding:13px;background:none;border:1.5px solid var(--navy);border-radius:3px;font-family:var(--font-h);font-size:11px;font-weight:900;color:var(--navy);cursor:pointer;text-align:center;letter-spacing:.14em;text-transform:uppercase;transition:background .15s,color .15s;}
+.all-issues-btn:hover{background:var(--navy);color:#fff;}
+.waitlist-section,.contact-section{padding:20px 28px;border-bottom:1px solid var(--border);}
+.waitlist-heading{font-family:var(--font-h);font-size:17px;font-weight:900;color:var(--ink);letter-spacing:-.2px;margin-bottom:8px;}
+.waitlist-body{font-size:14px;color:var(--ink2);line-height:1.6;margin-bottom:16px;}
+.waitlist-form{display:flex;gap:8px;margin-bottom:10px;}
+.waitlist-input{flex:1;padding:10px 12px;border:1px solid var(--border);border-radius:3px;font-family:var(--font-b);font-size:14px;color:var(--ink);min-width:0;}
+.waitlist-input:focus{outline:none;border-color:var(--navy);}
+.waitlist-btn{padding:10px 18px;background:var(--navy);color:#fff;border:none;border-radius:3px;font-family:var(--font-h);font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;white-space:nowrap;}
+.waitlist-btn:hover{background:#122348;}
+.waitlist-fine{font-size:12px;color:var(--muted-lt);line-height:1.5;}
+.waitlist-ok{display:none;font-size:14px;font-weight:700;color:#16a34a;margin-top:10px;}
+.contact-section p{font-size:14px;color:var(--ink2);line-height:1.6;}
+.contact-section a{color:var(--navy);font-weight:700;text-decoration:none;}
+.contact-section a:hover{text-decoration:underline;}
+
+@media(max-width:760px){
+  .wrapper{margin:0;border-radius:0;border-left:none;border-right:none;}
+  .masthead,.section,.nl-footer,.page-header,a.issue-row,.track-card,
+  .section-label-row,.intro-block,.waitlist-section,.contact-section,.all-issues-wrap{padding-left:16px;padding-right:16px;}
+  .masthead-pills{display:none;}
+  .sess-cols{grid-template-columns:1fr;}
+  .fs-winners ul{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+<div class="top-bar">
+  <nav class="site-nav">
+    <a href="../../dv/">ДВ Дайджест</a>
+    <a href="../" class="active">Заседания</a>
+    <a href="https://bpdoodles.com">Basepoint Doodles</a>
+  </nav>
+  <span class="top-bar-tag">Парламентарни Doodles</span>
+</div>
+
+<div class="masthead">
+  <div class="masthead-logo">
+    <div class="masthead-left">
+      <span class="masthead-basepoint">Парламентарни</span>
+      <span class="masthead-tagline">Парламентарен дайджест</span>
+    </div>
+    <div class="masthead-divider"></div>
+    <span class="masthead-doodles">Doodles</span>
+  </div>
+  <div class="masthead-meta">
+    <span class="masthead-issue">В залата · Седмица 12 · 2026</span>
+    <span class="masthead-date">16–22 март 2026</span>
+    <div class="masthead-pills"><span class="masthead-pill">2 заседания</span></div>
+  </div>
+</div>
+<div class="section">
+  <span class="section-tag" style="display:block;margin-bottom:14px">Пленарни заседания</span>
+  
+<details class="sess-block">
+  <summary class="sess-sum">
+    <div class="sess-hd">
+      <span class="sess-date-chip">сряда, 18 март 2026</span>
+      <span class="sess-label">51 НС, 158-о заседание</span>
+    </div>
+    <p class="sess-lead">Парламентът прие закон, който гарантира коледни и великденски добавки за около 507 000 уязвими граждани, и одобри заем от 3,26 млрд. евро за отбрана по европейс…</p>
+    <div class="expand-hint">Виж подробности ▾</div>
+  </summary>
+  <div class="sess-body">
+    <p class="sess-lead-full">Парламентът прие закон, който гарантира коледни и великденски добавки за около 507 000 уязвими граждани, и одобри заем от 3,26 млрд. евро за отбрана по европейски инструмент.</p>
+    
+    <div class="sess-cols"><div class="sess-col"><h5>Обсъждани теми</h5><ul><li><strong>Коледни и великденски добавки за уязвими групи:</strong> Прието на две четения ново законодателство, което за първи път залага в закон (вместо с ежегодно решение на МС) целеви помощи за Великден и Коледа за пенсионери с доходи под прага на бедност, многодетни семейства, хора с увреждания, самотни родители и деца от приемни семейства. Около 507 000 лица. Размерът се определя ежегодно с бюджета, но не може да пада под нивото на предходната година.</li><li><strong>Временен бюджетен закон – разширение:</strong> Прието второ гласуване на промени в закона за приходите и разходите до приемане на редовен бюджет за 2026 г. – включва нови правомощия за общините, финансиране на програми по заетостта и регулиране на капиталови разходи.</li><li><strong>Заем от ЕС за отбрана (SAFE):</strong> В рамките на временния бюджетен закон се разрешава на Министерски съвет да преговаря и сключи заем от 3,26 млрд. евро по европейския инструмент SAFE за отбранителна промишленост, при условие за последваща ратификация от НС.</li><li><strong>Представяне на националната позиция пред Европейски съвет:</strong> Гласувано включване в дневния ред на изслушване на служебния премиер Андрей Гюров и зам.-премиера Мария Недина за позицията на България преди заседанието на Европейския съвет на 19–20 март 2026 г.</li><li><strong>„Марица-Изток&quot; и въглеродни квоти:</strong> ВЪЗРАЖДАНЕ поиска спешно включване в дневния ред на решение за защита на въглищния комплекс и преговори за отмяна на въглеродни квоти – предложението беше отхвърлено при прегласуване. Партията изнесе декларация, обвинявайки управляващите, че пропускат да защитят националния енергиен интерес точно преди заседание на Европейски съвет по темата.</li><li><strong>Корупционна схема в АПИ (декларация на ПП-ДБ):</strong> ПП-ДБ изнесе подробна декларация за предполагаема схема при обществените поръчки за поддръжка на магистрали – незаконосъобразно включване на „пътна помощ&quot; в договорите, фактическо монополизиране от фирма „Юнит Асист&quot; (собственост на лице с криминално минало) без договор за подизпълнение, прогнозни загуби от ~98 млн. лв. Поискано е министърът на регионалното развитие да отчете изплатените суми.</li><li><strong>Декларация на ВЪЗРАЖДАНЕ за „Булгаргаз&quot; и енергийна независимост:</strong> Партията атакува коалиционните партньори за системни грешки в енергийната политика – газификация на въглищни централи, разпродаване на активи, липса на позиция пред ЕС за квотите.</li></ul></div><div class="sess-col"><h5>Гласувания</h5><ul><li><strong>Закон за социално подпомагане (коледни/великденски добавки) – първо четене:</strong> ЗА 154, ПРОТИВ 0, ВЪЗ 11 — широка подкрепа от всички групи</li><li><strong>Закон за социално подпомагане – второ четене (финален текст):</strong> Приет анблок с минимална опозиция; редакционна поправка на ИТН за включване на „всички деца&quot; подкрепена с 126 гласа</li><li><strong>Временен бюджетен закон – допуск на служители на МФ в залата:</strong> ЗА 118, ПРОТИВ 28, ВЪЗ 3 — против гласуваха предимно опозиционни групи</li><li><strong>Предложение на ВЪЗРАЖДАНЕ за „Марица-Изток&quot; (прегласуване):</strong> ЗА 80, ПРОТИВ 26, ВЪЗ 85 — не прието; управляващите се въздържаха вместо да гласуват против</li><li><strong>Изслушване на служебния премиер за Европейски съвет:</strong> ЗА 140, ПРОТИВ 3, ВЪЗ 29</li></ul></div></div><div class="notable-callout"><span class="notable-icon">★</span><div><h5>Забележително</h5><p>Управляващото мнозинство не гласува директно „против&quot; предложението на ВЪЗРАЖДАНЕ за „Марица-Изток&quot;, а масово се въздържа – точно в деня преди заседание на Европейски съвет, на което темата за въглеродните квоти е в дневния ред.</p></div></div><div class="parties-block"><h5>Позиции по партии</h5><ul><li><strong>ГЕРБ-СДС:</strong> Подкрепи социалния закон и временния бюджет; въздържа се по „Марица-Изток&quot;</li><li><strong>ПП-ДБ:</strong> Подкрепи социалния закон и бюджета; въздържа се по „Марица-Изток&quot;; изнесе остра декларация срещу АПИ</li><li><strong>ВЪЗРАЖДАНЕ:</strong> Подкрепи социалния закон; настоя за защита на въглищната енергетика – предложението отхвърлено; гласува против допуска на МФ служители</li><li><strong>ДПС – Ново начало / АПС:</strong> Подкрепиха социалния закон и бюджета; въздържаха се по „Марица-Изток&quot;</li><li><strong>БСП – Обединена левица:</strong> Подкрепи социалния закон; Гуцанов заяви авторство на идеята</li><li><strong>ИТН:</strong> Подкрепи социалния закон с допълнително предложение за включване на всички деца; гласуваха против допуска на МФ служители</li><li><strong>ПП МЕЧ:</strong> Въздържа се по социалния закон в комисии</li></ul></div>
+    <div class="sess-ft">
+      <a href="https://www.parliament.bg/bg/plenaryst/ns/55/ID/11118" target="_blank" class="ext-link">Отвори в parliament.bg ↗</a>
+    </div>
+  </div>
+</details>
+
+<details class="sess-block">
+  <summary class="sess-sum">
+    <div class="sess-hd">
+      <span class="sess-date-chip">четвъртък, 19 март 2026</span>
+      <span class="sess-label">51 НС, 159-о заседание</span>
+    </div>
+    <p class="sess-lead">На последното редовно заседание на 51-то Народното събрание преди предсрочните избори на 19 април депутатите гласуваха на второ четене изцяло нов Закон за общес…</p>
+    <div class="expand-hint">Виж подробности ▾</div>
+  </summary>
+  <div class="sess-body">
+    <p class="sess-lead-full">На последното редовно заседание на 51-то Народното събрание преди предсрочните избори на 19 април депутатите гласуваха на второ четене изцяло нов Закон за обществения транспорт, а партиите се надпреварваха с прощални декларации.</p>
+    
+    <div class="sess-cols"><div class="sess-col"><h5>Обсъждани теми</h5><ul><li><strong>Нов Закон за обществения транспорт (второ гласуване):</strong> Мащабен закон, който въвежда Национална транспортна схема, интелигентна система за управление на превозите в реално време, единен електронен превозен документ за всички видове транспорт и задължение за борба с „транспортната бедност&quot; – осигуряване на достъп до транспорт за отдалечени и бедни общности.</li><li><strong>Синдикати от енергетиката поискаха спешна среща:</strong> Представители на КНСБ и „Подкрепа&quot; от мините и ТЕЦ-овете дойдоха в парламента с искане за среща с Енергийната комисия заради опасения, че планове за разпарчетосване на Българския енергиен холдинг ще срутят структурата му и ще застрашат работните места.</li><li><strong>Прощални декларации на партиите:</strong> Всички парламентарни групи направиха декларации за изминалия мандат – ПП-ДБ акцентира върху „завладяната държава&quot; и корупцията; ГЕРБ-СДС се похвали с влизането в еврозоната; ДПС атакува „мрежите на Сорос&quot; като причина за политическата криза; ИТН нападна служебния кабинет „Петрохан&quot;; ВЪЗРАЖДАНЕ обяви геополитическия курс на страната за грешен; БСП призова за социална държава отвъд популизма.</li><li><strong>Второ гласуване на Закон за прозрачност и почтеност в управлението</strong> и <strong>на изменения в Наказателния кодекс</strong> бяха включени в дневния ред за същия ден (стенограмата не стига до тяхното разглеждане).</li><li><strong>Уведомление за чужди въоръжени сили:</strong> Министърът на отбраната е разрешил пребиваване на съюзнически военни на територията на България за съвместна подготовка – Народното събрание е уведомено по законов ред.</li><li><strong>Поздравления за Рамазан Байрям:</strong> АПС отправи официален поздрав към мюсюлманите в страната по повод предстоящия празник.</li></ul></div><div class="sess-col"><h5>Гласувания</h5><ul><li>Включване на Закона за обществения транспорт в дневния ред: ЗА 109, ПРОТИВ 39, ВЪЗ 1</li><li>Включване на Закона за прозрачност и почтеност в управлението: ЗА 113, ПРОТИВ 53, ВЪЗ 17</li><li>Включване на измененията в Наказателния кодекс: ЗА 150, ПРОТИВ 22, ВЪЗ 13</li><li>Членовете на Закона за обществения транспорт са гласувани поотделно в хода на второто четене — данни за партийна разбивка по отделните текстове не са налични в предоставените данни.</li></ul></div></div><div class="notable-callout"><span class="notable-icon">★</span><div><h5>Забележително</h5><p>ДПС поиска извънредна 30-минутна пауза, за да се проведе спешна среща с енергийни синдикати, притеснени че служебното правителство подготвя разпарчетосване на Българския енергиен холдинг – необичаен ход в последния пленарен ден на парламент, само месец преди избори.</p></div></div><div class="parties-block"><h5>Позиции по партии</h5><ul><li><strong>ГЕРБ-СДС:</strong> Подкрепя приетите закони; декларира мандата за успешен заради еврозоната.</li><li><strong>ПП-ДБ:</strong> Подкрепя законодателната програма; настоява, че без чисти институции успехът с еврозоната е недостатъчен.</li><li><strong>ДПС – Ново начало:</strong> Подкрепя законите; поиска извънредна пауза заради енергийния казус; декларацията насочена срещу „мрежите на влияние&quot;.</li><li><strong>АПС:</strong> Подкрепя управленската програма; декларация с фокус върху религиозна толерантност.</li><li><strong>БСП – Обединена левица:</strong> Умерено критична позиция; иска социална държава и край на популизма.</li><li><strong>ИТН:</strong> Опозиционна; атакува служебния кабинет и предупреждава за нечестни избори.</li><li><strong>ВЪЗРАЖДАНЕ:</strong> Опозиционна; отхвърля еврозоната и евроатлантическия курс; гласува против повечето инициативи на мнозинството.</li><li><strong>ВЕЛИЧИЕ:</strong> Опозиционна; критикува всички останали партии за „бетониране на корупцията&quot;.</li></ul></div>
+    <div class="sess-ft">
+      <a href="https://www.parliament.bg/bg/plenaryst/ns/55/ID/11119" target="_blank" class="ext-link">Отвори в parliament.bg ↗</a>
+    </div>
+  </div>
+</details>
+</div>
+
+<div class="nl-footer">
+  <span class="nl-footer-logo">Парламентарни Doodles</span>
+  <div class="nl-footer-links">
+    <a href="../../dv/">ДВ Дайджест</a>
+    <a href="../">Заседания</a>
+    <a href="https://bpdoodles.com">Basepoint Doodles</a>
+  </div>
+</div>
+</div>
+</body>
+</html>

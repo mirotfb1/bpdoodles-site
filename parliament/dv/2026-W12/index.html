@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="utf-8">
+<title>Парламентарни Doodles · ДВ Дайджест · Седмица 12</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --navy:#1B2E5E; --gold:#B5821A; --ink:#1C1C1C; --ink2:#444;
+  --muted:#888; --muted-lt:#AAA; --border:#E8E8E8; --surf:#F8F8F8; --paper:#FFF;
+  --font-d:'Caveat',cursive; --font-h:'Nunito','Arial Black',sans-serif;
+  --font-b:'Nunito',Arial,sans-serif;
+}
+body{font-family:var(--font-b);background:#F0F2F5;color:var(--ink);line-height:1.6;}
+.wrapper{max-width:740px;margin:32px auto;background:#fff;border:1px solid var(--border);border-radius:4px;overflow:hidden;}
+
+/* top bar */
+.top-bar{display:flex;justify-content:space-between;align-items:center;padding:8px 16px;background:var(--navy);}
+.site-nav{display:flex;gap:20px;align-items:center;}
+.site-nav a{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none;}
+.site-nav a:hover{color:rgba(255,255,255,.9);}
+.site-nav a.active{color:var(--gold);}
+.top-bar-tag{font-family:'Courier New',monospace;font-size:10px;color:rgba(255,255,255,.25);}
+
+/* masthead */
+.masthead{background:var(--navy);padding:24px 28px 20px;display:flex;justify-content:space-between;align-items:flex-end;border-bottom:3px solid var(--gold);}
+.masthead-logo{display:flex;flex-direction:row;align-items:center;}
+.masthead-left{display:flex;flex-direction:column;align-items:flex-end;padding-right:14px;}
+.masthead-basepoint{font-family:var(--font-h);font-size:22px;font-weight:900;color:#fff;letter-spacing:-.3px;line-height:1;}
+.masthead-tagline{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:4px;}
+.masthead-divider{width:2px;height:52px;background:rgba(255,255,255,.2);}
+.masthead-doodles{font-family:var(--font-d);font-size:48px;font-weight:700;color:var(--gold);line-height:1;padding-left:14px;}
+.masthead-meta{text-align:right;}
+.masthead-issue{font-size:13px;font-weight:700;color:rgba(255,255,255,.85);display:block;line-height:1.5;}
+.masthead-date{font-size:11px;color:rgba(255,255,255,.4);display:block;}
+.masthead-pills{margin-top:8px;display:flex;gap:6px;justify-content:flex-end;flex-wrap:wrap;}
+.masthead-pill{font-size:10px;font-weight:700;letter-spacing:.05em;background:rgba(255,255,255,.12);color:rgba(255,255,255,.6);padding:3px 8px;border-radius:3px;}
+
+/* content sections */
+.section{padding:20px 28px;border-bottom:1px solid var(--border);}
+.section:last-of-type{border-bottom:none;}
+
+/* subsection (within DV edition) */
+.subsection{margin-bottom:24px;}
+.subsection:last-child{margin-bottom:0;}
+.subsection-hd{display:flex;align-items:baseline;gap:10px;margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid var(--border);}
+.subsection-tag{font-size:10px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);}
+.subsection-title{font-family:var(--font-h);font-size:16px;font-weight:900;color:var(--navy);}
+.subsection-count{font-size:11px;color:var(--muted);margin-left:auto;}
+
+/* section label row */
+.section-label-row{padding:10px 28px 8px;background:var(--surf);border-bottom:1px solid var(--border);}
+.section-label{font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);}
+
+/* page header */
+.page-header{padding:20px 28px 16px;border-bottom:1px solid var(--border);}
+.page-title{font-family:var(--font-h);font-size:20px;font-weight:900;color:var(--ink);letter-spacing:-.3px;margin-bottom:6px;}
+.page-subtitle{font-size:13px;color:var(--muted);}
+
+/* issue list rows */
+a.issue-row{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 28px;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:background .1s;}
+a.issue-row:hover{background:var(--surf);}
+a.issue-row:last-of-type{border-bottom:none;}
+.issue-row-left{flex:1;}
+.issue-row-meta{font-family:'Courier New',monospace;font-size:10px;color:var(--muted-lt);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;}
+.issue-row-title{font-size:15px;font-weight:900;color:var(--ink);letter-spacing:-.2px;line-height:1.3;}
+.issue-row-desc{font-size:12px;color:var(--muted);margin-top:3px;}
+.issue-row-arrow{font-size:18px;color:var(--gold);font-weight:900;flex-shrink:0;}
+
+/* footer */
+.nl-footer{padding:14px 28px;background:var(--surf);border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
+.nl-footer-logo{font-family:var(--font-d);font-size:18px;font-weight:700;color:#CCC;}
+.nl-footer-links{font-size:11px;display:flex;gap:16px;}
+.nl-footer-links a{color:var(--muted-lt);text-decoration:none;}
+.nl-footer-links a:hover{color:var(--muted);}
+
+/* DV cards */
+.dv-grid{display:flex;flex-direction:column;gap:8px;}
+details.dv-card{background:var(--paper);border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:border-color .15s;}
+details.dv-card:hover{border-color:var(--gold);}
+details.dv-card[open]{border-color:var(--gold);}
+.dv-card-compact{background:var(--paper);border:1px solid var(--border);border-radius:8px;overflow:hidden;opacity:.9;}
+.dv-sum{padding:14px 16px;cursor:pointer;list-style:none;user-select:none;}
+.dv-sum::-webkit-details-marker{display:none;}
+.dv-sum-static{padding:14px 16px;}
+.dv-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+.dv-meta{font-size:11px;color:var(--muted);font-weight:700;}
+.dv-title{font-family:var(--font-h);font-size:13px;font-weight:900;color:var(--ink);line-height:1.4;letter-spacing:-.1px;margin-bottom:4px;}
+.exec-organ{font-size:11px;color:var(--muted);margin-bottom:6px;font-style:italic;}
+.dv-lead{font-size:13px;color:var(--ink2);line-height:1.55;margin-bottom:8px;}
+.compact-bullets ul{list-style:none;padding:0;margin-top:6px;}
+.compact-bullets li{padding:3px 0 3px 14px;position:relative;color:var(--ink2);font-size:12px;line-height:1.5;}
+.compact-bullets li::before{content:"·";position:absolute;left:2px;color:var(--gold);font-weight:700;font-size:15px;line-height:1.1;}
+.expand-hint{font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.06em;margin-top:4px;}
+details.dv-card[open] .expand-hint{display:none;}
+.dv-body{padding:0 16px 16px;border-top:1px solid var(--border);}
+
+/* badges */
+.badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;}
+.dv-badges{display:flex;gap:6px;align-items:center;flex-wrap:wrap;}
+.b-zakon   {background:#dbeafe;color:#1a56db;}
+.b-reshenie{background:#cffafe;color:#0a6e8a;}
+.b-ukaz    {background:#ede9fe;color:#7c3aed;}
+.b-decl    {background:#fef3c7;color:#92400e;}
+.b-post    {background:#d1fae5;color:#065f46;}
+.b-naredba {background:#fce7f3;color:#9d174d;}
+.b-pravilnik{background:#f3e8ff;color:#6b21a8;}
+.b-inst    {background:#fef9c3;color:#713f12;}
+.b-razp    {background:#e0f2fe;color:#0369a1;}
+.b-spor    {background:#fff7ed;color:#c2410c;}
+.b-other   {background:#f3f4f6;color:#6b7280;}
+.b-cat     {background:#f3f4f6;color:#555;}
+
+/* factsheet sections */
+.fs-sec{margin:12px 0;font-size:13px;}
+.fs-sec h5,.parties-block h5,.notable-callout h5,.sess-col h5{font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:8px;padding-bottom:5px;border-bottom:1px solid var(--border);}
+.fs-sec ul,.parties-block ul{list-style:none;padding:0;}
+.fs-sec li,.parties-block li{padding:4px 0 4px 16px;position:relative;color:var(--ink2);border-bottom:1px solid #f3f4f6;font-size:13px;line-height:1.5;}
+.fs-sec li:last-child,.parties-block li:last-child{border-bottom:none;}
+.fs-sec li::before{content:"·";position:absolute;left:3px;color:var(--gold);font-weight:700;font-size:16px;line-height:1.1;}
+.fs-sec p,.parties-block p{color:var(--ink2);font-size:13px;margin-bottom:4px;}
+.fs-winners ul{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.fs-winners li{padding:8px 10px 8px 24px;border-radius:6px;border-bottom:none !important;}
+.fs-winners li:first-child{background:#f0fdf4;}
+.fs-winners li:first-child::before{content:"✓";color:#16a34a;font-size:13px;top:8px;}
+.fs-winners li:nth-child(2){background:#fef2f2;}
+.fs-winners li:nth-child(2)::before{content:"✗";color:#dc2626;font-size:13px;top:8px;}
+.fs-notable{background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:12px 14px;}
+.fs-notable h5{border-bottom-color:#fde68a;color:#92400e;}
+.fs-notable li,.fs-notable p{color:#78350f;}
+.fs-notable li::before{color:#d97706;}
+.fs-eu{background:#f0f9ff;border-radius:8px;padding:12px 14px;}
+.fs-eu h5{color:#0369a1;border-bottom-color:#bae6fd;}
+.fs-eu p{color:#0c4a6e;font-size:13px;}
+.ext-link{display:inline-block;margin-top:12px;font-size:12px;font-weight:700;color:var(--navy);text-decoration:none;}
+.ext-link:hover{text-decoration:underline;}
+.no-summ{color:var(--muted);font-size:13px;font-style:italic;padding:12px 0;}
+
+/* session blocks */
+details.sess-block{background:var(--paper);border:1px solid var(--border);border-left:4px solid var(--navy);border-radius:0 8px 8px 0;margin-bottom:10px;overflow:hidden;}
+details.sess-block:hover{box-shadow:0 2px 8px rgba(0,0,0,.06);}
+details.sess-block[open]{border-left-color:var(--gold);}
+.sess-sum{padding:14px 18px;cursor:pointer;list-style:none;user-select:none;}
+.sess-sum::-webkit-details-marker{display:none;}
+.sess-hd{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap;}
+.sess-date-chip{background:var(--navy);color:#fff;font-size:10px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:4px;white-space:nowrap;}
+details.sess-block[open] .sess-date-chip{background:var(--gold);}
+.sess-label{font-family:var(--font-h);font-size:14px;font-weight:900;color:var(--ink);}
+.sess-lead{font-size:13px;color:var(--ink2);line-height:1.55;margin-bottom:6px;}
+.sess-body{padding:0 18px 16px;border-top:1px solid var(--border);}
+.sess-lead-full{font-size:13px;color:var(--ink2);line-height:1.6;margin:12px 0;background:#f8fafc;border-left:3px solid var(--gold);padding:8px 12px;border-radius:0 6px 6px 0;}
+.sess-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0;}
+.sess-col{font-size:13px;}
+.sess-col ul{list-style:none;padding:0;}
+.sess-col li{padding:4px 0 4px 14px;position:relative;color:var(--ink2);border-bottom:1px solid #f3f4f6;font-size:13px;line-height:1.5;}
+.sess-col li:last-child{border-bottom:none;}
+.sess-col li::before{content:"·";position:absolute;left:2px;color:var(--navy);font-weight:700;font-size:15px;line-height:1.1;}
+.notable-callout{display:flex;gap:10px;align-items:flex-start;background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:10px 12px;margin:12px 0;}
+.notable-icon{font-size:16px;color:#d97706;flex-shrink:0;line-height:1.4;}
+.notable-callout h5{border-bottom-color:#fde68a;color:#92400e;}
+.notable-callout p,.notable-callout li{color:#78350f;font-size:13px;}
+.notable-callout ul{list-style:none;padding:0;}
+.notable-callout li{padding:3px 0 3px 14px;position:relative;}
+.notable-callout li::before{content:"·";position:absolute;left:2px;color:#d97706;font-weight:700;font-size:15px;line-height:1.1;}
+.parties-block{margin:12px 0;font-size:13px;}
+.sess-ft{margin-top:12px;padding-top:10px;border-top:1px solid var(--border);}
+
+/* landing track cards */
+.track-card{display:block;padding:20px 28px;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:background .1s;}
+.track-card:hover{background:var(--surf);}
+.track-card:last-of-type{border-bottom:none;}
+.track-label{font-size:10px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+.track-title{font-family:var(--font-h);font-size:18px;font-weight:900;color:var(--navy);letter-spacing:-.3px;line-height:1.3;margin-bottom:6px;}
+.track-desc{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px;}
+.track-latest{font-size:12px;color:var(--ink2);}
+.track-arrow{font-size:22px;color:var(--gold);font-weight:900;float:right;margin-top:-28px;}
+
+/* archive / intro */
+.arch-table{width:100%;border-collapse:collapse;}
+.arch-table th{padding:8px 0;text-align:left;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);border-bottom:1px solid var(--border);}
+.arch-table td{padding:12px 8px 12px 0;border-bottom:1px solid var(--border);font-size:13px;color:var(--ink2);}
+.arch-table tr:last-child td{border-bottom:none;}
+.arch-table a{color:var(--navy);font-weight:700;text-decoration:none;}
+.arch-table a:hover{text-decoration:underline;}
+.intro-block{padding:20px 28px;border-bottom:1px solid var(--border);font-size:14px;line-height:1.7;color:var(--ink);}
+.all-issues-wrap{padding:16px 28px;border-bottom:1px solid var(--border);}
+.all-issues-btn{width:100%;padding:13px;background:none;border:1.5px solid var(--navy);border-radius:3px;font-family:var(--font-h);font-size:11px;font-weight:900;color:var(--navy);cursor:pointer;text-align:center;letter-spacing:.14em;text-transform:uppercase;transition:background .15s,color .15s;}
+.all-issues-btn:hover{background:var(--navy);color:#fff;}
+.waitlist-section,.contact-section{padding:20px 28px;border-bottom:1px solid var(--border);}
+.waitlist-heading{font-family:var(--font-h);font-size:17px;font-weight:900;color:var(--ink);letter-spacing:-.2px;margin-bottom:8px;}
+.waitlist-body{font-size:14px;color:var(--ink2);line-height:1.6;margin-bottom:16px;}
+.waitlist-form{display:flex;gap:8px;margin-bottom:10px;}
+.waitlist-input{flex:1;padding:10px 12px;border:1px solid var(--border);border-radius:3px;font-family:var(--font-b);font-size:14px;color:var(--ink);min-width:0;}
+.waitlist-input:focus{outline:none;border-color:var(--navy);}
+.waitlist-btn{padding:10px 18px;background:var(--navy);color:#fff;border:none;border-radius:3px;font-family:var(--font-h);font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;white-space:nowrap;}
+.waitlist-btn:hover{background:#122348;}
+.waitlist-fine{font-size:12px;color:var(--muted-lt);line-height:1.5;}
+.waitlist-ok{display:none;font-size:14px;font-weight:700;color:#16a34a;margin-top:10px;}
+.contact-section p{font-size:14px;color:var(--ink2);line-height:1.6;}
+.contact-section a{color:var(--navy);font-weight:700;text-decoration:none;}
+.contact-section a:hover{text-decoration:underline;}
+
+@media(max-width:760px){
+  .wrapper{margin:0;border-radius:0;border-left:none;border-right:none;}
+  .masthead,.section,.nl-footer,.page-header,a.issue-row,.track-card,
+  .section-label-row,.intro-block,.waitlist-section,.contact-section,.all-issues-wrap{padding-left:16px;padding-right:16px;}
+  .masthead-pills{display:none;}
+  .sess-cols{grid-template-columns:1fr;}
+  .fs-winners ul{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+<div class="top-bar">
+  <nav class="site-nav">
+    <a href="../" class="active">ДВ Дайджест</a>
+    <a href="../../sessions/">Заседания</a>
+    <a href="https://bpdoodles.com">Basepoint Doodles</a>
+  </nav>
+  <span class="top-bar-tag">Парламентарни Doodles</span>
+</div>
+
+<div class="masthead">
+  <div class="masthead-logo">
+    <div class="masthead-left">
+      <span class="masthead-basepoint">Парламентарни</span>
+      <span class="masthead-tagline">Парламентарен дайджест</span>
+    </div>
+    <div class="masthead-divider"></div>
+    <span class="masthead-doodles">Doodles</span>
+  </div>
+  <div class="masthead-meta">
+    <span class="masthead-issue">ДВ Дайджест · Седмица 12 · 2026</span>
+    <span class="masthead-date">16–22 март 2026</span>
+    <div class="masthead-pills"><span class="masthead-pill">6 акта от НС</span><span class="masthead-pill">3 наредби/регулации</span></div>
+  </div>
+</div>
+<div class="section">
+
+<div class="subsection">
+  <div class="subsection-hd">
+    <span class="subsection-tag">01</span>
+    <span class="subsection-title">Народно събрание</span>
+    <span class="subsection-count">4 решения · 2 закони</span>
+  </div>
+  <div class="dv-grid">
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-zakon">ЗАКОН</span></div>
+      <span class="dv-meta">Бр.&nbsp;27 &middot; 2026-03-17</span>
+    </div>
+    <div class="dv-title">ЗАКОН за изменение и допълнение на Наказателния кодекс</div>
+    <p class="dv-lead">Законът вдига възрастта на сексуалното съгласие в България от 14 на 16 години, като коригира всички свързани разпоредби в Наказателния кодекс.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Основната промяна: сексуален акт с лице под <strong>16 години</strong> вече се счита за престъпление по всички засегнати членове – досега прагът беше 14 години.</li><li>Промяната обхваща блок от наказателни норми – чл. 149, 150, 151, 152, 154а, 155а, 155б и 157 от НК, т.е. всички форми на сексуално насилие и разврат спрямо деца.</li><li>Там, където досега законът правеше разлика „непълнолетно лице&quot; (т.е. 14–18 г.) без допълнение, сега изрично се уточнява „навършило 16 години&quot; – така 16- и 17-годишните вече не са в сивата зона.</li><li>Квалифицираните (по-тежки) състави за деяния срещу „малолетни лица&quot; се разширяват – изричната граница се вдига на 16 години, което означава по-тежки присъди за деяния срещу по-широк кръг деца.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: деца на 14 и 15 години, които досега не се ползваха с пълна наказателноправна защита при сексуални посегателства.</li><li>Губят: лица, извършили сексуален акт с 14–15-годишен с „мълчаливото&quot; допускане на стария закон – занапред това е безусловно престъпление.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>България е сред последните страни в ЕС с долна граница от 14 години – тази поправка идва след десетилетия на критики и я изравнява с по-голямата част от европейските стандарти.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><ul><li>Влиза в сила от обнародването (17 март 2026 г.).</li></ul></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Повечето държави – членки на ЕС, определят възрастта на сексуалното съгласие между 14 и 16 години; 16 години е най-разпространеният праг (Германия, Нидерландия, Австрия и др.). България с прага от 14 години беше сред малкото изключения заедно с Италия и Португалия. С тази промяна страната се привежда към европейския мейнстрийм, съответствайки и на насоките на Директива 2011/93/ЕС за борба със сексуалното насилие над деца.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241833" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-zakon">ЗАКОН</span></div>
+      <span class="dv-meta">Бр.&nbsp;27 &middot; 2026-03-17</span>
+    </div>
+    <div class="dv-title">ЗАКОН за изменение и допълнение на Кодекса за социално осигуряване</div>
+    <p class="dv-lead">Законът реформира изцяло допълнителното пенсионно осигуряване – въвежда многофондова система с подфондове с различен инвестиционен профил, отделни фондове за изплащане на пенсии и нов резерв за тяхната гаранция, и постепенно намалява таксите за управление.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Три подфонда в универсалните пенсионни фондове</strong> – динамичен (до 90% акции), балансиран (до 55% акции) и консервативен (до 25% акции). Осигурените избират подфонд; тези, които не изберат, се разпределят служебно по възраст: динамичен до 50 г., балансиран от 50 г. до 3 г. преди пенсионна възраст, консервативен – в последните 3 години.</li><li><strong>Нови фондове за изплащане на пенсии</strong> – всяко пенсионноосигурително дружество създава отделен „Фонд за изплащане на пожизнени пенсии&quot; и „Фонд за срочни плащания&quot;. Активите им са напълно защитени – не влизат в масата на несъстоятелността на дружеството и не могат да се ползват за покриване на дългове на дружеството.</li><li><strong>Резерв за гарантиране на пенсионните плащания</strong> – задължителен резерв от минимум 4% до максимум 6% от капитализираната стойност на пенсиите. Дружествата не могат да раздават дивиденти, преди да са го сформирали и покрили евентуален недостиг.</li><li><strong>Актуализация на пенсиите</strong> – пожизнените пенсии и разсрочените плащания се актуализират минимум веднъж годишно с не по-малко от 50% от реализирания доход на съответния фонд; намаляване под първоначалния размер е забранено.</li><li><strong>Постепенно намаляване на таксите</strong> – удръжката от вноска остава 3,75% до края на 2026 г., след което спада до 2,10% от 2036 г. Инвестиционната такса за динамичния подфонд пада от 0,65% на нетните активи + 1,5% от дохода (2027 г.) до 0,20% + 6% от дохода (от 2036 г.).</li><li><strong>Капиталова база на дружествата</strong> – заменя стария режим на „граница на платежоспособност&quot; с изискване за 2% от нетните активи на управляваните фондове, въвеждано постепенно от 1,1% (2027 г.) до 2% (от 2036 г.).</li><li><strong>Забрана за давност</strong> – правата на осигурените лица (пенсии, еднократни плащания) не се погасяват по давност; отделна давност тече само за всяко конкретно изискуемо плащане.</li><li><strong>Нови правила за инвестиционни консултанти</strong> – задължително одобрение от КФН; при активи под 1 млрд. евро – минимум 3 лица, при над 3 млрд. евро – минимум 7 лица; консултантът не може едновременно да работи за две пенсионни дружества.</li><li><strong>Санкциите се преизчисляват в евро</strong> – всички глоби в кодекса се конвертират от лева в евро (при приблизително съотношение 2:1), без промяна на фактическото ниво.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li><strong>Печелят:</strong> Осигурените лица – по-висока защита на пенсиите (отделни фондове, гаранционен резерв, забрана за намаляване под първоначалния размер), повече избор (три подфонда), по-ниски такси в дългосрочен план.</li><li><strong>Губят:</strong> Пенсионноосигурителните дружества – ограничен достъп до приходи (по-ниски таксови тавани), задължение да вложат собствен капитал в гаранционни резерви, забрана за дивиденти до попълване на резервите.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Пенсионноосигурителното дружество е длъжно да допълни с <strong>собствени средства</strong> недостига в пенсионния фонд, ако резервът се изчерпи – това е директна финансова отговорност на дружеството към пенсионерите, каквато досега не е съществувала изрично.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><ul><li>Законът влиза в сила на <strong>1 януари 2027 г.</strong>; редица технически и процедурни разпоредби (регистри, санкции в евро, изпити на посредници) влизат в сила <strong>три дни след обнародването</strong> (около 20 март 2026 г.).</li><li>До <strong>30 ноември 2026 г.</strong> дружествата трябва да създадат подфондовете; осигурените лица имат право на избор на подфонд от <strong>1 септември до 30 ноември 2026 г.</strong>; неизбралите се разпределят служебно до 15 декември 2026 г.</li><li>Капиталовата база се покачва стъпаловидно от 1,1% (2027) до 2% (2036); резервите за гарантиране на пенсионните плащания трябва да достигнат изискуемия размер до <strong>30 юни 2027 г.</strong></li></ul></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Многофондовата система с автоматично разпределение по възраст (т.нар. „life-cycle&quot; подход) е широко прилагана в ЕС – Швеция, Полша, Словакия и Естония имат подобни механизми в задължителните капиталови стълбове. Отделянето на фондовете за изплащане на пенсии като защитено имущество, недостъпно при несъстоятелност, е в съответствие с Директива 2016/2341 (IORP II). България въвежда тези стандарти сравнително късно – повечето нови членки на ЕС са ги имплементирали в периода 2010–2018 г.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241886" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;28 &middot; 2026-03-20</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за предприемане на мерки срещу ценовия шок от високите цени на суровия петрол и природния газ</div>
+    <p class="dv-lead">Народното събрание нарежда на правителството спешно да създаде фонд и програма за компенсиране на граждани, бизнеси и публични услуги от удара на поскъпналите петрол и газ.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Създава се Фонд „Енергийно подпомагане на предприятията и домакинствата&quot; към Министерството на финансите – той ще събира и раздава парите по всички мерки за подкрепа.</li><li>Парите във фонда идват от допълнителните ДДС приходи, генерирани именно заради по-високите цени на петрол сорт „Брент&quot; и втечнен природен газ (LNG) – т.е. скъпото гориво само финансира собственото си компенсиране.</li><li>Допълнителният приход се изчислява като разлика между цените преди началото на военните действия и текущите цени на моторни горива и LNG на вътрешния пазар.</li><li>Подпомагането обхваща: хора с доходи под прага на бедност (разширени програми за енергийна помощ), земеделски производители, болници, училища, детски градини и ясли.</li><li>Градският и търговският транспорт също получават компенсации – за транспортния сектор те се изчисляват на база реално изразходвани горива през същия месец на предходната година.</li><li>БАЕЗ (Българската агенция за експортно застраховане) издава гаранции за разсрочване на лизингови вноски на транспортни фирми до края на 2026 г.</li><li>При нужда правителството може да финансира фонда и от Българската банка за развитие или други източници.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Домакинства под прага на бедност, земеделци, болници, училища, детски градини, градски и търговски транспортни фирми.</li><li>Губят: Не се открива явен губещ – финансирането е от „автоматично&quot; генерирани допълнителни ДДС постъпления, без нова такса или налог върху конкретна група.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Механизмът е самофинансиращ се по дизайн – колкото по-скъп е петролът, толкова повече ДДС събира държавата и толкова повече може да компенсира; но ако цените паднат, фондът изсъхва автоматично, без никаква гаранция за вече обещаната подкрепа.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><ul><li>В едноседмичен срок от приемането (т.е. до около 20 март 2026 г.) Министерството на финансите трябва да нотифицира помощта пред Европейската комисия.</li><li>В двуседмичен срок (до около 27 март 2026 г.) Министерският съвет представя в Народното събрание доклад за предприетите мерки и резултатите от тях.</li></ul></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>По време на енергийните кризи от 2021–2023 г. повечето държави членки въведоха подобни извънредни схеми за подкрепа – намалено акцизно облагане, директни субсидии или ценови тавани. Характерното за българското решение е, че то формално вързва финансирането директно към допълнителните ДДС приходи от скъпите горива, което е по-рядко срещан механизъм в сравнение с типичния европейски подход на бюджетно финансиране или специален данък върху свръхпечалбите на енергийни компании.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=242072" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;28 &middot; 2026-03-20</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за избиране на подуправител – ръководител на управление „Емисионно“ на Българската народна банка</div>
+    <p class="dv-lead">Народното събрание избира Карина Димитрова Караиванова-Ганозова за подуправител на БНБ, ръководещ управление „Емисионно&quot;, с мандат от 6 години.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Карина Димитрова Караиванова-Ганозова е назначена на позицията подуправител – ръководител на управление „Емисионно&quot; на БНБ.</li><li>Мандатът е 6 години – стандартният срок по Закона за БНБ.</li><li>Назначението е направено по предложение на управителя на БНБ, съгласно законово установената процедура.</li><li>Управление „Емисионно&quot; отговаря за паричното обращение – пускането и изтеглянето на банкноти и монети в страната.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Карина Димитрова Караиванова-Ганозова, която заема ключова ръководна позиция в централната банка.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Решението е подписано „за председател&quot; от Костадин Ангелов, което означава, че към датата на обнародване титулярният председател на НС не е изпълнявал функциите си.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><p>Влиза в сила от обнародването.</p></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Централните банки на всички държави членки на ЕС имат сходна структура с управителен съвет и подуправители, чието назначаване е регламентирано в националното законодателство. Изискването парламентът да избира ръководството на централната банка по предложение на управителя е типична практика в ЕС, целяща институционален баланс. България не се откроява като изключение в европейски контекст.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=242073" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;28 &middot; 2026-03-20</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за задължаване на Министерския съвет да внесе в Народното събрание Проект на закон за ратифициране на присъединяването на Република България като държава основателка към Устава на Съвета за мира, създаден по инициатива на САЩ</div>
+    <p class="dv-lead">Парламентът задължава правителството да внесе законопроект за официалното присъединяване на България като държава-основателка към новосъздадения Съвет за мира по американска инициатива.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Народното събрание задължава Министерския съвет да изготви и внесе проект на закон за ратификация – правителството няма право на преценка дали да действа.</li><li>Присъединяването е като <strong>държава-основателка</strong>, което означава по-висок статут и вероятно по-голяма роля в структурата, отколкото при последващо членство.</li><li>Министърът на външните работи трябва да обнародва окончателния закон в „Държавен вестник&quot; в <strong>15-дневен срок</strong> от влизането му в сила.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Привържениците на по-тясно обвързване на България със САЩ в дипломатическата сфера; организацията печели легитимност чрез парламентарно задължение.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Парламентът <strong>задължава</strong> правителството да внесе закон – нетипичен ход, при който законодателната власт дава директна инструкция на изпълнителната, заобикаляйки обичайната правителствена инициатива.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><ul><li>Влиза в сила от обнародването.</li><li>15-дневен срок за обнародване на ратификационния закон от министъра на външните работи след влизането му в сила.</li></ul></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Няма достатъчно сравнителни данни. „Съветът за мира&quot; е новосъздадена структура по американска инициатива и не съществува установена европейска практика или паралелно законодателство, спрямо което да се прави сравнение.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=242074" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;28 &middot; 2026-03-20</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за даване мандат на Министерския съвет да заяви позиция на Република България в рамките на заседанието на Европейския съвет на 19 – 20 март 2026 г. за необходимостта от временно преустановяване на прилагането на Системата за търговия с емисии на Европейския съюз (EU ETS) до приключване на те</div>
+    <p class="dv-lead">Народното събрание упълномощава правителството да поиска от Европейския съвет временно замразяване на системата за търговия с въглеродни квоти (EU ETS) и въвеждане на механизми за ограничаване на цените им.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Мандатът задължава правителството да настоява за <strong>пълно временно спиране на EU ETS</strong> до приключване на текущия й преглед на ниво ЕС – не частична реформа, а пауза в прилагането.</li><li>Искането включва <strong>освобождаване на Резерва за стабилност на пазара</strong> – буфер от квоти, създаден именно за стабилизиране, но чието масово освобождаване би свалило цените драстично.</li><li>България ще настоява за <strong>ценови коридор или стабилизиращи инструменти</strong>, ограничаващи екстремни нива на цената на въглеродните квоти.</li><li>Поиска се и <strong>забрана за директно пренасяне на цената на въглеродните емисии върху сметките за ток</strong> – мярка в полза на индустрията и домакинствата.</li><li>Страните членки да получат <strong>оперативна самостоятелност</strong> – право временно да се отклонят от задълженията по EU ETS при извънредни ситуации, застрашаващи енергийната им сигурност.</li><li>Правителството трябва да внесе в НС <strong>доклад в 7-дневен срок</strong> след края на Европейския съвет (20 март 2026 г.) с постигнатите резултати.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li><strong>Печелят:</strong> въглищната енергетика и тежката индустрия в България (по-ниски разходи за квоти); битови и промишлени потребители на ток (потенциално по-ниски цени).</li><li><strong>Губят:</strong> зелените технологии и инвеститорите в ВЕИ (по-слаб сигнал за декарбонизация); ЕС климатичните цели като цяло.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Решението е прието на 18 март – буквално ден преди самия Европейски съвет (19–20 март), което означава, че правителството е трябвало да отиде на срещата или без мандат, или с предварително договорена позиция, а НС я е одобрило проформа в последния момент.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><ul><li>Влиза в сила от обнародването (20 март 2026 г.).</li><li>Докладът на Министерския съвет до НС е дължим в <strong>7 дни след 20 март 2026 г.</strong>, т.е. най-късно до 27 март 2026 г.</li></ul></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>EU ETS е общоевропейска система и нито една държава членка досега не е искала официално нейното временно спиране пред Европейския съвет – това поставя България в изолирана позиция. Повечето страни от ЕС, включително Германия и Франция, настояват за реформа и по-добро регулиране на ценовата волатилност, но не и за замразяване на системата. Искането на България е сред най-радикалните формулирани от държава членка до момента и се разминава съществено с мейнстрийм европейския подход.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=242161" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details></div>
+</div>
+<div class="subsection">
+  <div class="subsection-hd">
+    <span class="subsection-tag">03</span>
+    <span class="subsection-title">Министерства и ведомства</span>
+    <span class="subsection-count">3 наредби</span>
+  </div>
+  <div class="dv-grid">
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;27 &middot; 2026-03-17</span>
+    </div>
+    <div class="dv-title">Наредба за изменение на Наредба № 4 от 2017 г. за нормиране и заплащане на труда</div>
+    <div class="exec-organ">Министерство на образованието и науката</div>
+    <p class="dv-lead">Наредбата актуализира минималните основни месечни заплати на педагогическите специалисти в образователните институции, като ги изразява в евро считано от 1 януари 2026 г.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Учителите и възпитателите получават минимална основна заплата от <strong>1 144,05 евро</strong> месечно; старши учител/възпитател – <strong>1 180,01 евро</strong>, главен учител/възпитател – <strong>1 225,64 евро</strong>.</li><li>Специалистите (логопеди, психолози, педагогически съветници, хореографи, треньори и др.) без кариерна степен получават същото ниво като учителите; с втора степен – <strong>1 162,30 евро</strong>, с първа степен – <strong>1 181,08 евро</strong>.</li><li>Директорите получават минимум <strong>1 393,69 евро</strong>; с втора кариерна степен – <strong>1 411,94 евро</strong>, с първа – <strong>1 430,73 евро</strong>.</li><li>Заместник-директорите стартират от <strong>1 289,00 евро</strong>; с втора степен – <strong>1 307,79 евро</strong>, с първа – <strong>1 326,03 евро</strong>.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Всички педагогически специалисти в държавните и общинските образователни институции – получават актуализирани минимални заплати.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Заплатите са фиксирани директно в евро – стъпка, която отразява въвеждането на еврото като официална валута на България от 1 януари 2026 г.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Наредбата влиза в сила от <strong>1 януари 2026 г.</strong> – с обратна дата спрямо обнародването (17 март 2026 г.), което означава, че разликите се дължат ретроактивно от началото на годината.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=241931" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;28 &middot; 2026-03-20</span>
+    </div>
+    <div class="dv-title">Наредба за изменение и допълнение на Наредба № 6 от 2023 г. за условията и реда за прилагане на интервенцията „Плащания за земеделски земи в зони от Натура 2000“, включена в Стратегическия план за развитие на земеделието и селските райони на Република България за периода 2023 – 2027 г.</div>
+    <div class="exec-organ">Министерство на земеделието и храните</div>
+    <p class="dv-lead">Наредбата добавя нова защитена зона в списъка с компенсаторни плащания за Натура 2000 и актуализира базовите изисквания за различните видове земеделски земи.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Защитена зона „Ниска Рила&quot; (BG0000636) вече е включена в списъка на зоните по Директива 92/43/ЕИО – фермерите в нея могат да кандидатстват за компенсаторни плащания в размер до <strong>22 евро/ха</strong>.</li><li>За зоната са предвидени само плащания за основния стълб (22 евро/ха), без допълнителни нива на компенсация (двете останали колони в таблицата са нула).</li><li>Базовите изисквания за <strong>постоянно затревени площи</strong> вече обхващат три стандарта за добро земеделско и екологично състояние: ДЗЕС 1, ДЗЕС 8 и ДЗЕС 9.</li><li>За <strong>обработваеми земи</strong> и <strong>трайни насаждения</strong> базовото изискване е само ДЗЕС 8.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Земеделци в зона „Ниска Рила&quot;, които досега не можеха да получават компенсаторни плащания за ограниченията от Натура 2000.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>От деня на обнародването – 20 март 2026 г., без гратисен период.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=242141" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;28 &middot; 2026-03-20</span>
+    </div>
+    <div class="dv-title">Наредба за изменение и допълнение на Наредба № 3 от 2023 г. за условията и реда за прилагане на интервенциите под формата на директни плащания, включени в Стратегическия план, за проверките, намаления на плащанията и реда за налагане на административни санкции</div>
+    <div class="exec-organ">Министерство на земеделието и храните</div>
+    <p class="dv-lead">Наредбата въвежда нови минимални прагове за реализация на мляко и животни като условие за получаване на директни плащания от животновъди, и уточнява документите, с които се доказва тази реализация.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Нов праг за краве мляко:</strong> За да получат директни плащания, говедовъдите трябва да са реализирали средно <strong>минимум 1000 кг</strong> краве мляко и/или млечни продукти (в млечен еквивалент) на животно за стопанство за периода 1 октомври – 30 септември. За кампания 2026 г. прагът е намален наполовина – <strong>500 кг</strong>.</li><li><strong>Нов праг за биволско мляко:</strong> За биволовъди минималното средно реализирано количество е <strong>400 кг</strong> на животно, а за кампания 2026 г. – <strong>200 кг</strong>.</li><li><strong>Нов праг за реализация на животни (овце, кози, говеда):</strong> За схемите за месодайни животни се изисква средно <strong>0,2 реализирани животни</strong> на женско животно в стопанството (за клане, износ, продажба); за кампания 2026 г. прагът е <strong>0,1 животни</strong>.</li><li><strong>Неизпълнение на прага = нула плащания:</strong> Ако животновъд не покрие прага за мляко или животни, не получава подпомагане за нито едно заявено животно – не само за неотговарящите.</li><li><strong>Точно определени документи за доказване на реализацията:</strong> Фактури с банков превод, фискални касови бележки, счетоводни документи, приемно-предавателни протоколи за ишлеме, фискални отчети от млекомат. Документите трябва да покриват периода 1 октомври – 30 септември на годината на кандидатстване и се подават от <strong>5 до 31 октомври</strong> в годината на кандидатстване.</li><li><strong>Нова таблица за превръщане на млечни продукти в млечен еквивалент:</strong> Въведена като официално приложение – напр. 1 кг кашкавал = 10,3 кг мляко; 1 кг масло = 22,5 кг мляко; 1 литър айрян = 0,55 кг мляко.</li><li><strong>Удължени срокове за промени в заявленията:</strong> Крайният срок за корекции се премества от 30 септември на <strong>15 октомври</strong>, а административните уведомления – от 10 октомври на <strong>10 ноември</strong>.</li><li><strong>Нова санкция:</strong> ДФЗ може да откаже плащане, ако установи нарушения на трудовото законодателство и задълженията на работодателя от страна на кандидата.</li><li><strong>Нова растителна норма за трайни насаждения:</strong> Минимум <strong>70% от растенията</strong> в заявен парцел трябва да са живи (неизсъхнали); изискването не важи за многогодишни медицински, ароматни култури и ягодоплодни.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li><strong>Печелят:</strong> По-едри и по-активни животновъди с документирана реализация, които вече отговарят на праговете и се отличават от формалните кандидати.</li><li><strong>Губят:</strong> Дребни и полусубсистентни животновъди, които отглеждат животни предимно за домашна консумация без документирана продажба, и няма да могат да докажат минималния праг на реализация.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Недоказана реализация на мляко или животни заличава цялото плащане за всички заявени животни – дори фермерът да е изпълнил всички останали условия безупречно.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Наредбата влиза в сила от деня на обнародването – <strong>20 март 2026 г.</strong></li><li>За кампания 2026 г. важат облекчени преходни прагове (500 кг краве мляко, 200 кг биволско мляко, 0,1 животни средно).</li><li>Разпоредбите за директни продажби (чл. 24, ал. 2 и 3) не се прилагат за кампании <strong>2026 и 2027 г.</strong></li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=242143" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details></div>
+</div>
+</div>
+
+<div class="nl-footer">
+  <span class="nl-footer-logo">Парламентарни Doodles</span>
+  <div class="nl-footer-links">
+    <a href="../">ДВ Дайджест</a>
+    <a href="../../sessions/">Заседания</a>
+    <a href="https://bpdoodles.com">Basepoint Doodles</a>
+  </div>
+</div>
+</div>
+</body>
+</html>

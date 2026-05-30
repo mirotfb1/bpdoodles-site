@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="utf-8">
+<title>Парламентарни Doodles · ДВ Дайджест · Седмица 4</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --navy:#1B2E5E; --gold:#B5821A; --ink:#1C1C1C; --ink2:#444;
+  --muted:#888; --muted-lt:#AAA; --border:#E8E8E8; --surf:#F8F8F8; --paper:#FFF;
+  --font-d:'Caveat',cursive; --font-h:'Nunito','Arial Black',sans-serif;
+  --font-b:'Nunito',Arial,sans-serif;
+}
+body{font-family:var(--font-b);background:#F0F2F5;color:var(--ink);line-height:1.6;}
+.wrapper{max-width:740px;margin:32px auto;background:#fff;border:1px solid var(--border);border-radius:4px;overflow:hidden;}
+
+/* top bar */
+.top-bar{display:flex;justify-content:space-between;align-items:center;padding:8px 16px;background:var(--navy);}
+.site-nav{display:flex;gap:20px;align-items:center;}
+.site-nav a{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none;}
+.site-nav a:hover{color:rgba(255,255,255,.9);}
+.site-nav a.active{color:var(--gold);}
+.top-bar-tag{font-family:'Courier New',monospace;font-size:10px;color:rgba(255,255,255,.25);}
+
+/* masthead */
+.masthead{background:var(--navy);padding:24px 28px 20px;display:flex;justify-content:space-between;align-items:flex-end;border-bottom:3px solid var(--gold);}
+.masthead-logo{display:flex;flex-direction:row;align-items:center;}
+.masthead-left{display:flex;flex-direction:column;align-items:flex-end;padding-right:14px;}
+.masthead-basepoint{font-family:var(--font-h);font-size:22px;font-weight:900;color:#fff;letter-spacing:-.3px;line-height:1;}
+.masthead-tagline{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:4px;}
+.masthead-divider{width:2px;height:52px;background:rgba(255,255,255,.2);}
+.masthead-doodles{font-family:var(--font-d);font-size:48px;font-weight:700;color:var(--gold);line-height:1;padding-left:14px;}
+.masthead-meta{text-align:right;}
+.masthead-issue{font-size:13px;font-weight:700;color:rgba(255,255,255,.85);display:block;line-height:1.5;}
+.masthead-date{font-size:11px;color:rgba(255,255,255,.4);display:block;}
+.masthead-pills{margin-top:8px;display:flex;gap:6px;justify-content:flex-end;flex-wrap:wrap;}
+.masthead-pill{font-size:10px;font-weight:700;letter-spacing:.05em;background:rgba(255,255,255,.12);color:rgba(255,255,255,.6);padding:3px 8px;border-radius:3px;}
+
+/* content sections */
+.section{padding:20px 28px;border-bottom:1px solid var(--border);}
+.section:last-of-type{border-bottom:none;}
+
+/* subsection (within DV edition) */
+.subsection{margin-bottom:24px;}
+.subsection:last-child{margin-bottom:0;}
+.subsection-hd{display:flex;align-items:baseline;gap:10px;margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid var(--border);}
+.subsection-tag{font-size:10px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);}
+.subsection-title{font-family:var(--font-h);font-size:16px;font-weight:900;color:var(--navy);}
+.subsection-count{font-size:11px;color:var(--muted);margin-left:auto;}
+
+/* section label row */
+.section-label-row{padding:10px 28px 8px;background:var(--surf);border-bottom:1px solid var(--border);}
+.section-label{font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);}
+
+/* page header */
+.page-header{padding:20px 28px 16px;border-bottom:1px solid var(--border);}
+.page-title{font-family:var(--font-h);font-size:20px;font-weight:900;color:var(--ink);letter-spacing:-.3px;margin-bottom:6px;}
+.page-subtitle{font-size:13px;color:var(--muted);}
+
+/* issue list rows */
+a.issue-row{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 28px;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:background .1s;}
+a.issue-row:hover{background:var(--surf);}
+a.issue-row:last-of-type{border-bottom:none;}
+.issue-row-left{flex:1;}
+.issue-row-meta{font-family:'Courier New',monospace;font-size:10px;color:var(--muted-lt);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;}
+.issue-row-title{font-size:15px;font-weight:900;color:var(--ink);letter-spacing:-.2px;line-height:1.3;}
+.issue-row-desc{font-size:12px;color:var(--muted);margin-top:3px;}
+.issue-row-arrow{font-size:18px;color:var(--gold);font-weight:900;flex-shrink:0;}
+
+/* footer */
+.nl-footer{padding:14px 28px;background:var(--surf);border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
+.nl-footer-logo{font-family:var(--font-d);font-size:18px;font-weight:700;color:#CCC;}
+.nl-footer-links{font-size:11px;display:flex;gap:16px;}
+.nl-footer-links a{color:var(--muted-lt);text-decoration:none;}
+.nl-footer-links a:hover{color:var(--muted);}
+
+/* DV cards */
+.dv-grid{display:flex;flex-direction:column;gap:8px;}
+details.dv-card{background:var(--paper);border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:border-color .15s;}
+details.dv-card:hover{border-color:var(--gold);}
+details.dv-card[open]{border-color:var(--gold);}
+.dv-card-compact{background:var(--paper);border:1px solid var(--border);border-radius:8px;overflow:hidden;opacity:.9;}
+.dv-sum{padding:14px 16px;cursor:pointer;list-style:none;user-select:none;}
+.dv-sum::-webkit-details-marker{display:none;}
+.dv-sum-static{padding:14px 16px;}
+.dv-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+.dv-meta{font-size:11px;color:var(--muted);font-weight:700;}
+.dv-title{font-family:var(--font-h);font-size:13px;font-weight:900;color:var(--ink);line-height:1.4;letter-spacing:-.1px;margin-bottom:4px;}
+.exec-organ{font-size:11px;color:var(--muted);margin-bottom:6px;font-style:italic;}
+.dv-lead{font-size:13px;color:var(--ink2);line-height:1.55;margin-bottom:8px;}
+.compact-bullets ul{list-style:none;padding:0;margin-top:6px;}
+.compact-bullets li{padding:3px 0 3px 14px;position:relative;color:var(--ink2);font-size:12px;line-height:1.5;}
+.compact-bullets li::before{content:"·";position:absolute;left:2px;color:var(--gold);font-weight:700;font-size:15px;line-height:1.1;}
+.expand-hint{font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.06em;margin-top:4px;}
+details.dv-card[open] .expand-hint{display:none;}
+.dv-body{padding:0 16px 16px;border-top:1px solid var(--border);}
+
+/* badges */
+.badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;}
+.dv-badges{display:flex;gap:6px;align-items:center;flex-wrap:wrap;}
+.b-zakon   {background:#dbeafe;color:#1a56db;}
+.b-reshenie{background:#cffafe;color:#0a6e8a;}
+.b-ukaz    {background:#ede9fe;color:#7c3aed;}
+.b-decl    {background:#fef3c7;color:#92400e;}
+.b-post    {background:#d1fae5;color:#065f46;}
+.b-naredba {background:#fce7f3;color:#9d174d;}
+.b-pravilnik{background:#f3e8ff;color:#6b21a8;}
+.b-inst    {background:#fef9c3;color:#713f12;}
+.b-razp    {background:#e0f2fe;color:#0369a1;}
+.b-spor    {background:#fff7ed;color:#c2410c;}
+.b-other   {background:#f3f4f6;color:#6b7280;}
+.b-cat     {background:#f3f4f6;color:#555;}
+
+/* factsheet sections */
+.fs-sec{margin:12px 0;font-size:13px;}
+.fs-sec h5,.parties-block h5,.notable-callout h5,.sess-col h5{font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:8px;padding-bottom:5px;border-bottom:1px solid var(--border);}
+.fs-sec ul,.parties-block ul{list-style:none;padding:0;}
+.fs-sec li,.parties-block li{padding:4px 0 4px 16px;position:relative;color:var(--ink2);border-bottom:1px solid #f3f4f6;font-size:13px;line-height:1.5;}
+.fs-sec li:last-child,.parties-block li:last-child{border-bottom:none;}
+.fs-sec li::before{content:"·";position:absolute;left:3px;color:var(--gold);font-weight:700;font-size:16px;line-height:1.1;}
+.fs-sec p,.parties-block p{color:var(--ink2);font-size:13px;margin-bottom:4px;}
+.fs-winners ul{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.fs-winners li{padding:8px 10px 8px 24px;border-radius:6px;border-bottom:none !important;}
+.fs-winners li:first-child{background:#f0fdf4;}
+.fs-winners li:first-child::before{content:"✓";color:#16a34a;font-size:13px;top:8px;}
+.fs-winners li:nth-child(2){background:#fef2f2;}
+.fs-winners li:nth-child(2)::before{content:"✗";color:#dc2626;font-size:13px;top:8px;}
+.fs-notable{background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:12px 14px;}
+.fs-notable h5{border-bottom-color:#fde68a;color:#92400e;}
+.fs-notable li,.fs-notable p{color:#78350f;}
+.fs-notable li::before{color:#d97706;}
+.fs-eu{background:#f0f9ff;border-radius:8px;padding:12px 14px;}
+.fs-eu h5{color:#0369a1;border-bottom-color:#bae6fd;}
+.fs-eu p{color:#0c4a6e;font-size:13px;}
+.ext-link{display:inline-block;margin-top:12px;font-size:12px;font-weight:700;color:var(--navy);text-decoration:none;}
+.ext-link:hover{text-decoration:underline;}
+.no-summ{color:var(--muted);font-size:13px;font-style:italic;padding:12px 0;}
+
+/* session blocks */
+details.sess-block{background:var(--paper);border:1px solid var(--border);border-left:4px solid var(--navy);border-radius:0 8px 8px 0;margin-bottom:10px;overflow:hidden;}
+details.sess-block:hover{box-shadow:0 2px 8px rgba(0,0,0,.06);}
+details.sess-block[open]{border-left-color:var(--gold);}
+.sess-sum{padding:14px 18px;cursor:pointer;list-style:none;user-select:none;}
+.sess-sum::-webkit-details-marker{display:none;}
+.sess-hd{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap;}
+.sess-date-chip{background:var(--navy);color:#fff;font-size:10px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:4px;white-space:nowrap;}
+details.sess-block[open] .sess-date-chip{background:var(--gold);}
+.sess-label{font-family:var(--font-h);font-size:14px;font-weight:900;color:var(--ink);}
+.sess-lead{font-size:13px;color:var(--ink2);line-height:1.55;margin-bottom:6px;}
+.sess-body{padding:0 18px 16px;border-top:1px solid var(--border);}
+.sess-lead-full{font-size:13px;color:var(--ink2);line-height:1.6;margin:12px 0;background:#f8fafc;border-left:3px solid var(--gold);padding:8px 12px;border-radius:0 6px 6px 0;}
+.sess-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0;}
+.sess-col{font-size:13px;}
+.sess-col ul{list-style:none;padding:0;}
+.sess-col li{padding:4px 0 4px 14px;position:relative;color:var(--ink2);border-bottom:1px solid #f3f4f6;font-size:13px;line-height:1.5;}
+.sess-col li:last-child{border-bottom:none;}
+.sess-col li::before{content:"·";position:absolute;left:2px;color:var(--navy);font-weight:700;font-size:15px;line-height:1.1;}
+.notable-callout{display:flex;gap:10px;align-items:flex-start;background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:10px 12px;margin:12px 0;}
+.notable-icon{font-size:16px;color:#d97706;flex-shrink:0;line-height:1.4;}
+.notable-callout h5{border-bottom-color:#fde68a;color:#92400e;}
+.notable-callout p,.notable-callout li{color:#78350f;font-size:13px;}
+.notable-callout ul{list-style:none;padding:0;}
+.notable-callout li{padding:3px 0 3px 14px;position:relative;}
+.notable-callout li::before{content:"·";position:absolute;left:2px;color:#d97706;font-weight:700;font-size:15px;line-height:1.1;}
+.parties-block{margin:12px 0;font-size:13px;}
+.sess-ft{margin-top:12px;padding-top:10px;border-top:1px solid var(--border);}
+
+/* landing track cards */
+.track-card{display:block;padding:20px 28px;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:background .1s;}
+.track-card:hover{background:var(--surf);}
+.track-card:last-of-type{border-bottom:none;}
+.track-label{font-size:10px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+.track-title{font-family:var(--font-h);font-size:18px;font-weight:900;color:var(--navy);letter-spacing:-.3px;line-height:1.3;margin-bottom:6px;}
+.track-desc{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px;}
+.track-latest{font-size:12px;color:var(--ink2);}
+.track-arrow{font-size:22px;color:var(--gold);font-weight:900;float:right;margin-top:-28px;}
+
+/* archive / intro */
+.arch-table{width:100%;border-collapse:collapse;}
+.arch-table th{padding:8px 0;text-align:left;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);border-bottom:1px solid var(--border);}
+.arch-table td{padding:12px 8px 12px 0;border-bottom:1px solid var(--border);font-size:13px;color:var(--ink2);}
+.arch-table tr:last-child td{border-bottom:none;}
+.arch-table a{color:var(--navy);font-weight:700;text-decoration:none;}
+.arch-table a:hover{text-decoration:underline;}
+.intro-block{padding:20px 28px;border-bottom:1px solid var(--border);font-size:14px;line-height:1.7;color:var(--ink);}
+.all-issues-wrap{padding:16px 28px;border-bottom:1px solid var(--border);}
+.all-issues-btn{width:100%;padding:13px;background:none;border:1.5px solid var(--navy);border-radius:3px;font-family:var(--font-h);font-size:11px;font-weight:900;color:var(--navy);cursor:pointer;text-align:center;letter-spacing:.14em;text-transform:uppercase;transition:background .15s,color .15s;}
+.all-issues-btn:hover{background:var(--navy);color:#fff;}
+.waitlist-section,.contact-section{padding:20px 28px;border-bottom:1px solid var(--border);}
+.waitlist-heading{font-family:var(--font-h);font-size:17px;font-weight:900;color:var(--ink);letter-spacing:-.2px;margin-bottom:8px;}
+.waitlist-body{font-size:14px;color:var(--ink2);line-height:1.6;margin-bottom:16px;}
+.waitlist-form{display:flex;gap:8px;margin-bottom:10px;}
+.waitlist-input{flex:1;padding:10px 12px;border:1px solid var(--border);border-radius:3px;font-family:var(--font-b);font-size:14px;color:var(--ink);min-width:0;}
+.waitlist-input:focus{outline:none;border-color:var(--navy);}
+.waitlist-btn{padding:10px 18px;background:var(--navy);color:#fff;border:none;border-radius:3px;font-family:var(--font-h);font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;white-space:nowrap;}
+.waitlist-btn:hover{background:#122348;}
+.waitlist-fine{font-size:12px;color:var(--muted-lt);line-height:1.5;}
+.waitlist-ok{display:none;font-size:14px;font-weight:700;color:#16a34a;margin-top:10px;}
+.contact-section p{font-size:14px;color:var(--ink2);line-height:1.6;}
+.contact-section a{color:var(--navy);font-weight:700;text-decoration:none;}
+.contact-section a:hover{text-decoration:underline;}
+
+@media(max-width:760px){
+  .wrapper{margin:0;border-radius:0;border-left:none;border-right:none;}
+  .masthead,.section,.nl-footer,.page-header,a.issue-row,.track-card,
+  .section-label-row,.intro-block,.waitlist-section,.contact-section,.all-issues-wrap{padding-left:16px;padding-right:16px;}
+  .masthead-pills{display:none;}
+  .sess-cols{grid-template-columns:1fr;}
+  .fs-winners ul{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+<div class="top-bar">
+  <nav class="site-nav">
+    <a href="../" class="active">ДВ Дайджест</a>
+    <a href="../../sessions/">Заседания</a>
+    <a href="https://bpdoodles.com">Basepoint Doodles</a>
+  </nav>
+  <span class="top-bar-tag">Парламентарни Doodles</span>
+</div>
+
+<div class="masthead">
+  <div class="masthead-logo">
+    <div class="masthead-left">
+      <span class="masthead-basepoint">Парламентарни</span>
+      <span class="masthead-tagline">Парламентарен дайджест</span>
+    </div>
+    <div class="masthead-divider"></div>
+    <span class="masthead-doodles">Doodles</span>
+  </div>
+  <div class="masthead-meta">
+    <span class="masthead-issue">ДВ Дайджест · Седмица 4 · 2026</span>
+    <span class="masthead-date">19–25 януари 2026</span>
+    <div class="masthead-pills"><span class="masthead-pill">1 акт от НС</span><span class="masthead-pill">6 акта от МС</span><span class="masthead-pill">17 наредби/регулации</span></div>
+  </div>
+</div>
+<div class="section">
+
+<div class="subsection">
+  <div class="subsection-hd">
+    <span class="subsection-tag">01</span>
+    <span class="subsection-title">Народно събрание</span>
+    <span class="subsection-count">1 закон</span>
+  </div>
+  <div class="dv-grid">
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-zakon">ЗАКОН</span></div>
+      <span class="dv-meta">Бр.&nbsp;9 &middot; 2026-01-23</span>
+    </div>
+    <div class="dv-title">ЗАКОН за изменение и допълнение на Закона за кредитиране на студенти и докторанти</div>
+    <p class="dv-lead">Законът ограничава кредитните банки от премии при нарушения на договорите и съкращава срокове, свързани с отпускането на студентски и докторантски кредити.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Банка или кредитна институция, която наруши типовия договор за студентски/докторантски кредит, губи правото на „премия за добро управление&quot; – тя просто не се изплаща.</li><li>Срокът по чл. 20, ал. 1 е намален от 7 на 3 (предположително дни или месеца) – конкретното значение зависи от контекста на оригиналния член, но съкращаването е значително.</li><li>Ал. 2 на чл. 27 е отменена изцяло – каквото задължение или право е съдържала, вече не действа.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Студенти и докторанти – кредиторите губят финансов стимул да нарушават договорните условия, което ги дисциплинира.</li><li>Губят: Банки и кредитни институции, управляващи студентски кредити – отпада възможността да получат премия дори при договорни нарушения, а процедурните срокове се съкращават.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Законът не дефинира какво точно се счита за „нарушение на типовия договор&quot;, което означава, че на практика всеки спор за премията ще се решава по тълкувателен път.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><ul><li>Влиза в сила от обнародването.</li></ul></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Студентското кредитиране с държавна гаранция и стандартизирани договори съществува в редица европейски държави (Германия, Нидерландия, Швеция), но моделът на „премия за добро управление&quot; към кредиторите е по-рядко срещан. Няма достатъчно сравнителни данни за точния аналог на тази конкретна мярка в европейски контекст.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240706" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details></div>
+</div>
+<div class="subsection">
+  <div class="subsection-hd">
+    <span class="subsection-tag">02</span>
+    <span class="subsection-title">Министерски съвет</span>
+    <span class="subsection-count">6 постановления</span>
+  </div>
+  <div class="dv-grid">
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;7 &middot; 2026-01-20</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 7 ОТ 15 ЯНУАРИ 2026 Г. за изменение и допълнение на Тарифата за таксите, които се събират от Държавната комисия за енергийно и водно регулиране по Закона за енергетиката, приета с Постановление № 266 на Министерския съвет от 2004 г.</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Таксите, събирани от регулатора КЕВР за издаване и притежаване на енергийни лицензии, се преизчисляват от левове в евро, като се привеждат в съответствие с бъдещото въвеждане на еврото в България.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Таксите за издаване на лицензи за производство, пренос, разпределение и търговия с енергия – досега по 1 000 лв. всяка – стават 511,29 евро; таксата за снабдяване с природен газ пада от 500 лв. на 255,65 евро.</li><li>Таксата за издаване на лиценз за обществено снабдяване (по-малки доставчици) слиза от 300 лв. на 153,39 евро; отменя се отделна такса (т. 4а), която досега съществуваше като самостоятелна категория.</li><li>Годишните такси за притежаване на лиценз за разпределение и снабдяване с електрическа енергия и природен газ – основният праг пада от 15 000 лв. на 7 669,38 евро; допълнителният праг – от 2 000 лв. на 1 022,58 евро; горният таван – от 50 000 лв. на 25 564,59 евро.</li><li>Таксите за достъп до газопреносна и газоразпределителна мрежа се преизчисляват от 3 000 лв. на 1 533,88 евро.</li><li>Годишната такса се заплаща задължително до 31 март на годината, за която е дължима – срокът вече е изрично фиксиран в наредбата.</li><li>При отнемане или изтичане на лиценз преди края на годината таксата се дължи пропорционално; ако цялата сума е платена предварително, надвнесеното се връща без лихва в 1 месец след искане, но не по-късно от края на календарната година.</li><li>Ако пропорционалната такса не е покрита до 31 март, след тази дата тече лихва върху неплатената сума.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Енергийни компании с лицензи – преизчислените суми в евро са математически еквивалент на левовите, без реално увеличение на тежестта; новите правила за надвнесени суми им дават право на възстановяване.</li><li>Губят: Не се открива явен губещ, но компании, които не платят таксата до 31 март, вече са изрично изложени на лихва върху неплатената пропорционална сума.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Промените с конкретните суми в евро влизат в сила не сега, а чак от датата на официалното въвеждане на еврото в България – тоест постановлението се приема предварително, без да знаем точната дата на еврозоната.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Незабавно (от обнародването – 20 януари 2026 г.): преименуването на регулатора от „Държавна комисия&quot; на „Комисия за енергийно и водно регулиране&quot;, отмяната на такса т. 4а, новите срокове за плащане и правилата за лихви/възстановяване.</li><li>От датата на въвеждане на еврото в България: всички нови суми в евро (511,29 €, 153,39 €, 7 669,38 € и др.).</li><li>Надплатени такси в левове към датата на въвеждане на еврото се възстановяват по реда на Закона за въвеждане на еврото.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240707" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;7 &middot; 2026-01-20</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 8 ОТ 15 ЯНУАРИ 2026 Г. за изменение и допълнение на Тарифата за таксите, които се събират от Държавната комисия за енергийно и водно регулиране по Закона за регулиране на водоснабдителните и канализационните услуги, приета с Постановление № 49 на Министерския съвет от 2006 г.</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Актът преизчислява таксите за регулиране на ВиК операторите от левове в евро и въвежда правила за пропорционално плащане при смяна на оператор в дадена територия.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Постоянна такса (малки оператори):</strong> минималният праг се променя от 500 лв. на 255,65 евро, максималният – от 500 000 лв. на 255 645,94 евро.</li><li><strong>Постоянна такса (по-големи оператори):</strong> минимумът от 2 000 лв. става 1 022,58 евро, максимумът остава 255 645,94 евро.</li><li><strong>Променлива такса:</strong> от 0,005 лв./куб. м пада на 0,003 евро/куб. м (фактическо намаление в стойност).</li><li><strong>Срокове за плащане:</strong> постоянната такса – до 25 февруари; променливата – на две равни вноски до 25 март и до 25 юни.</li><li><strong>При смяна на ВиК оператор:</strong> таксата за годината на промяната се разпределя пропорционално по дни – старият оператор плаща до 14 дни след прекратяване на дейността, новият – до 25 февруари следващата година.</li><li><strong>Надвнесени суми</strong> от стария оператор се възстановяват без лихва след писмено искане.</li><li><strong>Задължение за уведомяване:</strong> и двата оператора (стар и нов) уведомяват регулатора в 7-дневен срок от смяната, като представят документи и справка за приходи и фактурирани количества вода.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: ВиК операторите – реалното ниво на таксата леко намалява след преизчислението в евро; новите правила при смяна на оператор внасят яснота и предотвратяват двойно плащане.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Промяната на таксите в евро влиза в сила едва от датата на въвеждане на еврото в България – т.е. актът е приет предварително, но финансовото му действие е обвързано с неопределена бъдеща дата.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Промяната на наименованието на регулатора и новите правила при смяна на оператор – от деня на обнародването (20 януари 2026 г.).</li><li>Преизчислението на всички суми в евро и новите срокове за плащане – от датата на въвеждане на еврото в България.</li><li>Надвнесени такси в левове се възстановяват по реда на Закона за въвеждане на еврото след настъпване на тази дата.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240708" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;7 &middot; 2026-01-20</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 9 ОТ 15 ЯНУАРИ 2026 Г. за изменение на нормативни актове на Министерския съвет</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Актът подготвя шест наредби и правилника за чужденците за въвеждането на еврото, като заменя всички суми в левове с точните им евро-еквиваленти по фиксирания курс 1,95583 лв./евро.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Инвеститорски визи и разрешения за пребиваване:</strong> Прагът за инвестиция от 600 000 лв. се превръща в 306 755,13 евро; прагът от 6 000 000 лв. – в 3 067 751,29 евро; от 2 000 000 лв. – в 1 022 583,76 евро; от 250 000 лв. – в 127 822,97 евро.</li><li><strong>Санкции за чужденци:</strong> Глобите по Закона за чужденците се преизчисляват от „500 до 5 000 лв.&quot; на „255,65 до 2 556,46 евро&quot;.</li><li><strong>Жилищни компенсации за служители на МВР:</strong> Новите месечни суми в евро за Sofia/Пловдив/Варна/Бургас/Русе варират от 24,03 евро (едночленно семейство) до 90,50 евро (петчленно); за малки градове и села – от 12,27 евро до 53,69 евро.</li><li><strong>Европейски фондове:</strong> В наредбата за нередности по европейските фондове всички суми и прагове се преизчисляват от левове в евро – важно за бенефициенти и одитори.</li><li><strong>Доброволни формирования при бедствия и военновременни запаси на МВР:</strong> Техническа замяна на „лв.&quot; с „евро&quot; в съответните приложения без промяна на реалните стойности.</li><li><strong>Документи за чужденци на двуезични формуляри:</strong> Сумите са актуализирани едновременно на български (BGN → EUR) и на английски (BGN → EUR) в официалните формуляри.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Всички, които работят с тези наредби – инвеститори, служители на МВР, бенефициенти по еврофондове и административни органи, тъй като нормативната база ще е готова за деня на въвеждане на еврото.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Постановлението е публикувано и влезе в Държавен вестник днес, но не е в сила нито ден от обнародването си – прилага се единствено от момента, в който България официално приеме еврото, без да е фиксирана конкретна дата за това.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от датата на въвеждане на еврото в Република България – тази дата към момента не е определена официално.</li><li>До тогава всички наредби продължават да действат с левовите стойности.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240709" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;7 &middot; 2026-01-20</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 10 ОТ 15 ЯНУАРИ 2026 Г. за изменение и допълнение на Постановление № 138 на Министерския съвет от 2014 г. за създаване на Национален съвет по демографска политика към Министерския съвет</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Актуализират се две формулировки в правилата на Националния съвет по демографска политика – названието на стратегия за възрастни хора и наименованието на едно министерство.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Заменя се остарялото название „Националната концепция за насърчаване на активния живот на възрастните хора (2012 – 2030 г.)&quot; с актуалното „Националната стратегия за активен живот на възрастните хора в България (2019 – 2030 г.)&quot; – привеждане в съответствие с документ, приет след 2014 г.</li><li>Към думата „земеделието&quot; в текста се добавя „и храните&quot;, за да отрази официалното наименование на Министерството на земеделието и храните.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Не се открива явен печеливш – промяната е административно-техническа.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><p>От деня на обнародването – 20 януари 2026 г.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240710" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;7 &middot; 2026-01-20</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 11 ОТ 15 ЯНУАРИ 2026 Г. за преобразуване на Общински драматичен театър – Кюстендил, в Регионален културен институт – Кюстендил</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Общинският драматичен театър в Кюстендил се превръща в регионален културен институт с разширен обхват на дейността и на обслужваната територия.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Общински драматичен театър – Кюстендил, се преобразува в Регионален културен институт – Кюстендил, който е самостоятелно юридическо лице с бюджет.</li><li>Дейността се разширява значително: от само театър към театър, музика, кино, аудиовизия, визуални изкуства, литература, танц, цирк, архитектура, дизайн и фолклор.</li><li>Териториалният обхват включва три общини: Кюстендил, Невестино и Трекляно.</li><li>Институтът може да работи и с маргинализирани общности, да организира дискусии и да взаимодейства с висши и средни училища по изкуствата.</li><li>Стопанските дейности са ограничени до максимум 20% от общата дейност и капацитет на института.</li><li>Цялото имущество, архиви, права и задължения на стария театър автоматично преминават към новия институт.</li><li>Служителите запазват трудовите си правоотношения по реда на Кодекса на труда (при промяна на работодател без прекъсване).</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Жителите на Кюстендил, Невестино и Трекляно, които получават достъп до по-широка и разнообразна културна програма; служителите на театъра, чиято заетост е защитена.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Държавата поема под крилото си институция, която дотук е функционирала като общинска – Общинският съвет запазва само административната роля да приеме правилника, но изпълнението се ръководи от кмета, а не от централна държавна структура.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>В сила от датата на обнародването – 20 януари 2026 г.</li><li>Общинският съвет на Кюстендил трябва да приеме Правилник за устройството и дейността на института в срок до 2 месеца от влизането в сила, тоест до около 20 март 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240711" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;8 &middot; 2026-01-21</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 4 ОТ 12 ЯНУАРИ 2026 Г. за определяне на условията и реда за разплащания по сключени споразумения по Инвестиционната програма за общински проекти, одобрена със Закона за държавния бюджет на Република България за 2025 г., до приемането на Закона за държавния бюджет на Република Българи</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Постановлението урежда как общините ще продължат да получават пари по Инвестиционната програма за общински проекти от 2025 г., докато не бъде приет бюджет за 2026 г. – чрез Българската банка за развитие.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Таван на финансирането:</strong> До приемането на бюджет за 2026 г. максималната сума за разплащания по вече сключени споразумения е <strong>460 162 693 евро</strong> за годината – плащанията минават през Българската банка за развитие, която може да ползва собствени средства или заеми с държавна гаранция.</li><li><strong>Кой получава пари:</strong> Всички общини, включени в Приложение № 3 към Закона за държавния бюджет за 2025 г., с изключение на тези, при които са установени недопустими разходи или не са изпълнени законовите условия; при частично допустими проекти се финансира само допустимата част.</li><li><strong>Нови споразумения – забрана:</strong> До приемане на бюджет за 2026 г. е напълно забранено сключването на каквито и да е нови споразумения между министъра на регионалното развитие и кметовете на общини.</li><li><strong>Схема на плащанията при строителство:</strong> Аванс до <strong>20%</strong> от СМР разходите → две междинни плащания по <strong>35%</strong> всяко (задействат се при достигнати 25% и 50% изпълнение) → окончателно плащане максимум <strong>10%</strong> след въвеждане в експлоатация; непредвидени разходи – еднократно, до <strong>10%</strong> от предвидените СМР.</li><li><strong>При проектиране:</strong> Аванс до <strong>50%</strong> от разходите за проектиране; окончателното плащане се извършва само след влязло в сила разрешение за строеж.</li><li><strong>Краен срок за въвеждане в експлоатация:</strong> Актът за въвеждане в експлоатация трябва да е издаден преди <strong>30 юни 2027 г.</strong>, за да се получи окончателното плащане.</li><li><strong>Задължения на общините:</strong> Кметовете подават <strong>месечни отчети</strong> до МРРБ за финансово и фактическо изпълнение, включително прогноза за финансовите потоци по години. МРРБ от своя страна отчита пред Министерството на финансите до <strong>20-о число</strong> на следващия месец и публикува отчетите онлайн.</li><li><strong>Връщане на средствата:</strong> Парите, предоставени от ББР, се възстановяват ежегодно от МРРБ <strong>с лихва</strong> – банковият лихвен процент по използвания ресурс плюс <strong>0,5 процентни пункта</strong>; разходите се поемат от централния бюджет, не директно от общините.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Общините с вече одобрени проекти – осигурява се непрекъснато финансиране въпреки липсата на редовен бюджет за 2026 г.</li><li>Губят: Общини, които са искали да сключат нови споразумения – това е изрично забранено до приемането на бюджета за 2026 г.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Сметките в евро, открити от ББР за всяка община, не изискват съгласието на Министерството на финансите – нетипично изключение от стандартния бюджетен контрол.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>В сила от деня на обнародването – 21 януари 2026 г.</li><li>Действието на постановлението е временно и изтича автоматично с приемането на Закона за държавния бюджет за 2026 г.</li><li>Краен оперативен срок: акт за въвеждане в експлоатация трябва да е налице преди 30 юни 2027 г. за получаване на окончателно плащане.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240766" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details></div>
+</div>
+<div class="subsection">
+  <div class="subsection-hd">
+    <span class="subsection-tag">03</span>
+    <span class="subsection-title">Министерства и ведомства</span>
+    <span class="subsection-count">15 наредби · 1 правилник · 1 споразумение</span>
+  </div>
+  <div class="dv-grid">
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;7 &middot; 2026-01-20</span>
+    </div>
+    <div class="dv-title">НАРЕДБА № 12 от 6 януари 2026 г. за придобиване на квалификация по професията „Туристическа анимация“</div>
+    <div class="exec-organ">Министерство на образованието и науката</div>
+    <p class="dv-lead">Наредбата въвежда държавен образователен стандарт за обучение по новата професия „Туристическа анимация&quot; и определя изискванията за получаване на трета и четвърта степен на професионална квалификация по нея.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Официално се въвежда професия с код 101504 „Туристическа анимация&quot; към направление „Пътувания, туризъм и свободно време&quot; – досега такъв стандарт не е съществувал.</li><li>Обучението се предлага на две нива: трета и четвърта степен на професионална квалификация, като е предвидена и възможност за придобиване на квалификация само по част от професията.</li><li>Стандартът обхваща две групи обучаеми: ученици в VIII клас (редовно училищно обучение) и лица над 16 години (курсови форми).</li><li>Учебните планове и програми задължително трябва да включват обща, отраслова и специфична професионална подготовка с компетентности, достатъчни за реално упражняване на професията.</li><li>Стандартът задава и изисквания към материалната база на обучаващите институции, както и към квалификацията на самите обучаващи.</li><li>Оценяването на всяка единица резултат от обучението се извършва по предварително определени критерии и средства, залегнали в стандарта.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Кандидати за работа в туристическата анимация, които получават призната държавна квалификация; училища и центрове за професионално обучение, които могат да открият нова специалност.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>За лица над 16 години (курсово обучение): от 1 януари 2026 г.</li><li>За ученици в редовно училищно обучение: от учебната 2026/2027 г. – тоест за осмокласниците, постъпващи през септември 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240478" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;7 &middot; 2026-01-20</span>
+    </div>
+    <div class="dv-title">НАРЕДБА № 13 от 6 януари 2026 г. за придобиване на квалификация по професията „Организиране на туристически пътувания“</div>
+    <div class="exec-organ">Министерство на образованието и науката</div>
+    <p class="dv-lead">Наредбата въвежда държавен образователен стандарт за професията „Организиране на туристически пътувания&quot;, с който се определят изискванията за обучение и придобиване на трета степен на професионална квалификация в туристическия сектор.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Засегнати са ученици в професионалното образование (от VIII клас) и лица над 16 години, които искат да се обучават и работят като организатори на туристически пътувания (код 101502).</li><li>Стандартът задава три пласта подготовка: обща, отраслова и специфична професионална – като всички заедно гарантират способността за реална работа в бранша след края на обучението.</li><li>Определят се конкретни единици резултати от учене, критерии и средства за оценяване на всяка от тях – т.е. изпитните изисквания са унифицирани за всички училища и обучаващи организации.</li><li>Предвидена е и квалификация по „част от професията&quot; – по-кратко обучение за хора, които искат да придобият само отделни умения, без да завършват цялата програма.</li><li>Стандартът включва изисквания към материалната база (учебни помещения, оборудване) и към преподавателите – т.е. всяко училище или център трябва да отговаря на тези условия, за да провежда обучението.</li><li>Въз основа на наредбата се разработват типови учебни планове и програми – документите, по които реално се учи, ще следват единен шаблон.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Бъдещи туристически специалисти (ясна, стандартизирана пътека за квалификация); работодатели в туризма (предвидими и проверими компетентности на завършилите); хора над 16 г. без пълно образование (достъп до частична квалификация).</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>За ученици в VIII клас: новите учебни планове и програми се прилагат от учебната 2026/2027 година.</li><li>За лица над 16 години (курсове за възрастни): стандартът е в сила от 1 януари 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240479" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;7 &middot; 2026-01-20</span>
+    </div>
+    <div class="dv-title">НАРЕДБА № 14 от 6 януари 2026 г. за придобиване на квалификация по професията „Организиране на събития“</div>
+    <div class="exec-organ">Министерство на образованието и науката</div>
+    <p class="dv-lead">Наредбата въвежда официален държавен стандарт за обучение по новата професия „Организиране на събития&quot;, определяйки какво трябва да знаят и умеят завършилите я.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Създава се нова регламентирана професия с код 101503 „Организиране на събития&quot; от професионално направление „Пътувания, туризъм и свободно време&quot; – досега такава официална квалификация не е съществувала в системата.</li><li>Завършилите придобиват <strong>трета степен на професионална квалификация</strong> – средното ниво в петстепенната система, което дава право за работа като специалист в бранша.</li><li>Стандартът определя три пласта задължително учебно съдържание: обща, отраслова и специфична професионална подготовка, всяка с конкретни компетентности.</li><li>Предвидена е и възможност за частична квалификация – обучаемите могат да придобият само отделни „единици резултати от учене&quot;, без да завършват пълния курс.</li><li>Наредбата задава изисквания към материалната база на училищата и обучителните центрове, както и към квалификацията на преподавателите.</li><li>Обучението е достъпно по два пътя: за ученици в VIII клас (в рамките на редовното училищно образование) и за възрастни над 16 години (извънучилищно обучение).</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Кандидати за работа в event индустрията, които вече ще могат да се легитимират с призната държавна диплома; работодатели от сектора, получаващи кадри с унифицирана подготовка.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Обучението за възрастни над 16 години стартира незабавно от 1 януари 2026 г. – тоест преди самото обнародване на наредбата.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>За възрастни (над 16 г.) – от <strong>1 януари 2026 г.</strong></li><li>За ученици в редовно училищно образование – от <strong>учебната 2026/2027 г.</strong>, тоест от следващия септември, за постъпващите в VIII клас.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240480" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;7 &middot; 2026-01-20</span>
+    </div>
+    <div class="dv-title">НАРЕДБА № 15 от 9 януари 2026 г. за придобиване на квалификация по професията „Механизация и цифровизация в аграрния сектор“</div>
+    <div class="exec-organ">Министерство на образованието и науката</div>
+    <p class="dv-lead">Наредбата въвежда държавен образователен стандарт за нова професия, която обучава специалисти по механизация и цифрови технологии в земеделието, и урежда условията за придобиване на квалификация по нея.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Създава се официална нова професия с код 081201 „Механизация и цифровизация в аграрния сектор&quot; в областта на селското стопанство – тя не е съществувала досега в системата на професионалното образование.</li><li>По професията може да се придобие втора или трета степен на професионална квалификация, а не само първа – това я позиционира като по-задълбочена специализация.</li><li>Предвидена е и по-гъвкава опция: придобиване на квалификация само по част от професията или по отделни учебни единици, без да се завършва пълният курс.</li><li>Стандартът задава изисквания към кандидатите, учебното съдържание (обща, отраслова и специфична подготовка), материалната база и обучаващите.</li><li>Въз основа на наредбата трябва да се разработят типови учебни планове за ученици и отделни планове за лица над 16 години, които се обучават извън редовното училище.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Ученици и възрастни над 16 г., търсещи квалификация в модерното цифровизирано земеделие; земеделски работодатели, нуждаещи се от технологично грамотни кадри; професионални гимназии, които получават правна рамка за нова специалност.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Докато за ученици стандартът влиза в сила от учебната 2026/2027 г., за възрастни обучаеми той е приложим вече от 1 януари 2026 г. – тоест преди самото обнародване на наредбата.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>За лица над 16 г. в извънучилищно обучение: от 1 януари 2026 г.</li><li>За ученици в VIII клас на училищното професионално образование: от учебната 2026/2027 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240574" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;7 &middot; 2026-01-20</span>
+    </div>
+    <div class="dv-title">НАРЕДБА № 16 от 9 януари 2026 г. за придобиване на квалификация по професията „Агрономство и агробизнес“</div>
+    <div class="exec-organ">Министерство на образованието и науката</div>
+    <p class="dv-lead">Наредбата въвежда държавен образователен стандарт за професията „Агрономство и агробизнес&quot;, определяйки какво трябва да знаят и умеят завършилите това обучение.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Обхваща професия с код 081107 „Агрономство и агробизнес&quot; от направление „Растениевъдство, животновъдство и рибно стопанство&quot; – засягат се ученици и възрастни обучаеми по цялата страна.</li><li>Стандартът покрива трета и четвърта степен на професионална квалификация, включително квалификация по част от професията.</li><li>Определят се конкретни изисквания към кандидатите, описание на професията и единици резултати от учене за всяка степен на квалификация.</li><li>Включват се критерии и средства за оценяване на всяка единица резултат от учене.</li><li>Задават се изисквания към материалната база на училищата и обучителните центрове, провеждащи обучение по тази професия.</li><li>Задават се изисквания към обучаващите (преподавателите и инструкторите).</li><li>Въз основа на стандарта се разработват типови учебни планове и програми – за ученици и за лица над 16 години по отделни рамкови програми.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Ученици и възрастни, търсещи призната квалификация в агросектора; работодатели в земеделието, които получават кадри с унифицирана подготовка.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>За ученици, постъпващи в VIII клас: учебните планове и програми се прилагат от учебната 2026/2027 г.</li><li>За лица над 16 години в курсове за възрастни: стандартът е в сила от 1 януари 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240575" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;7 &middot; 2026-01-20</span>
+    </div>
+    <div class="dv-title">НАРЕДБА № 17 от 9 януари 2026 г. за придобиване на квалификация по професията „Производство на месо и месни продукти, риба и рибни продукти“</div>
+    <div class="exec-organ">Министерство на образованието и науката</div>
+    <p class="dv-lead">Наредбата въвежда държавен образователен стандарт за обучение по професията „Производство на месо и месни продукти, риба и рибни продукти&quot;, като определя изискванията за придобиване на първа, втора и трета степен на професионална квалификация.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Засяга ученици в професионални училища и лица над 16 години, които искат да се квалифицират в месопреработването и рибопреработването (код 072103).</li><li>Стандартът обхваща три степени на професионална квалификация – първа, втора и трета, като е предвидена и възможност за квалификация по част от професията или по отделни учебни единици.</li><li>Определят се задължителни изисквания към кандидатите за обучение, към материалната база на обучаващите институции и към самите обучаващи.</li><li>Обучението включва три вида подготовка: обща, отраслова и специфична – с конкретни професионални компетентности, необходими за упражняване на професията.</li><li>Въз основа на стандарта се разработват типови учебни планове и програми – отделно за ученици и отделно за лица над 16 години.</li><li>Критериите и средствата за оценяване на всяка учебна единица са фиксирани в стандарта, което унифицира изпитването навсякъде в страната.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Кандидатите за работа в месо- и рибопреработвателната промишленост получават ясна и унифицирана рамка за квалификация; работодателите в сектора получават стандартизирани кадри.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>За ученици, постъпващи в VIII клас: учебните планове и програми се прилагат от учебната 2026/2027 г.</li><li>За лица над 16 години: стандартът е в сила от 1 януари 2026 г. – т.е. обучението по новите правила за тази група е вече стартирало при обнародването.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240579" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;9 &middot; 2026-01-23</span>
+    </div>
+    <div class="dv-title">НАРЕДБА № 20 от 9 януари 2026 г. за придобиване на квалификация по професията „Агроекология и растителна защита“</div>
+    <div class="exec-organ">Министерство на образованието и науката</div>
+    <p class="dv-lead">Въвежда се нов държавен образователен стандарт за професията „Агроекология и растителна защита&quot;, който определя какво трябва да знаят и умеят учениците и курсистите, обучаващи се в тази специалност.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Стандартът обхваща три степени на професионална квалификация – втора, трета и четвърта – по специалността „Агроекология и растителна защита&quot; (код 081105).</li><li>Предвидена е възможност за придобиване на квалификация не само по цялата професия, но и по отделна част от нея или дори по единични резултати от обучението.</li><li>Стандартът задава конкретни изисквания към кандидатите за обучение, към материалната база (оборудване, учебни помещения) и към преподавателите.</li><li>Обучението включва три вида подготовка: обща, отраслова (специфична за агросектора) и специфична за самата професия, като всички те са обвързани с измерими компетентности.</li><li>Лицата над 16 години, които не са в редовно училище, могат да се обучават по тази специалност по гъвкави рамкови програми – и то вече от 1 януари 2026 г.</li><li>За редовните ученици новите учебни планове и програми се въвеждат от учебната 2026/2027 г. – само за новоприетите в VIII клас, не за вече обучаващите се.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Ученици и възрастни, търсещи призната квалификация в агроекологията и растителната защита; работодатели в земеделието, които ще получават кадри с унифицирана подготовка.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>За лица над 16 години (извънучилищно обучение): от 1 януари 2026 г.</li><li>За редовни ученици: от учебната 2026/2027 г., само за приетите в VIII клас от септември 2026 г. нататък.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240576" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;9 &middot; 2026-01-23</span>
+    </div>
+    <div class="dv-title">НАРЕДБА № 21 от 9 януари 2026 г. за придобиване на квалификация по професията „Флористика и озеленяване“</div>
+    <div class="exec-organ">Министерство на образованието и науката</div>
+    <p class="dv-lead">Наредбата въвежда държавен образователен стандарт за обучение по професията „Флористика и озеленяване&quot;, като определя изискванията за придобиване на три степени на квалификация по нея.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Засегнати са ученици, желаещи да се обучават за флористи и озеленители, както и лица над 16 години, търсещи професионална квалификация извън редовното училище.</li><li>Стандартът покрива три степени на професионална квалификация по професия с код 081106 „Флористика и озеленяване&quot; – от начална до по-висока специализация.</li><li>Предвидена е и възможност за придобиване на квалификация само по <strong>част от професията</strong> или по отделни единици резултати от учене – гъвкав вариант за хора, които искат конкретни умения, без да завършват цялото обучение.</li><li>Стандартът задава изисквания към кандидатите, материалната база (оборудване, учебни площи) и квалификацията на преподавателите.</li><li>Обучението обхваща обща, отраслова и специфична професионална подготовка с точно дефинирани компетентности, необходими за упражняване на професията.</li><li>Въз основа на стандарта се разработват типови учебни планове и програми – и за редовни ученици, и за възрастни обучаеми.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Ученици и възрастни, търсещи призната квалификация във флористиката и озеленяването; работодатели в озеленителния и флористичния сектор, които получават кадри с унифицирана подготовка.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>За ученици, постъпващи в VIII клас: учебните планове и програми се прилагат от учебната <strong>2026/2027 г.</strong></li><li>За лица над 16 години в извънучилищно обучение: стандартът се прилага от <strong>1 януари 2026 г.</strong></li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240577" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;9 &middot; 2026-01-23</span>
+    </div>
+    <div class="dv-title">НАРЕДБА № 18 от 9 януари 2026 г. за придобиване на квалификация по професията „Корабостроене и кораборемонт“</div>
+    <div class="exec-organ">Министерство на образованието и науката</div>
+    <p class="dv-lead">Наредбата установява държавен образователен стандарт за обучение по професията „Корабостроене и кораборемонт&quot; и определя какво трябва да знаят и умеят завършилите я.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Въвежда се официален стандарт за професията с код 071616 „Корабостроене и кораборемонт&quot; от направление „Транспортни средства&quot; – до момента такъв стандарт не е съществувал.</li><li>Обучението е структурирано в три степени на професионална квалификация – от по-ниска към по-висока, като е възможно и придобиване на квалификация само по част от професията.</li><li>Стандартът покрива три вида подготовка: обща, отраслова (специфична за транспортния сектор) и специфична за корабостроенето и кораборемонта.</li><li>Определят се изисквания към кандидатите за обучение, към материалната база (работилници, оборудване) и към преподавателите/инструкторите.</li><li>За всяка учебна единица са предвидени конкретни критерии и средства за оценяване на резултатите от ученето.</li><li>Обучението е достъпно за две групи: ученици в системата на професионалното образование (VIII клас нагоре) и лица над 16 години извън редовно училище.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Лица, търсещи работа в корабостроителната и кораборемонтната индустрия – получават призната квалификация; работодатели от бранша – получават кадри с унифицирана подготовка.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>За ученици в VIII клас: новите учебни планове и програми се прилагат от учебната 2026/2027 година.</li><li>За лица над 16 години извън редовно училище: стандартът е в сила от 1 януари 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240578" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;9 &middot; 2026-01-23</span>
+    </div>
+    <div class="dv-title">НАРЕДБА № 19 от 9 януари 2026 г. за придобиване на квалификация по професията „Производство на захар и захарни изделия“</div>
+    <div class="exec-organ">Министерство на образованието и науката</div>
+    <p class="dv-lead">Наредбата въвежда държавен образователен стандарт за професията „Производство на захар и захарни изделия&quot;, като определя какво трябва да знае и умее всеки, обучаван по тази специалност.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Засегнати са ученици в професионалното образование и пълнолетни (над 16 г.) лица, желаещи да се обучават по професия с код 072104 от направление „Хранителни технологии&quot;.</li><li>Стандартът обхваща три степени на професионална квалификация – първа, втора и трета, като е възможно и придобиване на квалификация само по част от професията или по отделни модули.</li><li>Обучението включва три вида подготовка: обща, отраслова (специфична за хранителната индустрия) и специфична за захарното производство – всички задължителни.</li><li>Стандартът задава конкретни изисквания към материалната база на училищата и квалификацията на преподавателите, което означава, че не всяко училище може автоматично да открие тази специалност.</li><li>Въз основа на наредбата се разработват типови учебни планове за ученици и отделни учебни планове за лица над 16 години – двете групи имат различни програми.</li><li>Определени са критерии и средства за оценяване на всяка учебна единица, което стандартизира изпитите и дипломирането в цялата страна.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Кандидатите за работа в захарната и сладкарската индустрия, които получават призната и стандартизирана квалификация; работодателите в сектора, които ще могат да разчитат на единни компетентности на завършилите.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>За ученици, постъпващи в VIII клас: новите учебни планове и програми се прилагат от учебната 2026/2027 година.</li><li>За лица над 16 години в курсове за професионално обучение: стандартът е в сила от 1 януари 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240580" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;9 &middot; 2026-01-23</span>
+    </div>
+    <div class="dv-title">Наредба за изменение на Наредба № 8121з-862 от 2018 г. за условията и реда за подпомагане с парични средства на служителите и членовете на семействата на загиналите при изпълнение на служебните си задължения държавни служители в Министерството на вътрешните работи, изпаднали в тежко материално полож</div>
+    <div class="exec-organ">Министерство на вътрешните работи</div>
+    <p class="dv-lead">Актът сменя валутата в таблицата с размерите на паричното подпомагане за служители на МВР в тежко материално положение и за семействата на загинали служители – от лева на евро.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Единствената промяна е техническа: съкращението „лв.&quot; в приложението към наредбата се заменя с „евро&quot; – размерите на сумите за подпомагане остават същите числово, но вече са деноминирани в евро.</li><li>Засегнати са действащи служители на МВР в тежко материално положение и членовете на семействата на служители, загинали при изпълнение на служебните си задължения.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Не се открива явен печеливш – промяната е чисто техническа и подготвителна.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Наредбата влиза в сила не от деня на обнародването, а от бъдещ и все още неопределен момент – датата на въвеждане на еврото в България, което я прави условен акт, обвързан с политическо решение без фиксиран срок.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Не от датата на обнародване, а от деня, в който еврото официално влезе в обращение в България.</li><li>Конкретна дата не е посочена – наредбата е „в изчакване&quot; до решението за еврозоната.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240638" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;9 &middot; 2026-01-23</span>
+    </div>
+    <div class="dv-title">Наредба за изменение на Наредба № 8121з-1243 от 2020 г. за условията и реда за възлагане и отчитане на изпълнението и/или управлението на проекти или програми и за формиране и изплащане на допълнителното възнаграждение по чл. 178, ал. 1, т. 6 от Закона за Министерството на вътрешните работи</div>
+    <div class="exec-organ">Министерство на вътрешните работи</div>
+    <p class="dv-lead">Актът заменя „лева&quot; с „евро&quot; в таблицата, по която се изчислява допълнителното възнаграждение на служители на МВР, участващи в управлението на проекти и програми.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>В приложението, което определя как се формира бонусът за служители на МВР, ангажирани с проекти и програми, всички суми занапред ще се изписват и изплащат в евро вместо в левове.</li><li>Промяната засяга единствено мерната единица на възнаграждението – самите размери и начин на изчисление остават непроменени.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Служители на МВР, участващи в проекти – получават възнаграждението директно в евро след въвеждането на единната валута, без допълнителна административна процедура по конвертиране.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Наредбата влиза в сила не от датата на обнародването си, а от момента на въвеждане на еврото в България – тоест срокът й е обвързан с политическо и икономическо събитие с все още неопределена дата.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от датата на въвеждане на еврото в Република България.</li><li>До настъпването на това събитие действащата наредба продължава да се прилага с „лева&quot;.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240639" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;9 &middot; 2026-01-23</span>
+    </div>
+    <div class="dv-title">Наредба за изменение и допълнение на Наредба № 9 от 2001 г. за качеството на водата, предназначена за питейно-битови цели</div>
+    <div class="exec-organ">Министерство на здравеопазването, Министерство на регионалното развитие и благоустройството, Министерство на околната среда и водите</div>
+    <p class="dv-lead">Актуализират се правилата за контрол на качеството на питейната вода – прецизират се термини, разширява се обхватът на рисковата оценка и се уточнява кой носи отговорността за мониторинга.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Контролът върху водоснабдяването минава изцяло в ръцете на РЗИ</strong> – досега програмите за мониторинг се изготвяха съвместно от водоснабдителните организации и регионалните здравни инспекции, сега задължението е само на РЗИ.</li><li><strong>Принципът на предпазливостта се вписва изрично в закона</strong> – забранява се всяко пряко или косвено влошаване на качеството на питейната вода по здравни показатели, включително замърсяване на природните водоизточници.</li><li><strong>Въвежда се ново понятие „индивидуален водоизточник&quot;</strong> – обхваща водовземане за лични нужди по Закона за водите; засяга собственици на кладенци и подобни частни съоръжения.</li><li><strong>Прецизирана е дефиницията на „обществен местен водоизточник&quot;</strong> – включва традиционно ползвани за пиене и водоналиване обекти (чешми, каптажи), които не са свързани към централната водоснабдителна система.</li><li><strong>Рисковата оценка на водосборните райони може да води до разширяване или стесняване на списъка с контролирани показатели</strong> – ако анализът покаже нови вещества или замърсители в суровата вода, се добавят нови показатели; при доказана безопасност е възможно и намаляване на честотата на пробовземане.</li><li><strong>Пространствените данни влизат в информирането на гражданите</strong> – при публикуване на информация за качеството на водата се използват услуги за пространствени данни съгласно съответния закон, което улеснява визуализацията и достъпа.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Граждани, ползващи обществени местни водоизточници и частни кладенци – статутът им е изяснен; РЗИ получават по-ясен мандат без споделена отговорност.</li><li>Губят: Водоснабдителните организации – губят участие в изготвянето на мониторинговите програми, което намалява влиянието им върху контролния процес.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Отпадането на водоснабдителните организации от съвместния контрол на мониторинга е съществена промяна – на практика компаниите, доставящи водата, вече нямат формална роля при определянето как тя се проверява.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от датата на обнародване – 23 януари 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240641" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;9 &middot; 2026-01-23</span>
+    </div>
+    <div class="dv-title">НАРЕДБА № 22 от 15 януари 2026 г. за придобиване на квалификация по професията „Екскурзовод“</div>
+    <div class="exec-organ">Министерство на образованието и науката</div>
+    <p class="dv-lead">Наредбата въвежда държавен образователен стандарт за обучение по професията „Екскурзовод&quot;, като определя изискванията, компетентностите и рамката за придобиване на трета степен на професионална квалификация.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Засегнати са ученици в професионални гимназии и лица над 16 години, които искат да се обучават и работят като екскурзоводи.</li><li>Придобива се <strong>трета степен на професионална квалификация</strong> – средното ниво в системата за професионално образование, което дава право за упражняване на професията след дипломиране.</li><li>Обучението включва три блока: обща, отраслова и специфична професионална подготовка с точно дефинирани компетентности.</li><li>Предвидена е и по-лека форма – <strong>квалификация по част от професията</strong>, за хора, които искат само определени умения, без пълния курс.</li><li>Определени са изисквания към <strong>материалната база</strong> на учебните заведения и към <strong>квалификацията на преподавателите</strong>, които провеждат обучението.</li><li>Въвеждат се критерии и инструменти за <strong>оценяване на всяка отделна учебна единица</strong>, което стандартизира изпитния процес в различните училища.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Кандидати за професията „Екскурзовод&quot;, тъй като получават ясна и стандартизирана образователна рамка; туристическият бизнес, който ще наема кадри с унифицирана подготовка.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>За ученици, постъпващи в <strong>VIII клас</strong> – новите учебни планове и програми се прилагат от <strong>учебната 2026/2027 г.</strong></li><li>За лица над 16 години в курсова форма на обучение – стандартът се прилага от <strong>1 януари 2026 г.</strong> (т.е. вече е в сила от преди обнародването).</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240742" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;9 &middot; 2026-01-23</span>
+    </div>
+    <div class="dv-title"></div>
+    <div class="exec-organ">Министерство на земеделието и храните</div>
+    <p class="dv-lead">Коригира се техническа грешка в датата на наредбата за спешна финансова помощ на земеделци, пострадали от измръзване/слана – вместо „6 януари 2025 г.&quot; трябва да се чете „6 януари 2026 г.&quot;</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Наредбата за помощ при щети от измръзване/слана върху 18 вида култури (сливи, праскови, ягоди, малини, лозя и др.) е издадена на 6 януари <strong>2026 г.</strong>, а не 2025 г., както погрешно е отпечатано в бр. 6 на „Държавен вестник&quot; от 2026 г.</li><li>Поправката е чисто техническа и не променя нито едно съдържателно правило, изискване или срок от самата наредба.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Земеделски стопани и администрацията – отпада правната несигурност около датата на акта.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>От обнародването – 23 януари 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240826" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-pravilnik">ПРАВИЛНИК</span></div>
+      <span class="dv-meta">Бр.&nbsp;7 &middot; 2026-01-20</span>
+    </div>
+    <div class="dv-title">Правилник за изменение и допълнение на Правилника за дейността на Комисията за защита на личните данни и на нейната администрация</div>
+    <div class="exec-organ">Комисия за защита на личните данни</div>
+    <p class="dv-lead">Актът преустройва вътрешната структура и процедури на КЗЛД – реорганизира дирекциите, въвежда дистанционни заседания и прецизира реда за разглеждане на сигнали за нарушения.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Общата администрация се преструктурира в две дирекции: „Финансово-стопанска дейност и управление на собствеността&quot; и „Административно-правно и информационно обслужване&quot; (вместо досегашната „Управление на ресурсите и административно-правно обслужване&quot;), а специализираната администрация нараства от три на четири дирекции.</li><li>Председател или член на КЗЛД може да участва в заседание дистанционно – чрез видеоконферентна платформа – при мотивирано искане или служебна необходимост, при спазване на изисквания за кворум.</li><li>Финансовите документи за командировки, допълнителни възнаграждения и участие в проекти на самия председател вече се одобряват не от него, а от друг член на комисията, определен с решение – мярка срещу конфликт на интереси.</li><li>За работа с класифицирана информация председателят и членовете получават добавка към основната заплата: 15% за ниво „строго секретно&quot;, 10% за „секретно&quot; и 5% за „поверително&quot;.</li><li>Проверките на задължени лица вече могат да се извършват и без предварително уведомление – с решение на комисията, включително проверки за изпълнение на нейни решения.</li><li>Сигналите за нарушения по ЗЗЛПСПОИН се регистрират в специализирана информационна система, разпределят се на случаен принцип и трябва да се разгледат в срок до 3 месеца (в обосновани случаи – до 6 месеца); при неспазване на срокове директорът или председателят образуват дисциплинарно производство.</li><li>Сигнали срещу самия председател и/или член на КЗЛД се препращат незабавно до Комисията за противодействие на корупцията.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Лицата, подаващи сигнали за нарушения – по-ясна и по-бърза процедура с конкретни срокове и случайно разпределение за безпристрастност. Членовете на КЗЛД – получават право на дистанционно участие в заседания.</li><li>Губят: Не се открива явен губещ, но проверяваните от КЗЛД организации губят гаранцията за предварително уведомление преди проверка.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>За първи път финансовите документи на самия председател (командировки, бонуси, облекло) трябва да се одобряват от колега-член на комисията – рядко срещана вътрешна антикорупционна клауза в правилник на регулатор.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Правилникът влиза в сила от 2 февруари 2026 г.</li><li>Изключение: задължението за вписване в регистъра на заетостта при възникване, изменение или прекратяване на служебни правоотношения влиза в сила от 1 юни 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240586" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<div class="dv-card dv-card-compact">
+  <div class="dv-sum-static">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-spor">СПОРАЗУМЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;7 &middot; 2026-01-20</span>
+    </div>
+    <div class="dv-title">СПОРАЗУМЕНИЕ между правителството на Република България и правителството на Обединеното кралство Великобритания и Северна Ирландия за прекратяване на Договора между правителството на Република България и правителството на Обединеното кралство Великобритания и Северна Ирландия за насърчаване и взаимн</div>
+    <div class="exec-organ">Министерство на финансите</div>
+    <p class="dv-lead">България и Великобритания официално закриват стария двустранен договор за защита на инвестициите от 1995 г. и заличават всякакво правно действие, което той би могъл да породи занапред.</p>
+    <div class="compact-bullets"><ul><li>Договорът от 11 декември 1995 г. за насърчаване и взаимна защита на инвестициите между България и Великобритания се прекратява изрично и окончателно.</li><li>Отменена е и т.нар. „клауза на залез&quot; (чл. 14, ал. 2 от договора от 1995 г.) – тоест инвестициите, направени преди прекратяването, също не могат да се позовават на стария договор след влизането в сила на споразумението.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=240587" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</div></div>
+</div>
+</div>
+
+<div class="nl-footer">
+  <span class="nl-footer-logo">Парламентарни Doodles</span>
+  <div class="nl-footer-links">
+    <a href="../">ДВ Дайджест</a>
+    <a href="../../sessions/">Заседания</a>
+    <a href="https://bpdoodles.com">Basepoint Doodles</a>
+  </div>
+</div>
+</div>
+</body>
+</html>
