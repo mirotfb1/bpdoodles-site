@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026-W22 · Законодателство · Парламентарни Doodles</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;900&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:     #1B2E5E;
+  --amber:    #B5821A;
+  --amber-lt: #FBF3E2;
+  --amber-bd: #D4A340;
+  --red:      #CC2B2B;
+  --red-lt:   #FFF1F1;
+  --green:    #2A7A4F;
+  --green-lt: #EDF7F2;
+  --ink:      #1C1C1C;
+  --muted:    #777;
+  --border:   #E0E0E0;
+  --surface:  #F5F5F5;
+  --page:     #EDEEF0;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito',sans-serif;font-size:15px;line-height:1.6;color:var(--ink);background:var(--page)}
+
+/* NAV */
+.topnav{background:var(--navy);padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:52px;position:sticky;top:0;z-index:100}
+.brand{font-family:'Caveat',cursive;font-size:1.35rem;color:#fff;text-decoration:none}
+.brand em{color:var(--amber);font-style:normal}
+.nav-links{display:flex;gap:20px;list-style:none}
+.nav-links a{color:rgba(255,255,255,.75);text-decoration:none;font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.nav-links a.active{color:var(--amber)}
+
+/* LAYOUT */
+.wrapper{max-width:840px;margin:0 auto;padding:0 20px}
+
+/* BREADCRUMB */
+.breadcrumb{padding:16px 0 0;font-size:.76rem;color:var(--muted)}
+.breadcrumb a{color:var(--muted);text-decoration:none}
+.breadcrumb a:hover{color:var(--amber)}
+.breadcrumb sep{margin:0 6px}
+
+/* WEEK HEADER */
+.week-hdr{padding:18px 0 22px;border-bottom:2px solid var(--border);margin-bottom:30px}
+.week-eyebrow{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);margin-bottom:5px}
+.week-title{font-size:1.55rem;font-weight:900;color:var(--navy);margin-bottom:6px}
+.week-meta{font-size:.82rem;color:var(--muted);display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+.week-pill{background:#fff;border:1px solid var(--border);border-radius:20px;padding:2px 10px;font-size:.75rem;color:var(--ink);font-weight:600}
+
+/* NO-PARLIAMENT NOTICE */
+.no-ns{background:#fff;border:1px solid var(--border);border-radius:4px;padding:13px 16px;font-size:.83rem;color:var(--muted);margin-bottom:28px;display:flex;align-items:center;gap:8px}
+.no-ns-icon{font-size:1rem;opacity:.4}
+
+/* ORGAN SECTION */
+.organ-hdr{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:8px;padding:8px 0 10px;border-bottom:1px solid var(--border);margin-bottom:8px}
+.organ-count{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1px 8px;font-size:.7rem}
+.organ-section{margin-bottom:32px}
+
+/* BADGES */
+.badge{font-size:.67rem;font-weight:700;letter-spacing:.06em;padding:2px 8px;border-radius:3px;text-transform:uppercase;flex-shrink:0}
+.badge-type{background:var(--navy);color:#fff}
+.badge-organ{background:transparent;border:1px solid var(--navy);color:var(--navy)}
+
+/* SUMMARY CARDS */
+.t1-card{background:#fff;border:1px solid var(--border);border-radius:4px;margin-bottom:6px;overflow:hidden}
+.t1-row{padding:12px 14px;display:flex;align-items:flex-start;gap:10px;cursor:pointer;transition:background .1s}
+.t1-row:hover{background:#FAFAFA}
+.t1-content{flex:1;min-width:0}
+.t1-badges{display:flex;align-items:center;gap:5px;margin-bottom:5px;flex-wrap:wrap}
+.t1-title{font-size:.88rem;font-weight:700;color:var(--navy);margin-bottom:3px;line-height:1.35}
+.t1-nakratko{font-size:.81rem;color:#555;line-height:1.45;margin-bottom:7px}
+.t1-footer{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.topic-tag{font-size:.67rem;font-weight:700;background:#EDF1F8;color:var(--navy);padding:2px 9px;border-radius:20px;text-decoration:none;transition:background .13s;letter-spacing:.01em}
+.topic-tag:hover{background:#D8E2F3}
+.eff-date{font-size:.71rem;color:var(--muted);white-space:nowrap}
+.expand-btn{flex-shrink:0;width:26px;height:26px;border:1px solid var(--border);border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:.9rem;color:var(--muted);cursor:pointer;margin-top:2px;transition:all .13s;font-weight:700}
+.expand-btn:hover{border-color:var(--navy);color:var(--navy)}
+.expand-btn.open{background:var(--navy);color:#fff;border-color:var(--navy)}
+.t1-factsheet{display:none;padding:14px 14px 16px;border-top:1px solid var(--border);background:#FDFEFF;font-size:.86rem;line-height:1.65}
+.t1-factsheet.open{display:block}
+.fs-meta{font-size:.78rem;color:var(--muted);margin-bottom:12px;display:flex;gap:14px;flex-wrap:wrap}
+.fs-meta span strong{color:var(--ink)}
+.fs-section-title{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:12px 0 6px}
+.fs-bullets{padding-left:16px}
+.fs-bullets li{margin-bottom:6px;font-size:.85rem;color:#333;line-height:1.55}
+.win-lose{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}
+.win-box{background:var(--green-lt);border-left:3px solid var(--green);border-radius:3px;padding:9px 12px;font-size:.82rem;line-height:1.5}
+.lose-box{background:var(--red-lt);border-left:3px solid var(--red);border-radius:3px;padding:9px 12px;font-size:.82rem;line-height:1.5}
+.wl-label{font-size:.67rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px}
+.win-box .wl-label{color:var(--green)}
+.lose-box .wl-label{color:var(--red)}
+.fs-notable{background:#FFFBF0;border-left:3px solid var(--amber);padding:9px 12px;font-size:.83rem;line-height:1.55;margin:10px 0;color:#333}
+.fs-notable-lbl{font-size:.67rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--amber);margin-bottom:4px}
+.fs-dv-link{display:inline-flex;align-items:center;gap:4px;font-size:.75rem;color:var(--navy);text-decoration:none;font-weight:700;margin-top:12px;border-bottom:1px solid var(--border)}
+
+/* BASIC SECTION */
+.basic-section{background:#fff;border:1px solid var(--border);border-radius:4px;margin-top:4px;margin-bottom:32px}
+.basic-toggle{padding:11px 14px;display:flex;align-items:center;gap:8px;cursor:pointer;font-size:.8rem;font-weight:700;color:var(--muted);user-select:none;transition:background .1s}
+.basic-toggle:hover{background:var(--surface)}
+.basic-toggle .basic-arr{font-size:.8rem;transition:transform .2s}
+.basic-toggle.open .basic-arr{transform:rotate(90deg)}
+.basic-count{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1px 8px;font-size:.7rem}
+.basic-list{display:none;padding:0 14px 10px;border-top:1px solid var(--border)}
+.basic-list.open{display:block}
+.basic-item{display:flex;align-items:baseline;gap:8px;padding:7px 0;border-bottom:1px solid var(--border);font-size:.81rem;color:#444}
+.basic-item:last-child{border-bottom:none}
+.basic-item a{color:var(--amber);text-decoration:none;font-size:.72rem;font-weight:700;flex-shrink:0;margin-left:auto}
+.basic-item a:hover{text-decoration:underline}
+.basic-badge{font-size:.62rem;font-weight:700;background:var(--surface);border:1px solid var(--border);color:var(--muted);padding:1px 6px;border-radius:2px;text-transform:uppercase;flex-shrink:0}
+.basic-organ{font-size:.72rem;color:var(--muted);flex-shrink:0}
+
+/* EDITION NAV + FOOTER */
+.edition-nav{display:flex;justify-content:space-between;align-items:center;margin-top:32px;padding-top:20px;border-top:1px solid var(--border);font-size:.82rem}
+.edition-nav a{color:var(--navy);text-decoration:none;font-weight:700}
+.edition-nav a:hover{color:var(--amber)}
+footer{margin-top:56px;border-top:1px solid var(--border);padding:18px 0 32px;text-align:center;font-size:.75rem;color:var(--muted)}
+footer a{color:var(--muted);text-decoration:none}
+
+@media(max-width:600px){
+  .win-lose{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="topnav">
+  <a class="brand" href="../">Парламентарни <em>Doodles</em></a>
+  <ul class="nav-links">
+    <li><a href="../" class="active">Законодателство</a></li>
+    <li><a href="#">Икономика</a></li>
+    <li><a href="#">Бюлетин</a></li>
+  </ul>
+</nav>
+
+<div class="wrapper">
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <a href="../">Начало</a><sep>›</sep>
+    <a href="../">Законодателство</a><sep>›</sep>
+    2026-W22
+  </div>
+
+  <!-- WEEK HEADER -->
+  <div class="week-hdr">
+    <div class="week-eyebrow">Законодателство · Седмично издание</div>
+    <div class="week-title">25–31 май 2026</div>
+    <div class="week-meta">
+      <span class="week-pill">ДВ бр. 48–49</span>
+      <span>2 резюмета</span>
+      <span>·</span>
+      <span>2 технически</span>
+    </div>
+  </div>
+
+  <!-- NO NS NOTICE -->
+  <div class="no-ns">
+    <span class="no-ns-icon">&#9634;</span>
+    Народното събрание не е обнародвало закони или решения в ДВ тази седмица.
+  </div>
+
+  <!-- МИНИСТЕРСТВА — 2 Summary cards -->
+  <div class="organ-section">
+    <div class="organ-hdr">
+      Министерства и ведомства <span class="organ-count">2</span>
+    </div>
+
+    <!-- Card 1: КЗД Правилник -->
+    <div class="t1-card">
+      <div class="t1-row" onclick="toggleCard('c1')">
+        <div class="t1-content">
+          <div class="t1-badges">
+            <span class="badge badge-type">Правилник</span>
+            <span class="badge badge-organ">КЗД</span>
+          </div>
+          <div class="t1-title">Правилник за устройството на Комисията за защита от дискриминация</div>
+          <div class="t1-nakratko">Установява пълни правила за работата на КЗД: как се подават жалби за дискриминация, какви са сроковете, защо процедурата е безплатна и как се изпълняват решенията.</div>
+          <div class="t1-footer">
+            <a class="topic-tag" href="#">Правосъдие и сигурност</a>
+            <a class="topic-tag" href="#">Администрация</a>
+            <span class="eff-date">В сила: 26.05.2026</span>
+          </div>
+        </div>
+        <div class="expand-btn" id="btn-c1">+</div>
+      </div>
+      <div class="t1-factsheet" id="fact-c1">
+        <div class="fs-meta">
+          <span><strong>Обнародван:</strong> 26.05.2026 · ДВ бр. 48</span>
+          <span><strong>Орган:</strong> Комисия за защита от дискриминация</span>
+        </div>
+        <div class="fs-section-title">Основни моменти</div>
+        <ul class="fs-bullets">
+          <li>Жалбите трябва да са писмени на български (или с превод), да съдържат ЕГН/ЕИК, адрес и описание на нарушението. Анонимни жалби не се разглеждат. Приемат се и електронно с квалифициран подпис. <strong>Производството е изцяло безплатно.</strong></li>
+          <li>Проучването приключва до <strong>30 дни</strong> от предаването на докладчика, при сложни случаи до 60 дни. Решение се постановява до 14 дни след последното заседание. Жалба не може да се подаде, ако от нарушението са минали <strong>повече от 3 години</strong>.</li>
+          <li>Неплатена глоба в едномесечен срок се събира принудително по данъчен ред. Лице с наложена мярка уведомява КЗД за изпълнението в рамките на 1 месец от получаване на решението.</li>
+          <li>В първото заседание задължително се предлага помирение. Страните могат да се споразумеят по всяко време, докато решението не е постановено.</li>
+          <li>Страни, свидетели и вещи лица могат да участват дистанционно при уважителна причина. Комисията ги уведомява <strong>не по-малко от 7 дни преди заседанието.</strong></li>
+          <li>Комисията има <strong>9 изборни члена и 80 служители</strong>. Открити заседания не се провеждат от 15 юли до 1 септември.</li>
+          <li>Членовете получават представително облекло до <strong>4 минимални заплати годишно</strong>, застраховки „Живот" и „Злополука" и ведомствено жилище в София за срока на мандата.</li>
+          <li>Юридическият стаж в КЗД се признава при кандидатстване за съдия, адвокат, Сметната палата и надзор по лични данни. Важи и ретроактивно за вече натрупан стаж.</li>
+        </ul>
+        <div class="fs-section-title">Кой печели / Кой губи</div>
+        <div class="win-lose">
+          <div class="win-box">
+            <div class="wl-label">Печелят</div>
+            Граждани с жалби за дискриминация: ясна, безплатна процедура с конкретни срокове и право на участие по видео. Юристи, работили в КЗД: получават признат стаж за множество кариерни пътища.
+          </div>
+          <div class="lose-box">
+            <div class="wl-label">Губят</div>
+            Нарушители на антидискриминационното законодателство: глобите се събират принудително, а неизпълнената мярка носи ново наказание.
+          </div>
+        </div>
+        <div class="fs-notable">
+          <div class="fs-notable-lbl">Забележително</div>
+          Членовете на КЗД получават представително облекло до 4 минимални заплати годишно, ведомствено жилище в София и застраховки „Живот" и „Злополука". Пакет от привилегии, нетипично щедър за колегиален надзорен орган.
+        </div>
+        <a class="fs-dv-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243472" target="_blank">Виж в Държавен вестник ↗</a>
+      </div>
+    </div>
+
+    <!-- Card 2: Контролни точки -->
+    <div class="t1-card">
+      <div class="t1-row" onclick="toggleCard('c2')">
+        <div class="t1-content">
+          <div class="t1-badges">
+            <span class="badge badge-type">Наредба</span>
+            <span class="badge badge-organ">МВР</span>
+          </div>
+          <div class="t1-title">Камерите за средна скорост вече носят същите точки като радара</div>
+          <div class="t1-nakratko">Актуализира системата за контролни точки: средната скорост в контролиран участък официално се приравнява към превишаване на скоростта и носи до 26 точки наведнъж.</div>
+          <div class="t1-footer">
+            <a class="topic-tag" href="#">Правосъдие и сигурност</a>
+            <span class="eff-date">В сила: 29.05.2026</span>
+          </div>
+        </div>
+        <div class="expand-btn" id="btn-c2">+</div>
+      </div>
+      <div class="t1-factsheet" id="fact-c2">
+        <div class="fs-meta">
+          <span><strong>Обнародван:</strong> 29.05.2026 · ДВ бр. 49</span>
+          <span><strong>Орган:</strong> Министерство на вътрешните работи</span>
+        </div>
+        <div class="fs-section-title">Основни моменти</div>
+        <ul class="fs-bullets">
+          <li>Точки се отнемат въз основа на влязло в сила наказателно постановление, фиш или електронен фиш, включително когато нарушителят е посочен от собственика на МПС.</li>
+          <li>Таванът остава <strong>39 точки за редовни водачи</strong> и <strong>26 за нови</strong>. Частично възстановяване чрез допълнително обучение: 1/3 от максималния брой, но не повече от веднъж годишно.</li>
+          <li>Служебно пълно възстановяване на точките след <strong>2 години</strong> без ново наказание.</li>
+          <li><strong>Средна скорост в контролиран участък вече носи:</strong> 18 точки за тежко превишаване, 21 точки при повторно нарушение, <strong>26 точки при системно.</strong> Същото като радарна засечка.</li>
+          <li>Системно нарушение на средна скорост = 26 точки наведнъж. За нов водач това е целият допустим лимит. Едно такова нарушение автоматично води до отнемане на свидетелството.</li>
+        </ul>
+        <div class="fs-section-title">Кой печели / Кой губи</div>
+        <div class="win-lose">
+          <div class="win-box">
+            <div class="wl-label">Печелят</div>
+            Водачи, пропуснали задължителното обучение: запазено е служебното възстановяване на точките след 2 години.
+          </div>
+          <div class="lose-box">
+            <div class="wl-label">Губят</div>
+            Водачи, заснети от камери за средна скорост: нарушението вече официално носи същите санкции в точки като засечка от радар.
+          </div>
+        </div>
+        <div class="fs-notable">
+          <div class="fs-notable-lbl">Забележително</div>
+          Системното нарушение на средна скорост носи 26 точки наведнъж, колкото е целият лимит на нов водач. Едно такова нарушение автоматично отнема шофьорската книжка.
+        </div>
+        <a class="fs-dv-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243531" target="_blank">Виж в Държавен вестник ↗</a>
+      </div>
+    </div>
+
+  </div><!-- /organ-section -->
+
+  <!-- BASIC SECTION -->
+  <div class="basic-section">
+    <div class="basic-toggle" id="basic-toggle" onclick="toggleBasic()">
+      <span class="basic-arr">&#9654;</span>
+      Технически актове
+      <span class="basic-count">2</span>
+    </div>
+    <div class="basic-list" id="basic-list">
+      <div class="basic-item">
+        <span class="basic-badge">Наредба</span>
+        Приемане в Академията на МВР: актуализирани специалности и образци за кандидатстване
+        <span class="basic-organ">МВР</span>
+        <a href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243493" target="_blank">→ ДВ</a>
+      </div>
+      <div class="basic-item">
+        <span class="basic-badge">Постановление</span>
+        Тол такси за тежкотоварни МПС: преференции за електрически превозни средства удължени до 2031 г.
+        <span class="basic-organ">МС</span>
+        <a href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243642" target="_blank">→ ДВ</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- EDITION NAV -->
+  <div class="edition-nav">
+    <a href="#">&larr; 2026-W21</a>
+    <a href="../">Архив</a>
+    <span style="color:var(--muted);font-size:.8rem">2026-W23 &rarr;</span>
+  </div>
+
+</div><!-- /wrapper -->
+
+<footer>
+  <div class="wrapper">
+    Парламентарни Doodles &middot; <a href="../">Законодателство</a> &middot; <a href="#">Икономика</a> &middot; <a href="#">Архив</a> &middot; <a href="#">Бюлетин</a><br>
+    Данните идват от <a href="https://dv.parliament.bg" target="_blank">dv.parliament.bg</a>. Резюметата са генерирани с AI и не представляват правна консултация.
+  </div>
+</footer>
+
+<script>
+function toggleCard(id) {
+  const fact = document.getElementById('fact-' + id);
+  const btn  = document.getElementById('btn-' + id);
+  const isOpen = fact.classList.contains('open');
+  fact.classList.toggle('open', !isOpen);
+  btn.classList.toggle('open', !isOpen);
+  btn.textContent = isOpen ? '+' : '−';
+}
+function toggleBasic() {
+  const list   = document.getElementById('basic-list');
+  const toggle = document.getElementById('basic-toggle');
+  list.classList.toggle('open');
+  toggle.classList.toggle('open');
+}
+</script>
+</body>
+</html>
