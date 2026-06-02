@@ -14,30 +14,29 @@
   --font-d:'Caveat',cursive; --font-h:'Nunito','Arial Black',sans-serif;
   --font-b:'Nunito',Arial,sans-serif;
 }
-body{font-family:var(--font-b);background:#F0F2F5;color:var(--ink);line-height:1.6;}
-.wrapper{max-width:740px;margin:32px auto;background:#fff;border:1px solid var(--border);border-radius:4px;overflow:hidden;}
+body{font-family:var(--font-b);background:#E8E8E8;color:var(--ink);line-height:1.6;}
+.wrapper{max-width:700px;margin:32px auto;background:#fff;border:1px solid #C0C0C0;border-radius:0;overflow:hidden;}
 
-/* top bar */
-.top-bar{display:flex;justify-content:space-between;align-items:center;padding:8px 16px;background:var(--navy);}
-.site-nav{display:flex;gap:20px;align-items:center;}
-.site-nav a{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none;}
-.site-nav a:hover{color:rgba(255,255,255,.9);}
-.site-nav a.active{color:var(--gold);}
-.top-bar-tag{font-family:'Courier New',monospace;font-size:10px;color:rgba(255,255,255,.25);}
+/* newspaper header */
+.nwp-hdr{padding:18px 24px 14px;border-bottom:1px solid var(--ink);}
+.nwp-topline{display:flex;justify-content:flex-end;align-items:center;margin-bottom:10px;}
+.nwp-nav{display:flex;gap:14px;flex-wrap:wrap;}
+.nwp-nav a{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#777;text-decoration:none;}
+.nwp-nav a:hover{color:var(--ink);}
+.nwp-nav a.nwp-active{color:var(--ink);font-weight:900;border-bottom:2px solid #CC2B2B;padding-bottom:1px;}
+.nwp-title-row{text-align:center;margin-bottom:10px;}
+.nwp-title{font-family:var(--font-h);font-size:40px;font-weight:900;color:var(--ink);letter-spacing:-1.5px;line-height:1;display:inline;}
+.nwp-doodles{font-family:var(--font-d);font-size:48px;font-weight:700;color:#CC2B2B;line-height:1;vertical-align:baseline;margin-left:6px;}
+.nwp-subtitle{text-align:center;font-size:11px;color:#777;letter-spacing:.14em;text-transform:uppercase;margin-top:6px;}
+.nwp-rule-thick{height:3px;background:var(--ink);margin:10px 0 0;}
+.nwp-rule-thin{height:1px;background:var(--ink);margin:3px 0 0;}
 
-/* masthead */
-.masthead{background:var(--navy);padding:24px 28px 20px;display:flex;justify-content:space-between;align-items:flex-end;border-bottom:3px solid var(--gold);}
-.masthead-logo{display:flex;flex-direction:row;align-items:center;}
-.masthead-left{display:flex;flex-direction:column;align-items:flex-end;padding-right:14px;}
-.masthead-basepoint{font-family:var(--font-h);font-size:22px;font-weight:900;color:#fff;letter-spacing:-.3px;line-height:1;}
-.masthead-tagline{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:4px;}
-.masthead-divider{width:2px;height:52px;background:rgba(255,255,255,.2);}
-.masthead-doodles{font-family:var(--font-d);font-size:48px;font-weight:700;color:var(--gold);line-height:1;padding-left:14px;}
-.masthead-meta{text-align:right;}
-.masthead-issue{font-size:13px;font-weight:700;color:rgba(255,255,255,.85);display:block;line-height:1.5;}
-.masthead-date{font-size:11px;color:rgba(255,255,255,.4);display:block;}
-.masthead-pills{margin-top:8px;display:flex;gap:6px;justify-content:flex-end;flex-wrap:wrap;}
-.masthead-pill{font-size:10px;font-weight:700;letter-spacing:.05em;background:rgba(255,255,255,.12);color:rgba(255,255,255,.6);padding:3px 8px;border-radius:3px;}
+/* section header (below newspaper header, parliament-specific) */
+.parl-hdr{padding:14px 24px 12px;border-bottom:1px solid var(--border);}
+.parl-hdr-title{font-size:16px;font-weight:900;color:var(--ink);letter-spacing:-.2px;}
+.parl-hdr-date{font-size:12px;color:var(--muted);margin-top:3px;}
+.masthead-pills{margin-top:8px;display:flex;gap:6px;flex-wrap:wrap;}
+.masthead-pill{font-size:10px;font-weight:700;letter-spacing:.05em;background:var(--surf);color:var(--muted);padding:3px 8px;border-radius:3px;border:1px solid var(--border);}
 
 /* content sections */
 .section{padding:20px 28px;border-bottom:1px solid var(--border);}
@@ -204,10 +203,13 @@ details.sess-block[open] .sess-date-chip{background:var(--gold);}
 .contact-section a:hover{text-decoration:underline;}
 
 @media(max-width:760px){
-  .wrapper{margin:0;border-radius:0;border-left:none;border-right:none;}
-  .masthead,.section,.nl-footer,.page-header,a.issue-row,.track-card,
+  .wrapper{margin:0;border-left:none;border-right:none;}
+  .nwp-hdr,.parl-hdr,.section,.nl-footer,.page-header,a.issue-row,.track-card,
   .section-label-row,.intro-block,.waitlist-section,.contact-section,.all-issues-wrap{padding-left:16px;padding-right:16px;}
   .masthead-pills{display:none;}
+  .nwp-nav{gap:8px 12px;}
+  .nwp-title{font-size:28px;letter-spacing:-.8px;}
+  .nwp-doodles{font-size:34px;}
   .sess-cols{grid-template-columns:1fr;}
   .fs-winners ul{grid-template-columns:1fr;}
 }
@@ -216,29 +218,28 @@ details.sess-block[open] .sess-date-chip{background:var(--gold);}
 <body>
 <div class="wrapper">
 
-<div class="top-bar">
-  <nav class="site-nav">
-    <a href="../" class="active">ДВ Дайджест</a>
-    <a href="../../sessions/">Заседания</a>
-    <a href="https://bpdoodles.com">Basepoint Doodles</a>
-  </nav>
-  <span class="top-bar-tag">Парламентарни Doodles</span>
+<div class="nwp-hdr">
+  <div class="nwp-topline">
+    <nav class="nwp-nav">
+      <a href="/">Начало</a>
+      <a href="/newsletters/">Бюлетин</a>
+      <a href="/cockpit/">Икономика</a>
+      <a href="/parliament/" class="nwp-active">Законодателство</a>
+      <a href="/about/">За нас</a>
+    </nav>
+  </div>
+  <div class="nwp-title-row">
+    <span class="nwp-title">Basepoint</span><span class="nwp-doodles">Doodles</span>
+  </div>
+  <p class="nwp-subtitle">Законодателство &middot; Парламентарен дайджест</p>
+  <div class="nwp-rule-thick"></div>
+  <div class="nwp-rule-thin"></div>
 </div>
 
-<div class="masthead">
-  <div class="masthead-logo">
-    <div class="masthead-left">
-      <span class="masthead-basepoint">Парламентарни</span>
-      <span class="masthead-tagline">Парламентарен дайджест</span>
-    </div>
-    <div class="masthead-divider"></div>
-    <span class="masthead-doodles">Doodles</span>
-  </div>
-  <div class="masthead-meta">
-    <span class="masthead-issue">ДВ Дайджест · Седмица 20 · 2026</span>
-    <span class="masthead-date">11–17 май 2026</span>
-    <div class="masthead-pills"><span class="masthead-pill">10 акта от НС</span><span class="masthead-pill">3 акта от МС</span><span class="masthead-pill">36 наредби/регулации</span></div>
-  </div>
+<div class="parl-hdr">
+  <div class="parl-hdr-title">ДВ Дайджест · Седмица 20 · 2026</div>
+  <div class="parl-hdr-date">11–17 май 2026</div>
+  <div class="masthead-pills"><span class="masthead-pill">10 акта от НС</span><span class="masthead-pill">3 акта от МС</span><span class="masthead-pill">36 наредби/регулации</span></div>
 </div>
 <div class="section">
 
@@ -1086,11 +1087,12 @@ details.sess-block[open] .sess-date-chip{background:var(--gold);}
 </div>
 
 <div class="nl-footer">
-  <span class="nl-footer-logo">Парламентарни Doodles</span>
+  <span class="nl-footer-logo">Doodles.</span>
   <div class="nl-footer-links">
-    <a href="../">ДВ Дайджест</a>
-    <a href="../../sessions/">Заседания</a>
-    <a href="https://bpdoodles.com">Basepoint Doodles</a>
+    <a href="/">Начало</a>
+    <a href="/newsletters/">Бюлетин</a>
+    <a href="/parliament/">Законодателство</a>
+    <a href="/about/">За нас</a>
   </div>
 </div>
 </div>
