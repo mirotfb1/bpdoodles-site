@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Newsletter Archive · Basepoint Doodles</title>
-<meta name="description" content="Archive of the Basepoint Doodles weekly macro newsletter — economic trends in Bulgaria, in charts and plain language."/>
+<title>Бюлетин · Basepoint Doodles</title>
+<meta name="description" content="Архив на бюлетина за макроикономика и законодателни промени в България."/>
 <link rel="icon" href="/favicon.ico" sizes="any"/>
 <link rel="apple-touch-icon" href="/favicon-180.png"/>
 <link rel="canonical" href="https://bpdoodles.com/newsletters/"/>
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://bpdoodles.com/newsletters/"/>
-<meta property="og:title" content="Newsletter Archive · Basepoint Doodles"/>
-<meta property="og:description" content="Archive of the Basepoint Doodles weekly macro newsletter — economic trends in Bulgaria, in charts and plain language."/>
+<meta property="og:title" content="Бюлетин · Basepoint Doodles"/>
+<meta property="og:description" content="Архив на бюлетина за макроикономика и законодателни промени в България."/>
 <meta property="og:image" content="https://bpdoodles.com/og-image.png"/>
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Newsletter Archive · Basepoint Doodles"/>
-<meta name="twitter:description" content="Archive of the Basepoint Doodles weekly macro newsletter — economic trends in Bulgaria, in charts and plain language."/>
+<meta name="twitter:title" content="Бюлетин · Basepoint Doodles"/>
+<meta name="twitter:description" content="Архив на бюлетина за макроикономика и законодателни промени в България."/>
 <meta name="twitter:image" content="https://bpdoodles.com/og-image.png"/>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Caveat:wght@700&display=swap" rel="stylesheet"/>
 <style>
@@ -152,42 +152,47 @@ body.lang-bg span.lc-en { display: none !important; }
   .site-nav { flex: 1; flex-wrap: wrap; gap: 8px 14px; }
   .nav-br { display: block; flex-basis: 100%; height: 0; }
 }
+
+/* ── Newspaper header ──────────────────────────────────────────────── */
+body { background: #E8E8E8 !important; }
+.wrapper { border-radius: 0 !important; border-color: #C0C0C0 !important; overflow: hidden; }
+.nwp-hdr { padding:18px 24px 14px; border-bottom:1px solid #1C1C1C; }
+.nwp-topline { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
+.nwp-dateline { font-family:'Courier New',monospace; font-size:10px; color:#777; letter-spacing:0.05em; text-transform:uppercase; }
+.nwp-nav { display:flex; gap:14px; flex-wrap:wrap; }
+.nwp-nav a { font-size:10px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#777; text-decoration:none; }
+.nwp-nav a:hover { color:#1C1C1C; }
+.nwp-nav a.nwp-active { color:#1C1C1C; font-weight:900; border-bottom:2px solid #CC2B2B; padding-bottom:1px; }
+.nwp-title-row { text-align:center; margin-bottom:10px; }
+.nwp-title { font-family:'Nunito',sans-serif; font-size:40px; font-weight:900; color:#1C1C1C; letter-spacing:-1.5px; line-height:1; display:inline; }
+.nwp-doodles { font-family:'Caveat',cursive; font-size:48px; font-weight:700; color:#CC2B2B; line-height:1; vertical-align:baseline; margin-left:6px; }
+.nwp-subtitle { text-align:center; font-size:11px; color:#777; letter-spacing:0.14em; text-transform:uppercase; margin-top:6px; }
+.nwp-rule-thick { height:3px; background:#1C1C1C; margin:10px 0 0; }
+.nwp-rule-thin  { height:1px; background:#1C1C1C; margin:3px 0 0; }
+
 </style>
 </head>
 <body class="lang-bg">
 <div class="wrapper">
 
-  <div class="lang-toggle">
-    <nav class="site-nav">
-      <a href="/">Начало</a>
-      <a href="/newsletters/" class="active">Бюлетин</a>
-      <a href="/cockpit/">Показатели</a>
-      <a href="/parliament/">Законодателство</a>
-      <a href="/about/">За нас</a>
-    </nav>
-  </div>
-
-  <div class="masthead">
-    <div class="masthead-logo">
-      <div class="masthead-left">
-        <span class="masthead-basepoint">Basepoint</span>
-        <span class="masthead-tagline lc-en">macro · bulgaria</span>
-        <span class="masthead-tagline lc-bg">макро · българия</span>
-      </div>
-      <div class="masthead-divider"></div>
-      <span class="masthead-doodles">Doodles</span>
+  <!-- Newspaper header -->
+  <div class="nwp-hdr">
+    <div class="nwp-topline">
+      <span class="nwp-dateline">Седмичен бюлетин · България</span>
+      <nav class="nwp-nav">
+        <a href="/">Начало</a>
+        <a href="/newsletters/" class="nwp-active">Бюлетин</a>
+        <a href="/cockpit/">Икономика</a>
+        <a href="/parliament/">Законодателство</a>
+        <a href="/about/">За нас</a>
+      </nav>
     </div>
-    <div class="masthead-desc">
-      <span class="masthead-desc-main lc-en">Newsletter Archive</span>
-      <span class="masthead-desc-main lc-bg">Архив на броевете</span>
-      <span class="masthead-desc-sub lc-en">all issues</span>
-      <span class="masthead-desc-sub lc-bg">всички броеве</span>
+    <div class="nwp-title-row">
+      <span class="nwp-title">Basepoint</span><span class="nwp-doodles">Doodles</span>
     </div>
-  </div>
-
-  <div class="page-header">
-    <div class="page-title lc-bg">Бюлетин</div>
-    <div class="page-subtitle lc-bg">Седмичен бюлетин за макроикономиката и законодателните промени в България.</div>
+    <p class="nwp-subtitle">Бюлетин · Архив</p>
+    <div class="nwp-rule-thick"></div>
+    <div class="nwp-rule-thin"></div>
   </div>
 
   <!-- ══ SECTION 1: Нов консолидиран бюлетин ══════════════════════════════ -->
@@ -289,11 +294,7 @@ body.lang-bg span.lc-en { display: none !important; }
 
 </div>
 <script>
-function setLang(lang) {
-  document.body.classList.toggle('lang-bg', lang === 'bg');
-  document.querySelectorAll('.lang-btn').forEach(function(btn) {
-    btn.classList.toggle('active', btn.dataset.lang === lang);
-  });
+);
   localStorage.setItem('bpd-lang', lang);
 }
 (function() { var s = localStorage.getItem('bpd-lang'); if (s === 'bg') setLang('bg'); })();
