@@ -21,18 +21,23 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bpdoodles.com/calendar/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://bpdoodles.com/parliament/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bpdoodles.com/parliament/archive/</loc>
+    <loc>https://bpdoodles.com/parliament/dv/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bpdoodles.com/parliament/sessions/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://bpdoodles.com/about/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
   </url>
 </urlset>

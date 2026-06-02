@@ -1,726 +1,231 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="bg">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Basepoint Doodles · Bulgaria Macro</title>
-<meta name="description" content="Live chartbook tracking Bulgaria's key economic indicators plus a periodic macro newsletter. Data-first, bilingual, free."/>
+<title>Basepoint Doodles · Макроикономика и законодателство</title>
+<meta name="description" content="Седмичен бюлетин и референтен чартбук за макроикономическите показатели на България и промените в нормативната уредба."/>
 <link rel="icon" href="/favicon.ico" sizes="any"/>
 <link rel="apple-touch-icon" href="/favicon-180.png"/>
 <link rel="canonical" href="https://bpdoodles.com/"/>
-<meta property="og:type" content="website"/>
-<meta property="og:url" content="https://bpdoodles.com/"/>
-<meta property="og:title" content="Basepoint Doodles · Bulgaria Macro"/>
-<meta property="og:description" content="Live chartbook tracking Bulgaria's key economic indicators plus a periodic macro newsletter. Data-first, bilingual, free."/>
-<meta property="og:image" content="https://bpdoodles.com/og-image.png"/>
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Basepoint Doodles · Bulgaria Macro"/>
-<meta name="twitter:description" content="Live chartbook tracking Bulgaria's key economic indicators plus a periodic macro newsletter. Data-first, bilingual, free."/>
-<meta name="twitter:image" content="https://bpdoodles.com/og-image.png"/>
+<meta property="og:type"        content="website"/>
+<meta property="og:url"         content="https://bpdoodles.com/"/>
+<meta property="og:title"       content="Basepoint Doodles · Макроикономика и законодателство"/>
+<meta property="og:description" content="Седмичен бюлетин и референтен чартбук за макроикономическите показатели на България и промените в нормативната уредба."/>
+<meta property="og:image"       content="https://bpdoodles.com/og-image.png"/>
+<meta name="twitter:card"       content="summary_large_image"/>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Caveat:wght@700&display=swap" rel="stylesheet"/>
 <style>
-/* ── Reset ── */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
-/* ── Tokens — Pack A (Navy + Red) ── */
+* { box-sizing:border-box; margin:0; padding:0; }
 body {
-  --color-basepoint:   #1B2E5E;
-  --color-doodles:     #CC2B2B;
-  --color-accent:      #CC2B2B;
-  --color-up:          #2A9D5C;
-  --color-ink:         #1C1C1C;
-  --color-ink-2:       #444444;
-  --color-muted:       #888888;
-  --color-muted-light: #AAAAAA;
-  --color-border:      #E8E8E8;
-  --color-surface:     #F8F8F8;
-  font-family: 'Nunito', Arial, sans-serif;
-  background: #F0F2F5;
-  color: var(--color-ink);
-  line-height: 1.6;
+  --bp:#1B2E5E; --red:#CC2B2B; --gold:#B5821A;
+  --ink:#1C1C1C; --ink2:#444; --dim:#777; --pale:#BBB; --bdr:#D0D0D0; --surf:#F8F8F8;
+  font-family:'Nunito',Arial,sans-serif; background:#E8E8E8; color:var(--ink); line-height:1.6;
+}
+.wrap { max-width:700px; margin:32px auto; background:#fff; border:1px solid #C0C0C0; overflow:hidden; }
+
+/* ── Newspaper header ── */
+.nwp-hdr { padding:18px 24px 14px; border-bottom:1px solid var(--ink); }
+.nwp-topline { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
+.nwp-dateline { font-family:'Courier New',monospace; font-size:10px; color:var(--dim); letter-spacing:0.05em; text-transform:uppercase; }
+.nwp-nav { display:flex; gap:14px; }
+.nwp-nav a { font-size:10px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--dim); text-decoration:none; }
+.nwp-nav a:hover { color:var(--ink); }
+.nwp-title-row { text-align:center; margin-bottom:10px; }
+.nwp-title {
+  font-family:'Nunito',sans-serif; font-size:40px; font-weight:900;
+  color:var(--ink); letter-spacing:-1.5px; line-height:1; display:inline;
+}
+.nwp-doodles {
+  font-family:'Caveat',cursive; font-size:48px; font-weight:700;
+  color:var(--red); line-height:1; vertical-align:baseline; margin-left:6px;
+}
+.nwp-subtitle { text-align:center; font-size:11px; color:var(--dim); letter-spacing:0.14em; text-transform:uppercase; margin-top:6px; }
+.nwp-rule-thick { height:3px; background:var(--ink); margin:10px 0 0; }
+.nwp-rule-thin  { height:1px; background:var(--ink); margin:3px 0 0; }
+
+/* ── Two-column grid ── */
+.nwp-cols { display:grid; grid-template-columns:1fr 1fr; gap:0; border-bottom:2px solid var(--ink); }
+.nwp-col { padding:16px 20px; }
+.nwp-col:first-child { border-right:1px solid var(--bdr); }
+.col-head {
+  font-size:9px; font-weight:900; letter-spacing:0.2em; text-transform:uppercase;
+  color:var(--dim); padding-bottom:8px; border-bottom:2px solid var(--ink); margin-bottom:12px;
 }
 
-/* ── Wrapper ── */
-.wrapper {
-  max-width: 700px;
-  margin: 32px auto;
-  background: #fff;
-  border: 1px solid var(--color-border);
-  border-radius: 4px;
+/* Economy column */
+.mini-chart { margin-bottom:10px; border:1px solid #DDD; overflow:hidden; display:block; text-decoration:none; }
+.mini-chart img { width:100%; display:block; }
+.mini-chart-lbl { font-size:9px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--dim); padding:3px 6px 4px; background:#F4F4F4; }
+
+/* Legislation column */
+.dv-item { margin-bottom:12px; padding-bottom:12px; border-bottom:1px solid #EEE; display:block; text-decoration:none; color:inherit; }
+.dv-item:last-child { border-bottom:none; margin-bottom:0; padding-bottom:0; }
+.dv-item:hover .dv-title { color:var(--gold); }
+.dv-meta { font-family:'Courier New',monospace; font-size:9px; color:var(--pale); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:3px; }
+.dv-type { display:inline-block; font-size:8px; font-weight:900; letter-spacing:0.1em; text-transform:uppercase; color:#fff; padding:1px 5px; border-radius:2px; margin-bottom:4px; }
+.tip-naredba { background:var(--gold); }
+.tip-zakon   { background:var(--bp); }
+.tip-post    { background:#555; }
+.tip-pravilnik { background:#777; }
+.dv-title { font-size:12px; font-weight:900; color:var(--ink); line-height:1.35; transition:color 0.1s; }
+.dv-lead  { font-size:11px; color:var(--dim); line-height:1.4; margin-top:3px; }
+.col-cta { padding-top:10px; }
+.col-cta a { font-size:10px; font-weight:900; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; }
+.col-cta a.eco  { color:var(--bp); }
+.col-cta a.law  { color:var(--gold); }
+
+/* ── Bulletin section ── */
+.bulletin-hdr {
+  border-top:2px solid var(--ink); padding:14px 24px 12px;
+  display:flex; justify-content:space-between; align-items:baseline;
+  border-bottom:1px solid #EEE;
+}
+.bulletin-title { font-size:18px; font-weight:900; color:var(--ink); letter-spacing:-0.3px; }
+.bulletin-coming {
+  font-size:12px; color:var(--dim); padding:14px 24px 18px;
+  border-bottom:1px solid #EEE;
 }
 
-/* ── Language toggle ── */
-.lang-toggle {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 8px 16px;
-  background: var(--color-basepoint);
-}
-.lang-buttons { display: flex; gap: 0; }
-.lang-btn {
-  background: transparent;
-  border: 1px solid #444;
-  color: #888;
-  font-family: 'Nunito', sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  padding: 4px 12px;
-  cursor: pointer;
-}
-.lang-btn:first-child { border-radius: 3px 0 0 3px; }
-.lang-btn:last-child  { border-radius: 0 3px 3px 0; border-left: none; }
-.lang-btn.active { background: var(--color-accent); border-color: var(--color-accent); color: #fff; }
-
-/* ── Site nav (top bar) ── */
-.site-nav {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-}
-.site-nav a {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.45);
-  text-decoration: none;
-  transition: color 0.15s;
-}
-.site-nav a:hover { color: rgba(255,255,255,0.9); }
-.site-nav a.active { color: var(--color-accent); }
-.site-nav a[href="/parliament/"] { color: #B5821A; }
-.site-nav .soon {
-  font-size: 9px;
-  background: rgba(255,255,255,0.1);
-  color: rgba(255,255,255,0.3);
-  border-radius: 3px;
-  padding: 1px 5px;
-  margin-left: 4px;
-  vertical-align: middle;
-  letter-spacing: 0.05em;
-}
-.nav-br { display: none; }
-
-/* ── Language visibility ── */
-.lc-bg { display: none !important; }
-.lc-en { display: block; }
-span.lc-en { display: inline; }
-span.lc-bg { display: none !important; }
-body.lang-bg .lc-en { display: none !important; }
-body.lang-bg .lc-bg { display: block !important; }
-body.lang-bg span.lc-bg { display: inline !important; }
-body.lang-bg span.lc-en { display: none !important; }
-
-/* ── Masthead ── */
-.masthead {
-  background: var(--color-basepoint);
-  padding: 22px 28px 18px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  border-bottom: 3px solid var(--color-accent);
-}
-.masthead-logo {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-.masthead-left {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  padding-right: 14px;
-}
-.masthead-basepoint {
-  font-family: 'Nunito', 'Arial Black', sans-serif;
-  font-size: 22px;
-  font-weight: 900;
-  color: #ffffff;
-  letter-spacing: -0.3px;
-  line-height: 1;
-}
-.masthead-tagline {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.3);
-  margin-top: 4px;
-}
-.masthead-divider {
-  width: 2px;
-  height: 52px;
-  background: rgba(255,255,255,0.18);
-}
-.masthead-doodles {
-  font-family: 'Caveat', cursive;
-  font-size: 48px;
-  font-weight: 700;
-  color: var(--color-doodles);
-  line-height: 1;
-  padding-left: 14px;
-}
-.masthead-desc {
-  text-align: right;
-}
-.masthead-desc-main {
-  font-size: 13px;
-  font-weight: 700;
-  color: rgba(255,255,255,0.75);
-  display: block;
-  line-height: 1.5;
-}
-.masthead-desc-sub {
-  font-size: 11px;
-  color: rgba(255,255,255,0.35);
-  display: block;
-}
-
-/* ── Hero ── */
-.hero {
-  padding: 32px 28px 28px;
-  border-bottom: 1px solid var(--color-border);
-}
-.hero-headline {
-  font-size: 28px;
-  font-weight: 900;
-  color: var(--color-ink);
-  letter-spacing: -0.5px;
-  line-height: 1.2;
-  margin-bottom: 12px;
-}
-.hero-body {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--color-ink);
-  line-height: 1.55;
-  max-width: 580px;
-}
-
-/* ── Section descriptor (below section label, above content) ── */
-.section-desc {
-  padding: 14px 28px 4px;
-  font-size: 13px;
-  color: var(--color-muted);
-  line-height: 1.65;
-}
-
-/* ── Section label ── */
-.section-label-row {
-  padding: 12px 28px 10px;
-  background: var(--color-surface);
-  border-top: 1px solid var(--color-border);
-  border-bottom: 1px solid var(--color-border);
-}
-.section-label {
-  font-size: 11px;
-  font-weight: 900;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-}
-
-/* ── Chartbook preview grid ── */
-.chart-grid {
-  padding: 20px 28px 16px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-}
-.chart-thumb {
-  border: 1px solid var(--color-border);
-  border-radius: 4px;
-  overflow: hidden;
-  text-decoration: none;
-  display: block;
-  background: var(--color-surface);
-  transition: border-color 0.15s;
-}
-.chart-thumb:hover { border-color: var(--color-basepoint); }
-.chart-thumb img {
-  width: 100%;
-  display: block;
-}
-.chart-thumb-label {
-  padding: 5px 8px 6px;
-  font-size: 10px;
-  font-weight: 900;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--color-muted);
-  line-height: 1;
-}
-.chartbook-cta {
-  padding: 4px 28px 22px;
-  text-align: center;
-}
-.chartbook-btn {
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 900;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #fff;
-  background: var(--color-basepoint);
-  text-decoration: none;
-  padding: 8px 22px;
-  border-radius: 3px;
-  transition: background 0.1s;
-}
-.chartbook-btn:hover { background: #14234a; }
-
-/* ── Issue rows (Briefings section) ── */
-.issue-row {
-  padding: 18px 28px;
-  border-bottom: 1px solid var(--color-border);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-  text-decoration: none;
-  color: inherit;
-  transition: background 0.1s;
-}
-.issue-row:hover { background: var(--color-surface); }
-.issue-row-left { flex: 1; }
-.issue-meta {
-  font-family: 'Courier New', monospace;
-  font-size: 10px;
-  color: var(--color-muted-light);
-  margin-bottom: 4px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-.issue-title {
-  font-size: 15px;
-  font-weight: 900;
-  color: var(--color-ink);
-  letter-spacing: -0.2px;
-  line-height: 1.3;
-}
-.issue-desc {
-  font-size: 12px;
-  color: var(--color-muted);
-  margin-top: 3px;
-}
-.issue-row-arrow { font-size: 18px; color: var(--color-accent); font-weight: 900; flex-shrink: 0; }
-
-/* ── Archive button row ── */
-.archive-row {
-  padding: 16px 28px;
-  border-bottom: 1px solid var(--color-border);
-  text-align: center;
-}
-.archive-btn {
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 900;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--color-basepoint);
-  text-decoration: none;
-  padding: 7px 20px;
-  border: 1px solid var(--color-basepoint);
-  border-radius: 3px;
-  transition: all 0.1s;
-}
-.archive-btn:hover { background: var(--color-basepoint); color: #fff; }
-
-/* ── Waitlist form ── */
-.waitlist {
-  padding: 28px 28px 24px;
-  border-bottom: 1px solid var(--color-border);
-}
-.waitlist-title {
-  font-size: 16px;
-  font-weight: 900;
-  color: var(--color-ink);
-  margin-bottom: 8px;
-  letter-spacing: -0.2px;
-}
-.waitlist-desc {
-  font-size: 13px;
-  color: var(--color-muted);
-  line-height: 1.6;
-  margin-bottom: 16px;
-}
-.waitlist-form {
-  display: flex;
-  gap: 8px;
-  max-width: 440px;
-}
-.waitlist-input {
-  flex: 1;
-  border: 1px solid var(--color-border);
-  border-radius: 3px;
-  padding: 9px 12px;
-  font-family: 'Nunito', sans-serif;
-  font-size: 13px;
-  color: var(--color-ink);
-  outline: none;
-  background: #fff;
-}
-.waitlist-input:focus { border-color: var(--color-basepoint); }
-.waitlist-btn {
-  background: var(--color-basepoint);
-  color: #fff;
-  border: none;
-  border-radius: 3px;
-  padding: 9px 18px;
-  font-family: 'Nunito', sans-serif;
-  font-size: 12px;
-  font-weight: 900;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  cursor: pointer;
-  white-space: nowrap;
-}
-.waitlist-btn:hover { background: #14234a; }
-.waitlist-note {
-  margin-top: 8px;
-  font-size: 11px;
-  color: var(--color-muted-light);
-}
-.waitlist-success {
-  display: none;
-  font-size: 13px;
-  color: var(--color-up);
-  margin-top: 10px;
-  font-weight: 700;
-}
-
-/* ── Contact ── */
-.contact {
-  padding: 20px 28px;
-  border-bottom: 1px solid var(--color-border);
-}
-.contact-line {
-  font-size: 14px;
-  color: var(--color-ink-2);
-  line-height: 1.6;
-}
-.contact-line a {
-  color: var(--color-basepoint);
-  font-weight: 700;
-  text-decoration: none;
-}
-.contact-line a:hover { text-decoration: underline; }
+/* ── Subscribe ── */
+.sub { background:var(--surf); border-top:2px solid var(--ink); padding:16px 24px 14px; }
+.sub p { font-size:13px; color:var(--ink2); margin-bottom:10px; }
+.sub-row { display:flex; gap:8px; max-width:400px; }
+.sub-in { flex:1; border:1px solid #CCC; padding:7px 11px; font-family:'Nunito',sans-serif; font-size:13px; outline:none; background:#fff; }
+.sub-in:focus { border-color:var(--ink); }
+.sub-btn { background:var(--ink); color:#fff; border:none; padding:7px 16px; font-family:'Nunito',sans-serif; font-size:11px; font-weight:900; letter-spacing:0.08em; text-transform:uppercase; cursor:pointer; white-space:nowrap; }
+.sub-btn:hover { background:#333; }
+.sub-ok { display:none; font-size:13px; color:#2A9D5C; font-weight:700; margin-top:8px; }
+.note { font-size:11px; color:var(--pale); margin-top:6px !important; }
 
 /* ── Footer ── */
-.footer {
-  padding: 14px 28px;
-  background: var(--color-surface);
-  border-top: 1px solid var(--color-border);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.footer-logo {
-  font-family: 'Caveat', cursive;
-  font-size: 18px;
-  font-weight: 700;
-  color: #CCC;
-}
-.footer-links {
-  font-size: 11px;
-  color: var(--color-muted-light);
-  display: flex;
-  gap: 16px;
-}
-.footer-links a {
-  color: var(--color-muted-light);
-  text-decoration: none;
-}
-.footer-links a:hover { color: var(--color-muted); }
-
-/* ── Mobile ── */
-@media (max-width: 740px) {
-  .wrapper { margin: 0; border-radius: 0; border-left: none; border-right: none; }
-  .masthead { padding: 18px 16px 14px; }
-  .hero, .waitlist, .contact, .footer { padding-left: 16px; padding-right: 16px; }
-  .section-label-row, .issue-row, .archive-row { padding-left: 16px; padding-right: 16px; }
-  .hero-headline { font-size: 22px; }
-  .waitlist-form { flex-direction: column; }
-  .masthead-desc { display: none; }
-  .chart-grid { grid-template-columns: repeat(2, 1fr); padding-left: 16px; padding-right: 16px; }
-  .chartbook-cta { padding-left: 16px; padding-right: 16px; }
-  .section-desc { padding-left: 16px; padding-right: 16px; }
-  .lang-toggle { align-items: flex-start; }
-  .site-nav { flex: 1; flex-wrap: wrap; gap: 8px 14px; }
-  .nav-br { display: block; flex-basis: 100%; height: 0; }
-}
+.footer { padding:12px 24px; border-top:1px solid #DDD; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; }
+.footer-logo { font-family:'Caveat',cursive; font-size:16px; font-weight:700; color:#BBB; }
+.footer-links { display:flex; gap:14px; font-size:10px; flex-wrap:wrap; }
+.footer-links a { color:var(--pale); text-decoration:none; }
+.footer-links a:hover { color:var(--dim); }
 </style>
 </head>
 <body>
-<div class="wrapper">
+<div class="wrap">
 
-  <!-- Top bar: lang toggle + site nav -->
-  <div class="lang-toggle">
-    <nav class="site-nav" aria-label="Site navigation">
-      <a href="/" class="active lc-en">Home</a>
-      <a href="/" class="active lc-bg">Начало</a>
-      <a href="/newsletters/" class="lc-en">Newsletter</a>
-      <a href="/newsletters/" class="lc-bg">Бюлетин</a>
-      <a href="/cockpit/" class="lc-en">Chartbook</a>
-      <a href="/cockpit/" class="lc-bg">Чартбук</a>
-      <a href="/about/" class="lc-en">About</a>
-      <a href="/about/" class="lc-bg">За проекта</a>
-      <span class="nav-br"></span>
-      <a href="/parliament/" class="lc-en">Parliament<span class="soon">WIP</span></a>
-      <a href="/parliament/" class="lc-bg">Парламент<span class="soon">WIP</span></a>
-    </nav>
-    <div class="lang-buttons">
-      <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
-      <button class="lang-btn" data-lang="bg" onclick="setLang('bg')">БГ</button>
+  <!-- Newspaper header -->
+  <div class="nwp-hdr">
+    <div class="nwp-topline">
+      <span class="nwp-dateline">Седмичен бюлетин · България</span>
+      <nav class="nwp-nav">
+        <a href="/newsletters/">Бюлетин</a>
+        <a href="/cockpit/">Икономика</a>
+        <a href="/parliament/">Законодателство</a>
+        <a href="/about/">За нас</a>
+      </nav>
     </div>
+    <div class="nwp-title-row">
+      <span class="nwp-title">Basepoint</span><span class="nwp-doodles">Doodles</span>
+    </div>
+    <p class="nwp-subtitle">Макроикономика · Законодателство · България</p>
+    <div class="nwp-rule-thick"></div>
+    <div class="nwp-rule-thin"></div>
   </div>
 
-  <!-- Masthead -->
-  <div class="masthead">
-    <div class="masthead-logo">
-      <div class="masthead-left">
-        <span class="masthead-basepoint">Basepoint</span>
-        <span class="masthead-tagline lc-en">macro · bulgaria</span>
-        <span class="masthead-tagline lc-bg">макро · българия</span>
-      </div>
-      <div class="masthead-divider"></div>
-      <span class="masthead-doodles">Doodles</span>
+  <!-- Two columns -->
+  <div class="nwp-cols">
+
+    <!-- Economy column -->
+    <div class="nwp-col">
+      <div class="col-head">Икономика · Показатели</div>
+      <a class="mini-chart" href="/cockpit/">
+        <img src="/cockpit/charts/hicp-01.png" alt="Потребителска инфлация" loading="lazy"/>
+        <div class="mini-chart-lbl">Потребителска инфлация</div>
+      </a>
+      <a class="mini-chart" href="/cockpit/">
+        <img src="/cockpit/charts/wages-01.png" alt="Работни заплати" loading="lazy"/>
+        <div class="mini-chart-lbl">Работни заплати</div>
+      </a>
+      <a class="mini-chart" href="/cockpit/">
+        <img src="/cockpit/charts/gdp-01.png" alt="БВП" loading="lazy"/>
+        <div class="mini-chart-lbl">БВП</div>
+      </a>
+      <div class="col-cta"><a href="/cockpit/" class="eco">→ Виж пълния чартбук</a></div>
     </div>
-    <div class="masthead-desc">
-      <span class="masthead-desc-main lc-en">Bulgaria Macro</span>
-      <span class="masthead-desc-main lc-bg">Макро · България</span>
-      <span class="masthead-desc-sub lc-en">data · charts · analysis</span>
-      <span class="masthead-desc-sub lc-bg">данни · графики · анализ</span>
+
+    <!-- Legislation column: 3 most recent substantive summaries -->
+    <div class="nwp-col">
+      <div class="col-head">Законодателство · Държавен вестник</div>
+
+      <!-- BEGIN:LAW-ITEMS -->
+      <a class="dv-item" href="/parliament/dv/2026-W22/">
+        <div class="dv-meta">29 май 2026 · Министерства</div>
+        <span class="dv-type tip-naredba">Наредба</span>
+        <div class="dv-title">Камерите за средна скорост вече отнемат контролни точки</div>
+        <div class="dv-lead">Еднакви санкции с радара — превишената средна скорост в контролиран участък вече носи точки.</div>
+      </a>
+
+      <a class="dv-item" href="/parliament/dv/2026-W22/">
+        <div class="dv-meta">26 май 2026 · Министерства</div>
+        <span class="dv-type tip-pravilnik">Правилник</span>
+        <div class="dv-title">Нови правила за жалби за дискриминация пред КЗД</div>
+        <div class="dv-lead">Правилникът установява как се подават жалби, как се разглеждат и какви са сроковете пред Комисията за защита от дискриминация.</div>
+      </a>
+
+      <a class="dv-item" href="/parliament/dv/2026-W21/">
+        <div class="dv-meta">22 май 2026 · Министерски съвет</div>
+        <span class="dv-type tip-post">Постановление</span>
+        <div class="dv-title">Промяна в изчисляването на осигурителен стаж за пенсия</div>
+        <div class="dv-lead">При изчисляване на стажа вместо следващия период вече се взима предходният — промяна с потенциален ефект върху пенсионните права.</div>
+      </a>
+      <!-- END:LAW-ITEMS -->
+
+      <div class="col-cta"><a href="/parliament/" class="law">→ Виж всички издания</a></div>
     </div>
+
   </div>
 
-  <!-- Hero -->
-  <div class="hero">
-    <div class="hero-body lc-en">Basepoint Doodles is a visualization portal for key Bulgarian macroeconomic indicators and periodic newsletter for people who want a concise, clear overview of economic trends in Bulgaria.</div>
-    <div class="hero-body lc-bg">Basepoint Doodles е портал за визуализация на ключови макроикономически показатели на България и периодичен бюлетин за хора, които искат кратък и ясен преглед на икономическите тенденции в страната.</div>
+  <!-- Bulletin section — empty until first consolidated issue -->
+  <div class="bulletin-hdr">
+    <span class="bulletin-title">Бюлетин</span>
+    <a href="/newsletters/" style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--dim);text-decoration:none;">Архив &rarr;</a>
   </div>
-
-  <!-- Chartbook preview -->
-  <div class="section-label-row">
-    <span class="section-label lc-en">&#9658; Macro Chartbook · Updated Weekly</span>
-    <span class="section-label lc-bg">&#9658; Макро Чартбук · Актуализиран Седмично</span>
-  </div>
-  <div class="section-desc lc-en">The Chartbook tracks 60+ indicators across inflation, output, labour, trade and more. Updated as new data is published by NSI, Eurostat, BNB, and others.</div>
-  <div class="section-desc lc-bg">Чартбукът проследява над 60 показателя за инфлация, производство, труд, търговия и други. Актуализиран с всяка нова публикация от НСИ, Евростат, БНБ и др.</div>
-  <div class="chart-grid">
-    <a class="chart-thumb" href="/cockpit/">
-      <img src="/cockpit/charts/hicp-01.png" alt="Inflation" loading="lazy"/>
-      <div class="chart-thumb-label lc-en">Inflation</div>
-      <div class="chart-thumb-label lc-bg">Инфлация</div>
-    </a>
-    <a class="chart-thumb" href="/cockpit/">
-      <img src="/cockpit/charts/ipi-01.png" alt="Industrial Output" loading="lazy"/>
-      <div class="chart-thumb-label lc-en">Industry</div>
-      <div class="chart-thumb-label lc-bg">Промишленост</div>
-    </a>
-    <a class="chart-thumb" href="/cockpit/">
-      <img src="/cockpit/charts/retail-01.png" alt="Retail Trade" loading="lazy"/>
-      <div class="chart-thumb-label lc-en">Retail</div>
-      <div class="chart-thumb-label lc-bg">Търговия</div>
-    </a>
-    <a class="chart-thumb" href="/cockpit/">
-      <img src="/cockpit/charts/wages-01.png" alt="Wages" loading="lazy"/>
-      <div class="chart-thumb-label lc-en">Wages</div>
-      <div class="chart-thumb-label lc-bg">Заплати</div>
-    </a>
-    <a class="chart-thumb" href="/cockpit/">
-      <img src="/cockpit/charts/unemp-01.png" alt="Labour Market" loading="lazy"/>
-      <div class="chart-thumb-label lc-en">Labour</div>
-      <div class="chart-thumb-label lc-bg">Труд</div>
-    </a>
-    <a class="chart-thumb" href="/cockpit/">
-      <img src="/cockpit/charts/gdp-01.png" alt="GDP" loading="lazy"/>
-      <div class="chart-thumb-label lc-en">GDP</div>
-      <div class="chart-thumb-label lc-bg">БВП</div>
-    </a>
-  </div>
-  <div class="chartbook-cta">
-    <a href="/cockpit/" class="chartbook-btn">
-      <span class="lc-en">Open full chartbook &rarr;</span>
-      <span class="lc-bg">Виж целия чартбук &rarr;</span>
-    </a>
-  </div>
-
-  <!-- Latest briefings -->
-  <div class="section-label-row">
-    <span class="section-label lc-en">&#9658; Latest Issues</span>
-    <span class="section-label lc-bg">&#9658; Последни броеве</span>
-  </div>
-
-  <div class="section-desc lc-en">The Newsletter is a periodic publication covering recent data releases. Published when there is enough to say, and using data to uncover developing trends in the Bulgarian economy.</div>
-  <div class="section-desc lc-bg">Бюлетинът е периодична публикация, която разглежда последните данни. Излиза когато има достатъчно за коментар и използва данните, за да открои развиващите се тенденции в икономиката.</div>
-
-  <a class="issue-row" href="/newsletters/2026-05-23/">
-    <div class="issue-row-left">
-      <div class="issue-meta lc-en">23 May 2026</div>
-      <div class="issue-meta lc-bg">23 май 2026</div>
-      <div class="issue-title lc-en">Wages Outpace Inflation by 10 Points. Then April Arrives.</div>
-      <div class="issue-title lc-bg">Заплатите изпреварват инфлацията с 10 пункта. После идва април.</div>
-      <div class="issue-desc lc-en">HICP 6.0% · Real wages +10.1pp · CA deficit EUR 1.6bn · Activity divergence since 2020</div>
-      <div class="issue-desc lc-bg">ХИПЦ 6,0% · Реални доходи +10,1 пп · ТС дефицит 1,6 млрд. евро · Активност от 2020 г.</div>
-    </div>
-    <span class="issue-row-arrow">&rarr;</span>
-  </a>
-
-  <a class="issue-row" href="/newsletters/2026-05-15/">
-    <div class="issue-row-left">
-      <div class="issue-meta lc-en">15 May 2026</div>
-      <div class="issue-meta lc-bg">15 май 2026</div>
-      <div class="issue-title lc-en">Industry Turns. Output Up for the First Time in 15 Months.</div>
-      <div class="issue-title lc-bg">Ръст в производството за пръв път от 15 месеца.</div>
-      <div class="issue-desc lc-en">IPI +4.8% · GDP 2.9% Q1 2026 · Retail at record high · Goods deficit widens to 9.9% of GDP</div>
-      <div class="issue-desc lc-bg">ИПП +4,8% · БВП 2,9% Q1 2026 · Търговия на дребно на рекорд · Стоков дефицит 9,9% от БВП</div>
-    </div>
-    <span class="issue-row-arrow">&rarr;</span>
-  </a>
-
-  <a class="issue-row" href="/newsletters/2026-05-04/">
-    <div class="issue-row-left">
-      <div class="issue-meta lc-en">4 May 2026</div>
-      <div class="issue-meta lc-bg">4 май 2026</div>
-      <div class="issue-title lc-en">Consumer Prices Jump to 6.2%. Broad-Based Surge.</div>
-      <div class="issue-title lc-bg">Потребителските цени скочиха до 6,2%. Широкообхватно ускорение.</div>
-      <div class="issue-desc lc-en">HICP +6.2% · Core 4.6% · PPI 4.9% · Trade deficit narrows · Restaurant price deep dive</div>
-      <div class="issue-desc lc-bg">ХИПЦ +6,2% · Основна 4,6% · ЦП 4,9% · Търг. дефицит се свива · Ресторантски цени</div>
-    </div>
-    <span class="issue-row-arrow">&rarr;</span>
-  </a>
-
-  <a class="issue-row" href="/newsletters/2026-W14/">
-    <div class="issue-row-left">
-      <div class="issue-meta lc-en">4 April 2026</div>
-      <div class="issue-meta lc-bg">4 април 2026</div>
-      <div class="issue-title lc-en">Services output slows down in January. The Consumer holds (for now).</div>
-      <div class="issue-title lc-bg">Производството в услугите се забавя. Търговията на дребно продължава да расте (засега).</div>
-      <div class="issue-desc lc-en">Services −1.2% YoY · Retail +7.3% · PPI squeeze deepens · Restaurant prices up 108%</div>
-      <div class="issue-desc lc-bg">Услуги −1,2% г/г · Търговия +7,3% · ЦП стискат маржовете · 108% ресторантска инфлация</div>
-    </div>
-    <span class="issue-row-arrow">&rarr;</span>
-  </a>
-
-  <a class="issue-row" href="/newsletters/2026-W13/">
-    <div class="issue-row-left">
-      <div class="issue-meta lc-en">29 March 2026</div>
-      <div class="issue-meta lc-bg">29 март 2026</div>
-      <div class="issue-title lc-en">Labour Costs Surge. Convergence With the EU Accelerates.</div>
-      <div class="issue-title lc-bg">Ръстът при разходите за труд се ускорява. Конвергенцията с ЕС набира скорост.</div>
-      <div class="issue-desc lc-en">Wage growth at 3× EU pace · Housing cycle turning · Energy grid turns net importer</div>
-      <div class="issue-desc lc-bg">Ръст на заплатите 3× над ЕС · Жилищният цикъл се обръща · Нетен вносител на ел. енергия</div>
-    </div>
-    <span class="issue-row-arrow">&rarr;</span>
-  </a>
-
-  <a class="issue-row" href="/newsletters/2026-W12/">
-    <div class="issue-row-left">
-      <div class="issue-meta lc-en">22 March 2026</div>
-      <div class="issue-meta lc-bg">22 март 2026</div>
-      <div class="issue-title lc-en">Is Bulgaria Losing Competitiveness?</div>
-      <div class="issue-title lc-bg">Губи ли България конкурентоспособност?</div>
-      <div class="issue-desc lc-en">ULC vs. productivity · Export market share · Wage convergence</div>
-      <div class="issue-desc lc-bg">НРЕТ срещу производителност · Пазарен дял · Сближаване на заплатите</div>
-    </div>
-    <span class="issue-row-arrow">&rarr;</span>
-  </a>
-
-  <div class="archive-row">
-    <a href="/newsletters/" class="archive-btn lc-en">Full Archive &rarr;</a>
-    <a href="/newsletters/" class="archive-btn lc-bg">Всички броеве &rarr;</a>
+  <div class="bulletin-coming">
+    Новият консолидиран бюлетин предстои. Абонирай се по-долу, за да бъдеш първи.
   </div>
 
   <!-- Subscribe -->
-  <div class="section-label-row">
-    <span class="section-label lc-en">&#9658; Subscribe to the free newsletter</span>
-    <span class="section-label lc-bg">&#9658; Абонирай се за бюлетина</span>
-  </div>
-  <div class="waitlist">
-    <div class="waitlist-title lc-en">Get the newsletter in your inbox.</div>
-    <div class="waitlist-title lc-bg">Получавай бюлетина по имейл.</div>
-    <div class="waitlist-desc lc-en">Free, weekly, bilingual. Data-driven macro coverage of the Bulgarian economy — new charts, key indicators, and the week's most important number.</div>
-    <div class="waitlist-desc lc-bg">Безплатен, седмичен, двуезичен. Макроикономически преглед на България — нови графики, ключови показатели и най-важното число на седмицата.</div>
-    <form class="waitlist-form" onsubmit="handleSubscribe(event, 3)">
-      <input class="waitlist-input" type="email" name="email" placeholder="your@email.com" required/>
-      <button class="waitlist-btn" type="submit">
-        <span class="lc-en">Subscribe</span>
-        <span class="lc-bg">Абонирай се</span>
-      </button>
+  <div class="sub">
+    <p>Получавай бюлетина по имейл. Безплатен, седмичен.</p>
+    <form class="sub-row" onsubmit="doSub(event,3)">
+      <input class="sub-in" type="email" placeholder="your@email.com" required/>
+      <button class="sub-btn" type="submit">Абонирай се</button>
     </form>
-    <div class="waitlist-note lc-en">No spam. Unsubscribe any time.</div>
-    <div class="waitlist-note lc-bg">Без спам. Откажи се по всяко време.</div>
-    <div class="waitlist-success lc-en" id="success-en">&#10003; You&#8217;re subscribed &#8212; see you in your inbox.</div>
-    <div class="waitlist-success lc-bg" id="success-bg">&#10003; Абониран &#8212; ще те намерим в пощата.</div>
-    <div class="waitlist-error" id="subscribe-error" style="display:none;color:#CC2B2B;font-size:13px;margin-top:8px;">Something went wrong. Please try again or email us at <a href="mailto:editor@bpdoodles.com">editor@bpdoodles.com</a>.</div>
-  </div>
-
-  <!-- Contact -->
-  <div class="section-label-row">
-    <span class="section-label lc-en">&#9658; Contact</span>
-    <span class="section-label lc-bg">&#9658; Контакт</span>
-  </div>
-  <div class="contact">
-    <div class="contact-line lc-en">Questions, feedback or data corrections: <a href="mailto:editor@bpdoodles.com">editor@bpdoodles.com</a></div>
-    <div class="contact-line lc-bg">Въпроси, коментари или корекции на данни: <a href="mailto:editor@bpdoodles.com">editor@bpdoodles.com</a></div>
+    <p class="note">Без спам. Откажи се по всяко време.</p>
+    <p class="sub-ok" id="sub-ok">&#10003; Абониран.</p>
   </div>
 
   <!-- Footer -->
   <div class="footer">
     <span class="footer-logo">Doodles.</span>
     <div class="footer-links">
-      <a href="/newsletters/" class="lc-en">Newsletter</a>
-      <a href="/newsletters/" class="lc-bg">Бюлетин</a>
-      <a href="/cockpit/" class="lc-en">Chartbook</a>
-      <a href="/cockpit/" class="lc-bg">Чартбук</a>
-      <a href="/calendar/" class="lc-en">Calendar</a>
-      <a href="/calendar/" class="lc-bg">Календар</a>
-      <a href="/privacy/" class="lc-en">Privacy</a>
-      <a href="/privacy/" class="lc-bg">Поверителност</a>
+      <a href="/newsletters/">Бюлетин</a>
+      <a href="/cockpit/">Икономика</a>
+      <a href="/parliament/">Законодателство</a>
+      <a href="/about/">За нас</a>
+      <a href="/privacy/">Поверителност</a>
     </div>
   </div>
 
 </div>
 <script>
-function setLang(lang) {
-  document.body.classList.toggle('lang-bg', lang === 'bg');
-  document.querySelectorAll('.lang-btn').forEach(function(btn) {
-    btn.classList.toggle('active', btn.dataset.lang === lang);
-  });
-  localStorage.setItem('bpd-lang', lang);
-}
-// Restore saved language preference
-(function() {
-  var saved = localStorage.getItem('bpd-lang');
-  if (saved === 'bg') setLang('bg');
-})();
-
-function handleSubscribe(e, listId) {
+function doSub(e, listId) {
   e.preventDefault();
-  var form = e.target;
-  var btn = form.querySelector('.waitlist-btn');
-  var email = form.querySelector('[type="email"]').value;
+  var f = e.target, btn = f.querySelector('button'), email = f.querySelector('input').value;
   btn.disabled = true;
   fetch('/subscribe', {
-    method: 'POST',
-    headers: { 'content-type': 'application/json' },
-    body: JSON.stringify({ email: email, list_id: listId })
-  }).then(function(r) { return r.json(); }).then(function(data) {
-    if (data.ok) {
-      form.style.display = 'none';
-      document.getElementById('success-en').style.display = 'block';
-      document.getElementById('success-bg').style.display = 'block';
-    } else {
-      btn.disabled = false;
-      document.getElementById('subscribe-error').style.display = 'block';
-    }
-  }).catch(function() {
-    btn.disabled = false;
-    document.getElementById('subscribe-error').style.display = 'block';
-  });
+    method:'POST', headers:{'content-type':'application/json'},
+    body: JSON.stringify({email:email, list_id:listId})
+  }).then(function(r){return r.json();}).then(function(d){
+    if(d.ok){ f.style.display='none'; document.getElementById('sub-ok').style.display='block'; }
+    else { btn.disabled=false; }
+  }).catch(function(){ btn.disabled=false; });
 }
 </script>
 </body>

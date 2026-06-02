@@ -1,5 +1,5 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="bg">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -154,27 +154,17 @@ body.lang-bg span.lc-en { display: none !important; }
 }
 </style>
 </head>
-<body>
+<body class="lang-bg">
 <div class="wrapper">
 
   <div class="lang-toggle">
     <nav class="site-nav">
-      <a href="/" class="lc-en">Home</a>
-      <a href="/" class="lc-bg">Начало</a>
-      <a href="/newsletters/" class="active lc-en">Newsletter</a>
-      <a href="/newsletters/" class="active lc-bg">Бюлетин</a>
-      <a href="/cockpit/" class="lc-en">Chartbook</a>
-      <a href="/cockpit/" class="lc-bg">Чартбук</a>
-      <a href="/about/" class="lc-en">About</a>
-      <a href="/about/" class="lc-bg">За проекта</a>
-      <span class="nav-br"></span>
-      <a href="/parliament/" class="lc-en">Parliament<span class="soon">WIP</span></a>
-      <a href="/parliament/" class="lc-bg">Парламент<span class="soon">WIP</span></a>
+      <a href="/">Начало</a>
+      <a href="/newsletters/" class="active">Бюлетин</a>
+      <a href="/cockpit/">Показатели</a>
+      <a href="/parliament/">Законодателство</a>
+      <a href="/about/">За нас</a>
     </nav>
-    <div class="lang-buttons">
-      <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
-      <button class="lang-btn" data-lang="bg" onclick="setLang('bg')">БГ</button>
-    </div>
   </div>
 
   <div class="masthead">
@@ -196,107 +186,104 @@ body.lang-bg span.lc-en { display: none !important; }
   </div>
 
   <div class="page-header">
-    <div class="page-title lc-en">Newsletter</div>
     <div class="page-title lc-bg">Бюлетин</div>
-    <div class="page-subtitle lc-en">Periodic macro newsletter on the Bulgarian economy. Free, bilingual, data-first.</div>
-    <div class="page-subtitle lc-bg">Периодичен макро бюлетин за българската икономика. Безплатен, двуезичен, базиран на данни.</div>
+    <div class="page-subtitle lc-bg">Седмичен бюлетин за макроикономиката и законодателните промени в България.</div>
   </div>
+
+  <!-- ══ SECTION 1: Нов консолидиран бюлетин ══════════════════════════════ -->
+  <!-- Добавяй нови броеве ТУК, в началото на списъка -->
 
   <div class="section-label-row">
-    <span class="section-label lc-en">&#9658; All Issues</span>
-    <span class="section-label lc-bg">&#9658; Всички броеве</span>
+    <span class="section-label lc-bg">&#9658; Бюлетин · Нови броеве</span>
   </div>
 
-  <!-- ═══════════════════════════════════════════════════════════════════════
-       ISSUE LIST — add new entries at the TOP when publishing a new issue
-       Format:
-         meta:  YYYY · Week NN · DD Month YYYY
-         title: Theme of the issue (EN + BG)
-         desc:  One-line summary (EN + BG)
-         href:  /newsletters/YYYY-WNN/
-       ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="section-desc lc-bg" style="padding:16px 28px;border-bottom:1px solid var(--color-border);font-size:13px;color:var(--color-muted);">
+    Новият консолидиран бюлетин предстои. Абонирай се на началната страница, за да бъдеш първи.
+  </div>
+
+  <!-- ══ SECTION 2: Архив — Макробюлетин ════════════════════════════════ -->
+
+  <div class="section-label-row" style="margin-top:8px;">
+    <span class="section-label lc-bg" style="color:var(--color-muted);">&#9658; Архив — Макробюлетин (2026)</span>
+  </div>
 
   <a class="issue-row" href="/newsletters/2026-05-23/">
     <div class="issue-row-left">
-      <div class="issue-row-meta lc-en">23 May 2026</div>
       <div class="issue-row-meta lc-bg">23 май 2026</div>
-      <div class="issue-row-title lc-en">Wages Outpace Inflation by 10 Points. Then April Arrives.</div>
       <div class="issue-row-title lc-bg">Заплатите изпреварват инфлацията с 10 пункта. После идва април.</div>
-      <div class="issue-row-desc lc-en">HICP 6.0% · Real wages +10.1pp · CA deficit EUR 1.6bn · Activity divergence since 2020</div>
-      <div class="issue-row-desc lc-bg">ХИПЦ 6,0% · Реални доходи +10,1 пп · ТС дефицит 1,6 млрд. евро · Активност от 2020 г.</div>
+      <div class="issue-row-desc lc-bg">ХИПЦ 6,0% · Реални доходи +10,1 пп · ТС дефицит 1,6 млрд. евро</div>
     </div>
     <span class="issue-row-arrow">&rarr;</span>
   </a>
 
   <a class="issue-row" href="/newsletters/2026-05-15/">
     <div class="issue-row-left">
-      <div class="issue-row-meta lc-en">15 May 2026</div>
       <div class="issue-row-meta lc-bg">15 май 2026</div>
-      <div class="issue-row-title lc-en">Industry Turns. Output Up for the First Time in 15 Months.</div>
       <div class="issue-row-title lc-bg">Ръст в производството за пръв път от 15 месеца.</div>
-      <div class="issue-row-desc lc-en">IPI +4.8% · GDP 2.9% Q1 2026 · Retail at record high · Goods deficit widens to 9.9% of GDP</div>
-      <div class="issue-row-desc lc-bg">ИПП +4,8% · БВП 2,9% Q1 2026 · Търговия на дребно на рекорд · Стоков дефицит 9,9% от БВП</div>
+      <div class="issue-row-desc lc-bg">ИПП +4,8% · БВП 2,9% Q1 2026 · Търговия на дребно на рекорд</div>
     </div>
     <span class="issue-row-arrow">&rarr;</span>
   </a>
 
   <a class="issue-row" href="/newsletters/2026-05-04/">
     <div class="issue-row-left">
-      <div class="issue-row-meta lc-en">4 May 2026</div>
       <div class="issue-row-meta lc-bg">4 май 2026</div>
-      <div class="issue-row-title lc-en">Consumer Prices Jump to 6.2%. Broad-Based Surge.</div>
       <div class="issue-row-title lc-bg">Потребителските цени скочиха до 6,2%. Широкообхватно ускорение.</div>
-      <div class="issue-row-desc lc-en">HICP +6.2% · Core 4.6% · PPI 4.9% · Trade deficit narrows · Restaurant price deep dive</div>
-      <div class="issue-row-desc lc-bg">ХИПЦ +6,2% · Основна 4,6% · ЦП 4,9% · Търг. дефицит се свива · Ресторантски цени</div>
+      <div class="issue-row-desc lc-bg">ХИПЦ +6,2% · Основна 4,6% · ЦП 4,9% · Ресторантски цени</div>
     </div>
     <span class="issue-row-arrow">&rarr;</span>
   </a>
 
   <a class="issue-row" href="/newsletters/2026-W14/">
     <div class="issue-row-left">
-      <div class="issue-row-meta lc-en">4 April 2026</div>
       <div class="issue-row-meta lc-bg">4 април 2026</div>
-      <div class="issue-row-title lc-en">Services output slows down in January. The Consumer holds (for now).</div>
-      <div class="issue-row-title lc-bg">Производството в услугите се забавя. Търговията на дребно продължава да расте (засега).</div>
-      <div class="issue-row-desc lc-en">Services −1.2% YoY · Retail +7.3% · PPI squeeze deepens · Restaurant prices up 108%</div>
-      <div class="issue-row-desc lc-bg">Услуги −1,2% г/г · Търговия +7,3% · ЦП стискат маржовете · 108% ресторантска инфлация</div>
+      <div class="issue-row-title lc-bg">Производството в услугите се забавя. Търговията на дребно расте (засега).</div>
+      <div class="issue-row-desc lc-bg">Услуги −1,2% г/г · Търговия +7,3% · 108% ресторантска инфлация</div>
     </div>
     <span class="issue-row-arrow">&rarr;</span>
   </a>
 
   <a class="issue-row" href="/newsletters/2026-W13/">
     <div class="issue-row-left">
-      <div class="issue-row-meta lc-en">29 March 2026</div>
       <div class="issue-row-meta lc-bg">29 март 2026</div>
-      <div class="issue-row-title lc-en">Labour Costs Surge. Convergence With the EU Accelerates.</div>
       <div class="issue-row-title lc-bg">Ръстът при разходите за труд се ускорява. Конвергенцията с ЕС набира скорост.</div>
-      <div class="issue-row-desc lc-en">Wage growth at 3× EU pace · Housing cycle turning · Energy grid turns net importer</div>
-      <div class="issue-row-desc lc-bg">Ръст на заплатите 3× над ЕС · Жилищният цикъл се обръща · Нетен вносител на ел. енергия</div>
+      <div class="issue-row-desc lc-bg">Ръст на заплатите 3× над ЕС · Жилищният цикъл се обръща · Енергетика</div>
     </div>
     <span class="issue-row-arrow">&rarr;</span>
   </a>
 
   <a class="issue-row" href="/newsletters/2026-W12/">
     <div class="issue-row-left">
-      <div class="issue-row-meta lc-en">22 March 2026</div>
       <div class="issue-row-meta lc-bg">22 март 2026</div>
-      <div class="issue-row-title lc-en">Is Bulgaria Losing Competitiveness?</div>
       <div class="issue-row-title lc-bg">Губи ли България конкурентоспособност?</div>
-      <div class="issue-row-desc lc-en">ULC vs. productivity · Export market share · Wage convergence</div>
       <div class="issue-row-desc lc-bg">НРЕТ срещу производителност · Пазарен дял · Сближаване на заплатите</div>
     </div>
     <span class="issue-row-arrow">&rarr;</span>
   </a>
 
-  <!-- END ISSUE LIST -->
+  <!-- ══ SECTION 3: Архив — Законодателство ══════════════════════════════ -->
+
+  <div class="section-label-row" style="margin-top:8px;">
+    <span class="section-label lc-bg" style="color:#B5821A;">&#9658; Архив — Законодателство и Държавен вестник (2026)</span>
+  </div>
+
+  <a class="issue-row" href="/parliament/">
+    <div class="issue-row-left">
+      <div class="issue-row-meta lc-bg">Всички издания · 2026-W02 до 2026-W22</div>
+      <div class="issue-row-title lc-bg">Парламентарни Doodles — Дайджест на Държавен вестник</div>
+      <div class="issue-row-desc lc-bg">Народно събрание, Министерски съвет, министерства и ведомства · всяка седмица</div>
+    </div>
+    <span class="issue-row-arrow" style="color:#B5821A;">&rarr;</span>
+  </a>
 
   <div class="footer">
-    <span class="footer-logo">Doodles.</span>
+        <span class="footer-logo">Doodles.</span>
     <div class="footer-links">
-      <a href="/" class="lc-en">Home</a>
-      <a href="/" class="lc-bg">Начало</a>
-      <a href="/cockpit/" class="lc-en">Chartbook</a>
-      <a href="/cockpit/" class="lc-bg">Чартбук</a>
+      <a href="/">Начало</a>
+      <a href="/newsletters/">Бюлетин</a>
+      <a href="/cockpit/">Показатели</a>
+      <a href="/parliament/">Законодателство</a>
+      <a href="/privacy/">Поверителност</a>
     </div>
   </div>
 

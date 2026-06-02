@@ -1,5 +1,5 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="bg">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -313,28 +313,18 @@ body.lang-bg span.lc-en { display: none !important; }
 }
 </style>
 </head>
-<body>
+<body class="lang-bg">
 <div class="wrapper" id="app">
 
   <!-- Language toggle + site nav -->
   <div class="lang-toggle">
     <nav class="site-nav">
-      <a href="/" class="lc-en">Home</a>
-      <a href="/" class="lc-bg">Начало</a>
-      <a href="/newsletters/" class="lc-en">Newsletter</a>
-      <a href="/newsletters/" class="lc-bg">Бюлетин</a>
-      <a href="/cockpit/" class="active lc-en">Chartbook</a>
-      <a href="/cockpit/" class="active lc-bg">Чартбук</a>
-      <a href="/about/" class="lc-en">About</a>
-      <a href="/about/" class="lc-bg">За проекта</a>
-      <span class="nav-br"></span>
-      <a href="/parliament/" class="lc-en">Parliament<span class="soon">WIP</span></a>
-      <a href="/parliament/" class="lc-bg">Парламент<span class="soon">WIP</span></a>
+      <a href="/">Начало</a>
+      <a href="/newsletters/">Бюлетин</a>
+      <a href="/cockpit/" class="active">Показатели</a>
+      <a href="/parliament/">Законодателство</a>
+      <a href="/about/">За нас</a>
     </nav>
-    <div class="lang-buttons">
-      <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
-      <button class="lang-btn" data-lang="bg" onclick="setLang('bg')">БГ</button>
-    </div>
   </div>
 
   <!-- Masthead -->
@@ -373,14 +363,15 @@ body.lang-bg span.lc-en { display: none !important; }
 
   <!-- Footer -->
   <div class="footer">
-    <span class="footer-logo">Doodles.</span>
-    <span class="footer-sources">
-      <span class="lc-en">Eurostat · NSI · BNB · NSSI</span>
-      <span class="lc-bg">Евростат · НСИ · БНБ · НОИ</span>
-    </span>
+        <span class="footer-logo">Doodles.</span>
+    <div class="footer-links">
+      <a href="/">Начало</a>
+      <a href="/newsletters/">Бюлетин</a>
+      <a href="/cockpit/">Показатели</a>
+      <a href="/parliament/">Законодателство</a>
+      <a href="/privacy/">Поверителност</a>
+    </div>
   </div>
-
-</div>
 
 <script>
 // ── Language toggle ──────────────────────────────────────────────────────────
