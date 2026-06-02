@@ -336,7 +336,7 @@ body { background: #E8E8E8 !important; }
   <!-- Newspaper header -->
   <div class="nwp-hdr">
     <div class="nwp-topline">
-      <span class="nwp-dateline">Седмичен бюлетин · България</span>
+      
       <nav class="nwp-nav">
       <a href="/">Начало</a>
       <a href="/newsletters/">Бюлетин</a>
@@ -419,8 +419,10 @@ function render(manifest) {
   var genDate = new Date(manifest.generated_at);
   var genStr = genDate.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
   var genStrBG = genDate.toLocaleDateString('bg-BG', { day: 'numeric', month: 'long', year: 'numeric' });
-  document.getElementById('gen-date-en').textContent = 'Charts generated: ' + genStr;
-  document.getElementById('gen-date-bg').textContent = 'Графики от: ' + genStrBG;
+  var elEn = document.getElementById('gen-date-en');
+  var elBg = document.getElementById('gen-date-bg');
+  if (elEn) elEn.textContent = 'Charts generated: ' + genStr;
+  if (elBg) elBg.textContent = 'Графики от: ' + genStrBG;
 
   var datasets = manifest.datasets || {};
 
