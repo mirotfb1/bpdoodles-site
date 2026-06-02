@@ -302,11 +302,28 @@ body.lang-bg span.lc-en { display: none !important; }
   text-align: right;
 }
 
+/* ── Section jump nav ── */
+.section-nav {
+  display: none;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 12px 28px 10px;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+.section-nav a {
+  font-size: 10px; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--color-basepoint); text-decoration: none;
+  padding: 4px 10px; border: 1px solid var(--color-border);
+  border-radius: 3px; background: #fff; transition: all 0.1s; white-space: nowrap;
+}
+.section-nav a:hover { background: var(--color-basepoint); color: #fff; border-color: var(--color-basepoint); }
+
 /* ── Mobile ── */
 @media (max-width: 740px) {
   .wrapper { margin: 0; border-radius: 0; border-left: none; border-right: none; }
   .masthead { padding: 18px 16px 14px; }
-  .page-header, .section-header, .chart-card, .footer { padding-left: 16px; padding-right: 16px; }
+  .page-header, .section-header, .chart-card, .footer, .section-nav { padding-left: 16px; padding-right: 16px; }
   .lang-toggle { align-items: flex-start; }
   .site-nav { flex: 1; flex-wrap: wrap; gap: 8px 14px; }
   .nav-br { display: block; flex-basis: 100%; height: 0; }
@@ -354,9 +371,11 @@ body { background: #E8E8E8 !important; }
   </div>
 
 
+  <!-- Section jump nav — populated by JS after manifest loads -->
+  <div id="section-nav" class="section-nav"></div>
+
   <!-- Charts injected here -->
   <div id="charts-container">
-    <div class="state-msg lc-en">Loading charts...</div>
     <div class="state-msg lc-bg">Зареждане...</div>
   </div>
 
@@ -426,13 +445,27 @@ function render(manifest) {
 
   var datasets = manifest.datasets || {};
 
+  // Build section jump nav
+  var navEl = document.getElementById('section-nav');
   manifest.sections.forEach(function(sec) {
+    var slug = (sec.label_bg || sec.label).toLowerCase().replace(/[^а-яёa-z0-9]+/gi, '-');
+    var secId = 'sec-' + slug;
+    if (navEl) {
+      var a = document.createElement('a');
+      a.href = '#' + secId;
+      a.textContent = sec.label_bg || sec.label;
+      navEl.appendChild(a);
+    }
+  });
+  if (navEl && manifest.sections.length > 0) navEl.style.display = 'flex';
+
+  manifest.sections.forEach(function(sec) {
+    var slug = (sec.label_bg || sec.label).toLowerCase().replace(/[^а-яёa-z0-9]+/gi, '-');
     // Section header
     var hdr = document.createElement('div');
     hdr.className = 'section-header';
-    hdr.innerHTML =
-      '<span class="section-label lc-en">&#9658; ' + escHtml(sec.label) + '</span>' +
-      '<span class="section-label lc-bg">&#9658; ' + escHtml(sec.label_bg) + '</span>';
+    hdr.id = 'sec-' + slug;
+    hdr.innerHTML = '<span class="section-label lc-bg">&#9658; ' + escHtml(sec.label_bg || sec.label) + '</span>';
     container.appendChild(hdr);
 
     sec.charts.forEach(function(chart) {

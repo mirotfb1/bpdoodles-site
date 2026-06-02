@@ -2,7 +2,7 @@
 <html lang="bg">
 <head>
 <meta charset="utf-8">
-<title>Парламентарни Doodles</title>
+<title>Законодателство · Basepoint Doodles</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Caveat:wght@700&display=swap" rel="stylesheet">
@@ -235,14 +235,8 @@ details.sess-block[open] .sess-date-chip{background:var(--gold);}
   <div class="nwp-rule-thick"></div>
   <div class="nwp-rule-thin"></div>
 </div>
-
-<div class="parl-hdr">
-  <div class="parl-hdr-title">Парламентарен дайджест</div>
-  <div class="parl-hdr-date">Народното събрание: всяка седмица</div>
-  
-</div>
 <div class="intro-block">
-  <p>Парламентарни Doodles обобщава дейността на Народното събрание с изкуствен интелект. Два раздела: какво е обнародвано в Държавен вестник и какво се е случило в пленарната зала.</p>
+  <p>Обобщение на законите, решенията и наредбите обнародвани в Държавен вестник по седмици: Народно събрание, Министерски съвет и министерствата. Резюметата са генерирани с AI и целят да обяснят накратко какво влиза в сила и кого засяга, без правен жаргон. В секцията &ldquo;В залата&rdquo; можете да намерите обобщения на стенограмите на заседанията на НС (публикуват се с 7-дневно забавяне).</p>
 </div>
 
 <a class="track-card" href="dv/">
@@ -261,20 +255,6 @@ details.sess-block[open] .sess-date-chip{background:var(--gold);}
   <div class="track-arrow">→</div>
 </a>
 
-<div class="section-label-row"><span class="section-label">► Абонирай се</span></div>
-<div class="waitlist-section">
-  <div class="waitlist-heading">Получавай дайджеста по имейл.</div>
-  <p class="waitlist-body">Безплатен седмичен дайджест. Без спам.</p>
-  <form onsubmit="parlSubscribe(event)">
-    <div class="waitlist-form">
-      <input class="waitlist-input" type="email" name="email" placeholder="your@email.com" required>
-      <button class="waitlist-btn" type="submit">АБОНИРАЙ СЕ</button>
-    </div>
-  </form>
-  <p class="waitlist-fine">Откажи се по всяко време.</p>
-  <div id="parl-wl-ok" class="waitlist-ok">✓ Абониран.</div>
-  <div id="parl-wl-err" style="display:none;font-size:12px;color:#E03E2D;margin-top:8px;">Нещо се обърка. Пиши на <a href="mailto:editor@bpdoodles.com">editor@bpdoodles.com</a>.</div>
-</div>
 <div class="section-label-row"><span class="section-label">► Контакт</span></div>
 <div class="contact-section">
   <p>Въпроси или корекции: <a href="mailto:editor@bpdoodles.com">editor@bpdoodles.com</a></p>
@@ -290,18 +270,5 @@ details.sess-block[open] .sess-date-chip{background:var(--gold);}
   </div>
 </div>
 </div>
-<script>
-function parlSubscribe(e){
-  e.preventDefault();
-  var form=e.target,btn=form.querySelector('.waitlist-btn');
-  var email=form.querySelector('[type="email"]').value;
-  btn.disabled=true;btn.textContent='...';
-  fetch('/subscribe',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({email:email,list_id:4})})
-    .then(r=>r.json()).then(d=>{
-      if(d.ok){document.getElementById('parl-wl-ok').style.display='block';form.style.display='none';}
-      else{btn.disabled=false;btn.textContent='АБОНИРАЙ СЕ';document.getElementById('parl-wl-err').style.display='block';}
-    }).catch(()=>{btn.disabled=false;btn.textContent='АБОНИРАЙ СЕ';document.getElementById('parl-wl-err').style.display='block';});
-}
-</script>
 </body>
 </html>
