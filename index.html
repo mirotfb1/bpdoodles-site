@@ -59,6 +59,7 @@ body {
 .mini-chart-lbl { font-size:9px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--dim); padding:3px 6px 4px; background:#F4F4F4; }
 
 /* Legislation column */
+.mini-chart-wrap { height:80px; }
 .dv-item { margin-bottom:12px; padding-bottom:12px; border-bottom:1px solid #EEE; display:block; text-decoration:none; color:inherit; }
 .dv-item:last-child { border-bottom:none; margin-bottom:0; padding-bottom:0; }
 .dv-item:hover .dv-title { color:var(--gold); }
@@ -156,9 +157,13 @@ body {
       <div class="col-cta"><a href="/cockpit/" class="eco">→ Виж пълния чартбук</a></div>
     </div>
 
-    <!-- Legislation column: 3 most recent substantive summaries -->
+    <!-- Legislation column: mini activity chart + 2 most recent substantive summaries -->
     <div class="nwp-col">
       <div class="col-head">Законодателство · Държавен вестник</div>
+      <a class="mini-chart" href="/parliament/">
+        <div class="mini-chart-wrap"><canvas id="parlMiniChart"></canvas></div>
+        <div class="mini-chart-lbl">Законодателна активност</div>
+      </a>
 
       <!-- BEGIN:LAW-ITEMS -->
       <a class="dv-item" href="/parliament/dv/2026-W22/">
@@ -172,12 +177,6 @@ body {
         <span class="dv-type tip-post">Постановление</span>
         <div class="dv-title">Г. за изменение на Тарифата за таксите, които се събират за преминаване и ползване на републиканската пътна мрежа, приета с Постановление №</div>
         <div class="dv-lead">Постановлението удължава преференциалните тол такси за тежкотоварни превозни средства с нулеви емисии по републиканската пътна мрежа и въвежда нова структура на.</div>
-      </a>
-      <a class="dv-item" href="/parliament/dv/2026-W22/">
-        <div class="dv-meta">26 май 2026 · Министерства</div>
-        <span class="dv-type tip-pravilnik">Правилник</span>
-        <div class="dv-title">ПРАВИЛНИК за устройството и организацията на дейността на Комисията за защита от дискриминация</div>
-        <div class="dv-lead">Актът установява пълни вътрешни правила за работата на КЗД – как се подават жалби за дискриминация, как се разглеждат, какви са сроковете и как се изпълняват ре.</div>
       </a>
       <!-- END:LAW-ITEMS -->
 
@@ -222,6 +221,29 @@ body {
   </div>
 
 </div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+      <!-- BEGIN:PARL-CHART-DATA -->
+      <script>
+(function(){
+  var L=["W02", "W03", "W04", "W05", "W06", "W07", "W08", "W09", "W10", "W11", "W12", "W13", "W14", "W15", "W16", "W17", "W18", "W19", "W20", "W21", "W22", "W23"],NS=[0, 0, 1, 0, 3, 8, 1, 6, 2, 4, 6, 8, 2, 1, 0, 0, 0, 3, 7, 0, 1, 1],MS=[12, 6, 6, 11, 7, 6, 8, 2, 1, 0, 0, 0, 1, 1, 4, 2, 6, 6, 3, 1, 1, 0],MN=[3, 29, 16, 14, 7, 14, 5, 10, 2, 2, 3, 9, 7, 4, 9, 7, 4, 6, 35, 0, 3, 1],RO=[15.0, 25.0, 24.3, 24.5, 25.0, 23.2, 21.0, 19.2, 16.2, 10.8, 9.5, 9.2, 10.5, 10.5, 11.5, 9.5, 9.5, 11.8, 19.8, 17.8, 16.5, 13.2];
+  var ctx=document.getElementById('parlMiniChart').getContext('2d');
+  new Chart(ctx,{type:'bar',data:{labels:L,datasets:[
+    {label:'НС',data:NS,backgroundColor:'#1B2E5E',stack:'s',order:3},
+    {label:'МС',data:MS,backgroundColor:'#B5821A',stack:'s',order:2},
+    {label:'МИН',data:MN,backgroundColor:'#4A7F6B',stack:'s',order:1},
+    {label:'avg',data:RO,type:'line',borderColor:'#CC2B2B',backgroundColor:'transparent',borderWidth:1.5,borderDash:[4,3],pointRadius:0,tension:0.35,order:0}
+  ]},options:{responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{display:false},tooltip:{mode:'index',intersect:false}},
+    scales:{
+      x:{stacked:true,grid:{display:false},ticks:{font:{size:7,family:'Courier New'},maxRotation:0}},
+      y:{stacked:true,display:false,beginAtZero:true}
+    },
+    onClick:function(){window.location.href='/parliament/';},
+    onHover:function(e,els){e.native.target.style.cursor=els.length?'pointer':'default';}
+  }});
+})();
+      </script>
+      <!-- END:PARL-CHART-DATA -->
 <script>
 function doSub(e, listId) {
   e.preventDefault();
