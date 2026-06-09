@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="bg">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Basepoint Doodles Â· Ð‘ÑŠÐ»Ð³Ð°Ñ€Ð¸Ñ Â· Ð¡ÐµÐ´Ð¼Ð¸Ñ†Ð° 23, 2026</title>
+<title>Basepoint Doodles · България · Седмица 23, 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&amp;family=Caveat:wght@700&amp;display=swap" rel="stylesheet"/>
 <style>
 * { box-sizing:border-box; margin:0; padding:0; }
@@ -18,7 +18,7 @@ body {
 .wrapper { max-width:700px; margin:32px auto; background:var(--paper);
   border:1px solid var(--bdr); border-radius:4px; overflow:hidden; }
 
-/* â”€â”€ Newspaper header â”€â”€ */
+/* ── Newspaper header ── */
 .nwp-hdr { padding:16px 24px 12px; border-bottom:1px solid var(--ink); background:#fff; }
 .nwp-topline { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
 .nwp-dateline { font-family:'Courier New',monospace; font-size:10px; color:var(--dim);
@@ -38,7 +38,7 @@ body {
 .nwp-rule-thick { height:3px; background:var(--ink); }
 .nwp-rule-thin  { height:1px; background:var(--ink); margin-top:3px; }
 
-/* â”€â”€ Section quicklinks â”€â”€ */
+/* ── Section quicklinks ── */
 .quicklinks { display:grid; grid-template-columns:1fr 1px 1fr;
   border-bottom:2px solid var(--ink); background:var(--surf); }
 .ql-col { padding:14px 20px 16px; }
@@ -50,10 +50,10 @@ body {
 .ql-links a { font-size:12px; font-weight:700; color:var(--dim); text-decoration:none;
   display:flex; align-items:center; gap:6px; }
 .ql-links a:hover { color:var(--ink); }
-.ql-links a::before { content:'â†’'; font-size:11px; color:var(--pale); }
+.ql-links a::before { content:'→'; font-size:11px; color:var(--pale); }
 .ql-divider { background:var(--bdr); }
 
-/* â”€â”€ Cover â”€â”€ */
+/* ── Cover ── */
 .cover { padding:22px 28px 20px; border-bottom:1px solid var(--bdr); }
 .cover-eyebrow { font-size:10px; font-weight:900; letter-spacing:0.18em;
   text-transform:uppercase; color:var(--red); margin-bottom:10px; display:block; }
@@ -62,10 +62,10 @@ body {
 .cover-bullets { list-style:none; display:flex; flex-direction:column; gap:7px; }
 .cover-bullets li { font-size:13.5px; color:var(--ink2); line-height:1.55;
   display:flex; gap:9px; }
-.cover-bullets li::before { content:'â–¸'; color:var(--red); flex-shrink:0;
+.cover-bullets li::before { content:'▸'; color:var(--red); flex-shrink:0;
   font-size:11px; margin-top:3px; }
 
-/* â”€â”€ Section dividers â”€â”€ */
+/* ── Section dividers ── */
 .section-divider { background:var(--ink); padding:13px 28px;
   display:flex; align-items:center; justify-content:space-between; }
 .section-divider-title { font-size:12px; font-weight:900; letter-spacing:0.2em;
@@ -79,7 +79,7 @@ body {
   padding:9px 16px; border-right:1px solid var(--bdr); }
 .section-subnav a:hover { color:var(--ink); background:#EFEFEF; }
 
-/* â”€â”€ The Number â”€â”€ */
+/* ── The Number ── */
 .the-number { padding:24px 28px; border-bottom:1px solid var(--bdr);
   display:flex; gap:20px; align-items:flex-start; }
 .the-number-label { font-size:10px; font-weight:900; letter-spacing:0.16em;
@@ -90,7 +90,7 @@ body {
 .the-number-big .denom { font-size:28px; color:var(--dim); }
 .the-number p { font-size:14px; color:var(--ink2); line-height:1.6; }
 
-/* â”€â”€ Macro Pulse â”€â”€ */
+/* ── Macro Pulse ── */
 .pulse-header { padding:14px 28px 0; display:flex; align-items:center; gap:10px; }
 .pulse-title { font-size:11px; font-weight:900; letter-spacing:0.16em;
   text-transform:uppercase; color:var(--red); }
@@ -109,7 +109,7 @@ body {
 .stat-period { font-family:'Courier New',monospace; font-size:10px;
   color:var(--pale); margin-top:5px; }
 
-/* â”€â”€ Charts â”€â”€ */
+/* ── Charts ── */
 .section { padding:20px 28px; border-bottom:1px solid var(--bdr); }
 .section-body { font-size:14px; color:var(--ink2); line-height:1.75; margin-bottom:12px; }
 .nl-chart { border:1px solid var(--bdr); border-radius:8px; overflow:hidden; margin:14px 0 20px; }
@@ -132,7 +132,7 @@ body {
   text-transform:uppercase; color:var(--red); margin:20px 0 12px; display:block; }
 .data-section-head:first-child { margin-top:0; }
 
-/* â”€â”€ Deep Dive â”€â”€ */
+/* ── Deep Dive ── */
 .deep-dive { padding:20px 28px; border-bottom:1px solid var(--bdr); }
 .deep-dive-head { font-size:11px; font-weight:900; letter-spacing:0.16em;
   text-transform:uppercase; color:var(--gold); margin-bottom:16px; display:block; }
@@ -142,7 +142,7 @@ body {
   text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
 .bottom-line p { font-size:13.5px; color:var(--ink2); line-height:1.7; }
 
-/* â”€â”€ Law Deep (scorecard) â”€â”€ */
+/* ── Law Deep (scorecard) ── */
 .sc-panel { background:#FFF8EC; border:1px solid #E8D5A0; border-radius:8px;
   overflow:hidden; margin:14px 0; }
 .sc-facts { display:grid; grid-template-columns:1fr 1px 1fr 1px 1fr; }
@@ -172,7 +172,7 @@ body {
 .es-pill.yes { background:#DCF0FB; color:#1B6A9E; }
 .es-pill.no { background:#EDEDED; color:#666; }
 .es-pill.beyond { background:#E8F7EC; color:#2A7D4F; }
-/* â”€â”€ Voting block â”€â”€ */
+/* ── Voting block ── */
 .vote-block { margin:14px 0; }
 .vote-block-head { font-size:9px; font-weight:900; letter-spacing:0.14em;
   text-transform:uppercase; color:var(--dim); margin-bottom:10px; }
@@ -200,7 +200,7 @@ body {
 .pt-verdict.against { color:var(--dn); }
 .pt-verdict.split { color:var(--gold); }
 
-/* â”€â”€ Legislative infographic â”€â”€ */
+/* ── Legislative infographic ── */
 .law-infographic { padding:20px 28px 18px; border-bottom:1px solid var(--bdr); }
 .infog-stats { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:20px; }
 .infog-stat { background:var(--surf); border-radius:8px; padding:12px 16px; text-align:center; }
@@ -223,7 +223,7 @@ body {
 .infog-footnote { font-family:'Courier New',monospace; font-size:10px;
   color:var(--pale); margin-top:14px; line-height:1.5; }
 
-/* â”€â”€ Legislative cards â”€â”€ */
+/* ── Legislative cards ── */
 .law-cards { padding:0 28px; }
 .nl-law-card { border:1px solid var(--bdr); border-radius:8px; overflow:hidden; margin:14px 0; }
 .nl-law-card.deep { border-color:var(--gold); border-width:2px; }
@@ -275,7 +275,7 @@ body {
 .nl-law-meta a { color:var(--pale); }
 .nl-law-meta a:hover { color:var(--ink); }
 
-/* â”€â”€ Technical items â”€â”€ */
+/* ── Technical items ── */
 .basic-section { margin:14px 28px 20px; border:1px solid var(--bdr); border-radius:8px; overflow:hidden; }
 .basic-toggle { display:flex; align-items:center; justify-content:space-between;
   padding:10px 14px; background:var(--surf); cursor:pointer;
@@ -296,7 +296,7 @@ body {
 .basic-item a { color:var(--pale); font-size:11px; margin-left:auto; flex-shrink:0; }
 .basic-item a:hover { color:var(--ink); }
 
-/* â”€â”€ Footer â”€â”€ */
+/* ── Footer ── */
 .footer { padding:14px 28px; background:var(--surf);
   border-top:1px solid var(--bdr);
   display:flex; justify-content:space-between; align-items:center; }
@@ -304,7 +304,7 @@ body {
 .footer-sources { font-family:'Courier New',monospace; font-size:9px;
   color:var(--pale); text-align:right; line-height:1.6; }
 
-/* â”€â”€ Responsive â”€â”€ */
+/* ── Responsive ── */
 @media (max-width:740px) {
   .wrapper { margin:0; border-radius:0; }
   .section, .deep-dive, .footer { padding-left:16px; padding-right:16px; }
@@ -324,495 +324,495 @@ function toggleCard(el) {
   const body = el.closest('.nl-law-card').querySelector('.nl-law-body');
   const tog  = el.querySelector('.nl-law-toggle');
   body.classList.toggle('open');
-  tog.textContent = body.classList.contains('open') ? 'â–´ Ð¡ÐºÑ€Ð¸Ð¹' : 'â–¾ ÐŸÐ¾ÐºÐ°Ð¶Ð¸';
+  tog.textContent = body.classList.contains('open') ? '▴ Скрий' : '▾ Покажи';
 }
 function toggleBasic() {
   const list = document.querySelector('.basic-list');
   const arr  = document.querySelector('.basic-toggle .arrow');
   list.classList.toggle('open');
-  arr.textContent = list.classList.contains('open') ? 'â–´' : 'â–¾';
+  arr.textContent = list.classList.contains('open') ? '▴' : '▾';
 }
 </script>
 </head>
 <body>
 <div class="wrapper">
 
-<!-- â”€â”€ Newspaper header â”€â”€ -->
+<!-- ── Newspaper header ── -->
 <div class="nwp-hdr">
   <div class="nwp-topline">
-    <span class="nwp-dateline">Ð¡ÐµÐ´Ð¼Ð¸Ñ†Ð° 23 Â· 9 ÑŽÐ½Ð¸ 2026</span>
+    <span class="nwp-dateline">Седмица 23 · 9 юни 2026</span>
     <nav class="nwp-nav">
-      <a href="/newsletters/" class="active">Ð‘ÑŽÐ»ÐµÑ‚Ð¸Ð½</a>
-      <a href="/cockpit/">Ð˜ÐºÐ¾Ð½Ð¾Ð¼Ð¸ÐºÐ°</a>
-      <a href="/parliament/">Ð—Ð°ÐºÐ¾Ð½Ð¾Ð´Ð°Ñ‚ÐµÐ»ÑÑ‚Ð²Ð¾</a>
-      <a href="/about/">Ð—Ð° Ð¿Ñ€Ð¾ÐµÐºÑ‚Ð°</a>
+      <a href="/newsletters/" class="active">Бюлетин</a>
+      <a href="/cockpit/">Икономика</a>
+      <a href="/parliament/">Законодателство</a>
+      <a href="/about/">За проекта</a>
     </nav>
   </div>
   <div class="nwp-title-row">
     <span class="nwp-title">Basepoint</span><span class="nwp-doodles">Doodles</span>
   </div>
-  <div class="nwp-issue">ÐœÐ°ÐºÑ€Ð¾Ð¸ÐºÐ¾Ð½Ð¾Ð¼Ð¸ÐºÐ° Â· Ð—Ð°ÐºÐ¾Ð½Ð¾Ð´Ð°Ñ‚ÐµÐ»ÑÑ‚Ð²Ð¾ Â· Ð‘ÑŠÐ»Ð³Ð°Ñ€Ð¸Ñ</div>
+  <div class="nwp-issue">Макроикономика · Законодателство · България</div>
   <div class="nwp-rule-thick"></div>
   <div class="nwp-rule-thin"></div>
 </div>
 
-<!-- â”€â”€ Section quicklinks â”€â”€ -->
+<!-- ── Section quicklinks ── -->
 <div class="quicklinks">
   <div class="ql-col">
-    <div class="ql-head"><span class="ql-arrow">â–¸</span>Ð˜ÐºÐ¾Ð½Ð¾Ð¼Ð¸Ñ‡ÐµÑÐºÐ¸ Ð´Ð°Ð½Ð½Ð¸</div>
+    <div class="ql-head"><span class="ql-arrow">▸</span>Икономически данни</div>
     <div class="ql-links">
-      <a href="#the-number">Ð§Ð¸ÑÐ»Ð¾Ñ‚Ð¾ Ð½Ð° ÑÐµÐ´Ð¼Ð¸Ñ†Ð°Ñ‚Ð°</a>
-      <a href="#macro-pulse">ÐœÐ°ÐºÑ€Ð¾ Ð¿ÑƒÐ»Ñ</a>
-      <a href="#new-data">ÐÐ¾Ð²Ð¸ Ð´Ð°Ð½Ð½Ð¸</a>
-      <a href="#deep-dive">Ð‘Ð’ÐŸ Ð¸ Ð£ÑÐ»ÑƒÐ³Ð¸</a>
+      <a href="#the-number">Числото на седмицата</a>
+      <a href="#macro-pulse">Макро пулс</a>
+      <a href="#new-data">Нови данни</a>
+      <a href="#deep-dive">БВП и Услуги</a>
     </div>
   </div>
   <div class="ql-divider"></div>
   <div class="ql-col">
-    <div class="ql-head"><span class="ql-arrow">â–¸</span>Ð—Ð°ÐºÐ¾Ð½Ð¸ Â· Ð ÐµÑˆÐµÐ½Ð¸Ñ Â· Ð ÐµÐ³ÑƒÐ»Ð°Ñ†Ð¸Ð¸</div>
+    <div class="ql-head"><span class="ql-arrow">▸</span>Закони · Решения · Регулации</div>
     <div class="ql-links">
-      <a href="#law-summary">ÐžÐ±Ð¾Ð±Ñ‰ÐµÐ½Ð¸Ðµ</a>
-      <a href="#law-items">ÐžÐ±Ð½Ð°Ñ€Ð¾Ð´Ð²Ð°Ð½Ð¸ Ð°ÐºÑ‚Ð¾Ð²Ðµ</a>
+      <a href="#law-summary">Обобщение</a>
+      <a href="#law-items">Обнародвани актове</a>
     </div>
   </div>
 </div>
 
-<!-- â”€â”€ Cover â”€â”€ -->
+<!-- ── Cover ── -->
 <div class="cover">
-  <span class="cover-eyebrow">â–¸ Ð¡ÐµÐ´Ð¼Ð¸Ñ†Ð° 23 Â· 2â€“8 ÑŽÐ½Ð¸ 2026</span>
-  <div class="cover-headline">Ð’ÑŠÑ‚Ñ€ÐµÑˆÐ½Ð¾Ñ‚Ð¾ Ñ‚ÑŠÑ€ÑÐµÐ½Ðµ ÑÐµ ÑƒÑÐºÐ¾Ñ€ÑÐ²Ð°, Ð¿Ñ€Ð¾Ð¸Ð·Ð²Ð¾Ð´ÑÑ‚Ð²Ð¾Ñ‚Ð¾ Ð² Ð¸Ð½Ð´ÑƒÑÑ‚Ñ€Ð¸ÑÑ‚Ð° ÑÐµ Ð·Ð°Ð±Ð°Ð²Ñ</div>
+  <span class="cover-eyebrow">▸ Седмица 23 · 2–8 юни 2026</span>
+  <div class="cover-headline">Вътрешното търсене се ускорява, производството в индустрията се забавя</div>
   <ul class="cover-bullets">
-    <li>Ð Ð°Ð·Ñ…Ð¾Ð´Ð¸Ñ‚Ðµ Ð·Ð° ÐºÑ€Ð°Ð¹Ð½Ð¾ Ð¿Ð¾Ñ‚Ñ€ÐµÐ±Ð»ÐµÐ½Ð¸Ðµ Ð½Ð° Ð´Ð¾Ð¼Ð°ÐºÐ¸Ð½ÑÑ‚Ð²Ð°Ñ‚Ð° Ð½Ð°Ñ€Ð°ÑÐ½Ð°Ñ…Ð° Ñ 9,4% Ð³/Ð³ Ð² Q1 2026, ÑÑ€ÐµÐ´ Ð½Ð°Ð¹-ÑÐ¸Ð»Ð½Ð¸Ñ‚Ðµ Ñ‚ÐµÐ¼Ð¿Ð¾Ð²Ðµ Ð¾Ñ‚ Ð¿Ð¾Ð²ÐµÑ‡Ðµ Ð¾Ñ‚ Ð´ÐµÑÐµÑ‚Ð¸Ð»ÐµÑ‚Ð¸Ðµ. Ð ÐµÐ²Ð¸Ð·Ð¸Ñ€Ð°Ð½Ð¸Ñ‚Ðµ Ñ‚Ñ€Ð¸Ð¼ÐµÑÐµÑ‡Ð½Ð¸ Ð´Ð°Ð½Ð½Ð¸ Ð·Ð° Ð‘Ð’ÐŸ Ñ€Ð°Ð·ÐºÑ€Ð¸Ð²Ð°Ñ‚ Ð½Ð¾Ð²Ð° Ñ€Ð°Ð·Ð±Ð¸Ð²ÐºÐ° Ð½Ð° Ñ€Ð°ÑÑ‚ÐµÐ¶Ð° Ð¿Ð¾ ÐºÐ¾Ð¼Ð¿Ð¾Ð½ÐµÐ½Ñ‚Ð¸.</li>
-    <li>ÐŸÑ€Ð¾Ð¼Ð¸ÑˆÐ»ÐµÐ½Ð¾Ñ‚Ð¾ Ð¿Ñ€Ð¾Ð¸Ð·Ð²Ð¾Ð´ÑÑ‚Ð²Ð¾ ÑÐµ ÑÐ²Ð¸Ð²Ð° Ñ 4,2% Ð³/Ð³ Ð² Ð°Ð¿Ñ€Ð¸Ð» ÑÐ»ÐµÐ´ Ñ€ÑŠÑÑ‚ Ð¾Ñ‚ 4,8% Ð² Ð¼Ð°Ñ€Ñ‚: Ð¾Ð±Ñ€Ð°Ñ‚ Ð¾Ñ‚ Ð±Ð»Ð¸Ð·Ð¾ 9 Ð¿Ñ€.Ð¿. Ð·Ð° ÐµÐ´Ð¸Ð½ Ð¼ÐµÑÐµÑ†, Ñ€ÑÐ´ÐºÐ¾ Ð½Ð°Ð±Ð»ÑŽÐ´Ð°Ð²Ð°Ð½ Ð¸Ð·Ð²ÑŠÐ½ Ð¿ÐµÑ€Ð¸Ð¾Ð´Ð° Ð½Ð° COVID.</li>
-    <li>Ð˜Ð·Ð½Ð¾ÑÑŠÑ‚ Ð½Ð° ÑÑ‚Ð¾ÐºÐ¸ Ð¸ ÑƒÑÐ»ÑƒÐ³Ð¸ Ð½Ð°Ð¼Ð°Ð»ÑÐ²Ð° Ñ 7,4% Ð³/Ð³ Ð² Q1, Ð´Ð¾ÐºÐ°Ñ‚Ð¾ Ð²Ð½Ð¾ÑÑŠÑ‚ Ð½Ð°Ñ€Ð°ÑÑ‚Ð²Ð° Ñ 8,2%: Ð½ÐµÑ‚Ð½Ð¸ÑÑ‚ Ð¸Ð·Ð½Ð¾Ñ Ðµ Ð³Ð»Ð°Ð²Ð½Ð°Ñ‚Ð° ÑÐ¿Ð¸Ñ€Ð°Ñ‡ÐºÐ° Ð½Ð° Ñ€Ð°ÑÑ‚ÐµÐ¶Ð°.</li>
-    <li>Ð’ ÑÐ¸Ð»Ð° Ðµ Ð½Ð¾Ð² Ð—Ð°ÐºÐ¾Ð½ Ð·Ð° Ð¿Ñ€Ð¾Ñ‚Ð¸Ð²Ð¾Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ðµ Ð½Ð° ÐºÐ¾Ñ€ÑƒÐ¿Ñ†Ð¸ÑÑ‚Ð°: Ð½Ð¾Ð²Ð° Ð½ÐµÐ·Ð°Ð²Ð¸ÑÐ¸Ð¼Ð° ÐºÐ¾Ð¼Ð¸ÑÐ¸Ñ Ñ Ñ€Ð°Ð·ÑÐ»ÐµÐ´Ð²Ð°Ñ‰Ð¸ Ð¸Ð½ÑÐ¿ÐµÐºÑ‚Ð¾Ñ€Ð¸ Ð¾Ð±Ñ…Ð²Ð°Ñ‰Ð° Ð½Ð°Ð´ 50 ÐºÐ°Ñ‚ÐµÐ³Ð¾Ñ€Ð¸Ð¸ Ð´Ð»ÑŠÐ¶Ð½Ð¾ÑÑ‚Ð½Ð¸ Ð»Ð¸Ñ†Ð°.</li>
+    <li>Разходите за крайно потребление на домакинствата нараснаха с 9,4% г/г в Q1 2026, сред най-силните темпове от повече от десетилетие. Ревизираните тримесечни данни за БВП разкриват нова разбивка на растежа по компоненти.</li>
+    <li>Промишленото производство се свива с 4,2% г/г в април след ръст от 4,8% в март: обрат от близо 9 пр.п. за един месец, рядко наблюдаван извън периода на COVID.</li>
+    <li>Износът на стоки и услуги намалява с 7,4% г/г в Q1, докато вносът нараства с 8,2%: нетният износ е главната спирачка на растежа.</li>
+    <li>В сила е нов Закон за противодействие на корупцията: нова независима комисия с разследващи инспектори обхваща над 50 категории длъжностни лица.</li>
   </ul>
 </div>
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
-<!-- â•â•â• SECTION 1: Ð˜ÐšÐžÐÐžÐœÐ˜Ð§Ð•Ð¡ÐšÐ˜ Ð”ÐÐÐÐ˜ â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<!-- ════════════════════════════════════════════════ -->
+<!-- ═══ SECTION 1: ИКОНОМИЧЕСКИ ДАННИ ═══════════════ -->
+<!-- ════════════════════════════════════════════════ -->
 <div class="section-divider" id="economy">
-  <span class="section-divider-title">Ð˜ÐºÐ¾Ð½Ð¾Ð¼Ð¸Ñ‡ÐµÑÐºÐ¸ Ð´Ð°Ð½Ð½Ð¸</span>
-  <span class="section-divider-num">Ð¡ÐµÐºÑ†Ð¸Ñ 1 Ð¾Ñ‚ 2</span>
+  <span class="section-divider-title">Икономически данни</span>
+  <span class="section-divider-num">Секция 1 от 2</span>
 </div>
 <nav class="section-subnav">
-  <a href="#the-number">Ð§Ð¸ÑÐ»Ð¾Ñ‚Ð¾</a>
-  <a href="#macro-pulse">ÐœÐ°ÐºÑ€Ð¾ Ð¿ÑƒÐ»Ñ</a>
-  <a href="#new-data">ÐÐ¾Ð²Ð¸ Ð´Ð°Ð½Ð½Ð¸</a>
-  <a href="#deep-dive">Ð‘Ð’ÐŸ Ð¸ Ð£ÑÐ»ÑƒÐ³Ð¸</a>
+  <a href="#the-number">Числото</a>
+  <a href="#macro-pulse">Макро пулс</a>
+  <a href="#new-data">Нови данни</a>
+  <a href="#deep-dive">БВП и Услуги</a>
 </nav>
 
-<!-- â”€â”€ The Number â”€â”€ -->
+<!-- ── The Number ── -->
 <div class="the-number" id="the-number">
-  <div class="the-number-label">Ð§Ð¸ÑÐ»Ð¾Ñ‚Ð¾<br/>Ð½Ð° ÑÐµÐ´Ð¼.</div>
+  <div class="the-number-label">Числото<br/>на седм.</div>
   <div class="the-number-content">
-    <div class="the-number-big">+9,4<span class="denom">% Ð³/Ð³</span></div>
-    <p>Ð Ð°Ð·Ñ…Ð¾Ð´Ð¸Ñ‚Ðµ Ð·Ð° ÐºÑ€Ð°Ð¹Ð½Ð¾ Ð¿Ð¾Ñ‚Ñ€ÐµÐ±Ð»ÐµÐ½Ð¸Ðµ Ð½Ð° Ð´Ð¾Ð¼Ð°ÐºÐ¸Ð½ÑÑ‚Ð²Ð°Ñ‚Ð° Ð½Ð°Ñ€Ð°ÑÐ½Ð°Ñ…Ð° Ñ 9,4% Ð³/Ð³ Ð² Q1 2026 ÑÐ¿Ð¾Ñ€ÐµÐ´ Ñ€ÐµÐ²Ð¸Ð·Ð¸Ñ€Ð°Ð½Ð¸Ñ‚Ðµ Ð´Ð°Ð½Ð½Ð¸ Ð½Ð° Ð•Ð²Ñ€Ð¾ÑÑ‚Ð°Ñ‚. Ð ÐµÐ²Ð¸Ð·Ð¸ÑÑ‚Ð° Ð¿Ð¾Ñ‚Ð²ÑŠÑ€Ð´Ð¸ Ð¸ ÑƒÑÐºÐ¾Ñ€Ð¸ Ñ€Ð°ÑÑ‚ÐµÐ¶Ð° ÑÐ¿Ñ€ÑÐ¼Ð¾ Ñ„Ð»Ð°Ñˆ Ð¾Ñ†ÐµÐ½ÐºÐ°Ñ‚Ð°. Ð”Ð°Ð½Ð½Ð¸Ñ‚Ðµ ÑÑŠÐ²Ð¿Ð°Ð´Ð°Ñ‚ Ñ Ñ€ÐµÐ°Ð»ÐµÐ½ Ñ€ÑŠÑÑ‚ Ð½Ð° Ð·Ð°Ð¿Ð»Ð°Ñ‚Ð¸Ñ‚Ðµ Ð¸ Ñ€ÐµÐºÐ¾Ñ€Ð´Ð½Ð¾ Ð½Ð¸ÑÑŠÐº ÐºÐ¾ÐµÑ„Ð¸Ñ†Ð¸ÐµÐ½Ñ‚ Ð½Ð° Ð±ÐµÐ·Ñ€Ð°Ð±Ð¾Ñ‚Ð¸Ñ†Ð°. ÐÐ° Ñ„Ð¾Ð½Ð° Ð½Ð° ÑÐ¿Ð°Ð´Ð°Ñ‰Ð¸Ñ Ð¸Ð·Ð½Ð¾Ñ (-7,4% Ð³/Ð³) Ñ€Ð°Ð·Ñ€Ð¸Ð²ÑŠÑ‚ Ð¼ÐµÐ¶Ð´Ñƒ Ð²ÑŠÑ‚Ñ€ÐµÑˆÐ½Ð¾Ñ‚Ð¾ Ð¸ Ð²ÑŠÐ½ÑˆÐ½Ð¾Ñ‚Ð¾ Ñ‚ÑŠÑ€ÑÐµÐ½Ðµ ÑÐµ Ð·Ð°Ð´ÑŠÐ»Ð±Ð¾Ñ‡Ð°Ð²Ð°.</p>
+    <div class="the-number-big">+9,4<span class="denom">% г/г</span></div>
+    <p>Разходите за крайно потребление на домакинствата нараснаха с 9,4% г/г в Q1 2026 според ревизираните данни на Евростат. Ревизията потвърди и ускори растежа спрямо флаш оценката. Данните съвпадат с реален ръст на заплатите и рекордно нисък коефициент на безработица. На фона на спадащия износ (-7,4% г/г) разривът между вътрешното и външното търсене се задълбочава.</p>
   </div>
 </div>
 
-<!-- â”€â”€ Macro Pulse â”€â”€ -->
+<!-- ── Macro Pulse ── -->
 <div class="pulse-header" id="macro-pulse">
-  <span class="pulse-title">â–¸ ÐœÐ°ÐºÑ€Ð¾ Ð¿ÑƒÐ»Ñ Â· Ð¿Ð¾ÑÐ»ÐµÐ´Ð½Ð¸ Ð´Ð°Ð½Ð½Ð¸</span>
+  <span class="pulse-title">▸ Макро пулс · последни данни</span>
 </div>
 <div class="stats-row">
   <!-- 1 -->
   <div class="stat-card">
-    <div class="stat-label">Ð˜Ð½Ñ„Ð»Ð°Ñ†Ð¸Ñ<br/>(Ð¥Ð˜ÐŸÐ¦)</div>
-    <div class="stat-value up">+6,3<span class="unit"> % Ð³/Ð³</span></div>
-    <div class="stat-period">Ð¼Ð°Ð¹ 2026</div>
+    <div class="stat-label">Инфлация<br/>(ХИПЦ)</div>
+    <div class="stat-value up">+6,3<span class="unit"> % г/г</span></div>
+    <div class="stat-period">май 2026</div>
   </div>
   <!-- 2 -->
   <div class="stat-card">
-    <div class="stat-label">Ð‘Ð°Ð·Ð¸ÑÐ½Ð°<br/>Ð¸Ð½Ñ„Ð»Ð°Ñ†Ð¸Ñ</div>
-    <div class="stat-value up">+4,7<span class="unit"> % Ð³/Ð³</span></div>
-    <div class="stat-period">Ð¼Ð°Ð¹ 2026</div>
+    <div class="stat-label">Базисна<br/>инфлация</div>
+    <div class="stat-value up">+4,7<span class="unit"> % г/г</span></div>
+    <div class="stat-period">май 2026</div>
   </div>
   <!-- 3 -->
   <div class="stat-card">
-    <div class="stat-label">ÐŸÑ€Ð¾Ð¸Ð·Ð²Ð¾Ð´ÑÑ‚Ð²ÐµÐ½Ð¸<br/>Ñ†ÐµÐ½Ð¸ (Ð¦ÐŸÐ˜)</div>
-    <div class="stat-value up">+12,1<span class="unit"> % Ð³/Ð³</span></div>
-    <div class="stat-period">Ð°Ð¿Ñ€. 2026</div>
+    <div class="stat-label">Производствени<br/>цени (ЦПИ)</div>
+    <div class="stat-value up">+12,1<span class="unit"> % г/г</span></div>
+    <div class="stat-period">апр. 2026</div>
   </div>
   <!-- 4 -->
   <div class="stat-card">
-    <div class="stat-label">ÐŸÑ€Ð¾Ð¼Ð¸ÑˆÐ»ÐµÐ½Ð¾<br/>Ð¿Ñ€Ð¾Ð¸Ð·Ð²Ð¾Ð´ÑÑ‚Ð²Ð¾</div>
-    <div class="stat-value dn">âˆ’4,2<span class="unit"> % Ð³/Ð³</span></div>
-    <div class="stat-period">Ð°Ð¿Ñ€. 2026</div>
+    <div class="stat-label">Промишлено<br/>производство</div>
+    <div class="stat-value dn">−4,2<span class="unit"> % г/г</span></div>
+    <div class="stat-period">апр. 2026</div>
   </div>
   <!-- 5 -->
   <div class="stat-card">
-    <div class="stat-label">Ð¢ÑŠÑ€Ð³Ð¾Ð²Ð¸Ñ<br/>Ð½Ð° Ð´Ñ€ÐµÐ±Ð½Ð¾</div>
-    <div class="stat-value up">+8,2<span class="unit"> % Ð³/Ð³</span></div>
-    <div class="stat-period">Ð°Ð¿Ñ€. 2026</div>
+    <div class="stat-label">Търговия<br/>на дребно</div>
+    <div class="stat-value up">+8,2<span class="unit"> % г/г</span></div>
+    <div class="stat-period">апр. 2026</div>
   </div>
   <!-- 6 -->
   <div class="stat-card">
-    <div class="stat-label">Ð¡Ñ‚Ñ€Ð¾Ð¸Ñ‚ÐµÐ»Ð½Ð°<br/>Ð¿Ñ€Ð¾Ð´ÑƒÐºÑ†Ð¸Ñ</div>
-    <div class="stat-value up">+6,7<span class="unit"> % Ð³/Ð³</span></div>
-    <div class="stat-period">Ð°Ð¿Ñ€. 2026</div>
+    <div class="stat-label">Строителна<br/>продукция</div>
+    <div class="stat-value up">+6,7<span class="unit"> % г/г</span></div>
+    <div class="stat-period">апр. 2026</div>
   </div>
   <!-- 7 -->
   <div class="stat-card">
-    <div class="stat-label">ÐŸÑ€Ð¾Ð¸Ð·Ð²Ð¾Ð´ÑÑ‚Ð²Ð¾<br/>Ð² ÑƒÑÐ»ÑƒÐ³Ð¸Ñ‚Ðµ</div>
-    <div class="stat-value up">+5,7<span class="unit"> % Ð³/Ð³</span></div>
-    <div class="stat-period">Ð¼Ð°Ñ€. 2026</div>
+    <div class="stat-label">Производство<br/>в услугите</div>
+    <div class="stat-value up">+5,7<span class="unit"> % г/г</span></div>
+    <div class="stat-period">мар. 2026</div>
   </div>
   <!-- 8 -->
   <div class="stat-card">
-    <div class="stat-label">Ð‘ÐµÐ·Ñ€Ð°Ð±Ð¾Ñ‚Ð¸Ñ†Ð°<br/>&nbsp;</div>
-    <div class="stat-value dn">2,8<span class="unit"> % Ð¡Ð˜</span></div>
-    <div class="stat-period">Ð°Ð¿Ñ€. 2026</div>
+    <div class="stat-label">Безработица<br/>&nbsp;</div>
+    <div class="stat-value dn">2,8<span class="unit"> % СИ</span></div>
+    <div class="stat-period">апр. 2026</div>
   </div>
   <!-- 9 -->
   <div class="stat-card">
-    <div class="stat-label">Ð‘Ð¸Ð·Ð½ÐµÑ ÐºÐ»Ð¸Ð¼Ð°Ñ‚<br/>(Ð˜Ð‘Ðš)</div>
-    <div class="stat-value">95,6<span class="unit"> Ñ‚.</span></div>
-    <div class="stat-period">Ð¼Ð°Ð¹ 2026</div>
+    <div class="stat-label">Бизнес климат<br/>(ИБК)</div>
+    <div class="stat-value">95,6<span class="unit"> т.</span></div>
+    <div class="stat-period">май 2026</div>
   </div>
   <!-- 10 -->
   <div class="stat-card">
-    <div class="stat-label">Ð Ð°ÑÑ‚ÐµÐ¶ Ð½Ð°<br/>Ð‘Ð’ÐŸ (Ð³/Ð³)</div>
-    <div class="stat-value up">+3,1<span class="unit"> % Ð³/Ð³</span></div>
+    <div class="stat-label">Растеж на<br/>БВП (г/г)</div>
+    <div class="stat-value up">+3,1<span class="unit"> % г/г</span></div>
     <div class="stat-period">Q1 2026</div>
   </div>
   <!-- 11 -->
   <div class="stat-card">
-    <div class="stat-label">Ð¢ÑŠÑ€Ð³Ð¾Ð²ÑÐºÐ¸<br/>Ð±Ð°Ð»Ð°Ð½Ñ (ÐÐ¡Ð˜)</div>
-    <div class="stat-value dn">âˆ’1 426<span class="unit"> â‚¬Ð¼Ð»Ð½</span></div>
-    <div class="stat-period">Ð¼Ð°Ñ€. 2026</div>
+    <div class="stat-label">Търговски<br/>баланс (НСИ)</div>
+    <div class="stat-value dn">−1 426<span class="unit"> €млн</span></div>
+    <div class="stat-period">мар. 2026</div>
   </div>
   <!-- 12 -->
   <div class="stat-card">
-    <div class="stat-label">Ð¡Ñ€. Ð±Ñ€. Ð¼ÐµÑÐµÑ‡Ð½Ð°<br/>Ð·Ð°Ð¿Ð»Ð°Ñ‚Ð°</div>
+    <div class="stat-label">Ср. бр. месечна<br/>заплата</div>
     <div class="stat-value up">1 392<span class="unit"> EUR</span></div>
     <div class="stat-period">Q1 2026</div>
   </div>
 </div>
 
-<!-- â”€â”€ New Data â”€â”€ -->
+<!-- ── New Data ── -->
 <div class="section" id="new-data">
 
-  <!-- â”€â”€ Ð‘Ð»Ð¾Ðº 1: ÐŸÑ€Ð¾Ð¼Ð¸ÑˆÐ»ÐµÐ½Ð¾ Ð¿Ñ€Ð¾Ð¸Ð·Ð²Ð¾Ð´ÑÑ‚Ð²Ð¾ â”€â”€ -->
-  <span class="data-section-head">â–¸ ÐÐ¾Ð²Ð¸ Ð´Ð°Ð½Ð½Ð¸ Â· ÐŸÑ€Ð¾Ð¼Ð¸ÑˆÐ»ÐµÐ½Ð¾ Ð¿Ñ€Ð¾Ð¸Ð·Ð²Ð¾Ð´ÑÑ‚Ð²Ð¾</span>
+  <!-- ── Блок 1: Промишлено производство ── -->
+  <span class="data-section-head">▸ Нови данни · Промишлено производство</span>
 
-  <p class="chart-lead">Ð˜Ð½Ð´ÐµÐºÑÑŠÑ‚ Ð½Ð° Ð¿Ñ€Ð¾Ð¼Ð¸ÑˆÐ»ÐµÐ½Ð¾Ñ‚Ð¾ Ð¿Ñ€Ð¾Ð¸Ð·Ð²Ð¾Ð´ÑÑ‚Ð²Ð¾ ÑÐµ ÑÐ²Ð¸Ð²Ð° Ñ 4,2% Ð³/Ð³ Ð² Ð°Ð¿Ñ€Ð¸Ð» ÑÐ»ÐµÐ´ Ñ€ÑŠÑÑ‚ Ð¾Ñ‚ 4,8% Ð² Ð¼Ð°Ñ€Ñ‚: Ð¾Ð±Ñ€Ð°Ñ‚ Ð¾Ñ‚ Ð±Ð»Ð¸Ð·Ð¾ 9 Ð¿Ñ€.Ð¿. Ð·Ð° ÐµÐ´Ð¸Ð½ Ð¼ÐµÑÐµÑ†, Ñ€ÑÐ´ÐºÐ¾ Ð½Ð°Ð±Ð»ÑŽÐ´Ð°Ð²Ð°Ð½ Ð¸Ð·Ð²ÑŠÐ½ Ð¿ÐµÑ€Ð¸Ð¾Ð´Ð° Ð½Ð° COVID.</p>
+  <p class="chart-lead">Индексът на промишленото производство се свива с 4,2% г/г в април след ръст от 4,8% в март: обрат от близо 9 пр.п. за един месец, рядко наблюдаван извън периода на COVID.</p>
   <div class="nl-chart">
     <div class="nl-chart-header">
       <div>
-        <div class="nl-chart-label">Ð˜Ð½Ð´ÐµÐºÑ Ð½Ð° Ð¿Ñ€Ð¾Ð¼Ð¸ÑˆÐ»ÐµÐ½Ð¾Ñ‚Ð¾ Ð¿Ñ€Ð¾Ð¸Ð·Ð²Ð¾Ð´ÑÑ‚Ð²Ð¾ (Ð˜ÐŸÐŸ)</div>
-        <div class="nl-chart-subtitle">% Ð³/Ð³ Ð¸ % Ð¼/Ð¼ Â· ÑÐµÐ·Ð¾Ð½Ð½Ð¾ Ð¸Ð·Ð³Ð»Ð°Ð´ÐµÐ½</div>
+        <div class="nl-chart-label">Индекс на промишленото производство (ИПП)</div>
+        <div class="nl-chart-subtitle">% г/г и % м/м · сезонно изгладен</div>
       </div>
       <div style="text-align:right">
-        <div class="nl-chart-reading">âˆ’4,2%</div>
-        <div class="nl-chart-subtitle">Ð°Ð¿Ñ€. 2026</div>
+        <div class="nl-chart-reading">−4,2%</div>
+        <div class="nl-chart-subtitle">апр. 2026</div>
       </div>
     </div>
-    <img src="./IPI-01.png" alt="Ð˜Ð½Ð´ÐµÐºÑ Ð½Ð° Ð¿Ñ€Ð¾Ð¼Ð¸ÑˆÐ»ÐµÐ½Ð¾Ñ‚Ð¾ Ð¿Ñ€Ð¾Ð¸Ð·Ð²Ð¾Ð´ÑÑ‚Ð²Ð¾"/>
+    <img src="./IPI-01.png" alt="Индекс на промишленото производство"/>
     <div class="nl-chart-footer">
-      <span>Ð•Ð²Ñ€Ð¾ÑÑ‚Ð°Ñ‚ Â· sts_inpr_m</span>
-      <span>Ð°ÐºÑ‚ÑƒÐ°Ð»Ð¸Ð·Ð¸Ñ€Ð°Ð½Ð¾ ÑŽÐ½Ð¸ 2026</span>
+      <span>Евростат · sts_inpr_m</span>
+      <span>актуализирано юни 2026</span>
     </div>
   </div>
 
-  <p class="chart-lead">Ð¡Ð²Ð¸Ð²Ð°Ð½ÐµÑ‚Ð¾ Ðµ ÐºÐ¾Ð½Ñ†ÐµÐ½Ñ‚Ñ€Ð¸Ñ€Ð°Ð½Ð¾ Ð² Ð´Ð¾Ð±Ð¸Ð²Ð½Ð°Ñ‚Ð° Ð¿Ñ€Ð¾Ð¼Ð¸ÑˆÐ»ÐµÐ½Ð¾ÑÑ‚ Ð¸ ÐµÐ½ÐµÑ€Ð³ÐµÑ‚Ð¸ÐºÐ°Ñ‚Ð°; Ð¿Ñ€ÐµÑ€Ð°Ð±Ð¾Ñ‚Ð²Ð°Ñ‰Ð°Ñ‚Ð° Ð¿Ñ€Ð¾Ð¼Ð¸ÑˆÐ»ÐµÐ½Ð¾ÑÑ‚ Ðµ Ð±Ð»Ð¸Ð·Ð¾ Ð´Ð¾ Ð½ÑƒÐ»Ð°Ñ‚Ð° (-0,8%), ÐºÐ¾ÐµÑ‚Ð¾ Ðµ Ð¿Ð¾-ÑÑŠÐ²Ð¼ÐµÑÑ‚Ð¸Ð¼Ð¾ Ñ Ð²Ñ€ÐµÐ¼ÐµÐ½ÐµÐ½, Ð¾Ñ‚ÐºÐ¾Ð»ÐºÐ¾Ñ‚Ð¾ ÑÑŠÑ ÑÑ‚Ñ€ÑƒÐºÑ‚ÑƒÑ€ÐµÐ½ Ñ„Ð°ÐºÑ‚Ð¾Ñ€.</p>
+  <p class="chart-lead">Свиването е концентрирано в добивната промишленост и енергетиката; преработващата промишленост е близо до нулата (-0,8%), което е по-съвместимо с временен, отколкото със структурен фактор.</p>
   <div class="nl-chart">
     <div class="nl-chart-header">
       <div>
-        <div class="nl-chart-label">ÐŸÑ€Ð¾Ð¼Ð¸ÑˆÐ»ÐµÐ½Ð¾ Ð¿Ñ€Ð¾Ð¸Ð·Ð²Ð¾Ð´ÑÑ‚Ð²Ð¾ Ð¿Ð¾ Ð¿Ð¾Ð´ÑÐµÐºÑ‚Ð¾Ñ€Ð¸</div>
-        <div class="nl-chart-subtitle">Ð¸Ð½Ð´ÐµÐºÑ (2021=100) Â· Ð´Ð¾Ð±Ð¸Ð²Ð½Ð°, Ð¿Ñ€ÐµÑ€Ð°Ð±Ð¾Ñ‚Ð²Ð°Ñ‰Ð°, ÐµÐ½ÐµÑ€Ð³ÐµÑ‚Ð¸ÐºÐ°</div>
+        <div class="nl-chart-label">Промишлено производство по подсектори</div>
+        <div class="nl-chart-subtitle">индекс (2021=100) · добивна, преработваща, енергетика</div>
       </div>
       <div style="text-align:right">
-        <div class="nl-chart-reading">Ð°Ð¿Ñ€. 2026</div>
-        <div class="nl-chart-subtitle">Ð¿Ð¾ ÑÐµÐºÑ‚Ð¾Ñ€Ð¸</div>
+        <div class="nl-chart-reading">апр. 2026</div>
+        <div class="nl-chart-subtitle">по сектори</div>
       </div>
     </div>
-    <img src="./IPI-02.png" alt="ÐŸÑ€Ð¾Ð¼Ð¸ÑˆÐ»ÐµÐ½Ð¾ Ð¿Ñ€Ð¾Ð¸Ð·Ð²Ð¾Ð´ÑÑ‚Ð²Ð¾ Ð¿Ð¾ Ð¿Ð¾Ð´ÑÐµÐºÑ‚Ð¾Ñ€Ð¸"/>
+    <img src="./IPI-02.png" alt="Промишлено производство по подсектори"/>
     <div class="nl-chart-footer">
-      <span>Ð•Ð²Ñ€Ð¾ÑÑ‚Ð°Ñ‚ Â· sts_inpr_m</span>
-      <span>Ð°ÐºÑ‚ÑƒÐ°Ð»Ð¸Ð·Ð¸Ñ€Ð°Ð½Ð¾ ÑŽÐ½Ð¸ 2026</span>
+      <span>Евростат · sts_inpr_m</span>
+      <span>актуализирано юни 2026</span>
     </div>
   </div>
 
-  <!-- â”€â”€ Ð‘Ð»Ð¾Ðº 2: Ð¢ÑŠÑ€Ð³Ð¾Ð²Ð¸Ñ Ð½Ð° Ð´Ñ€ÐµÐ±Ð½Ð¾ â”€â”€ -->
-  <span class="data-section-head">â–¸ ÐÐ¾Ð²Ð¸ Ð´Ð°Ð½Ð½Ð¸ Â· Ð¢ÑŠÑ€Ð³Ð¾Ð²Ð¸Ñ Ð½Ð° Ð´Ñ€ÐµÐ±Ð½Ð¾</span>
+  <!-- ── Блок 2: Търговия на дребно ── -->
+  <span class="data-section-head">▸ Нови данни · Търговия на дребно</span>
 
-  <p class="chart-lead">ÐžÐ±Ð¾Ñ€Ð¾Ñ‚ÑŠÑ‚ Ð² Ñ‚ÑŠÑ€Ð³Ð¾Ð²Ð¸ÑÑ‚Ð° Ð½Ð° Ð´Ñ€ÐµÐ±Ð½Ð¾ Ð·Ð°Ð±Ð°Ð²Ñ ÑƒÐ¼ÐµÑ€ÐµÐ½Ð¾ Ð´Ð¾ 8,2% Ð³/Ð³ Ð² Ð°Ð¿Ñ€Ð¸Ð» ÑÐ»ÐµÐ´ 9,9% Ð² Ð¼Ð°Ñ€Ñ‚; Ñ€Ð¸Ñ‚ÑŠÐ¼ÑŠÑ‚ Ð¾ÑÑ‚Ð°Ð²Ð° ÑÐ¸Ð»ÐµÐ½ Ð¸ ÑÑŠÐ¾Ñ‚Ð²ÐµÑ‚ÑÑ‚Ð²Ð° Ð½Ð° Ð´Ð°Ð½Ð½Ð¸Ñ‚Ðµ Ð·Ð° Ð¿Ð¾Ñ‚Ñ€ÐµÐ±Ð»ÐµÐ½Ð¸ÐµÑ‚Ð¾ Ð¾Ñ‚ Ð½Ð°Ñ†Ð¸Ð¾Ð½Ð°Ð»Ð½Ð¸Ñ‚Ðµ ÑÐ¼ÐµÑ‚ÐºÐ¸.</p>
+  <p class="chart-lead">Оборотът в търговията на дребно забавя умерено до 8,2% г/г в април след 9,9% в март; ритъмът остава силен и съответства на данните за потреблението от националните сметки.</p>
   <div class="nl-chart">
     <div class="nl-chart-header">
       <div>
-        <div class="nl-chart-label">ÐžÐ±Ð¾Ñ€Ð¾Ñ‚ Ð² Ñ‚ÑŠÑ€Ð³Ð¾Ð²Ð¸ÑÑ‚Ð° Ð½Ð° Ð´Ñ€ÐµÐ±Ð½Ð¾</div>
-        <div class="nl-chart-subtitle">% Ð³/Ð³ Ð¸ % Ð¼/Ð¼</div>
+        <div class="nl-chart-label">Оборот в търговията на дребно</div>
+        <div class="nl-chart-subtitle">% г/г и % м/м</div>
       </div>
       <div style="text-align:right">
         <div class="nl-chart-reading">+8,2%</div>
-        <div class="nl-chart-subtitle">Ð°Ð¿Ñ€. 2026</div>
+        <div class="nl-chart-subtitle">апр. 2026</div>
       </div>
     </div>
-    <img src="./RETAIL-01.png" alt="ÐžÐ±Ð¾Ñ€Ð¾Ñ‚ Ð² Ñ‚ÑŠÑ€Ð³Ð¾Ð²Ð¸ÑÑ‚Ð° Ð½Ð° Ð´Ñ€ÐµÐ±Ð½Ð¾"/>
+    <img src="./RETAIL-01.png" alt="Оборот в търговията на дребно"/>
     <div class="nl-chart-footer">
-      <span>ÐÐ¡Ð˜ Â· Ð•Ð²Ñ€Ð¾ÑÑ‚Ð°Ñ‚ Â· sts_trtu_m</span>
-      <span>Ð°ÐºÑ‚ÑƒÐ°Ð»Ð¸Ð·Ð¸Ñ€Ð°Ð½Ð¾ ÑŽÐ½Ð¸ 2026</span>
+      <span>НСИ · Евростат · sts_trtu_m</span>
+      <span>актуализирано юни 2026</span>
     </div>
   </div>
 
-  <!-- â”€â”€ Ð‘Ð»Ð¾Ðº 3: Ð¡Ñ‚Ñ€Ð¾Ð¸Ñ‚ÐµÐ»ÑÑ‚Ð²Ð¾ â”€â”€ -->
-  <span class="data-section-head">â–¸ ÐÐ¾Ð²Ð¸ Ð´Ð°Ð½Ð½Ð¸ Â· Ð¡Ñ‚Ñ€Ð¾Ð¸Ñ‚ÐµÐ»ÑÑ‚Ð²Ð¾</span>
+  <!-- ── Блок 3: Строителство ── -->
+  <span class="data-section-head">▸ Нови данни · Строителство</span>
 
-  <p class="chart-lead">Ð¡Ñ‚Ñ€Ð¾Ð¸Ñ‚ÐµÐ»Ð½Ð°Ñ‚Ð° Ð¿Ñ€Ð¾Ð´ÑƒÐºÑ†Ð¸Ñ Ð½Ð°Ñ€Ð°ÑÑ‚Ð²Ð° Ñ 6,7% Ð³/Ð³ Ð² Ð°Ð¿Ñ€Ð¸Ð» Ð¿Ñ€Ð¸ Ð¼Ð¸Ð½Ð¸Ð¼Ð°Ð»Ð½Ð° Ñ€Ð°Ð·Ð»Ð¸ÐºÐ° ÑÐ¿Ñ€ÑÐ¼Ð¾ 7,6% Ð² Ð¼Ð°Ñ€Ñ‚; ÑÐµÐºÑ‚Ð¾Ñ€ÑŠÑ‚ Ð·Ð°Ð¿Ð°Ð·Ð²Ð° ÑÑ€Ð°Ð²Ð½Ð¸Ñ‚ÐµÐ»Ð½Ð¾ Ð²Ð¸ÑÐ¾Ðº Ñ‚ÐµÐ¼Ð¿ Ð½Ð° Ñ€Ð°ÑÑ‚ÐµÐ¶ Ð·Ð° Ð´ÐµÐ²ÐµÑ‚Ð¸ Ð¿Ð¾Ñ€ÐµÐ´ÐµÐ½ Ð¼ÐµÑÐµÑ†.</p>
+  <p class="chart-lead">Строителната продукция нараства с 6,7% г/г в април при минимална разлика спрямо 7,6% в март; секторът запазва сравнително висок темп на растеж за девети пореден месец.</p>
   <div class="nl-chart">
     <div class="nl-chart-header">
       <div>
-        <div class="nl-chart-label">Ð¡Ñ‚Ñ€Ð¾Ð¸Ñ‚ÐµÐ»Ð½Ð° Ð¿Ñ€Ð¾Ð´ÑƒÐºÑ†Ð¸Ñ</div>
-        <div class="nl-chart-subtitle">% Ð³/Ð³ Ð¸ % Ð¼/Ð¼</div>
+        <div class="nl-chart-label">Строителна продукция</div>
+        <div class="nl-chart-subtitle">% г/г и % м/м</div>
       </div>
       <div style="text-align:right">
         <div class="nl-chart-reading">+6,7%</div>
-        <div class="nl-chart-subtitle">Ð°Ð¿Ñ€. 2026</div>
+        <div class="nl-chart-subtitle">апр. 2026</div>
       </div>
     </div>
-    <img src="./CONSTRUCTION-02.png" alt="Ð¡Ñ‚Ñ€Ð¾Ð¸Ñ‚ÐµÐ»Ð½Ð° Ð¿Ñ€Ð¾Ð´ÑƒÐºÑ†Ð¸Ñ"/>
+    <img src="./CONSTRUCTION-02.png" alt="Строителна продукция"/>
     <div class="nl-chart-footer">
-      <span>Ð•Ð²Ñ€Ð¾ÑÑ‚Ð°Ñ‚ Â· sts_copr_m</span>
-      <span>Ð°ÐºÑ‚ÑƒÐ°Ð»Ð¸Ð·Ð¸Ñ€Ð°Ð½Ð¾ ÑŽÐ½Ð¸ 2026</span>
+      <span>Евростат · sts_copr_m</span>
+      <span>актуализирано юни 2026</span>
     </div>
   </div>
 
 </div>
 
-<!-- â”€â”€ Deep Dive: Ð‘Ð’ÐŸ Ð¸ Ð£ÑÐ»ÑƒÐ³Ð¸ â”€â”€ -->
+<!-- ── Deep Dive: БВП и Услуги ── -->
 <div class="deep-dive" id="deep-dive">
-  <span class="deep-dive-head">â–¸ ÐÐ½Ð°Ð»Ð¸Ð· Â· Ð‘Ð’ÐŸ Q1 2026 Ð¸ ÐžÐ±Ð¾Ñ€Ð¾Ñ‚ Ð² ÑƒÑÐ»ÑƒÐ³Ð¸Ñ‚Ðµ</span>
+  <span class="deep-dive-head">▸ Анализ · БВП Q1 2026 и Оборот в услугите</span>
 
-  <p class="chart-lead">Ð ÐµÐ²Ð¸Ð·Ð¸Ñ€Ð°Ð½Ð¸Ñ‚Ðµ Ð´Ð°Ð½Ð½Ð¸ Ð¿Ð¾Ñ‚Ð²ÑŠÑ€Ð¶Ð´Ð°Ð²Ð°Ñ‚ Ñ€Ð°ÑÑ‚ÐµÐ¶ Ð½Ð° Ð‘Ð’ÐŸ Ð¾Ñ‚ 3,1% Ð³/Ð³ Ð² Q1 2026, Ñ 0,1 Ð¿Ñ€.Ð¿. Ð½Ð°Ð´ Ñ„Ð»Ð°Ñˆ Ð¾Ñ†ÐµÐ½ÐºÐ°Ñ‚Ð°. Ð¢Ñ€Ð¸Ð¼ÐµÑÐµÑ‡Ð½Ð¾Ñ‚Ð¾ Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ Ð² Ñ€ÐµÐ°Ð»Ð½Ð¾ Ð¸Ð·Ñ€Ð°Ð¶ÐµÐ½Ð¸Ðµ Ðµ ÑƒÐ¼ÐµÑ€ÐµÐ½Ð¾ Ð¿Ð¾Ð»Ð¾Ð¶Ð¸Ñ‚ÐµÐ»Ð½Ð¾; Ð³Ð¾Ð´Ð¸ÑˆÐ½Ð¸ÑÑ‚ Ñ‚ÐµÐ¼Ð¿ Ð¿Ð¾Ð´Ð´ÑŠÑ€Ð¶Ð° Ð¸Ð½ÐµÑ€Ñ†Ð¸ÑÑ‚Ð° Ð¾Ñ‚ 2025 Ð³.</p>
+  <p class="chart-lead">Ревизираните данни потвърждават растеж на БВП от 3,1% г/г в Q1 2026, с 0,1 пр.п. над флаш оценката. Тримесечното изменение в реално изражение е умерено положително; годишният темп поддържа инерцията от 2025 г.</p>
   <div class="nl-chart">
     <div class="nl-chart-header">
       <div>
-        <div class="nl-chart-label">Ð‘Ð’ÐŸ: Ñ€ÐµÐ°Ð»ÐµÐ½ Ñ‚ÐµÐ¼Ð¿ Ð½Ð° Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ</div>
-        <div class="nl-chart-subtitle">% Ð³/Ð³ Ð¸ % Ñ‚/Ñ‚ Â· Ñ€ÐµÐ²Ð¸Ð·Ð¸Ñ€Ð°Ð½Ð¸ Ð´Ð°Ð½Ð½Ð¸</div>
+        <div class="nl-chart-label">БВП: реален темп на изменение</div>
+        <div class="nl-chart-subtitle">% г/г и % т/т · ревизирани данни</div>
       </div>
       <div style="text-align:right">
         <div class="nl-chart-reading">+3,1%</div>
         <div class="nl-chart-subtitle">Q1 2026</div>
       </div>
     </div>
-    <img src="./GDP-01.png" alt="Ð‘Ð’ÐŸ Ñ€ÐµÐ°Ð»ÐµÐ½ Ñ‚ÐµÐ¼Ð¿"/>
+    <img src="./GDP-01.png" alt="БВП реален темп"/>
     <div class="nl-chart-footer">
-      <span>Ð•Ð²Ñ€Ð¾ÑÑ‚Ð°Ñ‚ Â· namq_10_gdp</span>
-      <span>Ð°ÐºÑ‚ÑƒÐ°Ð»Ð¸Ð·Ð¸Ñ€Ð°Ð½Ð¾ ÑŽÐ½Ð¸ 2026</span>
+      <span>Евростат · namq_10_gdp</span>
+      <span>актуализирано юни 2026</span>
     </div>
   </div>
 
-  <p class="chart-lead">Ð¡Ñ‚Ñ€ÑƒÐºÑ‚ÑƒÑ€Ð°Ñ‚Ð° Ð½Ð° Ñ€Ð°ÑÑ‚ÐµÐ¶Ð° Ðµ ÑÐ¼ÐµÑÐµÐ½Ð°. Ð Ð°Ð·Ñ…Ð¾Ð´Ð¸Ñ‚Ðµ Ð·Ð° ÐºÑ€Ð°Ð¹Ð½Ð¾ Ð¿Ð¾Ñ‚Ñ€ÐµÐ±Ð»ÐµÐ½Ð¸Ðµ Ð½Ð° Ð´Ð¾Ð¼Ð°ÐºÐ¸Ð½ÑÑ‚Ð²Ð°Ñ‚Ð° (+9,4% Ð³/Ð³) Ð¸ Ð±Ñ€ÑƒÑ‚Ð½Ð¾Ñ‚Ð¾ ÐºÐ°Ð¿Ð¸Ñ‚Ð°Ð»Ð¾Ð¾Ð±Ñ€Ð°Ð·ÑƒÐ²Ð°Ð½Ðµ (+9,1%) ÑÐ° Ð´Ð²Ð°Ñ‚Ð° Ð¾ÑÐ½Ð¾Ð²Ð½Ð¸ Ð´Ð²Ð¸Ð³Ð°Ñ‚ÐµÐ»Ñ. Ð˜Ð·Ð½Ð¾ÑÑŠÑ‚ Ð¾Ð±Ð°Ñ‡Ðµ Ð½Ð°Ð¼Ð°Ð»ÑÐ²Ð° Ñ 7,4% Ð³/Ð³, Ð° Ð²Ð½Ð¾ÑÑŠÑ‚ Ð½Ð°Ñ€Ð°ÑÑ‚Ð²Ð° Ñ 8,2%; Ð½ÐµÑ‚Ð½Ð¸ÑÑ‚ Ð¸Ð·Ð½Ð¾Ñ Ð¸Ð¼Ð° ÑÑŠÑ‰ÐµÑÑ‚Ð²ÐµÐ½ Ð¾Ñ‚Ñ€Ð¸Ñ†Ð°Ñ‚ÐµÐ»ÐµÐ½ Ð¿Ñ€Ð¸Ð½Ð¾Ñ, ÐºÐ¾Ð¹Ñ‚Ð¾ ÐºÐ¾Ð¼Ð¿ÐµÐ½ÑÐ¸Ñ€Ð° Ñ‡Ð°ÑÑ‚ Ð¾Ñ‚ Ð²ÑŠÑ‚Ñ€ÐµÑˆÐ½Ð¾Ñ‚Ð¾ Ñ‚ÑŠÑ€ÑÐµÐ½Ðµ.</p>
+  <p class="chart-lead">Структурата на растежа е смесена. Разходите за крайно потребление на домакинствата (+9,4% г/г) и брутното капиталообразуване (+9,1%) са двата основни двигателя. Износът обаче намалява с 7,4% г/г, а вносът нараства с 8,2%; нетният износ има съществен отрицателен принос, който компенсира част от вътрешното търсене.</p>
   <div class="nl-chart">
     <div class="nl-chart-header">
       <div>
-        <div class="nl-chart-label">Ð‘Ð’ÐŸ: Ð¿Ñ€Ð¸Ð½Ð¾ÑÐ¸ Ð¿Ð¾ Ñ€Ð°Ð·Ñ…Ð¾Ð´Ð½Ð¸ ÐºÐ¾Ð¼Ð¿Ð¾Ð½ÐµÐ½Ñ‚Ð¸</div>
-        <div class="nl-chart-subtitle">Ð¿Ñ€.Ð¿. Â· Ð¿Ð¾Ñ‚Ñ€ÐµÐ±Ð»ÐµÐ½Ð¸Ðµ, Ð¸Ð½Ð²ÐµÑÑ‚Ð¸Ñ†Ð¸Ð¸, Ð¿Ñ€Ð°Ð²Ð¸Ñ‚ÐµÐ»ÑÑ‚Ð²Ð¾, Ð½ÐµÑ‚ÐµÐ½ Ð¸Ð·Ð½Ð¾Ñ</div>
+        <div class="nl-chart-label">БВП: приноси по разходни компоненти</div>
+        <div class="nl-chart-subtitle">пр.п. · потребление, инвестиции, правителство, нетен износ</div>
       </div>
       <div style="text-align:right">
         <div class="nl-chart-reading">Q1 2026</div>
-        <div class="nl-chart-subtitle">Ñ€Ð°Ð·Ñ…Ð¾Ð´ÐµÐ½ Ð¼ÐµÑ‚Ð¾Ð´</div>
+        <div class="nl-chart-subtitle">разходен метод</div>
       </div>
     </div>
-    <img src="./GDP-03.png" alt="Ð‘Ð’ÐŸ Ð¿Ñ€Ð¸Ð½Ð¾ÑÐ¸ Ð¿Ð¾ Ñ€Ð°Ð·Ñ…Ð¾Ð´Ð½Ð¸ ÐºÐ¾Ð¼Ð¿Ð¾Ð½ÐµÐ½Ñ‚Ð¸"/>
+    <img src="./GDP-03.png" alt="БВП приноси по разходни компоненти"/>
     <div class="nl-chart-footer">
-      <span>Ð•Ð²Ñ€Ð¾ÑÑ‚Ð°Ñ‚ Â· namq_10_gdp</span>
-      <span>Ð°ÐºÑ‚ÑƒÐ°Ð»Ð¸Ð·Ð¸Ñ€Ð°Ð½Ð¾ ÑŽÐ½Ð¸ 2026</span>
+      <span>Евростат · namq_10_gdp</span>
+      <span>актуализирано юни 2026</span>
     </div>
   </div>
 
-  <p class="chart-lead">ÐŸÐ¾ Ð¿Ñ€Ð¾Ð¸Ð·Ð²Ð¾Ð´ÑÑ‚Ð²ÐµÐ½ Ð¼ÐµÑ‚Ð¾Ð´ Ð´Ð¾Ð±Ð¸Ð²Ð½Ð°Ñ‚Ð° Ð¿Ñ€Ð¾Ð¼Ð¸ÑˆÐ»ÐµÐ½Ð¾ÑÑ‚ Ð¸ ÐµÐ½ÐµÑ€Ð³ÐµÑ‚Ð¸ÐºÐ°Ñ‚Ð° (-4,6% Ð³/Ð³, Ð¿Ñ€Ð¸Ð½Ð¾Ñ -0,81 Ð¿Ñ€.Ð¿.) ÑÐ° Ñ Ð½Ð°Ð¹-Ð·Ð½Ð°Ñ‡Ð¸Ñ‚ÐµÐ»ÐµÐ½ Ð¾Ñ‚Ñ€Ð¸Ñ†Ð°Ñ‚ÐµÐ»ÐµÐ½ Ð¿Ñ€Ð¸Ð½Ð¾Ñ. ÐŸÑƒÐ±Ð»Ð¸Ñ‡Ð½Ð°Ñ‚Ð° Ð°Ð´Ð¼Ð¸Ð½Ð¸ÑÑ‚Ñ€Ð°Ñ†Ð¸Ñ Ð¸ Ð¾Ð±Ñ€Ð°Ð·Ð¾Ð²Ð°Ð½Ð¸ÐµÑ‚Ð¾ (+5,6%, +0,93 Ð¿Ñ€.Ð¿.) Ð¸ Ð½ÐµÐ´Ð²Ð¸Ð¶Ð¸Ð¼Ð¸Ñ‚Ðµ Ð¸Ð¼Ð¾Ñ‚Ð¸ (+5,3%, +0,51 Ð¿Ñ€.Ð¿.) ÑÐ° Ð²Ð¾Ð´ÐµÑ‰Ð¸Ñ‚Ðµ ÑÐµÐºÑ‚Ð¾Ñ€Ð¸ Ð½Ð° Ñ€Ð°ÑÑ‚ÐµÐ¶Ð°; ÑÑ‚Ñ€ÑƒÐºÑ‚ÑƒÑ€Ð°, ÑÑŠÐ¿ÑŠÑ‚ÑÑ‚Ð²Ð°Ð½Ð° Ð¾Ñ‚ ÑÐ¸Ð»Ð½Ð° Ñ€Ð¾Ð»Ñ Ð½Ð° Ð¿ÑƒÐ±Ð»Ð¸Ñ‡Ð½Ð¸Ñ ÑÐµÐºÑ‚Ð¾Ñ€ Ð¸ Ð¿Ð°Ð·Ð°Ñ€Ð° Ð½Ð° Ð½ÐµÐ´Ð²Ð¸Ð¶Ð¸Ð¼Ð¸ Ð¸Ð¼Ð¾Ñ‚Ð¸.</p>
+  <p class="chart-lead">По производствен метод добивната промишленост и енергетиката (-4,6% г/г, принос -0,81 пр.п.) са с най-значителен отрицателен принос. Публичната администрация и образованието (+5,6%, +0,93 пр.п.) и недвижимите имоти (+5,3%, +0,51 пр.п.) са водещите сектори на растежа; структура, съпътствана от силна роля на публичния сектор и пазара на недвижими имоти.</p>
   <div class="nl-chart">
     <div class="nl-chart-header">
       <div>
-        <div class="nl-chart-label">Ð‘Ð”Ð¡: Ð¿Ñ€Ð¸Ð½Ð¾ÑÐ¸ Ð¿Ð¾ ÑÐµÐºÑ‚Ð¾Ñ€Ð¸</div>
-        <div class="nl-chart-subtitle">Ð¿Ñ€.Ð¿. Â· Ð¿Ñ€Ð¾Ð¸Ð·Ð²Ð¾Ð´ÑÑ‚Ð²ÐµÐ½ Ð¼ÐµÑ‚Ð¾Ð´</div>
+        <div class="nl-chart-label">БДС: приноси по сектори</div>
+        <div class="nl-chart-subtitle">пр.п. · производствен метод</div>
       </div>
       <div style="text-align:right">
         <div class="nl-chart-reading">Q1 2026</div>
-        <div class="nl-chart-subtitle">Ð¿Ñ€Ð¾Ð¸Ð·Ð²Ð¾Ð´ÑÑ‚Ð²ÐµÐ½ Ð¼ÐµÑ‚Ð¾Ð´</div>
+        <div class="nl-chart-subtitle">производствен метод</div>
       </div>
     </div>
-    <img src="./GDP-04.png" alt="Ð‘Ð”Ð¡ Ð¿Ñ€Ð¸Ð½Ð¾ÑÐ¸ Ð¿Ð¾ ÑÐµÐºÑ‚Ð¾Ñ€Ð¸"/>
+    <img src="./GDP-04.png" alt="БДС приноси по сектори"/>
     <div class="nl-chart-footer">
-      <span>Ð•Ð²Ñ€Ð¾ÑÑ‚Ð°Ñ‚ Â· namq_10_gdp Â· namq_10_a10</span>
-      <span>Ð°ÐºÑ‚ÑƒÐ°Ð»Ð¸Ð·Ð¸Ñ€Ð°Ð½Ð¾ ÑŽÐ½Ð¸ 2026</span>
+      <span>Евростат · namq_10_gdp · namq_10_a10</span>
+      <span>актуализирано юни 2026</span>
     </div>
   </div>
 
-  <p class="chart-lead">Ð’ Ð°Ð±ÑÐ¾Ð»ÑŽÑ‚Ð½Ð¸ Ð½Ð¸Ð²Ð° ÐºÑ€Ð°Ð¹Ð½Ð¾Ñ‚Ð¾ Ð¿Ð¾Ñ‚Ñ€ÐµÐ±Ð»ÐµÐ½Ð¸Ðµ Ð¸ Ð±Ñ€ÑƒÑ‚Ð½Ð¾Ñ‚Ð¾ ÐºÐ°Ð¿Ð¸Ñ‚Ð°Ð»Ð¾Ð¾Ð±Ñ€Ð°Ð·ÑƒÐ²Ð°Ð½Ðµ Ð¿Ñ€Ð¾Ð´ÑŠÐ»Ð¶Ð°Ð²Ð°Ñ‚ Ð½Ð¾Ð¼Ð¸Ð½Ð°Ð»Ð½Ð¸Ñ ÑÐ¸ Ð¿Ð¾Ð´ÐµÐ¼, Ð´Ð¾ÐºÐ°Ñ‚Ð¾ Ð½ÐµÑ‚Ð½Ð¸ÑÑ‚ Ð¸Ð·Ð½Ð¾Ñ Ð¾ÑÑ‚Ð°Ð²Ð° ÑƒÑÑ‚Ð¾Ð¹Ñ‡Ð¸Ð²Ð¾ Ð¾Ñ‚Ñ€Ð¸Ñ†Ð°Ñ‚ÐµÐ»ÐµÐ½. Ð Ð°Ð·Ñ€Ð¸Ð²ÑŠÑ‚ Ð¼ÐµÐ¶Ð´Ñƒ Ð²Ð½Ð¾ÑÐ° Ð¸ Ð¸Ð·Ð½Ð¾ÑÐ° ÑÐµ Ð·Ð°Ð´ÑŠÐ»Ð±Ð¾Ñ‡Ð°Ð²Ð° ÑÐ¿Ñ€ÑÐ¼Ð¾ Q4 2025 Ð¸ Ðµ Ð²Ð¸Ð´Ð¸Ð¼ Ð² Ð½Ð°Ñ‚ÑƒÑ€Ð°Ð»Ð½Ð¾ Ð¸Ð·Ñ€Ð°Ð¶ÐµÐ½Ð¸Ðµ.</p>
+  <p class="chart-lead">В абсолютни нива крайното потребление и брутното капиталообразуване продължават номиналния си подем, докато нетният износ остава устойчиво отрицателен. Разривът между вноса и износа се задълбочава спрямо Q4 2025 и е видим в натурално изражение.</p>
   <div class="nl-chart">
     <div class="nl-chart-header">
       <div>
-        <div class="nl-chart-label">Ð‘Ð’ÐŸ Ð¸ Ð¾ÑÐ½Ð¾Ð²Ð½Ð¸ Ñ€Ð°Ð·Ñ…Ð¾Ð´Ð½Ð¸ ÐºÐ¾Ð¼Ð¿Ð¾Ð½ÐµÐ½Ñ‚Ð¸ (Ð½Ð¸Ð²Ð°)</div>
-        <div class="nl-chart-subtitle">Ð¼Ð»Ð½. ÐµÐ²Ñ€Ð¾ Â· Ñ‚ÐµÐºÑƒÑ‰Ð¸ Ñ†ÐµÐ½Ð¸</div>
+        <div class="nl-chart-label">БВП и основни разходни компоненти (нива)</div>
+        <div class="nl-chart-subtitle">млн. евро · текущи цени</div>
       </div>
       <div style="text-align:right">
         <div class="nl-chart-reading">Q1 2026</div>
-        <div class="nl-chart-subtitle">Ð½Ð¸Ð²Ð°</div>
+        <div class="nl-chart-subtitle">нива</div>
       </div>
     </div>
-    <img src="./GDP-09.png" alt="Ð‘Ð’ÐŸ Ð¸ ÐºÐ¾Ð¼Ð¿Ð¾Ð½ÐµÐ½Ñ‚Ð¸ Ð² Ð½Ð¸Ð²Ð°"/>
+    <img src="./GDP-09.png" alt="БВП и компоненти в нива"/>
     <div class="nl-chart-footer">
-      <span>Ð•Ð²Ñ€Ð¾ÑÑ‚Ð°Ñ‚ Â· namq_10_gdp</span>
-      <span>Ð°ÐºÑ‚ÑƒÐ°Ð»Ð¸Ð·Ð¸Ñ€Ð°Ð½Ð¾ ÑŽÐ½Ð¸ 2026</span>
+      <span>Евростат · namq_10_gdp</span>
+      <span>актуализирано юни 2026</span>
     </div>
   </div>
 
-  <p class="chart-lead">Ð˜Ð·Ð½Ð¾ÑÑŠÑ‚ Ð½Ð° ÑÑ‚Ð¾ÐºÐ¸ Ð¸ ÑƒÑÐ»ÑƒÐ³Ð¸ Ð² ÑÑ‚Ð¾Ð¹Ð½Ð¾ÑÑ‚Ð½Ð¾ Ð¸Ð·Ñ€Ð°Ð¶ÐµÐ½Ð¸Ðµ Ð½Ð°Ð¼Ð°Ð»ÑÐ²Ð° Ð·Ð° Ð¿Ñ€ÑŠÐ² Ð¿ÑŠÑ‚ Ð¾Ñ‚ 2023 Ð³. Ð¡Ð²Ð¸Ð²Ð°Ð½ÐµÑ‚Ð¾ Ðµ Ð²Ð¸Ð´Ð¸Ð¼Ð¾ Ð¸ Ð¿Ñ€Ð¸ ÑÑ‚Ð¾ÐºÐ¸Ñ‚Ðµ, Ð¸ Ð¿Ñ€Ð¸ ÑƒÑÐ»ÑƒÐ³Ð¸Ñ‚Ðµ; Ð¿Ñ€Ð¸ Ð½Ð°ÑÑ‚Ð¾ÑÑ‰Ð°Ñ‚Ð° Ð¸Ð½Ñ„Ð»Ð°Ñ†Ð¸Ñ Ð½Ð°Ð´ 6% Ñ€ÐµÐ°Ð»Ð½Ð¸ÑÑ‚ Ð¸Ð·Ð½Ð¾Ñ ÑÐ¿Ð°Ð´Ð° Ð¿Ð¾-Ñ‡ÑƒÐ²ÑÑ‚Ð²Ð¸Ñ‚ÐµÐ»Ð½Ð¾ Ð¾Ñ‚ Ð½Ð¾Ð¼Ð¸Ð½Ð°Ð»Ð½Ð¸Ñ, ÐºÐ¾ÐµÑ‚Ð¾ Ð¿Ð¾ÑÑ‚Ð°Ð²Ñ Ð²ÑŠÐ¿Ñ€Ð¾ÑÐ¸ Ð¾Ñ‚Ð½Ð¾ÑÐ½Ð¾ ÐºÐ¾Ð½ÐºÑƒÑ€ÐµÐ½Ñ‚Ð¾ÑÐ¿Ð¾ÑÐ¾Ð±Ð½Ð¾ÑÑ‚Ñ‚Ð° Ð½Ð° Ð¸Ð·Ð½Ð¾ÑÐ½Ð¸Ñ‚Ðµ ÑÐµÐºÑ‚Ð¾Ñ€Ð¸.</p>
+  <p class="chart-lead">Износът на стоки и услуги в стойностно изражение намалява за пръв път от 2023 г. Свиването е видимо и при стоките, и при услугите; при настоящата инфлация над 6% реалният износ спада по-чувствително от номиналния, което поставя въпроси относно конкурентоспособността на износните сектори.</p>
   <div class="nl-chart">
     <div class="nl-chart-header">
       <div>
-        <div class="nl-chart-label">Ð˜Ð·Ð½Ð¾Ñ Ð¸ Ð²Ð½Ð¾Ñ Ð½Ð° ÑÑ‚Ð¾ÐºÐ¸ Ð¸ ÑƒÑÐ»ÑƒÐ³Ð¸ (Ð½Ð¸Ð²Ð°)</div>
-        <div class="nl-chart-subtitle">Ð¼Ð»Ð½. ÐµÐ²Ñ€Ð¾ Â· Ñ‚ÐµÐºÑƒÑ‰Ð¸ Ñ†ÐµÐ½Ð¸</div>
+        <div class="nl-chart-label">Износ и внос на стоки и услуги (нива)</div>
+        <div class="nl-chart-subtitle">млн. евро · текущи цени</div>
       </div>
       <div style="text-align:right">
         <div class="nl-chart-reading">Q1 2026</div>
-        <div class="nl-chart-subtitle">Ð½Ð¸Ð²Ð°</div>
+        <div class="nl-chart-subtitle">нива</div>
       </div>
     </div>
-    <img src="./GDP-10.png" alt="Ð˜Ð·Ð½Ð¾Ñ Ð¸ Ð²Ð½Ð¾Ñ Ð² Ð½Ð¸Ð²Ð°"/>
+    <img src="./GDP-10.png" alt="Износ и внос в нива"/>
     <div class="nl-chart-footer">
-      <span>Ð•Ð²Ñ€Ð¾ÑÑ‚Ð°Ñ‚ Â· namq_10_gdp</span>
-      <span>Ð°ÐºÑ‚ÑƒÐ°Ð»Ð¸Ð·Ð¸Ñ€Ð°Ð½Ð¾ ÑŽÐ½Ð¸ 2026</span>
+      <span>Евростат · namq_10_gdp</span>
+      <span>актуализирано юни 2026</span>
     </div>
   </div>
 
-  <p class="chart-lead">ÐžÐ±Ð¾Ñ€Ð¾Ñ‚ÑŠÑ‚ Ð² ÑÐµÐºÑ‚Ð¾Ñ€Ð° Ð½Ð° ÑƒÑÐ»ÑƒÐ³Ð¸Ñ‚Ðµ Ð½Ð°Ñ€Ð°ÑÑ‚Ð²Ð° Ñ 5,7% Ð³/Ð³ Ð² Ð¼Ð°Ñ€Ñ‚ 2026 Ð³., ÑÐ¾Ð»Ð¸Ð´ÐµÐ½ Ñ‚ÐµÐ¼Ð¿ Ð¿Ñ€Ð¸ ÑÐµÐºÑ‚Ð¾Ñ€, Ñ„Ð¾Ñ€Ð¼Ð¸Ñ€Ð°Ñ‰ Ð½Ð°Ð´ Ð¿Ð¾Ð»Ð¾Ð²Ð¸Ð½Ð°Ñ‚Ð° Ð¾Ñ‚ Ð‘Ð’ÐŸ. Ð£ÑÐºÐ¾Ñ€ÐµÐ½Ð¸ÐµÑ‚Ð¾ Ðµ ÑˆÐ¸Ñ€Ð¾ÐºÐ¾ Ð±Ð°Ð·Ð¸Ñ€Ð°Ð½Ð¾: Ð˜ÐšÐ¢ (+10,5%), Ð½ÐµÐ´Ð²Ð¸Ð¶Ð¸Ð¼Ð¸ Ð¸Ð¼Ð¾Ñ‚Ð¸ (+13,3%) Ð¸ Ñ‚Ñ€Ð°Ð½ÑÐ¿Ð¾Ñ€Ñ‚ (+7,0%) ÑÐ° Ð½Ð°Ñ‡ÐµÐ»Ð¾; Ñ…Ð¾Ñ‚ÐµÐ»Ð¸ÐµÑ€ÑÑ‚Ð²Ð¾Ñ‚Ð¾ Ð¸ Ñ€ÐµÑÑ‚Ð¾Ñ€Ð°Ð½Ñ‚ÑŒÐ¾Ñ€ÑÑ‚Ð²Ð¾Ñ‚Ð¾ ÑÐ° ÐµÐ´Ð¸Ð½ÑÑ‚Ð²ÐµÐ½Ð¸ÑÑ‚ ÑÐµÐ³Ð¼ÐµÐ½Ñ‚ Ñ Ð»ÐµÐºÐ° Ð¾Ñ‚Ñ€Ð¸Ñ†Ð°Ñ‚ÐµÐ»Ð½Ð° ÑÑ‚Ð¾Ð¹Ð½Ð¾ÑÑ‚ (-0,6%), Ð²ÐµÑ€Ð¾ÑÑ‚Ð½Ð¾ ÑÐµÐ·Ð¾Ð½ÐµÐ½ ÐµÑ„ÐµÐºÑ‚ Ð¿Ñ€ÐµÐ´Ð¸ Ð¿Ð¸ÐºÐ¾Ð²Ð¸Ñ Ñ‚ÑƒÑ€Ð¸ÑÑ‚Ð¸Ñ‡ÐµÑÐºÐ¸ Ð¿ÐµÑ€Ð¸Ð¾Ð´.</p>
+  <p class="chart-lead">Оборотът в сектора на услугите нараства с 5,7% г/г в март 2026 г., солиден темп при сектор, формиращ над половината от БВП. Ускорението е широко базирано: ИКТ (+10,5%), недвижими имоти (+13,3%) и транспорт (+7,0%) са начело; хотелиерството и ресторантьорството са единственият сегмент с лека отрицателна стойност (-0,6%), вероятно сезонен ефект преди пиковия туристически период.</p>
   <div class="nl-chart">
     <div class="nl-chart-header">
       <div>
-        <div class="nl-chart-label">ÐžÐ±Ð¾Ñ€Ð¾Ñ‚ Ð² ÑÐµÐºÑ‚Ð¾Ñ€Ð° Ð½Ð° ÑƒÑÐ»ÑƒÐ³Ð¸Ñ‚Ðµ (Ð¾Ð±Ñ‰Ð¾)</div>
-        <div class="nl-chart-subtitle">% Ð³/Ð³ Ð¸ % Ð¼/Ð¼</div>
+        <div class="nl-chart-label">Оборот в сектора на услугите (общо)</div>
+        <div class="nl-chart-subtitle">% г/г и % м/м</div>
       </div>
       <div style="text-align:right">
         <div class="nl-chart-reading">+5,7%</div>
-        <div class="nl-chart-subtitle">Ð¼Ð°Ñ€. 2026</div>
+        <div class="nl-chart-subtitle">мар. 2026</div>
       </div>
     </div>
-    <img src="./SERVICES-02.png" alt="ÐžÐ±Ð¾Ñ€Ð¾Ñ‚ Ð² ÑƒÑÐ»ÑƒÐ³Ð¸Ñ‚Ðµ"/>
+    <img src="./SERVICES-02.png" alt="Оборот в услугите"/>
     <div class="nl-chart-footer">
-      <span>Ð•Ð²Ñ€Ð¾ÑÑ‚Ð°Ñ‚ Â· sts_sepr_m</span>
-      <span>Ð°ÐºÑ‚ÑƒÐ°Ð»Ð¸Ð·Ð¸Ñ€Ð°Ð½Ð¾ ÑŽÐ½Ð¸ 2026</span>
+      <span>Евростат · sts_sepr_m</span>
+      <span>актуализирано юни 2026</span>
     </div>
   </div>
 
-  <p class="chart-lead">Ð’ ÑÐµÐºÑ‚Ð¾Ñ€ÐµÐ½ Ñ€Ð°Ð·Ñ€ÐµÐ· Ð˜ÐšÐ¢ Ð¾Ñ‚Ñ‡Ð¸Ñ‚Ð° 10,5% Ñ€ÑŠÑÑ‚ Ð³/Ð³, Ð½ÐµÐ´Ð²Ð¸Ð¶Ð¸Ð¼Ð¸Ñ‚Ðµ Ð¸Ð¼Ð¾Ñ‚Ð¸: 13,3%, Ñ‚Ñ€Ð°Ð½ÑÐ¿Ð¾Ñ€Ñ‚ÑŠÑ‚: 7,0%. Ð¥Ð¾Ñ‚ÐµÐ»Ð¸ÐµÑ€ÑÑ‚Ð²Ð¾Ñ‚Ð¾ Ð¸ Ñ€ÐµÑÑ‚Ð¾Ñ€Ð°Ð½Ñ‚ÑŒÐ¾Ñ€ÑÑ‚Ð²Ð¾Ñ‚Ð¾ ÑÐ° ÐµÐ´Ð¸Ð½ÑÑ‚Ð²ÐµÐ½Ð¸ÑÑ‚ ÑÐµÐ³Ð¼ÐµÐ½Ñ‚ Ñ Ð¾Ñ‚Ñ€Ð¸Ñ†Ð°Ñ‚ÐµÐ»Ð½Ð° ÑÑ‚Ð¾Ð¹Ð½Ð¾ÑÑ‚ (-0,6%), ÐºÐ¾ÐµÑ‚Ð¾ Ð¼Ð¾Ð¶Ðµ Ð´Ð° Ðµ ÑÐ²ÑŠÑ€Ð·Ð°Ð½Ð¾ ÑÑŠÑ ÑÐµÐ·Ð¾Ð½Ð½Ð¸ Ñ„Ð°ÐºÑ‚Ð¾Ñ€Ð¸ Ð¿Ñ€ÐµÐ´Ð¸ Ð¿Ð¸ÐºÐ¾Ð²Ð¸Ñ Ñ‚ÑƒÑ€Ð¸ÑÑ‚Ð¸Ñ‡ÐµÑÐºÐ¸ Ð¿ÐµÑ€Ð¸Ð¾Ð´.</p>
+  <p class="chart-lead">В секторен разрез ИКТ отчита 10,5% ръст г/г, недвижимите имоти: 13,3%, транспортът: 7,0%. Хотелиерството и ресторантьорството са единственият сегмент с отрицателна стойност (-0,6%), което може да е свързано със сезонни фактори преди пиковия туристически период.</p>
   <div class="nl-chart">
     <div class="nl-chart-header">
       <div>
-        <div class="nl-chart-label">ÐžÐ±Ð¾Ñ€Ð¾Ñ‚ Ð² ÑƒÑÐ»ÑƒÐ³Ð¸Ñ‚Ðµ: Ð³/Ð³ Ð¿Ð¾ ÑÐµÐºÑ‚Ð¾Ñ€Ð¸</div>
-        <div class="nl-chart-subtitle">% Ð³/Ð³ Â· Ñ‚Ñ€Ð°Ð½ÑÐ¿Ð¾Ñ€Ñ‚, Ñ…Ð¾Ñ‚ÐµÐ»Ð¸, Ð˜ÐšÐ¢, Ð°Ð´Ð¼Ð¸Ð½Ð¸ÑÑ‚Ñ€Ð°Ñ‚Ð¸Ð²Ð½Ð¸ ÑƒÑÐ»ÑƒÐ³Ð¸</div>
+        <div class="nl-chart-label">Оборот в услугите: г/г по сектори</div>
+        <div class="nl-chart-subtitle">% г/г · транспорт, хотели, ИКТ, административни услуги</div>
       </div>
       <div style="text-align:right">
-        <div class="nl-chart-reading">Ð¼Ð°Ñ€. 2026</div>
-        <div class="nl-chart-subtitle">Ð¿Ð¾ ÑÐµÐºÑ‚Ð¾Ñ€Ð¸</div>
+        <div class="nl-chart-reading">мар. 2026</div>
+        <div class="nl-chart-subtitle">по сектори</div>
       </div>
     </div>
-    <img src="./SERVICES-03.png" alt="Ð£ÑÐ»ÑƒÐ³Ð¸ Ð¿Ð¾ ÑÐµÐºÑ‚Ð¾Ñ€Ð¸"/>
+    <img src="./SERVICES-03.png" alt="Услуги по сектори"/>
     <div class="nl-chart-footer">
-      <span>Ð•Ð²Ñ€Ð¾ÑÑ‚Ð°Ñ‚ Â· sts_sepr_m</span>
-      <span>Ð°ÐºÑ‚ÑƒÐ°Ð»Ð¸Ð·Ð¸Ñ€Ð°Ð½Ð¾ ÑŽÐ½Ð¸ 2026</span>
+      <span>Евростат · sts_sepr_m</span>
+      <span>актуализирано юни 2026</span>
     </div>
   </div>
 
   <div class="bottom-line">
-    <div class="bottom-line-head">â–¸ The Bottom Line</div>
-    <p>Q1 2026 Ð¾Ñ‡ÐµÑ€Ñ‚Ð°Ð²Ð° Ð¸ÐºÐ¾Ð½Ð¾Ð¼Ð¸ÐºÐ° Ð² Ð´ÑƒÐ°Ð»ÐµÐ½ Ñ€ÐµÐ¶Ð¸Ð¼. Ð’ÑŠÑ‚Ñ€ÐµÑˆÐ½Ð¾Ñ‚Ð¾ Ñ‚ÑŠÑ€ÑÐµÐ½Ðµ, Ð¾Ñ‚ Ð¿Ð¾Ñ‚Ñ€ÐµÐ±Ð»ÐµÐ½Ð¸Ðµ Ð´Ð¾ Ð¸Ð½Ð²ÐµÑÑ‚Ð¸Ñ†Ð¸Ð¸, Ð¿Ñ€Ð¾Ð´ÑŠÐ»Ð¶Ð°Ð²Ð° Ð´Ð° Ð½Ð°Ñ€Ð°ÑÑ‚Ð²Ð° ÑÑŠÑ ÑÐ¸Ð»ÐµÐ½ Ñ‚ÐµÐ¼Ð¿. Ð’ ÑÑŠÑ‰Ð¾Ñ‚Ð¾ Ð²Ñ€ÐµÐ¼Ðµ Ð¸Ð·Ð½Ð¾ÑÑŠÑ‚ ÑÐ²Ð¸Ð²Ð°, Ð´Ð¾Ð±Ð¸Ð²Ð½Ð°Ñ‚Ð° Ð¿Ñ€Ð¾Ð¼Ð¸ÑˆÐ»ÐµÐ½Ð¾ÑÑ‚ Ð¾Ñ‚Ñ‡Ð¸Ñ‚Ð° Ð·Ð½Ð°Ñ‡Ð¸Ñ‚ÐµÐ»ÐµÐ½ ÑÐ¿Ð°Ð´ Ð¸ Ð½ÐµÑ‚Ð½Ð¸ÑÑ‚ Ð¸Ð·Ð½Ð¾Ñ Ðµ ÑÐµÑ€Ð¸Ð¾Ð·Ð½Ð° ÑÐ¿Ð¸Ñ€Ð°Ñ‡ÐºÐ° Ð½Ð° Ñ€Ð°ÑÑ‚ÐµÐ¶Ð°. ÐÐºÐ¾ Ñ‚Ð°Ð·Ð¸ ÑÑ‚Ñ€ÑƒÐºÑ‚ÑƒÑ€Ð° ÑÐµ Ð·Ð°Ð¿Ð°Ð·Ð¸, ÑÑŠÑ‰ÐµÑÑ‚Ð²ÑƒÐ²Ð° Ñ€Ð¸ÑÐº Ð¾Ñ‚ Ð·Ð°Ð´ÑŠÐ»Ð±Ð¾Ñ‡Ð°Ð²Ð°Ð½Ðµ Ð½Ð° Ñ‚ÑŠÑ€Ð³Ð¾Ð²ÑÐºÐ¸Ñ Ð´Ð¸ÑÐ±Ð°Ð»Ð°Ð½Ñ Ð¿Ñ€Ð¸ Ð¿Ñ€Ð¾Ð´ÑŠÐ»Ð¶Ð°Ð²Ð°Ñ‰ Ð²ÑŠÑ‚Ñ€ÐµÑˆÐµÐ½ Ñ†ÐµÐ½Ð¾Ð²Ð¸ Ð½Ð°Ñ‚Ð¸ÑÐº. Ð”Ð°Ð½Ð½Ð¸Ñ‚Ðµ Ð·Ð° ÑƒÑÐ»ÑƒÐ³Ð¸Ñ‚Ðµ Ð´Ð¾Ð±Ð°Ð²ÑÑ‚ Ð½ÑŽÐ°Ð½Ñ: ÑÐµÐºÑ‚Ð¾Ñ€ÑŠÑ‚ Ðµ ÑÑ‚Ð°Ð±Ð¸Ð»ÐµÐ½ Ð¸ ÑˆÐ¸Ñ€Ð¾ÐºÐ¾ Ð±Ð°Ð·Ð¸Ñ€Ð°Ð½, Ñ Ð˜ÐšÐ¢ Ð¸ Ð½ÐµÐ´Ð²Ð¸Ð¶Ð¸Ð¼Ð¸ Ð¸Ð¼Ð¾Ñ‚Ð¸ Ð½Ð°Ñ‡ÐµÐ»Ð¾, ÐºÐ¾ÐµÑ‚Ð¾ Ð¾Ñ‚Ñ‡Ð°ÑÑ‚Ð¸ Ð¾Ð±ÑÑÐ½ÑÐ²Ð° ÑƒÑÑ‚Ð¾Ð¹Ñ‡Ð¸Ð²Ð¾ÑÑ‚Ñ‚Ð° Ð½Ð° Ð²ÑŠÑ‚Ñ€ÐµÑˆÐ½Ð¾Ñ‚Ð¾ Ñ‚ÑŠÑ€ÑÐµÐ½Ðµ.</p>
+    <div class="bottom-line-head">▸ The Bottom Line</div>
+    <p>Q1 2026 очертава икономика в дуален режим. Вътрешното търсене, от потребление до инвестиции, продължава да нараства със силен темп. В същото време износът свива, добивната промишленост отчита значителен спад и нетният износ е сериозна спирачка на растежа. Ако тази структура се запази, съществува риск от задълбочаване на търговския дисбаланс при продължаващ вътрешен ценови натиск. Данните за услугите добавят нюанс: секторът е стабилен и широко базиран, с ИКТ и недвижими имоти начело, което отчасти обяснява устойчивостта на вътрешното търсене.</p>
   </div>
 
 </div>
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
-<!-- â•â•â• SECTION 2: Ð—ÐÐšÐžÐÐžÐ”ÐÐ¢Ð•Ð›Ð¡Ð¢Ð’Ðž â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<!-- ════════════════════════════════════════════════ -->
+<!-- ═══ SECTION 2: ЗАКОНОДАТЕЛСТВО ══════════════════ -->
+<!-- ════════════════════════════════════════════════ -->
 <div class="section-divider" id="legislation" style="margin-top:8px;">
-  <span class="section-divider-title">Ð—Ð°ÐºÐ¾Ð½Ð¸ Â· Ð ÐµÑˆÐµÐ½Ð¸Ñ Â· Ð ÐµÐ³ÑƒÐ»Ð°Ñ†Ð¸Ð¸</span>
-  <span class="section-divider-num">Ð¡ÐµÐºÑ†Ð¸Ñ 2 Ð¾Ñ‚ 2</span>
+  <span class="section-divider-title">Закони · Решения · Регулации</span>
+  <span class="section-divider-num">Секция 2 от 2</span>
 </div>
 <nav class="section-subnav">
-  <a href="#law-summary">ÐžÐ±Ð¾Ð±Ñ‰ÐµÐ½Ð¸Ðµ</a>
-  <a href="#law-items">ÐžÐ±Ð½Ð°Ñ€Ð¾Ð´Ð²Ð°Ð½Ð¸ Ð°ÐºÑ‚Ð¾Ð²Ðµ</a>
+  <a href="#law-summary">Обобщение</a>
+  <a href="#law-items">Обнародвани актове</a>
 </nav>
 
-<!-- â”€â”€ Legislative infographic â”€â”€ -->
+<!-- ── Legislative infographic ── -->
 <div class="law-infographic" id="law-summary">
   <div class="infog-stats">
     <div class="infog-stat">
       <div class="infog-stat-num accent">4</div>
-      <div class="infog-stat-label">Ð—Ð½Ð°Ñ‡Ð¸Ð¼Ð¸ Ð°ÐºÑ‚Ð°*</div>
-      <div class="infog-stat-sub">ÐžÐ±Ð½Ð°Ñ€Ð¾Ð´Ð²Ð°Ð½Ð¸ 2â€“5 ÑŽÐ½Ð¸</div>
+      <div class="infog-stat-label">Значими акта*</div>
+      <div class="infog-stat-sub">Обнародвани 2–5 юни</div>
     </div>
     <div class="infog-stat">
       <div class="infog-stat-num">2</div>
-      <div class="infog-stat-label">Ð¢ÐµÑ…Ð½Ð¸Ñ‡ÐµÑÐºÐ¸ Ð°ÐºÑ‚Ð°</div>
-      <div class="infog-stat-sub">ÐÐµ ÑÐ° Ð²ÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸*</div>
+      <div class="infog-stat-label">Технически акта</div>
+      <div class="infog-stat-sub">Не са включени*</div>
     </div>
   </div>
 
-  <div class="infog-section-head">ÐŸÐ¾ Ð¾Ñ€Ð³Ð°Ð½</div>
+  <div class="infog-section-head">По орган</div>
   <div class="infog-bars">
     <div class="infog-bar-row">
-      <div class="infog-bar-label">ÐÐ°Ñ€Ð¾Ð´Ð½Ð¾ ÑÑŠÐ±Ñ€Ð°Ð½Ð¸Ðµ</div>
+      <div class="infog-bar-label">Народно събрание</div>
       <div class="infog-bar-wrap"><div class="infog-bar-fill" style="width:50%"></div></div>
       <div class="infog-bar-count">2</div>
     </div>
     <div class="infog-bar-row">
-      <div class="infog-bar-label">ÐœÐ¸Ð½Ð¸ÑÑ‚ÐµÑ€ÑÐºÐ¸ ÑÑŠÐ²ÐµÑ‚</div>
+      <div class="infog-bar-label">Министерски съвет</div>
       <div class="infog-bar-wrap"><div class="infog-bar-fill gold" style="width:0%"></div></div>
       <div class="infog-bar-count">0</div>
     </div>
     <div class="infog-bar-row">
-      <div class="infog-bar-label">ÐœÐ¸Ð½Ð¸ÑÑ‚ÐµÑ€ÑÑ‚Ð²Ð°</div>
+      <div class="infog-bar-label">Министерства</div>
       <div class="infog-bar-wrap"><div class="infog-bar-fill" style="width:50%"></div></div>
       <div class="infog-bar-count">2</div>
     </div>
   </div>
 
-  <div class="infog-section-head" style="margin-top:14px;">ÐŸÐ¾ Ñ‚ÐµÐ¼Ð°</div>
+  <div class="infog-section-head" style="margin-top:14px;">По тема</div>
   <div class="infog-bars">
     <div class="infog-bar-row">
-      <div class="infog-bar-label">ÐÐ½Ñ‚Ð¸ÐºÐ¾Ñ€ÑƒÐ¿Ñ†Ð¸Ñ</div>
+      <div class="infog-bar-label">Антикорупция</div>
       <div class="infog-bar-wrap"><div class="infog-bar-fill red" style="width:25%"></div></div>
       <div class="infog-bar-count">1</div>
     </div>
     <div class="infog-bar-row">
-      <div class="infog-bar-label">ÐŸÐ°Ñ€Ð». Ð¿Ñ€Ð¾Ñ†ÐµÐ´ÑƒÑ€Ð°</div>
+      <div class="infog-bar-label">Парл. процедура</div>
       <div class="infog-bar-wrap"><div class="infog-bar-fill" style="width:25%"></div></div>
       <div class="infog-bar-count">1</div>
     </div>
     <div class="infog-bar-row">
-      <div class="infog-bar-label">Ð”Ð°Ð½ÑŠÑ‡Ð½Ð° Ð¿Ñ€Ð¾Ð·Ñ€Ð°Ñ‡Ð½Ð¾ÑÑ‚</div>
+      <div class="infog-bar-label">Данъчна прозрачност</div>
       <div class="infog-bar-wrap"><div class="infog-bar-fill" style="width:50%"></div></div>
       <div class="infog-bar-count">2</div>
     </div>
   </div>
 
   <div class="infog-footnote">
-    * Ð‘Ñ€Ð¾Ð¹ÐºÐ¸Ñ‚Ðµ Ð¸Ð·ÐºÐ»ÑŽÑ‡Ð²Ð°Ñ‚ Ñ‚ÐµÑ…Ð½Ð¸Ñ‡ÐµÑÐºÐ¸ Ð°ÐºÑ‚Ð¾Ð²Ðµ (Ð¿Ð¾Ð¿Ñ€Ð°Ð²ÐºÐ¸ Ð¸ Ñ‚ÐµÑÐ½Ð¸ Ð¿Ñ€Ð¾Ñ†ÐµÐ´ÑƒÑ€Ð½Ð¸ Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ñ). ÐŸÑŠÐ»ÐµÐ½ ÑÐ¿Ð¸ÑÑŠÐº Ð²Ð¸Ð¶Ñ‚Ðµ Ð² ÑÐµÐºÑ†Ð¸Ñ â€žÐ¢ÐµÑ…Ð½Ð¸Ñ‡ÐµÑÐºÐ¸ Ð°ÐºÑ‚Ð¾Ð²Ðµ" Ð¿Ð¾-Ð´Ð¾Ð»Ñƒ.
+    * Бройките изключват технически актове (поправки и тесни процедурни изменения). Пълен списък вижте в секция „Технически актове" по-долу.
   </div>
 </div>
 
-<!-- â”€â”€ Law Cards â”€â”€ -->
+<!-- ── Law Cards ── -->
 <div class="law-cards" id="law-items">
 
-  <!-- â”€â”€ CARD 1 (DEEP): Ð—Ð°ÐºÐ¾Ð½ Ð·Ð° Ð¿Ñ€Ð¾Ñ‚Ð¸Ð²Ð¾Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ðµ Ð½Ð° ÐºÐ¾Ñ€ÑƒÐ¿Ñ†Ð¸ÑÑ‚Ð° â”€â”€ -->
+  <!-- ── CARD 1 (DEEP): Закон за противодействие на корупцията ── -->
   <div class="nl-law-card deep">
     <div class="nl-law-card-head" onclick="toggleCard(this)">
       <div class="nl-law-badges">
-        <span class="badge-type deep">â˜… Ð—ÐÐšÐžÐ Â· Ð’ Ð”Ð•Ð¢ÐÐ™Ð›</span>
-        <span class="badge-organ">ÐÐ°Ñ€Ð¾Ð´Ð½Ð¾ ÑÑŠÐ±Ñ€Ð°Ð½Ð¸Ðµ</span>
+        <span class="badge-type deep">★ ЗАКОН · В ДЕТАЙЛ</span>
+        <span class="badge-organ">Народно събрание</span>
       </div>
-      <div class="nl-law-title">ÐÐ¾Ð²Ð° Ð½ÐµÐ·Ð°Ð²Ð¸ÑÐ¸Ð¼Ð° Ð°Ð½Ñ‚Ð¸ÐºÐ¾Ñ€ÑƒÐ¿Ñ†Ð¸Ð¾Ð½Ð½Ð° ÐºÐ¾Ð¼Ð¸ÑÐ¸Ñ Ñ Ñ€Ð°Ð·ÑÐ»ÐµÐ´Ð²Ð°Ñ‰Ð¸ Ð¸Ð½ÑÐ¿ÐµÐºÑ‚Ð¾Ñ€Ð¸ Ð¾Ð±Ñ…Ð²Ð°Ñ‰Ð° Ð½Ð°Ð´ 50 ÐºÐ°Ñ‚ÐµÐ³Ð¾Ñ€Ð¸Ð¸ Ð´Ð»ÑŠÐ¶Ð½Ð¾ÑÑ‚Ð½Ð¸ Ð»Ð¸Ñ†Ð°</div>
+      <div class="nl-law-title">Нова независима антикорупционна комисия с разследващи инспектори обхваща над 50 категории длъжностни лица</div>
       <div class="nl-law-tags">
-        <span class="nl-law-tag">ÐŸÑ€Ð°Ð²Ð¾ÑÑŠÐ´Ð¸Ðµ Ð¸ ÑÐ¸Ð³ÑƒÑ€Ð½Ð¾ÑÑ‚</span>
-        <span class="nl-law-tag">ÐŸÑƒÐ±Ð»Ð¸Ñ‡Ð½Ð° Ð°Ð´Ð¼Ð¸Ð½Ð¸ÑÑ‚Ñ€Ð°Ñ†Ð¸Ñ</span>
-        <span class="nl-law-tag">Ð˜Ð½ÑÑ‚Ð¸Ñ‚ÑƒÑ†Ð¸Ð¾Ð½Ð°Ð»Ð½Ð° Ñ€ÐµÑ„Ð¾Ñ€Ð¼Ð°</span>
-        <span class="nl-law-tag">Ð•Ð²Ñ€Ð¾Ð¿Ð° Ð¸ Ð¼ÐµÐ¶Ð´ÑƒÐ½Ð°Ñ€Ð¾Ð´Ð½Ð¸</span>
+        <span class="nl-law-tag">Правосъдие и сигурност</span>
+        <span class="nl-law-tag">Публична администрация</span>
+        <span class="nl-law-tag">Институционална реформа</span>
+        <span class="nl-law-tag">Европа и международни</span>
       </div>
-      <span class="nl-law-toggle">â–¾ ÐŸÐ¾ÐºÐ°Ð¶Ð¸</span>
+      <span class="nl-law-toggle">▾ Покажи</span>
     </div>
     <div class="nl-law-body">
 
@@ -820,326 +820,325 @@ function toggleBasic() {
       <div class="sc-panel">
         <div class="sc-facts">
           <div class="sc-cell">
-            <div class="sc-label">Ð’Ð»Ð¸Ð·Ð° Ð² ÑÐ¸Ð»Ð°</div>
-            <div class="sc-value">5 ÑŽÐ½Ð¸ 2026 Ð³.</div>
-            <div class="sc-note">Ð•Ð»ÐµÐºÑ‚Ñ€Ð¾Ð½Ð½Ð¸ Ð´ÐµÐºÐ»Ð°Ñ€Ð°Ñ†Ð¸Ð¸: ÑÐ»ÐµÐ´ 18 Ð¼ÐµÑÐµÑ†Ð°</div>
+            <div class="sc-label">Влиза в сила</div>
+            <div class="sc-value">5 юни 2026 г.</div>
+            <div class="sc-note">Електронни декларации: след 18 месеца</div>
           </div>
           <div class="sc-divider"></div>
           <div class="sc-cell">
-            <div class="sc-label">Ð—Ð°ÑÑÐ³Ð°</div>
-            <div class="sc-value">Ð“Ñ€Ð°Ð¶Ð´Ð°Ð½Ð¸ Â· ÐŸÑƒÐ±Ð»Ð¸Ñ‡Ð½Ð° Ð°Ð´Ð¼.</div>
-            <div class="sc-note">50+ ÐºÐ°Ñ‚ÐµÐ³Ð¾Ñ€Ð¸Ð¸ Ð´Ð»ÑŠÐ¶Ð½Ð¾ÑÑ‚Ð½Ð¸ Ð»Ð¸Ñ†Ð°; Ð´ÐµÐºÐ»Ð°Ñ€Ð°Ñ†Ð¸Ð¸Ñ‚Ðµ Ð¾Ð±Ñ…Ð²Ð°Ñ‰Ð°Ñ‚ Ð¸ ÑÐµÐ¼ÐµÐ¹ÑÑ‚Ð²Ð¾Ñ‚Ð¾</div>
+            <div class="sc-label">Засяга</div>
+            <div class="sc-value">Граждани · Публична адм.</div>
+            <div class="sc-note">50+ категории длъжностни лица; декларациите обхващат и семейството</div>
           </div>
           <div class="sc-divider"></div>
           <div class="sc-cell">
-            <div class="sc-label">Ð•Ð¡ Ð¸Ð·Ð¸ÑÐºÐ²Ð°?</div>
-            <div class="sc-value"><span class="es-pill partial">Ð§Ð°ÑÑ‚Ð¸Ñ‡Ð½Ð¾</span></div>
-            <div class="sc-note">Ð•Ð¡ Ð¿Ñ€ÐµÐ¿Ð¾Ñ€ÑŠÑ‡Ð²Ð° ÑÐ¿ÐµÑ†Ð¸Ð°Ð»Ð¸Ð·Ð¸Ñ€Ð°Ð½Ð¸ Ð¾Ñ€Ð³Ð°Ð½Ð¸; Ð¾Ð±ÐµÐ´Ð¸Ð½ÑÐ²Ð°Ð½ÐµÑ‚Ð¾ Ð½Ð° Ð¿Ñ€ÐµÐ²ÐµÐ½Ñ†Ð¸Ñ, Ð¸Ð·Ð´Ð¸Ñ€Ð²Ð°Ð½Ðµ Ð¸ Ñ€Ð°Ð·ÑÐ»ÐµÐ´Ð²Ð°Ð½Ðµ Ð² ÐµÐ´Ð½Ð¾ Ñ‚ÑÐ»Ð¾ Ð½Ð°Ð´Ñ…Ð²ÑŠÑ€Ð»Ñ ÑÑ€ÐµÐ´Ð½Ð¾ÐµÐ²Ñ€Ð¾Ð¿ÐµÐ¹ÑÐºÐ°Ñ‚Ð° Ð¿Ñ€Ð°ÐºÑ‚Ð¸ÐºÐ°</div>
+            <div class="sc-label">ЕС изисква?</div>
+            <div class="sc-value"><span class="es-pill partial">Частично</span></div>
+            <div class="sc-note">ЕС препоръчва специализирани органи; обединяването на превенция, издирване и разследване в едно тяло надхвърля средноевропейската практика</div>
           </div>
         </div>
         <div class="sc-row">
           <div class="sc-dot indirect"></div>
-          <div class="sc-fiscal-text"><strong>Ð¤Ð¸Ð½Ð°Ð½ÑÐ¾Ð² ÐµÑ„ÐµÐºÑ‚:</strong> ÐÐ¾Ð²Ð° Ð¸Ð½ÑÑ‚Ð¸Ñ‚ÑƒÑ†Ð¸Ñ Ñ Ñ€Ð°Ð·ÑÐ»ÐµÐ´Ð²Ð°Ñ‰Ð¸ Ð¸Ð½ÑÐ¿ÐµÐºÑ‚Ð¾Ñ€Ð¸, IT ÑÐ¸ÑÑ‚ÐµÐ¼Ð° Ð·Ð° Ð´ÐµÐºÐ»Ð°Ñ€Ð°Ñ†Ð¸Ð¸ Ð¸ Ð¿Ñ€ÐµÑ…Ð²ÑŠÑ€Ð»ÑÐ½Ðµ Ð½Ð° Ð¿ÐµÑ€ÑÐ¾Ð½Ð°Ð» Ð¾Ñ‚ Ð¡Ð¼ÐµÑ‚Ð½Ð°Ñ‚Ð° Ð¿Ð°Ð»Ð°Ñ‚Ð°. Ð‘ÐµÐ· Ð¾Ñ„Ð¸Ñ†Ð¸Ð°Ð»Ð½Ð° Ñ„Ð¸Ð½Ð°Ð½ÑÐ¾Ð²Ð° Ð¾Ð±Ð¾ÑÐ½Ð¾Ð²ÐºÐ°; ÑÑ…Ð¾Ð´Ð½Ð¸ Ð¾Ñ€Ð³Ð°Ð½Ð¸ Ð² Ð•Ð¡ (Ð ÑƒÐ¼ÑŠÐ½Ð¸Ñ: ANI, Ð¡Ð»Ð¾Ð²Ð°ÐºÐ¸Ñ) ÑÑ‚Ñ€ÑƒÐ²Ð°Ñ‚ 10â€“30 Ð¼Ð»Ð½. ÐµÐ²Ñ€Ð¾ Ð³Ð¾Ð´Ð¸ÑˆÐ½Ð¾.</div>
+          <div class="sc-fiscal-text"><strong>Финансов ефект:</strong> Нова институция с разследващи инспектори, IT система за декларации и прехвърляне на персонал от Сметната палата. Без официална финансова обосновка; сходни органи в ЕС (Румъния: ANI, Словакия) струват 10–30 млн. евро годишно.</div>
         </div>
         <div class="sc-steps">
-          <div class="sc-steps-head">ÐÐµÐ¾Ð±Ñ…Ð¾Ð´Ð¸Ð¼Ð¸ ÑÑ‚ÑŠÐ¿ÐºÐ¸</div>
+          <div class="sc-steps-head">Необходими стъпки</div>
           <div class="sc-step">
-            <span class="sc-step-who">Ð”Ð»ÑŠÐ¶Ð½Ð¾ÑÑ‚Ð½Ð¸ Ð»Ð¸Ñ†Ð°:</span>
-            ÐŸÐ¾Ð´Ð³Ð¾Ñ‚Ð²ÐµÑ‚Ðµ Ð¸Ð¼ÑƒÑ‰ÐµÑÑ‚Ð²ÐµÐ½Ð° Ð´ÐµÐºÐ»Ð°Ñ€Ð°Ñ†Ð¸Ñ; ÐºÐ¾Ð½ÐºÑ€ÐµÑ‚Ð½Ð¸Ñ‚Ðµ ÑÑ€Ð¾ÐºÐ¾Ð²Ðµ Ñ‰Ðµ Ð±ÑŠÐ´Ð°Ñ‚ Ð¾Ð¿Ñ€ÐµÐ´ÐµÐ»ÐµÐ½Ð¸ Ð¾Ñ‚ ÐšÐ¾Ð¼Ð¸ÑÐ¸ÑÑ‚Ð° ÑÐ»ÐµÐ´ Ð²ÑÑ‚ÑŠÐ¿Ð²Ð°Ð½ÐµÑ‚Ð¾ Ð¹ (Ð´Ð¾ 3 Ð¼ÐµÑÐµÑ†Ð° Ð¾Ñ‚ ÐºÐ¾Ð½ÑÑ‚Ð¸Ñ‚ÑƒÐ¸Ñ€Ð°Ð½ÐµÑ‚Ð¾).
+            <span class="sc-step-who">Длъжностни лица:</span>
+            Подгответе имуществена декларация; конкретните срокове ще бъдат определени от Комисията след встъпването й (до 3 месеца от конституирането).
           </div>
           <div class="sc-step">
-            <span class="sc-step-who">ÐÐ¡ / Ð¿Ñ€ÐµÐ·Ð¸Ð´ÐµÐ½Ñ‚ / Ð’ÐšÐ¡ / Ð’ÐÐ¡ / Ð’ÐÐ´Ð²Ð¡:</span>
-            Ð˜Ð·Ð±ÐµÑ€ÐµÑ‚Ðµ/Ð½Ð°Ð·Ð½Ð°Ñ‡ÐµÑ‚Ðµ Ñ‡Ð»ÐµÐ½Ð¾Ð²Ðµ Ð½Ð° ÐšÐ¾Ð¼Ð¸ÑÐ¸ÑÑ‚Ð° Ð² ÐµÐ´Ð½Ð¾Ð¼ÐµÑÐµÑ‡ÐµÐ½ ÑÑ€Ð¾Ðº Ð¾Ñ‚ Ð²Ð»Ð¸Ð·Ð°Ð½Ðµ Ð² ÑÐ¸Ð»Ð° Ð½Ð° Ð·Ð°ÐºÐ¾Ð½Ð°.
+            <span class="sc-step-who">НС / президент / ВКС / ВАС / ВАдвС:</span>
+            Изберете/назначете членове на Комисията в едномесечен срок от влизане в сила на закона.
           </div>
         </div>
       </div>
 
       <!-- Nakratko -->
-      <div class="nl-law-lead">Ð—Ð°ÐºÐ¾Ð½ÑŠÑ‚ ÑÑŠÐ·Ð´Ð°Ð²Ð° ÐšÐ¾Ð¼Ð¸ÑÐ¸Ñ Ð·Ð° Ð¿Ñ€Ð¾Ñ‚Ð¸Ð²Ð¾Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ðµ Ð½Ð° ÐºÐ¾Ñ€ÑƒÐ¿Ñ†Ð¸ÑÑ‚Ð° Ñ Ð¿ÐµÑ‚ Ñ‡Ð»ÐµÐ½Ð¾Ð²Ðµ, Ð½ÐµÐ·Ð°Ð²Ð¸ÑÐ¸Ð¼Ð¸ Ð¾Ñ‚ Ð¿Ñ€Ð°Ð²Ð¸Ñ‚ÐµÐ»ÑÑ‚Ð²Ð¾ Ð¸ Ð¿Ñ€Ð¾ÐºÑƒÑ€Ð°Ñ‚ÑƒÑ€Ð°, Ñ Ð¿Ñ€Ð°Ð²Ð¾Ð¼Ð¾Ñ‰Ð¸Ñ Ð´Ð° Ñ€Ð°Ð·ÑÐ»ÐµÐ´Ð²Ð°Ñ‚, Ð´ÐµÐºÐ»Ð°Ñ€Ð¸Ñ€Ð°Ñ‚ Ð¸ Ð¿Ñ€ÐµÐ²Ð°Ð½Ñ‚Ð¸Ñ€Ð°Ñ‚ ÐºÐ¾Ñ€ÑƒÐ¿Ñ†Ð¸Ñ ÑÑ€ÐµÐ´ Ð¿Ñ€ÐµÐ·Ð¸Ð´ÐµÐ½Ñ‚Ð°, Ð¼Ð¸Ð½Ð¸ÑÑ‚Ñ€Ð¸Ñ‚Ðµ, Ð´ÐµÐ¿ÑƒÑ‚Ð°Ñ‚Ð¸Ñ‚Ðµ, ÐºÐ¼ÐµÑ‚Ð¾Ð²ÐµÑ‚Ðµ, Ñ€ÐµÐºÑ‚Ð¾Ñ€Ð¸Ñ‚Ðµ, Ð´Ð¸Ñ€ÐµÐºÑ‚Ð¾Ñ€Ð¸Ñ‚Ðµ Ð½Ð° Ð±Ð¾Ð»Ð½Ð¸Ñ†Ð¸ Ð¸ Ñ€ÑŠÐºÐ¾Ð²Ð¾Ð´Ð¸Ñ‚ÐµÐ»Ð¸Ñ‚Ðµ Ð½Ð° Ð”ÐÐÐ¡, ÐÐÐŸ Ð¸ ÐÐ³ÐµÐ½Ñ†Ð¸Ñ â€žÐœÐ¸Ñ‚Ð½Ð¸Ñ†Ð¸".</div>
+      <div class="nl-law-lead">Законът създава Комисия за противодействие на корупцията с пет членове, независими от правителство и прокуратура, с правомощия да разследват, декларират и превантират корупция сред президента, министрите, депутатите, кметовете, ректорите, директорите на болници и ръководителите на ДАНС, НАП и Агенция „Митници".</div>
 
-      <!-- ÐžÑÐ½Ð¾Ð²Ð½Ð¸ Ð¼Ð¾Ð¼ÐµÐ½Ñ‚Ð¸ -->
+      <!-- Основни моменти -->
       <div class="nl-law-points">
-        <div class="nl-law-points-head">ÐžÑÐ½Ð¾Ð²Ð½Ð¸ Ð¼Ð¾Ð¼ÐµÐ½Ñ‚Ð¸</div>
+        <div class="nl-law-points-head">Основни моменти</div>
         <ul>
-          <li>ÐŸÐµÑ‚Ñ‡Ð»ÐµÐ½Ð½Ð° ÐºÐ¾Ð¼Ð¸ÑÐ¸Ñ: Ð¿Ð¾ ÐµÐ´Ð¸Ð½ Ð¾Ñ‚ ÐÐ¡, Ð¿Ñ€ÐµÐ·Ð¸Ð´ÐµÐ½Ñ‚Ð°, Ð’ÐšÐ¡, Ð’ÐÐ¡ Ð¸ Ð’Ð¸ÑÑˆÐ¸Ñ Ð°Ð´Ð²Ð¾ÐºÐ°Ñ‚ÑÐºÐ¸ ÑÑŠÐ²ÐµÑ‚; Ð¿Ñ€ÐµÐ´ÑÐµÐ´Ð°Ñ‚ÐµÐ»ÑÑ‚ ÑÐµ Ð¾Ð¿Ñ€ÐµÐ´ÐµÐ»Ñ Ñ Ð¶Ñ€ÐµÐ±Ð¸Ð¹ Ð·Ð° 1 Ð³Ð¾Ð´Ð¸Ð½Ð° Ñ€Ð¾Ñ‚Ð°Ñ†Ð¸Ð¾Ð½Ð½Ð¾; Ð¼Ð°Ð½Ð´Ð°Ñ‚ÑŠÑ‚ Ðµ 5 Ð³Ð¾Ð´Ð¸Ð½Ð¸, ÑÐ°Ð¼Ð¾ Ð²ÐµÐ´Ð½ÑŠÐ¶.</li>
-          <li>Ð—Ð°Ð´ÑŠÐ»Ð¶Ð¸Ñ‚ÐµÐ»Ð½Ð¸ Ð´ÐµÐºÐ»Ð°Ñ€Ð°Ñ†Ð¸Ð¸ Ð·Ð° Ð¸Ð¼ÑƒÑ‰ÐµÑÑ‚Ð²Ð¾: Ð½ÐµÐ´Ð²Ð¸Ð¶Ð¸Ð¼Ð¸ Ð¸Ð¼Ð¾Ñ‚Ð¸, ÐœÐŸÐ¡, ÑÑƒÐ¼Ð¸ Ð½Ð°Ð´ <strong>5 000 ÐµÐ²Ñ€Ð¾</strong>, ÐºÑ€Ð¸Ð¿Ñ‚Ð¾Ð²Ð°Ð»ÑƒÑ‚Ð¸ Ð¸ Ð·Ð°Ð´ÑŠÐ»Ð¶ÐµÐ½Ð¸Ñ; Ð²ÐºÐ»ÑŽÑ‡Ð²Ð°Ñ‚ ÑÑŠÐ¿Ñ€ÑƒÐ³Ð°/Ð¿Ð°Ñ€Ñ‚Ð½ÑŒÐ¾Ñ€Ð° Ð¸ Ð½ÐµÐ½Ð°Ð²ÑŠÑ€ÑˆÐ¸Ð»Ð¸Ñ‚Ðµ Ð¿ÑŠÐ»Ð½Ð¾Ð»ÐµÑ‚Ð¸Ðµ Ð´ÐµÑ†Ð°.</li>
-          <li>ÐŸÑ€Ð¸ ÑƒÑÑ‚Ð°Ð½Ð¾Ð²ÐµÐ½Ð° Ñ€Ð°Ð·Ð»Ð¸ÐºÐ° Ð½Ð°Ð´ <strong>5 000 ÐµÐ²Ñ€Ð¾</strong>: Ð¼Ð°Ñ‚ÐµÑ€Ð¸Ð°Ð»Ð¸Ñ‚Ðµ Ð¾Ñ‚Ð¸Ð²Ð°Ñ‚ Ð¿Ñ€Ð¸ ÐÐÐŸ. ÐŸÑ€Ð¸ Ñ€Ð°Ð·Ð»Ð¸ÐºÐ° Ð½Ð°Ð´ <strong>12 500 ÐµÐ²Ñ€Ð¾</strong>: ÐšÐ¾Ð¼Ð¸ÑÐ¸ÑÑ‚Ð° Ð¾Ð±Ñ€Ð°Ð·ÑƒÐ²Ð° Ð¿Ñ€Ð¾Ð²ÐµÑ€ÐºÐ° Ð½Ð° Ð¸Ð¼ÑƒÑ‰ÐµÑÑ‚Ð²ÐµÐ½Ð¾Ñ‚Ð¾ ÑÑŠÑÑ‚Ð¾ÑÐ½Ð¸Ðµ.</li>
-          <li>ÐžÐ³Ñ€Ð°Ð½Ð¸Ñ‡ÐµÐ½Ð¸Ðµ ÑÐ»ÐµÐ´ Ð½Ð°Ð¿ÑƒÑÐºÐ°Ð½Ðµ: <strong>1 Ð³Ð¾Ð´Ð¸Ð½Ð°</strong> Ð·Ð°Ð±Ñ€Ð°Ð½Ð° Ð·Ð° Ñ€Ð°Ð±Ð¾Ñ‚Ð° Ð¸Ð»Ð¸ ÑƒÑ‡Ð°ÑÑ‚Ð¸Ðµ Ð² Ð´Ñ€ÑƒÐ¶ÐµÑÑ‚Ð²Ð°, ÑÐ¿Ñ€ÑÐ¼Ð¾ ÐºÐ¾Ð¸Ñ‚Ð¾ Ðµ ÑƒÐ¿Ñ€Ð°Ð¶Ð½ÑÐ²Ð°Ð½ ÐºÐ¾Ð½Ñ‚Ñ€Ð¾Ð» Ð² Ð¿Ð¾ÑÐ»ÐµÐ´Ð½Ð°Ñ‚Ð° Ð³Ð¾Ð´Ð¸Ð½Ð° Ð¾Ñ‚ Ð¼Ð°Ð½Ð´Ð°Ñ‚Ð°.</li>
-          <li>Ð Ð°Ð·ÑÐ»ÐµÐ´Ð²Ð°Ñ‰Ð¸ Ð¸Ð½ÑÐ¿ÐµÐºÑ‚Ð¾Ñ€Ð¸ Ñ Ð´Ð¾ÑÑŠÐ´ÐµÐ±Ð½Ð¸ Ð¿Ñ€Ð°Ð²Ð¾Ð¼Ð¾Ñ‰Ð¸Ñ; Ñ€Ð°Ð·Ð¿Ñ€ÐµÐ´ÐµÐ»ÐµÐ½Ð¸ÐµÑ‚Ð¾ Ð½Ð° Ð´ÐµÐ»Ð°Ñ‚Ð° Ðµ ÑÐ»ÑƒÑ‡Ð°Ð¹Ð½Ð¾ Ð¸ ÐµÐ»ÐµÐºÑ‚Ñ€Ð¾Ð½Ð½Ð¾.</li>
-          <li>Ð¡Ð°Ð½ÐºÑ†Ð¸Ð¸: Ð½ÐµÐ¿Ð¾Ð´Ð°Ð²Ð°Ð½Ðµ Ð½Ð° Ð´ÐµÐºÐ»Ð°Ñ€Ð°Ñ†Ð¸Ñ: 500â€“1 500 ÐµÐ²Ñ€Ð¾; ÐºÐ¾Ð½Ñ„Ð»Ð¸ÐºÑ‚ Ð½Ð° Ð¸Ð½Ñ‚ÐµÑ€ÐµÑÐ¸: 2 500â€“5 000 ÐµÐ²Ñ€Ð¾; Ð½Ð°Ñ€ÑƒÑˆÐµÐ½Ð¸Ðµ Ð½Ð° Ð·Ð°Ð±Ñ€Ð°Ð½Ð°Ñ‚Ð° ÑÐ»ÐµÐ´ Ð½Ð°Ð¿ÑƒÑÐºÐ°Ð½Ðµ: Ð´Ð¾ 10 000 ÐµÐ²Ñ€Ð¾, Ð·Ð° Ð´Ñ€ÑƒÐ¶ÐµÑÑ‚Ð²Ð¾Ñ‚Ð¾ Ð´Ð¾ 25 000 ÐµÐ²Ñ€Ð¾.</li>
-          <li>Ð’ÑÐ¸Ñ‡ÐºÐ¸ Ð´ÐµÐºÐ»Ð°Ñ€Ð°Ñ†Ð¸Ð¸ ÑÐ° Ð¿ÑƒÐ±Ð»Ð¸Ñ‡Ð½Ð¸ Ð² Ñ€ÐµÐ°Ð»Ð½Ð¾ Ð²Ñ€ÐµÐ¼Ðµ Ð² Ð¾Ñ‚Ð²Ð¾Ñ€ÐµÐ½, Ð¼Ð°ÑˆÐ¸Ð½Ð½Ð¾Ñ‡ÐµÑ‚Ð¸Ð¼ Ñ„Ð¾Ñ€Ð¼Ð°Ñ‚; ÐµÐ´Ð¸Ð½Ð½Ð° ÐµÐ»ÐµÐºÑ‚Ñ€Ð¾Ð½Ð½Ð° ÑÐ¸ÑÑ‚ÐµÐ¼Ð° Ð² ÑÑ€Ð¾Ðº <strong>18 Ð¼ÐµÑÐµÑ†Ð°</strong>.</li>
-          <li>ÐšÐ¾Ð¼Ð¸ÑÐ¸ÑÑ‚Ð° Ðµ Ð¿Ñ€Ð°Ð²Ð¾Ð¿Ñ€Ð¸ÐµÐ¼Ð½Ð¸Ðº Ð½Ð° Ð°Ð½Ñ‚Ð¸ÐºÐ¾Ñ€ÑƒÐ¿Ñ†Ð¸Ð¾Ð½Ð½Ð¸Ñ‚Ðµ Ð´ÐµÐ¹Ð½Ð¾ÑÑ‚Ð¸ Ð½Ð° Ð¡Ð¼ÐµÑ‚Ð½Ð°Ñ‚Ð° Ð¿Ð°Ð»Ð°Ñ‚Ð°.</li>
+          <li>Петчленна комисия: по един от НС, президента, ВКС, ВАС и Висшия адвокатски съвет; председателят се определя с жребий за 1 година ротационно; мандатът е 5 години, само веднъж.</li>
+          <li>Задължителни декларации за имущество: недвижими имоти, МПС, суми над <strong>5 000 евро</strong>, криптовалути и задължения; включват съпруга/партньора и ненавършилите пълнолетие деца.</li>
+          <li>При установена разлика над <strong>5 000 евро</strong>: материалите отиват при НАП. При разлика над <strong>12 500 евро</strong>: Комисията образува проверка на имущественото състояние.</li>
+          <li>Ограничение след напускане: <strong>1 година</strong> забрана за работа или участие в дружества, спрямо които е упражняван контрол в последната година от мандата.</li>
+          <li>Разследващи инспектори с досъдебни правомощия; разпределението на делата е случайно и електронно.</li>
+          <li>Санкции: неподаване на декларация: 500–1 500 евро; конфликт на интереси: 2 500–5 000 евро; нарушение на забраната след напускане: до 10 000 евро, за дружеството до 25 000 евро.</li>
+          <li>Всички декларации са публични в реално време в отворен, машинночетим формат; единна електронна система в срок <strong>18 месеца</strong>.</li>
+          <li>Комисията е правоприемник на антикорупционните дейности на Сметната палата.</li>
         </ul>
       </div>
 
-      <!-- ÐšÐ¾Ð¹ Ð¿ÐµÑ‡ÐµÐ»Ð¸ / ÐšÐ¾Ð¹ Ð³ÑƒÐ±Ð¸ -->
+      <!-- Кой печели / Кой губи -->
       <div class="nl-law-wl">
         <div class="nl-law-win">
-          <div class="nl-law-wl-head">ÐšÐ¾Ð¹ Ð¿ÐµÑ‡ÐµÐ»Ð¸</div>
-          <div class="nl-law-wl-text">Ð“Ñ€Ð°Ð¶Ð´Ð°Ð½Ð¸ Ð¸ Ð¾Ð±Ñ‰ÐµÑÑ‚Ð²Ð¾: Ð¿Ð¾-ÑÐ¿ÐµÑ†Ð¸Ð°Ð»Ð¸Ð·Ð¸Ñ€Ð°Ð½ Ð¼ÐµÑ…Ð°Ð½Ð¸Ð·ÑŠÐ¼ Ð·Ð° ÐºÐ¾Ð½Ñ‚Ñ€Ð¾Ð» Ð¸ Ð¾Ñ‚Ñ‡ÐµÑ‚Ð½Ð¾ÑÑ‚. ÐšÐžÐÐŸÐ˜ Ð¿Ð¾Ð»ÑƒÑ‡Ð°Ð²Ð° Ð°Ð²Ñ‚Ð¾Ð¼Ð°Ñ‚Ð¸Ñ‡Ð½Ð¸ ÑƒÐ²ÐµÐ´Ð¾Ð¼Ð»ÐµÐ½Ð¸Ñ Ð¿Ñ€Ð¸ Ð¿Ñ€Ð°Ð³Ð¾Ð²Ð¸ Ð½ÐµÑÑŠÐ¾Ñ‚Ð²ÐµÑ‚ÑÑ‚Ð²Ð¸Ñ.</div>
+          <div class="nl-law-wl-head">Кой печели</div>
+          <div class="nl-law-wl-text">Граждани и общество: по-специализиран механизъм за контрол и отчетност. КОНПИ получава автоматични уведомления при прагови несъответствия.</div>
         </div>
         <div class="nl-law-lose">
-          <div class="nl-law-wl-head">ÐšÐ¾Ð¹ Ð³ÑƒÐ±Ð¸</div>
-          <div class="nl-law-wl-text">Ð›Ð¸Ñ†Ð°Ñ‚Ð° Ð½Ð° Ð¿ÑƒÐ±Ð»Ð¸Ñ‡Ð½Ð¸ Ð´Ð»ÑŠÐ¶Ð½Ð¾ÑÑ‚Ð¸: Ð·Ð½Ð°Ñ‡Ð¸Ñ‚ÐµÐ»Ð½Ð¾ Ñ€Ð°Ð·ÑˆÐ¸Ñ€ÐµÐ½Ð¸ Ð·Ð°Ð´ÑŠÐ»Ð¶ÐµÐ½Ð¸Ñ Ð·Ð° Ð¿Ñ€Ð¾Ð·Ñ€Ð°Ñ‡Ð½Ð¾ÑÑ‚ Ð¸ ÐºÐ¾Ð½Ñ‚Ñ€Ð¾Ð». Ð¡Ð¼ÐµÑ‚Ð½Ð°Ñ‚Ð° Ð¿Ð°Ð»Ð°Ñ‚Ð° Ð³ÑƒÐ±Ð¸ Ð¸Ð·Ñ†ÑÐ»Ð¾ Ð°Ð½Ñ‚Ð¸ÐºÐ¾Ñ€ÑƒÐ¿Ñ†Ð¸Ð¾Ð½Ð½Ð¸Ñ‚Ðµ ÑÐ¸ Ñ„ÑƒÐ½ÐºÑ†Ð¸Ð¸.</div>
+          <div class="nl-law-wl-head">Кой губи</div>
+          <div class="nl-law-wl-text">Лицата на публични длъжности: значително разширени задължения за прозрачност и контрол. Сметната палата губи изцяло антикорупционните си функции.</div>
         </div>
       </div>
 
-      <!-- Ð—Ð°Ð±ÐµÐ»ÐµÐ¶Ð¸Ñ‚ÐµÐ»Ð½Ð¾ -->
+      <!-- Забележително -->
       <div class="nl-law-notable">
-        <div class="nl-law-notable-head">â–¸ Ð—Ð°Ð±ÐµÐ»ÐµÐ¶Ð¸Ñ‚ÐµÐ»Ð½Ð¾</div>
-        ÐŸÑ€Ð¾ÐºÑƒÑ€Ð¾Ñ€ÑŠÑ‚ ÑÐ°Ð¼ Ðµ Ð´Ð»ÑŠÐ¶ÐµÐ½ Ð´Ð° Ð¸Ð·Ð¿Ñ€Ð°Ñ‚Ð¸ Ð¿Ñ€ÐµÐ¿Ð¸ÑÐºÐ°Ñ‚Ð° Ð½Ð° ÑÑŠÐ´Ð° Ð² 3 Ð´Ð½Ð¸ Ð¿Ñ€Ð¸ Ð¿Ñ€ÐµÐºÑ€Ð°Ñ‚ÑÐ²Ð°Ð½Ðµ Ð¸Ð»Ð¸ ÑÐ¿Ð¸Ñ€Ð°Ð½Ðµ Ð½Ð° Ð´ÐµÐ»Ð¾ Ð¾Ñ‚ ÐºÐ¾Ð¼Ð¿ÐµÑ‚ÐµÐ½Ñ‚Ð½Ð¾ÑÑ‚Ñ‚Ð° Ð½Ð° ÐšÐ¾Ð¼Ð¸ÑÐ¸ÑÑ‚Ð°, Ð±ÐµÐ· Ð´Ð° Ñ‡Ð°ÐºÐ° Ð¶Ð°Ð»Ð±Ð°. ÐÐµÑ‚Ð¸Ð¿Ð¸Ñ‡Ð½Ð¾ Ð·Ð° Ð±ÑŠÐ»Ð³Ð°Ñ€ÑÐºÐ°Ñ‚Ð° Ð½Ð°ÐºÐ°Ð·Ð°Ñ‚ÐµÐ»Ð½Ð¾Ð¿Ñ€Ð¾Ñ†ÐµÑÑƒÐ°Ð»Ð½Ð° Ñ‚Ñ€Ð°Ð´Ð¸Ñ†Ð¸Ñ.
+        <div class="nl-law-notable-head">▸ Забележително</div>
+        Прокурорът сам е длъжен да изпрати преписката на съда в 3 дни при прекратяване или спиране на дело от компетентността на Комисията, без да чака жалба. Нетипично за българската наказателнопроцесуална традиция.
       </div>
 
-      <!-- Ð’ Ð•Ð¡ -->
+      <!-- В ЕС -->
       <div style="background:#EAF4FB; border:1px solid #B8D8EC; border-radius:6px; padding:10px 13px; margin-bottom:14px;">
-        <div style="font-size:9px; font-weight:900; letter-spacing:0.12em; text-transform:uppercase; color:#1B6A9E; margin-bottom:5px;">â–¸ Ð’ Ð•Ð¡</div>
-        <div style="font-size:12.5px; color:var(--ink2); line-height:1.6;">Ð¡Ð¿ÐµÑ†Ð¸Ð°Ð»Ð¸Ð·Ð¸Ñ€Ð°Ð½Ð¸ Ð°Ð½Ñ‚Ð¸ÐºÐ¾Ñ€ÑƒÐ¿Ñ†Ð¸Ð¾Ð½Ð½Ð¸ Ð¾Ñ€Ð³Ð°Ð½Ð¸ Ñ Ð´ÐµÐºÐ»Ð°Ñ€Ð°Ñ†Ð¸Ð¸ Ð¸ Ñ€Ð°Ð·ÑÐ»ÐµÐ´Ð²Ð°Ñ‚ÐµÐ»Ð½Ð¸ Ñ„ÑƒÐ½ÐºÑ†Ð¸Ð¸ ÑÑŠÑ‰ÐµÑÑ‚Ð²ÑƒÐ²Ð°Ñ‚ Ð² Ð ÑƒÐ¼ÑŠÐ½Ð¸Ñ (ANI, 2007 Ð³.), Ð¡Ð»Ð¾Ð²Ð°ÐºÐ¸Ñ Ð¸ Ð¥ÑŠÑ€Ð²Ð°Ñ‚Ð¸Ñ. Ð¥Ð°Ñ€Ð°ÐºÑ‚ÐµÑ€Ð½Ð° Ñ€Ð°Ð·Ð»Ð¸ÐºÐ°: Ð½Ð¾Ð²Ð°Ñ‚Ð° ÐšÐ¾Ð¼Ð¸ÑÐ¸Ñ ÐºÐ¾Ð½Ñ†ÐµÐ½Ñ‚Ñ€Ð¸Ñ€Ð° Ð² ÐµÐ´Ð½Ð¾ Ñ‚ÑÐ»Ð¾ Ð¿Ñ€ÐµÐ²ÐµÐ½Ñ†Ð¸ÑÑ‚Ð°, Ð¸Ð·Ð´Ð¸Ñ€Ð²Ð°Ð½ÐµÑ‚Ð¾ Ð¸ Ñ€Ð°Ð·ÑÐ»ÐµÐ´Ð²Ð°Ð½ÐµÑ‚Ð¾, Ð´Ð¾ÐºÐ°Ñ‚Ð¾ Ð² Ð¿Ð¾Ð²ÐµÑ‡ÐµÑ‚Ð¾ Ð·Ð°Ð¿Ð°Ð´Ð½Ð¾ÐµÐ²Ñ€Ð¾Ð¿ÐµÐ¹ÑÐºÐ¸ ÑÑ‚Ñ€Ð°Ð½Ð¸ Ñ‚ÐµÐ·Ð¸ Ñ„ÑƒÐ½ÐºÑ†Ð¸Ð¸ ÑÐ° Ñ€Ð°Ð·Ð´ÐµÐ»ÐµÐ½Ð¸. ÐÐ²Ñ‚Ð¾Ð¼Ð°Ñ‚Ð¸Ñ‡Ð½Ð¸ÑÑ‚ ÑÑŠÐ´ÐµÐ±ÐµÐ½ ÐºÐ¾Ð½Ñ‚Ñ€Ð¾Ð» Ð²ÑŠÑ€Ñ…Ñƒ Ð¿Ñ€Ð¾ÐºÑƒÑ€Ð¾Ñ€ÑÐºÐ¸ Ð¾Ñ‚ÐºÐ°Ð·Ð¸ Ðµ Ð¿Ð¾-Ð±Ð»Ð¸Ð·Ð¾ Ð´Ð¾ Ð¼Ð¾Ð´ÐµÐ»Ð° Ð½Ð° Ð ÑƒÐ¼ÑŠÐ½Ð¸Ñ Ð¸ ÐœÐ¾Ð»Ð´Ð¾Ð²Ð°, Ð¾Ñ‚ÐºÐ¾Ð»ÐºÐ¾Ñ‚Ð¾ Ð´Ð¾ Ð“ÐµÑ€Ð¼Ð°Ð½Ð¸Ñ Ð¸Ð»Ð¸ Ð¤Ñ€Ð°Ð½Ñ†Ð¸Ñ.</div>
+        <div style="font-size:9px; font-weight:900; letter-spacing:0.12em; text-transform:uppercase; color:#1B6A9E; margin-bottom:5px;">▸ В ЕС</div>
+        <div style="font-size:12.5px; color:var(--ink2); line-height:1.6;">Специализирани антикорупционни органи с декларации и разследвателни функции съществуват в Румъния (ANI, 2007 г.), Словакия и Хърватия. Характерна разлика: новата Комисия концентрира в едно тяло превенцията, издирването и разследването, докато в повечето западноевропейски страни тези функции са разделени. Автоматичният съдебен контрол върху прокурорски откази е по-близо до модела на Румъния и Молдова, отколкото до Германия или Франция.</div>
       </div>
 
-      <!-- Ð“Ð»Ð°ÑÑƒÐ²Ð°Ð½Ðµ -->
+      <!-- Гласуване -->
       <div class="vote-block">
-        <div class="vote-block-head">Ð“Ð»Ð°ÑÑƒÐ²Ð°Ð½Ðµ Â· Ð²Ñ‚Ð¾Ñ€Ð¾ Ñ‡ÐµÑ‚ÐµÐ½Ðµ Â· 29 Ð¼Ð°Ð¹ 2026</div>
+        <div class="vote-block-head">Гласуване · второ четене · 29 май 2026</div>
         <div class="vote-total-bar">
           <div class="vtb-for" style="width:94.3%"></div>
           <div class="vtb-against" style="width:3.6%"></div>
           <div class="vtb-abstain" style="width:2.1%"></div>
         </div>
         <div class="vote-totals">
-          <span class="vt-for">â–² 132 Ð—Ð°</span>
-          <span class="vt-against">â–¼ 5 ÐŸÑ€Ð¾Ñ‚Ð¸Ð²</span>
-          <span class="vt-abstain">â€“ 3 Ð’ÑŠÐ·Ð´ÑŠÑ€Ð¶Ð°Ð»Ð¸</span>
-          <span style="color:var(--pale)">140 Ð³Ð»Ð°ÑÑƒÐ²Ð°Ð»Ð¸</span>
+          <span class="vt-for">▲ 132 За</span>
+          <span class="vt-against">▼ 5 Против</span>
+          <span class="vt-abstain">– 3 Въздържали</span>
+          <span style="color:var(--pale)">140 гласували</span>
         </div>
         <div class="party-table">
-          <!-- ÐŸÐ‘: 103 Ð·Ð°, 1 Ð¿Ñ€Ð¾Ñ‚Ð¸Ð², 3 Ð²ÑŠÐ·Ð´ÑŠÑ€Ð¶Ð°Ð»Ð¸ -->
+          <!-- ПБ: 103 за, 1 против, 3 въздържали -->
           <div class="pt-row">
-            <div class="pt-name">ÐŸÐ‘</div>
+            <div class="pt-name">ПБ</div>
             <div class="pt-bar-wrap">
               <div class="pt-bar-for" style="width:93%"></div>
               <div class="pt-bar-against" style="width:1%"></div>
               <div class="pt-bar-abstain" style="width:3%"></div>
             </div>
-            <div class="pt-verdict for">103 Ð·Ð°</div>
+            <div class="pt-verdict for">103 за</div>
           </div>
-          <!-- Ð”Ð‘: 10 Ð·Ð° -->
+          <!-- ДБ: 10 за -->
           <div class="pt-row">
-            <div class="pt-name">Ð”Ð‘</div>
+            <div class="pt-name">ДБ</div>
             <div class="pt-bar-wrap">
               <div class="pt-bar-for" style="width:100%"></div>
             </div>
-            <div class="pt-verdict for">10 Ð·Ð°</div>
+            <div class="pt-verdict for">10 за</div>
           </div>
-          <!-- Ð’ÐªÐ—Ð ÐÐ–Ð”ÐÐÐ•: 9 Ð·Ð° -->
+          <!-- ВЪЗРАЖДАНЕ: 9 за -->
           <div class="pt-row">
-            <div class="pt-name">Ð’ÐªÐ—Ð ÐÐ–Ð”ÐÐÐ•</div>
+            <div class="pt-name">ВЪЗРАЖДАНЕ</div>
             <div class="pt-bar-wrap">
               <div class="pt-bar-for" style="width:100%"></div>
             </div>
-            <div class="pt-verdict for">9 Ð·Ð°</div>
+            <div class="pt-verdict for">9 за</div>
           </div>
-          <!-- Ð“Ð•Ð Ð‘-Ð¡Ð”Ð¡: 5 Ð·Ð° -->
+          <!-- ГЕРБ-СДС: 5 за -->
           <div class="pt-row">
-            <div class="pt-name">Ð“Ð•Ð Ð‘-Ð¡Ð”Ð¡</div>
+            <div class="pt-name">ГЕРБ-СДС</div>
             <div class="pt-bar-wrap">
               <div class="pt-bar-for" style="width:100%"></div>
             </div>
-            <div class="pt-verdict for">5 Ð·Ð°</div>
+            <div class="pt-verdict for">5 за</div>
           </div>
-          <!-- ÐŸÐŸ: 5 Ð·Ð° -->
+          <!-- ПП: 5 за -->
           <div class="pt-row">
-            <div class="pt-name">ÐŸÐŸ</div>
+            <div class="pt-name">ПП</div>
             <div class="pt-bar-wrap">
               <div class="pt-bar-for" style="width:100%"></div>
             </div>
-            <div class="pt-verdict for">5 Ð·Ð°</div>
+            <div class="pt-verdict for">5 за</div>
           </div>
-          <!-- Ð”ÐŸÐ¡: 0 Ð·Ð°, 4 Ð¿Ñ€Ð¾Ñ‚Ð¸Ð² -->
+          <!-- ДПС: 0 за, 4 против -->
           <div class="pt-row">
-            <div class="pt-name">Ð”ÐŸÐ¡</div>
+            <div class="pt-name">ДПС</div>
             <div class="pt-bar-wrap">
               <div class="pt-bar-against" style="width:100%"></div>
             </div>
-            <div class="pt-verdict against">4 Ð¿Ñ€Ð¾Ñ‚Ð¸Ð²</div>
+            <div class="pt-verdict against">4 против</div>
           </div>
         </div>
       </div>
 
       <div class="nl-law-meta">
-        ÐžÐ±Ð½Ð°Ñ€Ð¾Ð´Ð²Ð°Ð½: 5 ÑŽÐ½Ð¸ 2026 Â· Ð”Ð’ Ð±Ñ€. 51 Â· ÐŸÑ€Ð¸ÐµÑ‚: 29 Ð¼Ð°Ð¹ 2026
-        <a href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243769" target="_blank">â†’ Ð”Ð’ â†—</a>
+        Обнародван: 5 юни 2026 · ДВ бр. 51 · Приет: 29 май 2026
+        <a href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243769" target="_blank">→ ДВ ↗</a>
       </div>
     </div>
   </div>
 
-  <!-- â”€â”€ CARD 2: ÐŸÑ€Ð°Ð²Ð¸Ð»Ð½Ð¸Ðº Ð½Ð° ÐÐ¡ â”€â”€ -->
+  <!-- ── CARD 2: Правилник на НС ── -->
   <div class="nl-law-card">
     <div class="nl-law-card-head" onclick="toggleCard(this)">
       <div class="nl-law-badges">
-        <span class="badge-type">ÐŸÐ ÐÐ’Ð˜Ð›ÐÐ˜Ðš</span>
-        <span class="badge-organ">ÐÐ°Ñ€Ð¾Ð´Ð½Ð¾ ÑÑŠÐ±Ñ€Ð°Ð½Ð¸Ðµ</span>
+        <span class="badge-type">ПРАВИЛНИК</span>
+        <span class="badge-organ">Народно събрание</span>
       </div>
-      <div class="nl-law-title">Ð‘Ð¸Ð¾Ð¼ÐµÑ‚Ñ€Ð¸Ñ‡Ð½Ð¾ Ð³Ð»Ð°ÑÑƒÐ²Ð°Ð½Ðµ, ÑƒÐ´Ñ€ÑŠÐ¶ÐºÐ¸ Ð¿Ñ€Ð¸ Ð¾Ñ‚ÑÑŠÑÑ‚Ð²Ð¸Ñ Ð¸ Ð¾Ð½Ð»Ð°Ð¹Ð½ Ð¿ÐµÑ‚Ð¸Ñ†Ð¸Ð¸: Ð½Ð¾Ð² Ð¿Ñ€Ð°Ð²Ð¸Ð»Ð½Ð¸Ðº ÑƒÑ€ÐµÐ¶Ð´Ð° Ñ€Ð°Ð±Ð¾Ñ‚Ð°Ñ‚Ð° Ð½Ð° Ð¿Ð°Ñ€Ð»Ð°Ð¼ÐµÐ½Ñ‚Ð°</div>
+      <div class="nl-law-title">Биометрично гласуване, удръжки при отсъствия и онлайн петиции: нов правилник урежда работата на парламента</div>
       <div class="nl-law-tags">
-        <span class="nl-law-tag">ÐÐ°Ñ€Ð¾Ð´Ð½Ð¾ ÑÑŠÐ±Ñ€Ð°Ð½Ð¸Ðµ</span>
-        <span class="nl-law-tag">ÐŸÑ€Ð¾Ð·Ñ€Ð°Ñ‡Ð½Ð¾ÑÑ‚</span>
-        <span class="nl-law-tag">ÐŸÐ°Ñ€Ð»Ð°Ð¼ÐµÐ½Ñ‚Ð°Ñ€Ð½Ð° Ð¿Ñ€Ð¾Ñ†ÐµÐ´ÑƒÑ€Ð°</span>
+        <span class="nl-law-tag">Народно събрание</span>
+        <span class="nl-law-tag">Прозрачност</span>
+        <span class="nl-law-tag">Парламентарна процедура</span>
       </div>
-      <span class="nl-law-toggle">â–¾ ÐŸÐ¾ÐºÐ°Ð¶Ð¸</span>
+      <span class="nl-law-toggle">▾ Покажи</span>
     </div>
     <div class="nl-law-body">
-      <div class="nl-law-lead">ÐŸÑ€Ð°Ð²Ð¸Ð»Ð½Ð¸ÐºÑŠÑ‚ ÑƒÑÑ‚Ð°Ð½Ð¾Ð²ÑÐ²Ð° Ð¸Ð·Ñ†ÑÐ»Ð¾ Ð½Ð¾Ð²Ð°Ñ‚Ð° Ñ€Ð°Ð¼ÐºÐ° Ð·Ð° Ð¾Ñ€Ð³Ð°Ð½Ð¸Ð·Ð°Ñ†Ð¸ÑÑ‚Ð° Ð½Ð° 52-Ñ€Ð¾Ñ‚Ð¾ ÐÐ°Ñ€Ð¾Ð´Ð½Ð¾ ÑÑŠÐ±Ñ€Ð°Ð½Ð¸Ðµ. Ð”Ð²Ðµ Ð¼ÐµÑ€ÐºÐ¸ Ð¸Ð·Ð¿ÑŠÐºÐ²Ð°Ñ‚: Ð·Ð°Ð´ÑŠÐ»Ð¶Ð¸Ñ‚ÐµÐ»Ð½Ð¾ Ð±Ð¸Ð¾Ð¼ÐµÑ‚Ñ€Ð¸Ñ‡Ð½Ð¾ Ð³Ð»Ð°ÑÑƒÐ²Ð°Ð½Ðµ ÑÑ€ÐµÑ‰Ñƒ Ð¿Ñ€Ð°ÐºÑ‚Ð¸ÐºÐ°Ñ‚Ð° Ð´ÐµÐ¿ÑƒÑ‚Ð°Ñ‚Ð¸ Ð´Ð° Ð³Ð»Ð°ÑÑƒÐ²Ð°Ñ‚ Ñ Ñ‡ÑƒÐ¶Ð´Ð¸ ÐºÐ°Ñ€Ñ‚Ð¸ Ð¸ Ð·Ð½Ð°Ñ‡Ð¸Ñ‚ÐµÐ»Ð½Ð¸ Ñ„Ð¸Ð½Ð°Ð½ÑÐ¾Ð²Ð¸ ÑÐ°Ð½ÐºÑ†Ð¸Ð¸ Ð¿Ñ€Ð¸ ÑÐ¸ÑÑ‚ÐµÐ¼Ð½Ð¸ Ð¾Ñ‚ÑÑŠÑÑ‚Ð²Ð¸Ñ.</div>
+      <div class="nl-law-lead">Правилникът установява изцяло новата рамка за организацията на 52-рото Народно събрание. Две мерки изпъкват: задължително биометрично гласуване срещу практиката депутати да гласуват с чужди карти и значителни финансови санкции при системни отсъствия.</div>
       <div class="nl-law-points">
-        <div class="nl-law-points-head">ÐžÑÐ½Ð¾Ð²Ð½Ð¸ Ð¼Ð¾Ð¼ÐµÐ½Ñ‚Ð¸</div>
+        <div class="nl-law-points-head">Основни моменти</div>
         <ul>
-          <li>ÐœÐ¸Ð½Ð¸Ð¼ÑƒÐ¼ <strong>10 Ð´ÐµÐ¿ÑƒÑ‚Ð°Ñ‚Ð¸</strong> Ð·Ð° Ð¾Ð±Ñ€Ð°Ð·ÑƒÐ²Ð°Ð½Ðµ Ð½Ð° Ð¿Ð°Ñ€Ð»Ð°Ð¼ÐµÐ½Ñ‚Ð°Ñ€Ð½Ð° Ð³Ñ€ÑƒÐ¿Ð°; Ð´ÐµÐ¿ÑƒÑ‚Ð°Ñ‚, Ð½Ð°Ð¿ÑƒÑÐ½Ð°Ð» Ð¸Ð»Ð¸ Ð¸Ð·ÐºÐ»ÑŽÑ‡ÐµÐ½ Ð¾Ñ‚ Ð³Ñ€ÑƒÐ¿Ð°, Ð½Ðµ Ð¼Ð¾Ð¶Ðµ Ð´Ð° Ð²Ð»ÐµÐ·Ðµ Ð² Ð´Ñ€ÑƒÐ³Ð°, Ð½Ð¸Ñ‚Ð¾ Ð´Ð° Ð¾Ð±Ñ€Ð°Ð·ÑƒÐ²Ð° Ð½Ð¾Ð²Ð°.</li>
-          <li>Ð‘Ð¸Ð¾Ð¼ÐµÑ‚Ñ€Ð¸Ñ‡Ð½Ð¾ Ð³Ð»Ð°ÑÑƒÐ²Ð°Ð½Ðµ Ð·Ð°Ð´ÑŠÐ»Ð¶Ð¸Ñ‚ÐµÐ»Ð½Ð¾ Ð·Ð° Ð²ÑÐµÐºÐ¸ Ð´ÐµÐ¿ÑƒÑ‚Ð°Ñ‚ Ð² Ð¿Ð»ÐµÐ½Ð°Ñ€Ð½Ð° Ð·Ð°Ð»Ð°.</li>
-          <li>ÐŸÑ€Ð¸ 3 Ð¿Ð¾Ñ€ÐµÐ´Ð½Ð¸ Ð¸Ð»Ð¸ Ð¾Ð±Ñ‰Ð¾ 5 Ð½ÐµÐ¾Ð¿Ñ€Ð°Ð²Ð´Ð°Ð½Ð¸ Ð¾Ñ‚ÑÑŠÑÑ‚Ð²Ð¸Ñ Ð² Ð¼ÐµÑÐµÑ†Ð°: ÑƒÐ´Ñ€ÑŠÐ¶ÐºÐ° Ð¾Ñ‚ <strong>2/3 Ð¾Ñ‚ Ð¼ÐµÑÐµÑ‡Ð½Ð¾Ñ‚Ð¾ Ð²ÑŠÐ·Ð½Ð°Ð³Ñ€Ð°Ð¶Ð´ÐµÐ½Ð¸Ðµ</strong>.</li>
-          <li>Ð”ÐµÐ¿ÑƒÑ‚Ð°Ñ‚ÑÐºÐ¾ Ð²ÑŠÐ·Ð½Ð°Ð³Ñ€Ð°Ð¶Ð´ÐµÐ½Ð¸Ðµ = <strong>3Ã— ÑÑ€ÐµÐ´Ð½Ð° Ð¼ÐµÑÐµÑ‡Ð½Ð° Ð·Ð°Ð¿Ð»Ð°Ñ‚Ð°</strong> Ð² Ð¾Ð±Ñ‰ÐµÑÑ‚Ð²ÐµÐ½Ð¸Ñ ÑÐµÐºÑ‚Ð¾Ñ€, Ð¿Ñ€ÐµÐ¸Ð·Ñ‡Ð¸ÑÐ»ÑÐ²Ð°Ð½Ð¾ Ñ‚Ñ€Ð¸Ð¼ÐµÑÐµÑ‡Ð½Ð¾.</li>
-          <li>Ð—Ð°ÑÐµÐ´Ð°Ð½Ð¸ÑÑ‚Ð° Ð½Ð° ÐºÐ¾Ð¼Ð¸ÑÐ¸Ð¸Ñ‚Ðµ ÑÐµ Ð¸Ð·Ð»ÑŠÑ‡Ð²Ð°Ñ‚ Ð² Ñ€ÐµÐ°Ð»Ð½Ð¾ Ð²Ñ€ÐµÐ¼Ðµ Ð¾Ð½Ð»Ð°Ð¹Ð½; Ð¿Ñ€Ð¾Ñ‚Ð¾ÐºÐ¾Ð»Ð¸Ñ‚Ðµ ÑÐµ Ð¿ÑƒÐ±Ð»Ð¸ÐºÑƒÐ²Ð°Ñ‚ Ð² 7 Ð´Ð½Ð¸.</li>
-          <li>ÐžÐ½Ð»Ð°Ð¹Ð½ Ð¿ÐµÑ‚Ð¸Ñ†Ð¸Ð¸ Ð·Ð° Ð³Ñ€Ð°Ð¶Ð´Ð°Ð½Ð¸ Ñ‡Ñ€ÐµÐ· ÑÐ¿ÐµÑ†Ð¸Ð°Ð»ÐµÐ½ Ð¿Ð¾Ñ€Ñ‚Ð°Ð»; Ð·Ð°ÐºÐ¾Ð½Ð¾Ð¿Ñ€Ð¾ÐµÐºÑ‚Ð¸ Ð±ÐµÐ· Ð¼Ð¾Ñ‚Ð¸Ð²Ð¸ Ð¸ Ð¾Ñ†ÐµÐ½ÐºÐ° Ð½Ð° Ð²ÑŠÐ·Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸ÐµÑ‚Ð¾ Ð½Ðµ ÑÐµ Ñ€Ð°Ð·Ð¿Ñ€ÐµÐ´ÐµÐ»ÑÑ‚.</li>
+          <li>Минимум <strong>10 депутати</strong> за образуване на парламентарна група; депутат, напуснал или изключен от група, не може да влезе в друга, нито да образува нова.</li>
+          <li>Биометрично гласуване задължително за всеки депутат в пленарна зала.</li>
+          <li>При 3 поредни или общо 5 неоправдани отсъствия в месеца: удръжка от <strong>2/3 от месечното възнаграждение</strong>.</li>
+          <li>Депутатско възнаграждение = <strong>3× средна месечна заплата</strong> в обществения сектор, преизчислявано тримесечно.</li>
+          <li>Заседанията на комисиите се излъчват в реално време онлайн; протоколите се публикуват в 7 дни.</li>
+          <li>Онлайн петиции за граждани чрез специален портал; законопроекти без мотиви и оценка на въздействието не се разпределят.</li>
         </ul>
       </div>
       <div class="nl-law-wl">
         <div class="nl-law-win">
-          <div class="nl-law-wl-head">ÐšÐ¾Ð¹ Ð¿ÐµÑ‡ÐµÐ»Ð¸</div>
-          <div class="nl-law-wl-text">Ð“Ñ€Ð°Ð¶Ð´Ð°Ð½Ð¸: Ð¿Ð¾Ð²ÐµÑ‡Ðµ Ð¿Ñ€Ð¾Ð·Ñ€Ð°Ñ‡Ð½Ð¾ÑÑ‚ Ð¸ Ð¿Ñ€Ð°Ð²Ð¾ Ð½Ð° ÑƒÑ‡Ð°ÑÑ‚Ð¸Ðµ. ÐœÐ°Ð»ÐºÐ¸ Ð¿Ð°Ñ€Ð»Ð°Ð¼ÐµÐ½Ñ‚Ð°Ñ€Ð½Ð¸ Ð³Ñ€ÑƒÐ¿Ð¸: Ð³Ð°Ñ€Ð°Ð½Ñ‚Ð¸Ñ€Ð°Ð½Ð¾ Ð¼Ð¸Ð½Ð¸Ð¼Ð°Ð»Ð½Ð¾ Ð¸Ð·ÐºÐ°Ð·Ð²Ð°Ð½Ðµ.</div>
+          <div class="nl-law-wl-head">Кой печели</div>
+          <div class="nl-law-wl-text">Граждани: повече прозрачност и право на участие. Малки парламентарни групи: гарантирано минимално изказване.</div>
         </div>
         <div class="nl-law-lose">
-          <div class="nl-law-wl-head">ÐšÐ¾Ð¹ Ð³ÑƒÐ±Ð¸</div>
-          <div class="nl-law-wl-text">Ð”ÐµÐ¿ÑƒÑ‚Ð°Ñ‚Ð¸ Ñ Ñ‡ÐµÑÑ‚Ð¸ Ð½ÐµÐ¾Ð¿Ñ€Ð°Ð²Ð´Ð°Ð½Ð¸ Ð¾Ñ‚ÑÑŠÑÑ‚Ð²Ð¸Ñ Ð¸ Ñ‚Ð°ÐºÐ¸Ð²Ð°, ÑÐºÐ»Ð¾Ð½Ð½Ð¸ ÐºÑŠÐ¼ ÑÐ¼ÑÐ½Ð° Ð½Ð° Ð¿Ð°Ñ€Ð»Ð°Ð¼ÐµÐ½Ñ‚Ð°Ñ€Ð½Ð° Ð³Ñ€ÑƒÐ¿Ð°.</div>
+          <div class="nl-law-wl-head">Кой губи</div>
+          <div class="nl-law-wl-text">Депутати с чести неоправдани отсъствия и такива, склонни към смяна на парламентарна група.</div>
         </div>
       </div>
       <div class="nl-law-meta">
-        ÐžÐ±Ð½Ð°Ñ€Ð¾Ð´Ð²Ð°Ð½: 2 ÑŽÐ½Ð¸ 2026 Â· Ð”Ð’ Ð±Ñ€. 50
-        <a href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243751" target="_blank">â†’ Ð”Ð’ â†—</a>
+        Обнародван: 2 юни 2026 · ДВ бр. 50
+        <a href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243751" target="_blank">→ ДВ ↗</a>
       </div>
     </div>
   </div>
 
-  <!-- â”€â”€ CARD 3: CARF ÐºÑ€Ð¸Ð¿Ñ‚Ð¾ â”€â”€ -->
+  <!-- ── CARD 3: CARF крипто ── -->
   <div class="nl-law-card">
     <div class="nl-law-card-head" onclick="toggleCard(this)">
       <div class="nl-law-badges">
-        <span class="badge-type">Ð¡ÐŸÐžÐ ÐÐ—Ð£ÐœÐ•ÐÐ˜Ð•</span>
-        <span class="badge-organ">ÐœÐ¸Ð½Ð¸ÑÑ‚ÐµÑ€ÑÑ‚Ð²Ð¾ Ð½Ð° Ñ„Ð¸Ð½Ð°Ð½ÑÐ¸Ñ‚Ðµ</span>
+        <span class="badge-type">СПОРАЗУМЕНИЕ</span>
+        <span class="badge-organ">Министерство на финансите</span>
       </div>
-      <div class="nl-law-title">Ð‘ÑŠÐ»Ð³Ð°Ñ€Ð¸Ñ ÑÐµ Ð²ÐºÐ»ÑŽÑ‡Ð²Ð° Ð² Ð¼ÐµÐ¶Ð´ÑƒÐ½Ð°Ñ€Ð¾Ð´ÐµÐ½ Ð¾Ð±Ð¼ÐµÐ½ Ð½Ð° Ð´Ð°Ð½Ð½Ð¸ Ð·Ð° ÐºÑ€Ð¸Ð¿Ñ‚Ð¾ ÑÐ´ÐµÐ»ÐºÐ¸, Ð²ÐºÐ»ÑŽÑ‡Ð¸Ñ‚ÐµÐ»Ð½Ð¾ Ð¿Ñ€ÐµÐ²Ð¾Ð´Ð¸ ÐºÑŠÐ¼ Ð»Ð¸Ñ‡Ð½Ð¸ Ð¿Ð¾Ñ€Ñ‚Ñ„ÐµÐ¹Ð»Ð¸</div>
+      <div class="nl-law-title">България се включва в международен обмен на данни за крипто сделки, включително преводи към лични портфейли</div>
       <div class="nl-law-tags">
-        <span class="nl-law-tag">Ð”Ð°Ð½ÑŠÑ‡Ð½Ð° Ð¿Ñ€Ð¾Ð·Ñ€Ð°Ñ‡Ð½Ð¾ÑÑ‚</span>
-        <span class="nl-law-tag">ÐšÑ€Ð¸Ð¿Ñ‚Ð¾Ð°ÐºÑ‚Ð¸Ð²Ð¸</span>
-        <span class="nl-law-tag">ÐžÐ˜Ð¡Ð </span>
-        <span class="nl-law-tag">Ð¤Ð¸Ð½Ð°Ð½ÑÐ¾Ð²Ð¾ Ñ€ÐµÐ³ÑƒÐ»Ð¸Ñ€Ð°Ð½Ðµ</span>
+        <span class="nl-law-tag">Данъчна прозрачност</span>
+        <span class="nl-law-tag">Криптоактиви</span>
+        <span class="nl-law-tag">ОИСР</span>
+        <span class="nl-law-tag">Финансово регулиране</span>
       </div>
-      <span class="nl-law-toggle">â–¾ ÐŸÐ¾ÐºÐ°Ð¶Ð¸</span>
+      <span class="nl-law-toggle">▾ Покажи</span>
     </div>
     <div class="nl-law-body">
-      <div class="nl-law-lead">Ð”Ð¾ÑÑ‚Ð°Ð²Ñ‡Ð¸Ñ†Ð¸Ñ‚Ðµ Ð½Ð° ÐºÑ€Ð¸Ð¿Ñ‚Ð¾ ÑƒÑÐ»ÑƒÐ³Ð¸ Ð² Ð‘ÑŠÐ»Ð³Ð°Ñ€Ð¸Ñ (Ð±Ð¾Ñ€ÑÐ¸ Ð¸ Ð¿Ð»Ð°Ñ‚Ñ„Ð¾Ñ€Ð¼Ð¸) Ñ‰Ðµ Ð´Ð¾ÐºÐ»Ð°Ð´Ð²Ð°Ñ‚ ÑÐ´ÐµÐ»ÐºÐ¸Ñ‚Ðµ Ð½Ð° ÐºÐ»Ð¸ÐµÐ½Ñ‚Ð¸Ñ‚Ðµ ÑÐ¸ Ð½Ð° ÐÐÐŸ, Ð° Ñ‚ÐµÐ·Ð¸ Ð´Ð°Ð½Ð½Ð¸ Ñ‰Ðµ ÑÐµ ÑÐ¿Ð¾Ð´ÐµÐ»ÑÑ‚ Ð°Ð²Ñ‚Ð¾Ð¼Ð°Ñ‚Ð¸Ñ‡Ð½Ð¾ Ñ Ð´Ð°Ð½ÑŠÑ‡Ð½Ð¸Ñ‚Ðµ Ð²Ð»Ð°ÑÑ‚Ð¸ Ð½Ð° ÑÑ‚Ñ€Ð°Ð½Ð¸Ñ‚Ðµ Ð¾Ñ‚ ÐžÐ˜Ð¡Ð . ÐžÐ±Ñ…Ð²Ð°Ñ‚ÑŠÑ‚ Ð²ÐºÐ»ÑŽÑ‡Ð²Ð° Ð¸ Ð¿Ñ€ÐµÐ²Ð¾Ð´Ð¸ ÐºÑŠÐ¼ Ð½ÐµÐºÐ°ÑÑ‚Ð¾Ð´Ð¸Ð°Ð»Ð½Ð¸ (Ð»Ð¸Ñ‡Ð½Ð¸) Ð¿Ð¾Ñ€Ñ‚Ñ„ÐµÐ¹Ð»Ð¸.</div>
+      <div class="nl-law-lead">Доставчиците на крипто услуги в България (борси и платформи) ще докладват сделките на клиентите си на НАП, а тези данни ще се споделят автоматично с данъчните власти на страните от ОИСР. Обхватът включва и преводи към некастодиални (лични) портфейли.</div>
       <div class="nl-law-points">
-        <div class="nl-law-points-head">ÐžÑÐ½Ð¾Ð²Ð½Ð¸ Ð¼Ð¾Ð¼ÐµÐ½Ñ‚Ð¸</div>
+        <div class="nl-law-points-head">Основни моменти</div>
         <ul>
-          <li>Ð“Ð¾Ð´Ð¸ÑˆÐµÐ½ Ð°Ð²Ñ‚Ð¾Ð¼Ð°Ñ‚Ð¸Ñ‡ÐµÐ½ Ð¾Ð±Ð¼ÐµÐ½: Ð´Ð¾ 9 Ð¼ÐµÑÐµÑ†Ð° ÑÐ»ÐµÐ´ ÐºÑ€Ð°Ñ Ð½Ð° Ð¾Ñ‚Ñ‡ÐµÑ‚Ð½Ð°Ñ‚Ð° ÐºÐ°Ð»ÐµÐ½Ð´Ð°Ñ€Ð½Ð° Ð³Ð¾Ð´Ð¸Ð½Ð°.</li>
-          <li>Ð”Ð¾ÐºÐ»Ð°Ð´Ð²Ð°Ñ‚ ÑÐµ: Ð¿Ð¾ÐºÑƒÐ¿ÐºÐ¾-Ð¿Ñ€Ð¾Ð´Ð°Ð¶Ð±Ð¸ ÑÑ€ÐµÑ‰Ñƒ Ñ„Ð¸Ð°Ñ‚Ð½Ð° Ð²Ð°Ð»ÑƒÑ‚Ð°, ÐºÑ€Ð¸Ð¿Ñ‚Ð¾-Ð·Ð°-ÐºÑ€Ð¸Ð¿Ñ‚Ð¾ Ñ€Ð°Ð·Ð¼ÐµÐ½Ð¸, Ð¿Ð»Ð°Ñ‰Ð°Ð½Ð¸Ñ Ð·Ð° ÑÑ‚Ð¾ÐºÐ¸ Ð¸ ÑƒÑÐ»ÑƒÐ³Ð¸, Ð¿Ñ€ÐµÐ²Ð¾Ð´Ð¸ ÐºÑŠÐ¼/Ð¾Ñ‚ Ð»Ð¸Ñ‡Ð½Ð¸ Ð¿Ð¾Ñ€Ñ‚Ñ„ÐµÐ¹Ð»Ð¸.</li>
-          <li>ÐŸÐ°Ñ€Ñ‚Ð½ÑŒÐ¾Ñ€Ð¸: ÑÑ‚Ñ€Ð°Ð½Ð¸ Ð¸Ð·Ð²ÑŠÐ½ Ð•Ð¡: Ð¡ÐÐ©, Ð’ÐµÐ»Ð¸ÐºÐ¾Ð±Ñ€Ð¸Ñ‚Ð°Ð½Ð¸Ñ, Ð¯Ð¿Ð¾Ð½Ð¸Ñ Ð¸ Ð´Ñ€. (EU Ð´Ð¸Ñ€ÐµÐºÑ‚Ð¸Ð²Ð°Ñ‚Ð° DAC8 Ð¿Ð¾ÐºÑ€Ð¸Ð²Ð° ÑÐ°Ð¼Ð¾ Ð•Ð¡).</li>
-          <li>Ð’ ÑÐ¸Ð»Ð° Ð·Ð° Ð‘ÑŠÐ»Ð³Ð°Ñ€Ð¸Ñ Ð¾Ñ‚ 22 Ð°Ð¿Ñ€Ð¸Ð» 2026 Ð³.</li>
+          <li>Годишен автоматичен обмен: до 9 месеца след края на отчетната календарна година.</li>
+          <li>Докладват се: покупко-продажби срещу фиатна валута, крипто-за-крипто размени, плащания за стоки и услуги, преводи към/от лични портфейли.</li>
+          <li>Партньори: страни извън ЕС: САЩ, Великобритания, Япония и др. (EU директивата DAC8 покрива само ЕС).</li>
+          <li>В сила за България от 22 април 2026 г.</li>
         </ul>
       </div>
       <div class="nl-law-notable">
-        <div class="nl-law-notable-head">â–¸ Ð—Ð°Ð±ÐµÐ»ÐµÐ¶Ð¸Ñ‚ÐµÐ»Ð½Ð¾</div>
-        Ð¡Ð¿Ð¾Ñ€Ð°Ð·ÑƒÐ¼ÐµÐ½Ð¸ÐµÑ‚Ð¾ Ð¸Ð·Ñ€Ð¸Ñ‡Ð½Ð¾ Ð¾Ð±Ñ…Ð²Ð°Ñ‰Ð° Ð¿Ñ€ÐµÐ²Ð¾Ð´Ð¸ ÐºÑŠÐ¼ â€žÐ½ÐµÐ¸Ð·Ð²ÐµÑÑ‚Ð½Ð¸ Ð¿Ð¾Ñ€Ñ‚Ñ„ÐµÐ¹Ð»Ð¸" (hardware wallets); Ð´Ð¾Ñ€Ð¸ Ð¸Ð·Ñ‚ÐµÐ³Ð»ÑÐ½ÐµÑ‚Ð¾ Ð½Ð° ÐºÑ€Ð¸Ð¿Ñ‚Ð¾ ÐºÑŠÐ¼ Ð»Ð¸Ñ‡ÐµÐ½ Ð¿Ð¾Ñ€Ñ‚Ñ„ÐµÐ¹Ð» ÑÐµ Ð´Ð¾ÐºÐ»Ð°Ð´Ð²Ð° Ð½Ð° ÐÐÐŸ.
+        <div class="nl-law-notable-head">▸ Забележително</div>
+        Споразумението изрично обхваща преводи към „неизвестни портфейли" (hardware wallets); дори изтеглянето на крипто към личен портфейл се докладва на НАП.
       </div>
       <div class="nl-law-wl">
         <div class="nl-law-win">
-          <div class="nl-law-wl-head">ÐšÐ¾Ð¹ Ð¿ÐµÑ‡ÐµÐ»Ð¸</div>
-          <div class="nl-law-wl-text">ÐÐÐŸ Ð¸ Ð´Ð°Ð½ÑŠÑ‡Ð½Ð¸Ñ‚Ðµ Ð²Ð»Ð°ÑÑ‚Ð¸ Ð½Ð° Ð¿Ð°Ñ€Ñ‚Ð½ÑŒÐ¾Ñ€Ð¸Ñ‚Ðµ: Ð¿Ð¾-ÑˆÐ¸Ñ€Ð¾Ðº Ð´Ð¾ÑÑ‚ÑŠÐ¿ Ð´Ð¾ Ð´Ð°Ð½Ð½Ð¸ Ð·Ð° ÐºÑ€Ð¸Ð¿Ñ‚Ð¾Ð°ÐºÑ‚Ð¸Ð²Ð¸ Ð¸ ÑÐ²ÑŠÑ€Ð·Ð°Ð½Ð¸ Ð´Ð¾Ñ…Ð¾Ð´Ð¸.</div>
+          <div class="nl-law-wl-head">Кой печели</div>
+          <div class="nl-law-wl-text">НАП и данъчните власти на партньорите: по-широк достъп до данни за криптоактиви и свързани доходи.</div>
         </div>
         <div class="nl-law-lose">
-          <div class="nl-law-wl-head">ÐšÐ¾Ð¹ Ð³ÑƒÐ±Ð¸</div>
-          <div class="nl-law-wl-text">ÐŸÐ¾Ð»Ð·Ð²Ð°Ñ‚ÐµÐ»Ð¸ Ð½Ð° ÐºÑ€Ð¸Ð¿Ñ‚Ð¾ Ð¿Ð»Ð°Ñ‚Ñ„Ð¾Ñ€Ð¼Ð¸, ÑƒÐºÑ€Ð¸Ð²Ð°Ð»Ð¸ Ð´Ð¾Ñ…Ð¾Ð´Ð¸; Ð´Ð¾ÑÑ‚Ð°Ð²Ñ‡Ð¸Ñ†Ð¸Ñ‚Ðµ Ð¿Ð¾ÐµÐ¼Ð°Ñ‚ Ð°Ð´Ð¼Ð¸Ð½Ð¸ÑÑ‚Ñ€Ð°Ñ‚Ð¸Ð²Ð½Ð° Ñ‚ÐµÐ¶ÐµÑÑ‚ Ð¿Ð¾ Ð¾Ñ‚Ñ‡Ð¸Ñ‚Ð°Ð½Ðµ.</div>
+          <div class="nl-law-wl-head">Кой губи</div>
+          <div class="nl-law-wl-text">Ползватели на крипто платформи, укривали доходи; доставчиците поемат административна тежест по отчитане.</div>
         </div>
       </div>
       <div class="nl-law-meta">
-        ÐžÐ±Ð½Ð°Ñ€Ð¾Ð´Ð²Ð°Ð½Ð¾: 2 ÑŽÐ½Ð¸ 2026 Â· Ð”Ð’ Ð±Ñ€. 50
-        <a href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243627" target="_blank">â†’ Ð”Ð’ â†—</a>
+        Обнародвано: 2 юни 2026 · ДВ бр. 50
+        <a href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243627" target="_blank">→ ДВ ↗</a>
       </div>
     </div>
   </div>
 
-  <!-- â”€â”€ CARD 4: CRS Ñ„Ð¸Ð½Ð°Ð½ÑÐ¾Ð²Ð¸ ÑÐ¼ÐµÑ‚ÐºÐ¸ â”€â”€ -->
+  <!-- ── CARD 4: CRS финансови сметки ── -->
   <div class="nl-law-card">
     <div class="nl-law-card-head" onclick="toggleCard(this)">
       <div class="nl-law-badges">
-        <span class="badge-type">Ð¡ÐŸÐžÐ ÐÐ—Ð£ÐœÐ•ÐÐ˜Ð•</span>
-        <span class="badge-organ">ÐœÐ¸Ð½Ð¸ÑÑ‚ÐµÑ€ÑÑ‚Ð²Ð¾ Ð½Ð° Ñ„Ð¸Ð½Ð°Ð½ÑÐ¸Ñ‚Ðµ</span>
+        <span class="badge-type">СПОРАЗУМЕНИЕ</span>
+        <span class="badge-organ">Министерство на финансите</span>
       </div>
-      <div class="nl-law-title">Ð‘Ð°Ð½ÐºÐ¸Ñ‚Ðµ Ñ‰Ðµ Ð¿Ñ€ÐµÐ´Ð¾ÑÑ‚Ð°Ð²ÑÑ‚ Ð¿Ð¾-Ð´ÐµÑ‚Ð°Ð¹Ð»Ð½Ð° Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸Ñ Ð·Ð° ÐºÐ¾Ð½Ñ‚Ñ€Ð¾Ð»Ð¸Ñ€Ð°Ñ‰Ð¸Ñ‚Ðµ Ð»Ð¸Ñ†Ð° Ð¿Ð¾ ÑÐ¼ÐµÑ‚ÐºÐ¸Ñ‚Ðµ (Ð´Ð¾Ð¿ÑŠÐ»Ð½ÐµÐ½Ð¸Ðµ ÐºÑŠÐ¼ CRS)</div>
+      <div class="nl-law-title">Банките ще предоставят по-детайлна информация за контролиращите лица по сметките (допълнение към CRS)</div>
       <div class="nl-law-tags">
-        <span class="nl-law-tag">Ð”Ð°Ð½ÑŠÑ‡Ð½Ð° Ð¿Ñ€Ð¾Ð·Ñ€Ð°Ñ‡Ð½Ð¾ÑÑ‚</span>
-        <span class="nl-law-tag">Ð¤Ð¸Ð½Ð°Ð½ÑÐ¾Ð²Ð¸ Ð¸Ð½ÑÑ‚Ð¸Ñ‚ÑƒÑ†Ð¸Ð¸</span>
-        <span class="nl-law-tag">ÐžÐ˜Ð¡Ð </span>
+        <span class="nl-law-tag">Данъчна прозрачност</span>
+        <span class="nl-law-tag">Финансови институции</span>
+        <span class="nl-law-tag">ОИСР</span>
       </div>
-      <span class="nl-law-toggle">â–¾ ÐŸÐ¾ÐºÐ°Ð¶Ð¸</span>
+      <span class="nl-law-toggle">▾ Покажи</span>
     </div>
     <div class="nl-law-body">
-      <div class="nl-law-lead">Ð‘ÑŠÐ»Ð³Ð°Ñ€Ð¸Ñ Ð¾Ñ„Ð¸Ñ†Ð¸Ð°Ð»Ð¸Ð·Ð¸Ñ€Ð° Ð´Ð¾Ð¿ÑŠÐ»Ð½ÐµÐ½Ð¸Ðµ ÐºÑŠÐ¼ ÐžÐ±Ñ‰Ð¸Ñ ÑÑ‚Ð°Ð½Ð´Ð°Ñ€Ñ‚ Ð·Ð° Ð¾Ñ‚Ñ‡Ð¸Ñ‚Ð°Ð½Ðµ (CRS), Ñ ÐºÐ¾ÐµÑ‚Ð¾ Ñ€Ð°Ð·ÑˆÐ¸Ñ€ÑÐ²Ð° Ð·Ð°Ð´ÑŠÐ»Ð¶ÐµÐ½Ð¸ÑÑ‚Ð° Ð½Ð° Ñ„Ð¸Ð½Ð°Ð½ÑÐ¾Ð²Ð¸Ñ‚Ðµ Ð¸Ð½ÑÑ‚Ð¸Ñ‚ÑƒÑ†Ð¸Ð¸: Ð²ÐµÑ‡Ðµ ÑÐµ Ð¸Ð·Ð¸ÑÐºÐ²Ð° ÐºÐ¾Ð½ÐºÑ€ÐµÑ‚Ð½Ð°Ñ‚Ð° Ñ€Ð¾Ð»Ñ Ð½Ð° Ð²ÑÑÐºÐ¾ ÐºÐ¾Ð½Ñ‚Ñ€Ð¾Ð»Ð¸Ñ€Ð°Ñ‰Ð¾ Ð»Ð¸Ñ†Ðµ, ÑÑ‚Ð°Ñ‚ÑƒÑÑŠÑ‚ Ð½Ð° Ð´ÐµÐºÐ»Ð°Ñ€Ð°Ñ†Ð¸ÑÑ‚Ð° Ð·Ð° Ð´Ð°Ð½ÑŠÑ‡Ð½Ð¾ Ð¿Ñ€ÐµÐ±Ð¸Ð²Ð°Ð²Ð°Ð½Ðµ Ð¸ Ð´Ð°Ð»Ð¸ ÑÐ¼ÐµÑ‚ÐºÐ°Ñ‚Ð° Ðµ Ð½Ð¾Ð²Ð° Ð¸Ð»Ð¸ ÑÐ¿Ð¾Ð´ÐµÐ»ÐµÐ½Ð°.</div>
+      <div class="nl-law-lead">България официализира допълнение към Общия стандарт за отчитане (CRS), с което разширява задълженията на финансовите институции: вече се изисква конкретната роля на всяко контролиращо лице, статусът на декларацията за данъчно пребиваване и дали сметката е нова или споделена.</div>
       <div class="nl-law-points">
-        <div class="nl-law-points-head">ÐžÑÐ½Ð¾Ð²Ð½Ð¸ Ð¼Ð¾Ð¼ÐµÐ½Ñ‚Ð¸</div>
+        <div class="nl-law-points-head">Основни моменти</div>
         <ul>
-          <li>ÐÐ¾Ð²Ð° Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸Ñ Ð·Ð° Ð²ÑÑÐºÐ° ÑÐ¼ÐµÑ‚ÐºÐ°: Ð²Ð°Ð»Ð¸Ð´Ð½Ð¾ÑÑ‚ Ð½Ð° Ð´ÐµÐºÐ»Ð°Ñ€Ð°Ñ†Ð¸ÑÑ‚Ð° Ð·Ð° Ð´Ð°Ð½ÑŠÑ‡Ð½Ð¾ Ð¿Ñ€ÐµÐ±Ð¸Ð²Ð°Ð²Ð°Ð½Ðµ; Ñ€Ð¾Ð»Ñ Ð½Ð° ÐºÐ¾Ð½Ñ‚Ñ€Ð¾Ð»Ð¸Ñ€Ð°Ñ‰Ð¾Ñ‚Ð¾ Ð»Ð¸Ñ†Ðµ (ÑÐ¾Ð±ÑÑ‚Ð²ÐµÐ½Ð¸Ðº, Ð´Ð¸Ñ€ÐµÐºÑ‚Ð¾Ñ€, Ð±ÐµÐ½ÐµÑ„Ð¸Ñ†Ð¸ÐµÐ½Ñ‚); Ð±Ñ€Ð¾Ð¹ ÑÑŠÐ²Ð¼ÐµÑÑ‚Ð½Ð¸ Ñ‚Ð¸Ñ‚ÑƒÐ»ÑÑ€Ð¸.</li>
-          <li>ÐÐºÑ‚ÑƒÐ°Ð»Ð¸Ð·Ð°Ñ†Ð¸ÑÑ‚Ð° Ð¸Ð·Ð¿Ñ€ÐµÐ²Ð°Ñ€Ð²Ð° EU Ð´Ð¸Ñ€ÐµÐºÑ‚Ð¸Ð²Ð°Ñ‚Ð° DAC9 Ð¸ Ð²ÐµÑ‡Ðµ ÑÐµ Ð¿Ñ€Ð¸Ð»Ð°Ð³Ð° Ð½Ð° Ð¼Ð½Ð¾Ð³Ð¾ÑÑ‚Ñ€Ð°Ð½Ð½Ð¾ Ð½Ð¸Ð²Ð¾.</li>
-          <li>Ð’ ÑÐ¸Ð»Ð° Ð·Ð° Ð‘ÑŠÐ»Ð³Ð°Ñ€Ð¸Ñ Ð¾Ñ‚ 22 Ð°Ð¿Ñ€Ð¸Ð» 2026 Ð³.</li>
+          <li>Нова информация за всяка сметка: валидност на декларацията за данъчно пребиваване; роля на контролиращото лице (собственик, директор, бенефициент); брой съвместни титуляри.</li>
+          <li>Актуализацията изпреварва EU директивата DAC9 и вече се прилага на многостранно ниво.</li>
+          <li>В сила за България от 22 април 2026 г.</li>
         </ul>
       </div>
       <div class="nl-law-wl">
         <div class="nl-law-win">
-          <div class="nl-law-wl-head">ÐšÐ¾Ð¹ Ð¿ÐµÑ‡ÐµÐ»Ð¸</div>
-          <div class="nl-law-wl-text">Ð”Ð°Ð½ÑŠÑ‡Ð½Ð¸ Ð°Ð´Ð¼Ð¸Ð½Ð¸ÑÑ‚Ñ€Ð°Ñ†Ð¸Ð¸: Ð¿Ð¾-Ð´ÐµÑ‚Ð°Ð¹Ð»Ð½Ð° ÐºÐ°Ñ€Ñ‚Ð¸Ð½Ð° Ð·Ð° ÑÐºÑ€Ð¸Ñ‚Ð¸ Ð°ÐºÑ‚Ð¸Ð²Ð¸ Ð² Ñ‡ÑƒÐ¶Ð±Ð¸Ð½Ð°.</div>
+          <div class="nl-law-wl-head">Кой печели</div>
+          <div class="nl-law-wl-text">Данъчни администрации: по-детайлна картина за скрити активи в чужбина.</div>
         </div>
         <div class="nl-law-lose">
-          <div class="nl-law-wl-head">ÐšÐ¾Ð¹ Ð³ÑƒÐ±Ð¸</div>
-          <div class="nl-law-wl-text">Ð›Ð¸Ñ†Ð°, Ð¸Ð·Ð¿Ð¾Ð»Ð·Ð²Ð°Ñ‰Ð¸ Ð½ÐµÐ¿Ñ€Ð¾Ð·Ñ€Ð°Ñ‡Ð½Ð¸ ÑÑ‚Ñ€ÑƒÐºÑ‚ÑƒÑ€Ð¸ Ð·Ð° Ð¾Ð³Ñ€Ð°Ð½Ð¸Ñ‡Ð°Ð²Ð°Ð½Ðµ Ð½Ð° Ð´Ð°Ð½ÑŠÑ‡Ð½Ð°Ñ‚Ð° Ð¿Ñ€Ð¾Ð·Ñ€Ð°Ñ‡Ð½Ð¾ÑÑ‚.</div>
+          <div class="nl-law-wl-head">Кой губи</div>
+          <div class="nl-law-wl-text">Лица, използващи непрозрачни структури за ограничаване на данъчната прозрачност.</div>
         </div>
       </div>
       <div class="nl-law-meta">
-        ÐžÐ±Ð½Ð°Ñ€Ð¾Ð´Ð²Ð°Ð½Ð¾: 2 ÑŽÐ½Ð¸ 2026 Â· Ð”Ð’ Ð±Ñ€. 50
-        <a href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243628" target="_blank">â†’ Ð”Ð’ â†—</a>
+        Обнародвано: 2 юни 2026 · ДВ бр. 50
+        <a href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243628" target="_blank">→ ДВ ↗</a>
       </div>
     </div>
   </div>
 
 </div><!-- /law-cards -->
 
-<!-- â”€â”€ Technical acts (collapsed) â”€â”€ -->
+<!-- ── Technical acts (collapsed) ── -->
 <div class="basic-section">
   <div class="basic-toggle" onclick="toggleBasic()">
-    <span>â–¸ Ð¢ÐµÑ…Ð½Ð¸Ñ‡ÐµÑÐºÐ¸ Ð°ÐºÑ‚Ð¾Ð²Ðµ Â· 2 Ð±Ñ€Ð¾Ñ</span>
-    <span class="arrow">â–¾</span>
+    <span>▸ Технически актове · 2 броя</span>
+    <span class="arrow">▾</span>
   </div>
   <div class="basic-list">
     <div class="basic-item">
-      <span class="basic-badge">Ð—ÐÐšÐžÐ</span>
-      Ð¢ÐµÑ…Ð½Ð¸Ñ‡ÐµÑÐºÐ¾ Ð¿Ñ€ÐµÐ¸Ð·Ñ‡Ð¸ÑÐ»ÑÐ²Ð°Ð½Ðµ Ð½Ð° Ð³Ð»Ð¾Ð±Ð¸ Ð¿Ð¾ Ð—Ð°ÐºÐ¾Ð½Ð° Ð·Ð° Ð´ÑŠÑ€Ð¶Ð°Ð²Ð½Ð°Ñ‚Ð° Ñ„Ð¸Ð½Ð°Ð½ÑÐ¾Ð²Ð° Ð¸Ð½ÑÐ¿ÐµÐºÑ†Ð¸Ñ Ð¾Ñ‚ Ð»ÐµÐ²Ð¾Ð²Ðµ Ð² ÐµÐ²Ñ€Ð¾ Ð¿Ð¾ Ñ„Ð¸ÐºÑÐ¸Ñ€Ð°Ð½Ð¸Ñ ÐºÑƒÑ€Ñ 1,95583; Ð±ÐµÐ· Ð¿Ñ€Ð¾Ð¼ÑÐ½Ð° Ð½Ð° Ñ€ÐµÐ°Ð»Ð½Ð¸Ñ Ñ€Ð°Ð·Ð¼ÐµÑ€ Ð½Ð° ÑÐ°Ð½ÐºÑ†Ð¸Ð¸Ñ‚Ðµ
-      <span class="basic-organ">ÐÐ°Ñ€Ð¾Ð´Ð½Ð¾ ÑÑŠÐ±Ñ€Ð°Ð½Ð¸Ðµ</span>
-      <a href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243580" target="_blank">â†’ Ð”Ð’ â†—</a>
+      <span class="basic-badge">ЗАКОН</span>
+      Техническо преизчисляване на глоби по Закона за държавната финансова инспекция от левове в евро по фиксирания курс 1,95583; без промяна на реалния размер на санкциите
+      <span class="basic-organ">Народно събрание</span>
+      <a href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243580" target="_blank">→ ДВ ↗</a>
     </div>
     <div class="basic-item">
-      <span class="basic-badge">ÐÐÐ Ð•Ð”Ð‘Ð</span>
-      ÐŸÐ¾Ð¿Ñ€Ð°Ð²ÐºÐ° Ð½Ð° Ñ‚ÐµÑ…Ð½Ð¸Ñ‡ÐµÑÐºÐ° Ð³Ñ€ÐµÑˆÐºÐ° Ð² ÑÑƒÐ±ÑÐ¸Ð´Ð¸ÑÑ‚Ð° Ð·Ð° Ð±Ð¸Ð¾Ð»Ð¾Ð³Ð¸Ñ‡Ð½Ð¾ Ð¾Ñ‚Ð³Ð»ÐµÐ¶Ð´Ð°Ð½Ðµ Ð½Ð° ÑÐ¼ÐµÑÐµÐ½Ð¸ Ð·ÐµÐ»ÐµÐ½Ñ‡ÑƒÐºÐ¾Ð²Ð¸ ÐºÑƒÐ»Ñ‚ÑƒÑ€Ð¸ Ð² Ð¾Ñ‚Ð¾Ð¿Ð»ÑÐ²Ð°Ð½Ð¸ Ð¾Ñ€Ð°Ð½Ð¶ÐµÑ€Ð¸Ð¸: 960 â†’ 2 960 ÐµÐ²Ñ€Ð¾/Ñ…Ð°
-      <span class="basic-organ">ÐœÐ¸Ð½Ð¸ÑÑ‚ÐµÑ€ÑÑ‚Ð²Ð¾ Ð½Ð° Ð·ÐµÐ¼ÐµÐ´ÐµÐ»Ð¸ÐµÑ‚Ð¾ Ð¸ Ñ…Ñ€Ð°Ð½Ð¸Ñ‚Ðµ</span>
-      <a href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243743" target="_blank">â†’ Ð”Ð’ â†—</a>
+      <span class="basic-badge">НАРЕДБА</span>
+      Поправка на техническа грешка в субсидията за биологично отглеждане на смесени зеленчукови култури в отоплявани оранжерии: 960 → 2 960 евро/ха
+      <span class="basic-organ">Министерство на земеделието и храните</span>
+      <a href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243743" target="_blank">→ ДВ ↗</a>
     </div>
   </div>
 </div>
 
-<!-- â”€â”€ Footer â”€â”€ -->
+<!-- ── Footer ── -->
 <div class="footer">
   <span class="footer-logo">Doodles</span>
   <div class="footer-sources">
-    Ð˜ÐºÐ¾Ð½Ð¾Ð¼Ð¸Ñ‡ÐµÑÐºÐ¸ Ð´Ð°Ð½Ð½Ð¸: Ð•Ð²Ñ€Ð¾ÑÑ‚Ð°Ñ‚ Â· ÐÐ¡Ð˜ Â· Ð‘ÐÐ‘ Â· ÐÐžÐ˜ Â· ÐÐ—<br/>
-    Ð—Ð°ÐºÐ¾Ð½Ð¾Ð´Ð°Ñ‚ÐµÐ»ÑÑ‚Ð²Ð¾: Ð”ÑŠÑ€Ð¶Ð°Ð²ÐµÐ½ Ð²ÐµÑÑ‚Ð½Ð¸Ðº Â· dv.parliament.bg
+    Икономически данни: Евростат · НСИ · БНБ · НОИ · АЗ<br/>
+    Законодателство: Държавен вестник · dv.parliament.bg
   </div>
 </div>
 
 </div><!-- /wrapper -->
 </body>
 </html>
-
