@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Basepoint Doodles · България · Седмица 23, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&amp;family=Caveat:wght@700&amp;display=swap" rel="stylesheet"/>
+<style>
+* { box-sizing:border-box; margin:0; padding:0; }
+body {
+  --bp:#1B2E5E; --red:#CC2B2B; --gold:#B5821A;
+  --up:#2A9D5C; --dn:#E03E2D;
+  --ink:#1C1C1C; --ink2:#444444; --dim:#888888; --pale:#AAAAAA;
+  --bdr:#E8E8E8; --surf:#F8F8F8; --paper:#FFFFFF;
+  font-family:'Nunito',Arial,sans-serif; background:#F0F2F5;
+  color:var(--ink); line-height:1.6;
+}
+.wrapper { max-width:700px; margin:32px auto; background:var(--paper);
+  border:1px solid var(--bdr); border-radius:4px; overflow:hidden; }
+
+/* ── Newspaper header ── */
+.nwp-hdr { padding:16px 24px 12px; border-bottom:1px solid var(--ink); background:#fff; }
+.nwp-topline { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
+.nwp-dateline { font-family:'Courier New',monospace; font-size:10px; color:var(--dim);
+  letter-spacing:0.05em; text-transform:uppercase; }
+.nwp-nav { display:flex; gap:14px; align-items:center; }
+.nwp-nav a { font-size:10px; font-weight:700; letter-spacing:0.1em;
+  text-transform:uppercase; color:var(--dim); text-decoration:none; }
+.nwp-nav a:hover { color:var(--ink); }
+.nwp-nav a.active { color:var(--red); }
+.nwp-title-row { text-align:center; margin-bottom:8px; }
+.nwp-title { font-family:'Nunito',sans-serif; font-size:40px; font-weight:900;
+  color:var(--ink); letter-spacing:-1.5px; line-height:1; display:inline; }
+.nwp-doodles { font-family:'Caveat',cursive; font-size:48px; font-weight:700;
+  color:var(--red); line-height:1; vertical-align:baseline; margin-left:6px; }
+.nwp-issue { text-align:center; font-family:'Courier New',monospace; font-size:10px;
+  color:var(--dim); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:10px; }
+.nwp-rule-thick { height:3px; background:var(--ink); }
+.nwp-rule-thin  { height:1px; background:var(--ink); margin-top:3px; }
+
+/* ── Section quicklinks ── */
+.quicklinks { display:grid; grid-template-columns:1fr 1px 1fr;
+  border-bottom:2px solid var(--ink); background:var(--surf); }
+.ql-col { padding:14px 20px 16px; }
+.ql-head { font-size:10px; font-weight:900; letter-spacing:0.18em;
+  text-transform:uppercase; color:var(--ink); padding-bottom:10px;
+  border-bottom:1px solid var(--bdr); margin-bottom:10px; }
+.ql-head .ql-arrow { color:var(--red); margin-right:5px; }
+.ql-links { display:flex; flex-direction:column; gap:5px; }
+.ql-links a { font-size:12px; font-weight:700; color:var(--dim); text-decoration:none;
+  display:flex; align-items:center; gap:6px; }
+.ql-links a:hover { color:var(--ink); }
+.ql-links a::before { content:'→'; font-size:11px; color:var(--pale); }
+.ql-divider { background:var(--bdr); }
+
+/* ── Cover ── */
+.cover { padding:22px 28px 20px; border-bottom:1px solid var(--bdr); }
+.cover-eyebrow { font-size:10px; font-weight:900; letter-spacing:0.18em;
+  text-transform:uppercase; color:var(--red); margin-bottom:10px; display:block; }
+.cover-headline { font-size:20px; font-weight:900; color:var(--ink);
+  line-height:1.3; letter-spacing:-0.3px; margin-bottom:14px; }
+.cover-bullets { list-style:none; display:flex; flex-direction:column; gap:7px; }
+.cover-bullets li { font-size:13.5px; color:var(--ink2); line-height:1.55;
+  display:flex; gap:9px; }
+.cover-bullets li::before { content:'▸'; color:var(--red); flex-shrink:0;
+  font-size:11px; margin-top:3px; }
+
+/* ── Section dividers ── */
+.section-divider { background:var(--ink); padding:13px 28px;
+  display:flex; align-items:center; justify-content:space-between; }
+.section-divider-title { font-size:12px; font-weight:900; letter-spacing:0.2em;
+  text-transform:uppercase; color:#fff; }
+.section-divider-num { font-family:'Courier New',monospace; font-size:11px;
+  color:rgba(255,255,255,0.4); }
+.section-subnav { display:flex; gap:0; border-bottom:1px solid var(--bdr);
+  background:var(--surf); }
+.section-subnav a { font-size:10px; font-weight:900; letter-spacing:0.12em;
+  text-transform:uppercase; color:var(--dim); text-decoration:none;
+  padding:9px 16px; border-right:1px solid var(--bdr); }
+.section-subnav a:hover { color:var(--ink); background:#EFEFEF; }
+
+/* ── The Number ── */
+.the-number { padding:24px 28px; border-bottom:1px solid var(--bdr);
+  display:flex; gap:20px; align-items:flex-start; }
+.the-number-label { font-size:10px; font-weight:900; letter-spacing:0.16em;
+  text-transform:uppercase; color:var(--red); white-space:nowrap;
+  min-width:80px; padding-top:8px; }
+.the-number-big { font-family:'Nunito',sans-serif; font-size:56px; font-weight:900;
+  color:var(--ink); line-height:1; margin-bottom:8px; }
+.the-number-big .denom { font-size:28px; color:var(--dim); }
+.the-number p { font-size:14px; color:var(--ink2); line-height:1.6; }
+
+/* ── Macro Pulse ── */
+.pulse-header { padding:14px 28px 0; display:flex; align-items:center; gap:10px; }
+.pulse-title { font-size:11px; font-weight:900; letter-spacing:0.16em;
+  text-transform:uppercase; color:var(--red); }
+.stats-row { display:grid; grid-template-columns:repeat(3,1fr); gap:10px;
+  padding:12px 28px 20px; border-bottom:1px solid var(--bdr); }
+.stat-card { background:var(--surf); border-radius:8px; padding:12px 13px 11px; }
+.stat-label { font-size:10px; font-weight:900; letter-spacing:0.12em;
+  text-transform:uppercase; color:var(--dim); line-height:1.3;
+  height:2.6em; overflow:hidden; margin-bottom:5px; }
+.stat-value { font-size:22px; font-weight:900; color:var(--ink);
+  line-height:1; white-space:nowrap; overflow:hidden; }
+.stat-value .unit { font-size:12px; font-weight:700; color:var(--dim); }
+.stat-value.up { color:var(--up); }
+.stat-value.dn { color:var(--dn); }
+.stat-value.up .unit, .stat-value.dn .unit { color:inherit; opacity:0.65; }
+.stat-period { font-family:'Courier New',monospace; font-size:10px;
+  color:var(--pale); margin-top:5px; }
+
+/* ── Charts ── */
+.section { padding:20px 28px; border-bottom:1px solid var(--bdr); }
+.section-body { font-size:14px; color:var(--ink2); line-height:1.75; margin-bottom:12px; }
+.nl-chart { border:1px solid var(--bdr); border-radius:8px; overflow:hidden; margin:14px 0 20px; }
+.nl-chart-header { background:var(--surf); padding:9px 13px 7px;
+  border-bottom:1px solid var(--bdr);
+  display:flex; justify-content:space-between; align-items:flex-start; gap:10px; }
+.nl-chart-label { font-size:10px; font-weight:900; letter-spacing:0.12em;
+  text-transform:uppercase; color:var(--dim); }
+.nl-chart-reading { font-size:15px; font-weight:900; color:var(--red);
+  line-height:1.15; white-space:nowrap; text-align:right; }
+.nl-chart-subtitle { font-family:'Courier New',monospace; font-size:10px;
+  color:var(--pale); margin-top:2px; }
+.nl-chart img { width:100%; display:block; }
+.nl-chart-footer { font-family:'Courier New',monospace; font-size:10px;
+  color:var(--pale); padding:5px 13px 6px; background:var(--surf);
+  border-top:1px solid var(--bdr);
+  display:flex; justify-content:space-between; gap:8px; }
+.chart-lead { font-size:13.5px; color:var(--ink2); line-height:1.65; margin-bottom:4px; }
+.data-section-head { font-size:11px; font-weight:900; letter-spacing:0.16em;
+  text-transform:uppercase; color:var(--red); margin:20px 0 12px; display:block; }
+.data-section-head:first-child { margin-top:0; }
+
+/* ── Deep Dive ── */
+.deep-dive { padding:20px 28px; border-bottom:1px solid var(--bdr); }
+.deep-dive-head { font-size:11px; font-weight:900; letter-spacing:0.16em;
+  text-transform:uppercase; color:var(--gold); margin-bottom:16px; display:block; }
+.bottom-line { background:#FFF8EC; border:1px solid #E8D5A0; border-radius:8px;
+  padding:16px 18px; margin-top:20px; }
+.bottom-line-head { font-size:9px; font-weight:900; letter-spacing:0.16em;
+  text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
+.bottom-line p { font-size:13.5px; color:var(--ink2); line-height:1.7; }
+
+/* ── Law Deep (scorecard) ── */
+.sc-panel { background:#FFF8EC; border:1px solid #E8D5A0; border-radius:8px;
+  overflow:hidden; margin:14px 0; }
+.sc-facts { display:grid; grid-template-columns:1fr 1px 1fr 1px 1fr; }
+.sc-cell { padding:11px 13px; }
+.sc-divider { background:#E8D5A0; }
+.sc-label { font-size:9px; font-weight:900; letter-spacing:0.12em;
+  text-transform:uppercase; color:var(--gold); margin-bottom:4px; }
+.sc-value { font-size:12.5px; font-weight:700; color:var(--ink); line-height:1.4; }
+.sc-note { font-size:11px; color:var(--ink2); margin-top:3px; line-height:1.4; }
+.sc-row { padding:10px 13px; border-top:1px solid #E8D5A0;
+  display:flex; gap:10px; align-items:flex-start; }
+.sc-dot { width:10px; height:10px; border-radius:50%; flex-shrink:0; margin-top:3px; }
+.sc-dot.cost { background:#E03E2D; }
+.sc-dot.indirect { background:var(--gold); }
+.sc-dot.neutral { background:#AAAAAA; }
+.sc-dot.savings { background:var(--up); }
+.sc-fiscal-text { font-size:12.5px; color:var(--ink2); line-height:1.5; }
+.sc-steps { padding:10px 13px; border-top:1px solid #E8D5A0; }
+.sc-steps-head { font-size:9px; font-weight:900; letter-spacing:0.12em;
+  text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
+.sc-step { font-size:12px; color:var(--ink2); line-height:1.5; margin-bottom:5px;
+  display:flex; gap:7px; }
+.sc-step-who { font-weight:900; color:var(--ink); flex-shrink:0; min-width:90px; }
+.es-pill { display:inline-block; font-size:9px; font-weight:900; letter-spacing:0.08em;
+  text-transform:uppercase; padding:2px 7px; border-radius:3px; margin-right:5px; }
+.es-pill.partial { background:#FFF0C8; color:#A07010; border:1px solid #D4A340; }
+.es-pill.yes { background:#DCF0FB; color:#1B6A9E; }
+.es-pill.no { background:#EDEDED; color:#666; }
+.es-pill.beyond { background:#E8F7EC; color:#2A7D4F; }
+/* ── Voting block ── */
+.vote-block { margin:14px 0; }
+.vote-block-head { font-size:9px; font-weight:900; letter-spacing:0.14em;
+  text-transform:uppercase; color:var(--dim); margin-bottom:10px; }
+.vote-total-bar { display:flex; height:14px; border-radius:4px; overflow:hidden;
+  margin-bottom:10px; }
+.vtb-for { background:var(--up); }
+.vtb-against { background:var(--dn); }
+.vtb-abstain { background:#DDDDDD; }
+.vote-totals { display:flex; gap:16px; font-size:11px; font-weight:700;
+  margin-bottom:12px; }
+.vt-for { color:var(--up); }
+.vt-against { color:var(--dn); }
+.vt-abstain { color:var(--dim); }
+.party-table { display:flex; flex-direction:column; gap:5px; }
+.pt-row { display:flex; align-items:center; gap:8px; }
+.pt-name { font-size:10px; font-weight:700; color:var(--ink2); width:120px; flex-shrink:0; }
+.pt-bar-wrap { flex:1; background:#EDEDED; border-radius:3px; height:12px;
+  position:relative; overflow:hidden; display:flex; }
+.pt-bar-for { background:var(--up); height:100%; }
+.pt-bar-against { background:var(--dn); height:100%; }
+.pt-bar-abstain { background:#CCC; height:100%; }
+.pt-verdict { font-size:9px; font-weight:900; letter-spacing:0.06em;
+  text-transform:uppercase; width:50px; flex-shrink:0; text-align:right; }
+.pt-verdict.for { color:var(--up); }
+.pt-verdict.against { color:var(--dn); }
+.pt-verdict.split { color:var(--gold); }
+
+/* ── Legislative infographic ── */
+.law-infographic { padding:20px 28px 18px; border-bottom:1px solid var(--bdr); }
+.infog-stats { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:20px; }
+.infog-stat { background:var(--surf); border-radius:8px; padding:12px 16px; text-align:center; }
+.infog-stat-num { font-size:36px; font-weight:900; color:var(--ink); line-height:1; }
+.infog-stat-num.accent { color:var(--red); }
+.infog-stat-label { font-size:10px; font-weight:700; letter-spacing:0.1em;
+  text-transform:uppercase; color:var(--dim); margin-top:4px; }
+.infog-stat-sub { font-size:10px; color:var(--pale); margin-top:2px; }
+.infog-section-head { font-size:10px; font-weight:900; letter-spacing:0.15em;
+  text-transform:uppercase; color:var(--dim); margin-bottom:10px; }
+.infog-bars { display:flex; flex-direction:column; gap:8px; margin-bottom:20px; }
+.infog-bar-row { display:flex; align-items:center; gap:10px; }
+.infog-bar-label { font-size:11px; font-weight:700; color:var(--ink2);
+  width:130px; flex-shrink:0; text-align:right; }
+.infog-bar-wrap { flex:1; background:#EBEBEB; border-radius:3px; height:16px; overflow:hidden; }
+.infog-bar-fill { height:100%; border-radius:3px; background:var(--bp); }
+.infog-bar-fill.gold { background:var(--gold); }
+.infog-bar-fill.red  { background:var(--red); }
+.infog-bar-count { font-size:11px; font-weight:900; color:var(--ink2); width:20px; }
+.infog-footnote { font-family:'Courier New',monospace; font-size:10px;
+  color:var(--pale); margin-top:14px; line-height:1.5; }
+
+/* ── Legislative cards ── */
+.law-cards { padding:0 28px; }
+.nl-law-card { border:1px solid var(--bdr); border-radius:8px; overflow:hidden; margin:14px 0; }
+.nl-law-card.deep { border-color:var(--gold); border-width:2px; }
+.nl-law-card-head { padding:12px 14px 10px; cursor:pointer;
+  display:flex; flex-direction:column; gap:7px;
+  background:var(--paper); transition:background 0.08s; }
+.nl-law-card.deep .nl-law-card-head { background:#FEFBF3; }
+.nl-law-card-head:hover { background:var(--surf); }
+.nl-law-badges { display:flex; gap:6px; flex-wrap:wrap; }
+.badge-type { font-size:9px; font-weight:900; letter-spacing:0.1em;
+  text-transform:uppercase; color:#fff; background:var(--bp);
+  padding:2px 7px; border-radius:3px; }
+.badge-type.deep { background:var(--gold); }
+.badge-organ { font-size:9px; font-weight:900; letter-spacing:0.08em;
+  text-transform:uppercase; color:var(--bp); border:1.5px solid var(--bp);
+  padding:1px 6px; border-radius:3px; }
+.badge-organ.gold { color:var(--gold); border-color:var(--gold); }
+.nl-law-title { font-size:14px; font-weight:900; color:var(--ink); line-height:1.3; }
+.nl-law-tags { display:flex; gap:5px; flex-wrap:wrap; }
+.nl-law-tag { font-size:9px; font-weight:700; letter-spacing:0.08em;
+  text-transform:uppercase; color:var(--dim); background:#EDEDED;
+  padding:2px 7px; border-radius:10px; }
+.nl-law-toggle { font-size:10px; color:var(--pale); font-weight:700;
+  letter-spacing:0.06em; text-transform:uppercase; align-self:flex-end; }
+.nl-law-body { display:none; padding:14px 14px 16px;
+  border-top:1px solid var(--bdr); background:var(--surf); }
+.nl-law-card.deep .nl-law-body { background:#FEFBF3; border-top-color:#E8D5A0; }
+.nl-law-body.open { display:block; }
+.nl-law-lead { font-size:13.5px; color:var(--ink2); line-height:1.7; margin-bottom:14px; }
+.nl-law-points { margin-bottom:14px; }
+.nl-law-points-head { font-size:10px; font-weight:900; letter-spacing:0.14em;
+  text-transform:uppercase; color:var(--dim); margin-bottom:8px; }
+.nl-law-points ul { padding-left:16px; }
+.nl-law-points li { font-size:13px; color:var(--ink2); line-height:1.65; margin-bottom:5px; }
+.nl-law-notable { background:#FFF3CD; border:1px solid #E8D5A0; border-radius:6px;
+  padding:9px 12px; margin-bottom:14px; font-size:12.5px; color:var(--ink2); line-height:1.6; }
+.nl-law-notable-head { font-size:9px; font-weight:900; letter-spacing:0.12em;
+  text-transform:uppercase; color:var(--gold); margin-bottom:4px; }
+.nl-law-wl { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:14px; }
+.nl-law-win { background:#EBF7EF; border-radius:6px; padding:9px 11px; }
+.nl-law-lose { background:#FEF0EF; border-radius:6px; padding:9px 11px; }
+.nl-law-wl-head { font-size:9px; font-weight:900; letter-spacing:0.12em;
+  text-transform:uppercase; margin-bottom:4px; }
+.nl-law-win .nl-law-wl-head { color:var(--up); }
+.nl-law-lose .nl-law-wl-head { color:var(--dn); }
+.nl-law-wl-text { font-size:12px; color:var(--ink2); line-height:1.55; }
+.nl-law-meta { font-family:'Courier New',monospace; font-size:10px; color:var(--pale);
+  display:flex; justify-content:space-between; flex-wrap:wrap; gap:6px; }
+.nl-law-meta a { color:var(--pale); }
+.nl-law-meta a:hover { color:var(--ink); }
+
+/* ── Technical items ── */
+.basic-section { margin:14px 28px 20px; border:1px solid var(--bdr); border-radius:8px; overflow:hidden; }
+.basic-toggle { display:flex; align-items:center; justify-content:space-between;
+  padding:10px 14px; background:var(--surf); cursor:pointer;
+  font-size:10px; font-weight:900; letter-spacing:0.14em;
+  text-transform:uppercase; color:var(--dim); }
+.basic-toggle:hover { background:#EEEEEE; }
+.basic-toggle .arrow { font-size:12px; }
+.basic-list { display:none; }
+.basic-list.open { display:block; }
+.basic-item { padding:9px 14px; border-top:1px solid var(--bdr);
+  font-size:12px; color:var(--ink2); line-height:1.55;
+  display:flex; flex-wrap:wrap; gap:6px; align-items:baseline; }
+.basic-badge { font-size:8px; font-weight:900; letter-spacing:0.1em;
+  text-transform:uppercase; color:#fff; padding:2px 6px; border-radius:2px;
+  background:var(--dim); flex-shrink:0; }
+.basic-organ { font-size:8px; font-weight:700; letter-spacing:0.06em;
+  text-transform:uppercase; color:var(--dim); flex-shrink:0; }
+.basic-item a { color:var(--pale); font-size:11px; margin-left:auto; flex-shrink:0; }
+.basic-item a:hover { color:var(--ink); }
+
+/* ── Footer ── */
+.footer { padding:14px 28px; background:var(--surf);
+  border-top:1px solid var(--bdr);
+  display:flex; justify-content:space-between; align-items:center; }
+.footer-logo { font-family:'Caveat',cursive; font-size:18px; font-weight:700; color:#CCC; }
+.footer-sources { font-family:'Courier New',monospace; font-size:9px;
+  color:var(--pale); text-align:right; line-height:1.6; }
+
+/* ── Responsive ── */
+@media (max-width:740px) {
+  .wrapper { margin:0; border-radius:0; }
+  .section, .deep-dive, .footer { padding-left:16px; padding-right:16px; }
+  .quicklinks { grid-template-columns:1fr; }
+  .ql-divider { display:none; }
+  .stats-row { grid-template-columns:repeat(2,1fr); }
+  .infog-stats { grid-template-columns:1fr 1fr; }
+  .nl-law-wl { grid-template-columns:1fr; }
+  .law-cards { padding:0 16px; }
+  .basic-section { margin:14px 16px 20px; }
+  .law-infographic { padding:16px 16px 14px; }
+  .infog-bar-label { width:100px; font-size:10px; }
+}
+</style>
+<script>
+function toggleCard(el) {
+  const body = el.closest('.nl-law-card').querySelector('.nl-law-body');
+  const tog  = el.querySelector('.nl-law-toggle');
+  body.classList.toggle('open');
+  tog.textContent = body.classList.contains('open') ? '▴ Скрий' : '▾ Покажи';
+}
+function toggleBasic() {
+  const list = document.querySelector('.basic-list');
+  const arr  = document.querySelector('.basic-toggle .arrow');
+  list.classList.toggle('open');
+  arr.textContent = list.classList.contains('open') ? '▴' : '▾';
+}
+</script>
+</head>
+<body>
+<div class="wrapper">
+
+<!-- ── Newspaper header ── -->
+<div class="nwp-hdr">
+  <div class="nwp-topline">
+    <span class="nwp-dateline">Седмица 23 · 9 юни 2026</span>
+    <nav class="nwp-nav">
+      <a href="/newsletters/" class="active">Бюлетин</a>
+      <a href="/cockpit/">Икономика</a>
+      <a href="/parliament/">Законодателство</a>
+      <a href="/about/">За проекта</a>
+    </nav>
+  </div>
+  <div class="nwp-title-row">
+    <span class="nwp-title">Basepoint</span><span class="nwp-doodles">Doodles</span>
+  </div>
+  <div class="nwp-issue">Макроикономика · Законодателство · България</div>
+  <div class="nwp-rule-thick"></div>
+  <div class="nwp-rule-thin"></div>
+</div>
+
+<!-- ── Section quicklinks ── -->
+<div class="quicklinks">
+  <div class="ql-col">
+    <div class="ql-head"><span class="ql-arrow">▸</span>Икономически данни</div>
+    <div class="ql-links">
+      <a href="#the-number">Числото на седмицата</a>
+      <a href="#macro-pulse">Макро пулс</a>
+      <a href="#new-data">Нови данни</a>
+      <a href="#deep-dive">БВП и Услуги</a>
+    </div>
+  </div>
+  <div class="ql-divider"></div>
+  <div class="ql-col">
+    <div class="ql-head"><span class="ql-arrow">▸</span>Закони · Решения · Регулации</div>
+    <div class="ql-links">
+      <a href="#law-summary">Обобщение</a>
+      <a href="#law-items">Обнародвани актове</a>
+    </div>
+  </div>
+</div>
+
+<!-- ── Cover ── -->
+<div class="cover">
+  <span class="cover-eyebrow">▸ Седмица 23 · 2–8 юни 2026</span>
+  <div class="cover-headline">Вътрешното търсене се ускорява, производството в индустрията се забавя</div>
+  <ul class="cover-bullets">
+    <li>Разходите за крайно потребление на домакинствата нараснаха с 9,4% г/г в Q1 2026, сред най-силните темпове от повече от десетилетие. Ревизираните тримесечни данни за БВП разкриват нова разбивка на растежа по компоненти.</li>
+    <li>Промишленото производство се свива с 4,2% г/г в април след ръст от 4,8% в март: обрат от близо 9 пр.п. за един месец, рядко наблюдаван извън периода на COVID.</li>
+    <li>Износът на стоки и услуги намалява с 7,4% г/г в Q1, докато вносът нараства с 8,2%: нетният износ е главната спирачка на растежа.</li>
+    <li>В сила е нов Закон за противодействие на корупцията: нова независима комисия с разследващи инспектори обхваща над 50 категории длъжностни лица.</li>
+  </ul>
+</div>
+
+<!-- ════════════════════════════════════════════════ -->
+<!-- ═══ SECTION 1: ИКОНОМИЧЕСКИ ДАННИ ═══════════════ -->
+<!-- ════════════════════════════════════════════════ -->
+<div class="section-divider" id="economy">
+  <span class="section-divider-title">Икономически данни</span>
+  <span class="section-divider-num">Секция 1 от 2</span>
+</div>
+<nav class="section-subnav">
+  <a href="#the-number">Числото</a>
+  <a href="#macro-pulse">Макро пулс</a>
+  <a href="#new-data">Нови данни</a>
+  <a href="#deep-dive">БВП и Услуги</a>
+</nav>
+
+<!-- ── The Number ── -->
+<div class="the-number" id="the-number">
+  <div class="the-number-label">Числото<br/>на седм.</div>
+  <div class="the-number-content">
+    <div class="the-number-big">+9,4<span class="denom">% г/г</span></div>
+    <p>Разходите за крайно потребление на домакинствата нараснаха с 9,4% г/г в Q1 2026 според ревизираните данни на Евростат. Ревизията потвърди и ускори растежа спрямо флаш оценката. Данните съвпадат с реален ръст на заплатите и рекордно нисък коефициент на безработица. На фона на спадащия износ (-7,4% г/г) разривът между вътрешното и външното търсене се задълбочава.</p>
+  </div>
+</div>
+
+<!-- ── Macro Pulse ── -->
+<div class="pulse-header" id="macro-pulse">
+  <span class="pulse-title">▸ Макро пулс · последни данни</span>
+</div>
+<div class="stats-row">
+  <!-- 1 -->
+  <div class="stat-card">
+    <div class="stat-label">Инфлация<br/>(ХИПЦ)</div>
+    <div class="stat-value up">+6,3<span class="unit"> % г/г</span></div>
+    <div class="stat-period">май 2026</div>
+  </div>
+  <!-- 2 -->
+  <div class="stat-card">
+    <div class="stat-label">Базисна<br/>инфлация</div>
+    <div class="stat-value up">+4,7<span class="unit"> % г/г</span></div>
+    <div class="stat-period">май 2026</div>
+  </div>
+  <!-- 3 -->
+  <div class="stat-card">
+    <div class="stat-label">Производствени<br/>цени (ЦПИ)</div>
+    <div class="stat-value up">+12,1<span class="unit"> % г/г</span></div>
+    <div class="stat-period">апр. 2026</div>
+  </div>
+  <!-- 4 -->
+  <div class="stat-card">
+    <div class="stat-label">Промишлено<br/>производство</div>
+    <div class="stat-value dn">−4,2<span class="unit"> % г/г</span></div>
+    <div class="stat-period">апр. 2026</div>
+  </div>
+  <!-- 5 -->
+  <div class="stat-card">
+    <div class="stat-label">Търговия<br/>на дребно</div>
+    <div class="stat-value up">+8,2<span class="unit"> % г/г</span></div>
+    <div class="stat-period">апр. 2026</div>
+  </div>
+  <!-- 6 -->
+  <div class="stat-card">
+    <div class="stat-label">Строителна<br/>продукция</div>
+    <div class="stat-value up">+6,7<span class="unit"> % г/г</span></div>
+    <div class="stat-period">апр. 2026</div>
+  </div>
+  <!-- 7 -->
+  <div class="stat-card">
+    <div class="stat-label">Производство<br/>в услугите</div>
+    <div class="stat-value up">+5,7<span class="unit"> % г/г</span></div>
+    <div class="stat-period">мар. 2026</div>
+  </div>
+  <!-- 8 -->
+  <div class="stat-card">
+    <div class="stat-label">Безработица<br/>&nbsp;</div>
+    <div class="stat-value dn">2,8<span class="unit"> % СИ</span></div>
+    <div class="stat-period">апр. 2026</div>
+  </div>
+  <!-- 9 -->
+  <div class="stat-card">
+    <div class="stat-label">Бизнес климат<br/>(ИБК)</div>
+    <div class="stat-value">95,6<span class="unit"> т.</span></div>
+    <div class="stat-period">май 2026</div>
+  </div>
+  <!-- 10 -->
+  <div class="stat-card">
+    <div class="stat-label">Растеж на<br/>БВП (г/г)</div>
+    <div class="stat-value up">+3,1<span class="unit"> % г/г</span></div>
+    <div class="stat-period">Q1 2026</div>
+  </div>
+  <!-- 11 -->
+  <div class="stat-card">
+    <div class="stat-label">Търговски<br/>баланс (НСИ)</div>
+    <div class="stat-value dn">−1 426<span class="unit"> €млн</span></div>
+    <div class="stat-period">мар. 2026</div>
+  </div>
+  <!-- 12 -->
+  <div class="stat-card">
+    <div class="stat-label">Ср. бр. месечна<br/>заплата</div>
+    <div class="stat-value up">1 392<span class="unit"> EUR</span></div>
+    <div class="stat-period">Q1 2026</div>
+  </div>
+</div>
+
+<!-- ── New Data ── -->
+<div class="section" id="new-data">
+
+  <!-- ── Блок 1: Промишлено производство ── -->
+  <span class="data-section-head">▸ Нови данни · Промишлено производство</span>
+
+  <p class="chart-lead">Индексът на промишленото производство се свива с 4,2% г/г в април след ръст от 4,8% в март: обрат от близо 9 пр.п. за един месец, рядко наблюдаван извън периода на COVID.</p>
+  <div class="nl-chart">
+    <div class="nl-chart-header">
+      <div>
+        <div class="nl-chart-label">Индекс на промишленото производство (ИПП)</div>
+        <div class="nl-chart-subtitle">% г/г и % м/м · сезонно изгладен</div>
+      </div>
+      <div style="text-align:right">
+        <div class="nl-chart-reading">−4,2%</div>
+        <div class="nl-chart-subtitle">апр. 2026</div>
+      </div>
+    </div>
+    <img src="../editions/w23/screenshots/IPI-01.png" alt="Индекс на промишленото производство"/>
+    <div class="nl-chart-footer">
+      <span>Евростат · sts_inpr_m</span>
+      <span>актуализирано юни 2026</span>
+    </div>
+  </div>
+
+  <p class="chart-lead">Свиването е концентрирано в добивната промишленост и енергетиката; преработващата промишленост е близо до нулата (-0,8%), което е по-съвместимо с временен, отколкото със структурен фактор.</p>
+  <div class="nl-chart">
+    <div class="nl-chart-header">
+      <div>
+        <div class="nl-chart-label">Промишлено производство по подсектори</div>
+        <div class="nl-chart-subtitle">индекс (2021=100) · добивна, преработваща, енергетика</div>
+      </div>
+      <div style="text-align:right">
+        <div class="nl-chart-reading">апр. 2026</div>
+        <div class="nl-chart-subtitle">по сектори</div>
+      </div>
+    </div>
+    <img src="../editions/w23/screenshots/IPI-02.png" alt="Промишлено производство по подсектори"/>
+    <div class="nl-chart-footer">
+      <span>Евростат · sts_inpr_m</span>
+      <span>актуализирано юни 2026</span>
+    </div>
+  </div>
+
+  <!-- ── Блок 2: Търговия на дребно ── -->
+  <span class="data-section-head">▸ Нови данни · Търговия на дребно</span>
+
+  <p class="chart-lead">Оборотът в търговията на дребно забавя умерено до 8,2% г/г в април след 9,9% в март; ритъмът остава силен и съответства на данните за потреблението от националните сметки.</p>
+  <div class="nl-chart">
+    <div class="nl-chart-header">
+      <div>
+        <div class="nl-chart-label">Оборот в търговията на дребно</div>
+        <div class="nl-chart-subtitle">% г/г и % м/м</div>
+      </div>
+      <div style="text-align:right">
+        <div class="nl-chart-reading">+8,2%</div>
+        <div class="nl-chart-subtitle">апр. 2026</div>
+      </div>
+    </div>
+    <img src="../editions/w23/screenshots/RETAIL-01.png" alt="Оборот в търговията на дребно"/>
+    <div class="nl-chart-footer">
+      <span>НСИ · Евростат · sts_trtu_m</span>
+      <span>актуализирано юни 2026</span>
+    </div>
+  </div>
+
+  <!-- ── Блок 3: Строителство ── -->
+  <span class="data-section-head">▸ Нови данни · Строителство</span>
+
+  <p class="chart-lead">Строителната продукция нараства с 6,7% г/г в април при минимална разлика спрямо 7,6% в март; секторът запазва сравнително висок темп на растеж за девети пореден месец.</p>
+  <div class="nl-chart">
+    <div class="nl-chart-header">
+      <div>
+        <div class="nl-chart-label">Строителна продукция</div>
+        <div class="nl-chart-subtitle">% г/г и % м/м</div>
+      </div>
+      <div style="text-align:right">
+        <div class="nl-chart-reading">+6,7%</div>
+        <div class="nl-chart-subtitle">апр. 2026</div>
+      </div>
+    </div>
+    <img src="../editions/w23/screenshots/CONSTRUCTION-02.png" alt="Строителна продукция"/>
+    <div class="nl-chart-footer">
+      <span>Евростат · sts_copr_m</span>
+      <span>актуализирано юни 2026</span>
+    </div>
+  </div>
+
+</div>
+
+<!-- ── Deep Dive: БВП и Услуги ── -->
+<div class="deep-dive" id="deep-dive">
+  <span class="deep-dive-head">▸ Анализ · БВП Q1 2026 и Оборот в услугите</span>
+
+  <p class="chart-lead">Ревизираните данни потвърждават растеж на БВП от 3,1% г/г в Q1 2026, с 0,1 пр.п. над флаш оценката. Тримесечното изменение в реално изражение е умерено положително; годишният темп поддържа инерцията от 2025 г.</p>
+  <div class="nl-chart">
+    <div class="nl-chart-header">
+      <div>
+        <div class="nl-chart-label">БВП: реален темп на изменение</div>
+        <div class="nl-chart-subtitle">% г/г и % т/т · ревизирани данни</div>
+      </div>
+      <div style="text-align:right">
+        <div class="nl-chart-reading">+3,1%</div>
+        <div class="nl-chart-subtitle">Q1 2026</div>
+      </div>
+    </div>
+    <img src="../editions/w23/screenshots/GDP-01.png" alt="БВП реален темп"/>
+    <div class="nl-chart-footer">
+      <span>Евростат · namq_10_gdp</span>
+      <span>актуализирано юни 2026</span>
+    </div>
+  </div>
+
+  <p class="chart-lead">Структурата на растежа е смесена. Разходите за крайно потребление на домакинствата (+9,4% г/г) и брутното капиталообразуване (+9,1%) са двата основни двигателя. Износът обаче намалява с 7,4% г/г, а вносът нараства с 8,2%; нетният износ има съществен отрицателен принос, който компенсира част от вътрешното търсене.</p>
+  <div class="nl-chart">
+    <div class="nl-chart-header">
+      <div>
+        <div class="nl-chart-label">БВП: приноси по разходни компоненти</div>
+        <div class="nl-chart-subtitle">пр.п. · потребление, инвестиции, правителство, нетен износ</div>
+      </div>
+      <div style="text-align:right">
+        <div class="nl-chart-reading">Q1 2026</div>
+        <div class="nl-chart-subtitle">разходен метод</div>
+      </div>
+    </div>
+    <img src="../editions/w23/screenshots/GDP-03.png" alt="БВП приноси по разходни компоненти"/>
+    <div class="nl-chart-footer">
+      <span>Евростат · namq_10_gdp</span>
+      <span>актуализирано юни 2026</span>
+    </div>
+  </div>
+
+  <p class="chart-lead">По производствен метод добивната промишленост и енергетиката (-4,6% г/г, принос -0,81 пр.п.) са с най-значителен отрицателен принос. Публичната администрация и образованието (+5,6%, +0,93 пр.п.) и недвижимите имоти (+5,3%, +0,51 пр.п.) са водещите сектори на растежа; структура, съпътствана от силна роля на публичния сектор и пазара на недвижими имоти.</p>
+  <div class="nl-chart">
+    <div class="nl-chart-header">
+      <div>
+        <div class="nl-chart-label">БДС: приноси по сектори</div>
+        <div class="nl-chart-subtitle">пр.п. · производствен метод</div>
+      </div>
+      <div style="text-align:right">
+        <div class="nl-chart-reading">Q1 2026</div>
+        <div class="nl-chart-subtitle">производствен метод</div>
+      </div>
+    </div>
+    <img src="../editions/w23/screenshots/GDP-04.png" alt="БДС приноси по сектори"/>
+    <div class="nl-chart-footer">
+      <span>Евростат · namq_10_gdp · namq_10_a10</span>
+      <span>актуализирано юни 2026</span>
+    </div>
+  </div>
+
+  <p class="chart-lead">В абсолютни нива крайното потребление и брутното капиталообразуване продължават номиналния си подем, докато нетният износ остава устойчиво отрицателен. Разривът между вноса и износа се задълбочава спрямо Q4 2025 и е видим в натурално изражение.</p>
+  <div class="nl-chart">
+    <div class="nl-chart-header">
+      <div>
+        <div class="nl-chart-label">БВП и основни разходни компоненти (нива)</div>
+        <div class="nl-chart-subtitle">млн. евро · текущи цени</div>
+      </div>
+      <div style="text-align:right">
+        <div class="nl-chart-reading">Q1 2026</div>
+        <div class="nl-chart-subtitle">нива</div>
+      </div>
+    </div>
+    <img src="../editions/w23/screenshots/GDP-09.png" alt="БВП и компоненти в нива"/>
+    <div class="nl-chart-footer">
+      <span>Евростат · namq_10_gdp</span>
+      <span>актуализирано юни 2026</span>
+    </div>
+  </div>
+
+  <p class="chart-lead">Износът на стоки и услуги в стойностно изражение намалява за пръв път от 2023 г. Свиването е видимо и при стоките, и при услугите; при настоящата инфлация над 6% реалният износ спада по-чувствително от номиналния, което поставя въпроси относно конкурентоспособността на износните сектори.</p>
+  <div class="nl-chart">
+    <div class="nl-chart-header">
+      <div>
+        <div class="nl-chart-label">Износ и внос на стоки и услуги (нива)</div>
+        <div class="nl-chart-subtitle">млн. евро · текущи цени</div>
+      </div>
+      <div style="text-align:right">
+        <div class="nl-chart-reading">Q1 2026</div>
+        <div class="nl-chart-subtitle">нива</div>
+      </div>
+    </div>
+    <img src="../editions/w23/screenshots/GDP-10.png" alt="Износ и внос в нива"/>
+    <div class="nl-chart-footer">
+      <span>Евростат · namq_10_gdp</span>
+      <span>актуализирано юни 2026</span>
+    </div>
+  </div>
+
+  <p class="chart-lead">Оборотът в сектора на услугите нараства с 5,7% г/г в март 2026 г., солиден темп при сектор, формиращ над половината от БВП. Ускорението е широко базирано: ИКТ (+10,5%), недвижими имоти (+13,3%) и транспорт (+7,0%) са начело; хотелиерството и ресторантьорството са единственият сегмент с лека отрицателна стойност (-0,6%), вероятно сезонен ефект преди пиковия туристически период.</p>
+  <div class="nl-chart">
+    <div class="nl-chart-header">
+      <div>
+        <div class="nl-chart-label">Оборот в сектора на услугите (общо)</div>
+        <div class="nl-chart-subtitle">% г/г и % м/м</div>
+      </div>
+      <div style="text-align:right">
+        <div class="nl-chart-reading">+5,7%</div>
+        <div class="nl-chart-subtitle">мар. 2026</div>
+      </div>
+    </div>
+    <img src="../editions/w23/screenshots/SERVICES-02.png" alt="Оборот в услугите"/>
+    <div class="nl-chart-footer">
+      <span>Евростат · sts_sepr_m</span>
+      <span>актуализирано юни 2026</span>
+    </div>
+  </div>
+
+  <p class="chart-lead">В секторен разрез ИКТ отчита 10,5% ръст г/г, недвижимите имоти: 13,3%, транспортът: 7,0%. Хотелиерството и ресторантьорството са единственият сегмент с отрицателна стойност (-0,6%), което може да е свързано със сезонни фактори преди пиковия туристически период.</p>
+  <div class="nl-chart">
+    <div class="nl-chart-header">
+      <div>
+        <div class="nl-chart-label">Оборот в услугите: г/г по сектори</div>
+        <div class="nl-chart-subtitle">% г/г · транспорт, хотели, ИКТ, административни услуги</div>
+      </div>
+      <div style="text-align:right">
+        <div class="nl-chart-reading">мар. 2026</div>
+        <div class="nl-chart-subtitle">по сектори</div>
+      </div>
+    </div>
+    <img src="../editions/w23/screenshots/SERVICES-03.png" alt="Услуги по сектори"/>
+    <div class="nl-chart-footer">
+      <span>Евростат · sts_sepr_m</span>
+      <span>актуализирано юни 2026</span>
+    </div>
+  </div>
+
+  <div class="bottom-line">
+    <div class="bottom-line-head">▸ The Bottom Line</div>
+    <p>Q1 2026 очертава икономика в дуален режим. Вътрешното търсене, от потребление до инвестиции, продължава да нараства със силен темп. В същото време износът свива, добивната промишленост отчита значителен спад и нетният износ е сериозна спирачка на растежа. Ако тази структура се запази, съществува риск от задълбочаване на търговския дисбаланс при продължаващ вътрешен ценови натиск. Данните за услугите добавят нюанс: секторът е стабилен и широко базиран, с ИКТ и недвижими имоти начело, което отчасти обяснява устойчивостта на вътрешното търсене.</p>
+  </div>
+
+</div>
+
+<!-- ════════════════════════════════════════════════ -->
+<!-- ═══ SECTION 2: ЗАКОНОДАТЕЛСТВО ══════════════════ -->
+<!-- ════════════════════════════════════════════════ -->
+<div class="section-divider" id="legislation" style="margin-top:8px;">
+  <span class="section-divider-title">Закони · Решения · Регулации</span>
+  <span class="section-divider-num">Секция 2 от 2</span>
+</div>
+<nav class="section-subnav">
+  <a href="#law-summary">Обобщение</a>
+  <a href="#law-items">Обнародвани актове</a>
+</nav>
+
+<!-- ── Legislative infographic ── -->
+<div class="law-infographic" id="law-summary">
+  <div class="infog-stats">
+    <div class="infog-stat">
+      <div class="infog-stat-num accent">4</div>
+      <div class="infog-stat-label">Значими акта*</div>
+      <div class="infog-stat-sub">Обнародвани 2–5 юни</div>
+    </div>
+    <div class="infog-stat">
+      <div class="infog-stat-num">2</div>
+      <div class="infog-stat-label">Технически акта</div>
+      <div class="infog-stat-sub">Не са включени*</div>
+    </div>
+  </div>
+
+  <div class="infog-section-head">По орган</div>
+  <div class="infog-bars">
+    <div class="infog-bar-row">
+      <div class="infog-bar-label">Народно събрание</div>
+      <div class="infog-bar-wrap"><div class="infog-bar-fill" style="width:50%"></div></div>
+      <div class="infog-bar-count">2</div>
+    </div>
+    <div class="infog-bar-row">
+      <div class="infog-bar-label">Министерски съвет</div>
+      <div class="infog-bar-wrap"><div class="infog-bar-fill gold" style="width:0%"></div></div>
+      <div class="infog-bar-count">0</div>
+    </div>
+    <div class="infog-bar-row">
+      <div class="infog-bar-label">Министерства</div>
+      <div class="infog-bar-wrap"><div class="infog-bar-fill" style="width:50%"></div></div>
+      <div class="infog-bar-count">2</div>
+    </div>
+  </div>
+
+  <div class="infog-section-head" style="margin-top:14px;">По тема</div>
+  <div class="infog-bars">
+    <div class="infog-bar-row">
+      <div class="infog-bar-label">Антикорупция</div>
+      <div class="infog-bar-wrap"><div class="infog-bar-fill red" style="width:25%"></div></div>
+      <div class="infog-bar-count">1</div>
+    </div>
+    <div class="infog-bar-row">
+      <div class="infog-bar-label">Парл. процедура</div>
+      <div class="infog-bar-wrap"><div class="infog-bar-fill" style="width:25%"></div></div>
+      <div class="infog-bar-count">1</div>
+    </div>
+    <div class="infog-bar-row">
+      <div class="infog-bar-label">Данъчна прозрачност</div>
+      <div class="infog-bar-wrap"><div class="infog-bar-fill" style="width:50%"></div></div>
+      <div class="infog-bar-count">2</div>
+    </div>
+  </div>
+
+  <div class="infog-footnote">
+    * Бройките изключват технически актове (поправки и тесни процедурни изменения). Пълен списък вижте в секция „Технически актове" по-долу.
+  </div>
+</div>
+
+<!-- ── Law Cards ── -->
+<div class="law-cards" id="law-items">
+
+  <!-- ── CARD 1 (DEEP): Закон за противодействие на корупцията ── -->
+  <div class="nl-law-card deep">
+    <div class="nl-law-card-head" onclick="toggleCard(this)">
+      <div class="nl-law-badges">
+        <span class="badge-type deep">★ ЗАКОН · В ДЕТАЙЛ</span>
+        <span class="badge-organ">Народно събрание</span>
+      </div>
+      <div class="nl-law-title">Нова независима антикорупционна комисия с разследващи инспектори обхваща над 50 категории длъжностни лица</div>
+      <div class="nl-law-tags">
+        <span class="nl-law-tag">Правосъдие и сигурност</span>
+        <span class="nl-law-tag">Публична администрация</span>
+        <span class="nl-law-tag">Институционална реформа</span>
+        <span class="nl-law-tag">Европа и международни</span>
+      </div>
+      <span class="nl-law-toggle">▾ Покажи</span>
+    </div>
+    <div class="nl-law-body">
+
+      <!-- Scorecard -->
+      <div class="sc-panel">
+        <div class="sc-facts">
+          <div class="sc-cell">
+            <div class="sc-label">Влиза в сила</div>
+            <div class="sc-value">5 юни 2026 г.</div>
+            <div class="sc-note">Електронни декларации: след 18 месеца</div>
+          </div>
+          <div class="sc-divider"></div>
+          <div class="sc-cell">
+            <div class="sc-label">Засяга</div>
+            <div class="sc-value">Граждани · Публична адм.</div>
+            <div class="sc-note">50+ категории длъжностни лица; декларациите обхващат и семейството</div>
+          </div>
+          <div class="sc-divider"></div>
+          <div class="sc-cell">
+            <div class="sc-label">ЕС изисква?</div>
+            <div class="sc-value"><span class="es-pill partial">Частично</span></div>
+            <div class="sc-note">ЕС препоръчва специализирани органи; обединяването на превенция, издирване и разследване в едно тяло надхвърля средноевропейската практика</div>
+          </div>
+        </div>
+        <div class="sc-row">
+          <div class="sc-dot indirect"></div>
+          <div class="sc-fiscal-text"><strong>Финансов ефект:</strong> Нова институция с разследващи инспектори, IT система за декларации и прехвърляне на персонал от Сметната палата. Без официална финансова обосновка; сходни органи в ЕС (Румъния: ANI, Словакия) струват 10–30 млн. евро годишно.</div>
+        </div>
+        <div class="sc-steps">
+          <div class="sc-steps-head">Необходими стъпки</div>
+          <div class="sc-step">
+            <span class="sc-step-who">Длъжностни лица:</span>
+            Подгответе имуществена декларация; конкретните срокове ще бъдат определени от Комисията след встъпването й (до 3 месеца от конституирането).
+          </div>
+          <div class="sc-step">
+            <span class="sc-step-who">НС / президент / ВКС / ВАС / ВАдвС:</span>
+            Изберете/назначете членове на Комисията в едномесечен срок от влизане в сила на закона.
+          </div>
+        </div>
+      </div>
+
+      <!-- Nakratko -->
+      <div class="nl-law-lead">Законът създава Комисия за противодействие на корупцията с пет членове, независими от правителство и прокуратура, с правомощия да разследват, декларират и превантират корупция сред президента, министрите, депутатите, кметовете, ректорите, директорите на болници и ръководителите на ДАНС, НАП и Агенция „Митници".</div>
+
+      <!-- Основни моменти -->
+      <div class="nl-law-points">
+        <div class="nl-law-points-head">Основни моменти</div>
+        <ul>
+          <li>Петчленна комисия: по един от НС, президента, ВКС, ВАС и Висшия адвокатски съвет; председателят се определя с жребий за 1 година ротационно; мандатът е 5 години, само веднъж.</li>
+          <li>Задължителни декларации за имущество: недвижими имоти, МПС, суми над <strong>5 000 евро</strong>, криптовалути и задължения; включват съпруга/партньора и ненавършилите пълнолетие деца.</li>
+          <li>При установена разлика над <strong>5 000 евро</strong>: материалите отиват при НАП. При разлика над <strong>12 500 евро</strong>: Комисията образува проверка на имущественото състояние.</li>
+          <li>Ограничение след напускане: <strong>1 година</strong> забрана за работа или участие в дружества, спрямо които е упражняван контрол в последната година от мандата.</li>
+          <li>Разследващи инспектори с досъдебни правомощия; разпределението на делата е случайно и електронно.</li>
+          <li>Санкции: неподаване на декларация: 500–1 500 евро; конфликт на интереси: 2 500–5 000 евро; нарушение на забраната след напускане: до 10 000 евро, за дружеството до 25 000 евро.</li>
+          <li>Всички декларации са публични в реално време в отворен, машинночетим формат; единна електронна система в срок <strong>18 месеца</strong>.</li>
+          <li>Комисията е правоприемник на антикорупционните дейности на Сметната палата.</li>
+        </ul>
+      </div>
+
+      <!-- Кой печели / Кой губи -->
+      <div class="nl-law-wl">
+        <div class="nl-law-win">
+          <div class="nl-law-wl-head">Кой печели</div>
+          <div class="nl-law-wl-text">Граждани и общество: по-специализиран механизъм за контрол и отчетност. КОНПИ получава автоматични уведомления при прагови несъответствия.</div>
+        </div>
+        <div class="nl-law-lose">
+          <div class="nl-law-wl-head">Кой губи</div>
+          <div class="nl-law-wl-text">Лицата на публични длъжности: значително разширени задължения за прозрачност и контрол. Сметната палата губи изцяло антикорупционните си функции.</div>
+        </div>
+      </div>
+
+      <!-- Забележително -->
+      <div class="nl-law-notable">
+        <div class="nl-law-notable-head">▸ Забележително</div>
+        Прокурорът сам е длъжен да изпрати преписката на съда в 3 дни при прекратяване или спиране на дело от компетентността на Комисията, без да чака жалба. Нетипично за българската наказателнопроцесуална традиция.
+      </div>
+
+      <!-- В ЕС -->
+      <div style="background:#EAF4FB; border:1px solid #B8D8EC; border-radius:6px; padding:10px 13px; margin-bottom:14px;">
+        <div style="font-size:9px; font-weight:900; letter-spacing:0.12em; text-transform:uppercase; color:#1B6A9E; margin-bottom:5px;">▸ В ЕС</div>
+        <div style="font-size:12.5px; color:var(--ink2); line-height:1.6;">Специализирани антикорупционни органи с декларации и разследвателни функции съществуват в Румъния (ANI, 2007 г.), Словакия и Хърватия. Характерна разлика: новата Комисия концентрира в едно тяло превенцията, издирването и разследването, докато в повечето западноевропейски страни тези функции са разделени. Автоматичният съдебен контрол върху прокурорски откази е по-близо до модела на Румъния и Молдова, отколкото до Германия или Франция.</div>
+      </div>
+
+      <!-- Гласуване -->
+      <div class="vote-block">
+        <div class="vote-block-head">Гласуване · второ четене · 29 май 2026</div>
+        <div class="vote-total-bar">
+          <div class="vtb-for" style="width:94.3%"></div>
+          <div class="vtb-against" style="width:3.6%"></div>
+          <div class="vtb-abstain" style="width:2.1%"></div>
+        </div>
+        <div class="vote-totals">
+          <span class="vt-for">▲ 132 За</span>
+          <span class="vt-against">▼ 5 Против</span>
+          <span class="vt-abstain">– 3 Въздържали</span>
+          <span style="color:var(--pale)">140 гласували</span>
+        </div>
+        <div class="party-table">
+          <!-- ПБ: 103 за, 1 против, 3 въздържали -->
+          <div class="pt-row">
+            <div class="pt-name">ПБ</div>
+            <div class="pt-bar-wrap">
+              <div class="pt-bar-for" style="width:93%"></div>
+              <div class="pt-bar-against" style="width:1%"></div>
+              <div class="pt-bar-abstain" style="width:3%"></div>
+            </div>
+            <div class="pt-verdict for">103 за</div>
+          </div>
+          <!-- ДБ: 10 за -->
+          <div class="pt-row">
+            <div class="pt-name">ДБ</div>
+            <div class="pt-bar-wrap">
+              <div class="pt-bar-for" style="width:100%"></div>
+            </div>
+            <div class="pt-verdict for">10 за</div>
+          </div>
+          <!-- ВЪЗРАЖДАНЕ: 9 за -->
+          <div class="pt-row">
+            <div class="pt-name">ВЪЗРАЖДАНЕ</div>
+            <div class="pt-bar-wrap">
+              <div class="pt-bar-for" style="width:100%"></div>
+            </div>
+            <div class="pt-verdict for">9 за</div>
+          </div>
+          <!-- ГЕРБ-СДС: 5 за -->
+          <div class="pt-row">
+            <div class="pt-name">ГЕРБ-СДС</div>
+            <div class="pt-bar-wrap">
+              <div class="pt-bar-for" style="width:100%"></div>
+            </div>
+            <div class="pt-verdict for">5 за</div>
+          </div>
+          <!-- ПП: 5 за -->
+          <div class="pt-row">
+            <div class="pt-name">ПП</div>
+            <div class="pt-bar-wrap">
+              <div class="pt-bar-for" style="width:100%"></div>
+            </div>
+            <div class="pt-verdict for">5 за</div>
+          </div>
+          <!-- ДПС: 0 за, 4 против -->
+          <div class="pt-row">
+            <div class="pt-name">ДПС</div>
+            <div class="pt-bar-wrap">
+              <div class="pt-bar-against" style="width:100%"></div>
+            </div>
+            <div class="pt-verdict against">4 против</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nl-law-meta">
+        Обнародван: 5 юни 2026 · ДВ бр. 51 · Приет: 29 май 2026
+        <a href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243769" target="_blank">→ ДВ ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CARD 2: Правилник на НС ── -->
+  <div class="nl-law-card">
+    <div class="nl-law-card-head" onclick="toggleCard(this)">
+      <div class="nl-law-badges">
+        <span class="badge-type">ПРАВИЛНИК</span>
+        <span class="badge-organ">Народно събрание</span>
+      </div>
+      <div class="nl-law-title">Биометрично гласуване, удръжки при отсъствия и онлайн петиции: нов правилник урежда работата на парламента</div>
+      <div class="nl-law-tags">
+        <span class="nl-law-tag">Народно събрание</span>
+        <span class="nl-law-tag">Прозрачност</span>
+        <span class="nl-law-tag">Парламентарна процедура</span>
+      </div>
+      <span class="nl-law-toggle">▾ Покажи</span>
+    </div>
+    <div class="nl-law-body">
+      <div class="nl-law-lead">Правилникът установява изцяло новата рамка за организацията на 52-рото Народно събрание. Две мерки изпъкват: задължително биометрично гласуване срещу практиката депутати да гласуват с чужди карти и значителни финансови санкции при системни отсъствия.</div>
+      <div class="nl-law-points">
+        <div class="nl-law-points-head">Основни моменти</div>
+        <ul>
+          <li>Минимум <strong>10 депутати</strong> за образуване на парламентарна група; депутат, напуснал или изключен от група, не може да влезе в друга, нито да образува нова.</li>
+          <li>Биометрично гласуване задължително за всеки депутат в пленарна зала.</li>
+          <li>При 3 поредни или общо 5 неоправдани отсъствия в месеца: удръжка от <strong>2/3 от месечното възнаграждение</strong>.</li>
+          <li>Депутатско възнаграждение = <strong>3× средна месечна заплата</strong> в обществения сектор, преизчислявано тримесечно.</li>
+          <li>Заседанията на комисиите се излъчват в реално време онлайн; протоколите се публикуват в 7 дни.</li>
+          <li>Онлайн петиции за граждани чрез специален портал; законопроекти без мотиви и оценка на въздействието не се разпределят.</li>
+        </ul>
+      </div>
+      <div class="nl-law-wl">
+        <div class="nl-law-win">
+          <div class="nl-law-wl-head">Кой печели</div>
+          <div class="nl-law-wl-text">Граждани: повече прозрачност и право на участие. Малки парламентарни групи: гарантирано минимално изказване.</div>
+        </div>
+        <div class="nl-law-lose">
+          <div class="nl-law-wl-head">Кой губи</div>
+          <div class="nl-law-wl-text">Депутати с чести неоправдани отсъствия и такива, склонни към смяна на парламентарна група.</div>
+        </div>
+      </div>
+      <div class="nl-law-meta">
+        Обнародван: 2 юни 2026 · ДВ бр. 50
+        <a href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243751" target="_blank">→ ДВ ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CARD 3: CARF крипто ── -->
+  <div class="nl-law-card">
+    <div class="nl-law-card-head" onclick="toggleCard(this)">
+      <div class="nl-law-badges">
+        <span class="badge-type">СПОРАЗУМЕНИЕ</span>
+        <span class="badge-organ">Министерство на финансите</span>
+      </div>
+      <div class="nl-law-title">България се включва в международен обмен на данни за крипто сделки, включително преводи към лични портфейли</div>
+      <div class="nl-law-tags">
+        <span class="nl-law-tag">Данъчна прозрачност</span>
+        <span class="nl-law-tag">Криптоактиви</span>
+        <span class="nl-law-tag">ОИСР</span>
+        <span class="nl-law-tag">Финансово регулиране</span>
+      </div>
+      <span class="nl-law-toggle">▾ Покажи</span>
+    </div>
+    <div class="nl-law-body">
+      <div class="nl-law-lead">Доставчиците на крипто услуги в България (борси и платформи) ще докладват сделките на клиентите си на НАП, а тези данни ще се споделят автоматично с данъчните власти на страните от ОИСР. Обхватът включва и преводи към некастодиални (лични) портфейли.</div>
+      <div class="nl-law-points">
+        <div class="nl-law-points-head">Основни моменти</div>
+        <ul>
+          <li>Годишен автоматичен обмен: до 9 месеца след края на отчетната календарна година.</li>
+          <li>Докладват се: покупко-продажби срещу фиатна валута, крипто-за-крипто размени, плащания за стоки и услуги, преводи към/от лични портфейли.</li>
+          <li>Партньори: страни извън ЕС: САЩ, Великобритания, Япония и др. (EU директивата DAC8 покрива само ЕС).</li>
+          <li>В сила за България от 22 април 2026 г.</li>
+        </ul>
+      </div>
+      <div class="nl-law-notable">
+        <div class="nl-law-notable-head">▸ Забележително</div>
+        Споразумението изрично обхваща преводи към „неизвестни портфейли" (hardware wallets); дори изтеглянето на крипто към личен портфейл се докладва на НАП.
+      </div>
+      <div class="nl-law-wl">
+        <div class="nl-law-win">
+          <div class="nl-law-wl-head">Кой печели</div>
+          <div class="nl-law-wl-text">НАП и данъчните власти на партньорите: по-широк достъп до данни за криптоактиви и свързани доходи.</div>
+        </div>
+        <div class="nl-law-lose">
+          <div class="nl-law-wl-head">Кой губи</div>
+          <div class="nl-law-wl-text">Ползватели на крипто платформи, укривали доходи; доставчиците поемат административна тежест по отчитане.</div>
+        </div>
+      </div>
+      <div class="nl-law-meta">
+        Обнародвано: 2 юни 2026 · ДВ бр. 50
+        <a href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243627" target="_blank">→ ДВ ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CARD 4: CRS финансови сметки ── -->
+  <div class="nl-law-card">
+    <div class="nl-law-card-head" onclick="toggleCard(this)">
+      <div class="nl-law-badges">
+        <span class="badge-type">СПОРАЗУМЕНИЕ</span>
+        <span class="badge-organ">Министерство на финансите</span>
+      </div>
+      <div class="nl-law-title">Банките ще предоставят по-детайлна информация за контролиращите лица по сметките (допълнение към CRS)</div>
+      <div class="nl-law-tags">
+        <span class="nl-law-tag">Данъчна прозрачност</span>
+        <span class="nl-law-tag">Финансови институции</span>
+        <span class="nl-law-tag">ОИСР</span>
+      </div>
+      <span class="nl-law-toggle">▾ Покажи</span>
+    </div>
+    <div class="nl-law-body">
+      <div class="nl-law-lead">България официализира допълнение към Общия стандарт за отчитане (CRS), с което разширява задълженията на финансовите институции: вече се изисква конкретната роля на всяко контролиращо лице, статусът на декларацията за данъчно пребиваване и дали сметката е нова или споделена.</div>
+      <div class="nl-law-points">
+        <div class="nl-law-points-head">Основни моменти</div>
+        <ul>
+          <li>Нова информация за всяка сметка: валидност на декларацията за данъчно пребиваване; роля на контролиращото лице (собственик, директор, бенефициент); брой съвместни титуляри.</li>
+          <li>Актуализацията изпреварва EU директивата DAC9 и вече се прилага на многостранно ниво.</li>
+          <li>В сила за България от 22 април 2026 г.</li>
+        </ul>
+      </div>
+      <div class="nl-law-wl">
+        <div class="nl-law-win">
+          <div class="nl-law-wl-head">Кой печели</div>
+          <div class="nl-law-wl-text">Данъчни администрации: по-детайлна картина за скрити активи в чужбина.</div>
+        </div>
+        <div class="nl-law-lose">
+          <div class="nl-law-wl-head">Кой губи</div>
+          <div class="nl-law-wl-text">Лица, използващи непрозрачни структури за ограничаване на данъчната прозрачност.</div>
+        </div>
+      </div>
+      <div class="nl-law-meta">
+        Обнародвано: 2 юни 2026 · ДВ бр. 50
+        <a href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243628" target="_blank">→ ДВ ↗</a>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /law-cards -->
+
+<!-- ── Technical acts (collapsed) ── -->
+<div class="basic-section">
+  <div class="basic-toggle" onclick="toggleBasic()">
+    <span>▸ Технически актове · 2 броя</span>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="basic-list">
+    <div class="basic-item">
+      <span class="basic-badge">ЗАКОН</span>
+      Техническо преизчисляване на глоби по Закона за държавната финансова инспекция от левове в евро по фиксирания курс 1,95583; без промяна на реалния размер на санкциите
+      <span class="basic-organ">Народно събрание</span>
+      <a href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243580" target="_blank">→ ДВ ↗</a>
+    </div>
+    <div class="basic-item">
+      <span class="basic-badge">НАРЕДБА</span>
+      Поправка на техническа грешка в субсидията за биологично отглеждане на смесени зеленчукови култури в отоплявани оранжерии: 960 → 2 960 евро/ха
+      <span class="basic-organ">Министерство на земеделието и храните</span>
+      <a href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243743" target="_blank">→ ДВ ↗</a>
+    </div>
+  </div>
+</div>
+
+<!-- ── Footer ── -->
+<div class="footer">
+  <span class="footer-logo">Doodles</span>
+  <div class="footer-sources">
+    Икономически данни: Евростат · НСИ · БНБ · НОИ · АЗ<br/>
+    Законодателство: Държавен вестник · dv.parliament.bg
+  </div>
+</div>
+
+</div><!-- /wrapper -->
+</body>
+</html>
