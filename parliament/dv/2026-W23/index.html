@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="utf-8">
+<title>Парламентарни Doodles · ДВ Дайджест · Седмица 23</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --navy:#1B2E5E; --gold:#B5821A; --ink:#1C1C1C; --ink2:#444;
+  --muted:#888; --muted-lt:#AAA; --border:#E8E8E8; --surf:#F8F8F8; --paper:#FFF;
+  --font-d:'Caveat',cursive; --font-h:'Nunito','Arial Black',sans-serif;
+  --font-b:'Nunito',Arial,sans-serif;
+}
+body{font-family:var(--font-b);background:#E8E8E8;color:var(--ink);line-height:1.6;}
+.wrapper{max-width:700px;margin:32px auto;background:#fff;border:1px solid #C0C0C0;border-radius:0;overflow:hidden;}
+
+/* newspaper header */
+.nwp-hdr{padding:18px 24px 14px;border-bottom:1px solid var(--ink);}
+.nwp-topline{display:flex;justify-content:flex-end;align-items:center;margin-bottom:10px;}
+.nwp-nav{display:flex;gap:14px;flex-wrap:wrap;}
+.nwp-nav a{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#777;text-decoration:none;}
+.nwp-nav a:hover{color:var(--ink);}
+.nwp-nav a.nwp-active{color:var(--ink);font-weight:900;border-bottom:2px solid #CC2B2B;padding-bottom:1px;}
+.nwp-title-row{text-align:center;margin-bottom:10px;}
+.nwp-title{font-family:var(--font-h);font-size:40px;font-weight:900;color:var(--ink);letter-spacing:-1.5px;line-height:1;display:inline;}
+.nwp-doodles{font-family:var(--font-d);font-size:48px;font-weight:700;color:#CC2B2B;line-height:1;vertical-align:baseline;margin-left:6px;}
+.nwp-subtitle{text-align:center;font-size:11px;color:#777;letter-spacing:.14em;text-transform:uppercase;margin-top:6px;}
+.nwp-rule-thick{height:3px;background:var(--ink);margin:10px 0 0;}
+.nwp-rule-thin{height:1px;background:var(--ink);margin:3px 0 0;}
+
+/* section header (below newspaper header, parliament-specific) */
+.parl-hdr{padding:14px 24px 12px;border-bottom:1px solid var(--border);}
+.parl-hdr-title{font-size:16px;font-weight:900;color:var(--ink);letter-spacing:-.2px;}
+.parl-hdr-date{font-size:12px;color:var(--muted);margin-top:3px;}
+.masthead-pills{margin-top:8px;display:flex;gap:6px;flex-wrap:wrap;}
+.masthead-pill{font-size:10px;font-weight:700;letter-spacing:.05em;background:var(--surf);color:var(--muted);padding:3px 8px;border-radius:3px;border:1px solid var(--border);}
+
+/* content sections */
+.section{padding:20px 28px;border-bottom:1px solid var(--border);}
+.section:last-of-type{border-bottom:none;}
+
+/* subsection (within DV edition) */
+.subsection{margin-bottom:24px;}
+.subsection:last-child{margin-bottom:0;}
+.subsection-hd{display:flex;align-items:baseline;gap:10px;margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid var(--border);}
+.subsection-tag{font-size:10px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);}
+.subsection-title{font-family:var(--font-h);font-size:16px;font-weight:900;color:var(--navy);}
+.subsection-count{font-size:11px;color:var(--muted);margin-left:auto;}
+
+/* section label row */
+.section-label-row{padding:10px 28px 8px;background:var(--surf);border-bottom:1px solid var(--border);}
+.section-label{font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);}
+
+/* page header */
+.page-header{padding:20px 28px 16px;border-bottom:1px solid var(--border);}
+.page-title{font-family:var(--font-h);font-size:20px;font-weight:900;color:var(--ink);letter-spacing:-.3px;margin-bottom:6px;}
+.page-subtitle{font-size:13px;color:var(--muted);}
+
+/* issue list rows */
+a.issue-row{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 28px;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:background .1s;}
+a.issue-row:hover{background:var(--surf);}
+a.issue-row:last-of-type{border-bottom:none;}
+.issue-row-left{flex:1;}
+.issue-row-meta{font-family:'Courier New',monospace;font-size:10px;color:var(--muted-lt);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;}
+.issue-row-title{font-size:15px;font-weight:900;color:var(--ink);letter-spacing:-.2px;line-height:1.3;}
+.issue-row-desc{font-size:12px;color:var(--muted);margin-top:3px;}
+.issue-row-arrow{font-size:18px;color:var(--gold);font-weight:900;flex-shrink:0;}
+
+/* footer */
+.nl-footer{padding:14px 28px;background:var(--surf);border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
+.nl-footer-logo{font-family:var(--font-d);font-size:18px;font-weight:700;color:#CCC;}
+.nl-footer-links{font-size:11px;display:flex;gap:16px;}
+.nl-footer-links a{color:var(--muted-lt);text-decoration:none;}
+.nl-footer-links a:hover{color:var(--muted);}
+
+/* DV cards */
+.dv-grid{display:flex;flex-direction:column;gap:8px;}
+details.dv-card{background:var(--paper);border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:border-color .15s;}
+details.dv-card:hover{border-color:var(--gold);}
+details.dv-card[open]{border-color:var(--gold);}
+.dv-card-compact{background:var(--paper);border:1px solid var(--border);border-radius:8px;overflow:hidden;opacity:.9;}
+.dv-sum{padding:14px 16px;cursor:pointer;list-style:none;user-select:none;}
+.dv-sum::-webkit-details-marker{display:none;}
+.dv-sum-static{padding:14px 16px;}
+.dv-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+.dv-meta{font-size:11px;color:var(--muted);font-weight:700;}
+.dv-title{font-family:var(--font-h);font-size:13px;font-weight:900;color:var(--ink);line-height:1.4;letter-spacing:-.1px;margin-bottom:4px;}
+.exec-organ{font-size:11px;color:var(--muted);margin-bottom:6px;font-style:italic;}
+.dv-lead{font-size:13px;color:var(--ink2);line-height:1.55;margin-bottom:8px;}
+.compact-bullets ul{list-style:none;padding:0;margin-top:6px;}
+.compact-bullets li{padding:3px 0 3px 14px;position:relative;color:var(--ink2);font-size:12px;line-height:1.5;}
+.compact-bullets li::before{content:"·";position:absolute;left:2px;color:var(--gold);font-weight:700;font-size:15px;line-height:1.1;}
+.expand-hint{font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.06em;margin-top:4px;}
+details.dv-card[open] .expand-hint{display:none;}
+.dv-body{padding:0 16px 16px;border-top:1px solid var(--border);}
+
+/* badges */
+.badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;}
+.dv-badges{display:flex;gap:6px;align-items:center;flex-wrap:wrap;}
+.b-zakon   {background:#dbeafe;color:#1a56db;}
+.b-reshenie{background:#cffafe;color:#0a6e8a;}
+.b-ukaz    {background:#ede9fe;color:#7c3aed;}
+.b-decl    {background:#fef3c7;color:#92400e;}
+.b-post    {background:#d1fae5;color:#065f46;}
+.b-naredba {background:#fce7f3;color:#9d174d;}
+.b-pravilnik{background:#f3e8ff;color:#6b21a8;}
+.b-inst    {background:#fef9c3;color:#713f12;}
+.b-razp    {background:#e0f2fe;color:#0369a1;}
+.b-spor    {background:#fff7ed;color:#c2410c;}
+.b-other   {background:#f3f4f6;color:#6b7280;}
+.b-cat     {background:#f3f4f6;color:#555;}
+
+/* factsheet sections */
+.fs-sec{margin:12px 0;font-size:13px;}
+.fs-sec h5,.parties-block h5,.notable-callout h5,.sess-col h5{font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:8px;padding-bottom:5px;border-bottom:1px solid var(--border);}
+.fs-sec ul,.parties-block ul{list-style:none;padding:0;}
+.fs-sec li,.parties-block li{padding:4px 0 4px 16px;position:relative;color:var(--ink2);border-bottom:1px solid #f3f4f6;font-size:13px;line-height:1.5;}
+.fs-sec li:last-child,.parties-block li:last-child{border-bottom:none;}
+.fs-sec li::before{content:"·";position:absolute;left:3px;color:var(--gold);font-weight:700;font-size:16px;line-height:1.1;}
+.fs-sec p,.parties-block p{color:var(--ink2);font-size:13px;margin-bottom:4px;}
+.fs-winners ul{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.fs-winners li{padding:8px 10px 8px 24px;border-radius:6px;border-bottom:none !important;}
+.fs-winners li:first-child{background:#f0fdf4;}
+.fs-winners li:first-child::before{content:"✓";color:#16a34a;font-size:13px;top:8px;}
+.fs-winners li:nth-child(2){background:#fef2f2;}
+.fs-winners li:nth-child(2)::before{content:"✗";color:#dc2626;font-size:13px;top:8px;}
+.fs-notable{background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:12px 14px;}
+.fs-notable h5{border-bottom-color:#fde68a;color:#92400e;}
+.fs-notable li,.fs-notable p{color:#78350f;}
+.fs-notable li::before{color:#d97706;}
+.fs-eu{background:#f0f9ff;border-radius:8px;padding:12px 14px;}
+.fs-eu h5{color:#0369a1;border-bottom-color:#bae6fd;}
+.fs-eu p{color:#0c4a6e;font-size:13px;}
+.ext-link{display:inline-block;margin-top:12px;font-size:12px;font-weight:700;color:var(--navy);text-decoration:none;}
+.ext-link:hover{text-decoration:underline;}
+.no-summ{color:var(--muted);font-size:13px;font-style:italic;padding:12px 0;}
+
+/* session blocks */
+details.sess-block{background:var(--paper);border:1px solid var(--border);border-left:4px solid var(--navy);border-radius:0 8px 8px 0;margin-bottom:10px;overflow:hidden;}
+details.sess-block:hover{box-shadow:0 2px 8px rgba(0,0,0,.06);}
+details.sess-block[open]{border-left-color:var(--gold);}
+.sess-sum{padding:14px 18px;cursor:pointer;list-style:none;user-select:none;}
+.sess-sum::-webkit-details-marker{display:none;}
+.sess-hd{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap;}
+.sess-date-chip{background:var(--navy);color:#fff;font-size:10px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:4px;white-space:nowrap;}
+details.sess-block[open] .sess-date-chip{background:var(--gold);}
+.sess-label{font-family:var(--font-h);font-size:14px;font-weight:900;color:var(--ink);}
+.sess-lead{font-size:13px;color:var(--ink2);line-height:1.55;margin-bottom:6px;}
+.sess-body{padding:0 18px 16px;border-top:1px solid var(--border);}
+.sess-lead-full{font-size:13px;color:var(--ink2);line-height:1.6;margin:12px 0;background:#f8fafc;border-left:3px solid var(--gold);padding:8px 12px;border-radius:0 6px 6px 0;}
+.sess-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0;}
+.sess-col{font-size:13px;}
+.sess-col ul{list-style:none;padding:0;}
+.sess-col li{padding:4px 0 4px 14px;position:relative;color:var(--ink2);border-bottom:1px solid #f3f4f6;font-size:13px;line-height:1.5;}
+.sess-col li:last-child{border-bottom:none;}
+.sess-col li::before{content:"·";position:absolute;left:2px;color:var(--navy);font-weight:700;font-size:15px;line-height:1.1;}
+.notable-callout{display:flex;gap:10px;align-items:flex-start;background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:10px 12px;margin:12px 0;}
+.notable-icon{font-size:16px;color:#d97706;flex-shrink:0;line-height:1.4;}
+.notable-callout h5{border-bottom-color:#fde68a;color:#92400e;}
+.notable-callout p,.notable-callout li{color:#78350f;font-size:13px;}
+.notable-callout ul{list-style:none;padding:0;}
+.notable-callout li{padding:3px 0 3px 14px;position:relative;}
+.notable-callout li::before{content:"·";position:absolute;left:2px;color:#d97706;font-weight:700;font-size:15px;line-height:1.1;}
+.parties-block{margin:12px 0;font-size:13px;}
+.sess-ft{margin-top:12px;padding-top:10px;border-top:1px solid var(--border);}
+
+/* landing track cards */
+.track-card{display:block;padding:20px 28px;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:background .1s;}
+.track-card:hover{background:var(--surf);}
+.track-card:last-of-type{border-bottom:none;}
+.track-label{font-size:10px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+.track-title{font-family:var(--font-h);font-size:18px;font-weight:900;color:var(--navy);letter-spacing:-.3px;line-height:1.3;margin-bottom:6px;}
+.track-desc{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px;}
+.track-latest{font-size:12px;color:var(--ink2);}
+.track-arrow{font-size:22px;color:var(--gold);font-weight:900;float:right;margin-top:-28px;}
+
+/* archive / intro */
+.arch-table{width:100%;border-collapse:collapse;}
+.arch-table th{padding:8px 0;text-align:left;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);border-bottom:1px solid var(--border);}
+.arch-table td{padding:12px 8px 12px 0;border-bottom:1px solid var(--border);font-size:13px;color:var(--ink2);}
+.arch-table tr:last-child td{border-bottom:none;}
+.arch-table a{color:var(--navy);font-weight:700;text-decoration:none;}
+.arch-table a:hover{text-decoration:underline;}
+.intro-block{padding:20px 28px;border-bottom:1px solid var(--border);font-size:14px;line-height:1.7;color:var(--ink);}
+.all-issues-wrap{padding:16px 28px;border-bottom:1px solid var(--border);}
+.all-issues-btn{width:100%;padding:13px;background:none;border:1.5px solid var(--navy);border-radius:3px;font-family:var(--font-h);font-size:11px;font-weight:900;color:var(--navy);cursor:pointer;text-align:center;letter-spacing:.14em;text-transform:uppercase;transition:background .15s,color .15s;}
+.all-issues-btn:hover{background:var(--navy);color:#fff;}
+.waitlist-section,.contact-section{padding:20px 28px;border-bottom:1px solid var(--border);}
+.waitlist-heading{font-family:var(--font-h);font-size:17px;font-weight:900;color:var(--ink);letter-spacing:-.2px;margin-bottom:8px;}
+.waitlist-body{font-size:14px;color:var(--ink2);line-height:1.6;margin-bottom:16px;}
+.waitlist-form{display:flex;gap:8px;margin-bottom:10px;}
+.waitlist-input{flex:1;padding:10px 12px;border:1px solid var(--border);border-radius:3px;font-family:var(--font-b);font-size:14px;color:var(--ink);min-width:0;}
+.waitlist-input:focus{outline:none;border-color:var(--navy);}
+.waitlist-btn{padding:10px 18px;background:var(--navy);color:#fff;border:none;border-radius:3px;font-family:var(--font-h);font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;white-space:nowrap;}
+.waitlist-btn:hover{background:#122348;}
+.waitlist-fine{font-size:12px;color:var(--muted-lt);line-height:1.5;}
+.waitlist-ok{display:none;font-size:14px;font-weight:700;color:#16a34a;margin-top:10px;}
+.contact-section p{font-size:14px;color:var(--ink2);line-height:1.6;}
+.contact-section a{color:var(--navy);font-weight:700;text-decoration:none;}
+.contact-section a:hover{text-decoration:underline;}
+
+@media(max-width:760px){
+  .wrapper{margin:0;border-left:none;border-right:none;}
+  .nwp-hdr,.parl-hdr,.section,.nl-footer,.page-header,a.issue-row,.track-card,
+  .section-label-row,.intro-block,.waitlist-section,.contact-section,.all-issues-wrap{padding-left:16px;padding-right:16px;}
+  .masthead-pills{display:none;}
+  .nwp-nav{gap:8px 12px;}
+  .nwp-title{font-size:28px;letter-spacing:-.8px;}
+  .nwp-doodles{font-size:34px;}
+  .sess-cols{grid-template-columns:1fr;}
+  .fs-winners ul{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+<div class="nwp-hdr">
+  <div class="nwp-topline">
+    <nav class="nwp-nav">
+      <a href="/">Начало</a>
+      <a href="/newsletters/">Бюлетин</a>
+      <a href="/cockpit/">Икономика</a>
+      <a href="/parliament/" class="nwp-active">Законодателство</a>
+      <a href="/about/">За проекта</a>
+    </nav>
+  </div>
+  <div class="nwp-title-row">
+    <span class="nwp-title">Basepoint</span><span class="nwp-doodles">Doodles</span>
+  </div>
+  <p class="nwp-subtitle">Законодателство &middot; Парламентарен дайджест</p>
+  <div class="nwp-rule-thick"></div>
+  <div class="nwp-rule-thin"></div>
+</div>
+
+<div class="parl-hdr">
+  <div class="parl-hdr-title">ДВ Дайджест · Седмица 23 · 2026</div>
+  <div class="parl-hdr-date">1–7 юни 2026</div>
+  <div class="masthead-pills"><span class="masthead-pill">3 акта от НС</span><span class="masthead-pill">3 наредби/регулации</span></div>
+</div>
+<div class="section">
+
+<div class="subsection">
+  <div class="subsection-hd">
+    <span class="subsection-tag">01</span>
+    <span class="subsection-title">Народно събрание</span>
+    <span class="subsection-count">2 закони · 1 акт</span>
+  </div>
+  <div class="dv-grid">
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-zakon">ЗАКОН</span></div>
+      <span class="dv-meta">Бр.&nbsp;50 &middot; 2026-06-02</span>
+    </div>
+    <div class="dv-title">ЗАКОН за изменение на Закона за държавната финансова инспекция</div>
+    <p class="dv-lead">Законът преизчислява всички глоби и санкции по Закона за държавната финансова инспекция от левове в евро, без да променя техния реален размер.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Глобите за нарушения по чл. 32, ал. 1 се преизчисляват в евро: минималният праг навсякъде е 255,65 евро (бивши 500 лв.), а максималният варира от 306,78 евро до 1533,88 евро в зависимост от вида нарушение.</li><li>Изключение при по-леките нарушения (т. 7): минимумът е 127,82 евро, максимумът – 511,29 евро (бивши 250–1000 лв.).</li><li>За по-тежки нарушения по чл. 32, ал. 2: глобата вече е 511,29–2045,17 евро (бивши 1000–4000 лв.).</li><li>Санкциите по чл. 32а и 32б се уеднаквяват на 511,29–2556,46 евро (бивши 1000–5000 лв. за всяка).</li><li>Най-ниската глоба в закона (чл. 34) е 102,26–511,29 евро (бивши 200–1000 лв.).</li><li>Вредите, причинени в чуждестранна валута, вече могат да се възстановяват и в евро по курса на ЕЦБ към деня на причиняването или откриването им – не само в оригиналната валута.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Не се открива явен печеливш – промяната е техническа, реалният размер на санкциите остава същият.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Преизчислението от левове в евро е направено по фиксирания курс 1,95583, но закръглянето дава точни евро-стойности, което на практика означава, че санкциите остават идентични по размер – законът е изцяло козметична подготовка за еврото.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><ul><li>Няма посочени преходни разпоредби или гратисни периоди.</li><li>Влиза в сила от обнародването – 2 юни 2026 г.</li></ul></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Повечето страни от еврозоната отдавна деноминират административните си санкции директно в евро. България следва стандартната практика при присъединяване към еврозоната – механично преизчисляване на съществуващите левови прагове по фиксирания конверсионен курс, без съдържателна реформа на санкционната политика.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243580" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-zakon">ЗАКОН</span></div>
+      <span class="dv-meta">Бр.&nbsp;51 &middot; 2026-06-05</span>
+    </div>
+    <div class="dv-title">ЗАКОН за противодействие на корупцията сред лица, заемащи публични длъжности</div>
+    <p class="dv-lead">Законът създава изцяло нов независим орган – Комисия за противодействие на корупцията – с правомощия да разследва, разкрива и превентира корупция сред над 50 категории лица на публични длъжности, като едновременно задължава всички тях да декларират имущество и интереси и въвежда строги ограничения срещу конфликт на интереси.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Кой е обхванат:</strong> Над 50 категории лица на публични длъжности – от президента и народните представители до общинските съветници, ректори, директори на болници, ръководители на ДАНС, НАП, Агенция „Митници&quot;, председатели на политически партии с държавна субсидия и ръководители на публични предприятия.</li><li><strong>Нова комисия от петима:</strong> Комисията се състои от петима членове – по един от Народното събрание, президента, ВКС, ВАС и Висшия адвокатски съвет; председателят се определя чрез жребий за срок от 1 година на ротационен принцип; мандатът е 5 години, само един мандат е допустим.</li><li><strong>Изисквания за членовете:</strong> Висше юридическо образование „магистър&quot;, минимум 10 години юридически стаж, да не са осъждани, без публични задължения и без обвързаност с политически партии или правителство в последните 5 години.</li><li><strong>Задължителни декларации за имущество:</strong> Всички лица на публични длъжности декларират пред Комисията недвижими имоти, превозни средства, парични суми над 5 000 евро, вземания над 5 000 евро, задължения над 5 000 евро, криптовалути, договори и свързани лица; декларират се и имуществото на съпруга/фактическия партньор и ненавършилите пълнолетие деца.</li><li><strong>Прагове за последствия при несъответствие:</strong> При установена разлика над 5 000 евро – материалите се изпращат на НАП за данъчна проверка; при разлика над 12 500 евро – Комисията образува проверка на имущественото състояние и уведомява Комисията за отнемане на незаконно придобито имущество.</li><li><strong>Конфликт на интереси – ограничения след напускане:</strong> Бивш служител на публична длъжност не може 1 година след освобождаването да работи или да е съдружник в дружества, спрямо които е упражнявал контрол или е сключвал договори в последната година от мандата си; забраната важи и за свързаните дружества.</li><li><strong>Санкции:</strong> Неподаване на декларация в срок – глоба 500–1 500 евро (при повторно 1 750–3 000 евро); нарушение на забраните за конфликт на интереси – глоба 2 500–5 000 евро (при повторно до 10 000 евро); нарушение на ограниченията след напускане – глоба 2 500–7 500 евро, а за дружеството – имуществена санкция 5 000–10 000 евро (при повторно до 25 000 евро).</li><li><strong>Разследващи инспектори:</strong> Комисията разполага със собствени разследващи инспектори (минимум магистър по право и 5 години стаж), които провеждат досъдебно производство за корупционни престъпления на лица по чл. 5; разпределението на делата е случайно и електронно; прокурорският отказ да образува дело може да бъде обжалван от Комисията пред съда в 7-дневен срок.</li><li><strong>Декларациите са публични в реално време:</strong> Комисията публикува всички декларации в отворен, машинночетим формат веднага след подаването им; изгражда се единна електронна система в срок 18 месеца от влизане на закона в сила.</li><li><strong>Непреминаването на проверка за почтеност</strong> е самостоятелно основание за уволнение на служителите на Комисията, а чрез изменения в КТ и ЗДСл – и за всеки държавен служител или работник, за когото такава проверка е предвидена.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li><strong>Печелят:</strong> Граждани и общество – по-строг и специализиран контрол върху публичните длъжностни лица; Комисията за отнемане на незаконно придобито имущество – получава автоматични уведомления при прагови несъответствия.</li><li><strong>Губят:</strong> Лицата на публични длъжности – значително разширени задължения за прозрачност, по-строги ограничения след напускане и реален риск от наказателно преследване от специализирани разследващи инспектори; Сметната палата – губи изцяло антикорупционните си функции (цели глави от закона й се отменят).</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Прокурорското постановление за прекратяване или спиране на дело от компетентността на Комисията подлежи на автоматичен съдебен контрол – прокурорът сам е длъжен да изпрати преписката на съда в 3 дни, без да чака жалба, което е нетипично за българската наказателнопроцесуална традиция.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><ul><li>Законът влиза в сила от деня на обнародването (5 юни 2026 г.), с изключение на разпоредбите за електронните декларации (единна система и публикуване в реално време), които влизат в сила 18 месеца по-късно.</li><li>В едномесечен срок от влизането в сила петте органа (НС, президент, ВКС, ВАС, ВАС) трябва да изберат/назначат членовете на Комисията; до встъпването им в длъжност антикорупционните функции остават при досегашните органи, но не повече от 3 месеца след конституирането.</li><li>Служителите от дирекциите „Превенция на корупцията&quot;, „Публичен регистър&quot; и „Конфликт на интереси&quot; на Сметната палата преминават автоматично към новата Комисия без нов конкурс и без нов изпитателен срок; Комисията е правоприемник на документите на Сметната палата по тези дейности.</li></ul></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Специализирани антикорупционни органи с правомощия за разследване, декларации за имущество и конфликт на интереси съществуват в повечето държави-членки на ЕС (напр. Румъния – ANI, Словакия, Хърватия). България е сред страните, към които ЕС е отправял трайни препоръки за укрепване на институционалната рамка; характерна разлика е, че новата Комисия концентрира в едно тяло превенцията, оперативно-издирвателната дейност и разследването, докато в повечето западноевропейски страни тези функции са разделени между различни органи.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243769" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-other">ДРУГО</span></div>
+      <span class="dv-meta">Бр.&nbsp;50 &middot; 2026-06-02</span>
+    </div>
+    <div class="dv-title">законодателната инициатива си поставя за цел да регулира. Необходимо е да</div>
+    <p class="dv-lead">Новият правилник урежда изцяло организацията и работата на 52-рото Народно събрание – от образуването на парламентарни групи и комисии до приемане на закони, парламентарен контрол и дисциплинарни санкции срещу депутати.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Парламентарни групи:</strong> минимум 10 депутати за образуване; групи не могат да се сливат или разделят; депутат, напуснал или изключен от група, не може да влезе в друга, нито да образува нова.</li><li><strong>Постоянни комисии:</strong> 24 на брой (новост – Комисия по туризъм); всеки депутат може да е в най-много две комисии и в ръководството само на една; комисията по сигурността се формира на паритетен принцип и се председателства ротационно.</li><li><strong>Законодателен процес:</strong> законопроекти без мотиви и оценка на въздействието не се разпределят; докладът за първо гласуване трябва да е готов до 2 месеца; предложения за изменения след първо гласуване се правят в 7-дневен срок (може да се удължи с до 3 седмици или намали до минимум 3 дни).</li><li><strong>Парламентарен контрол:</strong> всеки депутат може да задава най-много 2 въпроса или 2 питания седмично с устен отговор; срокът за писмен отговор на въпрос е 10 дни, на питане – 14 дни; в първия петък на месеца министър-председателят отговаря на актуални устни въпроси до 2 часа.</li><li><strong>Възнаграждения:</strong> базовото месечно възнаграждение = 3 средномесечни заплати в обществения сектор, преизчислявано тримесечно; председателят на НС получава с 55% повече, зам.-председателите – с 45%, председателите на комисии и групи – с 35%; добавки за стаж (1% на година), научна степен „доктор&quot; – 10%, „доктор на науките&quot; – 15%.</li><li><strong>Санкции за отсъствия:</strong> при неоправдано отсъствие от пленарно заседание – удръжка от дневното възнаграждение; при 3 поредни или общо 5 неоправдани отсъствия в месеца – удръжка от 2/3 от месечното възнаграждение и НС покрива само 1/3 от допълнителните разходи.</li><li><strong>Дисциплина на депутатите:</strong> председателят може да отстрани депутат до 3 заседания; до 3 месеца спиране от международни форуми; Комисията по превенция и противодействие на корупцията налага етични мерки (забележка, порицание, временно отстраняване от комисия); подаръци над 1/20 от месечното възнаграждение трябва да се предадат и се вписват в публичен регистър.</li><li><strong>Прозрачност и граждани:</strong> заседанията на комисиите се излъчват в реално време онлайн; протоколите от открити заседания се публикуват до 7 дни; гражданите могат да подават онлайн петиции чрез специален портал; становища на граждански организации по законопроекти се публикуват на страницата на НС.</li><li><strong>Гласуване с биометрика:</strong> компютризираната система за гласуване задължително работи с биометрични данни на всеки депутат – мярка срещу гласуването с чужда карта.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li><strong>Печелят:</strong> Граждани и граждански организации (повече прозрачност, онлайн петиции, право на участие в комисии); малки парламентарни групи (гарантирано минимално 10 минути изказвания, право на два въпроса в контрола).</li><li><strong>Губят:</strong> Депутати, склонни към „групов туризъм&quot; – след напускане на група нямат право да влязат в нова; депутати с чести неоправдани отсъствия – сериозни финансови удръжки.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Гласуването в пленарна зала вече задължително се извършва с биометрични данни на всеки депутат – това е изрично записана конституционна мярка срещу практиката депутати да гласуват с картите на колегите си.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><ul><li>Правилникът влиза в сила от деня на обнародването му – 2 юни 2026 г.</li><li>Парламентарният телевизионен канал (БНТ) ще излъчва пленарни заседания само след осигуряване на техническа и финансова възможност – без конкретен срок.</li><li>Текущите процедури по законопроекти, разпределени на временните комисии по бюджет и правни въпроси (създадени на 8 май 2026 г.), продължават пред съответните нови постоянни комисии.</li></ul></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Всяка парламентарна демокрация в ЕС има подобен вътрешен правилник, но съдържанието им силно се различава. Биометричното гласуване е относително рядкост – повечето западноевропейски парламенти разчитат на електронни карти или явно вдигане на ръка. Изричната забрана за „групов туризъм&quot; (депутат, напуснал група, не може да влезе в друга) е по-рестриктивна от практиката в Германия или Франция, където подобни преходи са допустими.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243751" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details></div>
+</div>
+<div class="subsection">
+  <div class="subsection-hd">
+    <span class="subsection-tag">03</span>
+    <span class="subsection-title">Министерства и ведомства</span>
+    <span class="subsection-count">2 споразумения · 1 наредба</span>
+  </div>
+  <div class="dv-grid">
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;50 &middot; 2026-06-02</span>
+    </div>
+    <div class="dv-title"></div>
+    <div class="exec-organ">Министерство на земеделието и храните</div>
+    <p class="dv-lead">Коригира се техническа грешка в субсидията за биологично отглеждане на смесени зеленчукови култури в отоплявани оранжерии – сумата се увеличава близо три пъти.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Субсидията за отопляеми оранжерийни площи със смесени зеленчукови култури се коригира от грешно публикуваните 960 евро/ха на правилните <strong>2 960 евро/ха</strong>.</li><li>Засегнати са биологични производители на оранжерийни зеленчуци, кандидатстващи по интервенциите „Биологично растениевъдство&quot; в рамките на Стратегическия план 2023–2027 г.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Биологични зеленчукопроизводители с отоплявани оранжерии, чиято реална субсидия е почти три пъти по-висока от погрешно публикуваната.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Грешката е пропусната цифра „2&quot; в началото на числото – разлика от 2 000 евро на хектар, която би имала сериозни финансови последици за производителите, ако беше приложена непоправена.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Поправката влиза в сила от обнародването и се счита за приложима към оригиналния акт (ДВ, бр. 34 от 7 април 2026 г.) от датата на неговото обнародване.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243743" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<div class="dv-card dv-card-compact">
+  <div class="dv-sum-static">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-spor">СПОРАЗУМЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;50 &middot; 2026-06-02</span>
+    </div>
+    <div class="dv-title">МНОГОСТРАННО СПОРАЗУМЕНИЕ между компетентните органи за автоматичен обмен на информация съгласно Рамката за предоставяне на информация за криптоактиви</div>
+    <div class="exec-organ">Министерство на финансите</div>
+    <p class="dv-lead">България се присъединява към международна система за автоматичен обмен на данъчна информация за криптоактиви, при която местните доставчици на крипто услуги ще докладват сделките на клиентите си, а тези данни ще се споделят между данъчните власти на страните участнички.</p>
+    <div class="compact-bullets"><ul><li>Доставчиците на услуги за криптоактиви (борси, платформи и др.), регистрирани в България, са длъжни да събират и отчитат пред НАП информация за своите клиенти – имена, адреси, данъчни номера, дати и места на раждане.</li><li>За всяка сделка на клиент се отчита: вид криптоактив, брутни суми при покупка/продажба срещу фиатна валута, справедлива пазарна стойност при размени крипто за крипто, плащания за стоки и услуги, както и всички преводи към и от портфейли извън платформата.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243627" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</div>
+
+<div class="dv-card dv-card-compact">
+  <div class="dv-sum-static">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-spor">СПОРАЗУМЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;50 &middot; 2026-06-02</span>
+    </div>
+    <div class="dv-title">Допълнение към Многостранното споразумение между компетентните органи за автоматичен обмен на информация за финансови сметки</div>
+    <div class="exec-organ">Министерство на финансите</div>
+    <p class="dv-lead">България официално приема допълнение към международното споразумение за автоматичен обмен на данни за финансови сметки, с което разширява обхвата на информацията, която НАП изпраща и получава от данъчните власти на другите страни-участнички.</p>
+    <div class="compact-bullets"><ul><li>Финансовите институции (банки, инвестиционни дружества и др.) вече ще трябва да предоставят допълнителна информация за всяка сметка: дали притежателят е подал валидна декларация за данъчно пребиваване.</li><li>За сметки на дружества и правни структури се добавя задължение да се посочва конкретната роля, в която дадено лице е „контролиращо&quot; – например собственик, директор или бенефициент.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243628" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</div></div>
+</div>
+</div>
+
+<div class="nl-footer">
+  <span class="nl-footer-logo">Doodles.</span>
+  <div class="nl-footer-links">
+    <a href="/">Начало</a>
+    <a href="/newsletters/">Бюлетин</a>
+    <a href="/parliament/">Законодателство</a>
+    <a href="/about/">За проекта</a>
+  </div>
+</div>
+</div>
+</body>
+</html>
