@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="utf-8">
+<title>Парламентарни Doodles · ДВ Дайджест · Седмица 24</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --navy:#1B2E5E; --gold:#B5821A; --ink:#1C1C1C; --ink2:#444;
+  --muted:#888; --muted-lt:#AAA; --border:#E8E8E8; --surf:#F8F8F8; --paper:#FFF;
+  --font-d:'Caveat',cursive; --font-h:'Nunito','Arial Black',sans-serif;
+  --font-b:'Nunito',Arial,sans-serif;
+}
+body{font-family:var(--font-b);background:#E8E8E8;color:var(--ink);line-height:1.6;}
+.wrapper{max-width:700px;margin:32px auto;background:#fff;border:1px solid #C0C0C0;border-radius:0;overflow:hidden;}
+
+/* newspaper header */
+.nwp-hdr{padding:18px 24px 14px;border-bottom:1px solid var(--ink);}
+.nwp-topline{display:flex;justify-content:flex-end;align-items:center;margin-bottom:10px;}
+.nwp-nav{display:flex;gap:14px;flex-wrap:wrap;}
+.nwp-nav a{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#777;text-decoration:none;}
+.nwp-nav a:hover{color:var(--ink);}
+.nwp-nav a.nwp-active{color:var(--ink);font-weight:900;border-bottom:2px solid #CC2B2B;padding-bottom:1px;}
+.nwp-title-row{text-align:center;margin-bottom:10px;}
+.nwp-title{font-family:var(--font-h);font-size:40px;font-weight:900;color:var(--ink);letter-spacing:-1.5px;line-height:1;display:inline;}
+.nwp-doodles{font-family:var(--font-d);font-size:48px;font-weight:700;color:#CC2B2B;line-height:1;vertical-align:baseline;margin-left:6px;}
+.nwp-subtitle{text-align:center;font-size:11px;color:#777;letter-spacing:.14em;text-transform:uppercase;margin-top:6px;}
+.nwp-rule-thick{height:3px;background:var(--ink);margin:10px 0 0;}
+.nwp-rule-thin{height:1px;background:var(--ink);margin:3px 0 0;}
+
+/* section header (below newspaper header, parliament-specific) */
+.parl-hdr{padding:14px 24px 12px;border-bottom:1px solid var(--border);}
+.parl-hdr-title{font-size:16px;font-weight:900;color:var(--ink);letter-spacing:-.2px;}
+.parl-hdr-date{font-size:12px;color:var(--muted);margin-top:3px;}
+.masthead-pills{margin-top:8px;display:flex;gap:6px;flex-wrap:wrap;}
+.masthead-pill{font-size:10px;font-weight:700;letter-spacing:.05em;background:var(--surf);color:var(--muted);padding:3px 8px;border-radius:3px;border:1px solid var(--border);}
+
+/* content sections */
+.section{padding:20px 28px;border-bottom:1px solid var(--border);}
+.section:last-of-type{border-bottom:none;}
+
+/* subsection (within DV edition) */
+.subsection{margin-bottom:24px;}
+.subsection:last-child{margin-bottom:0;}
+.subsection-hd{display:flex;align-items:baseline;gap:10px;margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid var(--border);}
+.subsection-tag{font-size:10px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);}
+.subsection-title{font-family:var(--font-h);font-size:16px;font-weight:900;color:var(--navy);}
+.subsection-count{font-size:11px;color:var(--muted);margin-left:auto;}
+
+/* section label row */
+.section-label-row{padding:10px 28px 8px;background:var(--surf);border-bottom:1px solid var(--border);}
+.section-label{font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);}
+
+/* page header */
+.page-header{padding:20px 28px 16px;border-bottom:1px solid var(--border);}
+.page-title{font-family:var(--font-h);font-size:20px;font-weight:900;color:var(--ink);letter-spacing:-.3px;margin-bottom:6px;}
+.page-subtitle{font-size:13px;color:var(--muted);}
+
+/* issue list rows */
+a.issue-row{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 28px;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:background .1s;}
+a.issue-row:hover{background:var(--surf);}
+a.issue-row:last-of-type{border-bottom:none;}
+.issue-row-left{flex:1;}
+.issue-row-meta{font-family:'Courier New',monospace;font-size:10px;color:var(--muted-lt);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;}
+.issue-row-title{font-size:15px;font-weight:900;color:var(--ink);letter-spacing:-.2px;line-height:1.3;}
+.issue-row-desc{font-size:12px;color:var(--muted);margin-top:3px;}
+.issue-row-arrow{font-size:18px;color:var(--gold);font-weight:900;flex-shrink:0;}
+
+/* footer */
+.nl-footer{padding:14px 28px;background:var(--surf);border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
+.nl-footer-logo{font-family:var(--font-d);font-size:18px;font-weight:700;color:#CCC;}
+.nl-footer-links{font-size:11px;display:flex;gap:16px;}
+.nl-footer-links a{color:var(--muted-lt);text-decoration:none;}
+.nl-footer-links a:hover{color:var(--muted);}
+
+/* DV cards */
+.dv-grid{display:flex;flex-direction:column;gap:8px;}
+details.dv-card{background:var(--paper);border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:border-color .15s;}
+details.dv-card:hover{border-color:var(--gold);}
+details.dv-card[open]{border-color:var(--gold);}
+.dv-card-compact{background:var(--paper);border:1px solid var(--border);border-radius:8px;overflow:hidden;opacity:.9;}
+.dv-sum{padding:14px 16px;cursor:pointer;list-style:none;user-select:none;}
+.dv-sum::-webkit-details-marker{display:none;}
+.dv-sum-static{padding:14px 16px;}
+.dv-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+.dv-meta{font-size:11px;color:var(--muted);font-weight:700;}
+.dv-title{font-family:var(--font-h);font-size:13px;font-weight:900;color:var(--ink);line-height:1.4;letter-spacing:-.1px;margin-bottom:4px;}
+.exec-organ{font-size:11px;color:var(--muted);margin-bottom:6px;font-style:italic;}
+.dv-lead{font-size:13px;color:var(--ink2);line-height:1.55;margin-bottom:8px;}
+.compact-bullets ul{list-style:none;padding:0;margin-top:6px;}
+.compact-bullets li{padding:3px 0 3px 14px;position:relative;color:var(--ink2);font-size:12px;line-height:1.5;}
+.compact-bullets li::before{content:"·";position:absolute;left:2px;color:var(--gold);font-weight:700;font-size:15px;line-height:1.1;}
+.expand-hint{font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.06em;margin-top:4px;}
+details.dv-card[open] .expand-hint{display:none;}
+.dv-body{padding:0 16px 16px;border-top:1px solid var(--border);}
+
+/* badges */
+.badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;}
+.dv-badges{display:flex;gap:6px;align-items:center;flex-wrap:wrap;}
+.b-zakon   {background:#dbeafe;color:#1a56db;}
+.b-reshenie{background:#cffafe;color:#0a6e8a;}
+.b-ukaz    {background:#ede9fe;color:#7c3aed;}
+.b-decl    {background:#fef3c7;color:#92400e;}
+.b-post    {background:#d1fae5;color:#065f46;}
+.b-naredba {background:#fce7f3;color:#9d174d;}
+.b-pravilnik{background:#f3e8ff;color:#6b21a8;}
+.b-inst    {background:#fef9c3;color:#713f12;}
+.b-razp    {background:#e0f2fe;color:#0369a1;}
+.b-spor    {background:#fff7ed;color:#c2410c;}
+.b-other   {background:#f3f4f6;color:#6b7280;}
+.b-cat     {background:#f3f4f6;color:#555;}
+
+/* factsheet sections */
+.fs-sec{margin:12px 0;font-size:13px;}
+.fs-sec h5,.parties-block h5,.notable-callout h5,.sess-col h5{font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:8px;padding-bottom:5px;border-bottom:1px solid var(--border);}
+.fs-sec ul,.parties-block ul{list-style:none;padding:0;}
+.fs-sec li,.parties-block li{padding:4px 0 4px 16px;position:relative;color:var(--ink2);border-bottom:1px solid #f3f4f6;font-size:13px;line-height:1.5;}
+.fs-sec li:last-child,.parties-block li:last-child{border-bottom:none;}
+.fs-sec li::before{content:"·";position:absolute;left:3px;color:var(--gold);font-weight:700;font-size:16px;line-height:1.1;}
+.fs-sec p,.parties-block p{color:var(--ink2);font-size:13px;margin-bottom:4px;}
+.fs-winners ul{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.fs-winners li{padding:8px 10px 8px 24px;border-radius:6px;border-bottom:none !important;}
+.fs-winners li:first-child{background:#f0fdf4;}
+.fs-winners li:first-child::before{content:"✓";color:#16a34a;font-size:13px;top:8px;}
+.fs-winners li:nth-child(2){background:#fef2f2;}
+.fs-winners li:nth-child(2)::before{content:"✗";color:#dc2626;font-size:13px;top:8px;}
+.fs-notable{background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:12px 14px;}
+.fs-notable h5{border-bottom-color:#fde68a;color:#92400e;}
+.fs-notable li,.fs-notable p{color:#78350f;}
+.fs-notable li::before{color:#d97706;}
+.fs-eu{background:#f0f9ff;border-radius:8px;padding:12px 14px;}
+.fs-eu h5{color:#0369a1;border-bottom-color:#bae6fd;}
+.fs-eu p{color:#0c4a6e;font-size:13px;}
+.ext-link{display:inline-block;margin-top:12px;font-size:12px;font-weight:700;color:var(--navy);text-decoration:none;}
+.ext-link:hover{text-decoration:underline;}
+.no-summ{color:var(--muted);font-size:13px;font-style:italic;padding:12px 0;}
+
+/* session blocks */
+details.sess-block{background:var(--paper);border:1px solid var(--border);border-left:4px solid var(--navy);border-radius:0 8px 8px 0;margin-bottom:10px;overflow:hidden;}
+details.sess-block:hover{box-shadow:0 2px 8px rgba(0,0,0,.06);}
+details.sess-block[open]{border-left-color:var(--gold);}
+.sess-sum{padding:14px 18px;cursor:pointer;list-style:none;user-select:none;}
+.sess-sum::-webkit-details-marker{display:none;}
+.sess-hd{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap;}
+.sess-date-chip{background:var(--navy);color:#fff;font-size:10px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:4px;white-space:nowrap;}
+details.sess-block[open] .sess-date-chip{background:var(--gold);}
+.sess-label{font-family:var(--font-h);font-size:14px;font-weight:900;color:var(--ink);}
+.sess-lead{font-size:13px;color:var(--ink2);line-height:1.55;margin-bottom:6px;}
+.sess-body{padding:0 18px 16px;border-top:1px solid var(--border);}
+.sess-lead-full{font-size:13px;color:var(--ink2);line-height:1.6;margin:12px 0;background:#f8fafc;border-left:3px solid var(--gold);padding:8px 12px;border-radius:0 6px 6px 0;}
+.sess-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0;}
+.sess-col{font-size:13px;}
+.sess-col ul{list-style:none;padding:0;}
+.sess-col li{padding:4px 0 4px 14px;position:relative;color:var(--ink2);border-bottom:1px solid #f3f4f6;font-size:13px;line-height:1.5;}
+.sess-col li:last-child{border-bottom:none;}
+.sess-col li::before{content:"·";position:absolute;left:2px;color:var(--navy);font-weight:700;font-size:15px;line-height:1.1;}
+.notable-callout{display:flex;gap:10px;align-items:flex-start;background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:10px 12px;margin:12px 0;}
+.notable-icon{font-size:16px;color:#d97706;flex-shrink:0;line-height:1.4;}
+.notable-callout h5{border-bottom-color:#fde68a;color:#92400e;}
+.notable-callout p,.notable-callout li{color:#78350f;font-size:13px;}
+.notable-callout ul{list-style:none;padding:0;}
+.notable-callout li{padding:3px 0 3px 14px;position:relative;}
+.notable-callout li::before{content:"·";position:absolute;left:2px;color:#d97706;font-weight:700;font-size:15px;line-height:1.1;}
+.parties-block{margin:12px 0;font-size:13px;}
+.sess-ft{margin-top:12px;padding-top:10px;border-top:1px solid var(--border);}
+
+/* landing track cards */
+.track-card{display:block;padding:20px 28px;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:background .1s;}
+.track-card:hover{background:var(--surf);}
+.track-card:last-of-type{border-bottom:none;}
+.track-label{font-size:10px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+.track-title{font-family:var(--font-h);font-size:18px;font-weight:900;color:var(--navy);letter-spacing:-.3px;line-height:1.3;margin-bottom:6px;}
+.track-desc{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px;}
+.track-latest{font-size:12px;color:var(--ink2);}
+.track-arrow{font-size:22px;color:var(--gold);font-weight:900;float:right;margin-top:-28px;}
+
+/* archive / intro */
+.arch-table{width:100%;border-collapse:collapse;}
+.arch-table th{padding:8px 0;text-align:left;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);border-bottom:1px solid var(--border);}
+.arch-table td{padding:12px 8px 12px 0;border-bottom:1px solid var(--border);font-size:13px;color:var(--ink2);}
+.arch-table tr:last-child td{border-bottom:none;}
+.arch-table a{color:var(--navy);font-weight:700;text-decoration:none;}
+.arch-table a:hover{text-decoration:underline;}
+.intro-block{padding:20px 28px;border-bottom:1px solid var(--border);font-size:14px;line-height:1.7;color:var(--ink);}
+.all-issues-wrap{padding:16px 28px;border-bottom:1px solid var(--border);}
+.all-issues-btn{width:100%;padding:13px;background:none;border:1.5px solid var(--navy);border-radius:3px;font-family:var(--font-h);font-size:11px;font-weight:900;color:var(--navy);cursor:pointer;text-align:center;letter-spacing:.14em;text-transform:uppercase;transition:background .15s,color .15s;}
+.all-issues-btn:hover{background:var(--navy);color:#fff;}
+.waitlist-section,.contact-section{padding:20px 28px;border-bottom:1px solid var(--border);}
+.waitlist-heading{font-family:var(--font-h);font-size:17px;font-weight:900;color:var(--ink);letter-spacing:-.2px;margin-bottom:8px;}
+.waitlist-body{font-size:14px;color:var(--ink2);line-height:1.6;margin-bottom:16px;}
+.waitlist-form{display:flex;gap:8px;margin-bottom:10px;}
+.waitlist-input{flex:1;padding:10px 12px;border:1px solid var(--border);border-radius:3px;font-family:var(--font-b);font-size:14px;color:var(--ink);min-width:0;}
+.waitlist-input:focus{outline:none;border-color:var(--navy);}
+.waitlist-btn{padding:10px 18px;background:var(--navy);color:#fff;border:none;border-radius:3px;font-family:var(--font-h);font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;white-space:nowrap;}
+.waitlist-btn:hover{background:#122348;}
+.waitlist-fine{font-size:12px;color:var(--muted-lt);line-height:1.5;}
+.waitlist-ok{display:none;font-size:14px;font-weight:700;color:#16a34a;margin-top:10px;}
+.contact-section p{font-size:14px;color:var(--ink2);line-height:1.6;}
+.contact-section a{color:var(--navy);font-weight:700;text-decoration:none;}
+.contact-section a:hover{text-decoration:underline;}
+
+@media(max-width:760px){
+  .wrapper{margin:0;border-left:none;border-right:none;}
+  .nwp-hdr,.parl-hdr,.section,.nl-footer,.page-header,a.issue-row,.track-card,
+  .section-label-row,.intro-block,.waitlist-section,.contact-section,.all-issues-wrap{padding-left:16px;padding-right:16px;}
+  .masthead-pills{display:none;}
+  .nwp-nav{gap:8px 12px;}
+  .nwp-title{font-size:28px;letter-spacing:-.8px;}
+  .nwp-doodles{font-size:34px;}
+  .sess-cols{grid-template-columns:1fr;}
+  .fs-winners ul{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+<div class="nwp-hdr">
+  <div class="nwp-topline">
+    <nav class="nwp-nav">
+      <a href="/">Начало</a>
+      <a href="/newsletters/">Бюлетин</a>
+      <a href="/cockpit/">Икономика</a>
+      <a href="/parliament/" class="nwp-active">Законодателство</a>
+      <a href="/about/">За проекта</a>
+    </nav>
+  </div>
+  <div class="nwp-title-row">
+    <span class="nwp-title">Basepoint</span><span class="nwp-doodles">Doodles</span>
+  </div>
+  <p class="nwp-subtitle">Законодателство &middot; Парламентарен дайджест</p>
+  <div class="nwp-rule-thick"></div>
+  <div class="nwp-rule-thin"></div>
+</div>
+
+<div class="parl-hdr">
+  <div class="parl-hdr-title">ДВ Дайджест · Седмица 24 · 2026</div>
+  <div class="parl-hdr-date">8–14 юни 2026</div>
+  <div class="masthead-pills"><span class="masthead-pill">26 акта от НС</span><span class="masthead-pill">2 акта от МС</span><span class="masthead-pill">5 наредби/регулации</span></div>
+</div>
+<div class="section">
+
+<div class="subsection">
+  <div class="subsection-hd">
+    <span class="subsection-tag">01</span>
+    <span class="subsection-title">Народно събрание</span>
+    <span class="subsection-count">24 решения · 2 закони</span>
+  </div>
+  <div class="dv-grid">
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-zakon">ЗАКОН</span></div>
+      <span class="dv-meta">Бр.&nbsp;52 &middot; 2026-06-08</span>
+    </div>
+    <div class="dv-title">ЗАКОН за изменение и допълнение на Закона за водите</div>
+    <p class="dv-lead">Законът реформира регулацията на ВиК услугите – въвежда задължителен монопол на един оператор на всяка водна територия, разделя цените на битови и небитови потребители и ограничава печалбата на ВиК дружествата до 10% от приходите.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Един оператор на territoire:</strong> На всяка „обособена територия&quot; (поне една административна единица) може да работи само един ВиК оператор – въвежда се изричен юридически монопол.</li><li><strong>Две категории потребители и различни цени:</strong> Цените на ВиК услугите вече се определят разделно за битови (домакинства) и небитови (фирми, институции) потребители. Единната цена остава задължителна само за доставяне на вода и отвеждане на отпадъчни води; за пречистването може да има диференциране по степен на замърсеност.</li><li><strong>Кой е „битов&quot; потребител по закон:</strong> Освен домакинствата, като битови се третират детски градини, училища, болници, социални домове, висши училища, читалища, храмове и манастири, а също и всеки небитов потребител, който изразходва до <strong>25 куб. м вода на месец</strong>.</li><li><strong>Таван на печалбата:</strong> Годишният положителен финансов резултат от регулираната дейност не може да надвишава <strong>10% от признатите приходи</strong>. Всичко над това задължително отива в инвестиционен фонд за рехабилитация на мрежите – не може да се разпределя като дивидент.</li><li><strong>Социална поносимост – конкретна формула:</strong> Цените се считат за поносими, ако при минимален месечен разход от <strong>2,8 куб. м на човек</strong> общата сметка не надхвърля <strong>2,5% от медианния доход на домакинство</strong> за съответната административна област (по данни на НСИ).</li><li><strong>Продължаване на договори на ВиК оператори:</strong> Договор може да бъде удължен с максимум <strong>половината от първоначалния му срок</strong>, но само ако операторът е изпълнявал задълженията си и е поискал удължаване писмено поне <strong>1 година преди края</strong>; изисква се доказано подобрение в качеството, ефективността, финансовата стабилност и инвестициите.</li><li><strong>Три метода за ценово регулиране:</strong> Комисията за енергийно и водно регулиране (КЕВР) може да избира между „разходи плюс&quot;, „горна граница на цените&quot; (5-годишен период) и „горна граница на приходите&quot; (5-годишен период). При извънредни непредвидими събития КЕВР се произнася за промяна на цените в <strong>45 дни</strong>, за бизнес план – в <strong>60 дни</strong>, а при проблеми с европейски проекти – в <strong>30 дни</strong>.</li><li><strong>Консолидация на територии:</strong> КЕВР активно насърчава сливането на по-малки ВиК зони и може да дава стимули (признаване на разходи, по-дълъг бизнес план) на оператори, участващи в консолидация.</li><li><strong>15-годишен хоризонт за качество:</strong> Дългосрочните показатели за качество и ефективност (загуби на вода, аварии, енергийна ефективност и др.) трябва да бъдат достигнати в <strong>срок от 15 години</strong> от приемането на закона.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li><strong>Печелят:</strong> Битовите потребители и социалните обекти (болници, училища, храмове) – защитени от прекомерни цени чрез формулата за поносимост и преференциалното третиране; общините, чиито оператори могат да удължат договорите си при добро представяне.</li><li><strong>Губят:</strong> ВиК дружества с по-висока рентабилност – таванът от 10% ги задължава да реинвестират свръхпечалбата вместо да я разпределят; потенциални нови пазарни участници, тъй като монополът на обособена територия е изричен.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Законът изрично причислява храмове, манастири и читалища към битовите потребители – те плащат по по-ниската тарифа за домакинства, не по бизнес тарифата.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><ul><li>Законът влиза в сила от деня на обнародването – <strong>8 юни 2026 г.</strong></li><li>Бизнес плановете за периода 2027–2031 г. се подават до <strong>30 юни 2026 г.</strong>; КЕВР ги одобрява до края на 2026 г. и утвърждава цени за 2027 г. До одобряване на преработените планове остават в сила цените от 31 декември 2026 г.</li><li>В <strong>9 месеца</strong> от влизането в сила Министерският съвет актуализира двете ценови наредби; след това операторите имат още <strong>6 месеца</strong> да преработят бизнес плановете си.</li></ul></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Регулирането на ВиК услугите в ЕС е до голяма степен национална компетентност и моделите се различават значително – от пълна общинска собственост (скандинавски страни) до концесии на частни оператори (Франция, Англия преди ренационализацията). Таванът на печалбата от 10% и изричната забрана за разпределяне на дивидент над него е нетипична законодателна мярка в европейски контекст и по-скоро напомня на регулациите в секторите на естествените монополи (газ, ток), отколкото на стандартния ВиК модел. Разделянето на цени по „битови/небитови&quot; категории е практика, позната в няколко страни (напр. Германия, Австрия), така че в тази си част България следва утвърден европейски подход.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243854" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-zakon">ЗАКОН</span></div>
+      <span class="dv-meta">Бр.&nbsp;52 &middot; 2026-06-08</span>
+    </div>
+    <div class="dv-title">ЗАКОН за изменение и допълнение на Закона за събирането на приходи и извършването на разходи през 2026 г. до приемането на Закона за държавния бюджет на Република България за 2026 г., Закона за бюджета на държавното обществено осигуряване за 2026 г. и Закона за бюджета на Националната здравноосигури</div>
+    <p class="dv-lead">Законът намалява партийната субсидия за глас и определя минимална пенсия за осигурителен стаж и възраст от 1 юли 2026 г., докато трае бюджетният вакуум.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Партийната субсидия за получен действителен глас е намалена: от 4,09 евро (за периода 1 януари – 29 април) пада на <strong>3,00 евро</strong> считано от 30 април до края на 2026 г.</li><li>От <strong>1 юли 2026 г.</strong> се въвежда минимален размер на пенсията за осигурителен стаж и възраст по чл. 68, ал. 1 от КСО – <strong>347,51 евро месечно</strong>.</li><li>Отменя се ал. 18 от § 7ж на Преходните и заключителните разпоредби на Кодекса за социално осигуряване – разпоредба, която до момента е регулирала режима на минималната пенсия.</li><li>Всички промени са временни – действат до приемането на редовен държавен бюджет, бюджет на ДОО и бюджет на НЗОК за 2026 г.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Пенсионери с пенсия под 347,51 евро, чиито доходи се повишават до новия минимум.</li><li>Губят: Политически партии – субсидията им за глас е орязана с около 27% спрямо действалата ставка от 4,09 евро.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Намаляването на партийната субсидия е разделено на два периода в рамките на един и същи закон – което означава, че ниската ставка от 3,00 евро се прилага с обратна сила за близо месец и половина преди обнародването на закона.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><ul><li>Промяната в КСО (отмяна на ал. 18 от § 7ж) влиза в сила от <strong>1 юли 2026 г.</strong></li><li>Минималната пенсия от 347,51 евро се прилага също от <strong>1 юли 2026 г.</strong></li><li>Останалите разпоредби (партийна субсидия) влизат в сила от обнародването, но с дати на действие, отброени от 1 януари и 30 април 2026 г.</li></ul></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Повечето държави – членки на ЕС, имат законово установена минимална пенсия, но нейният размер и механизмът за определяне варират значително. Практиката на временно бюджетно законодателство (т.нар. „продължаващи резолюции&quot;) е позната в ЕС, но рядко се използва толкова продължително, колкото в България. Директното фиксиране на партийната субсидия в закон за временни разходи е специфично за настоящата българска практика и няма директен аналог в типичните западноевропейски системи.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243855" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;54 &middot; 2026-06-12</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за избиране на Комисия по бюджет и финанси</div>
+    <p class="dv-lead">Народното събрание официално формира Комисията по бюджет и финанси на 52-рото НС, определя броя на членовете, разпределението по парламентарни групи и ръководството й.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Комисията се състои от 24 народни представители.</li><li>Разпределението по групи: „Прогресивна България&quot; – 13 места (мнозинство в комисията); ГЕРБ-СДС – 4; ДПС – 2; „Демократична България&quot; – 2; „Продължаваме Промяната&quot; – 2; „ВЪЗРАЖДАНЕ&quot; – 1.</li><li>Председател е Константин Проданов (Прогресивна България); тримата заместник-председатели са Светла Коджабашева, Теменужка Петкова и Асен Василев.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: „Прогресивна България&quot; – с 13 от 24 места контролира комисията и заема председателския пост.</li><li>Губят: Не се открива явен губещ, но „ВЪЗРАЖДАНЕ&quot; получава само 1 място при значително по-голямо представителство в предишни парламенти.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>„Прогресивна България&quot; държи повече от половината места в комисията (13 от 24), което й осигурява самостоятелно мнозинство без нужда от договаряне с партньори.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><p>Влиза в сила от обнародването.</p></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Няма достатъчно сравнителни данни.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243992" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;54 &middot; 2026-06-12</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за избиране на Комисия по правни въпроси</div>
+    <p class="dv-lead">Народното събрание формира Комисията по правни въпроси, определя нейния състав от 24 депутати и избира ръководството ѝ.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Комисията се състои от 24 народни представители, разпределени между пет парламентарни групи.</li><li>Доминиращата сила е „Прогресивна България&quot; с 13 от 24 места – абсолютно мнозинство в комисията.</li><li>ГЕРБ–СДС получава 4 места; ДПС, „Демократична България&quot; и „Продължаваме Промяната&quot; – по 2; „Възраждане&quot; – 1 място.</li><li>Председател е Янка Тянкова (от мнозинството), с трима заместник-председатели – по един от ДПС и от опозицията (Надежда Йорданова от „Демократична България&quot;).</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: „Прогресивна България&quot; – контролира ключовата правна комисия с над половината места и председателския пост.</li><li>Губят: „Възраждане&quot; – представена с едва 1 депутат въпреки парламентарното си присъствие.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>„Прогресивна България&quot; държи 13 от 24 места в Комисията по правни въпроси – това е необичайно концентрирано мнозинство в орган, който е централен за всяко законодателно изменение.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><p>Влиза в сила от обнародването.</p></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Няма достатъчно сравнителни данни.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243993" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;54 &middot; 2026-06-12</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за избиране на Комисия по икономическа политика, инвестиции и индустрия</div>
+    <p class="dv-lead">Народното събрание учредява Комисия по икономическа политика, инвестиции и индустрия и избира нейния състав и ръководство.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Комисията се състои от 24 народни представители, разпределени между шест парламентарни групи.</li><li>Най-голям дял има „Прогресивна България&quot; – 13 от 24 места, което й осигурява мнозинство в комисията.</li><li>ГЕРБ–СДС получава 4 места; ДПС, Демократична България и Продължаваме Промяната – по 2; „Възраждане&quot; – 1 място.</li><li>За председател е избран Стефан Белчев (Прогресивна България); заместник-председатели са Катя Стайкова, Александър Иванов и Мартин Димитров.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: „Прогресивна България&quot; – доминира комисията с над половината места и председателския пост.</li><li>Губят: Не се открива явен губещ, но „Възраждане&quot; е с минимално представителство – едва 1 място.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>„Прогресивна България&quot; контролира 13 от 24 места – абсолютно мнозинство в комисията, което е рядкост при толкова фрагментиран парламент.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><p>Влиза в сила от обнародването.</p></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Няма достатъчно сравнителни данни.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243994" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;54 &middot; 2026-06-12</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за избиране на Комисия по енергетика</div>
+    <p class="dv-lead">Народното събрание създава парламентарна Комисия по енергетика с 24 члена и избира нейното ръководство.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Комисията се състои от 24 народни представители, разпределени между 6 парламентарни групи.</li><li>Най-голям дял има „Прогресивна България&quot; – 13 от 24 места, което осигурява мнозинство в комисията.</li><li>ГЕРБ–СДС получава 4 места; ДПС, „Демократична България&quot; и „Продължаваме Промяната&quot; – по 2; „ВЪЗРАЖДАНЕ&quot; – 1 място.</li><li>Председател е Румяна Петрова; заместник-председатели са Стефан Цанков, Жечо Станков и Радослав Рибарски.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: „Прогресивна България&quot; – доминират комисията с повече от половината места и председателския пост.</li><li>Губят: По-малките парламентарни групи имат минимално представителство – „ВЪЗРАЖДАНЕ&quot; е с едва 1 член.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>„Прогресивна България&quot; държи 13 от 24 места – абсолютно мнозинство в комисията само от една парламентарна група, което е необичайно концентрирано разпределение на влияние в енергийния надзор.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><p>Влиза в сила от обнародването.</p></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Няма достатъчно сравнителни данни.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243995" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;54 &middot; 2026-06-12</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за избиране на Комисия по регионална политика, благоустройство и местно самоуправление</div>
+    <p class="dv-lead">Народното събрание създава Комисията по регионална политика, благоустройство и местно самоуправление и избира нейните членове и ръководство.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Комисията се състои от 24 народни представители, разпределени между шест парламентарни групи.</li><li>Най-голям дял има „Прогресивна България&quot; – 13 от 24 места, което й осигурява мнозинство в комисията.</li><li>ГЕРБ–СДС получава 4 места; ДПС, Демократична България и Продължаваме Промяната – по 2; ВЪЗРАЖДАНЕ – 1 място.</li><li>Председател е Мартин Жлябинков („Прогресивна България&quot;), а заместник-председатели са Георги Чакъров, Николай Нанков (ГЕРБ–СДС) и Коста Стоянов.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: „Прогресивна България&quot; – доминира комисията с над половината места и председателския пост.</li><li>Губят: Не се открива явен губещ, но ВЪЗРАЖДАНЕ е представена минимално с едва 1 място.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>„Прогресивна България&quot; държи 13 от 24 места – абсолютно мнозинство в самата комисия, което е нетипично за парламентарни комисии, където обичайно се търси по-балансирано представителство.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><p>Влиза в сила от обнародването.</p></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Няма достатъчно сравнителни данни.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243996" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;54 &middot; 2026-06-12</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за избиране на Комисия по външна политика</div>
+    <p class="dv-lead">Народното събрание формира Комисията по външна политика, определя броя и разпределението на местата между парламентарните групи и избира нейното ръководство.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Комисията се състои от 19 народни представители.</li><li>Местата са разпределени така: 10 за „Прогресивна България&quot;, 3 за ГЕРБ–СДС, 2 за ДПС, 2 за „Демократична България&quot;, 1 за „Продължаваме Промяната&quot; и 1 за „ВЪЗРАЖДАНЕ&quot;.</li><li>Председател на комисията е Петър Бойков Витанов (от мнозинството).</li><li>Комисията има трима заместник-председатели: Слави Василев Василев, Георг Даниелов Георгиев и Ивайло Валентинов Шотев.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: „Прогресивна България&quot; – с 10 от 19 места (над 52%) доминира изцяло комисията, включително председателския пост.</li><li>Губят: По-малките групи като „Продължаваме Промяната&quot; и „ВЪЗРАЖДАНЕ&quot; получават само по едно символично място.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>„Прогресивна България&quot; държи абсолютно мнозинство в комисията сама – нещо нетипично, тъй като обичайно парламентарните комисии отразяват по-балансирано разпределение между управляващи и опозиция.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><p>Влиза в сила от обнародването.</p></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Няма достатъчно сравнителни данни.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243997" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;54 &middot; 2026-06-12</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за избиране на Комисия по европейските въпроси и контрол на европейските фондове</div>
+    <p class="dv-lead">Парламентът официално формира Комисията по европейските въпроси и контрол на европейските фондове на 52-рото Народно събрание, определя нейния състав от 19 депутати и избира ръководство.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Комисията се състои от 19 народни представители, разпределени по парламентарни групи.</li><li>Най-голяма квота има „Прогресивна България&quot; – 10 члена, следвана от ГЕРБ–СДС с 3.</li><li>ДПС и Демократична България имат по 2 представители; „Продължаваме Промяната&quot; и „ВЪЗРАЖДАНЕ&quot; – по 1.</li><li>Председател е Галин Неделчев Дурев (от мнозинството); заместник-председатели са Емине Фикри Гюлестан, Евгени Георгиев Дянков и Богдан Валериев Богданов.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: „Прогресивна България&quot; – доминира комисията с над половината от местата и председателския пост.</li><li>Губят: По-малките парламентарни групи като „Продължаваме Промяната&quot; и „ВЪЗРАЖДАНЕ&quot; са с минимално представителство – по едно място.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>„Прогресивна България&quot; държи 10 от 19 места – абсолютно мнозинство в комисията само за една парламентарна група, което е нетипично за разпределение в парламентарни комисии.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><p>Влиза в сила от обнародването.</p></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Парламентарни комисии по европейски въпроси съществуват във всички страни – членки на ЕС, като тяхното създаване е стандартна практика. Разпределението на местата по принцип следва пропорционалното представителство на партиите в пленарната зала – доминирането на една група с над 50% е по-скоро изключение в европейската практика.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243998" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;54 &middot; 2026-06-12</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за избиране на Комисия по отбрана</div>
+    <p class="dv-lead">Народното събрание създава парламентарна Комисия по отбрана от 19 члена и избира нейното ръководство.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Комисията се състои от 19 народни представители, разпределени пропорционално между парламентарните групи.</li><li>Най-голям дял има „Прогресивна България&quot; – 10 от 19 места, което й осигурява мнозинство в комисията.</li><li>ГЕРБ–СДС получава 3 места, ДПС и Демократична България – по 2, а „Продължаваме Промяната&quot; и „ВЪЗРАЖДАНЕ&quot; – по 1 място.</li><li>Председател на комисията е Иван Тодоров Лалов; заместник-председатели са Цветомир Цветанов, Атанас Славов и Ивелин Първанов.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: „Прогресивна България&quot; – доминира комисията с над половината места и председателския пост.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>„Прогресивна България&quot; държи 10 от 19 места – абсолютно мнозинство в комисията, което на практика й позволява да взема решения без подкрепата на нито една друга парламентарна група.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><p>Влиза в сила от обнародването.</p></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Няма достатъчно сравнителни данни.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243999" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;54 &middot; 2026-06-12</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за избиране на Комисия по вътрешна сигурност и обществен ред</div>
+    <p class="dv-lead">Народното събрание създава парламентарна Комисия по вътрешна сигурност и обществен ред и определя нейния състав и ръководство.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Комисията се състои от 19 народни представители, разпределени пропорционално между парламентарните групи.</li><li>Мнозинството в комисията е на „Прогресивна България&quot; – 10 от 19 места, което осигурява контрол върху дневния ред и решенията.</li><li>ГЕРБ–СДС има 3 места, ДПС и Демократична България – по 2, „Продължаваме Промяната&quot; и „ВЪЗРАЖДАНЕ&quot; – по 1.</li><li>Председател е Петър Тодоров (Прогресивна България); заместник-председатели са Красимир Иванов, Даниел Митов и Петър Петров.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: „Прогресивна България&quot; – доминира комисията с абсолютно мнозинство от местата.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>„Прогресивна България&quot; държи 10 от 19 места – точно мнозинство, което означава, че може да взима решения без нито един глас от останалите пет парламентарни групи.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><p>Влиза в сила от обнародването.</p></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Няма достатъчно сравнителни данни.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244000" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;54 &middot; 2026-06-12</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за избиране на Комисия за контрол над службите за сигурност, прилагането и използването на специалните разузнавателни средства и достъпа до данните по Закона за електронните съобщения</div>
+    <p class="dv-lead">Народното събрание формира парламентарната комисия, която контролира тайните служби и употребата на подслушване и следене.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Комисията се състои от 12 народни представители – по двама от всяка парламентарна група (паритетен принцип, т.е. равно представяне независимо от размера на групата).</li><li>Поименно са избрани 12 члена, представляващи 6 парламентарни групи.</li><li>Председателството е ротационно – сменя се всяка парламентарна сесия и редът е фиксиран с 6 имена, наредени по числеността на групите.</li><li>При отсъствие на действащия председател го замества автоматично следващият по ротационния ред – без допълнително гласуване.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: По-малките парламентарни групи – паритетният принцип им дава равен глас с по-големите в най-чувствителната надзорна комисия.</li><li>Губят: По-големите парламентарни групи, които при пропорционално представяне биха имали повече места и по-дълго председателство.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Въпреки че комисията е наредена по численост за целите на ротацията, всяка група има точно по двама членове – рядко срещано конституционно уравновесяване, при което мнозинството и малцинството имат идентична тежест в контрола над тайните служби.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><p>Влиза в сила от обнародването.</p></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Парламентарен надзор над службите за сигурност и специалните разузнавателни средства съществува в повечето страни от ЕС – Германия, Франция, Нидерландия и други имат специализирани комисии с подобни функции. Паритетният принцип на формиране (равен брой от всяка група) е по-рядко срещан – в повечето европейски парламенти представителството е пропорционално на размера на фракциите. Ротационното председателство е нетипично за западноевропейската практика, но се среща в страни с фрагментирани парламенти.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244001" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;54 &middot; 2026-06-12</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за избиране на Комисия по земеделието, храните и горите</div>
+    <p class="dv-lead">Народното събрание формира парламентарната Комисия по земеделието, храните и горите на 52-рото НС и избира нейното ръководство.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Комисията се състои от 23 народни представители, разпределени пропорционално между партиите в парламента.</li><li>Най-голям дял има „Прогресивна България&quot; – 13 от 23 места, което ѝ осигурява мнозинство в комисията.</li><li>ГЕРБ–СДС получава 4 места; ДПС и „Демократична България&quot; – по 2; „Продължаваме Промяната&quot; и „ВЪЗРАЖДАНЕ&quot; – по 1 място.</li><li>Председател е Явор Гечев (представител на мнозинството); трима заместник-председатели са от „Прогресивна България&quot;, ДПС и предположително друга група.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: „Прогресивна България&quot; – доминира комисията с абсолютно мнозинство от 13 места и председателския пост.</li><li>Губят: Не се открива явен губещ, но малките групи като „Продължаваме Промяната&quot; и „ВЪЗРАЖДАНЕ&quot; имат минимално представителство – по един член без ръководни позиции.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>С 13 от 23 места „Прогресивна България&quot; държи над 56% от комисията сама – рядко срещано толкова концентрирано мнозинство в парламентарна комисия.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><p>Влиза в сила от обнародването.</p></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Няма достатъчно сравнителни данни.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244002" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;54 &middot; 2026-06-12</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за избиране на Комисия по труда, демографската и социалната политика</div>
+    <p class="dv-lead">Народното събрание формира парламентарната Комисия по труда, демографската и социалната политика и определя нейното ръководство.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Комисията се състои от 24 народни представители, разпределени между 6 парламентарни групи.</li><li>Най-голям дял има „Прогресивна България&quot; – 13 от 24 места, което ѝ осигурява мнозинство в комисията.</li><li>ГЕРБ–СДС получават 4 места; ДПС, Демократична България и Продължаваме Промяната – по 2; ВЪЗРАЖДАНЕ – 1 място.</li><li>Председател е Венко Сабрутев; трима заместник-председатели: Мария Тодорова, Левент Апти и Георги Георгиев.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: „Прогресивна България&quot; – доминира комисията с над половината места.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>„Прогресивна България&quot; държи 13 от 24 места – абсолютно мнозинство в комисията, което означава, че може да налага решения без подкрепата на нито една друга парламентарна група.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><p>Влиза в сила от обнародването.</p></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Няма достатъчно сравнителни данни.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244003" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;54 &middot; 2026-06-12</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за избиране на Комисия по образованието и науката</div>
+    <p class="dv-lead">Народното събрание създава и окомплектова Комисията по образованието и науката към 52-рото НС с 24 члена и определя нейното ръководство.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Комисията се състои от 24 народни представители, разпределени пропорционално между парламентарните групи.</li><li>„Прогресивна България&quot; доминира с 13 от 24 места – абсолютно мнозинство в комисията.</li><li>ГЕРБ – СДС получава 4 места; ДПС, „Демократична България&quot; и „Продължаваме Промяната&quot; – по 2; „ВЪЗРАЖДАНЕ&quot; – само 1 място.</li><li>За председател е избран Димитър Здравков (ПБ), а за трима заместник-председатели – Владимир Гончев (ПБ), Красимир Вълчев (ГЕРБ) и Николай Денков (ПП).</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: „Прогресивна България&quot; – контролират председателското място и имат мнозинство в комисията.</li><li>Губят: „ВЪЗРАЖДАНЕ&quot; – с едва 1 представител нямат реално влияние в комисията.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>С 13 от 24 места „Прогресивна България&quot; има самостоятелно мнозинство в комисията и може да определя решенията ѝ без коалиционна подкрепа.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><p>Влиза в сила от обнародването.</p></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Няма достатъчно сравнителни данни.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244004" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;54 &middot; 2026-06-12</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за избиране на Комисия по въпросите на младежта и спорта</div>
+    <p class="dv-lead">Народното събрание учредява парламентарна Комисия по въпросите на младежта и спорта и избира нейните 23 членове и ръководство.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Комисията се състои от 23 народни представители, разпределени пропорционално между парламентарните групи.</li><li>Най-голям дял има „Прогресивна България&quot; – 13 от 23 места, което й осигурява мнозинство в комисията.</li><li>ГЕРБ–СДС получава 4 места; ДПС и „Демократична България&quot; – по 2; „Продължаваме Промяната&quot; и „ВЪЗРАЖДАНЕ&quot; – по 1.</li><li>За председател е избран Петър Райчев Стойчев; заместник-председатели са Владимир Николов, Джем Яменов и Мирослав Иванов.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: „Прогресивна България&quot; – доминира комисията с над половината места и председателския пост.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>„Прогресивна България&quot; контролира 13 от 23 места – абсолютно мнозинство в комисията, което означава, че може да взима решения без подкрепата на нито една друга парламентарна група.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><p>Влиза в сила от обнародването.</p></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Няма достатъчно сравнителни данни.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244005" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;54 &middot; 2026-06-12</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за избиране на Комисия по здравеопазването</div>
+    <p class="dv-lead">Народното събрание формира Комисия по здравеопазването от 23 депутати и избира нейното ръководство.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Комисията се състои от 23 народни представители, разпределени пропорционално между парламентарните групи.</li><li>„Прогресивна България&quot; доминира с 13 от 23 места – абсолютно мнозинство в комисията.</li><li>ГЕРБ–СДС получава 4 места; ДПС и Демократична България – по 2; „Продължаваме Промяната&quot; и „ВЪЗРАЖДАНЕ&quot; – по 1.</li><li>За председател е избран Костадин Георгиев Ангелов; заместник-председатели са Георги Петков Илиев, Джевдет Ибрям Чакъров и Катя Максимова Панева.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: „Прогресивна България&quot; – контролира комисията с над половината места и председателския пост.</li><li>Губят: По-малките парламентарни групи („Продължаваме Промяната&quot; и „ВЪЗРАЖДАНЕ&quot;) са представени символично с по 1 място.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>„Прогресивна България&quot; държи 13 от 23 места в здравната комисия – дял от 56,5%, който надхвърля пропорционалното ѝ тегло в пленарна зала и й осигурява самостоятелно мнозинство при гласуване в комисията.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><p>Влиза в сила от обнародването.</p></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Няма достатъчно сравнителни данни.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244006" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;54 &middot; 2026-06-12</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за избиране на Комисия по околната среда и водите</div>
+    <p class="dv-lead">Народното събрание създава парламентарна Комисия по околната среда и водите с 23 члена и избира нейното ръководство.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Комисията се състои от 23 народни представители, разпределени между шест парламентарни групи.</li><li>Най-голям дял има „Прогресивна България&quot; – 13 места, следвана от ГЕРБ–СДС с 4, ДПС и „Демократична България&quot; – по 2, „Продължаваме Промяната&quot; и „ВЪЗРАЖДАНЕ&quot; – по 1.</li><li>За председател е избран Халил Реджепов Летифов (ДПС), въпреки че групата му има само 2 места в комисията.</li><li>Трима заместник-председатели: Стефан Атанасов Сабрутев, Валери Пламенов Лачовски и Татяна Славова Султанова-Сивева.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: ДПС – получава председателското място въпреки малкото си представителство в комисията.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>ДПС има само 2 от 23 места в комисията, но именно техен представител оглавява нейното ръководство – нетипично несъответствие между брой места и получена власт.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><p>Влиза в сила от обнародването.</p></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Няма достатъчно сравнителни данни.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244007" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;54 &middot; 2026-06-12</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за избиране на Комисия по транспорт и съобщения</div>
+    <p class="dv-lead">Народното събрание създава Комисия по транспорт и съобщения от 23 депутати и избира нейното ръководство.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Комисията се състои от 23 народни представители, разпределени по партийна квота.</li><li>„Прогресивна България&quot; доминира с 13 от 23 места – абсолютно мнозинство в комисията.</li><li>ГЕРБ–СДС получава 4 места; ДПС и „Демократична България&quot; – по 2; „Продължаваме Промяната&quot; и „ВЪЗРАЖДАНЕ&quot; – по 1.</li><li>Председател е Йордан Иванов; заместник-председатели са Нели Андреева, Стефан Мирев и Тансер Бейти.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: „Прогресивна България&quot; – контролира комисията с мнозинство и председателски пост.</li><li>Губят: По-малките парламентарни групи („Продължаваме Промяната&quot; и „ВЪЗРАЖДАНЕ&quot;) с по едно място имат минимално влияние.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>„Прогресивна България&quot; държи 13 от 23 места – повече от всички останали пет групи взети заедно, което е необичайно концентрирано мнозинство в парламентарна комисия.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><p>Влиза в сила от обнародването.</p></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Няма достатъчно сравнителни данни.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244008" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;54 &middot; 2026-06-12</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за избиране на Комисия по иновациите и дигиталната трансформация</div>
+    <p class="dv-lead">Народното събрание създава нова постоянна парламентарна комисия по иновациите и дигиталната трансформация и избира нейния състав.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Комисията се състои от 15 народни представители, разпределени пропорционално между парламентарните групи.</li><li>Мнозинството в комисията е на „Прогресивна България&quot; – 8 от 15 места, което й осигурява решаващ глас.</li><li>ГЕРБ–СДС получава 3 места; ДПС, Демократична България, Продължаваме Промяната и ВЪЗРАЖДАНЕ – по 1 място.</li><li>Председател е Томислав Дончев (ГЕРБ–СДС); тримата заместник-председатели са от „Прогресивна България&quot;, ГЕРБ–СДС и „Продължаваме Промяната&quot;.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: „Прогресивна България&quot; – доминира новия надзорен орган за дигитална политика с абсолютно мнозинство от местата.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Въпреки че „Прогресивна България&quot; държи 8 от 15 места в комисията, председателското място отива при ГЕРБ–СДС – нетипично разминаване между числено надмощие и ръководен пост.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><p>Влиза в сила от обнародването.</p></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Специализирани парламентарни комисии по дигитализация и иновации съществуват в повечето страни от ЕС – Германия, Франция и Естония имат такива отдавна. България не е сред пионерите в създаването на подобен орган. Няма съществена структурна разлика от типичния европейски подход.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244009" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;54 &middot; 2026-06-12</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за избиране на Комисия по културата и медиите</div>
+    <p class="dv-lead">Народното събрание създава Комисия по културата и медиите с 23 члена и избира нейното ръководство.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Комисията се състои от 23 народни представители, разпределени пропорционално между партиите.</li><li>Най-голям дял има „Прогресивна България&quot; – 13 от 23 места, което ѝ осигурява мнозинство вътре в комисията.</li><li>ГЕРБ – СДС получава 4 места; ДПС и „Демократична България&quot; – по 2; „Продължаваме Промяната&quot; и „ВЪЗРАЖДАНЕ&quot; – по 1.</li><li>Председател е Антон Кутев („Прогресивна България&quot;); тримата заместник-председатели представляват ГЕРБ – СДС (Горанов), ГЕРБ – СДС (Фандъкова) и „Демократична България&quot; (Стеркова).</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: „Прогресивна България&quot; – доминира комисията с над половината места и поста председател.</li><li>Губят: Не се открива явен губещ, но малките парламентарни групи имат минимално представителство.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>„Прогресивна България&quot; контролира 13 от 23 места – абсолютно мнозинство в комисия, което на практика означава, че може да прокарва решения без подкрепата на нито един друг партньор.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><p>Влиза в сила от обнародването.</p></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Няма достатъчно сравнителни данни.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244010" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;54 &middot; 2026-06-12</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за избиране на Комисия за прякото участие на гражданите и взаимодействието с гражданското общество</div>
+    <p class="dv-lead">Народното събрание създава постоянна парламентарна комисия, която ще се занимава с гражданското участие и връзката между институциите и гражданското общество.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Комисията се състои от 15 народни представители, разпределени пропорционално между парламентарните групи.</li><li>Най-голям дял има „Прогресивна България&quot; – 8 от 15 места, т.е. абсолютно мнозинство в самата комисия.</li><li>ГЕРБ–СДС получава 3 места; ДПС, „Демократична България&quot;, „Продължаваме Промяната&quot; и „ВЪЗРАЖДАНЕ&quot; – по 1 място.</li><li>Председател е Александър Симидчиев; комисията има трима заместник-председатели.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: „Прогресивна България&quot; – доминира комисията с над половината места и си осигурява председателския пост.</li><li>Губят: Не се открива явен губещ, но по-малките групи имат символично присъствие – само по един представител.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>„Прогресивна България&quot; контролира 8 от 15 места в комисия, чиято тема е именно представителност и участие на гражданите – което е донякъде иронично с оглед на непропорционалното разпределение.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><p>Влиза в сила от обнародването.</p></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Парламентарни комисии по гражданско общество и гражданско участие съществуват в много страни от ЕС, включително Германия, Франция и Австрия. Формата не е нетипична, но конкретните правомощия и степента на реално влияние варират значително между отделните парламенти.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244011" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;54 &middot; 2026-06-12</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за избиране на Комисия по правата на човека, вероизповеданията и жалбите на гражданите</div>
+    <p class="dv-lead">Народното събрание създава парламентарната комисия, която разглежда жалби на граждани и въпроси за права и вероизповедания, и избира нейния състав и ръководство.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Комисията се състои от 15 народни представители, разпределени между шест парламентарни групи.</li><li>Най-голям дял има „Прогресивна България&quot; – 8 от 15 места, което й осигурява мнозинство в комисията.</li><li>ГЕРБ–СДС получава 3 места; ДПС, Демократична България, Продължаваме Промяната и ВЪЗРАЖДАНЕ – по 1 място.</li><li>За председател е избрана Атидже Байрямова Алиева-Вели; заместник-председатели са Нихал Фехмиева Юзерган, Тома Биков и Атанас Славов.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: „Прогресивна България&quot; – доминира комисията с над половината места и контролира дневния ред.</li><li>Губят: Не се открива явен губещ, но по-малките групи имат символично представителство от по един член.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>„Прогресивна България&quot; държи 8 от 15 места – абсолютно мнозинство в комисия, натоварена с граждански жалби и права, което е нетипична концентрация на контрол в един играч при многопартиен парламент.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><p>Влиза в сила от обнародването.</p></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Няма достатъчно сравнителни данни.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244012" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;54 &middot; 2026-06-12</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за избиране на Комисия по политиките за българите извън страната</div>
+    <p class="dv-lead">Народното събрание създава парламентарна комисия от 13 депутати, която ще се занимава с политиките към българите, живеещи извън страната.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Комисията се състои от 13 народни представители, разпределени между пет парламентарни групи.</li><li>Най-голям дял има „Прогресивна България&quot; – 7 от 13 места, което ѝ дава мнозинство в комисията.</li><li>ГЕРБ – СДС получава 2 места; ДПС, Демократична България, Продължаваме Промяната и ВЪЗРАЖДАНЕ – по 1 място.</li><li>Председател е Ангел Жеков Георгиев; комисията има трима заместник-председатели.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Българите в чужбина, чиито интереси вече имат специализирана парламентарна структура; „Прогресивна България&quot;, която доминира комисията с над половината места.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>„Прогресивна България&quot; контролира 7 от 13 места – абсолютно мнозинство в комисията – което означава, че на практика може да определя дневния ред и решенията ѝ без да се съобразява с останалите групи.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><p>Влиза в сила от обнародването.</p></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Повечето страни от ЕС имат някакъв механизъм за работа с диаспората – специализирани министерства, държавни агенции или парламентарни комисии. България не е сред първите, но и не изостава чувствително. Характерна особеност е, че в много западноевропейски страни диаспорната политика е обвързана предимно с консулски услуги, докато в България акцентът традиционно включва и въпроси за идентичност и гласуване от чужбина.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244013" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;54 &middot; 2026-06-12</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за избиране на Комисия по превенция и противодействие на корупцията</div>
+    <p class="dv-lead">Народното събрание създава парламентарна комисия по превенция и противодействие на корупцията и избира нейните членове и ръководство.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Комисията се състои от 19 народни представители, разпределени пропорционално между партиите в парламента.</li><li>„Прогресивна България&quot; доминира с 10 от 19 места – абсолютно мнозинство в самата комисия.</li><li>ГЕРБ–СДС получава 3 места; ДПС и „Демократична България&quot; – по 2; „Продължаваме Промяната&quot; и „Възраждане&quot; – по 1.</li><li>Председател е Димитър Балев Балев (предположително от „Прогресивна България&quot;), а трима заместник-председатели представляват различни парламентарни групи.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: „Прогресивна България&quot; – контролира комисията по корупция с над половината места и председателския пост.</li><li>Губят: По-малките парламентарни групи, чието влияние в комисията е минимално – по едно място.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>„Прогресивна България&quot; държи 10 от 19 места в комисията по борба с корупцията – рядко срещано мнозинство на една партия в парламентарна комисия, което й дава пълен контрол върху антикорупционния надзор.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><p>Влиза в сила от обнародването.</p></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Парламентарните комисии по борба с корупцията са стандартна практика в повечето страни от ЕС. Типично за европейския подход е по-балансирано представителство между управляващи и опозиция в подобни надзорни органи. България не изостава институционално, но концентрацията на мнозинство от управляващата сила в антикорупционна комисия се отклонява от духа на независим парламентарен контрол.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244014" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;54 &middot; 2026-06-12</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за избиране на Комисия по туризъм</div>
+    <p class="dv-lead">Народното събрание създава постоянна Комисия по туризъм от 15 депутати и избира нейното ръководство.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Комисията се състои от 15 народни представители, разпределени по партии: 8 от „Прогресивна България&quot;, 3 от ГЕРБ–СДС, по 1 от ДПС, „Демократична България&quot;, „Продължаваме Промяната&quot; и „ВЪЗРАЖДАНЕ&quot;.</li><li>За председател е избрана Росица Любенова Кирова.</li><li>Комисията има трима заместник-председатели: Ясен Щерев Щерев, Павел Димитров Попов и Цончо Томов Ганев.</li><li>„Прогресивна България&quot; държи абсолютно мнозинство в комисията (8 от 15 места) и всичките ключови позиции – председател и един от тримата заместник-председатели.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: „Прогресивна България&quot; – доминира комисията с над половината места и ръководството.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>„Прогресивна България&quot; притежава 8 от 15 места в комисията – това е нетипично тежко надмощие в една парламентарна комисия, което на практика й дава пълен контрол върху дневния ред и решенията в сферата на туризма.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><p>Влиза в сила от обнародването.</p></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Няма достатъчно сравнителни данни.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244015" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details></div>
+</div>
+<div class="subsection">
+  <div class="subsection-hd">
+    <span class="subsection-tag">02</span>
+    <span class="subsection-title">Министерски съвет</span>
+    <span class="subsection-count">2 постановления</span>
+  </div>
+  <div class="dv-grid">
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;53 &middot; 2026-06-09</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 66</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Общините получават право временно да пренасочат парите, предназначени за строителство и капиталови инвестиции, към спешни текущи ремонти на пътища, улици и публични сгради – но само с одобрение на общинския съвет и министъра на финансите.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Кой е засегнат:</strong> Всички общини в България, получаващи целева субсидия за капиталови разходи по временния бюджетен закон за 2026 г. (действащ поради липса на редовен държавен бюджет).</li><li><strong>Какво се разрешава:</strong> Капиталовата субсидия може да се трансформира в пари за текущи ремонти на общински пътища, улична мрежа и сгради – публична общинска собственост.</li><li><strong>Два прозореца за кандидатстване:</strong> Трансформацията може да се поиска до <strong>20 юни 2026 г.</strong> или до <strong>31 юли 2026 г.</strong> Предложението до министъра на финансите трябва да постъпи най-мално <strong>7 работни дни</strong> преди тези дати.</li><li><strong>Задължителна документация:</strong> Кметът подава справка по образец, доклад с обосновка на неотложността и решение на общинския съвет. В доклада задължително се описва всеки обект – година на строеж, последен ремонт, брой засегнати хора, евентуални предписания от контролни органи.</li><li><strong>Анализ разходи-ползи е задължителен:</strong> Трябва да се докаже, че текущият ремонт е по-изгоден от основен ремонт – включително колко години се удължава животът на обекта и колко намаляват авариите.</li><li><strong>Финансов механизъм:</strong> Одобреният трансфер намалява капиталовата субсидия на общината с точно толкова средства. Финансирането може да идва от бюджетни наличности от предходната година, без да се засяга Пенсионният резервен фонд.</li><li><strong>След приемане на редовен бюджет:</strong> Министърът на финансите автоматично преизчислява и официализира промените по бюджетите на общините – намалява капиталовата и увеличава целевата текуща субсидия.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li><strong>Печелят:</strong> Общини с неотложни нужди от ремонти на пътища и сгради – получават гъвкавост да действат още преди приемането на редовен бюджет.</li><li><strong>Губят:</strong> Общини, планирали капиталови проекти (ново строителство, крупни инвестиции) – ако изберат трансформацията, тези пари намаляват безвъзвратно от инвестиционния им ресурс за 2026 г.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Постановлението е необходимо именно защото България влезе в 2026 г. без приет държавен бюджет – целият механизъм е временна кръпка за управление на публични пари в условия на бюджетен вакуум.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>От деня на обнародването – 9 юни 2026 г.</li><li>Първи краен срок за общините: предложение до министъра най-късно около <strong>11 юни 2026 г.</strong> (7 работни дни преди 20 юни).</li><li>Втори краен срок: около <strong>22 юли 2026 г.</strong> (7 работни дни преди 31 юли).</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243834" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;54 &middot; 2026-06-12</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 67 ОТ 11 ЮНИ 2026 Г. за изменение и допълнение на нормативни актове на Министерския съвет</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Актуализират се правилата за електронното вписване на служебни правоотношения на държавните служители в регистъра на заетостта, като се въвеждат отделни кодове и процедури за активни и за прекратени преди 1 юни 2026 г. правоотношения.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Възникването на служебното правоотношение (датата на встъпване в длъжност) вече се вписва като самостоятелен вид електронен трудов запис – отделно от сключването на трудов договор, с ясно разграничение кой орган подава записа при временно преместване и при завръщане на служителя.</li><li>При временно преместване по чл. 81б от Закона за държавния служител: записът за възникване се подава от органа по назначаването на приемащата администрация, а записът за прекратяване/завръщане – от изпращащата администрация; объркването на задълженията между двете администрации вече е изрично изключено.</li><li>Изменението на служебното правоотношение се разширява – освен заплатата и длъжността, задължително се вписват и промени в: срока, кода на икономическата дейност (КИД), мястото на работа, работното време и ранга/дипломатическия ранг на служителя.</li><li>Въвеждат се три кода за вид правоотношение: код 01 – трудово; код 02 – служебно (активно от 1 юни 2026 г.); код 03 – служебно, прекратено преди 1 юни 2026 г. Историческите данни от служебните книжки се мигрират с код 03, без задължителен номер на акта за назначаване.</li><li>Органите по назначаването на всички заварени и активни към 1 юни 2026 г. служебни правоотношения са длъжни да извършат вписвания в регистъра на заетостта – за текущото правоотношение с код 02, за всички предходни прекратени – с код 03.</li><li>При подаване на електронен трудов запис за правоотношение, възникнало или изменено преди 1 януари 2026 г., размерът на заплатата се посочва задължително в лева (не в евро).</li><li>Коригират се технически грешки в кодовете на четири длъжности от Класификатора на длъжностите в администрацията (редове 22, 52, 259 и 334).</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Държавните служители – историята на служебните им правоотношения ще бъде систематично дигитализирана и достъпна в регистъра на заетостта, което улеснява доказването на служебен стаж.</li><li>Губят: Администрациите (органите по назначаването) – поемат значителна еднократна административна тежест за масово въвеждане на исторически данни от служебните книжки.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Постановлението влиза в сила с обратна дата – от 1 юни 2026 г., т.е. задължения за вписване формално са възникнали 11 дни преди самото му обнародване.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от 1 юни 2026 г. (с обратна дата спрямо обнародването на 12 юни 2026 г.).</li><li>Не е предвиден изричен гратисен период за привеждане в съответствие – задължението за вписване на заварените правоотношения е незабавно.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244073" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details></div>
+</div>
+<div class="subsection">
+  <div class="subsection-hd">
+    <span class="subsection-tag">03</span>
+    <span class="subsection-title">Министерства и ведомства</span>
+    <span class="subsection-count">4 наредби · 1 решение</span>
+  </div>
+  <div class="dv-grid">
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;53 &middot; 2026-06-09</span>
+    </div>
+    <div class="dv-title">Наредба за изменение и допълнение на Наредба №</div>
+    <div class="exec-organ">Комисия за публичен надзор над регистрираните одитори</div>
+    <p class="dv-lead">Актът добавя изданието от 2025 г. на международните одиторски стандарти към официално утвърдените в България, като занапред регистрираните одитори трябва да прилагат и новото издание наред със старото.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Към вече утвърденото издание 2023–2024 на международните одиторски стандарти се добавя официално и изданието 2025 – и двете стават задължителна регулаторна рамка за одиторите в България.</li><li>Изданието 2025 не се печата в „Държавен вестник&quot;, а се публикува като електронна притурка на интернет страницата на ДВ.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Регистрираните одитори и одиторските дружества, тъй като разполагат с ясна правна основа за прилагане на актуализираните стандарти.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от датата на обнародване – 9 юни 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243785" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;53 &middot; 2026-06-09</span>
+    </div>
+    <div class="dv-title">Наредба за изменение и допълнение на Наредба №</div>
+    <div class="exec-organ">Комисия за публичен надзор над регистрираните одитори</div>
+    <p class="dv-lead">Актът добавя изданието от 2025 г. на Международния етичен кодекс за счетоводители към действащите в България задължителни стандарти, като двете издания – 2024 и 2025 – вече се прилагат едновременно.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>До момента наредбата утвърждаваше само изданието от 2024 г.; сега приложението включва и изданието от 2025 г. на Международния етичен кодекс, включително Международните стандарти за независимост.</li><li>Регистрираните одитори и одиторските дружества в България трябва да се съобразяват с актуализираните правила за независимост и етика от изданието 2025 г.</li><li>Пълният текст на изданието 2025 г. е достъпен като притурка на сайта на „Държавен вестник&quot; – не се отпечатва в броя.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Клиенти на одиторски услуги и инвеститори, тъй като стандартите за независимост и етика се осъвременяват.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от датата на обнародването – 9 юни 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243786" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;54 &middot; 2026-06-12</span>
+    </div>
+    <div class="dv-title">Наредба за изменение и допълнение на Наредба № 50 от 30.03.2022 г. за капиталовата адекватност, ликвидността на инвестиционните посредници и осъществяването на надзор за спазването им</div>
+    <div class="exec-organ">Комисия за финансов надзор</div>
+    <p class="dv-lead">Наредбата въвежда нови задължения за по-големите инвестиционни посредници да публикуват и подават до КФН финансова информация в машинночетим формат, съвместим с европейската единна точка за достъп (ESAP), и добавя изисквания за управление на риска от концентрация към централни контрагенти.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Кой е засегнат:</strong> Инвестиционните посредници, които не попадат в категорията „малки и невзаимосвързани&quot; (т.е. по-големите играчи на пазара), и техните предприятия майки.</li><li><strong>Нов праг за разкриване:</strong> Посредници, чиито балансови и задбалансови активи надвишават <strong>100 млн. евро</strong> средно за предходните 4 години, оповестяват допълнителна информация – първата година веднъж годишно, след това веднъж на <strong>две години</strong>, в срок до <strong>90 дни</strong> от края на финансовата година.</li><li><strong>Срокове за стандартно оповестяване:</strong> Индивидуална основа – до <strong>90 дни</strong> след края на финансовата година; консолидирана основа – до <strong>180 дни</strong>.</li><li><strong>Машинночетим формат и метаданни:</strong> Едновременно с публикуването инвестиционните посредници подават информацията до КФН в специален формат за извличане на данни (ESAP-съвместим), задължително придружена от метаданни – наименование, идентификационен код на правния субект, категория на размера, вид информация и маркировка за лични данни.</li><li><strong>Управление на риска от концентрация към централни контрагенти:</strong> Инвестиционните посредници трябва да разработят и прилагат планове с <strong>количествено измерими цели</strong> за наблюдение на концентрационния риск към централни контрагенти с „съществено системно значение&quot; за ЕС или отделна държава членка.</li><li><strong>КФН получава надзорни правомощия:</strong> Комисията може да задължи посредник да оповестява информация по-често от веднъж годишно, да определя конкретни канали и места за публикуване, и да изисква от предприятията майки ежегодно описание на правната и управленска структура на групата.</li><li><strong>КФН като „орган за събиране на данни&quot;:</strong> Комисията официално се вписва в европейската инфраструктура ESAP и ще предоставя надзорна информация за инвестиционни посредници чрез тази платформа.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li><strong>Печелят:</strong> Инвеститори и участници на капиталовите пазари – получават по-лесен централизиран достъп до финансова информация чрез ESAP; европейските регулатори – по-добра видимост върху системните рискове.</li><li><strong>Губят:</strong> По-големите инвестиционни посредници – нови административни и технически разходи за форматиране, подаване и метаданни на информацията в ESAP-съвместим вид.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Пълното задействане на задълженията за ESAP е отложено до <strong>10 януари 2030 г.</strong> – рядко дълъг гратисен период, отразяващ, че европейската инфраструктура сама по себе си все още не е напълно изградена.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Наредбата влиза в сила от датата на обнародване – <strong>12 юни 2026 г.</strong></li><li>Задълженията за подаване на информация чрез европейската единна точка за достъп (ESAP) се прилагат от <strong>10 януари 2030 г.</strong></li></ul></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Актът транспонира две европейски директиви – Директива (ЕС) 2024/2994 относно риска от концентрация към централни контрагенти и Директива (ЕС) 2023/2864 за създаване на ESAP. Подобни изменения се въвеждат паралелно във всички държави членки на ЕС, тъй като ESAP е общоевропейски проект с обща целева дата 2030 г. България следва стандартния европейски подход без съществени национални отклонения.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243798" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;54 &middot; 2026-06-12</span>
+    </div>
+    <div class="dv-title">Наредба за отменяне на наредби на министъра на земеделието и храните</div>
+    <div class="exec-organ">Министерство на земеделието и храните</div>
+    <p class="dv-lead">Министерството отменя 8 остарели наредби от областта на ветеринарния контрол и хуманното отношение към животните, които вероятно са заменени от пряко приложими европейски регламенти.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Отпада националната наредба за граничен ветеринарен контрол (от 2006 г.), която регулираше изискванията към граничните инспекционни пунктове.</li><li>Отменят се правилата за лицензиране на хомеопатични ветеринарномедицински продукти – бизнесът в този сектор вече работи по друга (вероятно европейска) рамка.</li><li>Премахват се три наредби срещу заразни болести по животните: африканска чума по свинете, птичи грип и Нюкясълска болест – свиневъди и птицевъди са пряко засегнати.</li><li>Отпада и наредбата срещу болестта „син език&quot; при преживните животни (говеда, овце, кози).</li><li>Отменят се двете наредби за хуманно отношение – при клане/умъртвяване и при транспорт на животни.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Бизнесът (кланици, транспортьори на животни, свиневъди, птицевъди), който се освобождава от дублиращи национални изисквания върху вече действащи европейски правила.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Сред отменените е наредбата срещу африканската чума по свинете – болест, която към 2024–2025 г. беше сред най-острите ветеринарни заплахи в Европа, което прави отмяната й политически чувствителна, дори ако задълженията вече са уредени на европейско ниво.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от датата на обнародване – 12 юни 2026 г.</li></ul></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Всички отменени теми са уредени от пряко приложими европейски регламенти – контролът на болести по животните е хармонизиран чрез Регламент (ЕС) 2016/429 („Законодателство за здравеопазване на животните&quot;), а хуманното отношение при клане и транспорт – чрез регламенти от 2009 г. Националните наредби от 2005–2006 г. са приети преди или непосредствено след влизането на България в ЕС и оттогава до голяма степен се дублират с европейската рамка. Отмяната им е стандартна „правна хигиена&quot;, широко практикувана в другите страни членки.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243830" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;53 &middot; 2026-06-09</span>
+    </div>
+    <div class="dv-title"></div>
+    <div class="exec-organ">Централна избирателна комисия</div>
+    <p class="dv-lead">След смъртта на народния представител Любен Дилов, ЦИК обявява следващия кандидат от листата на ГЕРБ-СДС в Бургаски район – Галя Василева – за негов приемник в 52-рото Народно събрание.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Народният представител Любен Любенов Дилов, избран от коалиция „ГЕРБ-СДС&quot; във Втори изборен район – Бургаски, е починал, което е основанието за решението.</li><li>Галя Стоянова Василева е обявена за народен представител като следващия в листата кандидат – стандартна процедура при освобождаване на мандат.</li><li>Не се провежда нов избор или довибор – мястото се попълва автоматично от предизборната листа.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Галя Василева, която получава депутатски мандат без нов вот; коалиция ГЕРБ-СДС запазва броя на местата си в парламента.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Мандатът се прехвърля без никакво участие на избирателите – смъртта на депутат автоматично „активира&quot; следващото име от листата, колкото и малко гласове да е получило то лично.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от обнародването – 9 юни 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243835" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details></div>
+</div>
+</div>
+
+<div class="nl-footer">
+  <span class="nl-footer-logo">Doodles.</span>
+  <div class="nl-footer-links">
+    <a href="/">Начало</a>
+    <a href="/newsletters/">Бюлетин</a>
+    <a href="/parliament/">Законодателство</a>
+    <a href="/about/">За проекта</a>
+  </div>
+</div>
+</div>
+</body>
+</html>

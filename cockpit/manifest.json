@@ -1,101 +1,101 @@
 {
-  "generated_at": "2026-06-09T20:36:36Z",
+  "generated_at": "2026-06-16T18:22:22Z",
   "datasets": {
     "hicp": {
       "label": "HICP",
       "label_bg": "ХИПЦ",
       "latest_period": "May '26",
-      "last_generated": "2026-06-09T20:36:36Z"
+      "last_generated": "2026-06-16T18:22:22Z"
     },
     "ppi": {
       "label": "PPI",
       "label_bg": "ИЦП",
       "latest_period": "Apr '26",
-      "last_generated": "2026-06-09T20:36:36Z"
+      "last_generated": "2026-06-16T18:22:22Z"
     },
     "gdp": {
       "label": "GDP",
       "label_bg": "БВП",
       "latest_period": "Q1 '26",
-      "last_generated": "2026-06-09T20:36:36Z"
+      "last_generated": "2026-06-16T18:22:22Z"
     },
     "ipi": {
       "label": "Industry",
       "label_bg": "Промишленост",
       "latest_period": "Apr '26",
-      "last_generated": "2026-06-09T20:36:36Z"
+      "last_generated": "2026-06-16T18:22:22Z"
     },
     "construction": {
       "label": "Construction",
       "label_bg": "Строителство",
       "latest_period": "Apr '26",
-      "last_generated": "2026-06-09T20:36:36Z"
+      "last_generated": "2026-06-16T18:22:22Z"
     },
     "services": {
       "label": "Services",
       "label_bg": "Услуги",
       "latest_period": "Mar '26",
-      "last_generated": "2026-06-09T20:36:36Z"
+      "last_generated": "2026-06-16T18:22:22Z"
     },
     "retail": {
       "label": "Retail",
       "label_bg": "Търговия на дребно",
       "latest_period": "Apr '26",
-      "last_generated": "2026-06-09T20:36:36Z"
+      "last_generated": "2026-06-16T18:22:22Z"
     },
     "trade": {
       "label": "Trade",
       "label_bg": "Външна търговия",
       "latest_period": "Mar '26",
-      "last_generated": "2026-06-09T20:36:36Z"
+      "last_generated": "2026-06-16T18:22:22Z"
     },
     "unemployment": {
       "label": "Labour",
       "label_bg": "Пазар на труда",
-      "latest_period": "Apr '26",
-      "last_generated": "2026-06-09T20:36:36Z"
+      "latest_period": "Q1 '26",
+      "last_generated": "2026-06-16T18:22:22Z"
     },
     "wages": {
       "label": "Wages",
       "label_bg": "Заплати",
       "latest_period": "2026-Q4",
-      "last_generated": "2026-06-09T20:36:36Z"
+      "last_generated": "2026-06-16T18:22:22Z"
     },
     "confidence": {
       "label": "Confidence",
       "label_bg": "Доверие",
       "latest_period": "May '26",
-      "last_generated": "2026-06-09T20:36:36Z"
+      "last_generated": "2026-06-16T18:22:22Z"
     },
     "energy": {
       "label": "Energy",
       "label_bg": "Енергия",
       "latest_period": "Mar '26",
-      "last_generated": "2026-06-09T20:36:36Z"
+      "last_generated": "2026-06-16T18:22:22Z"
     },
     "bop": {
       "label": "Bal. of Payments",
       "label_bg": "Платежен баланс",
       "latest_period": "2026-Q1",
-      "last_generated": "2026-06-09T20:36:36Z"
+      "last_generated": "2026-06-16T18:22:22Z"
     },
     "hpi": {
       "label": "House Prices",
       "label_bg": "Жилищни цени",
       "latest_period": "2025-Q4",
-      "last_generated": "2026-06-09T20:36:36Z"
+      "last_generated": "2026-06-16T18:22:22Z"
     },
     "credit": {
       "label": "Credit",
       "label_bg": "Кредит",
       "latest_period": "Mar '26",
-      "last_generated": "2026-06-09T20:36:36Z"
+      "last_generated": "2026-06-16T18:22:22Z"
     },
     "extdebt": {
       "label": "External Debt",
       "label_bg": "Външен дълг",
       "latest_period": "Q4 '25",
-      "last_generated": "2026-06-09T20:36:36Z"
+      "last_generated": "2026-06-16T18:22:22Z"
     }
   },
   "sections": [
@@ -575,6 +575,30 @@
           "footer_left_bg": "End-of-month headcount · thousands of persons",
           "footer_right": "NSI Labour_1.1.1.1 · employees under labour contract",
           "footer_right_bg": "NSI Labour_1.1.1.1 · employees under labour contract"
+        },
+        {
+          "id": "LABOR-02",
+          "code": "LABOR-02",
+          "dataset": "unemployment",
+          "title": "Unit Labour Costs vs Labour Productivity — YoY %",
+          "title_bg": "Разходи за труд и производителност — ГоГ %",
+          "chart_file": "charts/labor-02.png",
+          "footer_left": "YoY % change · seasonally adjusted · per hour worked",
+          "footer_left_bg": "ГоГ % change · seasonally adjusted · per hour worked",
+          "footer_right": "Eurostat · namq_10_lp_ulc · Bulgaria",
+          "footer_right_bg": "Евростат · namq_10_lp_ulc · България"
+        },
+        {
+          "id": "LABOR-03",
+          "code": "LABOR-03",
+          "dataset": "unemployment",
+          "title": "ULC − Productivity Spread (pp)",
+          "title_bg": "Разлика РЕТУ − Производителност (пр.п.)",
+          "chart_file": "charts/labor-03.png",
+          "footer_left": "Spread = NULC YoY − Productivity YoY · positive = cost pressure",
+          "footer_left_bg": "Spread = NULC ГоГ − Productivity ГоГ · positive = cost pressure",
+          "footer_right": "Eurostat · namq_10_lp_ulc · Bulgaria",
+          "footer_right_bg": "Евростат · namq_10_lp_ulc · България"
         },
         {
           "id": "WAGES-01",

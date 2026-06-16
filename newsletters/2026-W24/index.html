@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Basepoint Doodles · България · Седмица 24, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&amp;family=Caveat:wght@700&amp;display=swap" rel="stylesheet"/>
+<style>
+* { box-sizing:border-box; margin:0; padding:0; }
+body {
+  --bp:#1B2E5E; --red:#CC2B2B; --gold:#B5821A;
+  --up:#2A9D5C; --dn:#E03E2D;
+  --ink:#1C1C1C; --ink2:#444444; --dim:#888888; --pale:#AAAAAA;
+  --bdr:#E8E8E8; --surf:#F8F8F8; --paper:#FFFFFF;
+  font-family:'Nunito',Arial,sans-serif; background:#F0F2F5;
+  color:var(--ink); line-height:1.6;
+}
+.wrapper { max-width:700px; margin:32px auto; background:var(--paper);
+  border:1px solid var(--bdr); border-radius:4px; overflow:hidden; }
+
+/* ── Newspaper header ── */
+.nwp-hdr { padding:16px 24px 12px; border-bottom:1px solid var(--ink); background:#fff; }
+.nwp-topline { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
+.nwp-dateline { font-family:'Courier New',monospace; font-size:10px; color:var(--dim);
+  letter-spacing:0.05em; text-transform:uppercase; }
+.nwp-nav { display:flex; gap:14px; align-items:center; }
+.nwp-nav a { font-size:10px; font-weight:700; letter-spacing:0.1em;
+  text-transform:uppercase; color:var(--dim); text-decoration:none; }
+.nwp-nav a:hover { color:var(--ink); }
+.nwp-nav a.active { color:var(--red); }
+.nwp-title-row { text-align:center; margin-bottom:8px; }
+.nwp-title { font-family:'Nunito',sans-serif; font-size:40px; font-weight:900;
+  color:var(--ink); letter-spacing:-1.5px; line-height:1; display:inline; }
+.nwp-doodles { font-family:'Caveat',cursive; font-size:48px; font-weight:700;
+  color:var(--red); line-height:1; vertical-align:baseline; margin-left:6px; }
+.nwp-issue { text-align:center; font-family:'Courier New',monospace; font-size:10px;
+  color:var(--dim); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:10px; }
+.nwp-rule-thick { height:3px; background:var(--ink); }
+.nwp-rule-thin  { height:1px; background:var(--ink); margin-top:3px; }
+
+/* ── Section quicklinks ── */
+.quicklinks { display:grid; grid-template-columns:1fr 1px 1fr;
+  border-bottom:2px solid var(--ink); background:var(--surf); }
+.ql-col { padding:14px 20px 16px; }
+.ql-head { font-size:10px; font-weight:900; letter-spacing:0.18em;
+  text-transform:uppercase; color:var(--ink); padding-bottom:10px;
+  border-bottom:1px solid var(--bdr); margin-bottom:10px; }
+.ql-head .ql-arrow { color:var(--red); margin-right:5px; }
+.ql-links { display:flex; flex-direction:column; gap:5px; }
+.ql-links a { font-size:12px; font-weight:700; color:var(--dim); text-decoration:none;
+  display:flex; align-items:center; gap:6px; }
+.ql-links a:hover { color:var(--ink); }
+.ql-links a::before { content:'→'; font-size:11px; color:var(--pale); }
+.ql-divider { background:var(--bdr); }
+
+/* ── Cover ── */
+.cover { padding:22px 28px 20px; border-bottom:1px solid var(--bdr); }
+.cover-eyebrow { font-size:10px; font-weight:900; letter-spacing:0.18em;
+  text-transform:uppercase; color:var(--red); margin-bottom:10px; display:block; }
+.cover-headline { font-size:20px; font-weight:900; color:var(--ink);
+  line-height:1.3; letter-spacing:-0.3px; margin-bottom:14px; }
+.cover-bullets { list-style:none; display:flex; flex-direction:column; gap:7px; }
+.cover-bullets li { font-size:13.5px; color:var(--ink2); line-height:1.55;
+  display:flex; gap:9px; }
+.cover-bullets li::before { content:'▸'; color:var(--red); flex-shrink:0;
+  font-size:11px; margin-top:3px; }
+
+/* ── Section dividers ── */
+.section-divider { background:var(--ink); padding:13px 28px;
+  display:flex; align-items:center; justify-content:space-between; }
+.section-divider-title { font-size:12px; font-weight:900; letter-spacing:0.2em;
+  text-transform:uppercase; color:#fff; }
+.section-divider-num { font-family:'Courier New',monospace; font-size:11px;
+  color:rgba(255,255,255,0.4); }
+.section-subnav { display:flex; gap:0; border-bottom:1px solid var(--bdr);
+  background:var(--surf); }
+.section-subnav a { font-size:10px; font-weight:900; letter-spacing:0.12em;
+  text-transform:uppercase; color:var(--dim); text-decoration:none;
+  padding:9px 16px; border-right:1px solid var(--bdr); }
+.section-subnav a:hover { color:var(--ink); background:#EFEFEF; }
+
+/* ── The Number ── */
+.the-number { padding:24px 28px; border-bottom:1px solid var(--bdr);
+  display:flex; gap:20px; align-items:flex-start; }
+.the-number-label { font-size:10px; font-weight:900; letter-spacing:0.16em;
+  text-transform:uppercase; color:var(--red); white-space:nowrap;
+  min-width:80px; padding-top:8px; }
+.the-number-big { font-family:'Nunito',sans-serif; font-size:56px; font-weight:900;
+  color:var(--ink); line-height:1; margin-bottom:8px; }
+.the-number-big .denom { font-size:28px; color:var(--dim); }
+.the-number p { font-size:14px; color:var(--ink2); line-height:1.6; }
+
+/* ── Macro Pulse ── */
+.pulse-header { padding:14px 28px 0; display:flex; align-items:center; gap:10px; }
+.pulse-title { font-size:11px; font-weight:900; letter-spacing:0.16em;
+  text-transform:uppercase; color:var(--red); }
+.stats-row { display:grid; grid-template-columns:repeat(3,1fr); gap:10px;
+  padding:12px 28px 20px; border-bottom:1px solid var(--bdr); }
+.stat-card { background:var(--surf); border-radius:8px; padding:12px 13px 11px; }
+.stat-label { font-size:10px; font-weight:900; letter-spacing:0.12em;
+  text-transform:uppercase; color:var(--dim); line-height:1.3;
+  height:2.6em; overflow:hidden; margin-bottom:5px; }
+.stat-value { font-size:22px; font-weight:900; color:var(--ink);
+  line-height:1; white-space:nowrap; overflow:hidden; }
+.stat-value .unit { font-size:12px; font-weight:700; color:var(--dim); }
+.stat-value.up { color:var(--up); }
+.stat-value.dn { color:var(--dn); }
+.stat-value.up .unit, .stat-value.dn .unit { color:inherit; opacity:0.65; }
+.stat-period { font-family:'Courier New',monospace; font-size:10px;
+  color:var(--pale); margin-top:5px; }
+
+/* ── Charts ── */
+.section { padding:20px 28px; border-bottom:1px solid var(--bdr); }
+.section-body { font-size:14px; color:var(--ink2); line-height:1.75; margin-bottom:12px; }
+.nl-chart { border:1px solid var(--bdr); border-radius:8px; overflow:hidden; margin:14px 0 20px; }
+.nl-chart-header { background:var(--surf); padding:9px 13px 7px;
+  border-bottom:1px solid var(--bdr);
+  display:flex; justify-content:space-between; align-items:flex-start; gap:10px; }
+.nl-chart-label { font-size:10px; font-weight:900; letter-spacing:0.12em;
+  text-transform:uppercase; color:var(--dim); }
+.nl-chart-reading { font-size:15px; font-weight:900; color:var(--red);
+  line-height:1.15; white-space:nowrap; text-align:right; }
+.nl-chart-subtitle { font-family:'Courier New',monospace; font-size:10px;
+  color:var(--pale); margin-top:2px; }
+.nl-chart img { width:100%; display:block; }
+.nl-chart-footer { font-family:'Courier New',monospace; font-size:10px;
+  color:var(--pale); padding:5px 13px 6px; background:var(--surf);
+  border-top:1px solid var(--bdr);
+  display:flex; justify-content:space-between; gap:8px; }
+.chart-lead { font-size:13.5px; color:var(--ink2); line-height:1.65; margin-bottom:4px; }
+.data-section-head { font-size:11px; font-weight:900; letter-spacing:0.16em;
+  text-transform:uppercase; color:var(--red); margin:20px 0 12px; display:block; }
+.data-section-head:first-child { margin-top:0; }
+
+/* ── Deep Dive ── */
+.deep-dive { padding:20px 28px; border-bottom:1px solid var(--bdr); }
+.deep-dive-head { font-size:11px; font-weight:900; letter-spacing:0.16em;
+  text-transform:uppercase; color:var(--gold); margin-bottom:16px; display:block; }
+.bottom-line { background:#FFF8EC; border:1px solid #E8D5A0; border-radius:8px;
+  padding:16px 18px; margin-top:20px; }
+.bottom-line-head { font-size:9px; font-weight:900; letter-spacing:0.16em;
+  text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
+.bottom-line p { font-size:13.5px; color:var(--ink2); line-height:1.7; }
+
+/* ── Law Deep (scorecard) ── */
+.sc-panel { background:#FFF8EC; border:1px solid #E8D5A0; border-radius:8px;
+  overflow:hidden; margin:14px 0; }
+.sc-facts { display:grid; grid-template-columns:1fr 1px 1fr 1px 1fr; }
+.sc-cell { padding:11px 13px; }
+.sc-divider { background:#E8D5A0; }
+.sc-label { font-size:9px; font-weight:900; letter-spacing:0.12em;
+  text-transform:uppercase; color:var(--gold); margin-bottom:4px; }
+.sc-value { font-size:12.5px; font-weight:700; color:var(--ink); line-height:1.4; }
+.sc-note { font-size:11px; color:var(--ink2); margin-top:3px; line-height:1.4; }
+.sc-row { padding:10px 13px; border-top:1px solid #E8D5A0;
+  display:flex; gap:10px; align-items:flex-start; }
+.sc-dot { width:10px; height:10px; border-radius:50%; flex-shrink:0; margin-top:3px; }
+.sc-dot.cost { background:#E03E2D; }
+.sc-dot.indirect { background:var(--gold); }
+.sc-dot.neutral { background:#AAAAAA; }
+.sc-dot.savings { background:var(--up); }
+.sc-fiscal-text { font-size:12.5px; color:var(--ink2); line-height:1.5; }
+.sc-steps { padding:10px 13px; border-top:1px solid #E8D5A0; }
+.sc-steps-head { font-size:9px; font-weight:900; letter-spacing:0.12em;
+  text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
+.sc-step { font-size:12px; color:var(--ink2); line-height:1.5; margin-bottom:5px;
+  display:flex; gap:7px; }
+.sc-step-who { font-weight:900; color:var(--ink); flex-shrink:0; min-width:90px; }
+.es-pill { display:inline-block; font-size:9px; font-weight:900; letter-spacing:0.08em;
+  text-transform:uppercase; padding:2px 7px; border-radius:3px; margin-right:5px; }
+.es-pill.partial { background:#FFF0C8; color:#A07010; border:1px solid #D4A340; }
+.es-pill.yes { background:#DCF0FB; color:#1B6A9E; }
+.es-pill.no { background:#EDEDED; color:#666; }
+.es-pill.beyond { background:#E8F7EC; color:#2A7D4F; }
+/* ── Voting block ── */
+.vote-block { margin:14px 0; }
+.vote-block-head { font-size:9px; font-weight:900; letter-spacing:0.14em;
+  text-transform:uppercase; color:var(--dim); margin-bottom:10px; }
+.vote-total-bar { display:flex; height:14px; border-radius:4px; overflow:hidden;
+  margin-bottom:10px; }
+.vtb-for { background:var(--up); }
+.vtb-against { background:var(--dn); }
+.vtb-abstain { background:#DDDDDD; }
+.vote-totals { display:flex; gap:16px; font-size:11px; font-weight:700;
+  margin-bottom:12px; }
+.vt-for { color:var(--up); }
+.vt-against { color:var(--dn); }
+.vt-abstain { color:var(--dim); }
+.party-table { display:flex; flex-direction:column; gap:5px; }
+.pt-row { display:flex; align-items:center; gap:8px; }
+.pt-name { font-size:10px; font-weight:700; color:var(--ink2); width:120px; flex-shrink:0; }
+.pt-bar-wrap { flex:1; background:#EDEDED; border-radius:3px; height:12px;
+  position:relative; overflow:hidden; display:flex; }
+.pt-bar-for { background:var(--up); height:100%; }
+.pt-bar-against { background:var(--dn); height:100%; }
+.pt-bar-abstain { background:#CCC; height:100%; }
+.pt-verdict { font-size:9px; font-weight:900; letter-spacing:0.06em;
+  text-transform:uppercase; width:50px; flex-shrink:0; text-align:right; }
+.pt-verdict.for { color:var(--up); }
+.pt-verdict.against { color:var(--dn); }
+.pt-verdict.split { color:var(--gold); }
+
+/* ── Legislative infographic ── */
+.law-infographic { padding:20px 28px 18px; border-bottom:1px solid var(--bdr); }
+.infog-stats { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:20px; }
+.infog-stat { background:var(--surf); border-radius:8px; padding:12px 16px; text-align:center; }
+.infog-stat-num { font-size:36px; font-weight:900; color:var(--ink); line-height:1; }
+.infog-stat-num.accent { color:var(--red); }
+.infog-stat-label { font-size:10px; font-weight:700; letter-spacing:0.1em;
+  text-transform:uppercase; color:var(--dim); margin-top:4px; }
+.infog-stat-sub { font-size:10px; color:var(--pale); margin-top:2px; }
+.infog-section-head { font-size:10px; font-weight:900; letter-spacing:0.15em;
+  text-transform:uppercase; color:var(--dim); margin-bottom:10px; }
+.infog-bars { display:flex; flex-direction:column; gap:8px; margin-bottom:20px; }
+.infog-bar-row { display:flex; align-items:center; gap:10px; }
+.infog-bar-label { font-size:11px; font-weight:700; color:var(--ink2);
+  width:130px; flex-shrink:0; text-align:right; }
+.infog-bar-wrap { flex:1; background:#EBEBEB; border-radius:3px; height:16px; overflow:hidden; }
+.infog-bar-fill { height:100%; border-radius:3px; background:var(--bp); }
+.infog-bar-fill.gold { background:var(--gold); }
+.infog-bar-fill.red  { background:var(--red); }
+.infog-bar-count { font-size:11px; font-weight:900; color:var(--ink2); width:20px; }
+.infog-footnote { font-family:'Courier New',monospace; font-size:10px;
+  color:var(--pale); margin-top:14px; line-height:1.5; }
+
+/* ── Legislative cards ── */
+.law-cards { padding:0 28px; }
+.nl-law-card { border:1px solid var(--bdr); border-radius:8px; overflow:hidden; margin:14px 0; }
+.nl-law-card.deep { border-color:var(--gold); border-width:2px; }
+.nl-law-card-head { padding:12px 14px 10px; cursor:pointer;
+  display:flex; flex-direction:column; gap:7px;
+  background:var(--paper); transition:background 0.08s; }
+.nl-law-card.deep .nl-law-card-head { background:#FEFBF3; }
+.nl-law-card-head:hover { background:var(--surf); }
+.nl-law-badges { display:flex; gap:6px; flex-wrap:wrap; }
+.badge-type { font-size:9px; font-weight:900; letter-spacing:0.1em;
+  text-transform:uppercase; color:#fff; background:var(--bp);
+  padding:2px 7px; border-radius:3px; }
+.badge-type.deep { background:var(--gold); }
+.badge-organ { font-size:9px; font-weight:900; letter-spacing:0.08em;
+  text-transform:uppercase; color:var(--bp); border:1.5px solid var(--bp);
+  padding:1px 6px; border-radius:3px; }
+.badge-organ.gold { color:var(--gold); border-color:var(--gold); }
+.nl-law-title { font-size:14px; font-weight:900; color:var(--ink); line-height:1.3; }
+.nl-law-tags { display:flex; gap:5px; flex-wrap:wrap; }
+.nl-law-tag { font-size:9px; font-weight:700; letter-spacing:0.08em;
+  text-transform:uppercase; color:var(--dim); background:#EDEDED;
+  padding:2px 7px; border-radius:10px; }
+.nl-law-toggle { font-size:10px; color:var(--pale); font-weight:700;
+  letter-spacing:0.06em; text-transform:uppercase; align-self:flex-end; }
+.nl-law-body { display:none; padding:14px 14px 16px;
+  border-top:1px solid var(--bdr); background:var(--surf); }
+.nl-law-card.deep .nl-law-body { background:#FEFBF3; border-top-color:#E8D5A0; }
+.nl-law-body.open { display:block; }
+.nl-law-lead { font-size:13.5px; color:var(--ink2); line-height:1.7; margin-bottom:14px; }
+.nl-law-points { margin-bottom:14px; }
+.nl-law-points-head { font-size:10px; font-weight:900; letter-spacing:0.14em;
+  text-transform:uppercase; color:var(--dim); margin-bottom:8px; }
+.nl-law-points ul { padding-left:16px; }
+.nl-law-points li { font-size:13px; color:var(--ink2); line-height:1.65; margin-bottom:5px; }
+.nl-law-notable { background:#FFF3CD; border:1px solid #E8D5A0; border-radius:6px;
+  padding:9px 12px; margin-bottom:14px; font-size:12.5px; color:var(--ink2); line-height:1.6; }
+.nl-law-notable-head { font-size:9px; font-weight:900; letter-spacing:0.12em;
+  text-transform:uppercase; color:var(--gold); margin-bottom:4px; }
+.nl-law-wl { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:14px; }
+.nl-law-win { background:#EBF7EF; border-radius:6px; padding:9px 11px; }
+.nl-law-lose { background:#FEF0EF; border-radius:6px; padding:9px 11px; }
+.nl-law-wl-head { font-size:9px; font-weight:900; letter-spacing:0.12em;
+  text-transform:uppercase; margin-bottom:4px; }
+.nl-law-win .nl-law-wl-head { color:var(--up); }
+.nl-law-lose .nl-law-wl-head { color:var(--dn); }
+.nl-law-wl-text { font-size:12px; color:var(--ink2); line-height:1.55; }
+.nl-law-meta { font-family:'Courier New',monospace; font-size:10px; color:var(--pale);
+  display:flex; justify-content:space-between; flex-wrap:wrap; gap:6px; }
+.nl-law-meta a { color:var(--pale); }
+.nl-law-meta a:hover { color:var(--ink); }
+
+/* ── Technical items ── */
+.basic-section { margin:14px 28px 20px; border:1px solid var(--bdr); border-radius:8px; overflow:hidden; }
+.basic-toggle { display:flex; align-items:center; justify-content:space-between;
+  padding:10px 14px; background:var(--surf); cursor:pointer;
+  font-size:10px; font-weight:900; letter-spacing:0.14em;
+  text-transform:uppercase; color:var(--dim); }
+.basic-toggle:hover { background:#EEEEEE; }
+.basic-toggle .arrow { font-size:12px; }
+.basic-list { display:none; }
+.basic-list.open { display:block; }
+.basic-item { padding:9px 14px; border-top:1px solid var(--bdr);
+  font-size:12px; color:var(--ink2); line-height:1.55;
+  display:flex; flex-wrap:wrap; gap:6px; align-items:baseline; }
+.basic-badge { font-size:8px; font-weight:900; letter-spacing:0.1em;
+  text-transform:uppercase; color:#fff; padding:2px 6px; border-radius:2px;
+  background:var(--dim); flex-shrink:0; }
+.basic-organ { font-size:8px; font-weight:700; letter-spacing:0.06em;
+  text-transform:uppercase; color:var(--dim); flex-shrink:0; }
+.basic-item a { color:var(--pale); font-size:11px; margin-left:auto; flex-shrink:0; }
+.basic-item a:hover { color:var(--ink); }
+
+/* ── Footer ── */
+.footer { padding:14px 28px; background:var(--surf);
+  border-top:1px solid var(--bdr);
+  display:flex; justify-content:space-between; align-items:center; }
+.footer-logo { font-family:'Caveat',cursive; font-size:18px; font-weight:700; color:#CCC; }
+.footer-sources { font-family:'Courier New',monospace; font-size:9px;
+  color:var(--pale); text-align:right; line-height:1.6; }
+
+/* ── Responsive ── */
+@media (max-width:740px) {
+  .wrapper { margin:0; border-radius:0; }
+  .section, .deep-dive, .footer { padding-left:16px; padding-right:16px; }
+  .quicklinks { grid-template-columns:1fr; }
+  .ql-divider { display:none; }
+  .stats-row { grid-template-columns:repeat(2,1fr); }
+  .infog-stats { grid-template-columns:1fr 1fr; }
+  .nl-law-wl { grid-template-columns:1fr; }
+  .law-cards { padding:0 16px; }
+  .basic-section { margin:14px 16px 20px; }
+  .law-infographic { padding:16px 16px 14px; }
+  .infog-bar-label { width:100px; font-size:10px; }
+}
+</style>
+<script>
+function toggleCard(el) {
+  const body = el.closest('.nl-law-card').querySelector('.nl-law-body');
+  const tog  = el.querySelector('.nl-law-toggle');
+  body.classList.toggle('open');
+  tog.textContent = body.classList.contains('open') ? '▴ Скрий' : '▾ Покажи';
+}
+function toggleBasic() {
+  const list = document.querySelector('.basic-list');
+  const arr  = document.querySelector('.basic-toggle .arrow');
+  list.classList.toggle('open');
+  arr.textContent = list.classList.contains('open') ? '▴' : '▾';
+}
+</script>
+</head>
+<body>
+<div class="wrapper">
+
+<!-- ── Newspaper header ── -->
+<div class="nwp-hdr">
+  <div class="nwp-topline">
+    <span class="nwp-dateline">Седмица 24 · 15 юни 2026</span>
+    <nav class="nwp-nav">
+      <a href="/newsletters/" class="active">Бюлетин</a>
+      <a href="/cockpit/">Икономика</a>
+      <a href="/parliament/">Законодателство</a>
+      <a href="/about/">За проекта</a>
+    </nav>
+  </div>
+  <div class="nwp-title-row">
+    <span class="nwp-title">Basepoint</span><span class="nwp-doodles">Doodles</span>
+  </div>
+  <div class="nwp-issue">Макроикономика · Законодателство · България</div>
+  <div class="nwp-rule-thick"></div>
+  <div class="nwp-rule-thin"></div>
+</div>
+
+<!-- ── Section quicklinks ── -->
+<div class="quicklinks">
+  <div class="ql-col">
+    <div class="ql-head"><span class="ql-arrow">▸</span>Икономически данни</div>
+    <div class="ql-links">
+      <a href="#the-number">Числото на седмицата</a>
+      <a href="#macro-pulse">Макро пулс</a>
+      <a href="#new-data">Нови данни · Разходи за труд Q1</a>
+    </div>
+  </div>
+  <div class="ql-divider"></div>
+  <div class="ql-col">
+    <div class="ql-head"><span class="ql-arrow">▸</span>Закони · Решения · Регулации</div>
+    <div class="ql-links">
+      <a href="#law-summary">Обобщение</a>
+      <a href="#law-items">Обнародвани актове</a>
+    </div>
+  </div>
+</div>
+
+<!-- ── Cover ── -->
+<div class="cover">
+  <span class="cover-eyebrow">▸ Седмица 24 · 8–14 юни 2026</span>
+  <div class="cover-headline">ВиК услугите с единен оператор и ценов таван; минималната пенсия нараства от 1 юли</div>
+  <ul class="cover-bullets">
+    <li>Законът за водите реформира регулацията: един ВиК оператор на обособена територия, таван на печалбата от 10% от приходите, а ценовата поносимост е обвързана с медианния доход по области.</li>
+    <li>От 1 юли 2026 г. минималната пенсия за осигурителен стаж и възраст е 347,51 евро месечно; партийната субсидия пада от 4,09 на 3,00 евро за глас; временни мерки до редовен бюджет.</li>
+    <li>52-рото Народно събрание конституира всичките си 22 постоянни комисии: парламентарната работа стартира официално.</li>
+    <li>Показателят за разходите за труд и производителността за Q1 2026 се понижава до 8,7% след 10,5% през Q4 2025; пазарът на труда остава с безработица на 5-годишно дъно от 2,8%.</li>
+  </ul>
+</div>
+
+<!-- ════════════════════════════════════════════════ -->
+<!-- ═══ SECTION 1: ИКОНОМИЧЕСКИ ДАННИ ═══════════════ -->
+<!-- ════════════════════════════════════════════════ -->
+<div class="section-divider" id="economy">
+  <span class="section-divider-title">Икономически данни</span>
+  <span class="section-divider-num">Секция 1 от 2</span>
+</div>
+<nav class="section-subnav">
+  <a href="#the-number">Числото</a>
+  <a href="#macro-pulse">Макро пулс</a>
+  <a href="#new-data">Нови данни</a>
+</nav>
+
+<!-- ── The Number ── -->
+<div class="the-number" id="the-number">
+  <div class="the-number-label">Числото<br/>на седм.</div>
+  <div class="the-number-content">
+    <div class="the-number-big">347,51<span class="denom"> евро</span></div>
+    <p>Новата минимална пенсия за осигурителен стаж и възраст, в сила от 1 юли 2026 г. Размерът е временен до приемането на редовен бюджет: България навлезе в 2026 г. без приет Закон за държавния бюджет. Засяга пенсионерите, чиито пенсии са под прага, и ще коригира автоматично доходите им от следващия месец.</p>
+  </div>
+</div>
+
+<!-- ── Macro Pulse ── -->
+<div class="pulse-header" id="macro-pulse">
+  <span class="pulse-title">▸ Макро пулс · последни данни</span>
+</div>
+<div class="stats-row">
+  <!-- 1 -->
+  <div class="stat-card">
+    <div class="stat-label">Инфлация<br/>(ХИПЦ)</div>
+    <div class="stat-value up">+6,3<span class="unit"> % г/г</span></div>
+    <div class="stat-period">май 2026</div>
+  </div>
+  <!-- 2 -->
+  <div class="stat-card">
+    <div class="stat-label">Базисна<br/>инфлация</div>
+    <div class="stat-value up">+4,7<span class="unit"> % г/г</span></div>
+    <div class="stat-period">май 2026</div>
+  </div>
+  <!-- 3 -->
+  <div class="stat-card">
+    <div class="stat-label">Производствени<br/>цени (ЦПИ)</div>
+    <div class="stat-value up">+12,1<span class="unit"> % г/г</span></div>
+    <div class="stat-period">апр. 2026</div>
+  </div>
+  <!-- 4 -->
+  <div class="stat-card">
+    <div class="stat-label">Промишлено<br/>производство</div>
+    <div class="stat-value dn">−4,2<span class="unit"> % г/г</span></div>
+    <div class="stat-period">апр. 2026</div>
+  </div>
+  <!-- 5 -->
+  <div class="stat-card">
+    <div class="stat-label">Търговия<br/>на дребно</div>
+    <div class="stat-value up">+8,2<span class="unit"> % г/г</span></div>
+    <div class="stat-period">апр. 2026</div>
+  </div>
+  <!-- 6 -->
+  <div class="stat-card">
+    <div class="stat-label">Строителна<br/>продукция</div>
+    <div class="stat-value up">+6,7<span class="unit"> % г/г</span></div>
+    <div class="stat-period">апр. 2026</div>
+  </div>
+  <!-- 7 -->
+  <div class="stat-card">
+    <div class="stat-label">Производство<br/>в услугите</div>
+    <div class="stat-value up">+5,7<span class="unit"> % г/г</span></div>
+    <div class="stat-period">мар. 2026</div>
+  </div>
+  <!-- 8 -->
+  <div class="stat-card">
+    <div class="stat-label">Безработица<br/>&nbsp;</div>
+    <div class="stat-value dn">2,8<span class="unit"> % СИ</span></div>
+    <div class="stat-period">апр. 2026</div>
+  </div>
+  <!-- 9 -->
+  <div class="stat-card">
+    <div class="stat-label">Бизнес климат<br/>(ИБК)</div>
+    <div class="stat-value">95,6<span class="unit"> т.</span></div>
+    <div class="stat-period">май 2026</div>
+  </div>
+  <!-- 10 -->
+  <div class="stat-card">
+    <div class="stat-label">Растеж на<br/>БВП (г/г)</div>
+    <div class="stat-value up">+3,1<span class="unit"> % г/г</span></div>
+    <div class="stat-period">Q1 2026</div>
+  </div>
+  <!-- 11 -->
+  <div class="stat-card">
+    <div class="stat-label">Търговски<br/>баланс (НСИ)</div>
+    <div class="stat-value dn">−1 426<span class="unit"> €млн</span></div>
+    <div class="stat-period">мар. 2026</div>
+  </div>
+  <!-- 12 -->
+  <div class="stat-card">
+    <div class="stat-label">Ср. бр. месечна<br/>заплата</div>
+    <div class="stat-value up">1 392<span class="unit"> EUR</span></div>
+    <div class="stat-period">Q1 2026</div>
+  </div>
+</div>
+
+<!-- ── New Data ── -->
+<div class="section" id="new-data">
+
+  <span class="data-section-head">▸ Нови данни · Заетост и производителност</span>
+
+  <p class="chart-lead">Номиналните разходи за труд на единица продукция (РЕТУ) се забавят до 8,7% г/г през Q1 2026 спрямо 10,5% през Q4 2025 (-1,8 пр.п.). Движението е съвместимо със сезонна нормализация: заплатите през Q4 традиционно включват годишни бонуси, което повишава базата за сравнение. Серията остава положителна за 60-о поредно тримесечие.</p>
+
+  <div class="nl-chart">
+    <div class="nl-chart-header">
+      <div>
+        <div class="nl-chart-label">Разходи за труд на единица продукция и производителност</div>
+        <div class="nl-chart-subtitle">ГоГ % · сезонно изгладен · на отработен час</div>
+      </div>
+      <div style="text-align:right">
+        <div class="nl-chart-reading">+8,7%</div>
+        <div class="nl-chart-subtitle">РЕТУ · Q1 2026</div>
+      </div>
+    </div>
+    <img src="./LABOR-02.png" alt="Разходи за труд на единица продукция и реална производителност ГоГ"/>
+    <div class="nl-chart-footer">
+      <span>Евростат · namq_10_lp_ulc</span>
+      <span>актуализирано юни 2026</span>
+    </div>
+  </div>
+
+  <p class="chart-lead">Реалната производителност на труда нараства с 2,1% г/г през Q1 2026, докато РЕТУ е 8,7%; разликата от 6,6 пр.п. в полза на разходите за труд е съвместима с натиск върху производствените разходи. Широкият спред не е нов: през Q4 2025 той е бил 9,2 пр.п. Сам по себе си не е достатъчен сигнал за структурен проблем, но повишава вероятността част от разходите за труд да продължат да се прехвърлят в потребителските цени.</p>
+
+  <div class="nl-chart">
+    <div class="nl-chart-header">
+      <div>
+        <div class="nl-chart-label">Разлика РЕТУ − Реална производителност</div>
+        <div class="nl-chart-subtitle">пр.п. · положително = разходите растат по-бързо от производителността</div>
+      </div>
+      <div style="text-align:right">
+        <div class="nl-chart-reading">+6,6 пр.п.</div>
+        <div class="nl-chart-subtitle">Q1 2026</div>
+      </div>
+    </div>
+    <img src="./LABOR-03.png" alt="Разлика РЕТУ минус реална производителност в пр.п."/>
+    <div class="nl-chart-footer">
+      <span>Евростат · namq_10_lp_ulc</span>
+      <span>актуализирано юни 2026</span>
+    </div>
+  </div>
+
+  <div class="bottom-line">
+    <div class="bottom-line-head">▸ The Bottom Line</div>
+    <p>Тази седмица икономическите данни са ограничени до един нов показател. По-важна е законодателната картина: ВиК реформата и фиксирането на минимална пенсия са решения с пряко въздействие върху домакинствата, докато конституирането на комисиите на 52-рото НС поставя институционалната рамка за предстоящата законодателна активност.</p>
+  </div>
+
+</div>
+
+<!-- ════════════════════════════════════════════════ -->
+<!-- ═══ SECTION 2: ЗАКОНОДАТЕЛСТВО ══════════════════ -->
+<!-- ════════════════════════════════════════════════ -->
+<div class="section-divider" id="legislation" style="margin-top:8px;">
+  <span class="section-divider-title">Закони · Решения · Регулации</span>
+  <span class="section-divider-num">Секция 2 от 2</span>
+</div>
+<nav class="section-subnav">
+  <a href="#law-summary">Обобщение</a>
+  <a href="#law-items">Обнародвани актове</a>
+</nav>
+
+<!-- ── Legislative infographic ── -->
+<div class="law-infographic" id="law-summary">
+  <div class="infog-stats">
+    <div class="infog-stat">
+      <div class="infog-stat-num accent">4</div>
+      <div class="infog-stat-label">Значими акта*</div>
+      <div class="infog-stat-sub">Обнародвани 8–12 юни</div>
+    </div>
+    <div class="infog-stat">
+      <div class="infog-stat-num">8</div>
+      <div class="infog-stat-label">Технически/процедурни</div>
+      <div class="infog-stat-sub">Не са включени*</div>
+    </div>
+  </div>
+
+  <div class="infog-section-head">По орган</div>
+  <div class="infog-bars">
+    <div class="infog-bar-row">
+      <div class="infog-bar-label">Народно събрание</div>
+      <div class="infog-bar-wrap"><div class="infog-bar-fill" style="width:50%"></div></div>
+      <div class="infog-bar-count">2</div>
+    </div>
+    <div class="infog-bar-row">
+      <div class="infog-bar-label">Министерски съвет</div>
+      <div class="infog-bar-wrap"><div class="infog-bar-fill gold" style="width:25%"></div></div>
+      <div class="infog-bar-count">1</div>
+    </div>
+    <div class="infog-bar-row">
+      <div class="infog-bar-label">Министерства</div>
+      <div class="infog-bar-wrap"><div class="infog-bar-fill" style="width:25%"></div></div>
+      <div class="infog-bar-count">1</div>
+    </div>
+  </div>
+
+  <div class="infog-section-head" style="margin-top:14px;">По тема</div>
+  <div class="infog-bars">
+    <div class="infog-bar-row">
+      <div class="infog-bar-label">ВиК / Инфраструктура</div>
+      <div class="infog-bar-wrap"><div class="infog-bar-fill red" style="width:25%"></div></div>
+      <div class="infog-bar-count">1</div>
+    </div>
+    <div class="infog-bar-row">
+      <div class="infog-bar-label">Пенсии и финансиране</div>
+      <div class="infog-bar-wrap"><div class="infog-bar-fill" style="width:25%"></div></div>
+      <div class="infog-bar-count">1</div>
+    </div>
+    <div class="infog-bar-row">
+      <div class="infog-bar-label">Парл. процедура</div>
+      <div class="infog-bar-wrap"><div class="infog-bar-fill" style="width:25%"></div></div>
+      <div class="infog-bar-count">1</div>
+    </div>
+    <div class="infog-bar-row">
+      <div class="infog-bar-label">Публични финанси</div>
+      <div class="infog-bar-wrap"><div class="infog-bar-fill gold" style="width:25%"></div></div>
+      <div class="infog-bar-count">1</div>
+    </div>
+  </div>
+
+  <div class="infog-footnote">
+    * Значимите актове включват 2 закона, 1 МС постановление и 1 блок процедурни решения (22 бр.). Пълен списък в секция „Технически актове" по-долу.
+  </div>
+</div>
+
+<!-- ── Law Cards ── -->
+<div class="law-cards" id="law-items">
+
+  <!-- ── CARD 1 (DEEP): Закон за водите ── -->
+  <div class="nl-law-card deep">
+    <div class="nl-law-card-head" onclick="toggleCard(this)">
+      <div class="nl-law-badges">
+        <span class="badge-type deep">★ ЗАКОН · В ДЕТАЙЛ</span>
+        <span class="badge-organ">Народно събрание</span>
+      </div>
+      <div class="nl-law-title">Един ВиК оператор на територия, таван на печалбата 10% и цени, обвързани с медианния доход</div>
+      <div class="nl-law-tags">
+        <span class="nl-law-tag">ВиК услуги</span>
+        <span class="nl-law-tag">Регулация</span>
+        <span class="nl-law-tag">Домакинства</span>
+        <span class="nl-law-tag">Инфраструктура</span>
+      </div>
+      <span class="nl-law-toggle">▾ Покажи</span>
+    </div>
+    <div class="nl-law-body">
+
+      <!-- Scorecard -->
+      <div class="sc-panel">
+        <div class="sc-facts">
+          <div class="sc-cell">
+            <div class="sc-label">Влиза в сила</div>
+            <div class="sc-value">8 юни 2026 г.</div>
+            <div class="sc-note">Бизнес планове 2027–2031: до 30 юни 2026 г.</div>
+          </div>
+          <div class="sc-divider"></div>
+          <div class="sc-cell">
+            <div class="sc-label">Засяга</div>
+            <div class="sc-value">Всички потребители на ВиК</div>
+            <div class="sc-note">Домакинства, болници, училища, храмове: всички в „битова" категория</div>
+          </div>
+          <div class="sc-divider"></div>
+          <div class="sc-cell">
+            <div class="sc-label">ЕС изисква?</div>
+            <div class="sc-value"><span class="es-pill partial">Частично</span></div>
+            <div class="sc-note">ВиК регулацията е национална компетентност; таванът на печалбата е нетипичен за ЕС</div>
+          </div>
+        </div>
+        <div class="sc-row">
+          <div class="sc-dot indirect"></div>
+          <div class="sc-fiscal-text"><strong>Финансов ефект:</strong> ВиК дружества с рентабилност над 10% са задължени да насочат излишъка към инвестиционен фонд за рехабилитация на мрежите; не може да се разпределя като дивидент. Ефектът върху цените зависи от методологията, избрана от КЕВР.</div>
+        </div>
+        <div class="sc-steps">
+          <div class="sc-steps-head">Необходими стъпки</div>
+          <div class="sc-step">
+            <span class="sc-step-who">ВиК оператори:</span>
+            да подадат нов бизнес план за периода 2027–2031 г. до 30 юни 2026 г. КЕВР одобрява до края на 2026 г. и утвърждава цените за 2027 г.
+          </div>
+          <div class="sc-step">
+            <span class="sc-step-who">КЕВР:</span>
+            да избере методология за ценово регулиране (разходи плюс / горна граница на цени / горна граница на приходи). При извънредни събития: произнасяне в 45 дни.
+          </div>
+          <div class="sc-step">
+            <span class="sc-step-who">МС:</span>
+            да актуализира двете ценови наредби в 9 месеца от влизане в сила; операторите да преработят бизнес плановете в допълнителни 6 месеца.
+          </div>
+        </div>
+      </div>
+
+      <!-- Nakratko -->
+      <div class="nl-law-lead">Законът реформира регулацията на ВиК услугите: въвежда задължителен монопол на един оператор на всяка обособена територия, разделя цените по категории потребители и ограничава годишната печалба на ВиК дружествата до 10% от приходите от регулираната дейност.</div>
+
+      <!-- Основни моменти -->
+      <div class="nl-law-points">
+        <div class="nl-law-points-head">Основни моменти</div>
+        <ul>
+          <li><strong>Монопол на обособена територия:</strong> На всяка зона (поне една административна единица) може да работи само един ВиК оператор: изричен юридически монопол без конкурентна алтернатива.</li>
+          <li><strong>Две категории потребители:</strong> Цените се определят разделно за битови и небитови потребители. Битови са домакинствата, детски градини, училища, болници, социални домове, висши училища, читалища, храмове и манастири, а също и всеки небитов потребител с разход до <strong>25 куб. м на месец</strong>.</li>
+          <li><strong>Таван на печалбата 10%:</strong> Годишният финансов резултат от регулираната дейност не може да надвишава 10% от признатите приходи. Всичко над прага задължително постъпва в инвестиционен фонд за рехабилитация.</li>
+          <li><strong>Ценова поносимост по формула:</strong> Цените се считат за поносими, ако при минимален месечен разход от <strong>2,8 куб. м на човек</strong> общата сметка не надвишава <strong>2,5% от медианния доход на домакинство</strong> за областта по данни на НСИ.</li>
+          <li><strong>Три метода за ценово регулиране:</strong> КЕВР може да избира между „разходи плюс", „горна граница на цените" (5-годишен период) и „горна граница на приходите" (5-годишен период).</li>
+          <li><strong>Удължаване на договори:</strong> Максимум с половината от първоначалния срок: само при добро изпълнение, писмено заявление поне <strong>1 година преди края</strong> и доказано подобрение в качеството, ефективността и инвестициите.</li>
+          <li><strong>Консолидация на малки зони:</strong> КЕВР активно насърчава сливането на по-малки ВиК зони чрез признаване на разходи и по-дълъг бизнес план.</li>
+          <li><strong>15-годишен хоризонт:</strong> Дългосрочните показатели (загуби на вода, аварии, енергийна ефективност) трябва да бъдат достигнати до <strong>15 години</strong> от приемането.</li>
+        </ul>
+      </div>
+
+      <!-- Кой печели / Кой губи -->
+      <div class="nl-law-wl">
+        <div class="nl-law-win">
+          <div class="nl-law-wl-head">Кой печели</div>
+          <div class="nl-law-wl-text">Битовите потребители: защитени от прекомерни цени чрез формулата за поносимост. Общини с добре работещи оператори: могат да удължат договорите. Мрежите: излишъкът над 10% задължително се реинвестира.</div>
+        </div>
+        <div class="nl-law-lose">
+          <div class="nl-law-wl-head">Кой губи</div>
+          <div class="nl-law-wl-text">ВиК дружества с рентабилност над 10%: задължени да реинвестират, не да разпределят. Потенциални нови оператори: монополът на обособена територия е изричен.</div>
+        </div>
+      </div>
+
+      <!-- Забележително -->
+      <div class="nl-law-notable">
+        <div class="nl-law-notable-head">▸ Забележително</div>
+        Законът причислява храмове, манастири и читалища към битовите потребители. Те заплащат по по-ниската тарифа за домакинства, не по бизнес тарифата. Разграничаването е изрично и не зависи от размера на потреблението.
+      </div>
+
+      <!-- В ЕС -->
+      <div style="background:#EAF4FB; border:1px solid #B8D8EC; border-radius:6px; padding:10px 13px; margin-bottom:14px;">
+        <div style="font-size:9px; font-weight:900; letter-spacing:0.12em; text-transform:uppercase; color:#1B6A9E; margin-bottom:5px;">▸ В ЕС</div>
+        <div style="font-size:12.5px; color:var(--ink2); line-height:1.6;">ВиК регулацията е национална компетентност в ЕС: моделите варират от пълна общинска собственост (скандинавски страни) до концесии на частни оператори (Франция). Таванът на печалбата от 10% с принудително реинвестиране е нетипичен в европейски контекст и по-скоро наподобява регулациите за естествени монополи в енергетиката, отколкото стандартния ВиК модел. Разделянето на цени по категории потребители е практика, позната в Германия и Австрия.</div>
+      </div>
+
+      <div class="nl-law-meta">
+        Обнародван: 8 юни 2026 · ДВ бр. 52 · Приет: 3 юни 2026
+        <a href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243854" target="_blank">→ ДВ ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CARD 2: Минимална пенсия и партийна субсидия ── -->
+  <div class="nl-law-card">
+    <div class="nl-law-card-head" onclick="toggleCard(this)">
+      <div class="nl-law-badges">
+        <span class="badge-type">ЗАКОН</span>
+        <span class="badge-organ">Народно събрание</span>
+      </div>
+      <div class="nl-law-title">Минимална пенсия 347,51 евро от 1 юли 2026 г.; партийната субсидия намалява до 3,00 евро за глас</div>
+      <div class="nl-law-tags">
+        <span class="nl-law-tag">Пенсии</span>
+        <span class="nl-law-tag">Партийно финансиране</span>
+        <span class="nl-law-tag">Временен бюджет</span>
+      </div>
+      <span class="nl-law-toggle">▾ Покажи</span>
+    </div>
+    <div class="nl-law-body">
+      <div class="nl-law-lead">Законът определя минимален размер на пенсията за осигурителен стаж и възраст от 347,51 евро месечно, считано от 1 юли 2026 г., и едновременно намалява партийната субсидия за глас. И двете мерки са временни: действат до приемането на редовен бюджет за 2026 г.</div>
+      <div class="nl-law-points">
+        <div class="nl-law-points-head">Основни моменти</div>
+        <ul>
+          <li>От <strong>1 юли 2026 г.</strong>: минимална пенсия за осигурителен стаж и възраст (чл. 68, ал. 1 КСО): <strong>347,51 евро месечно</strong>. Засяга пенсионерите, чиито пенсии са под прага.</li>
+          <li>Партийна субсидия за получен действителен глас: от 4,09 евро (за периода 1 януари – 29 април) пада на <strong>3,00 евро</strong> от 30 април до края на 2026 г. Намалението е приблизително 27%.</li>
+          <li>Отменя се разпоредба от Преходните и заключителните разпоредби на КСО, регулирала режима на минималната пенсия до сега.</li>
+          <li>Всички промени са <strong>временни</strong>: действат до приемането на редовен държавен бюджет, бюджет на ДОО и бюджет на НЗОК за 2026 г.</li>
+        </ul>
+      </div>
+      <div class="nl-law-wl">
+        <div class="nl-law-win">
+          <div class="nl-law-wl-head">Кой печели</div>
+          <div class="nl-law-wl-text">Пенсионери с пенсия под 347,51 евро: доходите им се коригират до новия минимум от 1 юли.</div>
+        </div>
+        <div class="nl-law-lose">
+          <div class="nl-law-wl-head">Кой губи</div>
+          <div class="nl-law-wl-text">Политически партии: субсидията за глас е намалена с около 27% спрямо действалата ставка.</div>
+        </div>
+      </div>
+      <div class="nl-law-notable">
+        <div class="nl-law-notable-head">▸ Забележително</div>
+        Намаляването на партийната субсидия е разделено на два периода в рамките на един и същи закон: ставката от 3,00 евро се прилага с обратна сила за период преди обнародването на закона (от 30 април).
+      </div>
+      <div class="nl-law-meta">
+        Обнародван: 8 юни 2026 · ДВ бр. 52 · Приет: 3 юни 2026
+        <a href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243855" target="_blank">→ ДВ ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CARD 3: 52-ро НС комисии ── -->
+  <div class="nl-law-card">
+    <div class="nl-law-card-head" onclick="toggleCard(this)">
+      <div class="nl-law-badges">
+        <span class="badge-type">РЕШЕНИЯ · 22 БР.</span>
+        <span class="badge-organ">Народно събрание</span>
+      </div>
+      <div class="nl-law-title">52-рото Народно събрание конституира всичките си постоянни комисии</div>
+      <div class="nl-law-tags">
+        <span class="nl-law-tag">Народно събрание</span>
+        <span class="nl-law-tag">Парламентарна процедура</span>
+        <span class="nl-law-tag">Институционална структура</span>
+      </div>
+      <span class="nl-law-toggle">▾ Покажи</span>
+    </div>
+    <div class="nl-law-body">
+      <div class="nl-law-lead">С 22 отделни решения, обнародвани в ДВ бр. 54 на 12 юни 2026 г., 52-рото Народно събрание официално учреди всичките си постоянни комисии и избра техните ръководства. Конституирането на комисиите е последната стъпка преди стартиране на пълноценна парламентарна работа.</div>
+      <div class="nl-law-points">
+        <div class="nl-law-points-head">Учредени комисии</div>
+        <ul>
+          <li>Бюджет и финанси · Правни въпроси · Икономическа политика, инвестиции и индустрия</li>
+          <li>Енергетика · Регионална политика, благоустройство и местно самоуправление</li>
+          <li>Външна политика · Европейски въпроси и контрол на европейските фондове</li>
+          <li>Отбрана · Вътрешна сигурност и обществен ред · Контрол над службите за сигурност</li>
+          <li>Земеделие, храни и гори · Труд, демографска и социална политика</li>
+          <li>Образование и наука · Здравеопазване · Околна среда и води · Транспорт и съобщения</li>
+          <li>Иновации и дигитална трансформация · Култура и медии · Туризъм</li>
+          <li>Пряко участие на гражданите · Права на човека и вероизповедания · Политики за българите извън страната</li>
+          <li>Превенция и противодействие на корупцията</li>
+        </ul>
+      </div>
+      <div class="nl-law-wl">
+        <div class="nl-law-win">
+          <div class="nl-law-wl-head">Сигнал</div>
+          <div class="nl-law-wl-text">Парламентарната работа започва в пълен състав. Комисиите могат да разглеждат закони, да провеждат изслушвания и да упражняват парламентарен контрол.</div>
+        </div>
+        <div class="nl-law-lose">
+          <div class="nl-law-wl-head">Закъснение</div>
+          <div class="nl-law-wl-text">Конституирането на комисиите идва повече от месец след учредяването на 52-рото НС; законодателната дейност е на практика блокирана за целия период.</div>
+        </div>
+      </div>
+      <div class="nl-law-meta">
+        Обнародвани: 12 юни 2026 · ДВ бр. 54
+        <a href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243870" target="_blank">→ ДВ ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CARD 4: МС Постановление общини ── -->
+  <div class="nl-law-card">
+    <div class="nl-law-card-head" onclick="toggleCard(this)">
+      <div class="nl-law-badges">
+        <span class="badge-type">ПОСТАНОВЛЕНИЕ</span>
+        <span class="badge-organ gold">Министерски съвет</span>
+      </div>
+      <div class="nl-law-title">Общините могат да пренасочат капиталови субсидии към неотложни ремонти на пътища и сгради</div>
+      <div class="nl-law-tags">
+        <span class="nl-law-tag">Общини</span>
+        <span class="nl-law-tag">Публични финанси</span>
+        <span class="nl-law-tag">Временен бюджет</span>
+        <span class="nl-law-tag">Инфраструктура</span>
+      </div>
+      <span class="nl-law-toggle">▾ Покажи</span>
+    </div>
+    <div class="nl-law-body">
+      <div class="nl-law-lead">Постановлението позволява на общините временно да трансформират целевата капиталова субсидия за 2026 г. в средства за текущи ремонти на пътища, улична мрежа и публични сгради, при одобрение от общинския съвет и министъра на финансите.</div>
+      <div class="nl-law-points">
+        <div class="nl-law-points-head">Основни моменти</div>
+        <ul>
+          <li><strong>Два прозореца:</strong> Трансформацията може да се поиска до <strong>20 юни 2026 г.</strong> или до <strong>31 юли 2026 г.</strong> Предложението до министъра трябва да постъпи най-малко <strong>7 работни дни</strong> преди тези дати.</li>
+          <li><strong>Задължителна документация:</strong> Кметът подава справка, доклад с обосновка на неотложността и решение на общинския съвет. Описват се всеки обект, последен ремонт и брой засегнати хора.</li>
+          <li><strong>Анализ разходи-ползи:</strong> Задължително доказване, че текущият ремонт е по-изгоден от основен: включително удължаване на живота на обекта и намаляване на авариите.</li>
+          <li>Мярката е <strong>временна</strong> и е свързана с липсата на редовен държавен бюджет за 2026 г.</li>
+        </ul>
+      </div>
+      <div class="nl-law-wl">
+        <div class="nl-law-win">
+          <div class="nl-law-wl-head">Кой печели</div>
+          <div class="nl-law-wl-text">Общини с неотложни нужди от ремонти: гъвкавост да действат преди приемането на редовен бюджет.</div>
+        </div>
+        <div class="nl-law-lose">
+          <div class="nl-law-wl-head">Кой губи</div>
+          <div class="nl-law-wl-text">Капиталовите проекти на общините: средствата, пренасочени към ремонти, намаляват инвестиционния им ресурс за 2026 г.</div>
+        </div>
+      </div>
+      <div class="nl-law-meta">
+        Обнародвано: 9 юни 2026 · ДВ бр. 53 · ПМС № 66
+        <a href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243834" target="_blank">→ ДВ ↗</a>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /law-cards -->
+
+<!-- ── Technical acts (collapsed) ── -->
+<div class="basic-section">
+  <div class="basic-toggle" onclick="toggleBasic()">
+    <span>▸ Технически и процедурни актове · 8 броя</span>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="basic-list">
+    <div class="basic-item">
+      <span class="basic-badge">НАРЕДБА</span>
+      Приемане на Международните одиторски стандарти (издание 2025 г.) за прилагане в България
+      <span class="basic-organ">Министерство на финансите</span>
+      <a href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243785" target="_blank">→ ДВ ↗</a>
+    </div>
+    <div class="basic-item">
+      <span class="basic-badge">НАРЕДБА</span>
+      Приемане на Международния етичен кодекс за счетоводители (издание 2025 г.)
+      <span class="basic-organ">Министерство на финансите</span>
+      <a href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243786" target="_blank">→ ДВ ↗</a>
+    </div>
+    <div class="basic-item">
+      <span class="basic-badge">РЕШЕНИЕ</span>
+      ЦИК: Обявяване на нов народен представител от ГЕРБ-СДС в Бургаски район след смъртта на Любен Дилов
+      <span class="basic-organ">ЦИК</span>
+      <a href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243835" target="_blank">→ ДВ ↗</a>
+    </div>
+    <div class="basic-item">
+      <span class="basic-badge">НАРЕДБА</span>
+      КФН: Нови задължения за по-големите инвестиционни посредници; разкриване на информация чрез ESAP (европейска единна точка за достъп) от 2030 г.
+      <span class="basic-organ">Комисия за финансов надзор</span>
+      <a href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243798" target="_blank">→ ДВ ↗</a>
+    </div>
+    <div class="basic-item">
+      <span class="basic-badge">НАРЕДБА</span>
+      Отменяне на 8 остарели наредби за ветеринарен контрол и хуманно отношение към животните
+      <span class="basic-organ">Министерство на земеделието</span>
+      <a href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243830" target="_blank">→ ДВ ↗</a>
+    </div>
+    <div class="basic-item">
+      <span class="basic-badge">ПОСТАНОВЛЕНИЕ</span>
+      ПМС № 67: Актуализация на правилата за електронно вписване на служебни правоотношения на държавни служители
+      <span class="basic-organ">Министерски съвет</span>
+      <a href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244073" target="_blank">→ ДВ ↗</a>
+    </div>
+    <div class="basic-item">
+      <span class="basic-badge">НАРЕДБА</span>
+      БНБ: Актуализация на Наредба № 8 за капиталовите буфери на банките
+      <span class="basic-organ">Българска народна банка</span>
+      <a href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243863" target="_blank">→ ДВ ↗</a>
+    </div>
+    <div class="basic-item">
+      <span class="basic-badge">ПОСТАНОВЛЕНИЕ</span>
+      Прецизиране на условията по схемата за компенсации на скъпа електроенергия за енергоемки предприятия (изм. на ПМС № 237/2025)
+      <span class="basic-organ">Министерски съвет</span>
+      <a href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244084" target="_blank">→ ДВ ↗</a>
+    </div>
+  </div>
+</div>
+
+<!-- ── Footer ── -->
+<div class="footer">
+  <span class="footer-logo">Doodles</span>
+  <div class="footer-sources">
+    Икономически данни: Евростат · НСИ · БНБ · НОИ · АЗ<br/>
+    Законодателство: Държавен вестник · dv.parliament.bg
+  </div>
+</div>
+
+</div><!-- /wrapper -->
+</body>
+</html>
