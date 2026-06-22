@@ -16,6 +16,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://bpdoodles.com/newsletters/2026-W25/</loc>
+    <changefreq>never</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://bpdoodles.com/newsletters/2026-W24/</loc>
     <changefreq>never</changefreq>
     <priority>0.7</priority>

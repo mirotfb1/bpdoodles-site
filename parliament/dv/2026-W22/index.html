@@ -1,331 +1,364 @@
 <!DOCTYPE html>
 <html lang="bg">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2026-W22 · Законодателство · Парламентарни Doodles</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;900&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<title>Парламентарни Doodles · ДВ Дайджест · Седмица 22</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Caveat:wght@700&display=swap" rel="stylesheet">
 <style>
-:root {
-  --navy:     #1B2E5E;
-  --amber:    #B5821A;
-  --amber-lt: #FBF3E2;
-  --amber-bd: #D4A340;
-  --red:      #CC2B2B;
-  --red-lt:   #FFF1F1;
-  --green:    #2A7A4F;
-  --green-lt: #EDF7F2;
-  --ink:      #1C1C1C;
-  --muted:    #777;
-  --border:   #E0E0E0;
-  --surface:  #F5F5F5;
-  --page:     #EDEEF0;
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --navy:#1B2E5E; --gold:#B5821A; --ink:#1C1C1C; --ink2:#444;
+  --muted:#888; --muted-lt:#AAA; --border:#E8E8E8; --surf:#F8F8F8; --paper:#FFF;
+  --font-d:'Caveat',cursive; --font-h:'Nunito','Arial Black',sans-serif;
+  --font-b:'Nunito',Arial,sans-serif;
 }
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Nunito',sans-serif;font-size:15px;line-height:1.6;color:var(--ink);background:var(--page)}
+body{font-family:var(--font-b);background:#E8E8E8;color:var(--ink);line-height:1.6;}
+.wrapper{max-width:700px;margin:32px auto;background:#fff;border:1px solid #C0C0C0;border-radius:0;overflow:hidden;}
 
-/* NAV */
-.topnav{background:var(--navy);padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:52px;position:sticky;top:0;z-index:100}
-.brand{font-family:'Caveat',cursive;font-size:1.35rem;color:#fff;text-decoration:none}
-.brand em{color:var(--amber);font-style:normal}
-.nav-links{display:flex;gap:20px;list-style:none}
-.nav-links a{color:rgba(255,255,255,.75);text-decoration:none;font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
-.nav-links a.active{color:var(--amber)}
+/* newspaper header */
+.nwp-hdr{padding:18px 24px 14px;border-bottom:1px solid var(--ink);}
+.nwp-topline{display:flex;justify-content:flex-end;align-items:center;margin-bottom:10px;}
+.nwp-nav{display:flex;gap:14px;flex-wrap:wrap;}
+.nwp-nav a{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#777;text-decoration:none;}
+.nwp-nav a:hover{color:var(--ink);}
+.nwp-nav a.nwp-active{color:var(--ink);font-weight:900;border-bottom:2px solid #CC2B2B;padding-bottom:1px;}
+.nwp-title-row{text-align:center;margin-bottom:10px;}
+.nwp-title{font-family:var(--font-h);font-size:40px;font-weight:900;color:var(--ink);letter-spacing:-1.5px;line-height:1;display:inline;}
+.nwp-doodles{font-family:var(--font-d);font-size:48px;font-weight:700;color:#CC2B2B;line-height:1;vertical-align:baseline;margin-left:6px;}
+.nwp-subtitle{text-align:center;font-size:11px;color:#777;letter-spacing:.14em;text-transform:uppercase;margin-top:6px;}
+.nwp-rule-thick{height:3px;background:var(--ink);margin:10px 0 0;}
+.nwp-rule-thin{height:1px;background:var(--ink);margin:3px 0 0;}
 
-/* LAYOUT */
-.wrapper{max-width:840px;margin:0 auto;padding:0 20px}
+/* section header (below newspaper header, parliament-specific) */
+.parl-hdr{padding:14px 24px 12px;border-bottom:1px solid var(--border);}
+.parl-hdr-title{font-size:16px;font-weight:900;color:var(--ink);letter-spacing:-.2px;}
+.parl-hdr-date{font-size:12px;color:var(--muted);margin-top:3px;}
+.masthead-pills{margin-top:8px;display:flex;gap:6px;flex-wrap:wrap;}
+.masthead-pill{font-size:10px;font-weight:700;letter-spacing:.05em;background:var(--surf);color:var(--muted);padding:3px 8px;border-radius:3px;border:1px solid var(--border);}
 
-/* BREADCRUMB */
-.breadcrumb{padding:16px 0 0;font-size:.76rem;color:var(--muted)}
-.breadcrumb a{color:var(--muted);text-decoration:none}
-.breadcrumb a:hover{color:var(--amber)}
-.breadcrumb sep{margin:0 6px}
+/* content sections */
+.section{padding:20px 28px;border-bottom:1px solid var(--border);}
+.section:last-of-type{border-bottom:none;}
 
-/* WEEK HEADER */
-.week-hdr{padding:18px 0 22px;border-bottom:2px solid var(--border);margin-bottom:30px}
-.week-eyebrow{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);margin-bottom:5px}
-.week-title{font-size:1.55rem;font-weight:900;color:var(--navy);margin-bottom:6px}
-.week-meta{font-size:.82rem;color:var(--muted);display:flex;gap:16px;flex-wrap:wrap;align-items:center}
-.week-pill{background:#fff;border:1px solid var(--border);border-radius:20px;padding:2px 10px;font-size:.75rem;color:var(--ink);font-weight:600}
+/* subsection (within DV edition) */
+.subsection{margin-bottom:24px;}
+.subsection:last-child{margin-bottom:0;}
+.subsection-hd{display:flex;align-items:baseline;gap:10px;margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid var(--border);}
+.subsection-tag{font-size:10px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);}
+.subsection-title{font-family:var(--font-h);font-size:16px;font-weight:900;color:var(--navy);}
+.subsection-count{font-size:11px;color:var(--muted);margin-left:auto;}
 
-/* NO-PARLIAMENT NOTICE */
-.no-ns{background:#fff;border:1px solid var(--border);border-radius:4px;padding:13px 16px;font-size:.83rem;color:var(--muted);margin-bottom:28px;display:flex;align-items:center;gap:8px}
-.no-ns-icon{font-size:1rem;opacity:.4}
+/* section label row */
+.section-label-row{padding:10px 28px 8px;background:var(--surf);border-bottom:1px solid var(--border);}
+.section-label{font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);}
 
-/* ORGAN SECTION */
-.organ-hdr{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:8px;padding:8px 0 10px;border-bottom:1px solid var(--border);margin-bottom:8px}
-.organ-count{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1px 8px;font-size:.7rem}
-.organ-section{margin-bottom:32px}
+/* page header */
+.page-header{padding:20px 28px 16px;border-bottom:1px solid var(--border);}
+.page-title{font-family:var(--font-h);font-size:20px;font-weight:900;color:var(--ink);letter-spacing:-.3px;margin-bottom:6px;}
+.page-subtitle{font-size:13px;color:var(--muted);}
 
-/* BADGES */
-.badge{font-size:.67rem;font-weight:700;letter-spacing:.06em;padding:2px 8px;border-radius:3px;text-transform:uppercase;flex-shrink:0}
-.badge-type{background:var(--navy);color:#fff}
-.badge-organ{background:transparent;border:1px solid var(--navy);color:var(--navy)}
+/* issue list rows */
+a.issue-row{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 28px;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:background .1s;}
+a.issue-row:hover{background:var(--surf);}
+a.issue-row:last-of-type{border-bottom:none;}
+.issue-row-left{flex:1;}
+.issue-row-meta{font-family:'Courier New',monospace;font-size:10px;color:var(--muted-lt);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;}
+.issue-row-title{font-size:15px;font-weight:900;color:var(--ink);letter-spacing:-.2px;line-height:1.3;}
+.issue-row-desc{font-size:12px;color:var(--muted);margin-top:3px;}
+.issue-row-arrow{font-size:18px;color:var(--gold);font-weight:900;flex-shrink:0;}
 
-/* SUMMARY CARDS */
-.t1-card{background:#fff;border:1px solid var(--border);border-radius:4px;margin-bottom:6px;overflow:hidden}
-.t1-row{padding:12px 14px;display:flex;align-items:flex-start;gap:10px;cursor:pointer;transition:background .1s}
-.t1-row:hover{background:#FAFAFA}
-.t1-content{flex:1;min-width:0}
-.t1-badges{display:flex;align-items:center;gap:5px;margin-bottom:5px;flex-wrap:wrap}
-.t1-title{font-size:.88rem;font-weight:700;color:var(--navy);margin-bottom:3px;line-height:1.35}
-.t1-nakratko{font-size:.81rem;color:#555;line-height:1.45;margin-bottom:7px}
-.t1-footer{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
-.topic-tag{font-size:.67rem;font-weight:700;background:#EDF1F8;color:var(--navy);padding:2px 9px;border-radius:20px;text-decoration:none;transition:background .13s;letter-spacing:.01em}
-.topic-tag:hover{background:#D8E2F3}
-.eff-date{font-size:.71rem;color:var(--muted);white-space:nowrap}
-.expand-btn{flex-shrink:0;width:26px;height:26px;border:1px solid var(--border);border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:.9rem;color:var(--muted);cursor:pointer;margin-top:2px;transition:all .13s;font-weight:700}
-.expand-btn:hover{border-color:var(--navy);color:var(--navy)}
-.expand-btn.open{background:var(--navy);color:#fff;border-color:var(--navy)}
-.t1-factsheet{display:none;padding:14px 14px 16px;border-top:1px solid var(--border);background:#FDFEFF;font-size:.86rem;line-height:1.65}
-.t1-factsheet.open{display:block}
-.fs-meta{font-size:.78rem;color:var(--muted);margin-bottom:12px;display:flex;gap:14px;flex-wrap:wrap}
-.fs-meta span strong{color:var(--ink)}
-.fs-section-title{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:12px 0 6px}
-.fs-bullets{padding-left:16px}
-.fs-bullets li{margin-bottom:6px;font-size:.85rem;color:#333;line-height:1.55}
-.win-lose{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}
-.win-box{background:var(--green-lt);border-left:3px solid var(--green);border-radius:3px;padding:9px 12px;font-size:.82rem;line-height:1.5}
-.lose-box{background:var(--red-lt);border-left:3px solid var(--red);border-radius:3px;padding:9px 12px;font-size:.82rem;line-height:1.5}
-.wl-label{font-size:.67rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px}
-.win-box .wl-label{color:var(--green)}
-.lose-box .wl-label{color:var(--red)}
-.fs-notable{background:#FFFBF0;border-left:3px solid var(--amber);padding:9px 12px;font-size:.83rem;line-height:1.55;margin:10px 0;color:#333}
-.fs-notable-lbl{font-size:.67rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--amber);margin-bottom:4px}
-.fs-dv-link{display:inline-flex;align-items:center;gap:4px;font-size:.75rem;color:var(--navy);text-decoration:none;font-weight:700;margin-top:12px;border-bottom:1px solid var(--border)}
+/* footer */
+.nl-footer{padding:14px 28px;background:var(--surf);border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
+.nl-footer-logo{font-family:var(--font-d);font-size:18px;font-weight:700;color:#CCC;}
+.nl-footer-links{font-size:11px;display:flex;gap:16px;}
+.nl-footer-links a{color:var(--muted-lt);text-decoration:none;}
+.nl-footer-links a:hover{color:var(--muted);}
 
-/* BASIC SECTION */
-.basic-section{background:#fff;border:1px solid var(--border);border-radius:4px;margin-top:4px;margin-bottom:32px}
-.basic-toggle{padding:11px 14px;display:flex;align-items:center;gap:8px;cursor:pointer;font-size:.8rem;font-weight:700;color:var(--muted);user-select:none;transition:background .1s}
-.basic-toggle:hover{background:var(--surface)}
-.basic-toggle .basic-arr{font-size:.8rem;transition:transform .2s}
-.basic-toggle.open .basic-arr{transform:rotate(90deg)}
-.basic-count{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1px 8px;font-size:.7rem}
-.basic-list{display:none;padding:0 14px 10px;border-top:1px solid var(--border)}
-.basic-list.open{display:block}
-.basic-item{display:flex;align-items:baseline;gap:8px;padding:7px 0;border-bottom:1px solid var(--border);font-size:.81rem;color:#444}
-.basic-item:last-child{border-bottom:none}
-.basic-item a{color:var(--amber);text-decoration:none;font-size:.72rem;font-weight:700;flex-shrink:0;margin-left:auto}
-.basic-item a:hover{text-decoration:underline}
-.basic-badge{font-size:.62rem;font-weight:700;background:var(--surface);border:1px solid var(--border);color:var(--muted);padding:1px 6px;border-radius:2px;text-transform:uppercase;flex-shrink:0}
-.basic-organ{font-size:.72rem;color:var(--muted);flex-shrink:0}
+/* DV cards */
+.dv-grid{display:flex;flex-direction:column;gap:8px;}
+details.dv-card{background:var(--paper);border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:border-color .15s;}
+details.dv-card:hover{border-color:var(--gold);}
+details.dv-card[open]{border-color:var(--gold);}
+.dv-card-compact{background:var(--paper);border:1px solid var(--border);border-radius:8px;overflow:hidden;opacity:.9;}
+.dv-sum{padding:14px 16px;cursor:pointer;list-style:none;user-select:none;}
+.dv-sum::-webkit-details-marker{display:none;}
+.dv-sum-static{padding:14px 16px;}
+.dv-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+.dv-meta{font-size:11px;color:var(--muted);font-weight:700;}
+.dv-title{font-family:var(--font-h);font-size:13px;font-weight:900;color:var(--ink);line-height:1.4;letter-spacing:-.1px;margin-bottom:4px;}
+.exec-organ{font-size:11px;color:var(--muted);margin-bottom:6px;font-style:italic;}
+.dv-lead{font-size:13px;color:var(--ink2);line-height:1.55;margin-bottom:8px;}
+.compact-bullets ul{list-style:none;padding:0;margin-top:6px;}
+.compact-bullets li{padding:3px 0 3px 14px;position:relative;color:var(--ink2);font-size:12px;line-height:1.5;}
+.compact-bullets li::before{content:"·";position:absolute;left:2px;color:var(--gold);font-weight:700;font-size:15px;line-height:1.1;}
+.expand-hint{font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.06em;margin-top:4px;}
+details.dv-card[open] .expand-hint{display:none;}
+.dv-body{padding:0 16px 16px;border-top:1px solid var(--border);}
 
-/* EDITION NAV + FOOTER */
-.edition-nav{display:flex;justify-content:space-between;align-items:center;margin-top:32px;padding-top:20px;border-top:1px solid var(--border);font-size:.82rem}
-.edition-nav a{color:var(--navy);text-decoration:none;font-weight:700}
-.edition-nav a:hover{color:var(--amber)}
-footer{margin-top:56px;border-top:1px solid var(--border);padding:18px 0 32px;text-align:center;font-size:.75rem;color:var(--muted)}
-footer a{color:var(--muted);text-decoration:none}
+/* badges */
+.badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;}
+.dv-badges{display:flex;gap:6px;align-items:center;flex-wrap:wrap;}
+.b-zakon   {background:#dbeafe;color:#1a56db;}
+.b-reshenie{background:#cffafe;color:#0a6e8a;}
+.b-ukaz    {background:#ede9fe;color:#7c3aed;}
+.b-decl    {background:#fef3c7;color:#92400e;}
+.b-post    {background:#d1fae5;color:#065f46;}
+.b-naredba {background:#fce7f3;color:#9d174d;}
+.b-pravilnik{background:#f3e8ff;color:#6b21a8;}
+.b-inst    {background:#fef9c3;color:#713f12;}
+.b-razp    {background:#e0f2fe;color:#0369a1;}
+.b-spor    {background:#fff7ed;color:#c2410c;}
+.b-other   {background:#f3f4f6;color:#6b7280;}
+.b-cat     {background:#f3f4f6;color:#555;}
 
-@media(max-width:600px){
-  .win-lose{grid-template-columns:1fr}
+/* factsheet sections */
+.fs-sec{margin:12px 0;font-size:13px;}
+.fs-sec h5,.parties-block h5,.notable-callout h5,.sess-col h5{font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:8px;padding-bottom:5px;border-bottom:1px solid var(--border);}
+.fs-sec ul,.parties-block ul{list-style:none;padding:0;}
+.fs-sec li,.parties-block li{padding:4px 0 4px 16px;position:relative;color:var(--ink2);border-bottom:1px solid #f3f4f6;font-size:13px;line-height:1.5;}
+.fs-sec li:last-child,.parties-block li:last-child{border-bottom:none;}
+.fs-sec li::before{content:"·";position:absolute;left:3px;color:var(--gold);font-weight:700;font-size:16px;line-height:1.1;}
+.fs-sec p,.parties-block p{color:var(--ink2);font-size:13px;margin-bottom:4px;}
+.fs-winners ul{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.fs-winners li{padding:8px 10px 8px 24px;border-radius:6px;border-bottom:none !important;}
+.fs-winners li:first-child{background:#f0fdf4;}
+.fs-winners li:first-child::before{content:"✓";color:#16a34a;font-size:13px;top:8px;}
+.fs-winners li:nth-child(2){background:#fef2f2;}
+.fs-winners li:nth-child(2)::before{content:"✗";color:#dc2626;font-size:13px;top:8px;}
+.fs-notable{background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:12px 14px;}
+.fs-notable h5{border-bottom-color:#fde68a;color:#92400e;}
+.fs-notable li,.fs-notable p{color:#78350f;}
+.fs-notable li::before{color:#d97706;}
+.fs-eu{background:#f0f9ff;border-radius:8px;padding:12px 14px;}
+.fs-eu h5{color:#0369a1;border-bottom-color:#bae6fd;}
+.fs-eu p{color:#0c4a6e;font-size:13px;}
+.ext-link{display:inline-block;margin-top:12px;font-size:12px;font-weight:700;color:var(--navy);text-decoration:none;}
+.ext-link:hover{text-decoration:underline;}
+.no-summ{color:var(--muted);font-size:13px;font-style:italic;padding:12px 0;}
+
+/* session blocks */
+details.sess-block{background:var(--paper);border:1px solid var(--border);border-left:4px solid var(--navy);border-radius:0 8px 8px 0;margin-bottom:10px;overflow:hidden;}
+details.sess-block:hover{box-shadow:0 2px 8px rgba(0,0,0,.06);}
+details.sess-block[open]{border-left-color:var(--gold);}
+.sess-sum{padding:14px 18px;cursor:pointer;list-style:none;user-select:none;}
+.sess-sum::-webkit-details-marker{display:none;}
+.sess-hd{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap;}
+.sess-date-chip{background:var(--navy);color:#fff;font-size:10px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:4px;white-space:nowrap;}
+details.sess-block[open] .sess-date-chip{background:var(--gold);}
+.sess-label{font-family:var(--font-h);font-size:14px;font-weight:900;color:var(--ink);}
+.sess-lead{font-size:13px;color:var(--ink2);line-height:1.55;margin-bottom:6px;}
+.sess-body{padding:0 18px 16px;border-top:1px solid var(--border);}
+.sess-lead-full{font-size:13px;color:var(--ink2);line-height:1.6;margin:12px 0;background:#f8fafc;border-left:3px solid var(--gold);padding:8px 12px;border-radius:0 6px 6px 0;}
+.sess-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0;}
+.sess-col{font-size:13px;}
+.sess-col ul{list-style:none;padding:0;}
+.sess-col li{padding:4px 0 4px 14px;position:relative;color:var(--ink2);border-bottom:1px solid #f3f4f6;font-size:13px;line-height:1.5;}
+.sess-col li:last-child{border-bottom:none;}
+.sess-col li::before{content:"·";position:absolute;left:2px;color:var(--navy);font-weight:700;font-size:15px;line-height:1.1;}
+.notable-callout{display:flex;gap:10px;align-items:flex-start;background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:10px 12px;margin:12px 0;}
+.notable-icon{font-size:16px;color:#d97706;flex-shrink:0;line-height:1.4;}
+.notable-callout h5{border-bottom-color:#fde68a;color:#92400e;}
+.notable-callout p,.notable-callout li{color:#78350f;font-size:13px;}
+.notable-callout ul{list-style:none;padding:0;}
+.notable-callout li{padding:3px 0 3px 14px;position:relative;}
+.notable-callout li::before{content:"·";position:absolute;left:2px;color:#d97706;font-weight:700;font-size:15px;line-height:1.1;}
+.parties-block{margin:12px 0;font-size:13px;}
+.sess-ft{margin-top:12px;padding-top:10px;border-top:1px solid var(--border);}
+
+/* landing track cards */
+.track-card{display:block;padding:20px 28px;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:background .1s;}
+.track-card:hover{background:var(--surf);}
+.track-card:last-of-type{border-bottom:none;}
+.track-label{font-size:10px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+.track-title{font-family:var(--font-h);font-size:18px;font-weight:900;color:var(--navy);letter-spacing:-.3px;line-height:1.3;margin-bottom:6px;}
+.track-desc{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px;}
+.track-latest{font-size:12px;color:var(--ink2);}
+.track-arrow{font-size:22px;color:var(--gold);font-weight:900;float:right;margin-top:-28px;}
+
+/* archive / intro */
+.arch-table{width:100%;border-collapse:collapse;}
+.arch-table th{padding:8px 0;text-align:left;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);border-bottom:1px solid var(--border);}
+.arch-table td{padding:12px 8px 12px 0;border-bottom:1px solid var(--border);font-size:13px;color:var(--ink2);}
+.arch-table tr:last-child td{border-bottom:none;}
+.arch-table a{color:var(--navy);font-weight:700;text-decoration:none;}
+.arch-table a:hover{text-decoration:underline;}
+.intro-block{padding:20px 28px;border-bottom:1px solid var(--border);font-size:14px;line-height:1.7;color:var(--ink);}
+.all-issues-wrap{padding:16px 28px;border-bottom:1px solid var(--border);}
+.all-issues-btn{width:100%;padding:13px;background:none;border:1.5px solid var(--navy);border-radius:3px;font-family:var(--font-h);font-size:11px;font-weight:900;color:var(--navy);cursor:pointer;text-align:center;letter-spacing:.14em;text-transform:uppercase;transition:background .15s,color .15s;}
+.all-issues-btn:hover{background:var(--navy);color:#fff;}
+.waitlist-section,.contact-section{padding:20px 28px;border-bottom:1px solid var(--border);}
+.waitlist-heading{font-family:var(--font-h);font-size:17px;font-weight:900;color:var(--ink);letter-spacing:-.2px;margin-bottom:8px;}
+.waitlist-body{font-size:14px;color:var(--ink2);line-height:1.6;margin-bottom:16px;}
+.waitlist-form{display:flex;gap:8px;margin-bottom:10px;}
+.waitlist-input{flex:1;padding:10px 12px;border:1px solid var(--border);border-radius:3px;font-family:var(--font-b);font-size:14px;color:var(--ink);min-width:0;}
+.waitlist-input:focus{outline:none;border-color:var(--navy);}
+.waitlist-btn{padding:10px 18px;background:var(--navy);color:#fff;border:none;border-radius:3px;font-family:var(--font-h);font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;white-space:nowrap;}
+.waitlist-btn:hover{background:#122348;}
+.waitlist-fine{font-size:12px;color:var(--muted-lt);line-height:1.5;}
+.waitlist-ok{display:none;font-size:14px;font-weight:700;color:#16a34a;margin-top:10px;}
+.contact-section p{font-size:14px;color:var(--ink2);line-height:1.6;}
+.contact-section a{color:var(--navy);font-weight:700;text-decoration:none;}
+.contact-section a:hover{text-decoration:underline;}
+
+@media(max-width:760px){
+  .wrapper{margin:0;border-left:none;border-right:none;}
+  .nwp-hdr,.parl-hdr,.section,.nl-footer,.page-header,a.issue-row,.track-card,
+  .section-label-row,.intro-block,.waitlist-section,.contact-section,.all-issues-wrap{padding-left:16px;padding-right:16px;}
+  .masthead-pills{display:none;}
+  .nwp-nav{gap:8px 12px;}
+  .nwp-title{font-size:28px;letter-spacing:-.8px;}
+  .nwp-doodles{font-size:34px;}
+  .sess-cols{grid-template-columns:1fr;}
+  .fs-winners ul{grid-template-columns:1fr;}
 }
 </style>
 </head>
 <body>
-
-<!-- NAV -->
-<nav class="topnav">
-  <a class="brand" href="../../">Парламентарни <em>Doodles</em></a>
-  <ul class="nav-links">
-    <li><a href="../../" class="active">Законодателство</a></li>
-    <li><a href="#">Икономика</a></li>
-    <li><a href="#">Бюлетин</a></li>
-  </ul>
-</nav>
-
 <div class="wrapper">
 
-  <!-- BREADCRUMB -->
-  <div class="breadcrumb">
-    <a href="../../">Начало</a><sep>›</sep>
-    <a href="../../">Законодателство</a><sep>›</sep>
-    2026-W22
+<div class="nwp-hdr">
+  <div class="nwp-topline">
+    <nav class="nwp-nav">
+      <a href="/">Начало</a>
+      <a href="/newsletters/">Бюлетин</a>
+      <a href="/cockpit/">Икономика</a>
+      <a href="/parliament/" class="nwp-active">Законодателство</a>
+      <a href="/about/">За проекта</a>
+    </nav>
   </div>
-
-  <!-- WEEK HEADER -->
-  <div class="week-hdr">
-    <div class="week-eyebrow">Законодателство · Седмично издание</div>
-    <div class="week-title">25–31 май 2026</div>
-    <div class="week-meta">
-      <span class="week-pill">ДВ бр. 48–49</span>
-      <span>2 резюмета</span>
-      <span>·</span>
-      <span>2 технически</span>
-    </div>
+  <div class="nwp-title-row">
+    <span class="nwp-title">Basepoint</span><span class="nwp-doodles">Doodles</span>
   </div>
+  <p class="nwp-subtitle">Законодателство &middot; Парламентарен дайджест</p>
+  <div class="nwp-rule-thick"></div>
+  <div class="nwp-rule-thin"></div>
+</div>
 
-  <!-- NO NS NOTICE -->
-  <div class="no-ns">
-    <span class="no-ns-icon">&#9634;</span>
-    Народното събрание не е обнародвало закони или решения в ДВ тази седмица.
+<div class="parl-hdr">
+  <div class="parl-hdr-title">ДВ Дайджест · Седмица 22 · 2026</div>
+  <div class="parl-hdr-date">25–31 май 2026</div>
+  <div class="masthead-pills"><span class="masthead-pill">1 акт от НС</span><span class="masthead-pill">1 акт от МС</span><span class="masthead-pill">3 наредби/регулации</span></div>
+</div>
+<div class="section">
+
+<div class="subsection">
+  <div class="subsection-hd">
+    <span class="subsection-tag">01</span>
+    <span class="subsection-title">Народно събрание</span>
+    <span class="subsection-count">1 закон</span>
   </div>
-
-  <!-- МИНИСТЕРСТВА — 2 Summary cards -->
-  <div class="organ-section">
-    <div class="organ-hdr">
-      Министерства и ведомства <span class="organ-count">2</span>
+  <div class="dv-grid">
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-zakon">ЗАКОН</span></div>
+      <span class="dv-meta">Бр.&nbsp;48 &middot; 2026-05-26</span>
     </div>
-
-    <!-- Card 1: КЗД Правилник -->
-    <div class="t1-card">
-      <div class="t1-row" onclick="toggleCard('c1')">
-        <div class="t1-content">
-          <div class="t1-badges">
-            <span class="badge badge-type">Правилник</span>
-            <span class="badge badge-organ">КЗД</span>
-          </div>
-          <div class="t1-title">Правилник за устройството на Комисията за защита от дискриминация</div>
-          <div class="t1-nakratko">Установява пълни правила за работата на КЗД: как се подават жалби за дискриминация, какви са сроковете, защо процедурата е безплатна и как се изпълняват решенията.</div>
-          <div class="t1-footer">
-            <a class="topic-tag" href="#">Правосъдие и сигурност</a>
-            <a class="topic-tag" href="#">Администрация</a>
-            <span class="eff-date">В сила: 26.05.2026</span>
-          </div>
-        </div>
-        <div class="expand-btn" id="btn-c1">+</div>
-      </div>
-      <div class="t1-factsheet" id="fact-c1">
-        <div class="fs-meta">
-          <span><strong>Обнародван:</strong> 26.05.2026 · ДВ бр. 48</span>
-          <span><strong>Орган:</strong> Комисия за защита от дискриминация</span>
-        </div>
-        <div class="fs-section-title">Основни моменти</div>
-        <ul class="fs-bullets">
-          <li>Жалбите трябва да са писмени на български (или с превод), да съдържат ЕГН/ЕИК, адрес и описание на нарушението. Анонимни жалби не се разглеждат. Приемат се и електронно с квалифициран подпис. <strong>Производството е изцяло безплатно.</strong></li>
-          <li>Проучването приключва до <strong>30 дни</strong> от предаването на докладчика, при сложни случаи до 60 дни. Решение се постановява до 14 дни след последното заседание. Жалба не може да се подаде, ако от нарушението са минали <strong>повече от 3 години</strong>.</li>
-          <li>Неплатена глоба в едномесечен срок се събира принудително по данъчен ред. Лице с наложена мярка уведомява КЗД за изпълнението в рамките на 1 месец от получаване на решението.</li>
-          <li>В първото заседание задължително се предлага помирение. Страните могат да се споразумеят по всяко време, докато решението не е постановено.</li>
-          <li>Страни, свидетели и вещи лица могат да участват дистанционно при уважителна причина. Комисията ги уведомява <strong>не по-малко от 7 дни преди заседанието.</strong></li>
-          <li>Комисията има <strong>9 изборни члена и 80 служители</strong>. Открити заседания не се провеждат от 15 юли до 1 септември.</li>
-          <li>Членовете получават представително облекло до <strong>4 минимални заплати годишно</strong>, застраховки „Живот" и „Злополука" и ведомствено жилище в София за срока на мандата.</li>
-          <li>Юридическият стаж в КЗД се признава при кандидатстване за съдия, адвокат, Сметната палата и надзор по лични данни. Важи и ретроактивно за вече натрупан стаж.</li>
-        </ul>
-        <div class="fs-section-title">Кой печели / Кой губи</div>
-        <div class="win-lose">
-          <div class="win-box">
-            <div class="wl-label">Печелят</div>
-            Граждани с жалби за дискриминация: ясна, безплатна процедура с конкретни срокове и право на участие по видео. Юристи, работили в КЗД: получават признат стаж за множество кариерни пътища.
-          </div>
-          <div class="lose-box">
-            <div class="wl-label">Губят</div>
-            Нарушители на антидискриминационното законодателство: глобите се събират принудително, а неизпълнената мярка носи ново наказание.
-          </div>
-        </div>
-        <div class="fs-notable">
-          <div class="fs-notable-lbl">Забележително</div>
-          Членовете на КЗД получават представително облекло до 4 минимални заплати годишно, ведомствено жилище в София и застраховки „Живот" и „Злополука". Пакет от привилегии, нетипично щедър за колегиален надзорен орган.
-        </div>
-        <a class="fs-dv-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243472" target="_blank">Виж в Държавен вестник ↗</a>
-      </div>
-    </div>
-
-    <!-- Card 2: Контролни точки -->
-    <div class="t1-card">
-      <div class="t1-row" onclick="toggleCard('c2')">
-        <div class="t1-content">
-          <div class="t1-badges">
-            <span class="badge badge-type">Наредба</span>
-            <span class="badge badge-organ">МВР</span>
-          </div>
-          <div class="t1-title">Камерите за средна скорост вече носят същите точки като радара</div>
-          <div class="t1-nakratko">Актуализира системата за контролни точки: средната скорост в контролиран участък официално се приравнява към превишаване на скоростта и носи до 26 точки наведнъж.</div>
-          <div class="t1-footer">
-            <a class="topic-tag" href="#">Правосъдие и сигурност</a>
-            <span class="eff-date">В сила: 29.05.2026</span>
-          </div>
-        </div>
-        <div class="expand-btn" id="btn-c2">+</div>
-      </div>
-      <div class="t1-factsheet" id="fact-c2">
-        <div class="fs-meta">
-          <span><strong>Обнародван:</strong> 29.05.2026 · ДВ бр. 49</span>
-          <span><strong>Орган:</strong> Министерство на вътрешните работи</span>
-        </div>
-        <div class="fs-section-title">Основни моменти</div>
-        <ul class="fs-bullets">
-          <li>Точки се отнемат въз основа на влязло в сила наказателно постановление, фиш или електронен фиш, включително когато нарушителят е посочен от собственика на МПС.</li>
-          <li>Таванът остава <strong>39 точки за редовни водачи</strong> и <strong>26 за нови</strong>. Частично възстановяване чрез допълнително обучение: 1/3 от максималния брой, но не повече от веднъж годишно.</li>
-          <li>Служебно пълно възстановяване на точките след <strong>2 години</strong> без ново наказание.</li>
-          <li><strong>Средна скорост в контролиран участък вече носи:</strong> 18 точки за тежко превишаване, 21 точки при повторно нарушение, <strong>26 точки при системно.</strong> Същото като радарна засечка.</li>
-          <li>Системно нарушение на средна скорост = 26 точки наведнъж. За нов водач това е целият допустим лимит. Едно такова нарушение автоматично води до отнемане на свидетелството.</li>
-        </ul>
-        <div class="fs-section-title">Кой печели / Кой губи</div>
-        <div class="win-lose">
-          <div class="win-box">
-            <div class="wl-label">Печелят</div>
-            Водачи, пропуснали задължителното обучение: запазено е служебното възстановяване на точките след 2 години.
-          </div>
-          <div class="lose-box">
-            <div class="wl-label">Губят</div>
-            Водачи, заснети от камери за средна скорост: нарушението вече официално носи същите санкции в точки като засечка от радар.
-          </div>
-        </div>
-        <div class="fs-notable">
-          <div class="fs-notable-lbl">Забележително</div>
-          Системното нарушение на средна скорост носи 26 точки наведнъж, колкото е целият лимит на нов водач. Едно такова нарушение автоматично отнема шофьорската книжка.
-        </div>
-        <a class="fs-dv-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243531" target="_blank">Виж в Държавен вестник ↗</a>
-      </div>
-    </div>
-
-  </div><!-- /organ-section -->
-
-  <!-- BASIC SECTION -->
-  <div class="basic-section">
-    <div class="basic-toggle" id="basic-toggle" onclick="toggleBasic()">
-      <span class="basic-arr">&#9654;</span>
-      Технически актове
-      <span class="basic-count">2</span>
-    </div>
-    <div class="basic-list" id="basic-list">
-      <div class="basic-item">
-        <span class="basic-badge">Наредба</span>
-        Приемане в Академията на МВР: актуализирани специалности и образци за кандидатстване
-        <span class="basic-organ">МВР</span>
-        <a href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243493" target="_blank">→ ДВ</a>
-      </div>
-      <div class="basic-item">
-        <span class="basic-badge">Постановление</span>
-        Тол такси за тежкотоварни МПС: преференции за електрически превозни средства удължени до 2031 г.
-        <span class="basic-organ">МС</span>
-        <a href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243642" target="_blank">→ ДВ</a>
-      </div>
-    </div>
+    <div class="dv-title">ЗАКОН за ратифициране на Договора за създаване на Европейския механизъм за стабилност между Кралство Белгия, Федерална република Германия, Република Естония, Ирландия, Република Гърция, Кралство Испания, Френската република, Република Хърватия, Италианската република, Република Кипър, Република Латв</div>
+    <p class="dv-lead">България официално се присъединява към Европейския механизъм за стабилност (ЕМС) – финансовия „буфер&quot; на еврозоната, който спасява страни-членки в тежка икономическа криза.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>България ратифицира основния Договор за ЕМС (подписан в Брюксел на 2 февруари 2012 г.) и Споразумението за неговото изменение (подписано януари–февруари 2021 г.), ставайки пълноправен член на механизма.</li><li>Задълженията на България за плащане са строго ограничени до нейния дял от утвърдения капитал, посочен в Приложение II – без предварително съгласие на българския представител и без спазване на националните процедури не може да бъде наложено по-голямо плащане.</li><li>Националният парламент запазва правото на достъп до пълна информация за дейността на ЕМС, въпреки клаузите за поверителност в чл. 32, 34 и 35 от Договора – това е изрично вписано в тълкувателната декларация.</li><li>Министърът на финансите е задължен да обнародва консолидираните версии на Договора и Споразумението в „Държавен вестник&quot; в срок от 15 дни след получаването им от Генералния секретариат на Съвета на ЕС.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: България като държава – при евентуална финансова криза след влизане в еврозоната получава достъп до механизма за спасителни заеми; ратификацията е формална предпоставка за пълноправно членство в еврозоната.</li><li>Губят: Не се открива явен губещ, но данъкоплатците поемат потенциален финансов ангажимент, ограничен до капиталовия дял на България.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>България ратифицира договор, подписан още през 2012 г. – с 14-годишно закъснение спрямо основателите на ЕМС, което отразява колко дълго трая пътят на страната към еврозоната.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><ul><li>Законът влиза в сила от деня на обнародването му – 26 май 2026 г.</li><li>Консолидираните версии на двата документа се обнародват от министъра на финансите в 15-дневен срок след получаване/влизане в сила – без допълнителен гратисен период.</li></ul></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Всички държави от еврозоната са членки на ЕМС от неговото създаване (2012 г.) или при влизането си в еврото. България е сред последните, присъединяващи се – заедно с Хърватия (2023 г.) и в очакване на собственото си влизане в еврозоната. Механизмът функционира по еднакви правила за всички членки, но капиталовият дял и гласовата тежест се определят пропорционално на размера на икономиката.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243557" target="_blank">Отвори в Държавен вестник ↗</a>
   </div>
-
-  <!-- EDITION NAV -->
-  <div class="edition-nav">
-    <a href="../2026-W21/">&larr; 2026-W21</a>
-    <a href="../../">Архив</a>
-    <span style="color:var(--muted);font-size:.8rem">2026-W23 &rarr;</span>
+</details></div>
+</div>
+<div class="subsection">
+  <div class="subsection-hd">
+    <span class="subsection-tag">02</span>
+    <span class="subsection-title">Министерски съвет</span>
+    <span class="subsection-count">1 постановление</span>
   </div>
-
-</div><!-- /wrapper -->
-
-<footer>
-  <div class="wrapper">
-    Парламентарни Doodles &middot; <a href="../../">Законодателство</a> &middot; <a href="#">Икономика</a> &middot; <a href="#">Архив</a> &middot; <a href="#">Бюлетин</a><br>
-    Данните идват от <a href="https://dv.parliament.bg" target="_blank">dv.parliament.bg</a>. Резюметата са генерирани с AI и не представляват правна консултация.
+  <div class="dv-grid">
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;49 &middot; 2026-05-29</span>
+    </div>
+    <div class="dv-title">Г. за изменение на Тарифата за таксите, които се събират за преминаване и ползване на републиканската пътна мрежа, приета с Постановление №</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Постановлението удължава преференциалните тол такси за тежкотоварни превозни средства с нулеви емисии по републиканската пътна мрежа и въвежда нова структура на таксите по класове CO₂ емисии.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Засегнати са</strong> всички оператори на тежкотоварни превозни средства над 3,5 т и автобуси, ползващи платената пътна мрежа – от малки камиони до многоосни ТИР-ове.</li><li><strong>Тол таксите се изчисляват в евро/км</strong> и се разпределят в четири компонента: инфраструктура, въздух, шум и CO₂ – последните три варират според екологичната категория на МПС.</li><li><strong>Най-мръсните камиони (EBPO 0, I, II) над 12 т с 4+ оси плащат до 0,34 евро/км</strong> на магистрала, докато чисти Euro VI камиони от същия клас плащат 0,21 евро/км – разлика от 62%.</li><li><strong>Електрически (ZEV) превозни средства не плащат CO₂ компонент</strong> и имат значително намалени общи ставки – например електрически камион над 12 т с 4+ оси плаща само 0,14 евро/км на магистрала срещу 0,21–0,34 евро/км за дизелови.</li><li><strong>Преференциите за ZEV превозни средства</strong> (намалени или нулеви ставки) се удължават с настоящото постановление <strong>до 30 юни 2031 г.</strong></li><li><strong>След 1 юли 2031 г.</strong> намаленията за ZEV не отпадат изцяло, а се ограничават – максимум 75% отстъпка спрямо стандартната ставка за CO₂ клас 1.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li><strong>Печелят:</strong> Превозвачи с електрически или нулевоемисионни тежки МПС – запазват преференциалните тол ставки до средата на 2031 г.</li><li><strong>Губят:</strong> Оператори на стари дизелови камиони (EBPO 0–II) – те носят най-високите тол разходи заради добавения CO₂ компонент.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Въпреки удължаването на преференциите за ZEV до 2031 г., след тази дата те не изчезват напълно, а се превръщат в постоянна 75% отстъпка – което означава, че електрическите камиони никога няма да плащат пълна тол такса наравно с дизеловите.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Постановлението влиза в сила от <strong>1 юни 2026 г.</strong></li><li>Преференциите за ZEV превозни средства важат до <strong>30 юни 2031 г.</strong></li><li>От <strong>1 юли 2031 г.</strong> намаленията за ZEV се ограничават до максимум 75% от стандартната ставка за CO₂ клас 1.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243642" target="_blank">Отвори в Държавен вестник ↗</a>
   </div>
-</footer>
+</details></div>
+</div>
+<div class="subsection">
+  <div class="subsection-hd">
+    <span class="subsection-tag">03</span>
+    <span class="subsection-title">Министерства и ведомства</span>
+    <span class="subsection-count">2 наредби · 1 правилник</span>
+  </div>
+  <div class="dv-grid">
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;48 &middot; 2026-05-26</span>
+    </div>
+    <div class="dv-title">Наредба за изменение и допълнение на Наредба № 8121з-273 от 2021 г. за приемане на курсанти, студенти и докторанти в Академията на Министерството на вътрешните работи</div>
+    <div class="exec-organ">Министерство на вътрешните работи</div>
+    <p class="dv-lead">Актуализират се специалностите, сроковете на обучение и образците на заявления за кандидатстване в Академията на МВР, като се премахват остарели специалности и се добавят нови условия за прием.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Актуализираната таблица на специалностите запазва „Противодействие на престъпността и опазване на обществения ред&quot; (бакалавър, редовна 4 г./задочна 5 г.) и „Гранична полиция&quot; (бакалавър, редовна 4 г.), добавя магистърски програми с продължителност 1 или 1,5 години по кибerpрестъпност, защита на националната сигурност, психологично подпомагане и защита правата на човека.</li><li>Специалностите „Управление при кризи от хуманитарен характер&quot; и „Управление и оптимизация на инвестиционни проекти в строителството чрез строително-информационни модели&quot; се премахват – кандидати за тях вече нямат правно основание да се явяват.</li><li>За магистърската програма „Пожарна и аварийна безопасност&quot; се въвеждат два варианта: 1,5 години и 2,5 години задочно обучение, като кандидатите трябва да отговарят на общите изисквания за здравословно и физическо състояние.</li><li>Образецът на заявление за бакалавърско задочно обучение се разширява: кандидатите вече могат изрично да заявят желание за обучение по чл. 21, ал. 2 от Закона за висшето образование (втора специалност за служители на МВР) наред с класическото субсидирано място.</li><li>Образецът на заявление за магистърска степен включва всички актуални специалности и разграничава субсидирани студенти от тези по чл. 21, ал. 3 от ЗВО; последните подават допълнителни документи – удостоверение от психо-неврологичен диспансер, медицинско свидетелство и декларация.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Служители на МВР, които искат да надградят образованието си по специалности „Противодействие на киберпрестъпността&quot; и „Психологично подпомагане&quot;, тъй като тези програми са официално включени; кандидати за „Пожарна и аварийна безопасност&quot; получават по-гъвкав избор на срок на обучение.</li><li>Губят: Кандидати, насочени към двете заличени специалности – те остават без тази опция в Академията на МВР.</li></ul></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>От датата на обнародване – 26 май 2026 г., без посочен гратисен период.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243493" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
 
-<script>
-function toggleCard(id) {
-  const fact = document.getElementById('fact-' + id);
-  const btn  = document.getElementById('btn-' + id);
-  const isOpen = fact.classList.contains('open');
-  fact.classList.toggle('open', !isOpen);
-  btn.classList.toggle('open', !isOpen);
-  btn.textContent = isOpen ? '+' : '−';
-}
-function toggleBasic() {
-  const list   = document.getElementById('basic-list');
-  const toggle = document.getElementById('basic-toggle');
-  list.classList.toggle('open');
-  toggle.classList.toggle('open');
-}
-</script>
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;49 &middot; 2026-05-29</span>
+    </div>
+    <div class="dv-title">Наредба за изменение и допълнение на Наредба №</div>
+    <div class="exec-organ">Министерство на вътрешните работи</div>
+    <p class="dv-lead">Наредбата актуализира системата за контролни точки на водачите – въвежда изрично отнемане на точки и при средна скорост в контролиран участък и прецизира условията за тяхното възстановяване.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Точки се отнемат въз основа на влязло в сила наказателно постановление, фиш или електронен фиш – включително в специални случаи, при които нарушителят е посочен от собственика на превозното средство.</li><li>Максимумът на контролните точки остава 39 за редовни водачи и 26 за нови водачи; частичното възстановяване чрез допълнително обучение е с 1/3 от максималния брой, но не по-често от веднъж годишно.</li><li>Служебното пълно възстановяване на точките става след 2 години без ново влязло в сила наказание за отнемане на точки.</li><li>Измерването на средна скорост в контролиран пътен участък вече изрично се приравнява към превишаване на разрешената скорост – и носи същите точки: 18 точки за тежко превишаване, 21 точки при повторно нарушение и 26 точки при системно нарушение.</li><li>При системно превишаване (реално или средна скорост) санкцията от 26 контролни точки изчерпва целия наличен лимит на нов водач с един удар.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Водачи, пропуснали допълнително обучение – служебното възстановяване след 2 години е запазено и ясно регламентирано.</li><li>Губят: Водачи, заснети от камери за средна скорост – нарушението вече официално носи същите тежки санкции в точки като класическото превишаване.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Системното нарушение на средна скорост вече носи 26 точки наведнъж – колкото е целият лимит на нов водач, което означава автоматично отнемане на свидетелството при единствено такова нарушение.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>От датата на обнародване – 29 май 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243531" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-pravilnik">ПРАВИЛНИК</span></div>
+      <span class="dv-meta">Бр.&nbsp;48 &middot; 2026-05-26</span>
+    </div>
+    <div class="dv-title">ПРАВИЛНИК за устройството и организацията на дейността на Комисията за защита от дискриминация</div>
+    <div class="exec-organ">Комисия за защита от дискриминация</div>
+    <p class="dv-lead">Актът установява пълни вътрешни правила за работата на КЗД – как се подават жалби за дискриминация, как се разглеждат, какви са сроковете и как се изпълняват решенията.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Подаване на жалби:</strong> Жалбите трябва да са писмени на български (или с заверен превод), да съдържат ЕГН/ЕИК, адрес, описание на нарушението и декларация, че по същия спор няма висящо съдебно дело; анонимни жалби не се разглеждат; приемат се и електронно с квалифициран електронен подпис. Производството е безплатно – без държавни такси.</li><li><strong>Срокове за разглеждане:</strong> Проучването по преписка трябва да приключи до 30 дни от предаването ѝ на докладчика; при сложни случаи председателят може да удължи с още 30 дни. Решение се постановява не по-късно от 14 дни след последното заседание. Производство не може да се образува, ако са изминали повече от 3 години от нарушението.</li><li><strong>Изпълнение на решенията:</strong> Лице, санкционирано с глоба или имуществена санкция, трябва да плати доброволно в едномесечен срок; при неплащане събирането става по данъчния ред (ДОПК). Лице с наложена принудителна административна мярка трябва да уведоми Комисията за изпълнението в срок не по-дълъг от 1 месец от получаване на решението.</li><li><strong>Помирение:</strong> В първото заседание задължително се предлага помирение между страните; споразумение може да се постигне по всяко време до решението; одобреното споразумение подлежи на контрол от КЗД.</li><li><strong>Видеоконференция:</strong> При важни причини или обективна невъзможност за явяване страни, свидетели и вещи лица могат да участват дистанционно; Комисията уведомява участниците най-късно 7 дни преди заседанието; провеждат се протокол и видеозапис.</li><li><strong>Персонал и структура:</strong> Комисията има 9 изборни члена и 80 служители (общо 89 щатни бройки); членовете имат ненормирано работно време; не се провеждат открити заседания от 15 юли до 1 септември.</li><li><strong>Социални придобивки за членовете:</strong> Представително облекло до 4 минимални месечни заплати годишно; осигуряване за всички осигурителни случаи с процент за трета категория труд; застраховки „Живот&quot; и „Злополука&quot;; при необходимост – ведомствено жилище в София за срока на мандата.</li><li><strong>Стаж:</strong> Юристите, работили като членове или в двете специализирани дирекции на КЗД, получават признат юридически стаж за целите на съда, адвокатурата, Сметната палата и защитата на лични данни – важи и за вече натрупан стаж.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Граждани, потърпевши от дискриминация – получават ясна, безплатна процедура с конкретни срокове, право на помирение и дистанционно участие; юристи в КЗД, на които се признава стажът за множество кариерни пътища.</li><li>Губят: Нарушители на антидискриминационното законодателство – глобите и санкциите се събират принудително по данъчен ред при неплащане, а неизпълнението на решение води до ново административно наказание.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Членовете на КЗД получават представително облекло до 4 минимални заплати годишно, ведомствено жилище в София и застраховки „Живот&quot; и „Злополука&quot; – пакет от привилегии, нетипично щедър за колегиален надзорен орган.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от обнародването – 26 май 2026 г.</li><li>Заварените незавършени производства се довършват по стария ред.</li><li>Старият правилник от 2005 г. (с всички изменения) и Правилата за производство от 2005 г. се отменят незабавно.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=243472" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details></div>
+</div>
+</div>
+
+<div class="nl-footer">
+  <span class="nl-footer-logo">Doodles.</span>
+  <div class="nl-footer-links">
+    <a href="/">Начало</a>
+    <a href="/newsletters/">Бюлетин</a>
+    <a href="/parliament/">Законодателство</a>
+    <a href="/about/">За проекта</a>
+  </div>
+</div>
+</div>
 </body>
 </html>
