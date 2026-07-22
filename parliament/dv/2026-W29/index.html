@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="utf-8">
+<title>Парламентарни Doodles · ДВ Дайджест · Седмица 29</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --navy:#1B2E5E; --gold:#B5821A; --ink:#1C1C1C; --ink2:#444;
+  --muted:#888; --muted-lt:#AAA; --border:#E8E8E8; --surf:#F8F8F8; --paper:#FFF;
+  --font-d:'Caveat',cursive; --font-h:'Nunito','Arial Black',sans-serif;
+  --font-b:'Nunito',Arial,sans-serif;
+}
+body{font-family:var(--font-b);background:#E8E8E8;color:var(--ink);line-height:1.6;}
+.wrapper{max-width:700px;margin:32px auto;background:#fff;border:1px solid #C0C0C0;border-radius:0;overflow:hidden;}
+
+/* newspaper header */
+.nwp-hdr{padding:18px 24px 14px;border-bottom:1px solid var(--ink);}
+.nwp-topline{display:flex;justify-content:flex-end;align-items:center;margin-bottom:10px;}
+.nwp-nav{display:flex;gap:14px;flex-wrap:wrap;}
+.nwp-nav a{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#777;text-decoration:none;}
+.nwp-nav a:hover{color:var(--ink);}
+.nwp-nav a.nwp-active{color:var(--ink);font-weight:900;border-bottom:2px solid #CC2B2B;padding-bottom:1px;}
+.nwp-title-row{text-align:center;margin-bottom:10px;}
+.nwp-title{font-family:var(--font-h);font-size:40px;font-weight:900;color:var(--ink);letter-spacing:-1.5px;line-height:1;display:inline;}
+.nwp-doodles{font-family:var(--font-d);font-size:48px;font-weight:700;color:#CC2B2B;line-height:1;vertical-align:baseline;margin-left:6px;}
+.nwp-subtitle{text-align:center;font-size:11px;color:#777;letter-spacing:.14em;text-transform:uppercase;margin-top:6px;}
+.nwp-rule-thick{height:3px;background:var(--ink);margin:10px 0 0;}
+.nwp-rule-thin{height:1px;background:var(--ink);margin:3px 0 0;}
+
+/* section header (below newspaper header, parliament-specific) */
+.parl-hdr{padding:14px 24px 12px;border-bottom:1px solid var(--border);}
+.parl-hdr-title{font-size:16px;font-weight:900;color:var(--ink);letter-spacing:-.2px;}
+.parl-hdr-date{font-size:12px;color:var(--muted);margin-top:3px;}
+.masthead-pills{margin-top:8px;display:flex;gap:6px;flex-wrap:wrap;}
+.masthead-pill{font-size:10px;font-weight:700;letter-spacing:.05em;background:var(--surf);color:var(--muted);padding:3px 8px;border-radius:3px;border:1px solid var(--border);}
+
+/* content sections */
+.section{padding:20px 28px;border-bottom:1px solid var(--border);}
+.section:last-of-type{border-bottom:none;}
+
+/* subsection (within DV edition) */
+.subsection{margin-bottom:24px;}
+.subsection:last-child{margin-bottom:0;}
+.subsection-hd{display:flex;align-items:baseline;gap:10px;margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid var(--border);}
+.subsection-tag{font-size:10px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);}
+.subsection-title{font-family:var(--font-h);font-size:16px;font-weight:900;color:var(--navy);}
+.subsection-count{font-size:11px;color:var(--muted);margin-left:auto;}
+
+/* section label row */
+.section-label-row{padding:10px 28px 8px;background:var(--surf);border-bottom:1px solid var(--border);}
+.section-label{font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);}
+
+/* page header */
+.page-header{padding:20px 28px 16px;border-bottom:1px solid var(--border);}
+.page-title{font-family:var(--font-h);font-size:20px;font-weight:900;color:var(--ink);letter-spacing:-.3px;margin-bottom:6px;}
+.page-subtitle{font-size:13px;color:var(--muted);}
+
+/* issue list rows */
+a.issue-row{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 28px;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:background .1s;}
+a.issue-row:hover{background:var(--surf);}
+a.issue-row:last-of-type{border-bottom:none;}
+.issue-row-left{flex:1;}
+.issue-row-meta{font-family:'Courier New',monospace;font-size:10px;color:var(--muted-lt);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;}
+.issue-row-title{font-size:15px;font-weight:900;color:var(--ink);letter-spacing:-.2px;line-height:1.3;}
+.issue-row-desc{font-size:12px;color:var(--muted);margin-top:3px;}
+.issue-row-arrow{font-size:18px;color:var(--gold);font-weight:900;flex-shrink:0;}
+
+/* footer */
+.nl-footer{padding:14px 28px;background:var(--surf);border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
+.nl-footer-logo{font-family:var(--font-d);font-size:18px;font-weight:700;color:#CCC;}
+.nl-footer-links{font-size:11px;display:flex;gap:16px;}
+.nl-footer-links a{color:var(--muted-lt);text-decoration:none;}
+.nl-footer-links a:hover{color:var(--muted);}
+
+/* DV cards */
+.dv-grid{display:flex;flex-direction:column;gap:8px;}
+details.dv-card{background:var(--paper);border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:border-color .15s;}
+details.dv-card:hover{border-color:var(--gold);}
+details.dv-card[open]{border-color:var(--gold);}
+.dv-card-compact{background:var(--paper);border:1px solid var(--border);border-radius:8px;overflow:hidden;opacity:.9;}
+.dv-sum{padding:14px 16px;cursor:pointer;list-style:none;user-select:none;}
+.dv-sum::-webkit-details-marker{display:none;}
+.dv-sum-static{padding:14px 16px;}
+.dv-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+.dv-meta{font-size:11px;color:var(--muted);font-weight:700;}
+.dv-title{font-family:var(--font-h);font-size:13px;font-weight:900;color:var(--ink);line-height:1.4;letter-spacing:-.1px;margin-bottom:4px;}
+.exec-organ{font-size:11px;color:var(--muted);margin-bottom:6px;font-style:italic;}
+.dv-lead{font-size:13px;color:var(--ink2);line-height:1.55;margin-bottom:8px;}
+.compact-bullets ul{list-style:none;padding:0;margin-top:6px;}
+.compact-bullets li{padding:3px 0 3px 14px;position:relative;color:var(--ink2);font-size:12px;line-height:1.5;}
+.compact-bullets li::before{content:"·";position:absolute;left:2px;color:var(--gold);font-weight:700;font-size:15px;line-height:1.1;}
+.expand-hint{font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.06em;margin-top:4px;}
+details.dv-card[open] .expand-hint{display:none;}
+.dv-body{padding:0 16px 16px;border-top:1px solid var(--border);}
+
+/* badges */
+.badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;}
+.dv-badges{display:flex;gap:6px;align-items:center;flex-wrap:wrap;}
+.b-zakon   {background:#dbeafe;color:#1a56db;}
+.b-reshenie{background:#cffafe;color:#0a6e8a;}
+.b-ukaz    {background:#ede9fe;color:#7c3aed;}
+.b-decl    {background:#fef3c7;color:#92400e;}
+.b-post    {background:#d1fae5;color:#065f46;}
+.b-naredba {background:#fce7f3;color:#9d174d;}
+.b-pravilnik{background:#f3e8ff;color:#6b21a8;}
+.b-inst    {background:#fef9c3;color:#713f12;}
+.b-razp    {background:#e0f2fe;color:#0369a1;}
+.b-spor    {background:#fff7ed;color:#c2410c;}
+.b-other   {background:#f3f4f6;color:#6b7280;}
+.b-cat     {background:#f3f4f6;color:#555;}
+
+/* factsheet sections */
+.fs-sec{margin:12px 0;font-size:13px;}
+.fs-sec h5,.parties-block h5,.notable-callout h5,.sess-col h5{font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:8px;padding-bottom:5px;border-bottom:1px solid var(--border);}
+.fs-sec ul,.parties-block ul{list-style:none;padding:0;}
+.fs-sec li,.parties-block li{padding:4px 0 4px 16px;position:relative;color:var(--ink2);border-bottom:1px solid #f3f4f6;font-size:13px;line-height:1.5;}
+.fs-sec li:last-child,.parties-block li:last-child{border-bottom:none;}
+.fs-sec li::before{content:"·";position:absolute;left:3px;color:var(--gold);font-weight:700;font-size:16px;line-height:1.1;}
+.fs-sec p,.parties-block p{color:var(--ink2);font-size:13px;margin-bottom:4px;}
+.fs-winners ul{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.fs-winners li{padding:8px 10px 8px 24px;border-radius:6px;border-bottom:none !important;}
+.fs-winners li:first-child{background:#f0fdf4;}
+.fs-winners li:first-child::before{content:"✓";color:#16a34a;font-size:13px;top:8px;}
+.fs-winners li:nth-child(2){background:#fef2f2;}
+.fs-winners li:nth-child(2)::before{content:"✗";color:#dc2626;font-size:13px;top:8px;}
+.fs-notable{background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:12px 14px;}
+.fs-notable h5{border-bottom-color:#fde68a;color:#92400e;}
+.fs-notable li,.fs-notable p{color:#78350f;}
+.fs-notable li::before{color:#d97706;}
+.fs-eu{background:#f0f9ff;border-radius:8px;padding:12px 14px;}
+.fs-eu h5{color:#0369a1;border-bottom-color:#bae6fd;}
+.fs-eu p{color:#0c4a6e;font-size:13px;}
+.ext-link{display:inline-block;margin-top:12px;font-size:12px;font-weight:700;color:var(--navy);text-decoration:none;}
+.ext-link:hover{text-decoration:underline;}
+.no-summ{color:var(--muted);font-size:13px;font-style:italic;padding:12px 0;}
+
+/* session blocks */
+details.sess-block{background:var(--paper);border:1px solid var(--border);border-left:4px solid var(--navy);border-radius:0 8px 8px 0;margin-bottom:10px;overflow:hidden;}
+details.sess-block:hover{box-shadow:0 2px 8px rgba(0,0,0,.06);}
+details.sess-block[open]{border-left-color:var(--gold);}
+.sess-sum{padding:14px 18px;cursor:pointer;list-style:none;user-select:none;}
+.sess-sum::-webkit-details-marker{display:none;}
+.sess-hd{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap;}
+.sess-date-chip{background:var(--navy);color:#fff;font-size:10px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:4px;white-space:nowrap;}
+details.sess-block[open] .sess-date-chip{background:var(--gold);}
+.sess-label{font-family:var(--font-h);font-size:14px;font-weight:900;color:var(--ink);}
+.sess-lead{font-size:13px;color:var(--ink2);line-height:1.55;margin-bottom:6px;}
+.sess-body{padding:0 18px 16px;border-top:1px solid var(--border);}
+.sess-lead-full{font-size:13px;color:var(--ink2);line-height:1.6;margin:12px 0;background:#f8fafc;border-left:3px solid var(--gold);padding:8px 12px;border-radius:0 6px 6px 0;}
+.sess-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0;}
+.sess-col{font-size:13px;}
+.sess-col ul{list-style:none;padding:0;}
+.sess-col li{padding:4px 0 4px 14px;position:relative;color:var(--ink2);border-bottom:1px solid #f3f4f6;font-size:13px;line-height:1.5;}
+.sess-col li:last-child{border-bottom:none;}
+.sess-col li::before{content:"·";position:absolute;left:2px;color:var(--navy);font-weight:700;font-size:15px;line-height:1.1;}
+.notable-callout{display:flex;gap:10px;align-items:flex-start;background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:10px 12px;margin:12px 0;}
+.notable-icon{font-size:16px;color:#d97706;flex-shrink:0;line-height:1.4;}
+.notable-callout h5{border-bottom-color:#fde68a;color:#92400e;}
+.notable-callout p,.notable-callout li{color:#78350f;font-size:13px;}
+.notable-callout ul{list-style:none;padding:0;}
+.notable-callout li{padding:3px 0 3px 14px;position:relative;}
+.notable-callout li::before{content:"·";position:absolute;left:2px;color:#d97706;font-weight:700;font-size:15px;line-height:1.1;}
+.parties-block{margin:12px 0;font-size:13px;}
+.sess-ft{margin-top:12px;padding-top:10px;border-top:1px solid var(--border);}
+
+/* landing track cards */
+.track-card{display:block;padding:20px 28px;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:background .1s;}
+.track-card:hover{background:var(--surf);}
+.track-card:last-of-type{border-bottom:none;}
+.track-label{font-size:10px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+.track-title{font-family:var(--font-h);font-size:18px;font-weight:900;color:var(--navy);letter-spacing:-.3px;line-height:1.3;margin-bottom:6px;}
+.track-desc{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px;}
+.track-latest{font-size:12px;color:var(--ink2);}
+.track-arrow{font-size:22px;color:var(--gold);font-weight:900;float:right;margin-top:-28px;}
+
+/* archive / intro */
+.arch-table{width:100%;border-collapse:collapse;}
+.arch-table th{padding:8px 0;text-align:left;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);border-bottom:1px solid var(--border);}
+.arch-table td{padding:12px 8px 12px 0;border-bottom:1px solid var(--border);font-size:13px;color:var(--ink2);}
+.arch-table tr:last-child td{border-bottom:none;}
+.arch-table a{color:var(--navy);font-weight:700;text-decoration:none;}
+.arch-table a:hover{text-decoration:underline;}
+.intro-block{padding:20px 28px;border-bottom:1px solid var(--border);font-size:14px;line-height:1.7;color:var(--ink);}
+.all-issues-wrap{padding:16px 28px;border-bottom:1px solid var(--border);}
+.all-issues-btn{width:100%;padding:13px;background:none;border:1.5px solid var(--navy);border-radius:3px;font-family:var(--font-h);font-size:11px;font-weight:900;color:var(--navy);cursor:pointer;text-align:center;letter-spacing:.14em;text-transform:uppercase;transition:background .15s,color .15s;}
+.all-issues-btn:hover{background:var(--navy);color:#fff;}
+.waitlist-section,.contact-section{padding:20px 28px;border-bottom:1px solid var(--border);}
+.waitlist-heading{font-family:var(--font-h);font-size:17px;font-weight:900;color:var(--ink);letter-spacing:-.2px;margin-bottom:8px;}
+.waitlist-body{font-size:14px;color:var(--ink2);line-height:1.6;margin-bottom:16px;}
+.waitlist-form{display:flex;gap:8px;margin-bottom:10px;}
+.waitlist-input{flex:1;padding:10px 12px;border:1px solid var(--border);border-radius:3px;font-family:var(--font-b);font-size:14px;color:var(--ink);min-width:0;}
+.waitlist-input:focus{outline:none;border-color:var(--navy);}
+.waitlist-btn{padding:10px 18px;background:var(--navy);color:#fff;border:none;border-radius:3px;font-family:var(--font-h);font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;white-space:nowrap;}
+.waitlist-btn:hover{background:#122348;}
+.waitlist-fine{font-size:12px;color:var(--muted-lt);line-height:1.5;}
+.waitlist-ok{display:none;font-size:14px;font-weight:700;color:#16a34a;margin-top:10px;}
+.contact-section p{font-size:14px;color:var(--ink2);line-height:1.6;}
+.contact-section a{color:var(--navy);font-weight:700;text-decoration:none;}
+.contact-section a:hover{text-decoration:underline;}
+
+@media(max-width:760px){
+  .wrapper{margin:0;border-left:none;border-right:none;}
+  .nwp-hdr,.parl-hdr,.section,.nl-footer,.page-header,a.issue-row,.track-card,
+  .section-label-row,.intro-block,.waitlist-section,.contact-section,.all-issues-wrap{padding-left:16px;padding-right:16px;}
+  .masthead-pills{display:none;}
+  .nwp-nav{gap:8px 12px;}
+  .nwp-title{font-size:28px;letter-spacing:-.8px;}
+  .nwp-doodles{font-size:34px;}
+  .sess-cols{grid-template-columns:1fr;}
+  .fs-winners ul{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+<div class="nwp-hdr">
+  <div class="nwp-topline">
+    <nav class="nwp-nav">
+      <a href="/">Начало</a>
+      <a href="/newsletters/">Бюлетин</a>
+      <a href="/cockpit/">Икономика</a>
+      <a href="/parliament/" class="nwp-active">Законодателство</a>
+      <a href="/about/">За проекта</a>
+    </nav>
+  </div>
+  <div class="nwp-title-row">
+    <span class="nwp-title">Basepoint</span><span class="nwp-doodles">Doodles</span>
+  </div>
+  <p class="nwp-subtitle">Законодателство &middot; Парламентарен дайджест</p>
+  <div class="nwp-rule-thick"></div>
+  <div class="nwp-rule-thin"></div>
+</div>
+
+<div class="parl-hdr">
+  <div class="parl-hdr-title">ДВ Дайджест · Седмица 29 · 2026</div>
+  <div class="parl-hdr-date">13–19 юли 2026</div>
+  <div class="masthead-pills"><span class="masthead-pill">2 акта от НС</span><span class="masthead-pill">3 акта от МС</span><span class="masthead-pill">8 наредби/регулации</span></div>
+</div>
+<div class="section">
+
+<div class="subsection">
+  <div class="subsection-hd">
+    <span class="subsection-tag">01</span>
+    <span class="subsection-title">Народно събрание</span>
+    <span class="subsection-count">2 решения</span>
+  </div>
+  <div class="dv-grid">
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;64 &middot; 2026-07-14</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ по Отчета на генералния директор на Българската телеграфна агенция Кирил Вълчев, включващ и финансов отчет за 2025 г.</div>
+    
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <p class="no-summ">Резюме не е налично.</p>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244729" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;64 &middot; 2026-07-14</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за приемане на Изменение на Проект за инвестиционен разход „Придобиване на основна бойна техника за изграждане на батальонни бойни групи от състава на механизирана бригада“</div>
+    <p class="dv-lead">Парламентът одобрява изменение на вече съществуващ проект за закупуване на тежко военно оборудване за изграждане на батальонни бойни групи в рамките на механизирана бригада на българската армия.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Решението не създава нов проект, а изменя вече одобрен такъв – конкретните параметри на промяната (суми, техника, срокове) са описани в приложение, което не е публикувано в основния текст.</li><li>Проектът е насочен към придобиване на „основна бойна техника&quot; – вероятно танкове, бойни машини на пехотата или артилерия – за окомплектоване на батальонни бойни групи.</li><li>Правното основание е чл. 16, т. 7а от Закона за отбраната и въоръжените сили, който изисква парламентарно одобрение за подобни инвестиционни разходи в отбраната.</li><li>Липсата на конкретни числа (стойност на договора, брой техника, доставчик) в публикувания текст означава, че ключовата информация остава в неоповестеното приложение.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Българската армия (повишен боен капацитет); евентуалният доставчик на техниката.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Приложението с реалното съдържание на изменението – вероятно включващо суми за стотици милиони лева – е посочено само с номер (3875) и не е публикувано в основния текст на „Държавен вестник&quot;, което прави парламентарното решение практически непрозрачно за гражданите.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><p>Влиза в сила от обнародването.</p></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Няма достатъчно сравнителни данни за конкретния формат на парламентарно одобрение на отбранителни инвестиционни проекти в останалите държави – членки на ЕС. Като цяло страните от НАТО и ЕС преминаха към ускорено одобряване на отбранителни разходи след 2022 г., като България следва тази тенденция.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244730" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details></div>
+</div>
+<div class="subsection">
+  <div class="subsection-hd">
+    <span class="subsection-tag">02</span>
+    <span class="subsection-title">Министерски съвет</span>
+    <span class="subsection-count">2 постановления · 1 решение</span>
+  </div>
+  <div class="dv-grid">
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;64 &middot; 2026-07-14</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 79 ОТ 10 ЮЛИ 2026 Г. за изменение и допълнение на Тарифата за таксите, които се събират по Закона за лова и опазване на дивеча, приета с Постановление № 177 на Министерския съвет от 2025 г.</div>
+    
+    
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <p class="no-summ">Резюме не е налично.</p>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244709" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;64 &middot; 2026-07-14</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 80 ОТ 10 ЮЛИ 2026 Г. за изменение и допълнение на Постановление № 416 на Министерския съвет от 2022 г. за определяне на структури от другите сили от системата за национална сигурност на Република България и тяхната численост за включване във въоръжените сили във военно време</div>
+    
+    
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <p class="no-summ">Резюме не е налично.</p>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244710" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;64 &middot; 2026-07-14</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ № 518 ОТ 10 ЮЛИ 2026 Г. за признаване на Сдружение „Национална асоциация на хората с придобити увреждания“ за национално представителна организация на хора с увреждания</div>
+    
+    
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <p class="no-summ">Резюме не е налично.</p>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244711" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details></div>
+</div>
+<div class="subsection">
+  <div class="subsection-hd">
+    <span class="subsection-tag">03</span>
+    <span class="subsection-title">Министерства и ведомства</span>
+    <span class="subsection-count">5 наредби · 1 решение · 1 споразумение</span>
+  </div>
+  <div class="dv-grid">
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;65 &middot; 2026-07-17</span>
+    </div>
+    <div class="dv-title">НАРЕДБА № 5 от 7</div>
+    
+    
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <p class="no-summ">Резюме не е налично.</p>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244638" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;65 &middot; 2026-07-17</span>
+    </div>
+    <div class="dv-title">Наредба за изменение и допълнение на Наредба № 9 от 19.11.2003 г. за оценка на активите и пасивите на пенсионноосигурителното дружество и на управляваните от него фондове, за изчисляване на стойността на нетните активи, на един дял и на доходността от инвестиционните имоти и за воденето на индивидуа</div>
+    <div class="exec-organ">Комисия за финансов надзор</div>
+    <p class="dv-lead">Наредбата приспособява правилата за оценка на активите и изчисляване на дяловете в пенсионните фондове към въведената структура на подфондове, в които осигурените лица ще могат да избират различен инвестиционен профил в рамките на един фонд.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Подфондове навсякъде:</strong> Универсалните и доброволните пенсионни фондове вече могат да имат подфондове с различен рисков профил. Всеки подфонд изчислява собствена стойност на нетните активи и стойност на един дял – независимо от останалите подфондове.</li><li><strong>Неперсонифицирани вноски:</strong> Постъпилите пари, преди да бъдат разпределени по партидите на конкретни осигурени лица, се отчитат по сметка на фонда (а не по подфонд), докато бъдат персонифицирани. В доброволния ПЕПП фонд временно се насочват към подфонда с най-ниско инвестиционно ниво.</li><li><strong>Лихви по разплащателни сметки:</strong> Приходите от лихви по сметките на фондовете преди разпределение по подфондове се разпределят между подфондовете в края на всеки месец – пропорционално на оборота. Преводът се извършва най-късно на първия работен ден на следващия месец.</li><li><strong>Оценка на инвестиционни имоти – разтегнат цикъл:</strong> Оценката на недвижими имоти в пенсионните фондове вече е на всеки 6 месеца (вместо на всяко тримесечие), а броят на независимите оценители се увеличава от два на три.</li><li><strong>Нова защитна клауза при оценка на акции:</strong> Ако методът на средна претеглена цена даде резултат, по-висок от последната цена на затваряне или цената „купува&quot; за последните три месеца, се използва по-ниската пазарна цена – мярка срещу надценяване на активите.</li><li><strong>Алтернативни инвестиционни фондове (АИФ):</strong> Въведени са четири метода за оценка на дялове в АИФ (последен кръг финансиране, последни сделки между независими страни, нетна балансова стойност, дисконтирани парични потоци). При промяна в оценката дружеството е длъжно незабавно да уведоми КФН.</li><li><strong>„Заетите&quot; финансови инструменти получават оценка:</strong> Вземанията от дадени назаем ценни книжа вече се оценяват по правилата на съответния инструмент, а неполучените такси по тях се начисляват ежедневно.</li><li><strong>По-широк списък признати пазари:</strong> Приложението с борсите, чиито цени служат за официална оценка, нараства до 55 пазара в 40 държави, включително Индия, Индонезия, Тайланд, Чили, Южна Африка и Македония.</li><li><strong>Коригиране на грешки – разширено за подфондове:</strong> Детайлната процедура за поправка на грешно изчислена стойност на дял (в рамките на 3 работни дни или по-дълго) вече обхваща и подфондовете, с конкретни стъпки за преизчисляване на партиди и такси.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Осигурените лица, получаващи по-прецизна и по-честа оценка на индивидуалните им портфейли в различни рискови профили; по-добра защита при надценени активи.</li><li>Губят: Пенсионноосигурителните дружества – значително нараства административната и счетоводна тежест (ежемесечно разпределение на лихви, нови процедури за грешки, оценка на АИФ с обосновка при всяка промяна).</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Оценката на инвестиционни имоти се удължава от тримесечна на шестмесечна, но едновременно с това броят на задължителните независими оценители нараства от два на три – по-рядко, но с повече проверки.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Наредбата влиза в сила на <strong>1 януари 2027 г.</strong></li><li>Изключение: отмяната на раздел Va (справки за нетни активи към КФН) влиза в сила <strong>три дни след обнародването</strong> – т.е. около 20 юли 2026 г.</li><li>Пенсионните дружества трябва да представят оценка на инвестиционните имоти към <strong>30 ноември 2026 г.</strong>, а следващата оценка – към <strong>30 юни 2027 г.</strong></li></ul></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Структурата на подфондове с различен рисков профил в рамките на един пенсионен фонд следва логиката на Регламента за ПЕПП (EU 2019/1238), който изисква базов „безопасен&quot; вариант и допуска алтернативни инвестиционни опции. Повечето страни от ЕС с многостълбови пенсионни системи (Полша, Румъния, Унгария) прилагат подобен подход на жизнения цикъл с диференцирани подфондове. Българската наредба надгражда общоевропейската рамка, като добавя детайлни национални правила за ежедневно счетоводно разпределение и корекция на грешки.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244639" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;65 &middot; 2026-07-17</span>
+    </div>
+    <div class="dv-title">НАРЕДБА № Н-1 от 8 юли 2026 г. за Регистъра за прозрачност</div>
+    <div class="exec-organ">Министерство на правосъдието</div>
+    <p class="dv-lead">Наредбата въвежда правилата за регистрация на лобистите в новия публичен Регистър за прозрачност – кой трябва да се впише, какво декларира и как се проследяват срещите им с държавни органи.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Кой трябва да се регистрира:</strong> Всички представители на интереси (лобисти) – физически лица, еднолични търговци и юридически лица – са задължени да се впишат в Регистъра в срок от 1 месец след настъпване на основанието за регистрация.</li><li><strong>Какво се декларира:</strong> Физическите лица вписват ЕГН/ЛНЧ, имена, контакти, сфера на дейност и дали работят срещу заплащане или безплатно; юридическите лица – идентификационен код, наименование, представляващи лица, брой ангажирани служители и същата информация за заплащане.</li><li><strong>Задължение при платен лобизъм:</strong> Когато представителството е срещу заплащане, трябва да се декларира и самоличността на възложителя (клиента), видимо разграничена от тази на лобиста в регистъра.</li><li><strong>Промени се отбелязват бързо:</strong> Всяка промяна в регистрираните данни трябва да се отрази в 7-дневен срок – без изключения.</li><li><strong>Задължителни календари за срещи:</strong> Всеки орган или длъжностно лице, с което лобистите се срещат, трябва да отразява всяка проведена среща в официален календар в 3-дневен срок; за всяка среща се записват имената на всички присъстващи, темата и желаното въздействие върху конкретен законодателен акт.</li><li><strong>Автоматично уведомяване:</strong> При публикуване на законопроект, по чиято тема са провеждани лобистки срещи, системата автоматично изпраща съобщение до всички участвали представители на интереси.</li><li><strong>Санкция за лъжа:</strong> Декларацията при регистрация носи наказателна отговорност по чл. 313, ал. 1 от Наказателния кодекс (за деклариране на неверни обстоятелства).</li><li><strong>Заличаване:</strong> Лобистът може да се отпише от регистъра само след като 6 непрекъснати месеца не е упражнявал дейност; данните се съхраняват 5 години след заличаването, след което се изтриват.</li><li><strong>Регистрацията е незабавна:</strong> Вписването не изисква одобрение от служител – публикува се автоматично след попълване и подписване с квалифициран електронен подпис, освен при регистрация чрез упълномощено лице, при която има 7-дневна проверка.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Граждани и журналисти – получават публичен достъп до информация кой лобира, пред кого, по какви теми и за чия сметка.</li><li>Губят: Лобисти и организации, упражняващи представителство на интереси – поемат административна тежест от регистрация, текущо отчитане и публично разкриване на клиентите и дейността си.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Системата автоматично свързва всяка лобистка среща с конкретния законопроект, в чието съдържание темата на срещата е намерила отражение – т.е. публично се проследява пряката връзка между лобирането и законодателния резултат.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Наредбата е в сила от датата на обнародване – 17 юли 2026 г.</li><li>Регистърът физически трябва да бъде създаден и пуснат в експлоатация в срок от 6 месеца от издаването на наредбата (т.е. до около януари 2027 г.).</li><li>До въвеждането на регистъра в експлоатация задълженията за вписване и водене на календари не могат да бъдат изпълнени на практика.</li></ul></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Регистрите за прозрачност на лобистите са разпространени в ЕС – Европейската комисия и Парламентът поддържат общ задължителен регистър от 2021 г., а редица държави членки (Австрия, Ирландия, Франция, Словения) имат национални аналози. Българската наредба следва тази европейска тенденция, но се отличава с по-засилена техническа автоматизация – автоматичното свързване на срещи с конкретни законопроекти и незабавното уведомяване на лобистите са елементи, нетипични за повечето съществуващи национални системи.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244666" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;65 &middot; 2026-07-17</span>
+    </div>
+    <div class="dv-title">Наредба за изменение и допълнение на Наредба № 25 от 2005 г. за минималните изисквания за хуманно отношение при отглеждане на кокошки носачки</div>
+    
+    
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <p class="no-summ">Резюме не е налично.</p>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244802" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;65 &middot; 2026-07-17</span>
+    </div>
+    <div class="dv-title">Наредба за изменение и допълнение на Наредба № 5 от 15.09.2017 г. за регистъра на професионалните колежи</div>
+    
+    
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <p class="no-summ">Резюме не е налично.</p>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244818" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;64 &middot; 2026-07-14</span>
+    </div>
+    <div class="dv-title"></div>
+    
+    
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <p class="no-summ">Резюме не е налично.</p>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244545" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<div class="dv-card dv-card-compact">
+  <div class="dv-sum-static">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-spor">СПОРАЗУМЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;64 &middot; 2026-07-14</span>
+    </div>
+    <div class="dv-title">Първо изменение и потвърждаване на Споразумението за финансов принос между Европейския съюз и Република България по отношение на Раздел „Държава членка“ по Програма InvestEU, изменящо и потвърждаващо първоначалното Споразумение за финансов принос</div>
+    <div class="exec-organ">Министерство на финансите</div>
+    <p class="dv-lead">България и ЕС официализират разширено споразумение за над 370 млн. евро гаранции, предназначени да улеснят достъпа на български МСП и проекти за зелена инфраструктура до банково финансиране чрез програма InvestEU.</p>
+    <div class="compact-bullets"><ul><li>Общият размер на ЕС гаранцията по Раздел „Държава членка&quot; за България е <strong>371 964 246 евро</strong> – увеличение спрямо първоначалното споразумение от 2022 г. с нови <strong>96 964 246 евро</strong> от Механизма за възстановяване и устойчивост (МВУ).</li><li>Парите идват от два източника: <strong>125 млн. евро</strong> от структурни фондове (ЕФРР и Кохезионен фонд) и <strong>246,96 млн. евро</strong> от националния план за възстановяване (ПВУ).</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244630" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</div>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-inst">ИНСТРУКЦИЯ</span></div>
+      <span class="dv-meta">Бр.&nbsp;65 &middot; 2026-07-17</span>
+    </div>
+    <div class="dv-title">Инструкция за изменение и допълнение на Инструкция № 8121з-1008 от 16 декември 2014 г. за организацията и реда за съпровождане на малолетни и непълнолетни лица от полицейските органи на Министерството на вътрешните работи</div>
+    
+    
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <p class="no-summ">Резюме не е налично.</p>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244607" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details></div>
+</div>
+</div>
+
+<div class="nl-footer">
+  <span class="nl-footer-logo">Doodles.</span>
+  <div class="nl-footer-links">
+    <a href="/">Начало</a>
+    <a href="/newsletters/">Бюлетин</a>
+    <a href="/parliament/">Законодателство</a>
+    <a href="/about/">За проекта</a>
+  </div>
+</div>
+</div>
+</body>
+</html>

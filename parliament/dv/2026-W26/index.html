@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="utf-8">
+<title>Парламентарни Doodles · ДВ Дайджест · Седмица 26</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --navy:#1B2E5E; --gold:#B5821A; --ink:#1C1C1C; --ink2:#444;
+  --muted:#888; --muted-lt:#AAA; --border:#E8E8E8; --surf:#F8F8F8; --paper:#FFF;
+  --font-d:'Caveat',cursive; --font-h:'Nunito','Arial Black',sans-serif;
+  --font-b:'Nunito',Arial,sans-serif;
+}
+body{font-family:var(--font-b);background:#E8E8E8;color:var(--ink);line-height:1.6;}
+.wrapper{max-width:700px;margin:32px auto;background:#fff;border:1px solid #C0C0C0;border-radius:0;overflow:hidden;}
+
+/* newspaper header */
+.nwp-hdr{padding:18px 24px 14px;border-bottom:1px solid var(--ink);}
+.nwp-topline{display:flex;justify-content:flex-end;align-items:center;margin-bottom:10px;}
+.nwp-nav{display:flex;gap:14px;flex-wrap:wrap;}
+.nwp-nav a{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#777;text-decoration:none;}
+.nwp-nav a:hover{color:var(--ink);}
+.nwp-nav a.nwp-active{color:var(--ink);font-weight:900;border-bottom:2px solid #CC2B2B;padding-bottom:1px;}
+.nwp-title-row{text-align:center;margin-bottom:10px;}
+.nwp-title{font-family:var(--font-h);font-size:40px;font-weight:900;color:var(--ink);letter-spacing:-1.5px;line-height:1;display:inline;}
+.nwp-doodles{font-family:var(--font-d);font-size:48px;font-weight:700;color:#CC2B2B;line-height:1;vertical-align:baseline;margin-left:6px;}
+.nwp-subtitle{text-align:center;font-size:11px;color:#777;letter-spacing:.14em;text-transform:uppercase;margin-top:6px;}
+.nwp-rule-thick{height:3px;background:var(--ink);margin:10px 0 0;}
+.nwp-rule-thin{height:1px;background:var(--ink);margin:3px 0 0;}
+
+/* section header (below newspaper header, parliament-specific) */
+.parl-hdr{padding:14px 24px 12px;border-bottom:1px solid var(--border);}
+.parl-hdr-title{font-size:16px;font-weight:900;color:var(--ink);letter-spacing:-.2px;}
+.parl-hdr-date{font-size:12px;color:var(--muted);margin-top:3px;}
+.masthead-pills{margin-top:8px;display:flex;gap:6px;flex-wrap:wrap;}
+.masthead-pill{font-size:10px;font-weight:700;letter-spacing:.05em;background:var(--surf);color:var(--muted);padding:3px 8px;border-radius:3px;border:1px solid var(--border);}
+
+/* content sections */
+.section{padding:20px 28px;border-bottom:1px solid var(--border);}
+.section:last-of-type{border-bottom:none;}
+
+/* subsection (within DV edition) */
+.subsection{margin-bottom:24px;}
+.subsection:last-child{margin-bottom:0;}
+.subsection-hd{display:flex;align-items:baseline;gap:10px;margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid var(--border);}
+.subsection-tag{font-size:10px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);}
+.subsection-title{font-family:var(--font-h);font-size:16px;font-weight:900;color:var(--navy);}
+.subsection-count{font-size:11px;color:var(--muted);margin-left:auto;}
+
+/* section label row */
+.section-label-row{padding:10px 28px 8px;background:var(--surf);border-bottom:1px solid var(--border);}
+.section-label{font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);}
+
+/* page header */
+.page-header{padding:20px 28px 16px;border-bottom:1px solid var(--border);}
+.page-title{font-family:var(--font-h);font-size:20px;font-weight:900;color:var(--ink);letter-spacing:-.3px;margin-bottom:6px;}
+.page-subtitle{font-size:13px;color:var(--muted);}
+
+/* issue list rows */
+a.issue-row{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 28px;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:background .1s;}
+a.issue-row:hover{background:var(--surf);}
+a.issue-row:last-of-type{border-bottom:none;}
+.issue-row-left{flex:1;}
+.issue-row-meta{font-family:'Courier New',monospace;font-size:10px;color:var(--muted-lt);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;}
+.issue-row-title{font-size:15px;font-weight:900;color:var(--ink);letter-spacing:-.2px;line-height:1.3;}
+.issue-row-desc{font-size:12px;color:var(--muted);margin-top:3px;}
+.issue-row-arrow{font-size:18px;color:var(--gold);font-weight:900;flex-shrink:0;}
+
+/* footer */
+.nl-footer{padding:14px 28px;background:var(--surf);border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
+.nl-footer-logo{font-family:var(--font-d);font-size:18px;font-weight:700;color:#CCC;}
+.nl-footer-links{font-size:11px;display:flex;gap:16px;}
+.nl-footer-links a{color:var(--muted-lt);text-decoration:none;}
+.nl-footer-links a:hover{color:var(--muted);}
+
+/* DV cards */
+.dv-grid{display:flex;flex-direction:column;gap:8px;}
+details.dv-card{background:var(--paper);border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:border-color .15s;}
+details.dv-card:hover{border-color:var(--gold);}
+details.dv-card[open]{border-color:var(--gold);}
+.dv-card-compact{background:var(--paper);border:1px solid var(--border);border-radius:8px;overflow:hidden;opacity:.9;}
+.dv-sum{padding:14px 16px;cursor:pointer;list-style:none;user-select:none;}
+.dv-sum::-webkit-details-marker{display:none;}
+.dv-sum-static{padding:14px 16px;}
+.dv-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+.dv-meta{font-size:11px;color:var(--muted);font-weight:700;}
+.dv-title{font-family:var(--font-h);font-size:13px;font-weight:900;color:var(--ink);line-height:1.4;letter-spacing:-.1px;margin-bottom:4px;}
+.exec-organ{font-size:11px;color:var(--muted);margin-bottom:6px;font-style:italic;}
+.dv-lead{font-size:13px;color:var(--ink2);line-height:1.55;margin-bottom:8px;}
+.compact-bullets ul{list-style:none;padding:0;margin-top:6px;}
+.compact-bullets li{padding:3px 0 3px 14px;position:relative;color:var(--ink2);font-size:12px;line-height:1.5;}
+.compact-bullets li::before{content:"·";position:absolute;left:2px;color:var(--gold);font-weight:700;font-size:15px;line-height:1.1;}
+.expand-hint{font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.06em;margin-top:4px;}
+details.dv-card[open] .expand-hint{display:none;}
+.dv-body{padding:0 16px 16px;border-top:1px solid var(--border);}
+
+/* badges */
+.badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;}
+.dv-badges{display:flex;gap:6px;align-items:center;flex-wrap:wrap;}
+.b-zakon   {background:#dbeafe;color:#1a56db;}
+.b-reshenie{background:#cffafe;color:#0a6e8a;}
+.b-ukaz    {background:#ede9fe;color:#7c3aed;}
+.b-decl    {background:#fef3c7;color:#92400e;}
+.b-post    {background:#d1fae5;color:#065f46;}
+.b-naredba {background:#fce7f3;color:#9d174d;}
+.b-pravilnik{background:#f3e8ff;color:#6b21a8;}
+.b-inst    {background:#fef9c3;color:#713f12;}
+.b-razp    {background:#e0f2fe;color:#0369a1;}
+.b-spor    {background:#fff7ed;color:#c2410c;}
+.b-other   {background:#f3f4f6;color:#6b7280;}
+.b-cat     {background:#f3f4f6;color:#555;}
+
+/* factsheet sections */
+.fs-sec{margin:12px 0;font-size:13px;}
+.fs-sec h5,.parties-block h5,.notable-callout h5,.sess-col h5{font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:8px;padding-bottom:5px;border-bottom:1px solid var(--border);}
+.fs-sec ul,.parties-block ul{list-style:none;padding:0;}
+.fs-sec li,.parties-block li{padding:4px 0 4px 16px;position:relative;color:var(--ink2);border-bottom:1px solid #f3f4f6;font-size:13px;line-height:1.5;}
+.fs-sec li:last-child,.parties-block li:last-child{border-bottom:none;}
+.fs-sec li::before{content:"·";position:absolute;left:3px;color:var(--gold);font-weight:700;font-size:16px;line-height:1.1;}
+.fs-sec p,.parties-block p{color:var(--ink2);font-size:13px;margin-bottom:4px;}
+.fs-winners ul{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.fs-winners li{padding:8px 10px 8px 24px;border-radius:6px;border-bottom:none !important;}
+.fs-winners li:first-child{background:#f0fdf4;}
+.fs-winners li:first-child::before{content:"✓";color:#16a34a;font-size:13px;top:8px;}
+.fs-winners li:nth-child(2){background:#fef2f2;}
+.fs-winners li:nth-child(2)::before{content:"✗";color:#dc2626;font-size:13px;top:8px;}
+.fs-notable{background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:12px 14px;}
+.fs-notable h5{border-bottom-color:#fde68a;color:#92400e;}
+.fs-notable li,.fs-notable p{color:#78350f;}
+.fs-notable li::before{color:#d97706;}
+.fs-eu{background:#f0f9ff;border-radius:8px;padding:12px 14px;}
+.fs-eu h5{color:#0369a1;border-bottom-color:#bae6fd;}
+.fs-eu p{color:#0c4a6e;font-size:13px;}
+.ext-link{display:inline-block;margin-top:12px;font-size:12px;font-weight:700;color:var(--navy);text-decoration:none;}
+.ext-link:hover{text-decoration:underline;}
+.no-summ{color:var(--muted);font-size:13px;font-style:italic;padding:12px 0;}
+
+/* session blocks */
+details.sess-block{background:var(--paper);border:1px solid var(--border);border-left:4px solid var(--navy);border-radius:0 8px 8px 0;margin-bottom:10px;overflow:hidden;}
+details.sess-block:hover{box-shadow:0 2px 8px rgba(0,0,0,.06);}
+details.sess-block[open]{border-left-color:var(--gold);}
+.sess-sum{padding:14px 18px;cursor:pointer;list-style:none;user-select:none;}
+.sess-sum::-webkit-details-marker{display:none;}
+.sess-hd{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap;}
+.sess-date-chip{background:var(--navy);color:#fff;font-size:10px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:4px;white-space:nowrap;}
+details.sess-block[open] .sess-date-chip{background:var(--gold);}
+.sess-label{font-family:var(--font-h);font-size:14px;font-weight:900;color:var(--ink);}
+.sess-lead{font-size:13px;color:var(--ink2);line-height:1.55;margin-bottom:6px;}
+.sess-body{padding:0 18px 16px;border-top:1px solid var(--border);}
+.sess-lead-full{font-size:13px;color:var(--ink2);line-height:1.6;margin:12px 0;background:#f8fafc;border-left:3px solid var(--gold);padding:8px 12px;border-radius:0 6px 6px 0;}
+.sess-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0;}
+.sess-col{font-size:13px;}
+.sess-col ul{list-style:none;padding:0;}
+.sess-col li{padding:4px 0 4px 14px;position:relative;color:var(--ink2);border-bottom:1px solid #f3f4f6;font-size:13px;line-height:1.5;}
+.sess-col li:last-child{border-bottom:none;}
+.sess-col li::before{content:"·";position:absolute;left:2px;color:var(--navy);font-weight:700;font-size:15px;line-height:1.1;}
+.notable-callout{display:flex;gap:10px;align-items:flex-start;background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:10px 12px;margin:12px 0;}
+.notable-icon{font-size:16px;color:#d97706;flex-shrink:0;line-height:1.4;}
+.notable-callout h5{border-bottom-color:#fde68a;color:#92400e;}
+.notable-callout p,.notable-callout li{color:#78350f;font-size:13px;}
+.notable-callout ul{list-style:none;padding:0;}
+.notable-callout li{padding:3px 0 3px 14px;position:relative;}
+.notable-callout li::before{content:"·";position:absolute;left:2px;color:#d97706;font-weight:700;font-size:15px;line-height:1.1;}
+.parties-block{margin:12px 0;font-size:13px;}
+.sess-ft{margin-top:12px;padding-top:10px;border-top:1px solid var(--border);}
+
+/* landing track cards */
+.track-card{display:block;padding:20px 28px;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:background .1s;}
+.track-card:hover{background:var(--surf);}
+.track-card:last-of-type{border-bottom:none;}
+.track-label{font-size:10px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+.track-title{font-family:var(--font-h);font-size:18px;font-weight:900;color:var(--navy);letter-spacing:-.3px;line-height:1.3;margin-bottom:6px;}
+.track-desc{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px;}
+.track-latest{font-size:12px;color:var(--ink2);}
+.track-arrow{font-size:22px;color:var(--gold);font-weight:900;float:right;margin-top:-28px;}
+
+/* archive / intro */
+.arch-table{width:100%;border-collapse:collapse;}
+.arch-table th{padding:8px 0;text-align:left;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);border-bottom:1px solid var(--border);}
+.arch-table td{padding:12px 8px 12px 0;border-bottom:1px solid var(--border);font-size:13px;color:var(--ink2);}
+.arch-table tr:last-child td{border-bottom:none;}
+.arch-table a{color:var(--navy);font-weight:700;text-decoration:none;}
+.arch-table a:hover{text-decoration:underline;}
+.intro-block{padding:20px 28px;border-bottom:1px solid var(--border);font-size:14px;line-height:1.7;color:var(--ink);}
+.all-issues-wrap{padding:16px 28px;border-bottom:1px solid var(--border);}
+.all-issues-btn{width:100%;padding:13px;background:none;border:1.5px solid var(--navy);border-radius:3px;font-family:var(--font-h);font-size:11px;font-weight:900;color:var(--navy);cursor:pointer;text-align:center;letter-spacing:.14em;text-transform:uppercase;transition:background .15s,color .15s;}
+.all-issues-btn:hover{background:var(--navy);color:#fff;}
+.waitlist-section,.contact-section{padding:20px 28px;border-bottom:1px solid var(--border);}
+.waitlist-heading{font-family:var(--font-h);font-size:17px;font-weight:900;color:var(--ink);letter-spacing:-.2px;margin-bottom:8px;}
+.waitlist-body{font-size:14px;color:var(--ink2);line-height:1.6;margin-bottom:16px;}
+.waitlist-form{display:flex;gap:8px;margin-bottom:10px;}
+.waitlist-input{flex:1;padding:10px 12px;border:1px solid var(--border);border-radius:3px;font-family:var(--font-b);font-size:14px;color:var(--ink);min-width:0;}
+.waitlist-input:focus{outline:none;border-color:var(--navy);}
+.waitlist-btn{padding:10px 18px;background:var(--navy);color:#fff;border:none;border-radius:3px;font-family:var(--font-h);font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;white-space:nowrap;}
+.waitlist-btn:hover{background:#122348;}
+.waitlist-fine{font-size:12px;color:var(--muted-lt);line-height:1.5;}
+.waitlist-ok{display:none;font-size:14px;font-weight:700;color:#16a34a;margin-top:10px;}
+.contact-section p{font-size:14px;color:var(--ink2);line-height:1.6;}
+.contact-section a{color:var(--navy);font-weight:700;text-decoration:none;}
+.contact-section a:hover{text-decoration:underline;}
+
+@media(max-width:760px){
+  .wrapper{margin:0;border-left:none;border-right:none;}
+  .nwp-hdr,.parl-hdr,.section,.nl-footer,.page-header,a.issue-row,.track-card,
+  .section-label-row,.intro-block,.waitlist-section,.contact-section,.all-issues-wrap{padding-left:16px;padding-right:16px;}
+  .masthead-pills{display:none;}
+  .nwp-nav{gap:8px 12px;}
+  .nwp-title{font-size:28px;letter-spacing:-.8px;}
+  .nwp-doodles{font-size:34px;}
+  .sess-cols{grid-template-columns:1fr;}
+  .fs-winners ul{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+<div class="nwp-hdr">
+  <div class="nwp-topline">
+    <nav class="nwp-nav">
+      <a href="/">Начало</a>
+      <a href="/newsletters/">Бюлетин</a>
+      <a href="/cockpit/">Икономика</a>
+      <a href="/parliament/" class="nwp-active">Законодателство</a>
+      <a href="/about/">За проекта</a>
+    </nav>
+  </div>
+  <div class="nwp-title-row">
+    <span class="nwp-title">Basepoint</span><span class="nwp-doodles">Doodles</span>
+  </div>
+  <p class="nwp-subtitle">Законодателство &middot; Парламентарен дайджест</p>
+  <div class="nwp-rule-thick"></div>
+  <div class="nwp-rule-thin"></div>
+</div>
+
+<div class="parl-hdr">
+  <div class="parl-hdr-title">ДВ Дайджест · Седмица 26 · 2026</div>
+  <div class="parl-hdr-date">22–28 юни 2026</div>
+  <div class="masthead-pills"><span class="masthead-pill">17 акта от НС</span><span class="masthead-pill">7 акта от МС</span><span class="masthead-pill">3 наредби/регулации</span></div>
+</div>
+<div class="section">
+
+<div class="subsection">
+  <div class="subsection-hd">
+    <span class="subsection-tag">01</span>
+    <span class="subsection-title">Народно събрание</span>
+    <span class="subsection-count">12 решения · 3 акта · 2 закони</span>
+  </div>
+  <div class="dv-grid">
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-zakon">ЗАКОН</span></div>
+      <span class="dv-meta">Бр.&nbsp;58 &middot; 2026-06-26</span>
+    </div>
+    <div class="dv-title">ЗАКОН за допълнение на Закона за защита на потребителите</div>
+    <p class="dv-lead">Законът забранява необосновано вдигане на цени от търговците и ги задължава да доказват пред Комисията за защита на потребителите, че всяко поскъпване е икономически оправдано.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Забрана за необосновано вдигане на цени:</strong> всяко повишение на крайната цена спрямо „сравним предходен период&quot; трябва да е в пряка и съразмерна връзка с обективен икономически фактор – ръст на доставни разходи, енергия, горива, данъци, валутни курсове или друг фактор извън контрола на търговеца.</li><li><strong>Доказателствената тежест е върху търговеца:</strong> при установено увеличение контролните органи дават срок на търговеца да обясни как е формирана старата и новата цена; ако не го направи, увеличението автоматично се счита за необосновано.</li><li><strong>Праг за задължително ежедневно публикуване:</strong> търговците на дребно с хранителни стоки, напитки, тютюн, нехранителни стоки и лекарства с оборот над 25 млн. евро за предходната година трябва всеки ден до 7:00 ч. да публикуват цените на стоките от „голямата потребителска кошница&quot; на сайта си в машинночетим формат, и до 8:00 ч. да ги изпращат на КЗП.</li><li><strong>По-малките търговци (под 25 млн. евро оборот)</strong> могат доброволно да публикуват и подават същата информация – задължение за тях не се въвежда.</li><li><strong>Публичен ценови портал на КЗП:</strong> комисията публикува всички подадени данни, включително цени на едро от Държавната комисия по стоковите борси и „справедлива стойност&quot; на ключови стоки, определена по методика на Министерския съвет и чрез сравнение с цени в други страни от ЕС – но тази стойност е само индикативна, не задължителна.</li><li><strong>Санкции за необосновано вдигане на цени:</strong> глоба 1 000–10 000 евро за физически лица; имуществена санкция 10 000–100 000 евро за фирми и еднолични търговци; при засегнати повече от една стока или обект – отделна санкция за всяко нарушение.</li><li><strong>Санкции за непредоставяне на информация за цени:</strong> имуществена санкция 5 000–50 000 евро за непълни, неточни или заблуждаващи данни.</li><li><strong>Санкции за блокиране на проверка:</strong> глоба 1 000–5 000 евро за физически лица; 10 000–100 000 евро за фирми и еднолични търговци.</li><li><strong>Търговска тайна не е защита:</strong> информацията за ценообразуване не може да бъде отказана с позоваване на производствена, търговска или друга защитена тайна.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li><strong>Печелят:</strong> потребителите (прозрачност на цените, публичен портал за сравнение); малкият бизнес (без задължения за публикуване).</li><li><strong>Губят:</strong> едрите търговци на дребно с оборот над 25 млн. евро – нова ежедневна административна тежест и риск от сериозни санкции при всяко поскъпване, което не могат документално да обосноват.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Законът е временен – влиза в сила на 9 август 2026 г. и автоматично изтича точно след една година, на 9 август 2027 г., което е необичайно за потребителско законодателство и подсказва, че парламентът го третира като антикризисна мярка с неясен резултат.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><ul><li>Законът влиза в сила на <strong>9 август 2026 г.</strong> и се прилага до <strong>9 август 2027 г.</strong></li><li>Изключение: задължението на Министерския съвет да приеме двете методики (за оценка на обосноваността на цените и за „справедлива стойност&quot;) влиза в сила от деня на обнародването – 26 юни 2026 г., като срокът за приемане е до два месеца, но <strong>не по-късно от 8 август 2026 г.</strong></li></ul></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Регулирането на цените чрез механизъм за доказване на икономическа обоснованост при поскъпване е рядкост в ЕС като трайна мярка, но редица страни – Франция, Белгия, Унгария – въведоха временни административни ограничения на цените на хранителни стоки след инфлационния шок от 2022–2023 г. Ключовата разлика на българския подход е, че не замразява цените директно, а прехвърля доказателствената тежест върху търговеца – по-пазарно ориентиран, но и по-труден за прилагане механизъм.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244128" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-zakon">ЗАКОН</span></div>
+      <span class="dv-meta">Бр.&nbsp;58 &middot; 2026-06-26</span>
+    </div>
+    <div class="dv-title">ЗАКОН за изменение и допълнение на Закона за защита на конкуренцията</div>
+    <p class="dv-lead">Законът разширява защитата срещу монополи и нелоялни практики в хранителната верига – въвежда забрана за прекомерно високи цени, урежда „съвместно господство&quot; на пазара и задължава търговците да вписват доставките в нов електронен регистър.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Нова презумпция за монопол:</strong> Ако фирма държи поне 50% от даден пазар, тя сама трябва да докаже, че не е господстващ играч – досега тежестта на доказване беше обратна.</li><li><strong>Съвместно господство:</strong> Въвежда се нова категория – две или повече фирми могат да бъдат третирани като „съвместно господстващи&quot;, без да е нужно споразумение помежду им; прагът е общ пазарен дял от поне 60%.</li><li><strong>Забрана за прекомерно високи цени:</strong> Фирми с монополно, господстващо или съвместно господстващо положение не могат да налагат цени без обоснована връзка с реалната икономическа стойност; изключение – цени, регулирани от държавен орган по закон.</li><li><strong>Критерии за „прекомерна цена&quot;:</strong> Комисията може да ползва: „разходи плюс&quot; (цената значително надвишава разходи + разумна печалба), сравнение с цени в ЕС, исторически скок без икономическа причина, или непропорционалност спрямо стойността на продукта.</li><li><strong>19 нови забранени нелоялни практики</strong> в хранителната верига: включват ретроактивни бонуси, скрити плащания, налагане на опаковки, заличаващи марката на доставчика, изискване доставчикът да поема над 50% от промоционално намаление, дискриминация в надценките над 10%, и заплашване с прекратяване на договор за упражняване на законни права.</li><li><strong>Нов електронен регистър за доставки:</strong> Бизнес операторите (вносители, търговци на едро, зърнопроизводители над 50 т/год., собственици на хранителни складове и др.) задължително вписват всяка доставка на селскостопански и хранителни продукти; регистърът използва AI анализ за засичане на пазарни деформации и нарушения.</li><li><strong>Санкции за нарушения на регистъра:</strong> При неподаване или невярна информация – от 2 500 до 500 000 евро според оборота, или до 1% от годишния оборот за най-големите фирми; при повторно нарушение – до 2% от оборота; при системни нарушения (3+ за 2 години) – до 10% от оборота.</li><li><strong>Съществуващите договори</strong> трябва да се приведат в съответствие в двумесечен срок от влизането в сила на закона.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li><strong>Печелят:</strong> Малки и средни доставчици на храни и земеделска продукция, потребители (защита от изкуствено надути цени), регулаторните органи (нови правомощия и инструменти).</li><li><strong>Губят:</strong> Големи търговски вериги и доминиращи купувачи, които губят механизми за натиск върху доставчици; фирми с господстващо пазарно положение, върху които се прехвърля тежестта на доказване.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Законът въвежда обърната доказателствена тежест – не регулаторът, а самата фирма трябва да докаже, че не злоупотребява, само защото притежава голям пазарен дял (50% за индивидуално, 60% за съвместно господство).</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><ul><li>Законът влиза в сила от деня на обнародването – 26 юни 2026 г.</li><li>Министерският съвет приема наредбата за регистъра в срок от <strong>3 месеца</strong>; задължението за бизнес операторите да подават данни възниква не по-рано от <strong>30 дни след пускането на регистъра в експлоатация</strong>.</li><li>Съществуващите договори за доставка трябва да се актуализират в <strong>2-месечен срок</strong>; КЗК предлага методиката за оценка на прекомерни цени също в рамките на <strong>2 месеца</strong>.</li></ul></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Директива 2019/633 на ЕС задължава всички членки да въведат забрани за нелоялни търговски практики в хранителната верига – България транспонира и надгражда тези правила с по-детайлни забрани и конкретни числови прагове. Въвеждането на изрична забрана за прекомерно високи цени като самостоятелен инструмент (извън антимонополното право) е по-рядко срещано в западноевропейски юрисдикции, но набира популярност след инфлационния период 2022–2024 г. Централният регистър за проследимост на доставките е по-амбициозна мярка от изискванията на повечето страни членки.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244129" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-other">ДРУГО</span></div>
+      <span class="dv-meta">Бр.&nbsp;57 &middot; 2026-06-23</span>
+    </div>
+    <div class="dv-title"></div>
+    <p class="dv-lead">Актът променя вътрешните правила за работата на Народното събрание, без пряко въздействие върху правата и задълженията на гражданите.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Текстът на акта не е публикуван в предоставения извадка – налични са само заглавието, броят на „Държавен вестник&quot; и датата; конкретното съдържание на измененията е неизвестно.</li><li>Промените засягат единствено организацията и дейността на Народното събрание – т.е. процедурни правила, приложими вътрешно за депутати и администрацията на парламента.</li><li>Без достъп до пълния текст не могат да се установят конкретни нови задължения, срокове, забрани или прагове.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Не може да се определи при липса на съдържание.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Датата на обнародване – 23.6.2026 г. – е в бъдещето спрямо стандартния референтен хоризонт, което поставя въпрос дали документът е автентичен или е проект/тест.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><p>Влиза в сила от обнародването.</p></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Няма достатъчно сравнителни данни.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244227" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-other">ДРУГО</span></div>
+      <span class="dv-meta">Бр.&nbsp;57 &middot; 2026-06-23</span>
+    </div>
+    <div class="dv-title"></div>
+    <p class="dv-lead">Законът изменя временните правила за събиране на приходи и харчене на държавни пари, прилагани докато все още няма приет редовен бюджет за 2026 г.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Текстът на акта не е публикуван в предоставения извадък – достъпно е само заглавието, поради което конкретните промени (числа, прагове, изключения) не могат да бъдат установени.</li><li>Законът касае три паралелни бюджетни документа: държавния бюджет, бюджета на държавното обществено осигуряване (ДОО) и бюджета на НЗОК – промените вероятно засягат и трите.</li><li>Самото съществуване на закона означава, че към 23 юни 2026 г. България все още работи без редовен бюджет – временният режим се удължава или коригира вече поне шест месеца след началото на годината.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: не може да се установи при липса на съдържание</li><li>Губят: не може да се установи при липса на съдържание</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Към края на юни 2026 г. България все още няма нито един от трите основни бюджетни закона за годината – прецедент, сигнализиращ за трайна политическа и фискална нестабилност.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><ul><li>Влиза в сила от обнародването.</li></ul></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Временни бюджетни режими при забавено приемане на бюджет съществуват в много страни от ЕС, но обикновено се прилагат за срок от 1 до 3 месеца. Удължаване отвъд средата на годината е изключително рядко и се счита за сериозен сигнал за институционална дисфункция. България е сред малкото страни членки, регистрирали подобно продължително забавяне в последните години.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244228" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-other">ДРУГО</span></div>
+      <span class="dv-meta">Бр.&nbsp;57 &middot; 2026-06-23</span>
+    </div>
+    <div class="dv-title"></div>
+    <p class="dv-lead">Народното събрание приема вътрешни процедурни правила за това как ще се предлагат, представят, изслушват и избират кандидати за един член на Комисията за противодействие на корупцията.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Решението урежда целия процес от А до Я: предлагане на кандидати, представяне на документи, публично оповестяване и изслушване – преди финалното гласуване в НС.</li><li>Документите на кандидатите трябва да бъдат публично оповестени – гражданите и медиите получават достъп до тях преди изслушването.</li><li>Изслушването е изрично предвидено като отделна стъпка, което означава, че кандидатите се явяват пред депутатите и отговарят на въпроси.</li><li>Правилата важат само за настоящия конкретен избор на един член – не са постоянна уредба.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Граждани и журналисти – получават публичен достъп до документите на кандидатите и прозрачност при избора.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Правилата се приемат ad hoc – само за един конкретен избор, което означава, че НС всеки път може да „нагласи&quot; процедурата по различен начин за различните антикорупционни назначения.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><p>Влиза в сила от обнародването.</p></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Няма достатъчно сравнителни данни.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244231" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;57 &middot; 2026-06-23</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за избиране на постоянна делегация на Народното събрание в Парламентарната асамблея на Съвета на Европа</div>
+    
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <p class="no-summ">Резюме не е налично.</p>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244258" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;57 &middot; 2026-06-23</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за избиране на постоянна делегация на Народното събрание в Парламентарната асамблея на Съюза за Средиземноморието</div>
+    
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <p class="no-summ">Резюме не е налично.</p>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244259" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;57 &middot; 2026-06-23</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за избиране на постоянна делегация на Народното събрание в Интерпарламентарната асамблея по православие</div>
+    
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <p class="no-summ">Резюме не е налично.</p>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244260" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;57 &middot; 2026-06-23</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за избиране на постоянна делегация на Народното събрание в Парламентарната асамблея на Организацията за сигурност и сътрудничество в Европа</div>
+    
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <p class="no-summ">Резюме не е налично.</p>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244261" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;57 &middot; 2026-06-23</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за избиране на постоянна делегация на Народното събрание в Парламентарната асамблея на Черноморското икономическо сътрудничество</div>
+    
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <p class="no-summ">Резюме не е налично.</p>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244262" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;57 &middot; 2026-06-23</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за избиране на постоянна делегация на Народното събрание в Парламентарното измерение на Централноевропейската инициатива</div>
+    
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <p class="no-summ">Резюме не е налично.</p>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244263" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;57 &middot; 2026-06-23</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за избиране на постоянна делегация на Народното събрание в Парламентарната асамблея на НАТО</div>
+    
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <p class="no-summ">Резюме не е налично.</p>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244264" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;57 &middot; 2026-06-23</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за избиране на постоянна делегация на Народното събрание в Парламентарната асамблея по франкофония</div>
+    
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <p class="no-summ">Резюме не е налично.</p>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244265" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;57 &middot; 2026-06-23</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за избиране на постоянна делегация на Народното събрание в Интерпарламентарния съюз</div>
+    
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <p class="no-summ">Резюме не е налично.</p>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244266" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;57 &middot; 2026-06-23</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за избиране на постоянна делегация на Народното събрание в Парламентарната асамблея на Процеса за сътрудничество в Югоизточна Европа</div>
+    
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <p class="no-summ">Резюме не е налично.</p>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244267" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;58 &middot; 2026-06-26</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за прекратяване пълномощията на народен представител</div>
+    
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <p class="no-summ">Резюме не е налично.</p>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244343" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;58 &middot; 2026-06-26</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за приемане на Процедурни правила за условията и реда за предлагане на кандидат за председател на Държавна агенция „Разузнаване“, представянето и публичното оповестяване на документите и изслушването на кандидата в Комисията за контрол над службите за сигурност, прилагането и използването на</div>
+    <p class="dv-lead">Решението установява стъпка по стъпка как Министерският съвет предлага кандидат за шеф на разузнаването, как публиката и медиите могат да участват, как комисията го изслушва и как Народното събрание го избира с явно гласуване.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Кандидатът се предлага единствено от Министерския съвет – граждани, партии или НПО нямат право на самостоятелно номиниране.</li><li>Задължителни документи: магистърска диплома, доказан 10-годишен стаж в системата за национална сигурност, медицинско за психично здраве и разрешение „Строго секретно&quot; (ако го няма – ДАНС прави проучване в едномесечен срок).</li><li>Кандидатът се проверява служебно дали е бил сътрудник на Държавна сигурност или военното разузнаване на НРБ – резултатът се публикува онлайн.</li><li>НПО с обществена полезност, професионални организации и медии могат да изпращат въпроси и становища до три дни преди изслушването; анонимни сигнали се игнорират; въпросите се връчват на кандидата писмено поне 24 часа предварително.</li><li>Изслушването е открито, излъчва се на живо в интернет и се стенографира публично; вносителят представя кандидата в до 3 мин., народните представители питат с до 2 мин., кандидатът отговаря с до 5 мин. на въпрос.</li><li>Изборът е с явно гласуване чрез компютризираната система; избран е кандидатът, получил повече от половината гласове на присъстващите депутати – при неуспех се открива изцяло нова процедура.</li><li>След избора шефът на разузнаването подава декларация за несъвместимост по антикорупционния закон; при промяна в обстоятелствата е длъжен да декларира и това.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Гражданското общество и медиите – получават формализирано право да задават публични въпроси към кандидата за най-чувствителния разузнавателен пост в страната.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Въпреки че изслушването е публично и на живо, кандидатът е само един – предложен от правителството – без алтернативна номинация, което прави цялата публична процедура на практика еднопосочна.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><ul><li>Влиза в сила от обнародването.</li><li>Документите по процедурата (включително декларациите по приложенията) се прилагат към предложения, внесени след приемането на тези правила.</li></ul></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Повечето държави от ЕС уреждат назначаването на ръководители на разузнавателни служби по изпълнителен, а не парламентарен път – публично изслушване пред законодателен орган е по-скоро изключение. България е сред малкото страни, въвели задължително парламентарно изслушване с граждански въпроси за шеф на разузнаването, което е по-близо до практиките за избор на омбудсман или конституционни съдии, отколкото до типичния европейски модел за управление на спецслужбите.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244364" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details></div>
+</div>
+<div class="subsection">
+  <div class="subsection-hd">
+    <span class="subsection-tag">02</span>
+    <span class="subsection-title">Министерски съвет</span>
+    <span class="subsection-count">6 постановления · 1 решение</span>
+  </div>
+  <div class="dv-grid">
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;57 &middot; 2026-06-23</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 70 ОТ 19 ЮНИ 2026 Г. за изменение и допълнение на Наредбата за системите за движение, докладване и управление на трафика и информационно обслужване на корабоплаването в морските пространства на Република България, приета с Постановление № 200 на Министерския съвет от 2005 г.</div>
+    
+    
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <p class="no-summ">Резюме не е налично.</p>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244246" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;57 &middot; 2026-06-23</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 71 ОТ 19 ЮНИ 2026 Г. за изменение и допълнение на Правилника за устройството и дейността на Служба „Военно разузнаване“, приет с Постановление № 316 на Министерския съвет от 2020 г.</div>
+    
+    
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <p class="no-summ">Резюме не е налично.</p>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244247" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;58 &middot; 2026-06-26</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 72 ОТ 24 ЮНИ 2026 Г. за определяне на нов размер на социалната пенсия за старост</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">От 1 юли 2026 г. социалната пенсия за старост се увеличава до 183,81 евро месечно.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Новият размер на социалната пенсия за старост е <strong>183,81 евро месечно</strong> – сумата е деноминирана в евро, което отразява въвеждането на единната валута в България.</li><li>Промяната влиза в сила от <strong>1 юли 2026 г.</strong> и засяга хората, които получават социална пенсия за старост – тоест лицата, навършили пенсионна възраст, но без достатъчен осигурителен стаж за трудова пенсия.</li><li>Изплащането на новия размер се осигурява от <strong>Националния осигурителен институт (НОИ)</strong>, чийто управител отговаря за изпълнението.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Пенсионери, получаващи социална пенсия за старост – получават по-висока месечна сума.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Пенсията е определена директно в евро, което е нетипично за предишни подобни постановления и сигнализира, че актът е приет след официалното въвеждане на еврото в България.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от <strong>1 юли 2026 г.</strong></li><li>Няма гратисен период – промяната е незабавна и автоматична за всички засегнати лица.</li></ul></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Социалните пенсии за старост (без изискване за осигурителен стаж) съществуват в повечето страни от ЕС като минимална гаранция за доход в напреднала възраст. Техният размер е изцяло национална компетентност и не се регулира с директиви. България традиционно определя тази пенсия на сравнително ниско ниво спрямо средноевропейските стандарти, но деноминирането в евро прави сумата директно сравнима с аналогичните обезщетения в еврозоната.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244365" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;58 &middot; 2026-06-26</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 73 ОТ 24 ЮНИ 2026 Г. за откриване на Институт за геопространствени изследвания и технологии в структурата на Софийския университет „Св. Климент Охридски“</div>
+    
+    
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <p class="no-summ">Резюме не е налично.</p>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244366" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;58 &middot; 2026-06-26</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 74 ОТ 24 ЮНИ 2026 Г. за изменение на Тарифа № 10 за таксите, които се събират в системата на Министерството на здравеопазването по Закона за държавните такси, приета с Постановление № 6 на Министерския съвет от 1975 г.</div>
+    
+    
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <p class="no-summ">Резюме не е налично.</p>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244367" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;58 &middot; 2026-06-26</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 75 ОТ 24 ЮНИ 2026 Г. за отменяне на Тарифата за пристанищните такси, събирани от Държавно предприятие „Пристанищна инфраструктура“, приета с Постановление № 97 на Министерския съвет от 2007 г.</div>
+    <div class="exec-organ">Министерски съвет</div>
+    <p class="dv-lead">Правителството премахва действащата от 2007 г. държавна тарифа, по която ДП „Пристанищна инфраструктура&quot; е събирало такси от корабите и ползвателите на пристанищата.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Тарифата за пристанищни такси, действала почти 20 години (от 2007 г., с множество изменения до 2016 г.), се отменя изцяло с един член.</li><li>Занапред ДП „Пристанищна инфраструктура&quot; вероятно ще определя таксите по различен ред – постановлението не указва какъв, което означава временна правна неяснота за корабособственици и спедитори.</li><li>Засегнати са всички оператори и ползватели на държавните пристанища (Варна, Бургас и др.) – търговски кораби, фериботни линии, риболовни и туристически съдове.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: ДП „Пристанищна инфраструктура&quot;, което получава по-голяма гъвкавост при определяне на таксите; потенциално и корабособственици, ако новият режим е по-прозрачен или по-нисък.</li><li>Губят: Ползватели на пристанищата, тъй като отпада ясната нормативна рамка, в която са знаели предварително размера на дължимите такси.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Постановлението премахва тарифата, без едновременно да въвежда нова – необичайна стъпка, оставяща регулирането на пристанищните такси без изрична нормативна база.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Влиза в сила от датата на обнародване – 26 юни 2026 г.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244368" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;58 &middot; 2026-06-26</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ № 472 ОТ 24 ЮНИ 2026 Г. за обявяване на 17 април за професионален празник на дипломираните експерт-счетоводители и на регистрираните одитори</div>
+    
+    
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <p class="no-summ">Резюме не е налично.</p>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244369" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details></div>
+</div>
+<div class="subsection">
+  <div class="subsection-hd">
+    <span class="subsection-tag">03</span>
+    <span class="subsection-title">Министерства и ведомства</span>
+    <span class="subsection-count">1 наредба · 1 споразумение · 1 решение</span>
+  </div>
+  <div class="dv-grid">
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;57 &middot; 2026-06-23</span>
+    </div>
+    <div class="dv-title"></div>
+    <div class="exec-organ">Министерство на образованието и науката</div>
+    <p class="dv-lead">Наредбата въвежда държавен образователен стандарт за придобиване на професионална квалификация „Парамедик&quot;, като определя какво трябва да знае и умее човек, за да работи законно в тази спешна медицинска роля.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><p>&gt; ⚠️ <strong>Важна бележка:</strong> Достъпният текст съдържа само заглавните данни на наредбата (брой на ДВ, дата, орган, наименование), но не и самото съдържание. Конкретните изисквания, прагове, срокове и санкции по-долу <strong>не могат да бъдат извлечени от предоставения откъс</strong>. За пълен факт-лист е необходим пълният текст на наредбата.</p><ul><li>Регулира придобиването на квалификация по нова за България самостоятелна професия „Парамедик&quot; – конкретните учебни програми, модули и хорариум не са видни от заглавието.</li><li>Определя изисквания към обучаващите институции и условията за провеждане на практическо обучение – детайлите изискват пълния текст.</li><li>Въвежда ред за полагане на изпити и издаване на документ за квалификация – форматът и органът не са уточнени в заглавната информация.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Лица, работещи в спешната медицинска помощ без досегашна формална квалификация – получават легална рамка за признаване на уменията си.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>„Парамедик&quot; е професия, която в България дълго е съществувала фактически (в системата на ЦСМП), но без самостоятелен образователен стандарт – наредбата формализира ролята със закъснение от десетилетия спрямо западноевропейската практика.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Данните от заглавието не посочват изрична дата на влизане в сила или преходни периоди.</li><li>По общото правило наредбата влиза в сила от датата на обнародване – 23 юни 2026 г., освен ако в текста й е предвидено друго.</li></ul></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Професията „парамедик&quot; е регулирана в повечето държави от ЕС, но стандартите варират значително – от кратък сертификационен курс до висше образование (напр. Германия, Нидерландия). България следва общата европейска тенденция към формализиране на спешната доболнична помощ като отделна регулирана професия, но конкретното ниво на квалификация (средно или висше) не може да се установи от заглавието на акта.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244163" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<div class="dv-card dv-card-compact">
+  <div class="dv-sum-static">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-spor">СПОРАЗУМЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;58 &middot; 2026-06-26</span>
+    </div>
+    <div class="dv-title"></div>
+    <div class="exec-organ">Министерство на външните работи</div>
+    <p class="dv-lead">Актуализират се условията по двустранното споразумение между България и Виетнам, което позволява безвизово пътуване за притежателите на дипломатически и служебни/официални паспорти.</p>
+    <div class="compact-bullets"><ul><li>Изменя се действащото споразумение от 7 юли 2010 г. за безвизов режим между двете страни – конкретните промени не са публикувани в извлечения текст, но засягат условията за влизане и престой.</li><li>Засегнати са единствено притежателите на дипломатически и служебни/официални паспорти – граждани с обикновени паспорти не са обхванати от режима.</li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244190" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</div>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;58 &middot; 2026-06-26</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ № 6-НС от 24 юни 2026 г. относно обявяване на Христо Георгиев Гаджев за народен представител от Двадесет и четвърти изборен район – София, в Петдесет и второто Народно събрание</div>
+    
+    
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <p class="no-summ">Резюме не е налично.</p>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244358" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details></div>
+</div>
+</div>
+
+<div class="nl-footer">
+  <span class="nl-footer-logo">Doodles.</span>
+  <div class="nl-footer-links">
+    <a href="/">Начало</a>
+    <a href="/newsletters/">Бюлетин</a>
+    <a href="/parliament/">Законодателство</a>
+    <a href="/about/">За проекта</a>
+  </div>
+</div>
+</div>
+</body>
+</html>

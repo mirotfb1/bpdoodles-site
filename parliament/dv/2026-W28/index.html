@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="utf-8">
+<title>Парламентарни Doodles · ДВ Дайджест · Седмица 28</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --navy:#1B2E5E; --gold:#B5821A; --ink:#1C1C1C; --ink2:#444;
+  --muted:#888; --muted-lt:#AAA; --border:#E8E8E8; --surf:#F8F8F8; --paper:#FFF;
+  --font-d:'Caveat',cursive; --font-h:'Nunito','Arial Black',sans-serif;
+  --font-b:'Nunito',Arial,sans-serif;
+}
+body{font-family:var(--font-b);background:#E8E8E8;color:var(--ink);line-height:1.6;}
+.wrapper{max-width:700px;margin:32px auto;background:#fff;border:1px solid #C0C0C0;border-radius:0;overflow:hidden;}
+
+/* newspaper header */
+.nwp-hdr{padding:18px 24px 14px;border-bottom:1px solid var(--ink);}
+.nwp-topline{display:flex;justify-content:flex-end;align-items:center;margin-bottom:10px;}
+.nwp-nav{display:flex;gap:14px;flex-wrap:wrap;}
+.nwp-nav a{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#777;text-decoration:none;}
+.nwp-nav a:hover{color:var(--ink);}
+.nwp-nav a.nwp-active{color:var(--ink);font-weight:900;border-bottom:2px solid #CC2B2B;padding-bottom:1px;}
+.nwp-title-row{text-align:center;margin-bottom:10px;}
+.nwp-title{font-family:var(--font-h);font-size:40px;font-weight:900;color:var(--ink);letter-spacing:-1.5px;line-height:1;display:inline;}
+.nwp-doodles{font-family:var(--font-d);font-size:48px;font-weight:700;color:#CC2B2B;line-height:1;vertical-align:baseline;margin-left:6px;}
+.nwp-subtitle{text-align:center;font-size:11px;color:#777;letter-spacing:.14em;text-transform:uppercase;margin-top:6px;}
+.nwp-rule-thick{height:3px;background:var(--ink);margin:10px 0 0;}
+.nwp-rule-thin{height:1px;background:var(--ink);margin:3px 0 0;}
+
+/* section header (below newspaper header, parliament-specific) */
+.parl-hdr{padding:14px 24px 12px;border-bottom:1px solid var(--border);}
+.parl-hdr-title{font-size:16px;font-weight:900;color:var(--ink);letter-spacing:-.2px;}
+.parl-hdr-date{font-size:12px;color:var(--muted);margin-top:3px;}
+.masthead-pills{margin-top:8px;display:flex;gap:6px;flex-wrap:wrap;}
+.masthead-pill{font-size:10px;font-weight:700;letter-spacing:.05em;background:var(--surf);color:var(--muted);padding:3px 8px;border-radius:3px;border:1px solid var(--border);}
+
+/* content sections */
+.section{padding:20px 28px;border-bottom:1px solid var(--border);}
+.section:last-of-type{border-bottom:none;}
+
+/* subsection (within DV edition) */
+.subsection{margin-bottom:24px;}
+.subsection:last-child{margin-bottom:0;}
+.subsection-hd{display:flex;align-items:baseline;gap:10px;margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid var(--border);}
+.subsection-tag{font-size:10px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);}
+.subsection-title{font-family:var(--font-h);font-size:16px;font-weight:900;color:var(--navy);}
+.subsection-count{font-size:11px;color:var(--muted);margin-left:auto;}
+
+/* section label row */
+.section-label-row{padding:10px 28px 8px;background:var(--surf);border-bottom:1px solid var(--border);}
+.section-label{font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);}
+
+/* page header */
+.page-header{padding:20px 28px 16px;border-bottom:1px solid var(--border);}
+.page-title{font-family:var(--font-h);font-size:20px;font-weight:900;color:var(--ink);letter-spacing:-.3px;margin-bottom:6px;}
+.page-subtitle{font-size:13px;color:var(--muted);}
+
+/* issue list rows */
+a.issue-row{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 28px;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:background .1s;}
+a.issue-row:hover{background:var(--surf);}
+a.issue-row:last-of-type{border-bottom:none;}
+.issue-row-left{flex:1;}
+.issue-row-meta{font-family:'Courier New',monospace;font-size:10px;color:var(--muted-lt);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;}
+.issue-row-title{font-size:15px;font-weight:900;color:var(--ink);letter-spacing:-.2px;line-height:1.3;}
+.issue-row-desc{font-size:12px;color:var(--muted);margin-top:3px;}
+.issue-row-arrow{font-size:18px;color:var(--gold);font-weight:900;flex-shrink:0;}
+
+/* footer */
+.nl-footer{padding:14px 28px;background:var(--surf);border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
+.nl-footer-logo{font-family:var(--font-d);font-size:18px;font-weight:700;color:#CCC;}
+.nl-footer-links{font-size:11px;display:flex;gap:16px;}
+.nl-footer-links a{color:var(--muted-lt);text-decoration:none;}
+.nl-footer-links a:hover{color:var(--muted);}
+
+/* DV cards */
+.dv-grid{display:flex;flex-direction:column;gap:8px;}
+details.dv-card{background:var(--paper);border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:border-color .15s;}
+details.dv-card:hover{border-color:var(--gold);}
+details.dv-card[open]{border-color:var(--gold);}
+.dv-card-compact{background:var(--paper);border:1px solid var(--border);border-radius:8px;overflow:hidden;opacity:.9;}
+.dv-sum{padding:14px 16px;cursor:pointer;list-style:none;user-select:none;}
+.dv-sum::-webkit-details-marker{display:none;}
+.dv-sum-static{padding:14px 16px;}
+.dv-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+.dv-meta{font-size:11px;color:var(--muted);font-weight:700;}
+.dv-title{font-family:var(--font-h);font-size:13px;font-weight:900;color:var(--ink);line-height:1.4;letter-spacing:-.1px;margin-bottom:4px;}
+.exec-organ{font-size:11px;color:var(--muted);margin-bottom:6px;font-style:italic;}
+.dv-lead{font-size:13px;color:var(--ink2);line-height:1.55;margin-bottom:8px;}
+.compact-bullets ul{list-style:none;padding:0;margin-top:6px;}
+.compact-bullets li{padding:3px 0 3px 14px;position:relative;color:var(--ink2);font-size:12px;line-height:1.5;}
+.compact-bullets li::before{content:"·";position:absolute;left:2px;color:var(--gold);font-weight:700;font-size:15px;line-height:1.1;}
+.expand-hint{font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.06em;margin-top:4px;}
+details.dv-card[open] .expand-hint{display:none;}
+.dv-body{padding:0 16px 16px;border-top:1px solid var(--border);}
+
+/* badges */
+.badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;}
+.dv-badges{display:flex;gap:6px;align-items:center;flex-wrap:wrap;}
+.b-zakon   {background:#dbeafe;color:#1a56db;}
+.b-reshenie{background:#cffafe;color:#0a6e8a;}
+.b-ukaz    {background:#ede9fe;color:#7c3aed;}
+.b-decl    {background:#fef3c7;color:#92400e;}
+.b-post    {background:#d1fae5;color:#065f46;}
+.b-naredba {background:#fce7f3;color:#9d174d;}
+.b-pravilnik{background:#f3e8ff;color:#6b21a8;}
+.b-inst    {background:#fef9c3;color:#713f12;}
+.b-razp    {background:#e0f2fe;color:#0369a1;}
+.b-spor    {background:#fff7ed;color:#c2410c;}
+.b-other   {background:#f3f4f6;color:#6b7280;}
+.b-cat     {background:#f3f4f6;color:#555;}
+
+/* factsheet sections */
+.fs-sec{margin:12px 0;font-size:13px;}
+.fs-sec h5,.parties-block h5,.notable-callout h5,.sess-col h5{font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:8px;padding-bottom:5px;border-bottom:1px solid var(--border);}
+.fs-sec ul,.parties-block ul{list-style:none;padding:0;}
+.fs-sec li,.parties-block li{padding:4px 0 4px 16px;position:relative;color:var(--ink2);border-bottom:1px solid #f3f4f6;font-size:13px;line-height:1.5;}
+.fs-sec li:last-child,.parties-block li:last-child{border-bottom:none;}
+.fs-sec li::before{content:"·";position:absolute;left:3px;color:var(--gold);font-weight:700;font-size:16px;line-height:1.1;}
+.fs-sec p,.parties-block p{color:var(--ink2);font-size:13px;margin-bottom:4px;}
+.fs-winners ul{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.fs-winners li{padding:8px 10px 8px 24px;border-radius:6px;border-bottom:none !important;}
+.fs-winners li:first-child{background:#f0fdf4;}
+.fs-winners li:first-child::before{content:"✓";color:#16a34a;font-size:13px;top:8px;}
+.fs-winners li:nth-child(2){background:#fef2f2;}
+.fs-winners li:nth-child(2)::before{content:"✗";color:#dc2626;font-size:13px;top:8px;}
+.fs-notable{background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:12px 14px;}
+.fs-notable h5{border-bottom-color:#fde68a;color:#92400e;}
+.fs-notable li,.fs-notable p{color:#78350f;}
+.fs-notable li::before{color:#d97706;}
+.fs-eu{background:#f0f9ff;border-radius:8px;padding:12px 14px;}
+.fs-eu h5{color:#0369a1;border-bottom-color:#bae6fd;}
+.fs-eu p{color:#0c4a6e;font-size:13px;}
+.ext-link{display:inline-block;margin-top:12px;font-size:12px;font-weight:700;color:var(--navy);text-decoration:none;}
+.ext-link:hover{text-decoration:underline;}
+.no-summ{color:var(--muted);font-size:13px;font-style:italic;padding:12px 0;}
+
+/* session blocks */
+details.sess-block{background:var(--paper);border:1px solid var(--border);border-left:4px solid var(--navy);border-radius:0 8px 8px 0;margin-bottom:10px;overflow:hidden;}
+details.sess-block:hover{box-shadow:0 2px 8px rgba(0,0,0,.06);}
+details.sess-block[open]{border-left-color:var(--gold);}
+.sess-sum{padding:14px 18px;cursor:pointer;list-style:none;user-select:none;}
+.sess-sum::-webkit-details-marker{display:none;}
+.sess-hd{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap;}
+.sess-date-chip{background:var(--navy);color:#fff;font-size:10px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:4px;white-space:nowrap;}
+details.sess-block[open] .sess-date-chip{background:var(--gold);}
+.sess-label{font-family:var(--font-h);font-size:14px;font-weight:900;color:var(--ink);}
+.sess-lead{font-size:13px;color:var(--ink2);line-height:1.55;margin-bottom:6px;}
+.sess-body{padding:0 18px 16px;border-top:1px solid var(--border);}
+.sess-lead-full{font-size:13px;color:var(--ink2);line-height:1.6;margin:12px 0;background:#f8fafc;border-left:3px solid var(--gold);padding:8px 12px;border-radius:0 6px 6px 0;}
+.sess-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0;}
+.sess-col{font-size:13px;}
+.sess-col ul{list-style:none;padding:0;}
+.sess-col li{padding:4px 0 4px 14px;position:relative;color:var(--ink2);border-bottom:1px solid #f3f4f6;font-size:13px;line-height:1.5;}
+.sess-col li:last-child{border-bottom:none;}
+.sess-col li::before{content:"·";position:absolute;left:2px;color:var(--navy);font-weight:700;font-size:15px;line-height:1.1;}
+.notable-callout{display:flex;gap:10px;align-items:flex-start;background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:10px 12px;margin:12px 0;}
+.notable-icon{font-size:16px;color:#d97706;flex-shrink:0;line-height:1.4;}
+.notable-callout h5{border-bottom-color:#fde68a;color:#92400e;}
+.notable-callout p,.notable-callout li{color:#78350f;font-size:13px;}
+.notable-callout ul{list-style:none;padding:0;}
+.notable-callout li{padding:3px 0 3px 14px;position:relative;}
+.notable-callout li::before{content:"·";position:absolute;left:2px;color:#d97706;font-weight:700;font-size:15px;line-height:1.1;}
+.parties-block{margin:12px 0;font-size:13px;}
+.sess-ft{margin-top:12px;padding-top:10px;border-top:1px solid var(--border);}
+
+/* landing track cards */
+.track-card{display:block;padding:20px 28px;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:background .1s;}
+.track-card:hover{background:var(--surf);}
+.track-card:last-of-type{border-bottom:none;}
+.track-label{font-size:10px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+.track-title{font-family:var(--font-h);font-size:18px;font-weight:900;color:var(--navy);letter-spacing:-.3px;line-height:1.3;margin-bottom:6px;}
+.track-desc{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px;}
+.track-latest{font-size:12px;color:var(--ink2);}
+.track-arrow{font-size:22px;color:var(--gold);font-weight:900;float:right;margin-top:-28px;}
+
+/* archive / intro */
+.arch-table{width:100%;border-collapse:collapse;}
+.arch-table th{padding:8px 0;text-align:left;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);border-bottom:1px solid var(--border);}
+.arch-table td{padding:12px 8px 12px 0;border-bottom:1px solid var(--border);font-size:13px;color:var(--ink2);}
+.arch-table tr:last-child td{border-bottom:none;}
+.arch-table a{color:var(--navy);font-weight:700;text-decoration:none;}
+.arch-table a:hover{text-decoration:underline;}
+.intro-block{padding:20px 28px;border-bottom:1px solid var(--border);font-size:14px;line-height:1.7;color:var(--ink);}
+.all-issues-wrap{padding:16px 28px;border-bottom:1px solid var(--border);}
+.all-issues-btn{width:100%;padding:13px;background:none;border:1.5px solid var(--navy);border-radius:3px;font-family:var(--font-h);font-size:11px;font-weight:900;color:var(--navy);cursor:pointer;text-align:center;letter-spacing:.14em;text-transform:uppercase;transition:background .15s,color .15s;}
+.all-issues-btn:hover{background:var(--navy);color:#fff;}
+.waitlist-section,.contact-section{padding:20px 28px;border-bottom:1px solid var(--border);}
+.waitlist-heading{font-family:var(--font-h);font-size:17px;font-weight:900;color:var(--ink);letter-spacing:-.2px;margin-bottom:8px;}
+.waitlist-body{font-size:14px;color:var(--ink2);line-height:1.6;margin-bottom:16px;}
+.waitlist-form{display:flex;gap:8px;margin-bottom:10px;}
+.waitlist-input{flex:1;padding:10px 12px;border:1px solid var(--border);border-radius:3px;font-family:var(--font-b);font-size:14px;color:var(--ink);min-width:0;}
+.waitlist-input:focus{outline:none;border-color:var(--navy);}
+.waitlist-btn{padding:10px 18px;background:var(--navy);color:#fff;border:none;border-radius:3px;font-family:var(--font-h);font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;white-space:nowrap;}
+.waitlist-btn:hover{background:#122348;}
+.waitlist-fine{font-size:12px;color:var(--muted-lt);line-height:1.5;}
+.waitlist-ok{display:none;font-size:14px;font-weight:700;color:#16a34a;margin-top:10px;}
+.contact-section p{font-size:14px;color:var(--ink2);line-height:1.6;}
+.contact-section a{color:var(--navy);font-weight:700;text-decoration:none;}
+.contact-section a:hover{text-decoration:underline;}
+
+@media(max-width:760px){
+  .wrapper{margin:0;border-left:none;border-right:none;}
+  .nwp-hdr,.parl-hdr,.section,.nl-footer,.page-header,a.issue-row,.track-card,
+  .section-label-row,.intro-block,.waitlist-section,.contact-section,.all-issues-wrap{padding-left:16px;padding-right:16px;}
+  .masthead-pills{display:none;}
+  .nwp-nav{gap:8px 12px;}
+  .nwp-title{font-size:28px;letter-spacing:-.8px;}
+  .nwp-doodles{font-size:34px;}
+  .sess-cols{grid-template-columns:1fr;}
+  .fs-winners ul{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+<div class="nwp-hdr">
+  <div class="nwp-topline">
+    <nav class="nwp-nav">
+      <a href="/">Начало</a>
+      <a href="/newsletters/">Бюлетин</a>
+      <a href="/cockpit/">Икономика</a>
+      <a href="/parliament/" class="nwp-active">Законодателство</a>
+      <a href="/about/">За проекта</a>
+    </nav>
+  </div>
+  <div class="nwp-title-row">
+    <span class="nwp-title">Basepoint</span><span class="nwp-doodles">Doodles</span>
+  </div>
+  <p class="nwp-subtitle">Законодателство &middot; Парламентарен дайджест</p>
+  <div class="nwp-rule-thick"></div>
+  <div class="nwp-rule-thin"></div>
+</div>
+
+<div class="parl-hdr">
+  <div class="parl-hdr-title">ДВ Дайджест · Седмица 28 · 2026</div>
+  <div class="parl-hdr-date">6–12 юли 2026</div>
+  <div class="masthead-pills"><span class="masthead-pill">8 акта от НС</span><span class="masthead-pill">3 акта от МС</span><span class="masthead-pill">15 наредби/регулации</span></div>
+</div>
+<div class="section">
+
+<div class="subsection">
+  <div class="subsection-hd">
+    <span class="subsection-tag">01</span>
+    <span class="subsection-title">Народно събрание</span>
+    <span class="subsection-count">6 решения · 1 закон · 1 акт</span>
+  </div>
+  <div class="dv-grid">
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-zakon">ЗАКОН</span></div>
+      <span class="dv-meta">Бр.&nbsp;62 &middot; 2026-07-07</span>
+    </div>
+    <div class="dv-title">ЗАКОН за изменение и допълнение на Закона за държавния дълг</div>
+    <p class="dv-lead">Законът въвежда клаузи за колективно преструктуриране на държавния дълг (изискване на еврозоната), създава официална рамка за „първични дилъри&quot; на ДЦК и за първи път дава на физическите лица право да купуват държавни ценни книжа директно и без такси.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Клаузи за колективно действие (CAC):</strong> Всички държавни ценни книжа с падеж над 1 година задължително включват стандартизирани клаузи на ЕС, позволяващи промяна на условията по дълга с решение на Министерския съвет – изискване за влизане в Европейския механизъм за стабилност (ЕМС).</li><li><strong>Защитен механизъм при преструктуриране:</strong> При гласуване за промяна на дълговите условия книжата, държани от държавни структури, публични предприятия и фирми под доминиращо влияние на държавата, не се броят в кворума – за да не може държавата да „гласува сама за себе си&quot;.</li><li><strong>Физическите лица получават нов достъп до ДЦК:</strong> Министърът на финансите може да емитира ДЦК специално за граждани; те не плащат никакви такси и комисиони при първично придобиване – те са за сметка на бюджета.</li><li><strong>Информационна система за граждани:</strong> Министерството на финансите създава специална платформа за продажба на ДЦК на физически лица; системата трябва да е готова до 9 месеца след приемането на съответната наредба.</li><li><strong>Първични дилъри – нова законова рамка:</strong> Банки и инвестиционни посредници могат да получат статут на „първичен дилър&quot; с едногодишен договор с МФ; задължени са да поддържат твърди котировки и да осигуряват ликвидност на вторичния пазар; министърът може да прекрати договора при нарушения.</li><li><strong>Дистрибутори за граждани:</strong> Отделна категория – банки и посредници, разпространяващи ДЦК на физически лица; задължени са да осигурят равнопоставен недискриминационен достъп и да поддържат котировки поне на един регулиран пазар.</li><li><strong>Санкциите се превалутират в евро:</strong> Всички глоби по закона се преизчисляват от левове в евро – при приблизително същото реално ниво (напр. максимумът по чл. 40д, ал. 3 за юридически лица: от 400 000 лв. на 200 000 евро).</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li><strong>Печелят:</strong> Граждани (безплатен достъп до ДЦК); банки и инвестиционни посредници с ресурс да станат дилъри/дистрибутори (нов бизнес); България като цяло (изпълнено условие за членство в ЕМС).</li><li><strong>Губят:</strong> Не се открива явен губещ, но банките, неотговарящи на изискванията за дилъри, губят достъп до привилегирования първичен пазар.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Държавните структури и публичните предприятия изрично са изключени от гласуването при евентуално преструктуриране на дълга – рядко срещана антиманипулативна клауза, която предотвратява сценарий, при който правителството контролира резултата от собственото си преструктуриране.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><ul><li>Законът влиза в сила от деня на обнародването (7 юли 2026 г.), с едно изключение.</li><li>Изискването дистрибуторите/дилърите да участват в алтернативни системи на централни депозитари влиза в сила 18 месеца след обнародването.</li><li>Новата система за избор на първични дилъри по новите правила се прилага за първи път едва за 2028 г.; за 2026 г. и 2027 г. действат досегашните правила.</li></ul></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Клаузите за колективно действие (CAC) са задължителни за всички страни от еврозоната от 2013 г. насам и са стандарт в повечето развити държави членки. България ги въвежда с известно закъснение – като условие за присъединяване към ЕМС. Специфичното за българския модел е изричното законово изключване на държавно контролирани притежатели от гласуването при преструктуриране, което не е универсална практика в ЕС.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244524" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;62 &middot; 2026-07-07</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за възлагане на Сметната палата извършването на одит на социалните плащания от бюджета на Министерството на труда и социалната политика и бюджета на държавното обществено осигуряване в Националния осигурителен институт за периода от 1 януари 2020 г. до 30 юни 2026 г.</div>
+    
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <p class="no-summ">Резюме не е налично.</p>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244585" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;62 &middot; 2026-07-07</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за възлагане на Сметната палата извършването на одит в Министерството на финансите на публичните финанси за периода от 1 януари 2020 г. до 31 май 2026 г.</div>
+    
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <p class="no-summ">Резюме не е налично.</p>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244586" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;62 &middot; 2026-07-07</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за задължаване на председателя на Държавна агенция „Национална сигурност“ да предостави документи и информация, включително представляваща и класифицирана информация, във връзка с данни и проверки, отнасящи се до дейността на доц. д-р Петко Стефановски, управител на Националната здравноосигу</div>
+    
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <p class="no-summ">Резюме не е налично.</p>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244587" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;62 &middot; 2026-07-07</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за възлагане на Сметната палата да извърши одити за съответствие при финансовото управление на Агенция „Пътна инфраструктура“</div>
+    
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <p class="no-summ">Резюме не е налично.</p>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244593" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;63 &middot; 2026-07-10</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за избор на председател на Държавна агенция „Разузнаване“</div>
+    <p class="dv-lead">Народното събрание официално назначава Антоан Любомиров Гечев за ръководител на разузнавателната служба на България.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li>Антоан Любомиров Гечев е избран за председател на Държавна агенция „Разузнаване&quot; с решение на 52-рото Народно събрание.</li><li>Правното основание е Конституцията (чл. 84, т. 8) и Законът за ДАР (чл. 14, ал. 1 и 2) – председателят на агенцията се избира от парламента, не се назначава от изпълнителната власт.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Антоан Гечев, който поема ръководството на агенцията; политическото мнозинство, издигнало кандидатурата му.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Решението не съдържа никаква информация за мандата, биографията или предишната позиция на Гечев – нетипично за акт с толкова висока степен на чувствителност.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><p>Влиза в сила от обнародването.</p></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Изборът на ръководител на разузнавателна служба от парламента е сравнително рядка практика в ЕС – в повечето държави (Германия, Франция, Полша) назначението е правителствена прерогатива. Парламентарният контрол върху разузнаването в България е по-директен от типичния европейски модел, при който парламентът упражнява надзор, но не гласува пряко ръководството.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244648" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;63 &middot; 2026-07-10</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ за приемане на Процедурни правила за условията и реда за предлагане на кандидат за председател на Държавна агенция „Национална сигурност“, изслушването на кандидата в Комисията по вътрешна сигурност и обществен ред, както и процедурата за избирането му от Народното събрание</div>
+    <p class="dv-lead">Решението установява стъпка по стъпка как Министерският съвет предлага кандидат за шеф на ДАНС, как той се изслушва публично и как Народното събрание го избира с обикновено мнозинство.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Кой предлага:</strong> Единствено Министерският съвет може да издигне кандидат – внася писмено предложение с мотиви до председателя на НС.</li><li><strong>Изисквания към кандидата:</strong> Магистърска степен; 12 години юридически стаж или стаж в службите за сигурност, от които 5 години на ръководна длъжност; само българско гражданство; без членство в партии; без търговска дейност.</li><li><strong>Достъп до класифицирана информация:</strong> Кандидатът трябва да притежава разрешение „Строго секретно&quot;. Ако го няма, ДАНС извършва специално проучване за надеждност в 14-дневен срок.</li><li><strong>Публичност:</strong> Документите (без въпросника за проучване за надеждност) се публикуват на сайта на НС. НПО и медии могат да изпращат становища и въпроси до 3 дни преди изслушването; въпросите се връчват на кандидата писмено най-късно 24 часа предварително. Анонимни сигнали не се разглеждат.</li><li><strong>Изслушване:</strong> Провежда се на открито заседание на Комисията по вътрешна сигурност, излъчвано на живо в интернет. Вносителят представя кандидата в до 3 минути; кандидатът отговаря на въпроси от НПО/медии – до 3 минути, на въпроси от народни представители – до 5 минути на отговор.</li><li><strong>Праг за избор:</strong> Кандидатът е избран, ако получи повече от половината гласове на присъстващите народни представители. При неуспех НС открива изцяло нова процедура.</li><li><strong>След избора:</strong> В едномесечен срок новият председател трябва да отстрани всяка несъвместимост (търговска дейност, партийно членство и др.) и подава декларация за несъвместимост. При промяна в обстоятелствата подава нова декларация.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li>Печелят: Гражданското общество и медиите – получават формализирано право да задават въпроси и да подават становища в рамките на процедурата.</li><li>Губят: Не се открива явен губещ.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Проверката за принадлежност към Държавна сигурност (т.нар. „досиета&quot;) е задължителна и резултатът се публикува публично – рядко изискване, което директно ситуира шефа на ДАНС под люпата на Закона за досиетата.</p></div><div class="fs-sec fs-trans"><h5>Преходни разпоредби и влизане в сила</h5><ul><li>Влиза в сила от обнародването.</li></ul></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Парламентарното изслушване и одобрение на ръководителите на служби за сигурност е разпространена практика в ЕС (напр. Германия, Нидерландия), но конкретните механизми варират значително. България следва общата тенденция към по-голяма парламентарна прозрачност при назначенията в сектора за сигурност. Необичайното за европейски стандарти е задължителната публична проверка по закона за досиетата като условие за самата процедура.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244665" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-other">ДРУГО</span></div>
+      <span class="dv-meta">Бр.&nbsp;63 &middot; 2026-07-10</span>
+    </div>
+    <div class="dv-title"></div>
+    
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <p class="no-summ">Резюме не е налично.</p>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244671" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details></div>
+</div>
+<div class="subsection">
+  <div class="subsection-hd">
+    <span class="subsection-tag">02</span>
+    <span class="subsection-title">Министерски съвет</span>
+    <span class="subsection-count">3 постановления</span>
+  </div>
+  <div class="dv-grid">
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;62 &middot; 2026-07-07</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 76 ОТ 3 ЮЛИ 2026 Г. за приемане на актуализиран Списък на защитените от държавата професии за учебните години 2026/2027 и 2027/2028 и на актуализиран Списък с професии, по които е налице очакван недостиг от специалисти на пазара на труда за учебните години 2026/2027 и 2027/2028</div>
+    
+    
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <p class="no-summ">Резюме не е налично.</p>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244555" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;62 &middot; 2026-07-07</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 77 ОТ 3 ЮЛИ 2026 Г. за изменение и допълнение на нормативни актове на Министерския съвет</div>
+    
+    
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <p class="no-summ">Резюме не е налично.</p>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244556" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-post">ПОСТАНОВЛЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;62 &middot; 2026-07-07</span>
+    </div>
+    <div class="dv-title">ПОСТАНОВЛЕНИЕ № 78 ОТ 3 ЮЛИ 2026 Г. за изменение и допълнение на нормативни актове на Министерския съвет</div>
+    
+    
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <p class="no-summ">Резюме не е налично.</p>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244557" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details></div>
+</div>
+<div class="subsection">
+  <div class="subsection-hd">
+    <span class="subsection-tag">03</span>
+    <span class="subsection-title">Министерства и ведомства</span>
+    <span class="subsection-count">7 наредби · 4 решения · 3 правилници</span>
+  </div>
+  <div class="dv-grid">
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;62 &middot; 2026-07-07</span>
+    </div>
+    <div class="dv-title">НАРЕДБА № Н-8 от 15 юни 2026 г. за придобиване на квалификация по професията „Сержант (Старшина за ВМС) – медицинско осигуряване на въоръжените сили“</div>
+    
+    
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <p class="no-summ">Резюме не е налично.</p>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244334" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;62 &middot; 2026-07-07</span>
+    </div>
+    <div class="dv-title">НАРЕДБА № Н-9 от 15 юни 2026 г. за придобиване на квалификация по професията „Военнослужещ – санитарен инструктор“</div>
+    
+    
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <p class="no-summ">Резюме не е налично.</p>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244335" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;62 &middot; 2026-07-07</span>
+    </div>
+    <div class="dv-title">Наредба за изменение и допълнение на Наредба № 9 от 2023 г. за условията и реда за прилагане на интервенциите „Биологично растениевъдство“ и „Биологично пчеларство“, включени в Стратегическия план за развитието на земеделието и селските райони за периода 2023 – 2027 г.</div>
+    <div class="exec-organ">Министерство на земеделието и храните</div>
+    <p class="dv-lead">Наредбата затяга контрола върху биологичните земеделци, произвеждащи растителен репродуктивен материал, като обвързва изплащането на субсидии с данни от официален регистър и въвежда нови основания за отказ и намаляване на плащанията.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Нов информационен поток с конкретни срокове:</strong> Контролното звено за биологично производство е длъжно да подаде до Държавен фонд „Земеделие&quot; (ДФЗ) данни за сертифицираните площи и отглежданите култури до <strong>1 декември</strong> на годината на кандидатстване; за обстоятелства, вписани след тази дата – до <strong>31 януари</strong> на следващата година.</li><li><strong>Нови основания за отказ на подпомагане:</strong> ДФЗ може да не одобри заявени парцели за растителен репродуктивен материал, ако те не фигурират в регистъра или ако заявените култури не съвпадат с регистрираните.</li><li><strong>Разширен период за сертификат при млади трайни насаждения:</strong> При разширяване на многогодишен ангажимент с насаждения в „младенчески период&quot; (от засаждане до плододаване) фермерите трябва да притежават биологичен сертификат за тези площи <strong>поне веднъж</strong> до края на ангажимента – изискването важи от <strong>четвъртата</strong> (вместо досегашната трета) година.</li><li><strong>Нови основания за санкции:</strong> За площи при преход към биологично производство – ако заявените култури се разминават с тези в регистъра или изобщо ги няма там, плащането се намалява. Същото важи симетрично и за вече сертифицирани биологични площи с репродуктивен материал.</li><li><strong>Ежегодна проверка като задължение:</strong> ДФЗ е задължен да проверява всяка година дали земеделецът спазва изискванията за регистрация на отглежданите култури.</li><li><strong>Изключение за млади насаждения:</strong> Правилото за намаляване на плащанията при нарушения не се прилага за площи с трайни насаждения в младенчески период, добавени към съществуващ ангажимент – облекчение, което предпазва от автоматични санкции в първите години.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li><strong>Печелят:</strong> Коректно регистрирани биологични земеделци с точна документация – те са защитени от конкуренция на некоректно заявени площи; фермерите с млади трайни насаждения получават по-гъвкав режим за сертифициране и изключение от санкции.</li><li><strong>Губят:</strong> Производители на биологичен репродуктивен материал, чиито данни в регистъра не съвпадат точно със заявените – рискуват пълен отказ на субсидии или финансови санкции без допълнителна гратисна процедура.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Срокът за задължителен биологичен сертификат при млади трайни насаждения е изместен от третата на четвъртата година – промяна, която на практика дава допълнителна година буфер, но е формулирана като завишено изискване.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>В сила от деня на обнародването – 7 юли 2026 г.</li><li>Заявления, подадени до края на 2025 г., се разглеждат по старите правила без изключения.</li></ul></div><div class="fs-sec fs-eu"><h5>В ЕС</h5><p>Интервенциите за биологично земеделие са рамкирани от Регламент (ЕС) 2018/848 за биологичното производство, който изисква сертификация и проследимост на репродуктивния материал. Повечето страни членки имат национални системи за кръстосана проверка между регистри и плащания по Стратегическите планове по ОСП. Специфичното тук е изричното задължение контролният орган да подава данни към фонда по предварително фиксирани дати – детайл, който в много държави остава неформализиран.</p></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244568" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;63 &middot; 2026-07-10</span>
+    </div>
+    <div class="dv-title">Наредба за изменение и допълнение на Наредба № 7 от 2013 г. за условията и реда за сортоизпитване, признаване, вписване и отписване на сортовете растения във и от Официалната сортова листа на Република България</div>
+    
+    
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <p class="no-summ">Резюме не е налично.</p>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244439" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;63 &middot; 2026-07-10</span>
+    </div>
+    <div class="dv-title">НАРЕДБА № Н-10 от 24 юни 2026 г. за условията и реда за валидиране на професионални знания, умения и компетентности в професионалните сержантски (старшински) колежи</div>
+    
+    
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <p class="no-summ">Резюме не е налично.</p>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244452" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;63 &middot; 2026-07-10</span>
+    </div>
+    <div class="dv-title">НАРЕДБА № 4 от 30 юни 2026 г. за показателите за съпоставяне на доходността на подфондовете в универсалните пенсионни фондове и на професионалните пенсионни фондове</div>
+    <div class="exec-organ">Комисия за финансов надзор</div>
+    <p class="dv-lead">Наредбата въвежда нова система за измерване и публично сравняване на доходността на пенсионните фондове с еталонни пазарни индекси, за да може всеки осигурен да види дали управляващото дружество работи добре или изостава от пазара.</p>
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <div class="fs-sec fs-moments"><h5>Основни моменти</h5><ul><li><strong>Три типа подфондове, три различни еталона:</strong> Динамичните подфондове се сравняват с портфейл, доминиран от акции (75% акции общо: 25% глобални, 30% еврозона, 20% български BGBX40); балансираните – с портфейл с преобладаващи облигации (50% държавни облигации 5–10 г.); консервативните – с изключително нисък рисков профил (65% краткосрочни държавни облигации 1–5 г., едва 5% акции общо).</li><li><strong>Как се изчислява еталонът:</strong> Тримесечно се изчислява претеглена средна доходност на шест компонента (4 борсови индекса + BGBX40 + парични средства); след това годишният показател е средногеометрична стойност на последните 20 тримесечия (5 години).</li><li><strong>Как се мери реалната доходност на фонда:</strong> Изчислява се като нарастване на стойността на един дял за последните 5 години (20 тримесечия), а после се анюализира по геометрична формула – така сравнението е яблъки с яблъки.</li><li><strong>КФН публикува резултатите тримесечно:</strong> До края на месеца след всяко тримесечие Комисията обявява и еталонния показател, и постигнатата доходност на всеки подфонд – информацията е публична.</li><li><strong>Стара наредба се отменя:</strong> Наредба № 12 от 2003 г. за минималната доходност (актуализирана многократно, последно през 2025 г.) се заменя изцяло с новия подход на пазарно сравнение вместо фиксиран минимум.</li><li><strong>Преходен период 2027–2031 г.:</strong> Тъй като са нужни 20 тримесечия исторически данни, до края на 2031 г. се прилага специална формула с постепенно акумулиране на данни (минимум 4 тримесечия); пълната 5-годишна методология заработва от 2032 г.</li><li><strong>2027 г. – само информационни данни:</strong> За първите три тримесечия на 2027 г. КФН публикува показателите единствено с информационна цел, без те да имат правни последици за фондовете.</li></ul></div><div class="fs-sec fs-winners"><h5>Кой печели / Кой губи</h5><ul><li><strong>Печелят:</strong> Осигурените лица в задължителните пенсионни фондове – получават ясен, публичен и обективен измерител дали управляващото им дружество е по-добро или по-лошо от пазара.</li><li><strong>Губят:</strong> Пенсионноосигурителните дружества с по-слабо представяне – занапред лошото управление ще е видимо за всеки осигурен чрез директно сравнение с пазарен еталон.</li></ul></div><div class="fs-sec fs-notable"><h5>Забележително</h5><p>Българският индекс BGBX40 получава значително тегло дори при „консервативен&quot; подфонд (10%), което означава, че еталонът за най-предпазливите спестители включва сериозна доза от сравнително малка и ниско ликвидна борса.</p></div><div class="fs-sec fs-trans"><h5>Влизане в сила</h5><ul><li>Наредбата влиза в сила на <strong>1 януари 2027 г.</strong></li><li>Първото официално определяне на годишните показатели – до края на <strong>януари 2028 г.</strong></li><li>Пълното 5-годишно изчисление по основната методология се прилага след <strong>края на 2031 г.</strong></li></ul></div>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244477" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-naredba">НАРЕДБА</span></div>
+      <span class="dv-meta">Бр.&nbsp;63 &middot; 2026-07-10</span>
+    </div>
+    <div class="dv-title">Наредба за изменение и допълнение на Наредба № 44 от 20.10.2011 г. за изискванията към дейността на колективните инвестиционни схеми, управляващите дружества, националните инвестиционни фондове, алтернативните инвестиционни фондове и лицата, управляващи алтернативни инвестиционни фондове</div>
+    
+    
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <p class="no-summ">Резюме не е налично.</p>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244478" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;62 &middot; 2026-07-07</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ № 7648 от 9 юли 2025 г. по административно дело № 397 от 2024 г.</div>
+    
+    
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <p class="no-summ">Резюме не е налично.</p>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244352" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;62 &middot; 2026-07-07</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ № 6658 от 17 юни 2026 г. по административно дело № 11411 от 2025 г.</div>
+    
+    
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <p class="no-summ">Резюме не е налично.</p>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244353" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;62 &middot; 2026-07-07</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ № 1592 от 12 февруари 2026 г. по административно дело № 8157 от 2024 г.</div>
+    
+    
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <p class="no-summ">Резюме не е налично.</p>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244397" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-reshenie">РЕШЕНИЕ</span></div>
+      <span class="dv-meta">Бр.&nbsp;62 &middot; 2026-07-07</span>
+    </div>
+    <div class="dv-title">РЕШЕНИЕ № 6765 от 18 юни 2026 г. по административно дело № 3950 от 2026 г.</div>
+    
+    
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <p class="no-summ">Резюме не е налично.</p>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244398" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-pravilnik">ПРАВИЛНИК</span></div>
+      <span class="dv-meta">Бр.&nbsp;62 &middot; 2026-07-07</span>
+    </div>
+    <div class="dv-title">ПРАВИЛНИК за устройството и дейността на Военно-географската служба</div>
+    
+    
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <p class="no-summ">Резюме не е налично.</p>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244538" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<div class="dv-card dv-card-compact">
+  <div class="dv-sum-static">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-other">ДРУГО</span></div>
+      <span class="dv-meta">Бр.&nbsp;63 &middot; 2026-07-10</span>
+    </div>
+    <div class="dv-title">споразумение, подчинен документ, очертаващ целите и резултатите от даден</div>
+    
+    
+    
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244510" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</div>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-pravilnik">ПРАВИЛНИК</span></div>
+      <span class="dv-meta">Бр.&nbsp;63 &middot; 2026-07-10</span>
+    </div>
+    <div class="dv-title">Правилник за изменение на Правилника за устройството и дейността на Централния артилерийски технически изпитателен полигон</div>
+    
+    
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <p class="no-summ">Резюме не е налично.</p>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244551" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details>
+
+<details class="dv-card">
+  <summary class="dv-sum">
+    <div class="dv-top">
+      <div class="dv-badges"><span class="badge b-pravilnik">ПРАВИЛНИК</span></div>
+      <span class="dv-meta">Бр.&nbsp;63 &middot; 2026-07-10</span>
+    </div>
+    <div class="dv-title">Правилник за изменение и допълнение на Правилника за устройството и дейността на Военна академия „Г. С. Раковски“</div>
+    
+    
+    <div class="expand-hint">Пълно резюме ▾</div>
+  </summary>
+  <div class="dv-body">
+    <p class="no-summ">Резюме не е налично.</p>
+    <a class="ext-link" href="https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=244552" target="_blank">Отвори в Държавен вестник ↗</a>
+  </div>
+</details></div>
+</div>
+</div>
+
+<div class="nl-footer">
+  <span class="nl-footer-logo">Doodles.</span>
+  <div class="nl-footer-links">
+    <a href="/">Начало</a>
+    <a href="/newsletters/">Бюлетин</a>
+    <a href="/parliament/">Законодателство</a>
+    <a href="/about/">За проекта</a>
+  </div>
+</div>
+</div>
+</body>
+</html>
