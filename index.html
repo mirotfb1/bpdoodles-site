@@ -3,22 +3,22 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Basepoint Doodles · Макроикономика и законодателство</title>
-<meta name="description" content="Седмичен бюлетин и референтен чартбук за макроикономическите показатели на България и промените в нормативната уредба."/>
+<title>Basepoint Doodles · Макроикономически показатели за България</title>
+<meta name="description" content="Чартбук с макроикономическите показатели на България — инфлация, БВП, производство, пазар на труда, търговия, кредит, енергия. Данни от НСИ, БНБ и Евростат, събрани и визуализирани на едно място."/>
 <link rel="icon" href="/favicon.ico" sizes="any"/>
 <link rel="apple-touch-icon" href="/favicon-180.png"/>
 <link rel="canonical" href="https://bpdoodles.com/"/>
 <meta property="og:type"        content="website"/>
 <meta property="og:url"         content="https://bpdoodles.com/"/>
-<meta property="og:title"       content="Basepoint Doodles · Макроикономика и законодателство"/>
-<meta property="og:description" content="Седмичен бюлетин и референтен чартбук за макроикономическите показатели на България и промените в нормативната уредба."/>
+<meta property="og:title"       content="Basepoint Doodles · Макроикономически показатели за България"/>
+<meta property="og:description" content="Чартбук с макроикономическите показатели на България — инфлация, БВП, производство, пазар на труда, търговия, кредит, енергия."/>
 <meta property="og:image"       content="https://bpdoodles.com/og-image.png"/>
 <meta name="twitter:card"       content="summary_large_image"/>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Caveat:wght@700&display=swap" rel="stylesheet"/>
 <style>
 * { box-sizing:border-box; margin:0; padding:0; }
 body {
-  --bp:#1B2E5E; --red:#CC2B2B; --gold:#B5821A;
+  --bp:#1B2E5E; --red:#CC2B2B;
   --ink:#1C1C1C; --ink2:#444; --dim:#777; --pale:#BBB; --bdr:#D0D0D0; --surf:#F8F8F8;
   font-family:'Nunito',Arial,sans-serif; background:#E8E8E8; color:var(--ink); line-height:1.6;
 }
@@ -27,91 +27,76 @@ body {
 /* ── Newspaper header ── */
 .nwp-hdr { padding:18px 24px 14px; border-bottom:1px solid var(--ink); }
 .nwp-topline { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
-.nwp-dateline { font-family:'Courier New',monospace; font-size:10px; color:var(--dim); letter-spacing:0.05em; text-transform:uppercase; }
-.nwp-nav { display:flex; gap:14px; }
+.nwp-nav { display:flex; gap:14px; flex-wrap:wrap; }
 .nwp-nav a { font-size:10px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--dim); text-decoration:none; }
 .nwp-nav a:hover { color:var(--ink); }
+.nwp-nav a.nwp-active { color:var(--ink); font-weight:900; border-bottom:2px solid var(--red); padding-bottom:1px; }
 .nwp-title-row { text-align:center; margin-bottom:10px; }
-.nwp-title {
-  font-family:'Nunito',sans-serif; font-size:40px; font-weight:900;
-  color:var(--ink); letter-spacing:-1.5px; line-height:1; display:inline;
-}
-.nwp-doodles {
-  font-family:'Caveat',cursive; font-size:48px; font-weight:700;
-  color:var(--red); line-height:1; vertical-align:baseline; margin-left:6px;
-}
+.nwp-title { font-family:'Nunito',sans-serif; font-size:40px; font-weight:900; color:var(--ink); letter-spacing:-1.5px; line-height:1; display:inline; }
+.nwp-doodles { font-family:'Caveat',cursive; font-size:48px; font-weight:700; color:var(--red); line-height:1; vertical-align:baseline; margin-left:6px; }
 .nwp-subtitle { text-align:center; font-size:11px; color:var(--dim); letter-spacing:0.14em; text-transform:uppercase; margin-top:6px; }
 .nwp-rule-thick { height:3px; background:var(--ink); margin:10px 0 0; }
 .nwp-rule-thin  { height:1px; background:var(--ink); margin:3px 0 0; }
 
-/* ── Two-column grid ── */
-.nwp-cols { display:grid; grid-template-columns:1fr 1fr; gap:0; border-bottom:2px solid var(--ink); }
-.nwp-col { padding:16px 20px; }
-.nwp-col:first-child { border-right:1px solid var(--bdr); }
-.col-head {
+/* ── Lede ── */
+.lede { padding:20px 24px 18px; border-bottom:2px solid var(--ink); }
+.lede p { font-size:14px; color:var(--ink2); line-height:1.7; margin-bottom:10px; }
+.lede p:last-of-type { margin-bottom:0; }
+.lede strong { font-weight:900; color:var(--ink); }
+.lede-stats {
+  margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;
+  font-family:'Courier New',monospace; font-size:10px; color:var(--dim);
+  letter-spacing:0.05em; text-transform:uppercase;
+}
+.lede-stats span { border:1px solid var(--bdr); padding:3px 8px; background:var(--surf); }
+
+/* ── Featured charts ── */
+.feat-head, .col-head {
   font-size:9px; font-weight:900; letter-spacing:0.2em; text-transform:uppercase;
   color:var(--dim); padding-bottom:8px; border-bottom:2px solid var(--ink); margin-bottom:12px;
 }
-
-/* Economy column */
-.mini-chart { margin-bottom:10px; border:1px solid #DDD; overflow:hidden; display:block; text-decoration:none; }
+.feat { padding:16px 24px 4px; }
+.mini-chart { border:1px solid #DDD; overflow:hidden; display:block; text-decoration:none; margin-bottom:12px; }
 .mini-chart img { width:100%; display:block; }
 .mini-chart-lbl { font-size:9px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--dim); padding:3px 6px 4px; background:#F4F4F4; }
+.mini-chart:hover .mini-chart-lbl { color:var(--ink); background:#EDEDED; }
 
-/* Legislation column */
-.mini-chart-wrap { height:120px; }
-.dv-item { margin-bottom:12px; padding-bottom:12px; border-bottom:1px solid #EEE; display:block; text-decoration:none; color:inherit; }
-.dv-item:last-child { border-bottom:none; margin-bottom:0; padding-bottom:0; }
-.dv-item:hover .dv-title { color:var(--gold); }
-.dv-meta { font-family:'Courier New',monospace; font-size:9px; color:var(--pale); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:3px; }
-.dv-type { display:inline-block; font-size:8px; font-weight:900; letter-spacing:0.1em; text-transform:uppercase; color:#fff; padding:1px 5px; border-radius:2px; margin-bottom:4px; }
-.tip-naredba { background:var(--gold); }
-.tip-zakon   { background:var(--bp); }
-.tip-post    { background:#555; }
-.tip-pravilnik { background:#777; }
-.dv-title { font-size:12px; font-weight:900; color:var(--ink); line-height:1.35; transition:color 0.1s; }
-.dv-lead  { font-size:11px; color:var(--dim); line-height:1.4; margin-top:3px; }
-.col-cta { padding-top:10px; }
-.col-cta a { font-size:10px; font-weight:900; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; }
-.col-cta a.eco  { color:var(--bp); }
-.col-cta a.law  { color:var(--gold); }
-
-/* ── Bulletin section ── */
-.bulletin-hdr {
-  border-top:2px solid var(--ink); padding:14px 24px 12px;
-  display:flex; justify-content:space-between; align-items:baseline;
-  border-bottom:1px solid #EEE;
+/* ── Section index ── */
+.sections { padding:16px 24px 20px; border-top:1px solid #EEE; }
+.sec-grid { display:grid; grid-template-columns:1fr 1fr; gap:0 20px; }
+.sec-item {
+  display:flex; justify-content:space-between; align-items:baseline; gap:8px;
+  padding:7px 0; border-bottom:1px solid #EEE; text-decoration:none; color:inherit;
 }
-.bulletin-title { font-size:18px; font-weight:900; color:var(--ink); letter-spacing:-0.3px; }
-.bulletin-coming {
-  font-size:12px; color:var(--dim); padding:14px 24px 18px;
-  border-bottom:1px solid #EEE;
-}
-.issue { display:block; padding:12px 24px; border-bottom:1px solid #EEE; text-decoration:none; color:inherit; transition:background 0.08s; }
-.issue:hover { background:var(--surf); }
-.issue-date { font-family:'Courier New',monospace; font-size:9px; color:var(--pale); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:3px; }
-.issue-title { font-size:15px; font-weight:900; color:var(--ink); letter-spacing:-0.3px; line-height:1.3; margin-bottom:3px; }
-.issue-tags { font-size:10px; color:var(--dim); }
-.cta-row { padding:10px 24px 16px; }
-.cta-row a { font-size:10px; font-weight:900; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; color:var(--ink); }
+.sec-name { font-size:13px; font-weight:700; color:var(--ink); }
+.sec-item:hover .sec-name { color:var(--red); }
+.sec-n { font-family:'Courier New',monospace; font-size:10px; color:var(--pale); flex-shrink:0; }
+.sec-loading { font-size:12px; color:var(--dim); grid-column:1 / -1; padding:6px 0; }
 
-/* ── Subscribe ── */
-.sub { background:var(--surf); border-top:2px solid var(--ink); padding:16px 24px 14px; }
-.sub p { font-size:13px; color:var(--ink2); margin-bottom:10px; }
-.sub-row { display:flex; gap:8px; max-width:400px; }
-.sub-in { flex:1; border:1px solid #CCC; padding:7px 11px; font-family:'Nunito',sans-serif; font-size:13px; outline:none; background:#fff; }
-.sub-in:focus { border-color:var(--ink); }
-.sub-btn { background:var(--ink); color:#fff; border:none; padding:7px 16px; font-family:'Nunito',sans-serif; font-size:11px; font-weight:900; letter-spacing:0.08em; text-transform:uppercase; cursor:pointer; white-space:nowrap; }
-.sub-btn:hover { background:#333; }
-.sub-ok { display:none; font-size:13px; color:#2A9D5C; font-weight:700; margin-top:8px; }
-.note { font-size:11px; color:var(--pale); margin-top:6px !important; }
+/* ── CTA ── */
+.cta { padding:18px 24px 20px; background:var(--surf); border-top:2px solid var(--ink); }
+.cta a {
+  display:inline-block; background:var(--ink); color:#fff; text-decoration:none;
+  padding:9px 20px; font-size:11px; font-weight:900; letter-spacing:0.1em; text-transform:uppercase;
+}
+.cta a:hover { background:var(--red); }
+.cta-note { font-size:12px; color:var(--dim); margin-top:10px; }
 
 /* ── Footer ── */
-.footer { padding:12px 24px; border-top:1px solid #DDD; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; }
+.footer { padding:14px 24px; border-top:1px solid #DDD; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; }
 .footer-logo { font-family:'Caveat',cursive; font-size:16px; font-weight:700; color:#BBB; }
 .footer-links { display:flex; gap:14px; font-size:10px; flex-wrap:wrap; }
 .footer-links a { color:var(--pale); text-decoration:none; }
 .footer-links a:hover { color:var(--dim); }
+
+/* ── Mobile ── */
+@media (max-width:740px) {
+  .wrap { margin:0; border-left:none; border-right:none; }
+  .nwp-hdr, .lede, .feat, .sections, .cta, .footer { padding-left:16px; padding-right:16px; }
+  .nwp-title { font-size:32px; }
+  .nwp-doodles { font-size:38px; }
+  .sec-grid { grid-template-columns:1fr; }
+}
 </style>
 </head>
 <body>
@@ -120,148 +105,120 @@ body {
   <!-- Newspaper header -->
   <div class="nwp-hdr">
     <div class="nwp-topline">
-      
       <nav class="nwp-nav">
-        <a href="/newsletters/">Бюлетин</a>
-        <a href="/cockpit/">Икономика</a>
-        <a href="/parliament/">Законодателство</a>
+        <a href="/" class="nwp-active">Начало</a>
+        <a href="/cockpit/">Показатели</a>
         <a href="/about/">За проекта</a>
       </nav>
     </div>
     <div class="nwp-title-row">
       <span class="nwp-title">Basepoint</span><span class="nwp-doodles">Doodles</span>
     </div>
-    <p class="nwp-subtitle">Макроикономика · Законодателство · България</p>
+    <p class="nwp-subtitle">Макроикономически показатели · България</p>
     <div class="nwp-rule-thick"></div>
     <div class="nwp-rule-thin"></div>
   </div>
 
-  <!-- Two columns -->
-  <div class="nwp-cols">
-
-    <!-- Economy column -->
-    <div class="nwp-col">
-      <div class="col-head">Икономика · Показатели</div>
-      <a class="mini-chart" href="/cockpit/">
-        <img src="/cockpit/charts/hicp-01.png" alt="Потребителска инфлация" loading="lazy"/>
-        <div class="mini-chart-lbl">Потребителска инфлация</div>
-      </a>
-      <a class="mini-chart" href="/cockpit/">
-        <img src="/cockpit/charts/wages-01.png" alt="Работни заплати" loading="lazy"/>
-        <div class="mini-chart-lbl">Работни заплати</div>
-      </a>
-      <a class="mini-chart" href="/cockpit/">
-        <img src="/cockpit/charts/gdp-01.png" alt="БВП" loading="lazy"/>
-        <div class="mini-chart-lbl">БВП</div>
-      </a>
-      <div class="col-cta"><a href="/cockpit/" class="eco">→ Виж пълния чартбук</a></div>
+  <!-- Lede -->
+  <div class="lede">
+    <p><strong>Чартбук на българската икономика.</strong> Ключовите макроикономически показатели — инфлация, БВП, промишлено производство, пазар на труда, външна търговия, кредит, жилищни цени и енергия — събрани и визуализирани на едно място.</p>
+    <p>Данните идват от НСИ, БНБ, Евростат и други институции. Графиките се обновяват, когато излязат нови данни.</p>
+    <div class="lede-stats">
+      <span id="stat-count">Показатели</span>
+      <span id="stat-date">Обновявано редовно</span>
     </div>
-
-    <!-- Legislation column: mini activity chart + 2 most recent substantive summaries -->
-    <div class="nwp-col">
-      <div class="col-head">Законодателство · Държавен вестник</div>
-      <a class="mini-chart" href="/parliament/">
-        <div class="mini-chart-wrap"><canvas id="parlMiniChart"></canvas></div>
-        <div class="mini-chart-lbl">Законодателна активност</div>
-      </a>
-
-      <!-- BEGIN:LAW-ITEMS -->
-      <a class="dv-item" href="/parliament/dv/2026-W29/">
-        <div class="dv-meta">17 юли 2026 · Министерства</div>
-        <span class="dv-type tip-naredba">Наредба</span>
-        <div class="dv-title">Наредба за изменение и допълнение на Наредба № 9 от 19.11.2003 г. за оценка на активите и пасивите на пенсионноосигурителното дружество и на управляваните от него фондове, за изчисляване на стойността на нетните активи, на един дял и на доходността от инвестиционните имоти и за воденето на индивидуа</div>
-        <div class="dv-lead">Наредбата приспособява правилата за оценка на активите и изчисляване на дяловете в пенсионните фондове към въведената структура на подфондове, в които осигурени.</div>
-      </a>
-      <a class="dv-item" href="/parliament/dv/2026-W29/">
-        <div class="dv-meta">17 юли 2026 · Министерства</div>
-        <span class="dv-type tip-naredba">Наредба</span>
-        <div class="dv-title">НАРЕДБА № Н-1 от 8 юли 2026 г. за Регистъра за прозрачност</div>
-        <div class="dv-lead">Наредбата въвежда правилата за регистрация на лобистите в новия публичен Регистър за прозрачност – кой трябва да се впише, какво декларира и как се проследяват.</div>
-      </a>
-      <!-- END:LAW-ITEMS -->
-
-      <div class="col-cta"><a href="/parliament/" class="law">→ Виж всички издания</a></div>
-    </div>
-
   </div>
 
-  <!-- Bulletin section — empty until first consolidated issue -->
-  <div class="bulletin-hdr">
-    <span class="bulletin-title">Бюлетин</span>
-    <a href="/newsletters/" style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--dim);text-decoration:none;">Архив &rarr;</a>
+  <!-- Featured charts -->
+  <div class="feat">
+    <div class="feat-head">Избрани графики</div>
+    <a class="mini-chart" href="/cockpit/#hicp-01">
+      <img src="/cockpit/charts/hicp-01.png" alt="Потребителска инфлация (ХИПЦ)" width="680" height="320"/>
+      <div class="mini-chart-lbl">Инфлация · Потребителски цени</div>
+    </a>
+    <a class="mini-chart" href="/cockpit/#gdp-01">
+      <img src="/cockpit/charts/gdp-01.png" alt="Растеж на БВП" width="680" height="320" loading="lazy"/>
+      <div class="mini-chart-lbl">Растеж на БВП</div>
+    </a>
+    <a class="mini-chart" href="/cockpit/#wages-01">
+      <img src="/cockpit/charts/wages-01.png" alt="Работни заплати" width="680" height="320" loading="lazy"/>
+      <div class="mini-chart-lbl">Работни заплати</div>
+    </a>
   </div>
-  <a class="issue" href="/newsletters/2026-W29/">
-    <div class="issue-date">19 юли 2026</div>
-    <div class="issue-title">Инфлацията отстъпва до 5,2%, докато парламентът реформира ВСС, денонсира Договора за Енергийна харта и приема бюджет с рекорден дефицит</div>
-    <div class="issue-tags">ХИПЦ 5,2% · Закон за съдебната власт · Закони срещу ценови ръст · Бюджет 2026 деф. 5,7% · Енергийна харта</div>
-  </a>
-  <a class="issue" href="/newsletters/2026-W25/">
-    <div class="issue-date">22 юни 2026</div>
-    <div class="issue-title">Търговски дефицит с многогодишен рекорд; промени в три министерства и ETS2 за горивния сектор</div>
-    <div class="issue-tags">Дефицит -1 423 EUR млн · Производствени цени +12,1% · Закон за инвестициите · ETS2 горива</div>
-  </a>
-  <div class="cta-row"><a href="/newsletters/">Всички броеве &rarr;</a></div>
 
-  <!-- Subscribe -->
-  <div class="sub">
-    <p>Получавай бюлетина по имейл. Безплатен, седмичен.</p>
-    <form class="sub-row" onsubmit="doSub(event,3)">
-      <input class="sub-in" type="email" placeholder="your@email.com" required/>
-      <button class="sub-btn" type="submit">Абонирай се</button>
-    </form>
-    <p class="note">Без спам. Откажи се по всяко време.</p>
-    <p class="sub-ok" id="sub-ok">&#10003; Абониран.</p>
+  <!-- Section index -->
+  <div class="sections">
+    <div class="col-head">Раздели</div>
+    <div class="sec-grid" id="sec-grid">
+      <div class="sec-loading">Зареждане…</div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta">
+    <a href="/cockpit/">Отвори чартбука &rarr;</a>
+    <p class="cta-note">Проектът е безплатен и независим. Нищо тук не е финансов съвет.</p>
   </div>
 
   <!-- Footer -->
   <div class="footer">
     <span class="footer-logo">Doodles.</span>
     <div class="footer-links">
-      <a href="/newsletters/">Бюлетин</a>
-      <a href="/cockpit/">Икономика</a>
-      <a href="/parliament/">Законодателство</a>
+      <a href="/">Начало</a>
+      <a href="/cockpit/">Показатели</a>
       <a href="/about/">За проекта</a>
-      <a href="/privacy/">Поверителност</a>
+      <a href="mailto:editor@bpdoodles.com">Контакт</a>
     </div>
   </div>
 
 </div>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
-      <!-- BEGIN:PARL-CHART-DATA -->
-      <script>
-(function(){
-  var L=["W02", "W03", "W04", "W05", "W06", "W07", "W08", "W09", "W10", "W11", "W12", "W13", "W14", "W15", "W16", "W17", "W18", "W19", "W20", "W21", "W22", "W23", "W24", "W25", "W26", "W27", "W28", "W29", "W30", "W31"],NS=[0, 0, 1, 0, 3, 8, 1, 6, 2, 4, 6, 8, 2, 1, 0, 0, 0, 3, 7, 0, 1, 2, 26, 0, 13, 5, 6, 2, 2, 0],MS=[12, 6, 6, 11, 7, 6, 8, 2, 1, 0, 0, 0, 1, 1, 4, 2, 6, 6, 3, 1, 1, 1, 2, 2, 7, 0, 3, 3, 8, 0],MN=[3, 29, 16, 14, 7, 14, 5, 10, 2, 2, 3, 9, 7, 4, 9, 7, 4, 6, 35, 0, 3, 2, 5, 6, 2, 12, 14, 7, 2, 4],RO=[15.0, 25.0, 24.3, 24.5, 25.0, 23.2, 21.0, 19.2, 16.2, 10.8, 9.5, 9.2, 10.5, 10.5, 11.5, 9.5, 9.5, 11.8, 19.8, 17.8, 16.5, 14.0, 11.0, 12.8, 17.0, 20.0, 17.5, 18.5, 16.0, 12.8];
-  var ctx=document.getElementById('parlMiniChart').getContext('2d');
-  new Chart(ctx,{type:'bar',data:{labels:L,datasets:[
-    {label:'НС',data:NS,backgroundColor:'#1B2E5E',stack:'s',order:3},
-    {label:'МС',data:MS,backgroundColor:'#B5821A',stack:'s',order:2},
-    {label:'МИН',data:MN,backgroundColor:'#4A7F6B',stack:'s',order:1},
-    {label:'avg',data:RO,type:'line',borderColor:'#CC2B2B',backgroundColor:'transparent',borderWidth:1.5,borderDash:[4,3],pointRadius:0,tension:0.35,order:0}
-  ]},options:{responsive:true,maintainAspectRatio:false,
-    plugins:{legend:{display:false},tooltip:{enabled:false}},
-    scales:{
-      x:{stacked:true,grid:{display:false},ticks:{font:{size:7,family:'Courier New'},maxRotation:0}},
-      y:{stacked:true,display:false,beginAtZero:true}
-    },
-    onClick:function(){window.location.href='/parliament/';},
-    onHover:function(e,els){e.native.target.style.cursor=els.length?'pointer':'default';}
-  }});
-})();
-      </script>
-      <!-- END:PARL-CHART-DATA -->
+
 <script>
-function doSub(e, listId) {
-  e.preventDefault();
-  var f = e.target, btn = f.querySelector('button'), email = f.querySelector('input').value;
-  btn.disabled = true;
-  fetch('/subscribe', {
-    method:'POST', headers:{'content-type':'application/json'},
-    body: JSON.stringify({email:email, list_id:listId})
-  }).then(function(r){return r.json();}).then(function(d){
-    if(d.ok){ f.style.display='none'; document.getElementById('sub-ok').style.display='block'; }
-    else { btn.disabled=false; }
-  }).catch(function(){ btn.disabled=false; });
-}
+// Разделите и броят графики се четат от манифеста на чартбука,
+// за да не се налага ръчна поддръжка на началната страница.
+fetch('/cockpit/manifest.json')
+  .then(function(r) {
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    return r.json();
+  })
+  .then(function(m) {
+    var grid = document.getElementById('sec-grid');
+    var sections = (m.sections || []).filter(function(s) { return (s.charts || []).length; });
+    if (!sections.length) throw new Error('empty manifest');
+
+    grid.innerHTML = '';
+    var total = 0;
+    sections.forEach(function(sec) {
+      var n = sec.charts.length;
+      total += n;
+      var a = document.createElement('a');
+      a.className = 'sec-item';
+      a.href = '/cockpit/#sec-' + sec.id;
+      var name = document.createElement('span');
+      name.className = 'sec-name';
+      name.textContent = sec.label_bg || sec.label || sec.id;
+      var cnt = document.createElement('span');
+      cnt.className = 'sec-n';
+      cnt.textContent = n;
+      a.appendChild(name);
+      a.appendChild(cnt);
+      grid.appendChild(a);
+    });
+
+    document.getElementById('stat-count').textContent =
+      total + ' графики · ' + sections.length + ' раздела';
+
+    var gen = new Date(m.generated_at);
+    if (!isNaN(gen)) {
+      document.getElementById('stat-date').textContent =
+        'Данни към ' + gen.toLocaleDateString('bg-BG', { day:'numeric', month:'long', year:'numeric' });
+    }
+  })
+  .catch(function(err) {
+    document.getElementById('sec-grid').innerHTML =
+      '<div class="sec-loading">Виж всички раздели в <a href="/cockpit/" style="color:#CC2B2B;">чартбука</a>.</div>';
+    console.error('Manifest load error:', err);
+  });
 </script>
 </body>
 </html>

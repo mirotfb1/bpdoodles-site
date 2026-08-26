@@ -4,134 +4,89 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>За проекта · Basepoint Doodles</title>
-<meta name="description" content="Basepoint Doodles: независим поглед към макроикономиката и законодателните промени в България."/>
+<meta name="description" content="За Basepoint Doodles — независим чартбук с макроикономическите показатели на България, съставен от данни на НСИ, БНБ и Евростат."/>
 <link rel="icon" href="/favicon.ico" sizes="any"/>
 <link rel="apple-touch-icon" href="/favicon-180.png"/>
 <link rel="canonical" href="https://bpdoodles.com/about/"/>
-<meta property="og:type" content="website"/>
-<meta property="og:url" content="https://bpdoodles.com/about/"/>
-<meta property="og:title" content="За проекта · Basepoint Doodles"/>
-<meta property="og:description" content="Basepoint Doodles: независим поглед към макроикономиката и законодателните промени в България."/>
-<meta property="og:image" content="https://bpdoodles.com/og-image.png"/>
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="За проекта · Basepoint Doodles"/>
-<meta name="twitter:description" content="Basepoint Doodles: независим поглед към макроикономиката и законодателните промени в България."/>
-<meta name="twitter:image" content="https://bpdoodles.com/og-image.png"/>
+<meta property="og:type"        content="website"/>
+<meta property="og:url"         content="https://bpdoodles.com/about/"/>
+<meta property="og:title"       content="За проекта · Basepoint Doodles"/>
+<meta property="og:description" content="За Basepoint Doodles — независим чартбук с макроикономическите показатели на България."/>
+<meta property="og:image"       content="https://bpdoodles.com/og-image.png"/>
+<meta name="twitter:card"       content="summary_large_image"/>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Caveat:wght@700&display=swap" rel="stylesheet"/>
 <style>
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* { box-sizing:border-box; margin:0; padding:0; }
 body {
-  --color-basepoint:   #1B2E5E;
-  --color-doodles:     #CC2B2B;
-  --color-accent:      #CC2B2B;
-  --color-ink:         #1C1C1C;
-  --color-ink-2:       #444444;
-  --color-muted:       #888888;
-  --color-muted-light: #AAAAAA;
-  --color-border:      #E8E8E8;
-  --color-surface:     #F8F8F8;
-  font-family: 'Nunito', Arial, sans-serif;
-  background: #F0F2F5;
-  color: var(--color-ink);
-  line-height: 1.6;
+  --bp:#1B2E5E; --red:#CC2B2B;
+  --ink:#1C1C1C; --ink2:#444; --dim:#777; --pale:#BBB; --bdr:#D0D0D0; --surf:#F8F8F8;
+  font-family:'Nunito',Arial,sans-serif; background:#E8E8E8; color:var(--ink); line-height:1.6;
 }
-.wrapper { max-width: 700px; margin: 32px auto; background: #fff; border: 1px solid var(--color-border); border-radius: 4px; }
-.lang-toggle { display: flex; justify-content: space-between; align-items: center; padding: 8px 16px; background: var(--color-basepoint); }
-.lang-buttons { display: flex; }
-.lang-btn { background: transparent; border: 1px solid #444; color: #888; font-family: 'Nunito', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; padding: 4px 12px; cursor: pointer; }
-.lang-btn:first-child { border-radius: 3px 0 0 3px; }
-.lang-btn:last-child  { border-radius: 0 3px 3px 0; border-left: none; }
-.lang-btn.active { background: var(--color-accent); border-color: var(--color-accent); color: #fff; }
-.site-nav { display: flex; gap: 20px; align-items: center; }
-.site-nav a { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.45); text-decoration: none; }
-.site-nav a:hover { color: rgba(255,255,255,0.9); }
-.site-nav a.active { color: var(--color-accent); }
-.site-nav a[href="/parliament/"] { color: #B5821A; }
-.site-nav .soon { font-size: 9px; background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.3); border-radius: 3px; padding: 1px 5px; margin-left: 4px; vertical-align: middle; letter-spacing: 0.05em; }
-.nav-br { display: none; }
-/* ── Lang visibility ── */
-.lc-bg { display: none !important; }
-.lc-en { display: block; }
-span.lc-en { display: inline; }
-span.lc-bg { display: none !important; }
-body.lang-bg .lc-en { display: none !important; }
-body.lang-bg .lc-bg { display: block !important; }
-body.lang-bg span.lc-bg { display: inline !important; }
-body.lang-bg span.lc-en { display: none !important; }
-/* ── Masthead ── */
-.masthead { background: var(--color-basepoint); padding: 22px 28px 18px; display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 3px solid var(--color-accent); }
-.masthead-logo { display: flex; align-items: center; }
-.masthead-left { display: flex; flex-direction: column; align-items: flex-end; padding-right: 14px; }
-.masthead-basepoint { font-family: 'Nunito', sans-serif; font-size: 22px; font-weight: 900; color: #fff; letter-spacing: -0.3px; line-height: 1; }
-.masthead-tagline { font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-top: 4px; }
-.masthead-divider { width: 2px; height: 52px; background: rgba(255,255,255,0.18); }
-.masthead-doodles { font-family: 'Caveat', cursive; font-size: 48px; font-weight: 700; color: var(--color-doodles); line-height: 1; padding-left: 14px; }
-.masthead-desc { text-align: right; }
-.masthead-desc-main { font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.75); display: block; }
-.masthead-desc-sub { font-size: 11px; color: rgba(255,255,255,0.35); display: block; }
-/* ── Page header ── */
-.page-header { padding: 20px 28px 16px; border-bottom: 1px solid var(--color-border); }
-.page-title { font-size: 20px; font-weight: 900; color: var(--color-ink); letter-spacing: -0.3px; margin-bottom: 6px; }
-/* ── About content ── */
-.about { padding: 28px 28px 24px; border-bottom: 1px solid var(--color-border); }
-.about p { font-size: 14px; color: var(--color-ink-2); line-height: 1.7; margin-bottom: 14px; }
-.about p:last-child { margin-bottom: 0; }
-.about strong { color: var(--color-ink); font-weight: 900; }
-.disclaimer { background: var(--color-surface); border-left: 3px solid var(--color-border); padding: 12px 14px; border-radius: 0 3px 3px 0; margin-top: 14px; }
-.disclaimer p { margin-bottom: 6px; font-size: 13px; color: var(--color-muted); }
-.disclaimer p:last-child { margin-bottom: 0; }
-/* ── Contact ── */
-.contact { padding: 20px 28px; border-bottom: 1px solid var(--color-border); }
-.contact-line { font-size: 14px; color: var(--color-ink-2); line-height: 1.6; }
-.contact-line a { color: var(--color-basepoint); font-weight: 700; text-decoration: none; }
-.contact-line a:hover { text-decoration: underline; }
-/* ── Footer ── */
-.footer { padding: 14px 28px; background: var(--color-surface); border-top: 1px solid var(--color-border); display: flex; justify-content: space-between; align-items: center; }
-.footer-logo { font-family: 'Caveat', cursive; font-size: 18px; font-weight: 700; color: #CCC; }
-.footer-links { font-size: 11px; display: flex; gap: 16px; }
-.footer-links a { color: var(--color-muted-light); text-decoration: none; }
-.footer-links a:hover { color: var(--color-muted); }
-/* ── Mobile ── */
-@media (max-width: 740px) {
-  .wrapper { margin: 0; border-radius: 0; border-left: none; border-right: none; }
-  .masthead, .page-header, .about, .contact, .footer { padding-left: 16px; padding-right: 16px; }
-  .masthead-desc { display: none; }
-  .lang-toggle { align-items: flex-start; }
-  .site-nav { flex: 1; flex-wrap: wrap; gap: 8px 14px; }
-  .nav-br { display: block; flex-basis: 100%; height: 0; }
-}
+.wrap { max-width:700px; margin:32px auto; background:#fff; border:1px solid #C0C0C0; overflow:hidden; }
 
-/* ── Newspaper header ──────────────────────────────────────────────── */
-body { background: #E8E8E8 !important; }
-.wrapper { border-radius: 0 !important; border-color: #C0C0C0 !important; overflow: hidden; }
-.nwp-hdr { padding:18px 24px 14px; border-bottom:1px solid #1C1C1C; }
+/* ── Newspaper header ── */
+.nwp-hdr { padding:18px 24px 14px; border-bottom:1px solid var(--ink); }
 .nwp-topline { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
-.nwp-dateline { font-family:'Courier New',monospace; font-size:10px; color:#777; letter-spacing:0.05em; text-transform:uppercase; }
 .nwp-nav { display:flex; gap:14px; flex-wrap:wrap; }
-.nwp-nav a { font-size:10px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#777; text-decoration:none; }
-.nwp-nav a:hover { color:#1C1C1C; }
-.nwp-nav a.nwp-active { color:#1C1C1C; font-weight:900; border-bottom:2px solid #CC2B2B; padding-bottom:1px; }
+.nwp-nav a { font-size:10px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--dim); text-decoration:none; }
+.nwp-nav a:hover { color:var(--ink); }
+.nwp-nav a.nwp-active { color:var(--ink); font-weight:900; border-bottom:2px solid var(--red); padding-bottom:1px; }
 .nwp-title-row { text-align:center; margin-bottom:10px; }
-.nwp-title { font-family:'Nunito',sans-serif; font-size:40px; font-weight:900; color:#1C1C1C; letter-spacing:-1.5px; line-height:1; display:inline; }
-.nwp-doodles { font-family:'Caveat',cursive; font-size:48px; font-weight:700; color:#CC2B2B; line-height:1; vertical-align:baseline; margin-left:6px; }
-.nwp-subtitle { text-align:center; font-size:11px; color:#777; letter-spacing:0.14em; text-transform:uppercase; margin-top:6px; }
-.nwp-rule-thick { height:3px; background:#1C1C1C; margin:10px 0 0; }
-.nwp-rule-thin  { height:1px; background:#1C1C1C; margin:3px 0 0; }
+.nwp-title { font-family:'Nunito',sans-serif; font-size:40px; font-weight:900; color:var(--ink); letter-spacing:-1.5px; line-height:1; display:inline; }
+.nwp-doodles { font-family:'Caveat',cursive; font-size:48px; font-weight:700; color:var(--red); line-height:1; vertical-align:baseline; margin-left:6px; }
+.nwp-subtitle { text-align:center; font-size:11px; color:var(--dim); letter-spacing:0.14em; text-transform:uppercase; margin-top:6px; }
+.nwp-rule-thick { height:3px; background:var(--ink); margin:10px 0 0; }
+.nwp-rule-thin  { height:1px; background:var(--ink); margin:3px 0 0; }
 
+/* ── Content ── */
+.about { padding:24px 24px 22px; border-bottom:2px solid var(--ink); }
+.about p { font-size:14px; color:var(--ink2); line-height:1.75; margin-bottom:14px; }
+.about p:last-child { margin-bottom:0; }
+.about strong { color:var(--ink); font-weight:900; }
+.disclaimer { background:var(--surf); border-left:3px solid var(--bdr); padding:12px 14px; margin-top:16px; }
+.disclaimer p { margin-bottom:6px; font-size:13px; color:var(--dim); }
+.disclaimer p:last-child { margin-bottom:0; }
+
+/* ── Sources ── */
+.sources { padding:18px 24px; border-bottom:1px solid #EEE; }
+.col-head { font-size:9px; font-weight:900; letter-spacing:0.2em; text-transform:uppercase; color:var(--dim); padding-bottom:8px; border-bottom:2px solid var(--ink); margin-bottom:12px; }
+.src-item { display:flex; gap:10px; padding:6px 0; border-bottom:1px solid #EEE; font-size:13px; }
+.src-item:last-child { border-bottom:none; }
+.src-name { font-weight:900; color:var(--ink); flex-shrink:0; min-width:96px; }
+.src-desc { color:var(--dim); font-size:12px; }
+
+/* ── Contact ── */
+.contact { padding:18px 24px; border-bottom:1px solid #EEE; }
+.contact-line { font-size:14px; color:var(--ink2); line-height:1.6; }
+.contact-line a { color:var(--bp); font-weight:700; text-decoration:none; }
+.contact-line a:hover { text-decoration:underline; }
+
+/* ── Footer ── */
+.footer { padding:14px 24px; background:var(--surf); border-top:1px solid #DDD; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; }
+.footer-logo { font-family:'Caveat',cursive; font-size:16px; font-weight:700; color:#BBB; }
+.footer-links { display:flex; gap:14px; font-size:10px; flex-wrap:wrap; }
+.footer-links a { color:var(--pale); text-decoration:none; }
+.footer-links a:hover { color:var(--dim); }
+
+/* ── Mobile ── */
+@media (max-width:740px) {
+  .wrap { margin:0; border-left:none; border-right:none; }
+  .nwp-hdr, .about, .sources, .contact, .footer { padding-left:16px; padding-right:16px; }
+  .nwp-title { font-size:32px; }
+  .nwp-doodles { font-size:38px; }
+  .src-item { flex-direction:column; gap:2px; }
+}
 </style>
 </head>
-<body class="lang-bg">
-<div class="wrapper">
+<body>
+<div class="wrap">
 
   <!-- Newspaper header -->
   <div class="nwp-hdr">
     <div class="nwp-topline">
-      
       <nav class="nwp-nav">
         <a href="/">Начало</a>
-        <a href="/newsletters/">Бюлетин</a>
-        <a href="/cockpit/">Икономика</a>
-        <a href="/parliament/">Законодателство</a>
+        <a href="/cockpit/">Показатели</a>
         <a href="/about/" class="nwp-active">За проекта</a>
       </nav>
     </div>
@@ -144,24 +99,37 @@ body { background: #E8E8E8 !important; }
   </div>
 
   <div class="about">
-    <div class="lc-en">
-      <p>My name is Miro. I'm not an economist, but I've spent years following economic data, reading analyses, and trying to understand how Bulgaria's economy is developing.</p>
-      <p>I decided to create a single place where key economic indicators and data are brought together and visualized  figures that various institutions publish regularly, but often in formats that aren't easy to interpret. Once a week I put out a newsletter summarizing the most important trends worth paying attention to.</p>
-      <p>This isn't professional analysis. It's more like thinking out loud and visualizing indicators. I often simplify and combine sources. I'm interested in the direction and the logic behind the numbers, not absolute precision.</p>
-      <div class="disclaimer">
-        <p>The data comes from NSI, BNB, Eurostat, and other institutions. The interpretation is entirely my own.</p>
-        <p>The project is free and independent. Mistakes are possible. Nothing here is financial advice.</p>
-        <p>The goal is simple: to make economic indicators a little easier to understand.</p>
-      </div>
+    <p>Казвам се Миро. Не съм икономист, но от години следя икономически данни, чета анализи и се опитвам да разбера как се развива икономиката в България.</p>
+    <p>Реших да събера на едно място визуализации на ключови икономически показатели — числа, които различни институции публикуват редовно, но често във формат, който не е лесен за интерпретация. <strong>Basepoint Doodles</strong> е точно това: чартбук, който проследява инфлацията, БВП, производството, пазара на труда, външната търговия, кредита, жилищните цени и енергията, и се обновява, когато излязат нови данни.</p>
+    <p>Това не е професионален анализ. По-скоро е мислене на глас и визуализиране на показатели. Често опростявам и комбинирам източници. Интересува ме посоката и логиката зад числата, а не абсолютната прецизност.</p>
+    <div class="disclaimer">
+      <p>Данните идват от НСИ, БНБ, Евростат и други институции. Интерпретацията е изцяло моя.</p>
+      <p>Проектът е безплатен и независим. Грешки са възможни. Нищо тук не е финансов съвет.</p>
+      <p>Целта е проста: да направи икономическите показатели по-разбираеми.</p>
     </div>
-    <div class="lc-bg">
-      <p>Казвам се Миро. Не съм икономист, но от години следя икономически данни, чета анализи и се опитвам да разбера как се развива икономиката в България.</p>
-      <p>Реших да създам и събера на едно място визуализации на ключови икономически показатели и данни, които различни институции публикуват редовно, но често във формат, който не е лесен за интерпретация. Веднъж седмично изготвям бюлетин, в който обобщавам какви нови макроикономически данни са публикувани от НСИ, Евростат и БНБ. Законите и наредбите обнародвани в Държавен вестник резюмирам с помощта на AI: на разбираем, не юридически език.</p>
-      <div class="disclaimer">
-        <p>Данните идват от НСИ, БНБ, Евростат и други институции. Интерпретацията е изцяло моя.</p>
-        <p>Проектът е безплатен и независим. Грешки са възможни. Нищо тук не е финансов съвет.</p>
-        <p>Целта е проста: да направи икономическите показатели по-разбираеми.</p>
-      </div>
+  </div>
+
+  <div class="sources">
+    <div class="col-head">Източници на данни</div>
+    <div class="src-item">
+      <span class="src-name">НСИ</span>
+      <span class="src-desc">Национален статистически институт — производство, търговия, заплати, строителство</span>
+    </div>
+    <div class="src-item">
+      <span class="src-name">БНБ</span>
+      <span class="src-desc">Българска народна банка — платежен баланс, кредит и депозити, външен дълг</span>
+    </div>
+    <div class="src-item">
+      <span class="src-name">Евростат</span>
+      <span class="src-desc">Хармонизирани серии и сравнения със страните от ЕС</span>
+    </div>
+    <div class="src-item">
+      <span class="src-name">АЗ</span>
+      <span class="src-desc">Агенция по заетостта — регистрирана безработица</span>
+    </div>
+    <div class="src-item">
+      <span class="src-name">ЕСО</span>
+      <span class="src-desc">Електроенергиен системен оператор — производство и потребление на електроенергия</span>
     </div>
   </div>
 
@@ -173,19 +141,12 @@ body { background: #E8E8E8 !important; }
     <span class="footer-logo">Doodles.</span>
     <div class="footer-links">
       <a href="/">Начало</a>
-      <a href="/newsletters/">Бюлетин</a>
       <a href="/cockpit/">Показатели</a>
-      <a href="/parliament/">Законодателство</a>
-      <a href="/privacy/">Поверителност</a>
+      <a href="/about/">За проекта</a>
+      <a href="mailto:editor@bpdoodles.com">Контакт</a>
     </div>
   </div>
 
 </div>
-<script>
-);
-  localStorage.setItem('bpd-lang', lang);
-}
-(function() { var s = localStorage.getItem('bpd-lang'); if (s === 'bg') setLang('bg'); })();
-</script>
 </body>
 </html>

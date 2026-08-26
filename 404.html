@@ -1,89 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bg">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Page not found · Basepoint Doodles</title>
+<title>Страницата не е намерена · Basepoint Doodles</title>
+<meta name="robots" content="noindex"/>
 <link rel="icon" href="/favicon.ico" sizes="any"/>
 <link rel="apple-touch-icon" href="/favicon-180.png"/>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Caveat:wght@700&display=swap" rel="stylesheet"/>
 <style>
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* { box-sizing:border-box; margin:0; padding:0; }
 body {
-  font-family: 'Nunito', sans-serif;
-  background: #F0F2F5;
-  color: #1C1C1C;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 40px 16px;
+  font-family:'Nunito',Arial,sans-serif; background:#E8E8E8; color:#1C1C1C;
+  min-height:100vh; display:flex; align-items:center; justify-content:center; padding:40px 16px;
 }
 .card {
-  background: #fff;
-  border: 1px solid #E8E8E8;
-  border-radius: 6px;
-  max-width: 480px;
-  width: 100%;
-  padding: 48px 40px;
-  text-align: center;
+  background:#fff; border:1px solid #C0C0C0; max-width:480px; width:100%;
+  padding:40px 32px; text-align:center;
 }
-.logo {
-  font-size: 28px;
-  font-weight: 900;
-  color: #1B2E5E;
-  letter-spacing: -0.5px;
-  margin-bottom: 4px;
-}
-.logo span { font-family: 'Caveat', cursive; color: #CC2B2B; font-size: 34px; }
-.code {
-  font-size: 72px;
-  font-weight: 900;
-  color: #E8E8E8;
-  line-height: 1;
-  margin: 28px 0 8px;
-}
-.message {
-  font-size: 18px;
-  font-weight: 700;
-  color: #1C1C1C;
-  margin-bottom: 8px;
-}
-.sub {
-  font-size: 14px;
-  color: #888;
-  margin-bottom: 32px;
-  line-height: 1.6;
-}
-.links {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
+.logo { font-size:26px; font-weight:900; color:#1C1C1C; letter-spacing:-0.8px; }
+.logo span { font-family:'Caveat',cursive; color:#CC2B2B; font-size:32px; margin-left:4px; }
+.rule-thick { height:3px; background:#1C1C1C; margin:12px 0 0; }
+.rule-thin  { height:1px; background:#1C1C1C; margin:3px 0 0; }
+.code { font-size:64px; font-weight:900; color:#E8E8E8; line-height:1; margin:24px 0 4px; }
+.message { font-size:18px; font-weight:900; color:#1C1C1C; margin-bottom:8px; }
+.sub { font-size:14px; color:#777; margin-bottom:28px; line-height:1.6; }
+.links { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
 .btn {
-  display: inline-block;
-  padding: 10px 22px;
-  border-radius: 4px;
-  font-size: 13px;
-  font-weight: 700;
-  text-decoration: none;
+  display:inline-block; padding:9px 18px; font-size:11px; font-weight:900;
+  letter-spacing:0.1em; text-transform:uppercase; text-decoration:none;
 }
-.btn-primary { background: #CC2B2B; color: #fff; }
-.btn-secondary { background: #F0F2F5; color: #1B2E5E; border: 1px solid #E8E8E8; }
+.btn-primary { background:#1C1C1C; color:#fff; }
+.btn-primary:hover { background:#CC2B2B; }
+.btn-secondary { background:#F8F8F8; color:#1B2E5E; border:1px solid #D0D0D0; }
+.btn-secondary:hover { background:#EDEDED; }
 </style>
 </head>
 <body>
   <div class="card">
-    <div class="logo">Basepoint <span>Doodles</span></div>
+    <div class="logo">Basepoint<span>Doodles</span></div>
+    <div class="rule-thick"></div>
+    <div class="rule-thin"></div>
     <div class="code">404</div>
-    <div class="message">Page not found</div>
-    <div class="sub">This page doesn't exist or has moved.<br/>Try one of the links below.</div>
+    <div class="message">Страницата не е намерена</div>
+    <div class="sub">Тази страница не съществува или е преместена.<br/>Архивът с бюлетини и законодателните резюмета вече не е публичен.</div>
     <div class="links">
-      <a href="/" class="btn btn-primary">Home</a>
-      <a href="/newsletters/" class="btn btn-secondary">Newsletter</a>
-      <a href="/cockpit/" class="btn btn-secondary">Cockpit</a>
+      <a href="/" class="btn btn-primary">Начало</a>
+      <a href="/cockpit/" class="btn btn-secondary">Показатели</a>
+      <a href="/about/" class="btn btn-secondary">За проекта</a>
     </div>
   </div>
 </body>

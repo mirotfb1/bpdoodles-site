@@ -1,11 +1,12 @@
 name = "bpdoodles-site"
-main = "worker.js"
 compatibility_date = "2026-05-19"
-compatibility_flags = ["nodejs_compat"]
 
+# Static-assets-only Worker — no server code.
+# (The /subscribe endpoint and worker.js were removed when the newsletter stopped.)
 [assets]
 directory = "."
-exclude = ["worker.js", "wrangler.toml"]
+exclude = ["wrangler.toml", "WORKFLOW.md"]
+not_found_handling = "404-page"
 
 [observability]
 enabled = true
