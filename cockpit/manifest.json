@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-27T07:29:19Z",
+  "generated_at": "2026-08-27T11:09:10Z",
   "datasets": {
     "hicp": {
       "label": "HICP",
@@ -88,8 +88,8 @@
     "credit": {
       "label": "Credit",
       "label_bg": "Кредит",
-      "latest_period": "Jun '26",
-      "last_generated": "2026-08-26T16:42:15Z"
+      "latest_period": "Jul '26",
+      "last_generated": "2026-08-27T11:09:10Z"
     },
     "extdebt": {
       "label": "External Debt",
