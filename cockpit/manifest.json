@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-26T16:42:15Z",
+  "generated_at": "2026-08-27T07:09:16Z",
   "datasets": {
     "hicp": {
       "label": "HICP",
@@ -52,14 +52,14 @@
     "unemployment": {
       "label": "Labour",
       "label_bg": "Пазар на труда",
-      "latest_period": "Q2 '26",
-      "last_generated": "2026-08-26T16:42:15Z"
+      "latest_period": "Jun '26",
+      "last_generated": "2026-08-27T07:09:16Z"
     },
     "wages": {
       "label": "Wages",
       "label_bg": "Заплати",
-      "latest_period": "2026-Q2",
-      "last_generated": "2026-08-26T16:42:15Z"
+      "latest_period": "Jun '26",
+      "last_generated": "2026-08-27T07:09:16Z"
     },
     "confidence": {
       "label": "Confidence",
@@ -76,8 +76,8 @@
     "bop": {
       "label": "Bal. of Payments",
       "label_bg": "Платежен баланс",
-      "latest_period": "2026-Q2",
-      "last_generated": "2026-08-26T16:42:15Z"
+      "latest_period": "Jun '26",
+      "last_generated": "2026-08-27T07:09:16Z"
     },
     "hpi": {
       "label": "House Prices",
