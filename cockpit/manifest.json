@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-27T11:09:10Z",
+  "generated_at": "2026-08-31T11:22:29Z",
   "datasets": {
     "hicp": {
       "label": "HICP",
@@ -10,8 +10,8 @@
     "ppi": {
       "label": "PPI",
       "label_bg": "ИЦП",
-      "latest_period": "Jun '26",
-      "last_generated": "2026-08-26T16:42:15Z"
+      "latest_period": "Jul '26",
+      "last_generated": "2026-08-31T11:22:29Z"
     },
     "gdp": {
       "label": "GDP",
@@ -34,14 +34,14 @@
     "services": {
       "label": "Services",
       "label_bg": "Услуги",
-      "latest_period": "May '26",
-      "last_generated": "2026-08-26T16:42:15Z"
+      "latest_period": "Jun '26",
+      "last_generated": "2026-08-31T11:22:29Z"
     },
     "retail": {
       "label": "Retail",
       "label_bg": "Търговия на дребно",
-      "latest_period": "Jun '26",
-      "last_generated": "2026-08-26T16:42:15Z"
+      "latest_period": "Jul '26",
+      "last_generated": "2026-08-31T11:22:29Z"
     },
     "trade": {
       "label": "Trade",
@@ -64,14 +64,14 @@
     "confidence": {
       "label": "Confidence",
       "label_bg": "Доверие",
-      "latest_period": "Jul '26",
-      "last_generated": "2026-08-26T16:42:15Z"
+      "latest_period": "Aug '26",
+      "last_generated": "2026-08-31T11:22:29Z"
     },
     "energy": {
       "label": "Energy",
       "label_bg": "Енергия",
-      "latest_period": "May '26",
-      "last_generated": "2026-07-22T12:12:05Z"
+      "latest_period": "Jun '26",
+      "last_generated": "2026-08-31T11:22:29Z"
     },
     "bop": {
       "label": "Bal. of Payments",
@@ -94,8 +94,8 @@
     "extdebt": {
       "label": "External Debt",
       "label_bg": "Външен дълг",
-      "latest_period": "Q1 '26",
-      "last_generated": "2026-08-26T16:42:15Z"
+      "latest_period": "Q2 '26",
+      "last_generated": "2026-08-31T11:22:29Z"
     }
   },
   "sections": [
