@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-10T12:03:53Z",
+  "generated_at": "2026-09-10T15:02:50Z",
   "datasets": {
     "hicp": {
       "label": "HICP",
@@ -495,7 +495,7 @@
           "footer_left": "Chained index, 2015 annual average = 100 · goods only",
           "footer_left_bg": "Chained index, 2015 annual average = 100 · goods only",
           "footer_right": "NSI Bulgaria",
-          "footer_right_bg": "NSI България"
+          "footer_right_bg": "НСИ България"
         },
         {
           "id": "TRADE-06",
@@ -538,7 +538,7 @@
           "footer_left": "Thousands of persons · 4-year window · not seasonally adjusted",
           "footer_left_bg": "Thousands of persons · 4-year window · not seasonally adjusted",
           "footer_right": "AZ (Bulgarian Employment Agency)",
-          "footer_right_bg": "AZ (Българияn Employment Agency)"
+          "footer_right_bg": "AZ (Агенция по заетостта)"
         },
         {
           "id": "UNEMP-05",
@@ -550,7 +550,7 @@
           "footer_left": "YoY % vs same month prior year · red = more registered (worse) · green = fewer (better)",
           "footer_left_bg": "ГоГ % vs same month prior year · red = more registered (worse) · green = fewer (better)",
           "footer_right": "AZ (Bulgarian Employment Agency)",
-          "footer_right_bg": "AZ (Българияn Employment Agency)"
+          "footer_right_bg": "AZ (Агенция по заетостта)"
         },
         {
           "id": "UNEMP-07",
