@@ -35,9 +35,10 @@
     .back { font-size:11px; }
     .back a { color:#777777; text-decoration:none; }
     .rev { background:#F8F8F8; border-top:1px solid #D0D0D0;
-            padding:20px 28px; }
-    .rev li { font-size:13px; line-height:1.6; color:#444;
-               margin-bottom:6px; }
+            padding:20px 28px 8px; }
+    .rev-item { margin:0 0 22px; }
+    .rev-item .cap { font-size:14px; color:#444; }
+    .rev-item .num { color:#777777; font-weight:700; }
     .foot { padding:20px 28px 26px; border-top:1px solid #D0D0D0;
              font-size:11px; color:#BBBBBB; line-height:1.7; }
     .foot a { color:#777777; }
@@ -51,7 +52,7 @@
 </div>
 <div class="rule"></div>
 <div class="idx" id="idx"><div class="idx-t">В ТОЗИ БРОЙ</div>
-<a href="#sec-prices">Цени</a> <span>(4)</span> &nbsp;<span>·</span>&nbsp; <a href="#sec-activity">Производство и Активност</a> <span>(2)</span> &nbsp;<span>·</span>&nbsp; <a href="#sec-retail_trade">Търговия</a> <span>(4)</span> &nbsp;<span>·</span>&nbsp; <a href="#sec-labour">Пазар на труда</a> <span>(3)</span> &nbsp;<span>·</span>&nbsp; <a href="#sec-sentiment">Доверие и Настроения</a> <span>(2)</span> &nbsp;<span>·</span>&nbsp; <a href="#sec-energy">Енергия</a> <span>(1)</span>
+<a href="#sec-prices">Цени</a> <span>(4)</span> &nbsp;<span>·</span>&nbsp; <a href="#sec-activity">Производство и Активност</a> <span>(2)</span> &nbsp;<span>·</span>&nbsp; <a href="#sec-retail_trade">Търговия</a> <span>(4)</span> &nbsp;<span>·</span>&nbsp; <a href="#sec-labour">Пазар на труда</a> <span>(3)</span> &nbsp;<span>·</span>&nbsp; <a href="#sec-sentiment">Доверие и Настроения</a> <span>(2)</span> &nbsp;<span>·</span>&nbsp; <a href="#sec-energy">Енергия</a> <span>(1)</span> &nbsp;<span>·</span>&nbsp; <a href="#sec-revisions">Ревизии</a> <span>(2)</span>
 </div>
 <div class="sec" id="sec-prices">
 <h2>Цени</h2>
@@ -157,12 +158,22 @@
 </div>
 <p class="back"><a href="#idx">↑ Обратно към индекса</a></p>
 </div>
-<div class="rev"><div class="idx-t">РЕВИЗИИ</div><ul>
-<li>Растеж на БВП — ревизирани 1 стойност; най-голяма промяна за второ тримесечие на 2026: 2,8 → 3,2.</li>
-</ul></div>
+<div class="rev" id="sec-revisions">
+<div class="idx-t">РЕВИЗИИ</div>
+<div class="rev-item">
+<p class="cap"><span class="num">↻</span> Растеж на БВП — ревизирани 1 стойност; най-голяма промяна за второ тримесечие на 2026: 2,8 → 3,2.</p>
+<img class="chart" width="680" src="charts/gdp-01.png" alt="Растеж на БВП">
+<p class="src">Евростат · namq_10_gdp · seasonally adjusted</p>
+</div>
+<div class="rev-item">
+<p class="cap"><span class="num">↻</span> Инфлация — Потребителски цени (ХИПЦ) — ревизирани 1 стойност; най-голяма промяна за юни 2026: 5,2 → 5,7.</p>
+<p class="src">графиката е по-горе в броя</p>
+</div>
+<p class="back"><a href="#idx">↑ Обратно към индекса</a></p>
+</div>
 <div class="foot">
 Графиките се обновяват автоматично на <a href="https://bpdoodles.com/cockpit/">bpdoodles.com/cockpit</a>. Данните са от Евростат, НСИ, БНБ и АЗ.<br>
-Брой 2026-W37-test · генериран автоматично на 2026-09-10 16:00 ч.
+Брой 2026-W37-test · генериран автоматично на 2026-09-10 16:25 ч.
 </div>
 </div></div>
 </body></html>
