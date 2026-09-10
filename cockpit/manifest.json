@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-08-31T11:22:29Z",
+  "generated_at": "2026-09-10T12:03:53Z",
   "datasets": {
     "hicp": {
       "label": "HICP",
       "label_bg": "ХИПЦ",
-      "latest_period": "Jul '26",
-      "last_generated": "2026-08-26T16:42:15Z"
+      "latest_period": "Aug '26",
+      "last_generated": "2026-09-10T12:03:53Z"
     },
     "ppi": {
       "label": "PPI",
@@ -22,14 +22,14 @@
     "ipi": {
       "label": "Industry",
       "label_bg": "Промишленост",
-      "latest_period": "Jun '26",
-      "last_generated": "2026-08-26T16:42:15Z"
+      "latest_period": "Jul '26",
+      "last_generated": "2026-09-10T12:03:53Z"
     },
     "construction": {
       "label": "Construction",
       "label_bg": "Строителство",
-      "latest_period": "Jun '26",
-      "last_generated": "2026-08-26T16:42:15Z"
+      "latest_period": "Jul '26",
+      "last_generated": "2026-09-10T12:03:53Z"
     },
     "services": {
       "label": "Services",
@@ -52,8 +52,8 @@
     "unemployment": {
       "label": "Labour",
       "label_bg": "Пазар на труда",
-      "latest_period": "Jun '26",
-      "last_generated": "2026-08-27T07:09:16Z"
+      "latest_period": "Jul '26",
+      "last_generated": "2026-09-10T12:03:53Z"
     },
     "wages": {
       "label": "Wages",
