@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-10T15:02:50Z",
+  "generated_at": "2026-09-13T08:32:52Z",
   "datasets": {
     "hicp": {
       "label": "HICP",
@@ -46,8 +46,8 @@
     "trade": {
       "label": "Trade",
       "label_bg": "Външна търговия",
-      "latest_period": "Jun '26",
-      "last_generated": "2026-08-26T16:42:15Z"
+      "latest_period": "Jul '26",
+      "last_generated": "2026-09-13T08:32:52Z"
     },
     "unemployment": {
       "label": "Labour",
