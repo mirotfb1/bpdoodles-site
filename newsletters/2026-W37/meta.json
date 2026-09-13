@@ -1,9 +1,13 @@
 {
   "edition": "2026-W37",
-  "generated_at": "2026-09-13T11:23:36.827243+03:00",
-  "since": "1970-01-01T00:00:00Z",
-  "n_charts": 0,
+  "generated_at": "2026-09-13T11:32:56.616006+03:00",
+  "since": "2026-09-10T15:02:50Z",
+  "n_charts": 3,
   "n_revisions": 0,
-  "charts": [],
+  "charts": [
+    "TRADE-01",
+    "TRADE-02",
+    "TRADE-03"
+  ],
   "warnings": {}
 }
